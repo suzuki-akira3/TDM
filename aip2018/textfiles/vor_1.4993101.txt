@@ -1,0 +1,118 @@
+Determination of coal ash content by the combined x-ray fluorescence and scattering spectrum
+An alternative method is proposed for the determination of the inorganic constituent mass fraction (ash) in solid fuel by the ratio of Compton and Rayleigh X-ray scattering peaks I_{C}/I_{R} subject to the iron fluorescence intensity. An original X-ray optical scheme with a Ti/Mo (or Sc/Cu) double-layer secondary radiator allows registration of the combined fluorescence-and-scattering spectrum at the specified scattering angle. An algorithm for linear calibration of the Compton-to-Rayleigh I_{C}/I_{R} ratio is proposed which uses standard samples with two certified characteristics: mass fractions of ash (A_{d}) and iron oxide (W_{Fe2O3}). Ash mass fractions have been determined for coals of different deposits in the wide range of A_{d} from 9.4% to 52.7% mass and W_{Fe2O3} from 0.3% to 4.95% mass. Due to the high penetrability of the probing radiation with energy E > 17 keV, the sample preparation procedure is rather simplified in comparison with the traditional method of A_{d} determination by the sum of fluorescence intensities of all constituent elements.
+INTRODUCTION
+Coal is a multi-component mixture of carbon-based combustible materials and a mineral component consisting of magnesium, aluminum, silicon, calcium, titanium, and iron oxides. Consumer merits of a fuel are characterized first of all by the ratio of combustible and incombustible components. A generally recognized method for determination of the coal mineral constituent (ash content) [1] consists in air combustion of a fuel sample (ashing) and calcination of the ash residue to a constant mass. The ash content in the sample is calculated on the base on the ash mass. A disadvantage of this method is significant expenditure of time for the analysis. One of the rapid methods for ash content determination is Energy Dispersive X-ray Fluorescence (EDXRF) analysis [2–4] where the mineral component amount is determined as a sum of all concentrations of oxides. The concentrations are evaluated by intensities of secondary emission (fluorescence) lines. However, it is known from the literature [5] that light element fluorescence intensity is strongly dependent on the grain size. This effect is related with low penetrability of radiation with energy E < 2 keV. Thus, as the grain average size decreases from 2.3 μm to 50 μm, the fluorescence intensity decreases by a factor 5 for sodium, by a factor 4 for magnesium, by a factor 3 for aluminum, etc. Plant laboratories have occasional technology facilities for preparation of samples with a grain size lower than 60 μm. In addition, quantitative measurements of carbon low-energy fluorescence (E = 0.28 keV) are practically impossible for powder samples.
+An alternative method to determine concentrations of elements with low atomic numbers is the measurement of the Compton and Rayleigh peak intensity ratio, I_{C}/I_{R} [6–8]. This ratio sharply increases with decreasing atomic number and can be calculated for whatever aggregation of scattering atoms [9]. As the scattered X-ray radiation with photon energy E > 17 keV possesses significantly higher penetrability than fluorescence radiation of light elements, their grain sizes are no object; so, the sample preparation procedure is simplified.
+In some recent studies [10–14], measurements of I_{C}/I_{R} ratio were used mainly as auxiliary ones, in particular, to allow for effects of matrix with Z < 11 in concentration calculations of elements with Z ≥ 11 by the X-ray Fluorescence analysis (XRF) method. Such measurements require neither precise determination of peak profiles nor thorough removing of the continuous spectrum background. Therefore, a standard XRF scheme with a primary broadband spectrum was used. Rayleigh and Compton scattering peaks of the anode analytical line are observed in the specimen spectrum against the significant background of X-ray tube Bremsstrahlung emission. In coal, the mass fraction of elements with Z < 11 reaches from 60% to 95%. For quantitative determination of these elements, high-precision measurements of Compton and Rayleigh peak intensities are required. These measurements are possible only using an original X-ray optic scheme which provides high contrast of both scattering peaks and fluorescence lines.
+The aim of the work is development of an X-ray method for determination of ash content in coals by a combined spectrum including the Compton and Rayleigh scattering and X-ray fluorescence.
+THEORY
+According to Pirenne’s review [9], total intensity scattered by an isolated atom for unpolarized primary radiation is given by the formula:
+where Q=1+h1−cos2θmcλ{−3} is the relativity correction factor for incoherent radiation, h is Plank’s constant, m is the mass of an electron at rest, c is the speed of light, λ is the wavelength (in Å), I_{0} is the primary beam intensity, a_{e} is the classical radius of an electron, R is the distance from the sample, 2θ is the scattering angle, f is the atomic scattering factor for X-ray, Z is the atomic number, and S is the incoherent scattering function according to Heisenberg-Bewilogua [9].
+In Eq. (1), the expression in parentheses defines coherent (Rayleigh) and incoherent (Compton) scattering components. The S = S(v) function depends on the chosen model for distribution of electrons in the atom, v=2.21sinθλZ^{23}, with λ in Å. Heisenberg obtained a formula for S(υ) calculation, and Bewilogua made a numerical table of S values as a function of υ [9]. Using this table, we can calculate the Compton scattering intensity for any atom.
+For a chaotic assemblage of different atoms contributing additively into scattering, we can write an expression for the Compton-to-Rayleigh intensity ratio as
+where n_{i} is the number of i—sort atoms and m is the number of atomic sorts in the assemblage. Note that because of nonlinear S dependence on Z [9], we cannot use an average atomic number over the atomic assemblage for our calculations.
+The effect of correlation in atomic arrangement, for example, due to formation of molecules, shows itself as oscillations in diffraction curves at sinθλ<0.6 Å^{−1} [15].
+This effect distorts the shape of Compton and Rayleigh peaks and makes difficulties for calculations. Therefore, we measured the spectrum at such scattering angle 2θ as the condition sinθλ_{R}≥0.6 Å^{−1} was fulfilled for the Rayleigh peak with wavelength λ_{R}. Under this condition, the correlation effect does not distort the Compton-to-Rayleigh peak ratio [15], so this is neglected in calculations. Then by analogy with (2) for an assemblage of molecules, we can write
+where q is the number of sorts of molecules, N_{j} is the number of j-sort molecules, and p_{j} is the number of atomic types in a j-sort molecule.
+Taking into account N_{j} ∼ W_{j}M_{j}, where W_{j} is the mass fraction of j-sort molecules and M_{j} is the molecular mass, Eq. (3) may be rewritten as
+This formula establishes a relation between scattering peak intensity ratios and mass fractions of molecules in the coal composition. Calculations by Eq. (4) require determining the mass fractions of all the molecules in the multi-component system. Such measurements are possible by the intensity of fluorescence lines; but, as it was established before, these require the complex sample preparation procedure. However, for the case of coal, the calculations by (4) may be significantly simplified taking into account that for some molecules the I_{C}/I_{R} ratios have close values. In Table I, we grouped coal mineral components by their X-ray scattering power.
+Taking into consideration the numerical data in Table I, the multi-component system may be divided in three groups of materials by the effect on I_{C}/I_{R} ratio: carbon, I_{C}/I_{R} ≈ 1; oxides of “light” metals (Na, Mg, Al) and Si, I_{C}/I_{R} ≈ 0.25 ± 0.02; and inorganic compounds of “medium” metals (Ca, Ti, Fe), I_{C}/I_{R} ≈ 0.125 ± 0.04. For convenience, we name these carbon, “light” oxides (symbolically SiO_{2} as much meaningful of them), and oxides of “medium” metals (symbolically Fe_{2}O_{3}). In this conception, the ash is a sum of oxide mass fractions,
+A sum of mass fractions of carbon and the mineral constituent is
+Subject to equals (5) and (6), the numerator of (4) is given in the form
+Designating
+and
+we obtain
+and
+with
+and
+In this representation, the I_{C}/I_{R} ratio is the function of only two parameters: A_{d} and W_{Fe2O3}.
+CALIBRATION PLOTS
+To obtain a linear calibration by measurements of standard samples, we use the y_{i} = ax_{i} + b function. Usually, certified mass fractions are used as x_{i} and measured analytical signal values as y_{i}. We use an experimental y = I_{C}/I_{R} ratio as analytical signal and x_{i}—according to
+In this calibration, x_{i} depends on mass fractions of ash, A_{d}, and iron oxide, W_{Fe2O3}, in standard samples; a and b are the fitting parameters determined in the calibration procedure.
+In experimental spectra (Fig. 1), we cannot remove the background completely and separate Compton and Rayleigh scattering peaks perfectly. Integral intensity of each peak is measured partially in certain ranges of photon energy. Therefore, experimental I_{C}/I_{R} ratios differ from calculated ones; this difference is taken into account using fitting parameters in the calibration procedure.
+The calibration procedure of the experimentally measured ratio y=I_{C}I_{R} is fulfilled by 17 standard samples with certified A_{d} and W_{Fe2O3} values (Fig. 2). Coal standard samples and experimental ones (Table II) were powdered to granules about 60 μm. No tableting was used.
+Experimental I_{C}/I_{R} ratios measured with standard specimens are calibrated by a linear function in a very wide range of A_{d} (from 7% to 56% mass) and W_{Fe2O3} (from 0.2% to 6.5% mass). Standard deviation from the linear regularization solution does not exceed 0.005. This allows application of x values calculated by (8) in the usual calibration procedure; obtained a and b are used to calculate A_{d}.
+Measurements of an unknown sample are fulfilled in the following sequence. At first, iron oxide mass fraction W_{Fe2O3} is determined by iron fluorescence intensity using a relevant calibration plot. Then, measured y and W_{Fe2O3} values are used for A_{d} calculation,
+It is important to note that for determination of the ash mass fraction, no fluorescence measurements of light elements are needed in this method.
+Using the proposed method, we can estimate theoretically an ash mass fraction measurement error, ΔA_{d}, depending on I_{C}/I_{R} and W_{Fe2O3} measurement errors. ΔA_{d} is determined as the total differential of Eq. (9),
+Here the first term, ΔA_{d1}, is defined by the measurement error for the ratio of scattering signals, Δy, and the second one, ΔA_{d2}, by the measurement error of iron oxide mass fraction, ΔW_{Fe2O3}. Then, from (9) and (10), we obtain
+where Δyy is a relative error of measurement and
+Substitution of numerical values of the coefficients gives ΔA_{d1} = 1.895Δyy and ΔA_{d1} = 1.997 ΔW_{Fe2O3}. The error of iron oxide content as measured by fluorescence intensity is rather small (≤0.05% mass), so the main contribution into ΔA_{d} is introduced by the relative error of the scattering peak ratio measurements. With standard requirements to A_{d} precision in the limits ±1%, it is necessary to measure I_{C}/I_{R} ratios with accuracy not less than 0.5% that requires pulse accumulation not less than ∼5 × 10^{4} at each of the scattering peaks. To support such requirements, a nonstandard scheme of measurements is needed.
+EXPERIMENT
+Powdered coal specimens (grain size about 60 μm) of 2 g mass were poured into a cylindrical container with the bottom made of Ultralene 3225 organic film of 4 μm thickness.
+Spectra of X-ray fluorescence and Compton scattering were registered using the energy-dispersion spectrometer “SPRUT” SEF 01 (JSC “Ukrrentgen,” Ukraine) equipped by a SDD detector X-123 (Amptek, USA) and an X-ray tube with power 15 W. We applied an original X-ray optic scheme with double-layer Ti/Mo (or Sc/Cu) secondary emitters. These emitters provided effective excitation of fluorescence of light elements by Ti (or Sc) characteristic radiation, whereas Mo-Kα (or Cu-Kα) “probing” radiation lines gave Compton and Rayleigh scattering peaks.
+In order to assure the condition sinθλ_{R}≥0.6 Å^{−1}, a specified scattering angle 2θ ≈ 130° was set using Soller collimators with angular divergence 5° (by analogy with an X-ray optical scheme from Ref [16]). At that, we obtained sinθλ_{R}=1.28 Å^{−1} for Mo-K_{α} and sinθλ_{R}=0.59 Å^{−1} for Cu-K_{α}. Fluorescence lines of chemical elements with atomic numbers Z ≥ 12 (Mg) as well as Compton and Rayleigh scattering peaks were registered simultaneously in the common X-ray spectrum (Fig. 1). Optimization of the target upper layer (Ti or Sc) by thickness has allowed obtaining high contrast spectra needed for measuring the scattering peaks with high precision. For measuring the ratio of Compton-to-Rayleigh scattering integral intensities with accumulation time 300 s, an impulse-statistical error was reduced to 0.2%.
+RESULTS AND DISCUSSION
+On the X-ray spectrum of a coal powder sample (Fig. 1), fluorescence lines of mineral components are observable, whereas the background of the Bremsstrahlung radiation scattered from an X-ray tube is practically absent.
+The double-layer Ti/Mo target radiation scattered at the sample shows three peaks. The titanium scattering peak (E = 4.5 keV) is not split. The molybdenum scattering peak is split into Rayleigh (E = 17.4 keV) and Compton (E = 16.5 keV) ones which are different by width.
+In Table II, measured I_{C}/I_{R} values are given for coal powder samples taken from different deposits. W_{Fe2O3} values were determined by fluorescence; A_{d} were calculated by Eq. (9) using the calibration plot (Fig. 2). These samples were independently certified by the method of analytical chemistry.
+According to Table II, the standard deviation value for A_{d} determined by our method is not more than 0.084. Singular spikes of ΔA_{d} are caused by the fact that the samples were taken from different deposits. Evidently, for more precise measurements, the special attestation of standards for each deposit is necessary. For the calculations, the following coefficients were used: a = 0.865, b = 0.015, p = −0.213, q = −0.186, m = 2.192, and n =1.266.
+CONCLUSIONS
+A new method for rapid determination of the mineral constituent (ash), A_{d}, in powder coal samples is proposed. The method consists in measuring the ratio of Compton and Rayleigh scattering intensities, I_{C}/I_{R}, and the iron fluorescence intensity in the common X-ray spectrum. By the effect on the I_{C}/I_{R} ratio, substances included in coal have been divided into three groups: carbon, “light” element oxides, and inorganic compounds based on “medium” elements. The sum mass fraction of these constituents is 100%. Taking into account this normalization, for determination of each of these three constituents, only two measurements are enough: (i) the ratio of scattering peaks intensities and (ii) fluorescence intensities of the “medium” elements according to their mass fractions. Specific character of the X-ray optical scheme for such measurements consists in application of the optimized secondary double-layer target. Due to that, high contrast of lines and good separation of Compton and Rayleigh peaks are achieved in the single spectrum. High accuracy of measuring the peak intensities allows realization of I_{C}/I_{R} linear calibration algorithm using standard samples with two attested characteristics: ash A_{d} and iron W_{Fe2O3} mass fractions. The ash mass fractions were determined in coals from different deposits in the wide ranges from 9.4% to 52.7% mass for A_{d} and from 0.3% to 4.95% mass for W_{Fe2O3}.
+TABLE I. 
+Calculated Compton-to-Rayleigh scattering intensity ratios for molecules of coal constituents.
+TABLE II. 
+Determination of ash mass fraction A_{d} in coal powder samples by the I_{C}/I_{R} ratio and by iron oxide mass fraction W_{Fe2O3}.
+TABLE I. -body
+Molecule	I_{C}/I_{R}
+C	0.964
+MgO	0.265
+Al_{2}O_{3}	0.260
+SiO_{2}	0.238
+CaO	0.125
+CaCl_{2}	0.090
+TiO_{2}	0.151
+Fe_{2}O_{3}	0.130
+FeS	0.088
+FeS_{2}	0.092
+FeSO_{4}	0.169
+TABLE II. -body
+Sample	 Certificated	Measured	Calculated
+			W_{Fe2O3}	A_{d}	ΔA_{d}
+No.	A_{d} (% mass)	I_{C}/I_{R}	(% mass)	(% mass)	(% mass)
+1	48.10	0.4495	3.48	50.18	2.08
+2	48.00	0.4649	3.54	46.49	−1.51
+3	33.10	0.5212	3.46	35.22	2.12
+4	48.30	0.4552	3.65	48.69	0.39
+5	50.50	0.4639	3.63	46.66	−3.84
+6	28.50	0.5653	4.56	27.40	−1.10
+7	39.50	0.4791	4.84	42.52	3.02
+8	36.30	0.5046	4.92	37.35	1.05
+9	52.70	0.4453	3.89	50.97	−1.73
+10	37.20	0.4917	4.44	40.17	2.97
+11	41.60	0.4840	4.52	41.69	0.09
+12	46.60	0.4806	3.19	43.26	−3.34
+13	47.00	0.4624	3.65	46.98	−0.02
+14	41.90	0.4751	4.60	43.55	1.65
+15	32.00	0.5482	4.30	30.17	−1.83
+16	28.20	0.5670	4.64	27.10	−1.10
+17	44.70	0.4670	3.39	46.09	1.39
+18	37.60	0.5124	4.62	36.08	−1.52
+19	38.20	0.4961	4.81	39.06	0.86
+20	41.30	0.4851	3.20	42.29	0.99
+21	40.00	0.4890	4.32	40.80	0.80
+22	50.70	0.4472	3.28	50.88	0.18
+23	43.50	0.4731	4.87	43.80	0.30
+24	45.40	0.4631	3.61	46.84	1.44
+25	45.40	0.4591	3.43	47.90	2.50
+26	51.40	0.4478	3.60	50.53	−0.87
+27	45.60	0.4594	3.41	47.85	2.25
+28	38.60	0.4902	4.80	40.26	1.66
+29	47.90	0.4590	3.14	48.12	0.22
+30	45.20	0.4676	3.48	45.92	0.72
+31	10.30	0.7060	4.94	10.87	0.57
+32	16.30	0.6500	4.97	16.42	0.12
+33	20.40	0.6215	4.95	19.68	−0.72
+34	25.40	0.5730	4.79	26.14	0.74
+35	9.40	0.7284	0.32	11.72	2.32
+36	13.70	0.6828	1.34	15.26	1.56
+37	19.10	0.6411	2.15	19.13	0.03
+38	10.50	0.7234	2.78	10.65	0.15
+39	15.80	0.6596	3.72	16.16	0.36
+40	20.20	0.6141	3.80	21.29	1.09
+41	25.10	0.5979	4.29	23.05	−2.05
+42	30.00	0.5477	4.37	30.21	0.21
+FIG. 1. 
+A combined X-ray spectrum of a powder coal sample. The secondary target is Ti/Mo; the scattering angle is 130°. The titanium scattering peak is labeled as “secondary target.”
+FIG. 2. 
+Calibration of the Compton-to-Rayleigh scattering intensity ratio by the x parameter from Eq. (8).

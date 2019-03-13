@@ -1,0 +1,104 @@
+The effect of sky view factors on optimized photovoltaic fields
+Photovoltaic (PV) fields deployed in multiple collector rows, with two modules one on the top of the other, experience uneven incident diffuse radiation due to the difference in the modules' sky view factor. It is plausible that the two modules may be installed with different inclination angles to obtain an improved field design compared to a common inclination angle for both modules. The examination of these two types of field installations was based on the maximum annual incident energy on the PV fields. The comparison for obtaining maximum incident energy was investigated at two monitoring stations (Tel Aviv and Lindenberg-Germany) having different percentages of diffuse radiation. The study shows that top and bottom modules collect different amounts of annual energies. Designing optimal PV fields mounted with two inclination angles for the top and bottom modules may result in an annual energy gain of about 2÷3%.
+I. INTRODUCTION
+Photovoltaic (PV) collectors are usually deployed in a number of rows facing south (in the northern hemisphere) on horizontal or inclined planes. Modules may be placed vertically (portrait) or horizontally (landscape) on the mounting frames. In a landscape installation, one or more modules may be placed one on the top of the other with a common inclination β, Fig. 1. As the sky view factor of the collector varies along the width H of the module [1], the values of the view factors of the top and bottom modules are different and, consequently, receive different amounts of diffuse irradiance and hence different amounts of global irradiance. This fact may suggest placing the two modules with different inclination angles β_{1} and β_{2} with the aim of collecting more incident energy from the PV field. Two possible deployments are therefore suggested in Figs. 2 and 3.
+Photovoltaic fields are usually designed optimally meeting some objectives (see Sec. II). The inclination angle β is one of the variables in the optimization problem. With the new approach, adding an additional variable to the optimization problem may result in a higher energy production of the PV field. The purpose of the present study is to compare the maximum annual incident energy on the PV modules in a solar field of given dimensions for the two deployments—one with a single inclination β for both the top and bottom modules, Fig. 1, and the other with two inclination angles β_{1} and β_{2}, Figs. 2 and 3.
+II. FORMULATION OF THE OPTIMAL DESIGN OF A PV FIELD
+Photovoltaic fields are usually designed optimally to meet economic or energy objectives, such as obtaining maximum incident energy from a given field and minimum cost per unit energy. Optimum designs of solar fields were dealt with in Refs [2–8] taking into account shading effects [9–12]. In addition to the effect of the shading on the direct beam radiation incident on the collectors, the position of the collectors relative to each other in different rows also affects the diffuse radiation by the sky view factor and hence the global radiation. In all the above studies, the modules are installed on frames with an inclination angle β of the same value as shown in Fig. 1. Optimal inclination angles for PV systems were dealt with in numerous studies [13–17]. The daily optimal inclination angle for a single collector row, neglecting the reflected irradiance, is developed in Ref [13] and is
+where G_{b} is the direct beam irradiance; G_{dh} is the diffuse irradiance on a horizontal plane; ϕ is the geographic latitude; δ is the declination angle; ω is the hour angle; and ω_{sr},ω_{ss} are the sunrise and sunset hour angles, respectively.
+The optimal design of a solar field may be formulated mathematically as a constrained optimization problem comprising an objective function and a set of constraints [18]. The problem variables include field and collector parameters: field length L; field width W; distance between collector rows D; collector width H; inclination angle β; and geometric limits of these parameters. The constraints are bounding conditions imposed on the design parameters. Figure 4 shows a deployment of collectors in multiple rows K, indicating mutual shadings between the collectors. In the present study, the maximum incident energy is the objective function.
+III. SKY VIEW FACTOR
+The global solar irradiance G incident on a PV collector (module), neglecting the reflected irradiance, consists of the direct beam G_{b}, the diffuse irradiance on a horizontal plane G_{dh}, and the sky view factor F
+The diffuse radiation may constitute a large portion of the global radiation. Analytical expressions of the sky view factor for collectors in multiple rows were developed in Refs [1],  [9], and  [19–21]. The daily diffuse radiation (for isotropic sky) is given by
+where A_{C} is the collector area and Q_{d} is the daily diffuse radiation. The calculation of the sky view factor for a single collector or for the first row in multiple row fields is
+where β is the inclination angle of the collector to a horizontal plane.
+Photovoltaic collectors are deployed in rows in a solar field. The length of the row is much larger than its height, i.e., the collector may be considered of infinite length. The calculation of view factors may be based on Ref [1]. In the present article, the “cross-string rule” [22] is used to develop the sky view factors. This approach is more convenient to apply. The view factor is a numerical value expressed by the geometries of the collectors and the distance between the collector rows, Fig. 1. A general case of a collector with two different PV modules H_{1}, β_{1} and H_{2}, β_{2}, one on the top of the other, is shown in Fig. 5.
+Based on the “cross-string rule,” the view factors to sky of modules H_{1} and H_{2} are
+For the case where H_{1}=H_{2}, the view factors are
+and for the case where H_{1}=H_{2}=H and β_{1}=β_{2}=β, the view factors to sky are
+IV. MAXIMUM ANNUAL INCIDENT ENERGY
+Defining the objective function as maximum annual incident energy on the collectors in a field of given dimensions L_{max}×W_{max}(L_{max}-field length, W_{max}-field width), the optimization problem is formulated as follows:
+Maximize energy E: C(X¯) with respect to vector parameters X¯=(D,H,β,K).
+Subject to (see Fig. 4)
+The distance between the collector rows depends on the inclination angle and the collector width and is determined by the shadow length when the solar path attains the minimum elevation angles, namely, on Dec. 21 at solar noon
+where ϕ is the site's latitude, and δ_{0}=−23.45° is earth's declination angle during winter solstice.
+For the case where two modules H_{1} and H_{2} are mounted one on the top of the other with different inclination angles β_{1} and β_{2}, the vector parameters become X¯=(D,H_{1},H_{2},β_{1},β_{2},K) and the distance between collectors is now
+For the case H_{1}=H_{2}=H and β_{1}=β_{2}=β
+MATLAB optimization toolbox command “fmincon” [23] was applied to solve the optimization problems. The calculation for row shading is given in Ref [9], and the calculation of the annual incident energy is given in Ref [18]. A comment here is in place to mention. The optimal design of a solar field may be described as a “general programming problem,” usually multivariable and nonlinear in both the objective and constraint functions, and therefore could have multiple local maxima (minima) and among them is the global maximum (minimum) which needs to be located, resulting in the optimal parameters of the design problem.
+V. OPTIMIZATION RESULTS
+The objective of the present study is the calculation of the annual incident energy on a PV field where the row of collectors contain PV modules, horizontally oriented and placed one on the top of the other for cases depicted, for example, in Figs. 1–3. For the purpose of this comparison, equal conditions must be applied for these cases, i.e., optimal designs of PV fields, and maximum annual incident energy is the objective function. The present study deals with the case where H_{1}=H_{2}=H (two identical PV modules on the collector row, one on the top of the other) and for two locations: Tel Aviv –latitude 32° N (solar radiation data 1995–2005) with a relatively low percentage of diffuse irradiance, and Lindenberg, Germany-latitude 52.2° N (monitoring station, BSRN-https://dataportals.pangaea.de/bsrn/?q=LR1300, solar radiation data, year 2006) with a high percentage of diffuse irradiance. For both locations, we compare the maximum incident energy for a single optimal inclination angle β (Fig. 1) and for two optimal angles β_{1} and β_{2} (Fig. 2) of the two modules. It is important to emphasize that for the latter case, the optimization problem contains an addition variable, and it is expected that the optimal result for the energy is higher. The module and filed dimensions are H=0.941m,L=100m,andW=100m.
+The optimal results for Tel Aviv are summarized in Table I for β_{1}=β_{2}. The inclination angle β_{1}=β_{2}=β=18.6°; the field contains K=38 rows [utilizing the entire field width-W, see Eq. (11)]; the distance between the rows is D=0.87m; the annual incident energy is E_{y} = 13 203 173 kWh; the diffuse energy on the top (1) modules is E_{d−1} = 1 919 749 kWh; the diffuse energy on the bottom (2) modules is E_{d−2} = 1 779 373 kWh; the direct beam energy on the top modules is E_{b−1} = 4 780 417 kWh; and the direct beam energy on the bottom modules is E_{b−2} = 4 723 634 kWh. For the optimal inclination angle, the monthly energy is also computed.
+Table I indicates the following:
+1. The top module collects 2.94% more global energy than the bottom module.
+2. The top module collects 7.31% more diffuse energy than the bottom module because the view factor of the top module (F_{1}=0.960) is greater than the view factor of the bottom module (F_{2}=0.888).
+3. In summer months, the top module collects 2.06% more global energy than the bottom module.
+4. In winter months, the top module collects 4.32% more global energy than the bottom module.
+The optimal results for Tel Aviv are summarized in Table II for the case β_{1}≠β_{2}. The inclination angles are β_{1}=24.2° (top) and β_{2}=10.1°(bottom); the field now contains K=39 rows, and the distance between the rows is D=0.80m. For the optimal inclination angles, the monthly energies are also computed.
+Table II indicates the following:
+1. The top module collects 4.75% more global energy than the bottom module.
+2. The top module only collects 0.88% more diffuse energy than the bottom module because the view factor values are about the same.
+3. In summer months, the bottom module collects 0.48% more global energy than the top module.
+4. In winter months, the top module collects 12.53% more global energy than the bottom module.
+5. By comparing the collected energies for the two cases at Tel Aviv, it is found that there is an energy gain of 1.86% in favor of case β_{1}≠β_{2} deployment as opposed to the deployment for case β_{1}=β_{2}; however, the optimal deployment for β_{1}≠β_{2} resulted in an additional collector row.
+The optimal results for Lindenberg are summarized in Table III for β_{1}=β_{2}. The inclination angle β_{1}=β_{2}=β=6.68°; the field contains K=37 rows [utilizing the entire field width-W, see Eq. (11)]; the distance between the rows is D=0.86m. For the optimal inclination angle, the monthly energy is also computed.
+Table III indicates the following:
+1. The top module collects 0.72% more global energy than the bottom module.
+2. The top module collects 1.08% more diffuse energy than the bottom module because the view factor of the top module (F_{1}=0.995) is greater than the view factor of the bottom module (F_{2}=0.984).
+3. In summer months, the top module collects 0.52% more global energy than the bottom module.
+4. In winter months, the top module collects 1.41% more global energy than the bottom module.
+The optimal results for Lindenberg are summarized in Table IV for β_{1}≠β_{2}. The inclination angles are β_{1}=13.68° (top) and β_{2}=0.01° (bottom); the field now contains K=38 rows, and the distance between the rows is D=0.87m. For the optimal inclination angles, the monthly energies are also computed.
+Table IV indicates the following:
+1. The top module collects 5.46% more global energy than the bottom module.
+2. The bottom module only collects 0.635% more diffuse energy than the top module because the view factor values are about the same.
+3. In summer months, the top module collects 3.55% more global energy than the bottom module.
+4. In winter months, the top module only collects 0.14% more global energy than the bottom module.
+5. By comparing the collected energies for the two cases at Lindenberg, it is found that there is an energy gain of 2.04% in favor for case β_{1}≠β_{2} deployment as opposed to the deployment for case β_{1}=β_{2}; however, the optimal deployment for β_{1}≠β_{2} resulted in an additional collector row.
+VI. DISCUSSION
+Various optimal inclination angle values were published in the literature for static photovoltaic modules. It is in place to settle the differences in the optimal inclination angle values. The differences may result from
+1. Geographic location (latitude)
+2. Percentage of diffuse radiation of the global radiation
+3. Diffuse radiation model whether isotropic or anisotropic
+4. Photovoltaic field deployment: single or multiple collector rows. Collector height, and row-to-row distance (affecting shading and sky view factor)
+5. Solar radiation data: simulated or experimental
+6. Optimization criteria whether energy or economy wise
+7. Reflectance from surroundings
+It should be noted that the latitude inclination angle is based solely on direct beam radiation. The inclination angle for solely diffuse radiation (cloudy sky) is 0°, and the sky view factor is 1.0 [see Eq. (4)].
+For the two analyzed cites of the present article (Tel Aviv and Lindenberg), we used the isotropic diffuse radiation model; the deployment of the PV field is in multiple rows, the maximum annual incident radiation criterion and neglecting reflectance from the surroundings, including ground albedo. At Tel Aviv (latitude 32°N), the optimal inclination angles are 24° for a single collector row and 18.6° for multiple rows. For Lindenberg (latitude 47.6°N), solar radiation data for year 2006), the optimal inclination angles are 27° for a single row and 9.11° for multiple rows. One may notice the reduction in the optimal inclination angles from the latitude value through values corresponding to single and multiple rows. This trend results from the inclusion of the percentage of diffuse radiation and the sky view factor [see Eq. (2)] in the determination of the optimal inclination angle. At last, the optimal inclination angle depends on many factors as stated above, and this is the reason for the various optimal inclination angle values that were published in the literature; the proper inclination angle should be determined individually considering the above mentioned factors.
+The present study introduces an additional point of view to the optimal photovoltaic field design, i.e., collectors having more than one row of modules, each one with a different inclination angle. The study shows an improved PV field design with higher incident solar radiation on the PV modules. The optimal inclination angle value for a single collector row is between the optimal inclination angle values for multiple collector rows. At Tel Aviv, β=18.6° (top and bottom modules) for a single collector row and β_{1}=24.2° (top module) and β_{2}=10.1° (bottom module) for multiple collector rows. At Lindenberg, β=9.11° (top and bottom modules) for a single collector row and β_{1}=14.1° (top module) and β_{2}=2.8° (bottom module) for multiple collector rows. The top module is more tuned to receive the direct beam incident radiation, whereas the bottom module is more tuned to receive the incident diffuse radiation. Again, at last, the optimal inclination angles for several modules, installed one on the top of the other on a collector, depend on many factors as stated above and are site dependent and mainly affected by the percentage of the diffuse solar radiation.
+VII. CONCLUSIONS
+Photovoltaic fields deployed in multiple collector rows with two modules one on the top of the other experience uneven incident diffuse radiation due to the difference in the modules' sky view factor. Based on this fact, it is plausible that the two modules may be installed with different inclination angles to obtain an improved optimal field design compared to a common inclination angle for both modules. The criteria for the examination of these two types of field installations are the maximum annual incident energies on the PV fields. The notion for obtaining an improved design is based on the fact that the optimization problem for two module inclination angles contains an additional variable. The main results are
+1. The top and the bottom modules collect different amounts of annual energy at both sites, and therefore, it is preferable not to connect them in series and form separate strings (series connected modules) for the top and bottom modules of the collectors.
+2. By comparing the collected energies for the two cases at Tel Aviv, there is an energy gain of 1.86% in favor case β_{1}≠β_{2} deployment, as opposed to the deployment for case β_{1}=β_{2}; however, the optimal deployment for β_{1}≠β_{2} resulted in an additional collector row.
+3. By comparing the collected energies for the two cases at Lindenberg, there is an energy gain of 2.04% in favor case β_{1}≠β_{2} deployment, as opposed to the deployment for case β_{1}=β_{2}; however, the optimal deployment for β_{1}≠β_{2} resulted in an additional collector row.
+4. Designing PV fields mounted with two inclination angles for the top and bottom modules may result in an annual energy gain of about 2% at different field locations; however, these optimal field designs contain an additional collector row.
+5. The optimization of the PV field at Lindenberg verifies that the optimal inclination angle of the collectors is rather small because of the large component of the diffuse radiation [24].
+TABLE I. 
+Optimal results for the case β_{1}=β_{2}-Tel Aviv.
+TABLE II. 
+Optimal results for the case β_{1}≠β_{2}-Tel Aviv.
+TABLE III. 
+Optimal results for the case β_{1}=β_{2}-Lindenberg.
+TABLE IV. 
+Optimal results for the case β_{1}≠β_{2}-Lindenberg.
+TABLE I. -body
+E_{b−2}(kWh)	E_{b−1}(kWh)	E_{d−2}(kWh)	E_{d−1}(kWh)	E_{y}(kWh)	β_{1}	D(m)	β_{2}	K
+4 723 634	4 780 417	1 779 373	1 919 749	13 203 173	18.6	0.87	18.6	38
+TABLE II. -body
+E_{b−2}(kWh)	E_{b−1}(kWh)	E_{d−2}(kWh)	E_{d−1}(kWh)	E_{y}(kWh)	β_{1}	D(m)	β_{2}	K
+4 662 795	4 972 978	1 898 057	1 914 966	13 448 796	24.2	0.8	10.1	39
+TABLE III. -body
+E_{b−2}(kWh)	E_{b−1}(kWh)	E_{d−2}(kWh)	E_{d−1}(kWh)	E_{y}(kWh)	β_{1}	D(m)	β_{2}	K
+1849434	1855562	1924478	1945569	7575042	6.68	0.86	6.68	37
+TABLE IV. -body
+E_{b−2}(kWh)	E_{b−1}(kWh)	E_{d−2}(kWh)	E_{d−1}(kWh)	E_{y}(kWh)	β_{1}	D(m)	β_{2}	K
+1991161	2004013	1941041	1914085	7850300	13.68	0.87	0.01	37
+FIG. 1. 
+Landscape placement of PV modules in multiple rows in a PV field.
+FIG. 2. 
+Landscape placement of PV modules in multiple rows in a PV field, β_{1}>β_{2}.
+FIG. 3. 
+Landscape placement of PV modules in multiple rows in a PV field, β_{1}<β_{2}.
+FIG. 4. 
+Deployment of collectors in multiple rows.
+FIG. 5. 
+Two different PV modules on a collector.

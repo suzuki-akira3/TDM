@@ -1,0 +1,174 @@
+Continuous properties of the data-to-solution map for a generalized μ-Camassa-Holm integrable equation
+This work studies a generalized μ-type integrable equation with both quadratic and cubic nonlinearities; the μ-Camassa-Holm and modified μ-Camassa-Holm equations are members of this family of equations. It has been shown that the Cauchy problem for this generalized μ-Camassa-Holm integrable equation is locally well-posed for initial data u_{0} ∈ H^{s}, s > 5/2. In this work, we further investigate the continuity properties to this equation. It is proved in this work that the data-to-solution map of the proposed equation is not uniformly continuous. It is also found that the solution map is Hölder continuous in the H^{r}-topology when 0 ≤ r < s with Hölder exponent α depending on both s and r.
+I. INTRODUCTION
+We consider the following spatially periodic Cauchy problem of the generalized μ-Camassa-Holm (μ-CH) equation, which was first proposed in Ref [25]
+where u(t, x) is a function of time variable t and a single spatial variable x, μ(u)=∫_{S}u(t,x)dx, with S=R/Z denoting the unit circle in R. We study continuous properties of the data-to-solution map and demonstrate that the solution map is continuous but not uniformly continuous on H^{s} with s > 5/2. Moreover, we prove that the solution map is Hölder continuous when the topology on H^{s}(S) is relaxed to that of H^{s}(S),0≤r<s with a Hölder exponent α depending on both s and r.
+When we take k_{1} = 0 and k_{2} = 1 in the equation of (1.1), we recover the μ-CH (or μ-HS) equation [18]
+which lies “midway” between the periodic Hunter-Saxton and Camassa-Holm equations and describes evolution of rotators in liquid crystals with external magnetic field and self-interaction. The Eulerian nature, Hamiltonian framework and conservation laws, local well-posedness, existence of global solutions and traveling wave solutions for the μ-CH equation (1.2) are defined in Ref [18]. Moreover, the blow-up structure [6], the wave-breaking phenomenon [8], and the stability of peakons [1] for the μ-CH equation (1.2) are also investigated. It is worth mentioning that the non-uniform dependence and the Hölder continuity of the solution map for the μ-CH equation (1.2) have also been studied in Refs [21] and  [22], respectively.
+When we take k_{1} = 1 and k_{2} = 0 in the equation of (1.1), we recover the modified μ-CH equation [26]
+which is introduced as the μ-version of the modified CH equation
+The modified μ-CH equation (1.3) is formally integrable with the bi-Hamiltonian structure and the Lax-pair and arises from a non-stretching planar curve flows in R^{2} [26]. On the other hand, the local well-posedness, wave-breaking, existence of peaked traveling waves and their stabilities were discussed in Refs [20] and  [26]. For the modified CH equation (1.4), as a consequence of duality, it is formally integrable in the sense that it admits a bi-Hamiltonian structure [23] and was later shown to admit a Lax formulation [24]. Moreover, the modified CH equation (1.4) exhibits new features such as wave-breaking and blow-up structure [7], which do not appear in the original CH equation [2–5,19]. On the other hand, since the modified CH equation (1.4) also arises from an intrinsic invariant planar curve flow in Euclidean geometry [7], it can be regarded as a Euclidean invariant version of the CH equation. It is worth mentioning that the non-uniform continuous and Hölder continuous properties of solutions for the Cauchy problem of the modified CH equation (1.4) have been discussed in Refs [14] and  [15], respectively.
+To the best of our knowledge, the continuous properties of solution map for Cauchy problem (1.1) have not been investigated yet. The goal of this paper is to investigate whether or not the generalized μ-version (1.1) with two different nonlocal nonlinearities has similar remarkable continuous properties as the CH equation and the modified CH equation (1.4), as well as their μ-versions (1.2) and (1.3). Moreover, it is found that the two parameters k_{1} and k_{2} corresponding to the modified μ-CH cubic and μ-CH quadratic nonlinearities, respectively, play an important role in the effects of varying nonlocal nonlinearities on the continuous properties. To prove the non-uniform dependence result, we employ the method of approximate solutions, which was initially adopted in Ref [12] for the CH equation and then used in Refs [9],  [10],  [13],  [14], and  [16] for other CH-type equations. However, the coexistence of both quadratic and cubic nonlinearities poses some challenges to the construction of approximate solutions; in order to overcome this difficulty, we construct approximate solutions separately according to the different values of k_{1} and k_{2}—to be specific, for k_{1} ≠ 0 and k_{2} = 0, we construct two sequences of approximate solutions λ^{−s} cos λx and λ^{−12}+λ^{−s}⁡cos(λx−2k_{1}t), while for k_{1} ≠ 0, k_{2} ≠ 0 and k_{1} = 0, k_{2} ≠ 0, we employ two sequences of different approximate solutions −λ^{−1} + λ^{−s} cos(λx + k_{2}t) and λ^{−1} + λ^{−s} cos(λx − k_{2}t). In order to derive the Hölder continuity result, for the general case k_{1} ≠ 0, we divide the sr-plane(s > 5/2) into four parts to discuss and obtain a similar result, but since the problem (1.1) we concerned about is a periodic one, and the structure of our equation in (1.1) is more complicate than the modified CH equation (1.4), the discussions are thus totally different from those presented in the previous literatures. Furthermore, we also prove a Hölder continuity result for the quadratic case k_{1} = 0, k_{2} ≠ 0.
+This paper is structured as follows. In Sec. II, we recall the local well-posedness result for (1.1), make some preparations for further discussions and present some useful lemmas, and then write the problem (1.1) in a nonlocal form and convert it into a quasilinear system to derive the solution size estimate result Theorem 2. In Sec. III, we present the non-uniform dependence result of solution maps u_{0} ↦ u for system (1.1). Section IV is dedicated to the deduction of Hölder continuity result. We prove that in the regions A_{1}(k_{1} ≠ 0) and B_{1}(k_{1} = 0, k_{2} ≠ 0), the solution map is Lipschitz continuous, while in other regions the solution map is showed to be Hölder continuous in the weaker H^{r}-topology.
+Notations. Throughout this paper, the symbols ≲, ≳/⋍ are used to denote inequality/equality up to a positive constant. For example, X ≲ Y denote X ≤ CY for some uniform C > 0. Since all spaces of functions are over S, the reference to S will be dropped if no ambiguity arises. For simplicity, the H^{s}-norm will be designated by ‖⋅‖{H^{s}} and the L^{p}-norm will be denoted by ∥⋅∥_{p}.
+II. PRELIMINARIES AND LOCAL WELL-POSEDNESS
+In this section, we shall make some preparations for our further discussion and we write some of the theorems and lemmas down but omit their proofs.
+First, we recall a local well-posedness result for problem (1.1), which was stated as Theorem 5.1 in Ref [25].
+Theorem 1 (Ref [25]). Suppose that u_{0} ∈ H^{s}, s > 5/2, then there exists a maximal T > 0 that depends only on‖u0‖{H^{s}}such that problem (1.1) has a unique solution in the space C([0, T); H^{s}) ∩ C^{1}([0, T); H^{s−1}). Moreover, the solution depends continuously on the initial data in the sense that the mapping of the initial data to the solution is continuous from the Sobolev space H^{s}to the space C([0, T); H^{s}) ∩ C^{1}([0, T); H^{s−1}).Next, we introduce an operator Λ=(μ−∂x2){12}; note that the operator A^{−1}≐ Λ^{−2} is an isomorphism between H^{s} and H^{s−2}, with its inverse v = A^{−1}w given explicitly by
+Since A^{−1} and ∂_{x} commute, the following identities hold:
+and then for all w ∈ H^{s} with s > 1/2, we have
+From the Cauchy-Schwartz inequality,
+Therefore, combination of (2.3) and (2.4) yields
+Applying the operator Λ^{−2} to both sides of the equation in (1.1), one obtains the following equivalent problem:
+We start from some lemmas that will be needed in this context.
+Lemma 1 (Ref [17]). For any r > −1/2, there is C_{r} > 0 such that
+Lemma 2 (Ref [17]). For any r > 0, there is C_{r} > 0 such that
+The Sobolev embedding theorem yields from Lemma 1.
+Lemma 3 (Ref [17]). For any r > 1/2, there is C_{r} > 0 such that
+The following lemma will be also needed in the derivation of the non-uniform dependence result:
+Lemma 4 (Ref [11]). For any −1 ≤ r ≤ 0, σ > 1/2, and r + σ ≥ 0, there is C_{r,σ} > 0 such that
+We also need the following Kato-Ponce theorem in this sequel:
+Lemma 5 (Ref [17]). For any r > 0, there is C_{r} > 0 such that
+We will use the following Calderon-Ciofman-Meyer commutator estimate result, whose proof will be found in Ref [27]:
+Lemma 6 (Ref [27]). If r + 1 ≥ 0, then for f ∈ H^{s−1}and g ∈ H^{r}, there is C_{r,s} > 0 such that
+provided that s − 1 > 3/2 and r + 1 ≤ s − 1.And we will also need the following Sobolev interpolation lemma, whose proof is provided in Ref [15]:
+Lemma 7 (Ref [15]). Suppose σ_{1} < σ < σ_{2}and f ∈ H^{σ}, then
+Next, we state the first result of this work, which concerns about the energy size and lifespan for solution of problem (2.6).
+Theorem 2. Let s > 5/2, if u ∈ C([0, T); H^{s}) is a solution guaranteed by Theorem 1, then we have the following estimate:
+where c(s, k_{1}, k_{2}) is a constant depending on s, k_{1}, and k_{2}.
+Proof. Differentiating the equation in (2.6) with respect to x and using the relation (2.2), we obtain
+Let w = u_{x}, motivated by Ref [14], in view of the equation in (2.6) and (2.8), we consider the following system:
+Define for each ε ∈ (0, 1] the operator J_{ε} that is a Friedriches mollifier by
+where j_{ε}=1εj(xε) and j(x) is a C^{∞} function supported in the interval [−1, 1] such that j(x)≥0,∫_{R}j(x)dx=1.Applying J_{ε} to system (2.9) yields the following mollified version:
+where
+Define X_{ε}≐ (u_{ε}, w_{ε}) with its Sobolev norm denoted by
+In particular, at time t = 0 we have X_{ε}(0) = (u_{ε}(0), w_{ε}(0)) = (u_{0}(x), u_{0x}(x)).For u_{0} ∈ H^{s}, the mollified system (2.10) is a system of ordinary differential equations (ODEs) in H^{s−1} × H^{s−1}. Therefore, according to the fundamental theorem for ODEs in Banach Spaces, there exists a unique solution X_{ε} for this system in the space C([0, T_{ε}); H^{s−1} × H^{s−1}).Applying the operator Λ^{s−1} to both sides of the first equation in (2.10), multiplying the resulting equation by Λ^{s−1}u_{ε}, and then integrating over S with respect to spatial variable x yield the following identity:
+For the first term on the right-hand side (R.H.S.) of (2.12), by commuting the operators J_{ε} and Λ^{s−1} twice, using the Cauchy-Schwartz inequality, (2.4), and Lemma 3, we find
+where in the above estimate we have used the fact ‖J_{ε}v‖{H^{σ}}≤‖v‖{H^{σ}}.Similarly, the second term on the R.H.S. of (2.12) can be estimated as
+For the third term, it can be bounded from above as
+The fourth term can be controlled as
+For the fifth term, it can be deduced from (2.4) and (2.5) that
+Substituting the estimates (2.13)–(2.17) into (2.12), we find
+Now we apply the operator Λ^{s−1} to both sides of the second equation in (2.10), multiply the resulting equation by Λ^{s−1}w_{ε}, and then integrate over S to find
+where
+For the first term on the R.H.S. of (2.19), by commuting the operators J_{ε} and Λ^{s−1} twice, using the Cauchy-Schwartz inequality, the Kato-Ponce Lemma 5, Lemma 3, (2.4), and the Sobolev embedding theorem, we find
+For the second term on the R.H.S. of (2.19), by using the Cauchy-Schwartz inequality, (2.4), and Lemma 3, we obtain
+Similarly, we get the estimate for the third term as follows:
+Substituting the estimates (2.20)–(2.22) into (2.19), we find
+Adding the inequalities (2.18) and (2.23), in view of (2.11), we obtain
+Let ζ_{ε}(t)=‖Xε‖{H^{s−1}}+1, it follows from the above inequality that
+where c(s, k_{1}, k_{2}) is a positive constant depending only on s, k_{1}, k_{2}. Solving the above inequality, we have
+Therefore, if we take
+then the ODE theory in Banach space implies that there exists a unique solution X_{ε} to system (2.10) such that
+Note that X_{ε} = (u_{ε}, w_{ε}) is the solution of (2.10); we can follow the similar argument in Ref [14] to return the solution to the original problem (2.6) and get the final size estimate result (2.7). The proof of Theorem 2 is completed.If k_{1} = 0 and k_{2} ≠ 0, then the local well-posedness regularity requirement of problem (1.1) can be relaxed to s > 3/2 and the size estimate result can be stated as follows:
+Proposition 1 (Ref [21]). Let k_{1} = 0, k_{2} ≠ 0, s > 3/2, and u ∈ C([0, T); H^{s}) be the unique solution of (1.1) with initial data u_{0} ∈ H^{s}. Then we have the following estimate:
+where c(s, k_{2}) is a positive constant depending only on s and k_{2}.
+III. NON-UNIFORM DEPENDENCE OF THE STRONG SOLUTION TO (1.1)
+In this section, we aim to prove the non-uniform dependence property of the data-to-solution map for the following three cases: (i) k_{1} ≠ 0, k_{2} = 0; (ii) k_{1} ≠ 0, k_{2} ≠ 0; and (iii) k_{1} = 0, k_{2} ≠ 0 based on the method of approximate solutions. This section is further divided into three subsections that are detailed below.
+A. Construction of approximate solutions and error estimates
+In this subsection, for a more delicate analysis, we construct approximate solutions separately according to the above-mentioned three cases without requiring the availability of two sequences of actual solutions to demonstrate the results of non-uniform dependence. The norm of the error by which the approximate solution fails to be an actual one must tend to zero; therefore, we construct the following families of approximate solutions consisting of low- and high-frequency parts, to be specific:
+(i) For k_{1} ≠ 0, k_{2} = 0, the two sequences of approximate solutions are
+(ii) For k_{1} ≠ 0, k_{2} ≠ 0 and k_{1} = 0, k_{2} ≠ 0, the two sequences of approximate solutions are
+1. Error estimates while k_{1}≠0,k_{2}=0
+In this case, the error by which the approximate solution (3.1) fails to be an actual one is
+Direct calculations show that for ω ∈ {0, 1},
+In view of the triangle formula sin^{3}⁡θ=34sin⁡θ−14sin⁡3⁡θ, we obtain
+Using (2.1), we find
+Next, we state the main result of this part concerning the error estimate while k_{1} ≠ 0, k_{2} = 0.
+Lemma 8. Let k_{1} ≠ 0, k_{2} = 0, s > 5/2, and σ > 0, then the errorEk_{1}ω,λwith ω ∈ {0, 1} admits the following estimate:
+Proof. Recalling that the Fourier transform of sin λx on the circle is
+we therefore have
+Using this relation and recalling that s > 5/2, one obtains
+Similarly, we can prove
+The proof of Lemma 8 is completed by substituting the estimates (3.5) and (3.6) into (3.3).
+2. Error estimates while k_{1}≠0,k_{2}≠0
+In this case, the error of the approximate solution (3.2) can be expressed as
+A direct calculation shows that for ω ∈ {−1, 1},
+Next, we state the main result of this part.
+Lemma 9. Let k_{1} ≠ 0, k_{2} ≠ 0, s > 5/2, and σ > 0, then the errorEk_{1},k_{2}ω,λwith ω ∈{−1, 1} admits the following estimate:
+The proof of Lemma 9 is similar to that of Lemma 8; therefore, we omit it.
+3. Error estimates while k_{1}=0,k_{2}≠0
+Taking k_{1} = 0 in (3.7), we find that in this case the error by which the approximate solution fails to be an actual one is
+Following the estimates in Lemma 8, one obtains the error estimate of the approximate solution (3.2) by the lemma given below:
+Lemma 10. Let k_{1} = 0, k_{2} ≠ 0, s > 5/2, and σ > 0, then the errorEk_{2}ω,λwith ω ∈ {−1, 1} admits the following estimate:
+B. Difference between the approximate and the actual solutions
+We now estimate the H^{σ}-norm difference between the approximate solution u^{ω,λ} and the actual solution u_{ω,λ} with 3/2 < σ ≤ s − 1, which shares the same initial condition with the approximate one.
+The discussions here are also divided into three parts concerning (i) k_{1} ≠ 0, k_{2} = 0; (ii) k_{1} ≠ 0, k_{2} ≠ 0; and (iii) k_{1} = 0, k_{2} ≠ 0.
+1. H^{σ}-norm difference estimate while k_{1}≠0,k_{2}=0
+Let u_{ω,λ} be the solution of the initial value problem below:
+Recalling that Ek_{1}ω,λ defined by (3.3) denotes the error of the approximate solution u^{ω,λ}, we have the following:
+Denoting v_{k1}=u^{ω,λ}−u_{ω,λ} and subtracting (3.10) and (3.11), we deduce that v_{k1} satisfies
+where f=u^{ω,λ}+u_{ω,λ},g=(∂xuω,λ){2}+(∂_{x}u^{ω,λ})(∂_{x}u_{ω,λ})+(∂xuω,λ){2}.
+We present the following result concerning the estimate for ‖vk1‖{H^{σ}} with 3/2 < σ ≤ s − 1.
+Lemma 11. Let k_{1} ≠ 0, k_{2} = 0, s > 5/2, σ ∈ (3/2, s − 1], and ω ∈ {0, 1}. Thenv_{k1}admits the following estimate:
+Sketch of Proof. Applying to both sides of (3.12) the operator Λ^{σ}, multiplying the resulting equation by Λ^{σ}v_{k1}, and integrating over S, we find
+By using Cauchy-Schwartz inequality, in view of Lemmas 3, 5, and 6, and further referring to the estimates in literatures [14,21], we can complete the proof of this lemma.
+2. H^{σ}-norm difference estimate while k_{1}≠0,k_{2}≠0
+Let u_{ω,λ} be the actual solution (2.6) with initial data of the approximate solution; i.e., u_{ω,λ} satisfies the following:
+Denote v_{k1,k2}=u^{ω,λ}−u_{ω,λ}, where u^{ω,λ} = ωλ^{−1} + λ^{−s} cos(λx − k_{2}ωt), ω ∈ {−1, 1} is defined in (3.2). Recalling that Ek_{1},k_{2}ω,λ defined in (3.7) denotes the error of the approximate solution, we obtain the following:
+Subtracting (3.14) and (3.15), we can derive that v_{k1,k2} satisfies
+By following the similar procedure as in the proof of Lemma 11, we find the below-mentioned result on H^{σ}-norm estimate of v_{k1,k2}.
+Lemma 12. Let k_{1} ≠ 0, k_{2} = 0, s > 5/2, σ ∈ (3/2, s − 1], and ω ∈ {−1, 1}. Thenv_{k1,k2}admits the following estimate:
+3. H^{σ}-norm difference estimate while k_{1}=0,k_{2}≠0
+The discussions are similar to those of 3.2.2 by letting k_{1} = 0 in (3.14) and (3.15); the counterpart of (3.16) here is to replace v_{k1,k2} and Ek_{1},k_{2}ω,λ in (3.16) with v_{k2} and Ek_{2}ω,λ, respectively. In view of the error estimate (3.9), we can obtain the following result about the estimate of ‖vk2‖{H^{σ}}.
+Lemma 13. Let k_{1} = 0, k_{2} ≠ 0, s > 5/2, σ ∈ (3/2, s − 1], and ω ∈{−1, 1}. Thenv_{k2}admits the following estimate:
+C. Non-uniform dependence
+In this part, we present our main theorem on non-uniform dependence as follows:
+Theorem 3. If s > 5/2, then the data-to-solution map u(0) ↦ u(t) for (1.1) is not uniformly continuous for any bounded subset of H^{s}to C([0, T); H^{s}). More precisely,
+(i) If k_{1} ≠ 0, k_{2} = 0, there exist two sequences of solutions u_{0,λ}(t) and u_{1,λ}(t) to problem (1.1) in C([0, T); H^{s}) such that
+and
+(ii) If k_{2} ≠ 0, there exist two sequences of solutions u_{−1,λ}(t) and u_{1,λ}(t) to problem (1.1) in C([0, T); H^{s}) such that
+and
+Sketch of Proof. By verifying that the approximate solution sequences (3.1) and (3.2) satisfy the properties of boundedness, coming together at t = 0 and staying apart for t > 0, and carrying out similar estimates presented in Ref [14], we can complete the proof of this theorem.
+IV. LIPSCHITZ AND HÖLDER CONTINUITY IN THE H^{r}-TOPOLOGY
+In this section, we shall further explore the continuous properties of the solution map of problem (1.1); more precisely, we state the following main theorem of this section.
+Theorem 4. The solution map of (1.1) is Hölder continuous in H^{s}under H^{r}(0 ≤ r < s) norm. More precisely, for initial data u_{0}, v_{0}in a ballB(0,R)={u∈H^{s}:‖u‖{H^{s}}≤R}of H^{s}, the corresponding solutions u, vto (1.1) satisfy the inequality
+where α is given, respectively, according to the values of k_{1}and k_{2}as follows:
+(i) If k_{1} ≠ 0, s > 5/2, and 0 ≤ r < s, then
+and the regions A_{1}, A_{2}, A_{3}, and A_{4}are defined as
+(ii) If k_{1} = 0, k_{2} ≠ 0, s ≥ 2, and 0 ≤ r < s, then
+and the regions B_{1}, B_{2}, and B_{3}are defined as
+Next, we split the proof of Theorem 4 into two subsections concerning the case k_{1} ≠ 0 and the case k_{1} = 0, k_{2} ≠ 0, respectively.
+A. Lipschitz and Hölder continuity while k_{1}≠ 0
+Note that k_{1} ≠ 0 contains two subcases: (i) k_{1} ≠ 0, k_{2} ≠ 0 and (ii) k_{1} ≠ 0, k_{2} = 0. We only show Theorem 4 for the former case; the demonstration for the latter case can be done in a simpler way.
+Proof of Theorem 4(i). Let (v, z) be the solution to the initial value problem (2.9) with initial data (v_{0}, z_{0}):
+Denote
+Subtracting system (4.1) from system (2.9) yields the following system:
+where f_{1} = u + v, h_{1} = 2μ(v)v − k_{1}w^{2} + k_{2}v, h_{2} = 2k_{1}[μ(ξ)u + μ(v)ξ] + k_{2}ξ.Next, we shall prove that the data-to-solution map of (1.1) is Lipschitz continuous in A_{1}.Applying Λ^{r} to both sides of the first equation in (4.3), multiplying the resulting equation by Λ^{r}ξ, and then integrating with respect to x over S, we obtain
+We first discuss the case when r > 1/2 and r + 1 ≤ s.For the first term on the R.H.S. of (4.4), using the Cauchy-Schwartz inequality, (2.4), Lemma 3, and Theorem 2, it can be bounded as follows:
+In a similar manner, the second term can be estimated as
+Regarding the third term, it can be controlled as follows:
+Therefore, the fourth term can be bounded in a similar way as
+For the estimate of the fifth term, we have by (2.5) in addition
+The last term of (4.4) can be bounded as follows:
+Substituting the estimates (4.5)–(4.10) into (4.4), we find for 1/2 < r ≤ s − 1
+Next, we consider the case where −1/2 < r ≤ 1/2, r ≤ s − 2.In this case, the following estimate holds:
+Note that ξ_{x} = η, we can deduce from the above inequality that
+From Lemma 1, we also have in this case
+Based on the discussion above, with the help of Cauchy-Schwartz inequality and the size estimate result Theorem 2, we can prove for −1/2 < r ≤ 1/2, r ≤ s – 2,
+Finally, we consider the case where −1 ≤ r ≤ − 1/2, r + s ≥ 1.Note that the latter inequality above naturally holds provided the former one is true since s > 5/2.We have in this case
+and as a direct consequence,
+Moreover, from Lemma 4, we have in this case
+By exploiting the Cauchy-Schwartz inequality and proceeding similar estimates in the discussion above, we find that for
+the following inequality holds:
+Next, we repeat the similar procedure for the second equation in (4.3) and thus obtain the differential inequality for the H^{r}-norm of the second solution component η as
+where
+By the definition of B_{r} and C_{r}, we find C_{r} ⊂ B_{r}. Thus, combination of (4.13) and (4.14) yields
+Solving the above inequality and recalling the definition of ξ and η in (4.2), we can find that
+Note that w = u_{x}, z = v_{x}, we have from the above inequality that
+If we replace r + 1 in the above inequality with r and adjust the range in C_{r}, we can obtain
+which implies that the data-to-solution map is Lipschitz continuous in A_{1}.The remaining part concerning Hölder continuous in A_{2}, A_{3}, A_{4} can be demonstrated in a similar way as in Ref [15].
+B. Lipschitz and Hölder continuity while k_{1} = 0, k_{2}≠ 0
+When k_{1} = 0, by virtue of the disappearance of the term ux3, we only have to consider the following simpler problem by letting k_{1} = 0 in the first equation of (4.3):
+Proof of Theorem 4(ii). Applying Λ^{r} to both sides of the equation in (4.15), multiplying the resulting equation by Λ^{r}ξ, and then integrating over S, we find
+First, we prove the Lipschitz continuous result in B_{1}.For the first term on the R.H.S. of (4.16), when 1/2 < r ≤ s − 1, we have by Lemma 3 and Proposition 1
+When 0 ≤ r ≤ 1/2, r ≤ s − 2, we have by Lemma 1
+Overall, the first term on the R.H.S. of (4.16) can be bounded as follows:
+Similarly, the rest of the terms on the R.H.S. of (4.16) can all be bounded by R‖ξ‖H^{r}2; thus, we find for all r ∈ B_{1} = {0 ≤ r ≤ 1/2, r ≤ s − 2} ∪ {1/2 < r ≤ s − 1},
+which implies that
+or, equivalently,
+Next, we shall prove the Hölder continuity of the solution map in B_{2} and B_{3}.Hölder continuity inB_{2}. Since s − 2 ≤ r ≤ 1/2, by interpolation between H^{s−2}- and H^{s}-norms, we get from Lemma 7 that
+From the size estimate result in Proposition 1 and (4.18), we have
+Hölder continuity inB_{3}. Since s − 1 ≤ r < s, by interpolation between H^{s−1}- and H^{s}-norms, we obtain
+By the size estimate result in Proposition 1 and (4.18), we obtain
+The proof of Theorem 4 is completed.

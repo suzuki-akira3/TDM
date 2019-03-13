@@ -1,0 +1,167 @@
+Nonlocal nonlinear Schrödinger equations and their soliton solutions
+We study standard and nonlocal nonlinear Schrödinger (NLS) equations obtained from the coupled NLS system of equations (Ablowitz-Kaup-Newell-Segur (AKNS) equations) by using standard and nonlocal reductions, respectively. By using the Hirota bilinear method, we first find soliton solutions of the coupled NLS system of equations; then using the reduction formulas, we find the soliton solutions of the standard and nonlocal NLS equations. We give examples for particular values of the parameters and plot the function |q(t, x)|^{2} for the standard and nonlocal NLS equations.
+I. INTRODUCTION
+When the Lax pairs are sl(2, R) valued matrices (Ablowitz-Kaup-Newell-Segur (AKNS) scheme) and polynomials of the spectral parameter of degree two, then the resulting equations are the following coupled nonlinear Schrödinger (NLS) equations [1]:
+where q(t, x) and r(t, x) are complex dynamical variables, a is a complex number in general. We call the above system of coupled equations a nonlinear Schrödinger system (NLS system). The standard (local) reduction of this system is obtained by letting
+where k is a real constant and q¯ is the complex conjugate of the function q. When this condition on the dynamical variables q and r is used in the system of equations (1) and (2), they reduce to the following nonlinear Schrödinger (NLS) equation:
+provided that ā = −a. Recently, Ablowitz and Musslimani [2–4] found another integrable reduction. It is a nonlocal reduction of the NLS system (1) and (2), which is given by
+where (ε1){2}=(ε2){2}=1. Under this condition, the NLS system (1) and (2) reduces to
+provided that ā = −ε_{1}a. There is only one standard reduction where (ε_{1}, ε_{2}) = (1, 1) but there are three different nonlocal reductions where (ε_{1}, ε_{2}) = {(−1, 1), (1, −1), (−1, −1)}. Hence for these values of ε_{1} and ε_{2} and for different signs of k (sign(k) = ±1), we have six different nonlocal integrable NLS equations. They are, respectively, the time reflection symmetric (T-symmetric), the space reflection symmetric (S-symmetric), and the space-time reflection symmetric (ST-symmetric) nonlocal nonlinear Schrödinger equations, which are given by
+1. T-symmetric nonlinear Schrödinger equation:
+2. S-symmetric nonlinear Schrödinger equation:
+3. ST-symmetric nonlinear Schrödinger equation:
+Nonlocal NLS equations have the focusing and defocusing cases when the sign(k) = −1 and sign(k) = 1, respectively. All these equations are integrable. They possess Lax pairs and recursion operators. In addition to the above Eqs. (7)–(9), we also have the equations for q(−t, x), q(t, −x), and q(−t, −x), respectively. Since they are obtained from (7)–(9) by t → −t; x → −x; and (t → −t, x → −x) reflections, respectively, we do not display them here.
+Ablowitz and Musslimani have observed [2] that one-soliton solutions of the nonlocal NLS equations blow up in a finite time. Existence of this singular behavior of one-soliton solutions of nonlocal NLS equations was also observed in Ref [10]. Ablowitz and Musslimani have found many other nonlocal integrable equations such as nonlocal modified Korteweg-de Vries equation, nonlocal Davey-Stewartson equation, nonlocal sine-Gordon equation, and nonlocal (2 + 1)-dimensional three-wave interaction equations [2–4]. After the work of Ablowitz and Musslimani, there is increasing interest in obtaining the nonlocal reductions of systems of integrable equations and their properties [5–19].
+The main purpose of this work is to search for possible integrable reductions of the NLS system (1) and (2) and investigate the applicability of the Hirota direct method to find the (soliton) solutions of the reduced nonlinear Schrödinger equations.
+By using the Hirota method, we first find one- and two-soliton solutions of the NLS system of equations (1) and (2). We then investigate whether the system of equations (1) and (2) satisfy the Hirota integrability; i.e., existence of three-soliton solution [20–22]. We showed that the system possesses three-soliton solution. Then by using the reductions (3) and (5), we obtain one-, two-, and also three-soliton solutions of the standard and nonlocal NLS equations, namely, Eqs. (4) and (7)–(9), respectively. In this paper, we give the general soliton solutions but we study only S-symmetric nonlocal NLS equations. We observe that all types of nonlocal NLS equations have singular and non-singular solutions depending on the values of the parameters in the solutions. In addition to the solitary wave solutions, there are regular and singular localized solutions. We give examples for certain values of the parameters and plot the function |q(x, t)|^{2} for the S-symmetric case.
+For the case of S-symmetric nonlocal NLS equation (8), we are at variance with Stalin et_al’s results [19] (see Remark 2 and Remark 3 in Secs. IV A and IV B, respectively). They claim that they produce soliton solutions of the nonlocal NLS equation (S-symmetric) but it seems that they are solving the NLS system of equations (1) and (2) rather than solving nonlocal NLS equation (8) because they ignore the constraint equations satisfied by the parameters of the one-soliton solutions.
+The lay out of the paper is as follows. In Sec. II, we apply the Hirota method to the NLS system (1) and (2) and find one-, two-, and three-soliton solutions. In Sec. III, we obtain soliton solutions of the standard NLS equation by using the standard reduction. In Sec. IV, we investigate soliton solutions of the S-symmetric nonlocal NLS equation and give some examples for one-soliton, two-soliton, and three-soliton solutions and plot the function |q(x, t)|^{2} for each example.
+II. HIROTA METHOD FOR COUPLED NLS SYSTEM
+To find soliton solutions, we use the Hirota method for (1) and (2). For this purpose, we let
+Equation (1) becomes
+which is equivalent to
+Similarly, Eq. (2) becomes
+which is equivalent to
+Hence the Hirota bilinear form of the coupled NLS system (1) and (2) is
+where α is an arbitrary constant.
+A. One-soliton solution of the NLS system
+To find one-soliton solution, we use the following expansions for the functions F, G, and f:
+where
+When we substitute (18) into Eqs. (15)–(17), we obtain the coefficients of ε as
+yielding the dispersion relations
+From the coefficient of ε^{2}
+we obtain the function f_{2} as
+The coefficients of ε^{3} vanish due to the dispersion relations and (24). From the coefficient of ε^{4}
+by using the function f_{2} given in (24), we get that α = 0. In the rest of the paper, we will take α = 0. Let us also take ε = 1. Hence a pair of solutions of the NLS system (1) and (2) is given by (q(t, x), r(t, x)), where
+with θ_{i} = k_{i}x + ω_{i}t + δ_{i}, i = 1, 2, ω_{1}=k122a, ω_{2}=−k222a, and A=−1(k1+k2){2}. Here k_{1}, k_{2}, δ_{1}, and δ_{2} are arbitrary complex numbers.
+B. Two-soliton solution of the NLS system
+For two-soliton solution, we take
+where
+with θ_{i} = k_{i}x + ω_{i}t + δ_{i}, η_{i} = ℓ_{i}x + m_{i}t + α_{i} for i = 1, 2. When we insert the above expansions into (15)–(17), we obtain the coefficients of ε as
+Here we get the dispersion relations
+The coefficient of ε^{2} gives
+yielding the function f_{2},
+where
+From the coefficients of ε^{3}, we get
+These equations give the functions F_{3} and G_{3} as
+where
+The coefficient of ε^{4} gives
+yielding the function f_{4} as
+where
+The coefficients of ε^{5};
+the coefficient of ε^{6};
+the coefficients of ε^{7};
+and the coefficient of ε^{8};
+vanish directly due to the functions F_{1}, G_{1}, and F_{3}, G_{3}, f_{2}, f_{4} that are previously found. If we take ε = 1, then two-soliton solution of the NLS system (1) and (2) is given with the pair (q(t, x), r(t, x)), where
+with θ_{i}=k_{i}x+ki22at+δ_{i}, η_{i}=ℓ_{i}x−ℓi22at+α_{i} for i = 1, 2. Here k_{i}, ℓ_{i}, δ_{i}, and α_{i}, i = 1, 2 are arbitrary complex numbers.
+C. Three-soliton solution of the NLS system
+Hirota integrability is defined as the existence of three-soliton solutions. For this purpose, we find three-soliton solutions of the NLS system (1) and (2) and all of its reductions.
+For three-soliton solution, we take
+and
+where θ_{i} = k_{i}x + ω_{i}t + δ_{i}, η_{i} = ℓ_{i}x + m_{i}t + α_{i} for i = 1, 2, 3. We insert the expansions to the Hirota bilinear form of the NLS system (15)–(17) and obtain the coefficients of ε^{n}, 1 ≤ n ≤ 12 as
+From the equalities (46) and (47), we obtain the dispersion relations
+Equation (48) gives the function f_{2} as
+From the coefficients of ε^{3}, we obtain the functions F_{3} and G_{3}
+Equation (51) yields the function f_{4} as
+where
+for 1 ≤ i < j ≤ 3, 1 ≤ p < r ≤ 3. From the coefficients of ε^{5}, we obtain the functions F_{5} and G_{5},
+where
+for 1 ≤ i < j ≤ 3. Here S_{ij} and Q_{ij} are given in the Appendix of Ref [23]. Equation (54) gives the function f_{6},
+where the coefficient H is also represented in the Appendix of Ref [23]. The rest of Eqs. (55)–(63) are satisfied directly. Let us also take ε = 1. Hence three-soliton solution of the coupled NLS system (1) and (2) is given with the pair (q(t, x), r(t, x)), where
+Remark 1. Notice that the authors of Ref [19] used another form of Hirota perturbation expansion for one-soliton solution;
+where
+different from the form (18) that we use. The solution found in Ref [19],
+the numerator and denominator are factorizable and it reduces to our solution (26)
+For two-soliton solution, the following form of Hirota perturbation expansion:
+is used in Ref [19]. Our two-soliton solutions (42) and (43) are much simpler and shorter than the one given in Ref [19]. Similar to one-soliton solution, one expects that the two-soliton solution given in Ref [19] is equivalent to the solutions (42) and (43).
+III. STANDARD REDUCTION OF THE NLS SYSTEM
+Here we consider the standard reduction (3) and obtain soliton solutions of the reduced Eq. (4) with the condition
+satisfied.
+A. One-soliton solution for the standard NLS equation
+We first obtain the conditions on the parameters of one-soliton solution of the NLS system to satisfy the equality (3); i.e.,
+Hence one of the sets of the constraints that the parameters must satisfy the following:
+Consider the condition (ii). We have
+by (82) and the condition (i). Similarly, the conditions (iv)−(vi) are also satisfied directly by (82) and (i). Now consider the relation e^{δ2}=ke^{δ¯1} or e^{δ¯2}=ke^{δ1} given in (iii) of (84). Note that since k is a real constant, we have k¯=k. Consequently, we have
+yielding the equality e^{δ1+δ2}=e^{δ¯1+δ¯2}.
+Therefore the parameters of one-soliton solution of Eq. (4) must have the following properties:
+Example 1. Let us illustrate a particular example of one-soliton solution of (4). For (k_{1},k_{2},e^{δ1},e^{δ2},k,a)=(1+i,1−i,i,i,−1,i2), one-soliton solution becomes
+To sketch the graph of this solution in a real plane, we will consider q(t,x)q¯(t,x)=|q(t,x)|^{2},
+The graph of (88) is given in Fig. 1.
+B. Two-soliton solution for the standard NLS equation
+Similar to the one-soliton solution case, we obtain the conditions on the parameters of two-soliton solution given by (42) and (43) of the NLS system to satisfy the equality (3);
+Example 2. Consider the following parameters: (k_{1}, ℓ_{1}, k_{2}, ℓ_{2}) = (1 + i, 1 − i, 2 + 2i, 2 − 2i) with (e^{αj},e^{δj},k,a)=(−1+i,1+i,−1,i) for j = 1, 2. In this case, two-soliton solution is
+where
+and
+The graph of the function |q(t, x)|^{2} corresponding to the solution (90) is given in Fig. 2(a).
+Example 3. In this example, we just give the graphs of two-soliton solutions defined by the function |q(t, x)|^{2} corresponding to (k_{1},ℓ_{1},k_{2},ℓ_{2})=−12−25i,−12+25i,−1325+25i,−1325−25i and (k_{1},ℓ_{1},k_{2},ℓ_{2})=−12−25i,−12+25i,1325−25i,1325+25i with (e^{αj},e^{δj},k,a)=(−1+i,1+i,−1,i) for j = 1, 2 in Figs. 2(b) and 2(c), respectively.
+C. Three-soliton solution for the standard NLS equation
+The conditions on the parameters of three-soliton solution of the standard NLS equation (4) can be easily found by the same analysis used in Sec. III A as
+Example 4. To illustrate some examples of three-soliton solution for the standard NLS equation, we give particular values, satisfying above constraints, to the parameters of the solution. The graphs of the functions |q(t, x)|^{2} corresponding to (k_{1},l_{1},k_{2},l_{2},k_{3},l_{3})=−12−25i,−12+25i,−1325−25i,−1325+25i,−2750−25i,−2750+25i, (k_{1},l_{1},k_{2},l_{2},k_{3},l_{3})=−12−25i,−12+25i,−1325−25i,−1325+25i,−2750+25i,−2750−25i, and (k_{1},l_{1},k_{2},l_{2},k_{3},l_{3})=−12−25i,−12+25i,−1325+25i,−1325−25i,2750−25i,2750−25iwith (e^{αj},e^{δj},k,a)=(−1+i,1+i,−1,i), j = 1, 2, 3 are given in Figs. 3(a)–3(c), respectively.
+IV. NONLOCAL REDUCTION OF THE NLS SYSTEM
+In this section, we use the reduction (5) introduced by Ablowitz and Musslimani [2–4] to obtain soliton solutions for three different nonlocal NLS equations (7)–(9) with the condition
+satisfied.
+A. One-soliton solution for nonlocal NLS equation
+Here we find the conditions on the parameters of one-soliton solution of the NLS system to satisfy the equality (5). We must have
+yielding the conditions
+From (i) we have k22=k¯12. If we use this relation on the left-hand side of (ii) with (92), we get that the condition (ii) is satisfied directly since
+For (iv), we only need that the equality (k1+k2){2}=(k¯1+k¯2){2} holds. Indeed it is satisfied directly since
+with the condition given in (i).
+The condition (v) is already true since
+by the condition k_{2}=k¯{1}ε_{2} or equivalently k_{1}=k¯{2}ε_{2}. Similarly, (vi) is satisfied directly since
+by k22=k¯12, k12=k¯22, and ā = −ε_{1}a.
+In Sec. III A, we proved that the condition (vii) is satisfied automatically by the condition (iii). Hence for one-soliton solutions of the nonlocal reductions of the NLS system, we have obtained the following conditions:
+Therefore one-soliton solution of the nonlocal NLS equations is given by
+with conditions (95) satisfied.
+Now and then we will consider only the case (ε_{1}, ε_{2}) = (1, −1) (S-symmetric case). Here the nonlocal reduction is r(t,x)=kq¯(t,−x) giving ā = −a, k_{2}=−k¯{1}, and
+with e^{δ2}=ke^{δ¯1}. From ā = −a, we have a = iy, y∈R. If k_{1} = α + iβ, α,β∈R, then the solution of (97) becomes
+where β ≠ 0. Here the solution is complex valued. Hence let us consider the real valued function |q(t, x)|^{2}. We have
+This function is singular at x=nπ2β, ke^{2αβyt+δ1+δ¯1}+4β^{2}(−1){n}=0 both for focusing and defocusing cases. If α = 0, the function (99) becomes
+for B=ρ^{2}+16β^{4}8ρβ^{2}, where ρ=ke^{δ1+δ¯1}. Clearly, the solution (100) is non-singular if B > 1 or B < − 1.
+Example 5. For the set of parameters (k_{1},k_{2},e^{δ1},e^{δ2},k,a)=(i,i,i,−i,1,i2), we get the solution
+and therefore,
+This solution represents a periodic solution. Its graph is given in Fig. 4.
+Example 6. In addition to the solution given with conditions (95), we have another possible solution of r(t,x)=kq¯(t,−x), which is given by
+where e^{δ2}=ke^{δ¯1}, Ake^{δ¯1+δ1}=1, k_{2} = k_{1}, and k_{1} is real. Here ā = −a. Hence
+which represents a stationary soliton solution for the focusing case (k < 0). For example, if we consider k_{1}=12 and e^{δ1}=1+i giving k=−12<0, the above function becomes
+which represents a soliton. Its graph is given in Fig. 5.
+Remark 2. In Ref [19], the authors studied a particular form of S-symmetric nonlocal NLS equation (8), where a=i2 and k = −1,
+Here ^{*} is used for complex conjugation. In Ref [19], one-soliton solution of the nonlocal equation (106) is given as
+Here we expressed their parameters k_{1}, k¯{1} of Ref [19] as ℓ_{1}, ℓ¯{1}, respectively, not to mix with our k_{1}, k_{2}. Under the conditions a=i2, k = −1, e^{δ1}=α_{1}e^{ξ¯1(0)}, and e^{δ¯1}=β_{1}e^{ξ1(0)}, the solution (107) becomes equivalent to our case. They also give the function q*(t, −x) as
+and define the constants ℓ_{1},ℓ¯{1},α_{1},β_{1},ξ1(0), and ξ¯1(0) as arbitrary complex constants. But obviously from the relation between the functions q(t, x) and q^{*}(t, −x), the following constraints must be satisfied:
+These conditions are equivalent to our conditions coming from the reduction (5) for the S-symmetric case which were missed in Ref [19]. Because of this fact, the example given in Ref [19] with the parameters chosen as ℓ_{1} = 0.4 + i, ℓ¯{1}=−0.4+i, α_{1} = 1 + i, and β_{1} = 1 − i is not valid. They claim that they find the non-singular most general one-bright soliton solution of Eq. (106) which is not correct because the above constraints (109) are not satisfied by the parameters they have chosen. Indeed such specific parameters they use are not allowed since ℓ_{1}=0.4+i≠−0.4−i=(ℓ¯1){*}. Note that if we use the parameters not satisfying (109) that they give and, e.g., e^{ξ¯1(0)}=1+i and e^{ξ1(0)}=−1+i in the solution then the solution (107) and q^{*}(t, −x) becomes
+One can easily check that the nonlocal NLS equation (106) is not satisfied by the above functions.If we take the parameters satisfying (109), for instance ℓ_{1} = 0.4 + i, ℓ¯{1}=0.4−i, α_{1} = 1 + i, and β_{1} = 1 − i with ξ1(0)=ξ¯1(0)=0, then the solution (107) becomes
+and so
+which is not a solitary wave. Indeed it has singularity at (x,t)=52nπ,58ln(825), n is an integer.We understand that the authors of Ref [19] are solving the NLS system of equations (1) and (2) rather than solving nonlocal NLS equation (8) as they claim. They treat q^{*}(t, −x) as a separate quantity than q(t, x) rather than using the equivalence q^{*}(t, −x) = (q(t,x))^{*}|_{x→−x}. That is the reason why they miss the constraint equations (109) for the parameters of the one-soliton solution.
+B. Two-soliton solution for nonlocal NLS equation
+We obtain the conditions on the parameters of two-soliton solution of the NLS system to satisfy the equality (5), where the function r(t, x) is given in (43) and kq¯(ε_{1}t,ε_{2}x) is
+where
+for i = 1, 2. Here we have the following conditions that must be satisfied:
+From the condition (i), we get
+yielding ℓ_{i}=ε_{2}k¯{i}, i = 1, 2. The coefficients of t in the above equality are directly equal with this relation and ā = −ε_{1}a that we have previously obtained. All the other conditions (ii)−(xi) are also satisfied automatically by the following conditions:
+For particular choice of the parameters, let us present some solutions of the nonlocal reduction of the NLS system only for (ε_{1}, ε_{2}) = (1, −1) (S-symmetric case). In this case, we have ā = −a, ℓ_{i}=−k¯{i}, and e^{αi}=ke^{δ¯i} for i = 1, 2.
+Example 7. Consider the set of the parameters (k_{1},ℓ_{1},k_{2},ℓ_{2})=(i4,i4,i,i) with (e^{αj},e^{δj},k,a)=(1,1,1,i2) for j = 1, 2. The solution q(t, x) becomes
+and so the function |q(t, x)|^{2} is
+where
+and
+The graph of (118) is given in Fig. 6.
+Remark 3. Two-soliton solution presented in Ref [19] has the same flaw as stated in Remark 2. They chose the parameters of their solution not satisfying the constraint equations. Because of the relation between the functions q(t, x) and q^{*}(t, −x), their parameters must satisfy the following constraints:
+where j = {1, 2, 3, 4, 11, 12, 21, 22, 23, 24, 25, 26, 31, 32}. Remember that we use ℓ and ℓ¯ instead of the parameters k and k¯ (parameters of Ref [19]), respectively. However, they have taken the parameters as in the form ℓ¯{1}=a_{1}+b_{1}i, ℓ_{1} = −a_{1} + b_{1}i, ℓ¯{2}=c_{1}+d_{1}i, and ℓ_{2} = −c_{1} + d_{1}i for some specific values of a_{p}, b_{p}, c_{p}, and d_{p}, p = 1, 2. Clearly, the parameters do not satisfy the above constraints, hence two-soliton solution of Ref [19] does not satisfy the nonlocal nonlinear Schrödinger equation (106).
+C. Three-soliton solution for nonlocal NLS equation
+Similar to one- and two-soliton solution for nonlocal NLS equations, we first obtain the conditions on the parameters of three-soliton solution of the NLS system to satisfy the equality (5), where r(t, x) is given by (76) and
+where
+Here we obtain that (5) is satisfied by the following conditions:
+For (ε_{1}, ε_{2}) = (1, −1) (S-symmetric case), the constraints are ā = −a, ℓ_{i}=−k¯{i}, and e^{αi}=ke^{δ¯i} for i = 1, 2, 3. Examples of bounded and non-singular three-soliton solutions are under investigation.
+V. CONCLUSION
+In this work, by using the standard Hirota method, we found one-, two-, and three-soliton solutions of the integrable coupled NLS system. Then we have studied the standard and nonlocal (Ablowitz-Musslimani type) reductions of the NLS system and obtained integrable time T-, space S-, and space-time ST-reversal symmetric nonlocal NLS equations. By using the reduction formulas on the soliton solutions of the coupled NLS system, we obtained one-, two-, and three-soliton solutions of the nonlocal NLS equations. It is important to note that to obtain these soliton solutions of the nonlocal NLS equations the parameters of the soliton solutions of NLS system must satisfy certain constraints for each type of nonlocal NLS equations. These constraints play a critical role to obtain the soliton solutions of the nonlocal NLS equations. Although we found solutions of all types of nonlocal NLS equations, we gave only the solutions of the S-symmetric case. Furthermore, we gave particular values to the parameters (satisfying the constraint equations) of the solutions and plot the graphs of |q(t, x)|^{2} to illustrate the solutions.
+FIG. 1. 
+One-soliton solution for (88).
+FIG. 2. 
+Different types of two-soliton solutions for Eq. (4).
+FIG. 3. 
+Different types of three-soliton solutions for Eq. (4).
+FIG. 4. 
+Periodic solution for (102).
+FIG. 5. 
+One-soliton solution for (105).
+FIG. 6. 
+Breather type of wave solution for (118).

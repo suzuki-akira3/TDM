@@ -1,0 +1,278 @@
+A new control approach to improve the dynamic performance and ride through capability of PMSG wind energy system
+The increasing penetration of wind power into the modern power system forces many countries to adopt and revise grid codes for wind farms. The latest grid codes demand the wind energy systems to remain online during grid disturbances to meet the Low Voltage Ride-Through Capability (LVRT). The disconnection of the grid connected wind farm under abnormal grid disturbances significantly impacts the stability of the grid system. This paper proposes the robust active disturbance rejection control for permanent magnet synchronous generator (PMSG) based wind energy systems to enhance the dynamic performance and ride through capability under abnormal grid disturbances. The proposed approach is applied to the machine and grid side converter of PMSG to improve its ride through capability in compliance with the grid codes. Besides external grid disturbances, the proposed approach also considers the internal disturbances such as random parameter variations, parameter uncertainties, and cross-coupling terms to improve the dynamic performance of the wind energy system. The proposed approach is particularly effective in real-time estimation and compensation of the internal and external disturbances. The simulation results are performed in Matlab/Simulink to support the theoretical considerations, demonstrating the potential contributions of the proposed control strategy. The superiority of the proposed control strategy to improve the LVRT potentiality for the grid-connected PMSG wind energy system is verified by comparing with the traditional vector PI control scheme.
+I. INTRODUCTION
+In recent years, due to increasing concern about energy crisis as well as global warming, the world is looking towards alternate energy sources [1,2]. Among the alternate energy sources, wind energy has been growing rapidly and attracted considerable attention [3]. At present, variable speed wind turbines dominate in today's world market share due to their superior advantages over the constant speed wind energy system such as maximum energy capture over a wide range of wind speeds, improved efficiency, and quality of power [4]. Currently, doubly fed induction generators (DFIGs) and permanent magnet synchronous generator (PMSG)-based wind turbines are widely used in wind farms. The DFIG technology has the advantage of reduced power converter rating which reduces the overall cost and losses in the converter. However, the disadvantage of DFIG is its vulnerability to grid disturbances due to the direct connection of the stator to the grid. Furthermore, the use of gearbox with this type of wind turbine increases the maintenance cost. In contrast, the direct-drive permanent-magnet synchronous generators have gained increasing popularity and greater attention due to various advantages including their greater efficiency, higher power density, lower maintenance cost due to gearless configuration, and high reliability [5–7]. Besides, PMSG with a full-scale converter provides smooth grid operation and high energy yield over a wind range of operating speeds. These features have made the direct-drive PMSG the most popular configuration in multi-MW wind energy applications.
+As the generator side converter of PMSG is not directly coupled to the grid, the grid disturbances would not affect the operation and it continues to transmit power from the wind turbine to the grid. Meanwhile, the grid side converter of PMSG is directly influenced by grid disturbances. Hence, the grid side converter can transfer reduced power to the grid compared to that in normal operation conditions. As a result, the surplus power through the generator-side converter starts to charge the DC link capacitor and causes overvoltage in the DC-link. Moreover, under unsymmetrical fault conditions, the negative sequence component of voltage and current creates double frequency oscillations in the active power, dc link voltage, rotor speed, and electromagnetic torque, which in turn damage the power converter, leading to the disconnection of the wind turbine. However, disruption of the wind turbine under grid disturbances is not acceptable according to the latest grid codes.
+According to the latest grid codes specified by the transmission system operators (TSOs), the wind turbines must stay connected to the grid during grid disturbances to ensure a stable grid voltage and frequency. To accomplish the grid code requirements and ride through the capability of the grid-connected PMSG wind energy system, several solutions have been proposed in the literature [8,9].
+One of the easiest methods reported in the literature to meet the Low Voltage Ride-Through Capability (LVRT) requirement is the braking resistor [10]. The braking resistor into the dc link is used to dissipate the surplus active power under grid disturbances. This method is comparatively a simple and low-cost approach to meet the ride through capability. However, the increase in the temperature of the braking resistor significantly increases the losses. The STATCOM for the PMSG wind energy system has been discussed in Ref [11] for grid connected PMSG. Using this method, voltage support can be provided by regulating the reactive power. However, the STATCOM cannot provide the active power support during grid disturbance. To meet the LVRT requirement, the surplus active power can be stored in the inertia of the turbine-generator system. Nevertheless, the stored energy in turbine inertia is not huge, particularly when the generator operates near the rated speed. Another important solution is to use the energy storage devices such as batteries, supercapacitors, and superconducting magnetic energy storage at the dc link to smoothen and improve power fluctuations [12–16]. However, this approach is not suitable to meet the LVRT requirement for large MW wind farms since the cost of the energy storage system (ESS) is high. The previously mentioned solutions significantly increase the size and cost of the overall system. To address these issues, recent studies have been focused on various control techniques for the PMSG wind energy system to improve LVRT capability under grid disturbances.
+Several control strategies have been found in the literature to meet the LVRT requirement. The vector decouple PI control technique has been proposed in Refs [17–19] to control the PMSG-based wind energy system. This control system is widely accepted by many researchers in industrial applications due to their simple control scheme and low cost. In this control scheme, the cross-coupling terms are eliminated with feed forward compensation to enhance the dynamic performance of the controller. However, the performance of a control system is sensitive to the variation in machine and grid parameters. Due to system non-linearity and variations of internal parameters, the tuning of the PI controller is a highly challenging task, when the conventional PI design is employed. This deteriorates the performance of a controller and influences the system stability. Moreover, this scheme needs many complex transformations of voltage and current, which increases the computational complexity of the control system. In order to reduce the complexity of the vector control method, Direct Torque Control (DTC) and Direct Power Control (DPC) schemes are used for PMSG WECS [20,21] (Wind Energy Conversion System). Direct control schemes do not need complex coordinate transformations. However, the variable switching frequency in DTC and DPC results in high ripples in reactive/active power and flux/torque which degrades the performance of a controller [22]. Furthermore, the performance of a control scheme is not satisfactory, when the actual machine and grid parameters differ from those values that are employed in a control scheme. A few other methods such as Fuzzy based control [23] and Feedback linearization [24] have also been discoursed to improve the LVRT capability of the PMSG based wind energy system. The mathematical model of the above control schemes requires the exact information of system parameters. Moreover, the performance of control schemes is sensitive to internal and external disturbances, which substantially deteriorates the controller performance. Thus, the above control schemes cannot guarantee robust performance for wind energy applications due to the existence of parametric uncertainties, non-linearities, and external perturbations.
+To overcome the shortcomings of the former approaches, this paper proposes an active disturbance rejection controller (ADRC) for the grid-connected PMSG wind energy system. ADRC was first originally proposed by Han [25] and was further simplified by Gao [26]. The control scheme is easy to implement with only two tuning parameters and without any need of complicated computation of reference frame transformations. Besides, ADRC is insensitive to parameter variations and external disturbances. Further, ADRC accurately estimates and dynamically compensates lumped disturbance including internal as well as external disturbances in real time. Due to these competitive advantages, ADRC has been widely implemented in various engineering applications including robotic systems [27], maglev systems [28], structural vibration [29], tower cranes [30], non-minimum phase systems [31], and Load frequency control [32,33]. ADRC has been used in speed control application for PMSM [34] and also used in DFIG wind energy applications [35,36]. In Refs [37] and  [38], ADRC has been applied for maximum power extraction of the PMSG wind energy system against internal unknown dynamics as well as external wind disturbances. However, the proposed ADRC has not yet been explored for improving the LVRT capability of the wind energy system under adverse grid disturbances.
+The main contributions of this paper are
+• Developing the ADRC framework for the PMSG machine and grid side converter
+• Investigating the performance of PMSG WECS with the proposed control scheme to improve the ride through capability under adverse grid disturbance conditions
+• Studying the robustness of the proposed scheme in the presence of parametric variations
+• To verify the effectiveness of the proposed method with the conventional vector PI control
+The rest of this paper is formulated as follows. In Sec. II the dynamic modeling of PMSG-based wind turbines is elucidated. The proposed system and control strategy are presented in Sec. III. Discussion and results are shown in Sec. IV Finally, concluding remarks are furnished in Sec. V
+II. PMSG MATHEMATICAL MODELING
+The dynamic model of the surface-mounted PMSG in the dq synchronous reference frame with the d axis aligned with the rotor magnetic flux can be expressed by [39]
+where R_{s} is the PMSG stator resistance; v_{ds} and v_{qs} are the dq axis stator voltages, respectively; L_{d} and L_{q} are the dq axis inductances; ω_{e} is the electrical rotating speed of the generator; ψ_{d} and ψ_{q} are the dq axis stator flux linkages, respectively.
+The electrical angular velocity ω_{e} can be related to rotor mechanical angular velocity ω_{m} as
+where p_{n} is the number of pole pairs of the machine
+The PMSG d and q axis stator flux linkages can be expressed as
+where ψ_{m} is the magnet flux linkage produced by permanent magnets.
+Therefore, by substituting (3) in (1), Eq. (1) can be expressed as
+The PMSG stator active and reactive power is given by [40]
+The Electromagnetic torque of PMSG is obtained as
+For a non-saliency, the stator direct and quadrature inductances L_{d} and Lq are approximately equal. In this case, the electromagnetic torque of PMSG can be described in the following form:
+The mechanical rotor speed dynamic equation is given by
+The mechanical rotational speed of the generator is described by
+where J_{m} is the rotor moment of inertia, B_{m} is the viscous friction coefficient, and T_{m} and T_{e} are the mechanical and electrical torque, respectively.
+III. PROPOSED SYSTEM AND CONTROL SCHEME
+The block diagram of the grid connected PMSG WECS is displayed in Fig. 1. The proposed system consists of a wind turbine, PMSG, power converters, and a transformer for interfacing the grid. The PMSG has a full-scale power converter with the dc link interface to decouple the grid frequency from rotor mechanical frequency. The machine side converter acts as a rectifier and is used to control the active and reactive power independently. On the other hand, the grid side converter works as an inverter and is used to control dc link voltage and active and reactive power delivered to the grid.
+A. Proposed control strategy for the PMSG machine side converter
+The block diagram of the control scheme for the machine side converter is presented in Fig. 2. The PMSG machine side converter has an external control loop and two inner control loops as shown in Fig. 2. The inner current loop is used for controlling dq stator current components. In this control scheme, electromagnetic torque is controlled by controlling the q-axis current component of the stator; meanwhile, the reactive power is controlled by controlling the d-axis component of stator current.
+Figure 2 shows the principle of the MPPT scheme with optimal torque control (OTC), where the generator speed ω_{m} is measured and is used to compute the desired reference torque Te*. The coefficient K_{op} for the optimal torque can be determined according to the wind turbine parameters.
+The active power control is performed by regulating the generator torque T_{e} through the q-axis component of stator current
+The reference q-axis stator current is determined from (10)
+The reference d-axis stator current is usually set to zero to obtain the maximum torque at a minimum current and also to minimize the resistive losses in the generator.
+As shown in Fig. 2, the reference d and q axis stator currents are fed to ADRC. The control signals at the output of ADRC are the reference d and q axis stator voltages vds* and vqs*, respectively. The reference dq stator voltage signals are transformed back to three phase natural frame reference voltage signals vas*, vbs*, and vcs* through dq/abc transformation. The reference voltage signals are sent to the PWM block to generate the switching pulses for the machine side converter such that the active and reactive power is controlled independently. The dynamic performance is improved by adjusting the parameters of ADRC on a trial and error basis. The ADRC parameters are specified in Appendix (Tables V and VI). The design of ADRC for d and q axis current loops is described in Subsection III C.
+B. Design of ADRC for the machine side converter
+PMSG with a full-scale power converter system is a highly complex and nonlinear system. The inner current loops of the machine side converter have unknown internal dynamics which include parameter variations and cross-coupled terms. These parameter variations degrade the performance of the controller. To reject the above-mentioned unfavorable effects, ADRC is designed for d and q axis current loops of the machine side converter for improved performance. The basic objective of ADRC is to transform the nonlinear system into the linear system by estimating and compensating the internal and external disturbances in real time. The ADRC mainly consists of the Extended State Observer (ESO) and the state feedback control law. The extended state observer dynamically estimates the system estimates as well as the generalized disturbance including unknown internal model dynamics, uncertainties, parameter variations, and external disturbances. By designing an appropriate control law, generalized disturbance can be actively compensated
+With the rotor flux orientation scheme, the dq stator voltage equations are given by [41]
+Equation (12) can be expressed as
+Equation (13) in the state space model is written as
+Equation (14) shows that the d-axis stator voltage is influenced by q-axis stator current and the q-axis stator voltage relies on the d-axis stator current. The cross-coupled terms are taken as inner disturbance of the system which are represented by ω_{e}L_{q}i_{qs} and (−ω_{e}L_{d}i_{ds}−ω_{e}ψ_{m}).
+The canonical form of (14) including external disturbance d(t) is written as
+where f_{d}(i_{ds,}t)=1L_{s}(−R_{s}i_{ds}+ω_{e}L_{q}i_{qs}); f_{q}(i_{qs},t)=1L_{s}(−R_{s}i_{qs}−ω_{e}L_{d}i_{ds}−ω_{e}ψ_{m}); u_{d}(t)=v_{ds};u_{q}(t)=v_{qs}; b_{o}= 1L_{s}, where f_{d} and f_{q} are the internal disturbances consisting of unknown internal dynamics and modelling errors, u_{d}(t) and u_{q}(t) are the control inputs in the current loop, b is the known part of the system parameter, and L_{s} is the stator inductance.
+The combined effect of internal as well as external disturbance d(t) for both d and q axis current loops is represented by lumped disturbance f̂_{ds}(t) and f̂_{qs}(t), respectively,
+Thus, d-axis and q-axis stator current equations from (16) can be written as
+The main idea of the proposed ADRC is to estimate the lumped disturbances f̂_{ds}(t) and f̂_{qs}(t) using an extended state observer and to reject them in the control law in real time.
+C. Design of ADRC for the dq-axes current loop
+The d axis stator current from (17) is given by
+Let x_{1}=y=i_{ds};x_{2}=f̂_{ds}(t)
+The augmented state space representation of (18) is
+The state space model represented in (19) is written in the matrix form
+The compact state space model of (20) is written by
+where
+The problem of estimating lumped disturbance in the d-axis loop leads to a unique state observer known as the ESO (Extended State Observer). To determine the states and the generalized disturbance of the d-axis current loop, the extended state observer is established as follows:
+where ẑ is the observer vector of state vector x. Vector L is the observer gain vector, and b represents the estimation of b_{0}. ŷ is the estimation of output y.
+The state space model of (22) in the vector-matrix form is presented by
+The estimated states of ESO from the above equation are written as
+where β_{1} and β_{2} are the observer gains, ẑ_{1} is the estimate of the d axis component of active current i_{ds}, and ẑ_{2} is the estimate of lumped disturbance f̂_{ds}(t) for the d axis current loop.
+The combined effect of internal as well as external disturbance d(t) for the d-axis current loop is represented by lumped disturbance. The internal disturbance constitutes the parameter variations such as stator resistance R, inductance L_{s} of the machine, and cross-coupled terms. The cross-coupled term for the d axis current loop is taken as inner disturbance of the system, which is represented by −ω_{e}L_{d}i_{ds}−ω_{e}ψ_{m}. The lumped disturbance f̂_{ds}(t) for the d-axis current loop for the machine side converter is given in (16).
+The extended state observer gains β_{1}=2ω_{o}; β_{2}=ωo2 are determined based on bandwidth parameterization [42].
+Thus, the estimated states are expressed by
+with proper tuning of observer bandwidth ω_{o}, the estimated states ẑ_{1} and ẑ_{2} can track i_{ds} and f̂_{ds}(t), respectively. The composite control law for the stator d-axis current loop to reject the disturbance is defined by
+where u_{d}=v_{ds}.
+Thus, the control law equations to reject the total disturbance are defined by
+where k_{p} is the proportional gain of the d-axis current loop controller and ids* is the d-axis reference current. vds0 is the converter control signal of the d-axis current loop.
+Similarly, the control law equations for the q-axis current loop to reject the disturbance are given by
+where k_{p} is the proportional gain of the q-axis current loop controller and iqs* is the q-axis reference current. vqs0 is the inverter control signal of the q-axis current loop.
+The ADRC for d and q axis current loops for the machine side converter is shown in Figs. 3 and 4, respectively.
+The simplicity of the controller design lies in the fact that only one system parameter b and two tuning parameters such as the observer bandwidth and controller gain are required for d and q-axis current loops, respectively. The design is an independent model and significantly simplifies the tuning process.
+D. The proposed ADRC control scheme for the grid side converter
+The block diagram of the control scheme for the grid side converter is presented in Fig. 5. The current control of the grid side converter has been implemented in the d-q synchronous reference frame.
+The grid voltage equations in the synchronous d-q reference frame [43]
+where v_{dg} and v_{qg} are the dq-axis components of the grid voltage vector and v_{di} and v_{qi} represent the d and q-axis components on the inverter side. i_{dg}, i_{qg} are the dq axis components of the grid current vector. ω_{e} is the speed of the synchronous reference frame.
+The active and reactive power in the dq rotating frame can be defined by [43]
+with the grid voltage orientation scheme, the d-axis synchronous reference frame is aligned with the grid voltage vector, and hence, the magnitude of q axis grid voltage is made zero. Therefore, the resultant grid active and reactive power can be defined as
+Thus, the reference q-axis grid current from (31) is calculated as
+The main function of the grid side converter is to control the DC link voltage and reactive power exchange with the grid at their reference values. Under normal conditions, the grid side converter operates at unity power factor and the voltage at PCC (Point of common coupling) is maintained at 1 p.u. However, under abnormal grid conditions, the voltage at PCC deviates from the reference value. The deviation in PCC voltage is processed by the PI controller which generates the reference reactive power. The reference reactive power is compared with the measured reactive power and is processed by the PI controller which generates the reference q-axis current. Hence, the reactive power generated by the grid side converter supports voltage at PCC.
+Equation (31) shows that the active and reactive powers are proportional to d-axis and q-axis reference grid currents. The active and reactive power is controlled by controlling the dq grid currents. The d-axis reference current is provided by a DC-link voltage control loop, whereas the q-axis reference current is provided by the reactive power control loop.
+The grid side converter scheme is composed of an external voltage and an internal current control loop. The reference q axis current is determined from (32). The reference d-axis current for the internal current loop is set by an outer ADRC loop. The reference and actual dq current signals are sent to the inner ADRC loop. The control signals obtained from ADRC are the converter output voltages vdg*,vqg*. The dq reference voltage signals are transformed back to abc reference voltage signals vai*,vbi*,vci* through dq/abc transformation. The reference voltage signals are sent to the PWM block to generate the switching pulses for the grid side converter. The control signals are adjusted to control the active and reactive current injected by the inverter to trace the reference grid currents. The design of ADRC for the dq-axes current loop is discussed in the Subsection III F.
+E. Design of proposed ADRC for the grid side converter
+The voltage equations in the dq reference frame from (29) are given by
+Equation (33) can be written as
+Equation (34) shows that the d axis grid voltage is influenced by the q axis grid current and the q axis grid voltage is affected by the d axis grid current which makes difficult to control i_{dg} and i_{qg}, respectively. The above dynamic equations are cross-coupled on d and q axes due to the presence of coupled terms. The cross-coupled terms are taken as internal disturbance of the system.
+Equation (34) can be written by
+Equation (35) can be expressed by
+where f(i_{dg},t) and f(i_{qg},t) represent the internal system dynamics in the current control loop with grid parameter variations and cross-coupled terms, where f(i_{dg},t)=(−R_{g}L_{g}i_{dg}+1L_{g}v_{dg}+ω_{e}L_{g}i_{qg});f(i_{qg},t)=(−R_{g}L_{g}i_{qg}+1L_{g}v_{qg}−ω_{e}L_{g}i_{dg}).
+The control gain (b) and control signals (u) in the dq current loop for the grid side converter are given by
+The dq grid current equations including external disturbance d(t) are given by
+The generalized disturbance f̂(t) which includes the combined effect of internal and external disturbances for both d and q axis current loops is given by
+Thus, Eq. (39) can be written by
+F. Design of the ADRC dq-axes current loop
+The d-axis grid current from (40) is given by
+The augmented state space model for the d-axis loop is given by
+where A=(0101);B=(10);C=(1).
+To estimate the states and the generalized disturbance for the d-axis current loop, the extended state observer is constructed as follows:
+The estimated signals of ESO from (44) are written as
+where ẑ_{1} is the state estimated signal of active current and ẑ_{2} is the estimated signal of generalized disturbance.
+The combined effect of internal as well as external disturbance d(t) for the d-axis current loop is represented by lumped disturbance f̂_{dg}(t).The internal disturbance constitutes the grid parameter variations such as grid side resistance R_{g}, grid side inductance L_{g}, and cross-coupled terms. The cross-coupled term for the d axis current loop is taken as inner disturbance of the system which is represented by ω_{e}L_{g}i_{qg}.The lumped disturbance for the d-axis current loop for the grid side converter is given in (39).
+The extended state observer gains β_{1}=2ω_{o}; β_{2}=ωo2 are chosen. Hence, the new estimated states are given by
+The control law for the d-axis current loop designed to eliminate the disturbance is given by
+where u_{d}=v_{dg} Thus, the control law equations to reject the total disturbance are given by
+where k_{p} is the proportional gain of the d-axis current loop controller and idg* is the d-axis reference current. v_{dg} is the inverter control signal of the d-axis current loop.
+Similarly, the control law equations for the q-axis current loop to reject the disturbance are given by
+where K_{p} is the proportional gain of the q-axis current loop controller and iq* is the q-axis reference current. vqg* is the inverter control signal of the q-axis current loop.
+The block diagram of ADRC for d and q axis current loops is presented in Figs. 6 and 7.
+G. Design of ADRC for the DC link voltage loop
+The DC link power is expressed by
+The generated active power in the dq reference frame is expressed by
+In the voltage oriented control scheme, the grid voltage is oriented along the d-axis and voltage on the q-axis is made zero. Therefore, the active power is given by
+The generated power equals the DC link power when neglecting losses in the converter
+Let w=vdc2.
+Equation (53) can be expressed as
+The canonical form of (54) is written by
+where f(w,d,t)=v_{dc}; b_{o}=3Cv_{d}; u(t)=i_{d}, where f(w,d,t) denotes the lumped disturbance with dc link parameter variations and v_{dc} and i_{d} represent the output and control input of the dc link voltage loop. The ESO estimates the dc link voltage states and total disturbance of the system. The ESO for the dc link voltage loop is designed as follows. The estimated signals are given by
+where ẑ_{1} estimates the dc link voltage, ẑ_{2} estimates the total disturbance, and β_{1} and β_{2} are the adjustable parameters.
+Thus, the control law equations become to reject the total disturbance
+The ADRC design for the DC link controller is presented in Fig. 8.
+IV. RESULTS AND DISCUSSION
+To verify the proposed method, the grid connected PMSG wind energy system has been modeled in the simulation environment. The efficacy of the proposed method has been tested and compared with a PI controller under different operating conditions. The system parameters are tabulated in Appendix. Wind speed is assumed to be constant at 12 m/s. A simulation time step of 20 μs is used. Various case studies are considered here to demonstrate the superiority of the proposed method over the conventional method.
+Case 1: Dynamic performance analysis of grid connected PMSG under symmetrical fault conditions
+The symmetrical fault is applied at t = 1 s and removed by opening the circuit breaker after 120 ms. As shown in Fig. 9, at the instant of the LLLG fault, the PCC voltage decreases slightly and recovers to the rated value after the fault vanishes. From Fig. 9, it is visualized that the proposed method brings back the voltage deviation with fewer oscillations to the pre-fault state faster than the PI controller.
+Figure 10 shows that prior to the fault condition, the reactive power injected by the grid side converter is zero as the grid side converter operates at unity power factor. At the instant of the symmetrical fault at t = 1 s, the reactive power injected by the converter with the conventional scheme increases to 0.2 p.u. On the other hand, with the proposed scheme, the injected reactive power increases over 0.5 p.u. to recover the PCC voltage quickly. After the fault is cleared at t = 1.2 s, the reactive power drops to zero and the voltage at PCC is recovered to the nominal value. Hence, the proposed controller helps PCC voltage to restore its pre-fault value faster than the conventional method.
+Figure 11 depicts the active output power of the wind farm. The active output power maintains close to 1 p.u. before the occurrence of the fault and slightly reduces at the instant of the 3 phase short circuit fault. The proposed method restores the active power rapidly to the pre-fault condition faster than the conventional method after the fault vanishes.
+Figure 12 displays the response of DC link voltage under the 3 phase symmetrical fault. The three phase fault creates disturbances in DC link voltage as presented in Fig. 12. The proposed method keeps the DC link voltage variation close to the reference value. The proposed method offers the least deviation in the DC link voltage compared to the conventional approach.
+Figure 13 shows the electromagnetic torque variation under the symmetrical fault condition. The proposed method succeeds to suppress the mechanical vibrations of the turbine shaft during grid disturbance and extends its lifetime. The proposed method helps to control the torque quite stable compared to the conventional method.
+Figure 14 shows the PMSG rotor speed acceleration followed by symmetrical fault at t = 1 s. The reduction of active power causes the decrease in the electromagnetic torque, which results in the gradual increase in rotor speed. From Fig. 14, it is found that the rotor speed rises to 1.02 p.u. during the fault condition with the conventional controller; on the other hand, the rotor speed rises to 1.01 p.u. with the proposed controller. The growth of the generator speed during the grid fault is relatively low with the proposed method. Therefore, the PMSG wind energy conversion system does not face instability. The rotor speed acceleration is small owing to the large inertia of the turbine and the generator.
+The response of PMSG stator current with the conventional and proposed method is manifested in Figs. 15 and 16. The rise in stator current destroys the generator, and the grid side converter with no proper control action is taken. It is evident from Fig. 15 that the stator current is increased to above 2 p.u. with the conventional control during the abnormal gird condition. The proposed control method minimizes the stator current level below 1 p.u. as shown in Fig. 16. The proposed method performs better than the PI controller in suppressing the fault current.
+Case 2: Dynamic performance analysis of grid connected PMSG during asymmetrical fault conditions
+Typically, the unsymmetrical fault occurs quite frequently compared to symmetrical faults. The LG fault is initiated at t = 1 s for a duration of 120 ms. The response of the voltage profile is manifested in Fig. 17. After the disappearance of the fault, the PCC voltage reaches quickly its pre-fault value due to reactive power support from the grid side converter of PMSG. From Fig. 17, it is realized that the voltage at PCC is improved better than the PI controller.
+Figure 18 shows that with the proposed method, over 0.2 p.u. of reactive power is delivered to the grid during the fault from the grid side converter. On the other hand, the reactive power delivered with the PI controller is lower than the proposed method. As a result, the PCC voltage with the proposed method is higher than the conventional approach. However, under the asymmetrical fault condition, the negative-sequence component leads to second-order harmonics in the injected reactive currents. Hence, the oscillations are present in the injected reactive power in this scenario.
+Figure 19 shows the active power profile under the LG fault condition. From Fig. 19, it is noticed that the active power fluctuation is the lowest with the proposed method compared to the conventional control.
+Due to the unsymmetrical fault condition, the negative sequence component present in the stator voltage creates large oscillations in dc link voltage and electromagnetic torque. The LG fault produces the sudden increase in dc link voltage at fault initiation. A significant rise in the DC link voltage is observed with the conventional method from Fig. 20. After considerable oscillations in the transient state, the DC link voltage reaches the pre-fault state after the fault vanishes. From Fig. 20, it is seen that the proposed method can reduce the deviation in DC link voltage better than the PI control method.
+Figure 21 shows the PMSG electromagnetic torque response when the wind energy is subjected to the LG fault. The response of electromagnetic torque oscillations is high with the conventional control, and the system becomes unstable. From Fig. 21, it is observed that the electromagnetic torque fluctuation is the lowest with the proposed controller in action, and hence, the generator turbine electromechanical system faces the least stress.
+From Fig. 22, it is shown that at the instant of the unsymmetrical fault condition, the speed of PMSG fluctuates over a wide range with the PI controller. The rotor oscillations present in rotor speed is higher in this scenario due to the negative sequence component present in grid voltage. The proposed controller greatly improves the system dynamic performance by keeping the PMSG speed oscillation within a narrow range without causing instability during the fault.
+Figure 23 displays the stator current due to the LG fault condition with the PI controller. During the fault conditions, the stator current increases abruptly. If the inrush current in stator winding is not limited, the rotor and grid side converters of PMSG get destroyed. The proposed approach prevents the wind turbine disconnecting from the grid by maintaining stator current close to the nominal value with no surges in the current waveform. From Fig. 24, it is visualized that the proposed method can reduce the fault current much effective than the conventional method.
+From the results, it is revealed that the LG fault is the least severe fault, and hence, variations in the PCC voltage, stator current, speed, torque, and DC link voltage from the fault instant is the lowest compared to 3 phase symmetrical fault conditions.
+Case 3: Dynamic performance analysis of grid connected PMSG under voltage swell conditions.
+Voltage profile at PCC is shown in Fig. 25 under the voltage swell condition. From Fig. 25, it is noticed that the proposed method offers a lower voltage deviation and faster voltage recovery compared to the conventional vector PI control.
+Voltage swell is created at t = 1 s as shown in Fig. 26. Under this scenario, the voltage at PCC is raised due to the increase in voltage at the grid side. To reduce the voltage at PCC, the reactive power is absorbed by the grid side converter. Figure 26 shows that the reactive power absorbed by the grid side converter with the proposed method is −1.2 p.u. which is higher than the conventional control scheme in order to help lowering the PCC voltage.
+Figure 27 shows the active power profile under the voltage swell condition. Before occurrence of the grid disturbance, the active output power remains close to 1 p.u. During voltage swell, active power injected into the grid increases and remained at the reference value after the fault is cleared.
+With the application of the proposed method, the DC-link voltage is maintained close to the reference value with little fluctuations. The proposed approach aids to maintain the DC link voltage more stable than the PI controller as shown in Fig. 28.
+Figure 29 shows the response of electrical torque of PMSG under voltage swell. There is a substantial deviation in electrical torque caused by grid disturbance. The change in electromagnetic torque oscillations harms the turbine generator system. From Fig. 29, it is evident that the proposed method prevents the fluctuations in torque and provides better and faster stabilization.
+Figure 30 shows the PMSG rotor speed oscillation during the voltage swell condition. Under this condition, the active power injected to the grid increases, and hence, the rotor speed slightly decelerates and oscillates around 0.996 p.u. On the other hand, rotor speed oscillations are damped out with the proposed controller as shown in Fig. 30. This shows that the proposed controller can quickly force the rotor speed to retain its pre-fault value without causing instability. As a result, there is no stress on the mechanical components of the wind turbine and PMSG in this scenario.
+Case 4: Dynamic performance analysis of grid connected PMSG under the parametric variations
+The robust performance of the proposed controller under grid parameter variations is examined to test LVRT capability for the grid connected PMSG. The performance of grid connected PMSG under stiff and weak grid conditions is illustrated in Figs. 31–33. The weak grid is comprehended by decreasing the short circuit ratio and increasing the grid impedance. The strong grid is realized by increasing the short circuit ratio and decreasing the grid impedance. From Figs. 31–33, it is noticed that the proposed control enhances the LVRT capability of the grid-connected wind energy system by recovering the PCC voltage to the nominal value which is faster than the conventional method. The voltage at PCC for different values of SC MVA (Short Circuit MVA) and with variable grid impedance is tabulated in Table I.
+Case 5: Performance assessment
+The performance indices are considered in order to verify the efficacy of the proposed method in improving the dynamic performance of the PMSG wind energy system under 3LG, LG, and voltage swell conditions. Several performance indices are considered to give a numerical representation of performance comparison. Since they account for the deviation from system time parameters, their lower values are indicative of better system performance. The performance indices are defined by the ITAE (Integral Time of Absolute Error) index by Eqs. (58)–(62).
+In Eqs. (57)–(61), ΔV, ΔP, ΔV_{dc}, Δω, and ΔT_{e} represent the PCC voltage deviation, active power deviation, dc link deviation, rotor speed deviation, and electromagnetic torque deviation, respectively. T denotes the duration of simulation time interest, which is considered.
+The variation of performance index parameters or performance indices for symmetric fault, asymmetric fault, and voltage swell conditions are displayed in Tables II, III, and IV respectively. From Tables II–IV, it is noticed that the vector PI control method exhibits poor performance with respect to all index parameters. However, a significant improvement is seen using the proposed method as it gives the lowest index values. Compared to PI, the ADRC gives the lower value of indices and hence exhibits better performance. The numerical results displayed in Tables II–IV support the graphical simulation results.
+V. CONCLUSION
+This paper has presented a robust ADRC design to enhance the dynamic performance of the PMSG wind energy system under adverse grid disturbances. The simulation results show that the proposed control approach has shown an excellent performance by limiting the dc link voltage variations, rotor speed oscillations, electromagnetic torque pulsations, and the peak value of stator current under adverse grid conditions. Furthermore, the results have demonstrated that the proposed approach exhibits strong robustness against the grid parameter variations to improve the LVRT capability of the wind energy system. The efficacy of the proposed control scheme is compared with the conventional vector control strategy using MATLAB/SIMULINK software. The results demonstrated that the proposed ADRC scheme provides excellent control performance compared to the conventional vector PI approach.
+APPENDIX: SYSTEM PARAMETERS
+TABLE I. 
+Voltage at PCC under grid parametric variations.
+TABLE II. 
+Performance index values for the LLLG fault condition.
+TABLE III. 
+Performance index values for the LG fault condition.
+TABLE IV. 
+Performance index values under the voltage swell condition.
+TABLE V. 
+Wind turbine and machine parameters.
+TABLE VI. 
+ADRC parameters.
+TABLE I. -body
+Short circuit MVA	Grid inductance (H) variation	Short circuit ratio (SC MVA/rated wind turbine)	Voltage at PCC with conventional vector control	Voltage at PCC with the proposed control
+250	0.1589	125	0.90	0.98
+50	0.7632	25	0.55	0.9
+25	1.5264	12.5	0.45	0.9
+TABLE II. -body
+Grid side fault	Index parameters (%)	Deviation of Index values (in percentage)
+PI control	Proposed ADRC
+LLLG	ITAE_{v}	8.23	6.34
+ITAE_{p}	6.23	5.23
+ITAE_{VDC}	12.34	8.34
+ITAE_{ω}	0.345	0.23
+ITAE_{Te}	3.34	2.34
+TABLE III. -body
+Grid side fault	Index parameters (%)	Deviation of index values (in percentage)
+PI control	Proposed ADRC
+LG	ITAE_{v}	5.33	2.34
+ITAE_{p}	4.44	3.33
+ITAE_{VDC}	10.23	7.34
+ITAE_{ω}	0.655	0.34
+ITAE_{Te}	2.34	1.34
+TABLE IV. -body
+Grid side fault	Index parameters (%)	Deviation of Index values (in percentage)
+PI control	Proposed ADRC
+Swell	ITAE_{v}	9.234	6.34
+ITAE_{p}	7.234	5.343
+ITAE_{VDC}	11.34	9.34
+ITAE_{ω}	0.44	0.23
+ITAE_{Te}	3.33	2.22
+TABLE V. -body
+Parameters	Value
+Wind turbine rated power (MW)	2
+Base wind speed (m/s)	12
+Stator per phase resistance	0.78 × 10^{−3}
+Rated frequency (Hz)	60
+d-axis Stator resistance (H)	1.5 × 10^{−3}
+q-axis Stator resistance (H)	2.6 × 10^{−3}
+Permanent magnet flux (Wb)	7.9
+Machine inertia (kg m^{2})	0.5 × 10^{6}
+DC link voltage (V)	1200
+DC link capacitance (F)	20 × 10^{−3}
+TABLE VI. -body
+Parameters	Value
+Observer bandwidth (ω_{0} rad/s)	100
+Controller gain (ω_{c})	10
+FIG. 1. 
+Block diagram of the proposed system.
+FIG. 2. 
+Block diagram of the control scheme for the machine side converter.
+FIG. 3. 
+ADRC for the d-axis inner current loop for the machine side converter.
+FIG. 4. 
+ADRC for the q-axis inner current loop for the machine side converter.
+FIG. 5. 
+Block diagram of the control scheme for the grid side converter.
+FIG. 6. 
+ADRC for the d-axis inner current loop for the grid side converter.
+FIG. 7. 
+ADRC for the q-axis inner current loop for the grid side converter.
+FIG. 8. 
+ADRC for the DC link voltage.
+FIG. 9. 
+Voltage at PCC under the 3 phase symmetrical fault.
+FIG. 10. 
+Reactive power injected by the grid side converter during the 3 phase symmetrical fault.
+FIG. 11. 
+Active power response of PMSG wind energy under the 3 phase symmetrical fault.
+FIG. 12. 
+DC link voltage variations under the 3 phase symmetrical fault.
+FIG. 13. 
+An electromagnetic torque of PMSG under the 3 phase symmetrical fault.
+FIG. 14. 
+Rotor speed response of PMSG under the 3 phase symmetrical fault.
+FIG. 15. 
+Stator current of PMSG under the 3 phase symmetrical fault with PI control.
+FIG. 16. 
+Stator current of PMSG under the 3 phase symmetrical fault with the proposed method.
+FIG. 17. 
+Voltage profile at PCC under the LG fault.
+FIG. 18. 
+Reactive power injected under the LG fault.
+FIG. 19. 
+Active power response of PMSG wind energy under the LG fault.
+FIG. 20. 
+DC link voltage variations under the LG fault.
+FIG. 21. 
+Electromagnetic variations under the LG fault.
+FIG. 22. 
+Rotor speed response of PMSG under the LG fault.
+FIG. 23. 
+Stator current of PMSG under the LG fault with PI control.
+FIG. 24. 
+Stator current of PMSG under the LG fault with the proposed control.
+FIG. 25. 
+Voltage at PCC under voltage swell.
+FIG. 26. 
+Reactive power absorbed by the converter during voltage swell.
+FIG. 27. 
+Active power response of the PMSG wind energy system under voltage swell.
+FIG. 28. 
+DC link voltage variations under voltage swell.
+FIG. 29. 
+Electromagnetic torque response of PMSG under voltage swell.
+FIG. 30. 
+Rotor speed response of PMSG under voltage swell.
+FIG. 31. 
+Voltage at PCC for SC MVA = 250.
+FIG. 32. 
+Voltage at PCC for SC MVA = 50.
+FIG. 33. 
+Voltage at PCC for SC MVA = 25.

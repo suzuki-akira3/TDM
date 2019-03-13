@@ -1,0 +1,118 @@
+Optimum operation of multi-energy carriers in the context of an energy hub considering a wind generator based on linear programming
+This paper presents a model that can be easily used to resolve the energy hub operation problem. The proposed model considers the uncertainty in the input and output ports. The energy hub optimum operation problem needs to be resolved in order to supply several energy loads in combination at the minimum total energy cost. In this study, mixed-integer linear programming was applied to formulate this optimization problem. The power balance, energy storage, and converter limitations of the input and output ports were included as equality and inequality constraints. The total cost of an energy hub was determined by the price of energy carriers. Eventually, deterministic and stochastic versions of the proposed model were tested in a case study. In the test system, electricity, gas, and wind generation were used in the input port, and the output port contained the electrical and thermal load. The results demonstrated that a stochastic model based on different scenarios was more realistic than a deterministic model. However, the total operating cost of an energy hub decreased more in the stochastic model compared to the deterministic model.
+I. INTRODUCTION
+Issues such as the continuously growing demand for energy and energy supply concerns have influenced the structure of energy management and operation strategies. One of the most important and valuable considerations is the concept of an energy hub as a centralized unit, together with various associated issues related to it. To efficiently model and analyze multiple energy carrier systems, they should be considered as integrated systems rather than conventional infrastructure. The basic concept of an energy hub has been developed by adopting this approach [1].
+An energy hub is considered to be a common interface between producers, infrastructure, and consumers in an energy system. In terms of its structure, a set of energy carriers are connected to an input port and various demands are supplied by the output port in the centralized unit. It is reasonable to state that direct connectors, converters, and storage are the fundamental components of an energy hub.
+Researchers need to consider the design, operation, and planning of studies when investigating energy hubs. Recently, several studies have been conducted to investigate energy hubs as multi-energy carrier systems. The basic energy hub concept that was introduced by Andersson and colleagues focused on the multi-energy carrier optimal power flow [2].
+Zhang et_al [3] presented the optimal expansion planning of an energy hub with the optimum investment cost in several different energy infrastructures. Paudyal et_al [4] investigated the optimal operation of an industrial energy system in the context of energy hubs. Bozchalui et_al [5] modeled residential buildings based on the energy hub concept by considering different electrical and thermal loads. Moeini-Aghtaie [6] focused on the online economic dispatch (ED) in an energy hub when the input port was unavailable. The proposed model was based on nonlinear programming (NLP) and was solved using a multi-agent genetic algorithm.
+Demand-side management in an energy hub based on a game theory framework was analyzed by Sheikhi [7], using cloud computing to process various data. The investigators reported that it was important to determine the Nash equilibrium. Sheikhi et_al [8] evaluated the optimal energy hub size in terms of investment, maintenance, and fuel costs in the objective function.
+Shahmohammadi [9] solved the energy hub planning and design problem by considering the reliability constraints in linear programming. Minimization of the total cost in the planning horizon was defined as the objective function. Moeini-Aghtaie [10] considered energy management for plug-in hybrid electric vehicles in an energy hub concept model. Partial swarm optimization was used to identify the charging pattern of the studied vehicles.
+The present study considered the issue of the short-term operation of an energy hub. The minimization of operating costs to satisfy various pivotal system constraints is the objective function of an energy hub ED. Therefore, the ED solution reports the amount of appropriate inputs, with the aim of minimizing the total operating costs. We also considered wind generation as an uncertain energy source in the input port. The output power of a wind source and the load are probabilistic variables, and therefore, stochastic parameters must be applied to model them. The advantage of stochastic modeling is that the probability of each scenario is considered in terms of its objective function and constraints.
+This study made the following contributions to this research area:
+The uncertainty was modeled in the input and output ports of the energy hub. The operation problem is inherently nonlinear; however, we linearized the problem. The objective function was computed by establishing the stochastic model considering different scenarios.
+The general algebraic modeling system (GAMS) was applied to simulate the energy hub ED formulation. A feasible and optimum solution was found using the LINDO solver (one of the linear solvers).
+This paper is organized as follows: The energy hub concept and its operation problem and the uncertainty model in the input and output ports are presented in Sec. II. Then, Sec. III describes the case study, assumptions, and results. Finally, the conclusions are provided in Sec. IV.
+II. FORMULATION OF THE ENERGY HUB OPERATION
+A. Energy hub modeling
+From a systematic perspective, combining and connecting different energy carriers in an energy hub concept can be modeled as a multi-input–multi-output system. Figure 1 shows the typical structure of this system (P_{i} is the i^{th} input energy and L_{j} denotes the j^{th} output load).
+Mathematically, the concept of an energy hub as shown in Fig. 1 can be described as follows:
+where P, L, and C are the input, output, and coupling matrices, respectively. The relation between the i^{th} input energy (P_{i}) and the j^{th} output load (L_{j}) is shown by C_{ij} as a coupling matrix array. It is evident that generally C is a rectangular matrix. Because the efficiency of hub elements is lower than 100% and the operating conditions are not ideal, output matrix values are always less than or equal to the input matrix values. The total outputs generated by each specific input should be less than or equal to the input being considered. These constraints can be handled by the following equations:
+In addition, each energy in the input port can be divided into several converters, leading to the creation of the dispatch matrix [1]. For example, a specified energy carrier as shown in Fig. 2 is divided into several parts.
+In the above figure, the m^{th} converter is fed by v_{i,m} as a percentage of the i^{th} energy carrier. Constraints (4) to (6) are applicable
+The relation between the input and output of the converters is represented by the efficiency matrix. The efficiency matrix is also built by the efficiency of each converter. According to the concepts outlined in the preceding points, the relation between the input and output of the specified energy hub in Fig. 3 can be written as follows:
+where η_{Trans}, ηCHPe, ηCHPth, η_{Fr}, and η_{Exe} are the transformer (TR) efficiency, combined heat and power (CHP), electrical efficiency, CHP thermal efficiency, furnace efficiency, and heat exchanger efficiency, respectively.
+Different types of storage can be installed within the input or output ports; thus, some of the production or consumption of the input and output are provided through them. Storage facilities are usually located at the energy hub outlet.
+B. Formulation of the energy hub operation problem
+The objective function of a stochastic energy hub is to minimize the expected total cost of providing several loads subject to related constraints over a full operating horizon. The formulations are defined as follows:
+In addition to the energy hub rules previously outlined, the prevailing constraints are as follows:
+Input energy balance
+Output load balance
+Charge and discharge of storage
+Input/output energy of converters
+Converter limits
+Storage limits
+where Pr_{sc} is the probability of occurrence of each scenario; π_EC is the price of an energy carrier; Pin_Tot and Pout_Tot are the total input and output of the energy hub, respectively; Pin and Pout are the input and output energy, respectively; sin and Sout are the input and output power of storage, respectively; θ^{dis} and θ^{ch} are the charging and discharging rates of storage, respectively; SE is the stored energy in energy storage; η is the component efficiency; Pin^{min} and Pin^{max} are the minimum and maximum power of the energy converter, respectively; Sin^{min} and Sin^{max} are the minimum and maximum input power of energy storage, respectively; Sout^{min} and Sout^{max} are the minimum and maximum output power of energy storage, respectively; SE^{min} and SE^{max} are the minimum and maximum stored energy in energy storage, respectively; I is the binary installation value (1 = installed; 0 = not installed); sc,i,j,m,n,t,s, and sc^{′} are the index value for different scenarios, index value for the hub's input energy carriers, index value for the hub's output energy carriers, index value for the energy converter type, index value for the number of installed elements, index value for time blocks (each time block is equal to 15 min) (Considering four time intervals per hour, a total of 96 time periods are considered), index value for the energy storage type, and the index value for the previous scenario, respectively; N_{sc},N_{i},N_{m},N_{n},N_{s}, and N_{t} are the number of scenarios, number of input energy carriers, number of energy converters, number of installed elements, number of energy storage units, and number of time blocks, respectively.
+Both storage devices and other energy hub elements supply the loads in the output port. According to the objective function, the storage devices are generally charged/discharged when the energy carrier's price is low/high, respectively. Consider a situation in that the energy carrier's price is high and the discharge rate is not sufficient to supply the loads. In this case, the outputs of the converters play a vital role in supplying the loads from the networks, no matter how much the energy carrier's price is. Also, Charge and discharge limits of storage are considered in (13). Minimum and maximum capacity of storages is seen in (16). According to (12), storage devices participate in supplying loads.
+Nonlinearity followed by the production of two continuous variables was tackled by a straightforward task. The production of v_{i,m,t} and Pin_{i,t} makes the problem nonlinear. We used Pin_{i,m,n,t} directly in (11) and (14) to address the production of v_{i,m} and Pin_{i,t}. This action made the problem linear. Due to the mathematical basis, considering the well-known mixed-integer linear programming leads to a global solution. All equations used in the proposed formulation are here written in the linear format to create the mixed-integer linear programming (MILP) structure in GAMS and find better solution in comparison to the NLP one.
+C. A wind and load model considering uncertainty
+Inputs and outputs of an energy hub have different values over time. These can be defined as deterministic (constant) or stochastic parameters. When considering the uncertainty of a problem, a stochastic process is more appropriate than a deterministic process. In this study, the output power of a wind generator (as one of the inputs) and the load were modeled as stochastic parameters.
+Different probability distribution functions (PDFs), i.e., hyperbolic, normal, and truncated normal, were used to represent the demand curve. Several PDFs, including the Weibull and normal distribution functions, were used to model the output power of a wind generator [11]. Here, normal distribution functions were selected to model the loads, and the Weibull distribution function was applied to represent the output power of a wind generator.
+The output power of a wind turbine depends on the wind speed and technical specifications. In previous studies [6,12], a linear function consisting of the following three criteria was used to show this dependency:
+where P_{wind} is the output power of the wind turbine, V is the wind speed, Vcut_{in} is the cut-in speed, V_{r} is the rated speed, Vcut_{out} is the cut-out speed, and P_{r} is the rated output power.
+III. CASE STUDY AND SIMULATION RESULTS
+A. Assumptions and case study
+In this study, the test system was based on the common sample energy hub presented by Shahmohammadi [9], in which electricity and gas networks are connected to the input port and loads (electrical and thermal) are supplied from the output port. We modified the energy carrier prices within the Iranian electricity market as shown in Fig. 4 [13]. The uncertainties of wind turbine generation and load were also included in the input and output ports, respectively. According to Iranian electricity market regulations, the cost of wind generation is paid by upstream network owners and the gas price contains three tariffs. Furthermore, the hourly output power of the wind generator in this study was obtained from historical data [14] (the rated output power of this wind generator was 5 kW). The structure for the case study of this modified energy hub is shown in Fig. 5. The Weibull distribution function, which is considered for wind production, is based on wind speed data in different time blocks. Furthermore, six scenarios in each time block are taken into account to cover different situations which can include the worst realization of wind fluctuations.
+This problem was solved in this study by adopting two different approaches. Case 1 used the deterministic approach, while case 2 used the stochastic approach. In case 1, the load and wind output power were equal to the expected value in each hour (constant). In this case, the index value for scenarios (sc) and the probability of occurrence (Pr_{sc}) were equal to one. In case 2, the load and wind output power were described as stochastic variables, with different index values and probabilities for each scenario in the time blocks. In case 2, six scenarios (sampling) for the aforementioned variables were generated in each time block by the LINDO LIBRARY (lsadclib) in GAMS. Figures 6–9 show these parameters.
+Table I presents the technical details of the energy hub elements [i.e., electrical convertor (EConv), TR, CHP, Fur, electrical storage (EStorage), and heat storage (HStorage)]. Energy (power), cost, and energy prices were assumed per unit (p.u.), and the base quantities were 1 kW, 0.01 $, and 0.01 $per 1 kW, respectively. The maximum value of the n index (number of installed elements) was assumed to be equal to seven. Therefore, this system test consists of 42 (6 × 7) elements.
+To investigate the effects of energy storage, uncertainty, and the energy hub concept on total operating costs, seven states in two cases were applied. Table II shows the different characteristics of the states. Uncertainties were considered in states 5, 6, and 7. The wind output power and load under the constant state were equal to the value in case 1, as shown in Figs. 6 and 7.
+The LINDO solver was applied to solve the aforementioned optimization problem in the GAMS software. The simulation was performed on a computer with a 5 GHz CPU and 8 GB RAM.
+It is necessary to mention that the most realistic situation in the energy hub system is the one that the demand in output and wind in input port have been modeled using distribution functions in each time block (Normal distribution for demand and Weibull distribution for wind).
+B. Simulation results
+The simulation results, including the total operating cost and total input of the energy hub, are shown in Figs. 10–16. It should be noted that states 1–4 in cases 1 and 2 have the same operating conditions.
+From the values shown in Fig. 10, state 1 in both cases has the highest total operating cost. This is why the interaction between different networks was neglected. In fact, in this state, electrical loads were supplied by an electricity input, thermal loads were provided by a gas input, and no storage was applied. This state was not considered to be an economic scheme.
+The total operating cost in state 2 in both cases decreased in comparison with state 1. This indicates that consideration of the energy hub had a positive effect on the total operating cost. The interaction between the different energy carriers in state 2 was responsible for the cost reduction. It is remarkable that in states 2–7, each load could be supplied by several convertors, which is consistent with the energy hub concept. Although the total cost in state 2 was less than that in state 1, it was not considered to be an attractive scheme.
+As seen in Fig. 10, due to the consideration of energy storage in state 3, the total cost decreased in comparison with states 1 and 2. This indicates that when more flexibility is introduced to the system, there is a greater reduction in the total cost. Based on a comparison of the results from states 1–3, state 3 was recommended as the best strategy in an energy hub system without wind generation. It is notable that in cases 1–3, wind is neglected and the demand is modeled based on the deterministic value (not based on normal pdf).
+In state 4, the total cost decreased considerably in comparison with previous states. This was confirmed by comparing the results in Fig. 10. This reduction was due to some of the electrical load being supplied by wind power. In this state, the wind output and load were constant and similar to states 1, 2, and 3. In case 1, based on the situation described in Table II, the total costs in states 4–7 were similar.
+Considering the uncertainties in states 5, 6, and 7 made the simulation results more realistic. By including the energy hub concept, storage, and uncertainty in the model (normal pdf for demand and weibull pdf for wind), state 7 was considered to be the most practical framework. Based on the inherent nature of the uncertainty values in the input and output ports, it was concluded that state 7 in case 2 was the most realistic simulation. It should be noted that the total cost in case 2 based on (10) matched the expected value.
+The total energy hub inputs for similar states between cases 1 and 2 are shown in Figs. 11 and 12, respectively. In the aforementioned situations, the parameters were in a fixed form and uncertainty was not modeled. Here, the constant value (expected value) is considered for each hour instead of six scenarios for the four time period in each hour. The values corresponding to each input are obtained based on the price and the proposed constraints.
+Figures 13 and 14 present energy hub inputs when parameters had stochastic variables and uncertainty was considered. As noted earlier, each time period has six scenarios. For clarity, these figures are depicted for only one of the six scenarios. Here, at each time interval, the input values for electricity and gas are shown separately.
+Finally, Figs. 15 and 16 show the wind output power for states 6 and 7 in case 2. In these figures, six scenarios are calculated for each time block. A total of 576 (24 h × 4 time blocks × 6 scenarios) values are shown for wind power output. As mentioned earlier, in these states, wind output was modeled as a stochastic variable addressed by a Weibull PDF and loads were presented as a normal PDF. As seen in these figures, six wind output values were expressed in each time block.
+IV. CONCLUSION
+An optimum operation (ED) problem model based on mixed-integer linear programming (MILP) for an energy hub was implemented. To consider a realistic energy hub, the uncertainty in the input and output ports was also considered and the structures were classified into two cases and seven states. Moreover, wind generation and loads were the sources of uncertainties handled by PDFs. To investigate the effectiveness of the proposed model, different scenarios were studied. The most realistic was scenario 7 in case 2, which simulated the stochastic aspects of a multi-carrier energy system. Several situations could be explained by applying different operating conditions. A reduction in total operating costs could be achieved by considering the energy hub concept, energy storage, and a stochastic approach.
+Future studies will evaluate the impact of reliability and energy security on the energy hub operation problem. Also, considering other uncertain resources such as solar in the input port of the energy hub will be addressed in our future work.
+TABLE I. 
+Technical details of energy hub elements.
+TABLE II. 
+Different characteristics of various states and cases.
+TABLE I. -body
+Hub element	MaxInputPower	MinInputPower	ElecEffa	ThEffa	MaxEnergy	MinEnergy
+EConv	5	0	0.98			
+TR	12	0.12	0.97			
+CHP	10	0.1	0.4	0.45		
+Fur	10	0.1		0.75		
+EStorage	5	0	0.95		10	0.5
+HStorage	3	0		0.9	10	0.5
+^{a} Charging and discharging rates of storage are addressed by ElecEff or ThEff.
+TABLE II. -body
+	Energy hub concept	Storage	Wind model	Load model
+St1	✗	✗	✗	Constant
+St2	✓	✗	✗	Constant
+St3	✓	✓	✗	Constant
+St4	✓	✓	Constant	Constant
+St5	✓	✓	Constant	Normal PDF
+St6	✓	✓	Weibull PDF	Constant
+St7	✓	✓	Weibull PDF	Normal PDF
+Case1	Deterministic approach
+Case2	Stochastic approach (expected value is used for constant parameters)
+FIG. 1. 
+Typical schematic of an energy hub.
+FIG. 2. 
+The division of input energy into several converters.
+FIG. 3. 
+Specified energy hub.
+FIG. 4. 
+Gas and electricity price tariffs.
+FIG. 5. 
+Structure of the case study.
+FIG. 6. 
+Expected value of the wind output power (constant state).
+FIG. 7. 
+Expected values of the electrical and thermal loads (constant state).
+FIG. 8. 
+Amount of electric load in each scenario (case 2).
+FIG. 9. 
+Amount of thermal load in each scenario (case 2).
+FIG. 10. 
+Total operating cost of an energy hub.
+FIG. 11. 
+Total electrical input in an energy hub (states 1–7 for case 1 and states 1–4 for case 2).
+FIG. 12. 
+Total gas input in an energy hub (states 1–7 for case 1 and states 1–4 for case 2).
+FIG. 13. 
+Total electrical input in an energy hub (case 2, states 5–7, scenario 4).
+FIG. 14. 
+Total gas input in an energy hub (case 2, states 5–7, scenario 4).
+FIG. 15. 
+Wind output power in each scenario (case 2, state 6).
+FIG. 16. 
+Wind output power in each scenario (case 2, state 7).

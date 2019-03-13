@@ -1,0 +1,191 @@
+Asymptotics of the evolution semigroup associated with a scalar field in the presence of a non-linear electromagnetic field
+We consider a model describing the coupling of a vector-valued and a scalar homogeneous Markovian random field over R^{4}, interpreted as expressing the interaction between a charged scalar quantum field coupled with a nonlinear quantized electromagnetic field. Expectations of functionals of the random fields are expressed by Brownian bridges. Using this, together with Feynman-Kac-Itô type formulae and estimates on the small time and large time behaviour of Brownian functionals, we prove asymptotic upper and lower bounds on the kernel of the transition semigroup for our model. The upper bound gives faster than exponential decay for large distances of the corresponding resolvent (propagator).
+I. INTRODUCTION
+The problem of the mathematical construction of models of interacting relativistic quantum fields in 4 space-time dimensions is known to meet considerable difficulties. This is in particular the case for models involving the electromagnetic fields interacting with charged relativistic particles associated with Dirac or scalar fields. However several types of models have been discussed which possess at least part of the properties required for full relativistic quantum field models. Let us mention in particular important work concerned with an electromagnetic relativistic quantum field interacting with non-relativistic quantum particles, going back to  [Nelson (1964)], see also  [Fröhlich (1973)], and for recent work see, e.g.,  [Dybalski and Pizzo (2014)],  [Gubinelli et_al (2014)],  [Gubinelli et_al (2012)], and  [Bach et_al (1998)]. Related models with particles with relativistic kinematics but no vacuum polarization have been discussed in  [Eckmann (1970)], Albeverio ( [1973];  [1972]),  [Gross (1973)], and  [Hidaka and Hiroshima (2016)].
+In another direction, let us mention models where full relativistic invariance is preserved. This was initiated in the following studies: Albeverio and Høegh-Krohn ( [1986];  [1988]),  [Albeverio et_al (1989b)],  [Albeverio et_al (1990)],  [Albeverio et_al (1993)],  [Albeverio and Gottschalk (2001)], and Albeverio et_al ( [2002];  [1997]), where Euclidean quantized (generalized) random fields over R^{4} were constructed which can be interpreted as (quantized) electromagnetic fields with non-linear interaction, for short “non-linear electromagnetic fields.” These fields are obtained by solving a system of coupled stochastic partial differential equations. It has been shown in  [Iwata (1992)] and  [Albeverio et_al (1992)] that they have the sharp global Markov property. In  [Albeverio et_al (1991)], the time ordered moment functions corresponding to such fields have been constructed and shown to satisfy all Euclidean and relativistic Morchio-Strocchi axioms (in the relativistic case they are a substitute of Wightman axioms for quantized gauge fields). A special case of these fields is given by the free electromagnetic relativistic field. In this sense, the above non-linear electromagnetic fields can be looked upon as a substitute of the “usual quantized relativistic electromagnetic fields,” an attitude we shall carry through in the present paper.
+Let us also remark that a similar kind of non-linear fields have also been discussed on R^{d} and with different behaviour under the corresponding relativistic transformations (e.g., scalar fields and massive vector fields) in many publications; see, e.g.,  [Albeverio and Gottschalk (2001)],  [Albeverio et_al (1997)],  [Becker et_al (1998)], and  [Grothaus and Streit (1999)].
+Coming back to the non-linear electromagnetic fields, let us add that holonomy operators (“Wilson loops”) associated with such fields have also been discussed and shown to exist rigorously, without any renormalization, the field being regular enough (i.e., having only a “mild ultraviolet behavour”)  [Tamura (1991)]. The expectation of the Euclidean Wilson loops have been used to define a “static potential,” which has been shown to be unbounded.
+Looking at the latter as the potential energy for two unit test charges of opposite sign put in the field, this has been interpreted as a property of “confinement of static charges” in such models [ [Tamura (1991)]].
+The work in  [Tamura (1991)] has been continued in  [Nakane (1996)], where a meaning to (∂ − iA)^{2} has been given as a self-adjoint gauge covariant operator in L^{2}(R^{d}) with almost sure constant spectrum, where A is the non-linear electromagnetic field of above models [in particular, Albeverio and Høegh-Krohn ( [1986];  [1988]),  [Tamura (1991)], and  [Albeverio and Tamura (1992)]] and ∂ is the gradient operator.
+In the present paper, we consider models describing such non-linear electromagnetic fields interacting with a charged scalar field. For simplicity, we shall restrict ourselves to the case of fields over R^{4}. Also the case of corresponding models over R^{d} for general d can be treated by similar methods.
+In a presentation of the models via heuristic Euclidean path integrals, we would have to study, in particular, expectations of the form D̃(x,y)=“Z^{−1}∫_{R^{n}}φ^{*}(x)φ(y)λ(dφ,dA)”, with x,y∈R^{4}, λ(dφ, dA) a heuristic measure of the form λ(dφ, dA) = ρ(dφ)μ(dA), ρ(dφ)≔“Zρ−1⁡exp−12∫_{R^{4}}((∂−iA)φ^{*})(∂−iA)φ dx−m^{2}∫_{R^{4}}φ^{*}φ dxdφ.”
+Z and Z_{ρ} are normalizations, φ is the complex-free Euclidean scalar field of “bare mass” m ≥ 0, over R^{4}, with probability distribution ρ. φ* is the conjugate of φ, A is the Euclidean non-linear electromagnetic potential field (over R^{4} with values in R^{4}) and with probability distribution μ.
+In the case where A is the Euclidean-free electromagnetic potential field μ is heuristically given by dμ(A)=“Zμ−1e^{−12∫R4FA2 dx} dA,” where F_{A} is the curvature field associated with A and Z_{μ} is a normalization.
+The distribution μ of our Euclidean non-linear electromagnetic field will be made precise in Sec. II.
+D̃(x,y) expresses the correlation between the values of the field φ at x and y and will be called “full propagator.”
+Heuristic integration with respect to ρ(dφ) yields an expression of the form
+K_{A,m} is the heuristic determinant of −(∂−iA)2+m2{12}.
+The term
+is random, A being random, with distribution μ.
+It has been proven (for μ being in particular as in our Sec. II) in  [Albeverio and Tamura (1992)] and in  [Nakane (1996)] that D(x, y; A) is well defined as an element of L^{p}(S′, μ), S^{′}=S^{′}(R^{4},R^{4}) being Schwartz space of R^{4}-valued tempered distributions. In  [Nakane (1996)], it has been additionally proved that (∂ − iA)^{2} is well defined as a self-adjoint operator in L^{2}(R^{d})μ-a.s. and is the generator of a strongly continuous symmetric semigroup T_{t}(A)=e^{t(∂−iA)2}, t ≥ 0, with random kernel T_{t}(x, y; A), in L^{2}(R^{d}), for μ-a.e. A. Moreover (∂ − iA)^{2} is a gauge covariant [in a sense made precise in  [Nakane (1996)]].
+In the present paper, we give a probabilistic derivation of such results. The rigorous study of D̃(x,y) as given in (1) would also be very interesting. As a first step in this direction in this paper, we will discuss the related quantity D(x, y) which results from D̃(x,y) by replacing the determinant K_{A,m} in (1) by the constant 1, i.e.,
+where D(x, y; A) is given by (2).
+In the literature on gauge fields [see, e.g.,  [Rothe (1992)] and  [Roepstorff (1996)]], the procedure of replacing determinants like K_{Am} by 1 is well known under the name “quenched approximation.”
+In a heuristic perturbative expansion (in powers of the interaction), it corresponds to omitting all terms which contain at least one internal scalar loop (i.e., a loop coming from the scalar field).
+One can arrive at the quenched approximation also by dropping in K_{A,m} (and only there) the dependence on A (observing that K_{A,m} also occurs in the normalization constant Z).
+Equivalently, one can reach heuristically the same effect by taking the limit for m → +∞ in K_{A,m} and, in the other places where it appears, in the integrand in (1) μ and in Z. This is the heuristic argument usually used for arguing that at least for large values of m the “quenched approximation” (3) might be considered as a good approximation for the propagation (1).
+In this paper, we shall construct rigorously (2) and D as given by (3) called here the “quenched propagator” or simply “the propagator” and study its properties. In particular, we shall get for its asymptotic upper and lower bounds for large values of x−y. For m = 0, we are also able to show (Theorem 2) that D(x, y) decays to 0 as x−y→∞ with a speed which is faster than exponential. This can be interpreted as expressing the fact that in the present model the physical mass of a single particle created by the interaction would be infinite. This gives an intuitive understanding of confinement in the present model: matter cannot appear in the form of individual particles since the mass of a single particle would be infinite [for the physical notion of confinement, see, e.g.,  [Wilson (1974)]].
+The method of the paper is to express expectations of random fields over R^{4} by expectations with respect to Brownian motion, using the representation of the propagator in terms of the Feynman-Kac-Itô formula and some probabilistic estimates. For previous related work in the case where R^{4} is replaced to R^{2}, see Albeverio et_al ( [1989a];  [1989b]). For a result in this case in the spirit of the present paper but where the distribution of A is the one of the usual electromagnetic Euclidean quantum field, see  [Albeverio and Kusuoka (1995)]. For other spectral results for random Schrödinger operators, see, e.g.,  [Carmona and Lacroix (1990)] and  [Ueki (1994)].
+The structure of the present paper is as follows. In Sec. II, after introducing the model, we first construct the propagator as the kernel of the resolvent of the Laplacian with the vector potential of the model as the limit of a sequence of kernels associated with the resolvent for regularized vector potentials. Then we construct the associated semigroups, their kernels, and their limit [identifying the limit with the semigroup discussed before in  [Nakane (1996)]; in  [Nakane (1996)] its generator is constructed for almost every vector potential]. In Sec. III, we derive two estimates, from above and from below, on the kernel of the semigroup. As corollaries to the results of Secs. II and III, we provide corresponding estimates for the propagators given, respectively, by (2) and (3) and deduce the above claimed asymptotic behaviour of the propagator D for large distances x−y. In Sec. IV (Remark 3), the physical meaning of the results and the relation to a mass renormalization procedure are discussed.
+II. CONSTRUCTION OF THE MODEL AND THE ASSOCIATED SEMIGROUP
+We first give an outline of the theory of quantized nonlinear electromagnetic fields and then specify the class of models we deal with in this paper.
+Let μ be the Borel probability measure on S^{′}(R^{4};R^{4}), the dual of the Schwartz space of the R^{4} valued rapidly decreasing C^{∞} functions on R^{4}, characterized by
+in the sense of Minlos’ theorem [see, e.g.,  [Gel’fand and Vilenkin (1964)] and  [Hida et_al (1993)]]. Here f∈S(R^{4}) and Sf is defined by
+with
+for σ = 0, 1, 2, 3 and i, j = 1, 2, 3. The function ψ in (4) is a negative definite function on R^{4}, represented by a Lévy Khinchine formula
+where ν(dα) is a (positive) measure on R^{4}∖{0} α=(α_{0},α)∈R^{4}\{0}, which is invariant under α_{0}→−α_{0},α→Rα for R ∈ SO(3) and satisfies
+with constants c_{0},c≥0,λ=(λ_{0},λ)∈R×R^{3}. Note that by these conditions, ψ is a non-negative real valued function. Further ψ is assumed to satisfy the inequality
+for |λ| ≤ 1 with some positive constants c′ and ε.
+In this paper, we deal with the class of models of the nonlinear electromagnetic field which satisfy the following additional conditions:
+The function ψ is bounded and λ_{0}-independent, in particular,
+in the representation (6). (γ^{′} some (positive) measure on R^{3}\{0})
+There exist constants c_{1} ≥ c_{2} > 0 and η ∈ (4/3, 3/2) such that
+for|λ|<1.
+These conditions are slightly stronger compared to those in  [Tamura (1991)], where η is allowed to be equal to 3/2, ψ may grow as |λ|^{ζ} for large |λ| with ζ < 1, and ψ may depend on λ_{0}. Under these weaker conditions, an associated static potential has been defined and shown to be unbounded [ [Tamura (1991)]]. The stronger condition on η and the boundedness of the function ψ assumed in the present paper are just for technical reasons. A being a gauge covariant field [ [Nakane (1996)]], one can fix a gauge condition. The dependence of ψ on λ_{0} can be used to fix the gauge condition for our model. We have chosen the most simple λ_{0}-dependence.
+We give here two examples of ψ which satisfy the above conditions, i.e., the function
+and, respectively, the function ψ defined by Eqs. (6) and (9) with the corresponding measure
+where dα is the Lebesgue measure on R^{3} and θ is the Heaviside function. The proof of the fact that these functions satisfy all the above conditions (6)–(10) is similar to the proof of Proposition 2.2 in  [Tamura (1991)], so we skip it here. Hereafter we consider an arbitrary ψ satisfying the conditions (6)–(10).
+Now suppose that a charged scalar field is coupled to the above nonlinear electromagnetic field A. As mentioned in Sec. I, formula (3) and (2), the (quenched) propagator of the scalar field coupled to the non-linear electromagnetic field is represented heuristically by
+where the integrand on the right-hand side is the resolvent kernel at m^{2} of the formal operator (∂−iA){2}=∑ν=03(∂ν−iAν){2} on D(R^{4})=C◦∞(R^{4})⊂L^{2}(R^{4}). m ≥ 0 is a parameter (representing the “bare mass” of the scalar field; see Sec. I). The word “heuristically” reflects the fact that we have not given a definition of the operator (∂ − iA)^{2}, and hence of the quantity (2) for every A in the support of the measure μ on S^{′}(R^{4};R^{4}). Instead, we will give a direct definition of the integrand in Eq. (11) as an element of L^{p}(S^{′}(R^{4};R^{4}),μ)=L^{p}(μ) for p ∈ [1, ∞) [this is an often used procedure in relativistic quantum field theory; see, e.g.,  [Glimm and Jaffe (1987)]].
+Let I:R→[0,1] be a C^{∞} function such that
+and set
+Then for any ϵ > 0, the function
+satisfies
+and hence
+where x=(x_{0},x_{1},x_{2},x_{3}),||⋅||_{L^{1}} is the norm of L^{1}(R,dx) with Lebesgue measure dx. The function
+satisfies
+and
+For each A∈S^{′}(R^{4};R^{4}), we define the (ϵ, L)-regularized field A^{ϵ,L} by
+Obviously A^{ϵ,L}∈C◦∞(R^{4};R^{4}) and
+For the regularized field A^{ϵ,L}, the integrand on the right-hand side of Eq. (11) is well defined.
+Using methods presented, e.g., in  [Simon (1979)], we get the following representation:
+where E0,xt,y denotes the expectation with respect to the four dimensional (0, x; t, y)-pinned Brownian motion C([0,t];R^{4}),B(C([0,t];R^{4})),{b(s)}{s∈[0,t]},(Fsb){s∈[0,t]},P0,xt,y.
+If we define T_{t}(x,y;A^{ε,L})≔e^{t2(∂−iAε,L)2}(x,y), t ≥ 0, then T_{t}(x, y; A^{ε,L}) is the random semigroup kernel generated by −12(∂−iAε,L){2} [see also  [Nakane (1996)]] and we have the relations
+Using this representation, we can prove the following theorem.
+Theorem 1. Let {ϵ_{n}} be a sequence of positive numbers and {L_{n}} be a sequence of positive integers, such that ϵ_{n}↓ 0, L_{n}↑ ∞. Then {D(x,y;A^{ϵn,Ln})}and{T_{t}(x,y;A^{εn,Ln})}are Cauchy sequences inL^{p}(S^{′}(R^{4};R^{4}),dμ)for everyx≠y∈R^{4},and every p ∈ [1, ∞).The proof is given below, after Lemmas 1 and 3. We first describe some consequences of Theorem 1. The first one is that there exists a unique functional
+which is the limit of {D(x,y;A^{ϵn,Ln})} in every L^{p}(μ), p ∈ [1, ∞) because the inclusion L^{q}(μ) ⊂ L^{p}(μ) for 1 ≤ p ≤ q holds. Now we can define the propagator (of the scalar field coupled to the nonlinear electromagnetic field in the quenched approximation) by
+with S^{′}≡S^{′}(R^{4};R^{4}) [this is a rigorous version of (3)].Another consequence of Theorem 1 is that there exists a unique functional
+which is the limit of {T_{t}(x,y;A^{εn,Ln})} in every L^{p}(S^{′}(R^{4};R^{4}),μ), for every x≠y∈R^{4},t>0, and p∈[1,∞).In the proof of Theorem 1, we will use the following two lemmas concerning the pinned Brownian motion.
+Lemma 1. For anyf∈D(R^{4}×R^{4}),we can take a suitable version of the (Itô) stochastic integral∫0tf(b(s),z)db_{ν}(s)for eachz∈R^{4},such that
+and
+hold for everyφ∈D^{′}(R^{4}), ν = 0, 1, 2, 3. The equality
+also holds for anyg∈D(R^{4}×R^{4}),andφ∈D^{′}(R^{4}).
+Proof. Suppose that supp f ⊂ K × K, where K is a compact set in R^{4}. Let b^{(n)} be the simple process defined from a pinned Brownian motion b by
+and let Xν(n) be the stochastic integral
+Obviously, we have
+So Xν(n) is an element of D^{′}(R^{4}),for n∈N,ν=0,1,2,3. Let α=(α_{0},α_{1},α_{2},α_{3})∈Z+4 be a multi-index of non-negative integer components, then
+Let us recall the following facts on the pinned Brownian motion [see, e.g.,  [Simon et_al (1979)]]; for 0 < ′s ≤ t − s,
+is independent of Fsb, mean 0, and variance  ’s−’s^{2}t−s≤’s; Using this fact and the inequalities,
+and
+we have that the right-hand side of (16) is bounded by
+where const. depends only on t and |x − y|. Thus we get
+where const. depends only on t, |x − y|, and l.Using the Borel-Cantelli lemma, we deduce from this that {Xν(n)(b,⋅)} is a Cauchy sequence and hence convergent in D_{K}(R^{4}) [all functions in D(R^{4}) with support in K] for P0,xt,y−a.e.b. Let X̃{ν}(b,⋅) be the element 0 of D_{K}(R^{4}) for b in a set N⊂C([0,t];R^{4}) of measure zero, on whose complement the sequence X̃ν(n)(b,⋅) converges, and X̃{ν}(b,⋅) be the value to which Xν(n)(b,⋅) converges for b ∈ N^{c}. In particular, for every z∈R^{4}, we have
+i.e., X̃{ν}(b,z) is a version of the stochastic integral
+The equality (a.e., of the limit with the latter integral) is derived as follows:
+where the first equality is a consequence of Xν(n)(b,⋅)→X̃{ν}(b,⋅) in D(R^{4}), a.e.b, for the third equality, we note that the stochastic integral is well defined because ⟨f(x, ⋅), φ⟩ is a Co∞ function of x∈R^{4}.The second part is easily verified by means of approximating Riemann sums.In Lemma 2, we recall a relation between the measures of a given set with respect to the standard Brownian motion and pinned Brownian motion. For its proof, we refer to  [Nakao (1977)].
+Lemma 2. LetC([0,t];R^{4}),B(C([0,t];R^{4})),{b(s)}{s∈[0,t]},(Fsb){s∈[0,t]},P0,xt,ybe the four dimensional (0, x; t, y)-pinned Brownian motion andC([0,t];R^{4}),B(C([0,t];R^{4})),{b(s)}{s∈[0,t]},(Fsb){s∈[0,t]},Pbe the four dimensional standard Brownian motion of the interval [0, t], then
+for Λ∈Fub,0≤u<t.Lemma 2 will be used to prove the following
+Lemma 3. 
+Here Vol. K means the Lebesgue measure of the setK⊂R^{4}.
+Proof. We first deal with the case of the standard Brownian motion. Define the stopping time τ_{ϵ} by
+for a∈R^{4}\{0} and 0 < ϵ < |a|. Let X(s) be the process
+Note that the function
+satisfies the equation
+at (s,z)∈(−∞,t+12λ)×(R^{4}\{0}) for λ > 0. The process f(s ∧ τ_{ϵ}, X(s)) is a martingale because
+Since the function f(s, z) is monotone decreasing with respect to s and |z|, Doob’s first martingale inequality gives
+Set λ = (|a| − ϵ)/2tϵ, then we get
+Now, let us consider the case of the pinned Brownian motion. We recall that b̃(s,ω)≡b(t−s,ω) is a (0, y; t, x)-pinned Brownian motion for the (0, x; t, y)-pinned Brownian motion b. Then Lemma 2 with the estimate (20) leads to
+where χ_{K} denotes the indicator function of the set K.
+Proof of Theorem 1. Let us check first the B(S^{′}(R^{4};R^{4}))-measurability of D(x, y; A^{ϵ,L}) and T_{t}(x, y; A^{ε,L}). Because every stochastic integral is a.e. limit of integrals of approximating simple processes, we get
+from (12) and the Lebesgue convergence theorem. Using the explicit representation of the stochastic expectation
+we conclude that D(x, y: A^{ϵ,L}) is the limit of continuous functions of A∈S^{′}(R^{4};R^{4}). Hence it is measurable. The same argument applied to the integrand in the above integration over dt yields the measurability of T_{t}(x,y;A^{εn,Ln}) [we are using (13)].We are now going to prove that {D(x,y;A^{εn,Ln})} and {T_{t}(x,y;A^{εn,Ln})} are Cauchy sequences.We carry out the proof in details for {D(x,y;A^{εn,Ln})}, but it also contains the one for {T_{t}(x,y;A^{εn,Ln})}, due to the relation (13) between them. In order to prove that D(x,y;A^{ϵnLn}) is a Cauchy sequence in L^{p}(S^{′}(R^{4};R^{4})) for every p ∈ [1, ∞), it is enough to consider the case p = 2 because D(x,y;A^{ϵn,Ln}) is uniformly bounded,
+Using (12) and Fubini’s theorem, we obtain, for any n,m∈N,
+Using Lemma 1 for φ=A_{ν},f(u,z)=f_{n,m}(u,z)≡w_{Ln}(u)ρ_{ϵn}(u−z)−w_{Lm}(u)ρ_{ϵm}(u−z),g(u,z)=g_{n,m;ν}(u,z)≡∂∂u_{ν}f_{n,m}(u,z), we obtain
+where (4) has been used.Using Lemma 1 again for φ=S_{jν}(z−⋅),f=f_{n,m},g=g_{n,m;ν}(obviouslyS_{jν}∈Lloc1(R^{4})⊂D^{′}(R^{4})), and Jensen’s inequality, we obtain
+So in order to prove F_{n,m} → 0, as n, m → ∞, we shall show in the following that
+Put
+then by Lemma 3 and the boundedness of ψ, the first term on the right-hand side of the expression
+tends to 0 as ϵ → 0. We show in the following that the second term of G_{n,m} tends to 0 as n, m → ∞ for arbitrary but fixed ϵ > 0. We may assume that n and m are so large that ϵ_{n}, ϵ_{m} < ϵ/2 holds. Because suppρ_{ϵn}, suppρ_{ϵm}⊂z|z|≤ϵ/2, and infs∈[0,t]|b(s)−z|≥ϵ on V(b, ϵ )^{c}, we can replace S_{μν} by
+in the second term. By this replacement followed by the use of (10) and the inequalities
+for real a_{jν}’s, which are consequences of Cauchy-Schwarz’s and Jensen’s inequalities, and the inequality ∑_{n}a_{n}{η/2}≤∑_{n}anη/2 for a_{n} > 0 (recall that 0 < η/2 < 1), we get the following bound for the second term Gn,m(2) in (22):
+where the functions Sf and Sg are defined by
+Now, we regard the (0, x; t, y)-pinned Brownian motion as an F_{s}-adapted continuous process obtained by solving
+where (W(s),F_{s}) is a four-dimensional standard Brownian motion. Substituting this equation into the above estimate, we have
+where E denotes the expectation with respect to the standard Brownian motion W.Minkowski’s inequality and the basic equality for the stochastic integral of the F_{s}-adapted bounded process X(s),
+have been used.Since Sμνϵ is C^{∞}, it follows from (23) and the definition of f_{n,m} and g_{n,m;ν} that
+pointwise as n, m → ∞. Note that
+and
+where
+with a constant C_{ϵ} independent of n and m. If we show that
+then we have by the Lebesgue convergence theorem that G_{n,m} converges to 0 as n, m → ∞, which completes the proof.For (28), we argue as follows:
+The probability in the third member can be estimated as in the proof of Lemma 3 using Lemma 2, i.e.,
+So, we get (28). Similarly we obtain
+Thus, we have (27) because
+Remark 1. We shall see below in Sec. IV that if we define D(x, y; A) correspondingly as in  [Nakane (1996)], we have D(x, y; ⋅) ≠ 0 as an element of L^{p}(μ), for all 1 ≤ p < ∞.Indeed, from Theorem 1, Fubini’s theorem, and Jensen’s inequality, we obtain that
+is larger or equal to
+As in the proof of Theorem 1, we observe that the integral in the exponent is uniformly bounded.
+III. ESTIMATES FOR THE BASIC SEMIGROUP T_{t}(x, y; A) OF RANDOM KERNELS
+The purpose of this section is to yield two estimates for the semigroup of random kernels T_{t}(x, y; A), given by t > 0. These estimates are an upper bound for large x−y and a lower bound for large x−y and t > 0. We shall use the following notations. We denote the (0, x; t, y)-pinned four dimensional Brownian motion by {b(s)}_{s∈[0,t]}. The four-dimensional Brownian bridge {B(s)}_{s∈[0,t]} is related to {b(s)}_{s∈[0,t]} by
+where ζ:[0,t]∋s→(t−s)x/t+sy/t∈R^{4}. The stochastic differential equation
+yields {B(s)}_{s∈[0,t]} in terms of the four-dimensional standard Brownian motion {W(s)}_{s∈[0,t]} as in (24). P and E denote the probability and expectation with respect to the standard Brownian motion W, respectively. P0,xt,y and E0,xt,y denote the probability and the expectation with respect to the (0, x; t, y)-pinned Brownian motion b, respectively, and so on.
+We begin with the following two lemmas.
+Lemma 4. Let H_{jν}(z, u, s), j = 1, 2, 3, ν = 0, 1, 2, 3, be real measurable functions on R^{4}×R^{4}×[0,t] and K(z) be a non-negative measureable function on R^{4}, Λ be a measurable subset of R^{4}, and L be a positive constant satisfying L>R≡x−y. Suppose K satisfies K(z)≥sup_{u,s,j,ν}H_{j,ν}(z,u,s) for every z ∈ Λ and ∫_{Λ}K^{η}dz < +∞, then there exist numerical constants C_{1}, C_{2} > 0 such that
+holds.
+Proof. By the assumptions on H_{jν}, K, and Eq. (30), we have that the left-hand side of (32) is less or equal to
+where we use Chebyshev’s inequality in the last step. The following bound shows that the expectation of the last member is less than
+Lemma 5. With the notations and the assumptions of Lemma 4, there exist numerical constants C_{3}, C_{4} > 0 such that
+holds if L^{2} ≥ 4νt, t > 0.
+Proof. First of all, we note that the inequality
+holds for x ≥ 0 and B ≥ η ∈ (4/3, 3/2). In fact, (e^{±s} − 1)/s are increasing functions of s > 0 for both signs. So,
+since e^{x−1} ≥ x, for all x ≥ 0.Using (36), we obtain
+We remark that
+is an F_{t}-martingale because H_{jν} is F_{t}-adapted and is a bounded process for each z ∈ Λ. Using Chebyshev’s inequality and Fubini’s theorem in addition to the martingale property, we obtain
+Setting B = L^{2}/4t(≥η), we then get the lemma.Now let us state the upper bound on T_{t}(x, y; A).
+Theorem 2. There exist constants β > 2 and γ > 1 and positive constants c1′,c2′,c3′ depending only on the function ψ via η such that
+holds for large enough x−y.
+Proof. We have from Theorem 1, Lemma 1, and Fubini’s theorem
+The first inequality of Theorem 2 is easily seen from this.To prove the second inequality, let us introduce the following functions R_{i}, i = 1, 2, of R ≡ |x − y|:
+where κ∈(1,(η−1)/(3η−4)). We have 1 < (η − 1)/(3η − 4) since η ∈ (4/3, 3/2). Our basic strategy for the proof of the second inequality is to show that the pinned Brownian motion can be replaced by the straight-line motion from x to y for z≥R_{2} if R is large enough in (39). We begin with the obvious bound
+In the above bound, we can replace, in ψ, w_{Ln} by 1, for n large enough [ψ is as in (8)]. We have from (5)
+So, the argument of ψ in (41) is now
+where fjνϵ(z,u)≔∑_{α}∫01dku_{α}∂_{α}(ρ_{ϵ}*S_{jν})(z−ku).Applying (4) and (24), we decompose the second term of (41), and we get
+where δ > 0 is a constant. On the fourth term, we have used the inequality ψ(a+b)≥c_{2}(2^{1−η}a^{η}−b^{η}), which holds for a small enough and for some constant c_{2} > 0. This inequality is derived from (10) and |a+b|^{η}≥2^{1−η}a^{η}−b^{η}.Let us estimate each term on the right-hand side of (42).It follows from (26) that the first term is estimated as
+with numerical constants, C_{5}, C_{6} > 0.For the second term, we apply Lemma 4 to the case
+If we set the numerical constant C > 0 large enough, then H_{jν}≤K(z) holds for all z ∈ Λ. We have
+with constants C1′,C2′>0 depending only on η and δ.In order to get a bound on the third term in (42), we use Lemma 5. Let H_{jν} and Λ be as in (44) and (45). Now replace K and L in (45) by
+where C is the same constant as in (44). Then for any δ, there exists constants C3′,C4′>0 depending only on δ such that
+holds for R large enough.We get the following estimate for the fourth term in (42).
+Lemma 6. For sufficiently small δ > 0, there exists a constantC7′>0independent of n such that
+holds.
+Proof of Lemma 6. From a straight forward calculation using (5), we get
+where θ is the angle between the two vectors x − y and z in R^{4}. So, there exist constants C, C′ independent of 0 < ϵ_{n} < 1, η, and δ such that
+On the other hand,
+If we take δ > 0 small enough such that C7′=C^{′}−2^{η}(2π^{2}+3η−4)δ>0, then we see that the lemma holds. Now from (42), the estimates (43), (46), and (47), and Lemma 6, we get, setting δ > 0 sufficiently small, that
+Thus we get Theorem 2 with β = 2κ, γ = η − κ^{2}(3η − 4). Note that β > 2, γ > 1, by (38).A lower bound for ∫T(x, y; A)μ(dA) is given by the following:
+Theorem 3. For any ϵ > 0, there exist positive constants c4′,c5′ depending only on ϵ and ψ in (8) such that the inequality
+holds for large enough x−y and t≥x−y{2}.
+Proof. Performing an integration by parts in the stochastic integration with respect to the Brownian bridge, we have
+where we have used the representation (30) and (19). Note that there is a constant c″ > 0 such that
+for any λ∈R^{3}, by the assumptions on ψ in Sec. I. Then, we get
+Here, we put Λ={z∈R^{4}|dz,ξ([0,t])≡mins∈[0,t]z−ξ(s)≥R_{2}}. We restrict the integration with respect to the Brownian bridge to the set {maxs∈[0,t]B(s)≤R_{1}}.Contrary to the proof of Theorem 1, we consider the situation R ≫ R_{2} ≫ R_{1}. On this set, the inequalities
+hold for z ∈ Λ, with a numerical constant C > 0, when ϵ_{n} is small enough. So, we have
+Now, using the representation of the Brownian bridge in terms of the standard Brownian motion B(s) = sW(t)/t − W(s) [notice the difference with (30)], we get
+where in the last equality we have used the reflection principle for the one dimensional standard Brownian motion. Applying Lemmas 4 and 5 to
+we get
+where c̃ is a constant depending only on ψ. Thus we get a lower bound uniform in ϵ_{n}.Set R_{1} = t^{−(2+ϵ)/4} and R_{2} = R^{1/3}, then the conditions L ≥ R, L^{2} ≥ 4ηt require
+So the condition t ≥ R^{2} with large enough R is sufficient for (54) and for the domination of the first term by the other terms in the lower bound (53).
+Remark 2. In the formulation of  [Nakane (1996)], the operator Λ_{A}≔∑_{μ}(∂μ−iAμ){2} is defined as the generator of the strongly continuous symmetric semigroup whose kernel is T_{t}(x, y; A) for μ − a.e.A (and m = 0). By a result of ergodic theory, it is shown in  [Nakane (1996)] that the spectrum of Λ_{A} is the same set for μ − a.e.A. In this respect, our Theorem 3 suggests that the spectrum of the negative operator Λ_{A} contains zero for μ − a.e.A.
+IV. ESTIMATES ON THE PROPAGATOR
+It follows from (12), Fubini’s theorem, and Hölder’s inequality that
+holds for every x≠y∈R^{4}, t > 0, and p ∈ [1, +∞). The right-hand side of the above inequality tends to zero as n, m → ∞, because of the bound
+which is an immediate consequence of (14), and the fact that Theorem 1 permits the application of Lebesgue’s convergence theorem. Thus, Dx,y;A^{ϵn,Ln}{n} is a Cauchy sequence in L^{p}(S^{′}(R^{4};R^{4}),μ) for every p ∈ [0, +∞). Hence (as anticipated after Theorem 1) there exists a unique functional
+such that Dx,y;A^{ϵn,Ln} tends to D(x, y; A) for every p ∈ [1, +∞), as in the case of T_{t}(x, y; A). Thanks to the convergence theorem for Bochner integrals and (12), the limits of kernels of the semigroup and the resolvent are related by the formula
+Thus, we have from (3) and (55) the representation
+for the propagator of a scalar field of mass m affected by the nonlinear electromagnetic field in the quenched approximation (in the sense of Sec. I).
+Remark 3. As an element of L^{p}(S^{′}(R^{4},R^{4}),μ), for any 1 ≤ p < +∞, one has D(x, y; ⋅) ≠ 0.Indeed, from Theorem 1, Fubini’s theorem, and Jensen’s inequality, we obtain
+From Theorem 2, inserting the relation (56) between D and T_{t}, we get the following upper bound for the propagator D [heuristically given by (3)]:
+Here, K_{1}(z) is the modified Bessel’s function of order 1, whose asymptotic form is
+Note that β/2 > 1, γ > 1 (as reminded at the end of the proof of Theorem 2). In the case where m ≠ 0, the second term dominates the first term for large enough x−y. Thus we get
+where d_{1}, d_{2} are positive constants depending on η and m.Define the “physical mass” m̃ of the scalar particle affected by the field A in the quenched approximation by
+We get in our case m̃=+∞. This can be interpreted as a feature of confinement, i.e., the scalar field coupled to the confining nonlinear electromagnetic field does not manifest itself in the form of individual particles because the mass m̃ of such a single particle would in fact be finite.For the case m = 0, the first term of (58) is dominant; hence
+This bound, however, gives no restriction on the corresponding m̃, obtained from (60) for m = 0. From the analysis of the present paper, we are therefore not able to conclude whether the above feature of confinement holds or not in the case where the scalar field φ of our model has the original mass m (“bare mass”) equal to zero.Finally, let us discuss the “mass renormalization” of m̃. One might consider that the infinity of the physical mass m̃ would appear because we have not performed any mass renormalization procedures. If it is the case that m̃=0 when m = 0, renormalisation and a suitable “fine tuning” of m could yield a finite m̃ also for m > 0. However, the usual mass renormalization procedure in terms of mass counter terms δm^{2} yields a factor of the form e^{tδm2} in front of ∫_{S^{′}}T_{t}(x,y;A) dμ(A).One the other hand, Theorem 3 implies that ∫_{S^{′}}T_{t}(x,y;A) dμ(A) does not fall off exponentially with a linear dependence on t in the exponent, as t → +∞. Thus the origin of the infinity of m̃ cannot come from a factor of the form e^{−tδm2}. So, we might conclude that the infinity of m̃ comes from a dynamical reason like a “confinement mechanism,” not from an improper renormalization procedure.It would also be interesting to investigate the corresponding model with a Fermi field instead of a scalar matter field and to show that the effective mass of the system of two particles of opposite charges would be finite although the mass of a single particle would still be infinite. Future work in this direction is planned.

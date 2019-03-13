@@ -1,0 +1,221 @@
+Approximate isotropic cloak for the Maxwell equations
+We construct a regular isotropic approximate cloak for the Maxwell system of equations. The method of transformation optics has enabled the design of electromagnetic parameters that cloak a region from external observation. However, these constructions are singular and anisotropic, making practical implementation difficult. Thus, regular approximations to these cloaks have been constructed that cloak a given region to any desired degree of accuracy. In this paper, we show how to construct isotropic approximations to these regularized cloaks using homogenization techniques so that one obtains cloaking of arbitrary accuracy with regular and isotropic parameters.
+I. INTRODUCTION
+A region of space is said to be cloaked if its contents are indistinguishable from empty space by external measurements. The idea of invisibility cloaks has fascinated human beings throughout history, and in recent years there has been a wave of serious theoretical proposals for such a cloak that have gained considerable interest in mathematics and the broader scientific community [19]. The particular approach to cloaking that has received the most attention is that of transformation optics, the use of transformation rules for the material properties of optics under changes of coordinates: the index of refraction n(x) for scalar optics, governed by the Helmholtz equation, and the electric permittivity ε(x) and magnetic permeability μ(x) for vector optics, as described by Maxwell’s equations. The transformation optics approach to cloaking for the conductivity equation was first introduced by Greenleaf, Lassas, and Uhlmann [21,22] in 2003, in the context of providing counter-examples to the Calderón problem in dimensions N ≥ 3. Three years later, using the same singular change of coordinates, Pendry, Schurig, and Smith [45] gave a prescription for values of ε(x) and μ(x) giving a cloaking device for electromagnetic waves. Also in 2006, Leonhardt [30] gave a description, based on conformal mapping, of inhomogeneous indices of refraction n(x) in two dimensions that would make light rays go around a region and emerge on the other side as if it had passed through empty space.
+The method of transformation optics is based on the invariance properties of governing equations under changes of coordinates. One first selects a region Ω in space. For a fixed point p ∈ Ω and a bounded open subset D ⋐ Ω containing p, let F be a diffeomorphism from Ω\{p} to Ω\D¯. The material parameters in Ω\D¯ are defined by pushing-forward the material parameters of homogeneous space by the singular transformation F. Now using the transformation properties of the governing equation and a removable singularity theorem, it is shown that no matter what the material parameters are in D, the resulting acoustic or electromagnetic waves have the same scattering properties and boundary measurements as in the case where Ω is a homogeneous medium. We call Ω\D¯ and D the cloaking region and the cloaked region, respectively. Similarly, cloaking devices based on blowing up a curve or a flat surface were considered in Refs [16] and  [31], respectively, resulting in the so-called wormholes and carpet cloaks. Since these constructions are based on a singular coordinate transformation, the material parameters of the cloak thus obtained are also singular. This presents serious challenges to practical implementation using metamaterials, as well as making theoretical analysis more difficult. To tackle the acoustic and electromagnetic wave equations with singular coefficients arising from singular cloaking constructions, finite energy solutions in Sobolev spaces with singular weights were introduced and studied in Refs [15],  [16],  [23], and  [40].
+A natural way to avoid the singular structures of the perfect cloak is to construct regular approximations which provide cloaking of arbitrary accuracy. Kohn, Shen, Vogelius, and Weinstein in Ref [29] developed a regularization method based on approximating the “blow-up-a-point” transformation by a “blow-up-a-small-region” transformation, apart from extending the result of Refs [21] and  [22] to N = 2 dimensions. A slightly different approximation scheme based on truncation of singularities was considered by Greenleaf, Kurylev, Lassas, and Uhlmann in Ref [17]. Nevertheless, it was pointed out that these constructions are equivalent in Ref [27]. Due to its practical importance, such approximate cloaking schemes have been studied and achieved in various settings, such as acoustic waves [3,4,28,32,33,35–37,43,44], elastic waves [1,24,34], and electromagnetic waves [5–7,39]. Also see Ref [38] for a broad survey of approximate cloaking. In Ref [11], the authors generalize this approximate cloaking construction to more general generating sets, such as curves and planar surfaces.
+Though the regularized approximate cloak is nonsingular, its material parameters are still anisotropic, which poses another difficulty in practical implementation. Therefore, it would be useful if, as a second step, these regularized approximate cloaks were further approximated by regular isotropic cloaks. It is a well-known phenomenon in homogenization theory [2,8,46] that homogenization of isotropic material parameters can lead, in the small scale limit, to anisotropic parameters. This approach, called isotropic transformation optics, was introduced and performed in the case of electrostatic, acoustic, and quantum cloaking by Greenleaf, Kurylev, Lassas, and Uhlmann in Refs [18] and  [20]. It was shown in Ref [20] that for a fixed Dirichlet boundary value, the Neumann data for the approximate cloaking construction converge strongly to the corresponding Neumann data for empty space. Moreover, Faraco, Kurylev, and Ruiz [12] showed that the same construction in fact gives us strong convergence of the Dirichlet-to-Neumann maps in the operator norm. The same scheme has also been implemented in a quasilinear model [13] and in the context of time-dependent heat propagation [47].
+In this paper, we will construct an approximate isotropic cloak for Maxwell’s equations using similar homogenization techniques. We begin by summarizing the main results of the existence-uniqueness and cloaking theory for the Maxwell equations in Sec. II. In Sec. III, we present a brief overview of homogenization and present a proof of the homogenization result for the Maxwell equations, under the assumption that both ε(x) and μ(x) have positive imaginary parts. Section IV will be devoted to an explicit construction of an approximate isotropic cloak using inverse homogenization techniques as in Ref [18]. Since the magnetic permeability of the anisotropic approximate cloak does not have an imaginary part, we need to go through a two-step process. In the first step, we alter permittivities and permeabilities by a small positive parameter δ so that the assumptions of Sec. III are satisfied and then construct isotropic parameters εδn and μ^{n} that homogenize to the altered parameters. In the second step, we let δ → 0. Finally in Sec. V, we will prove our main theorem: that as we first let n → ∞ and then δ → 0, the electromagnetic boundary measurements corresponding to our approximate cloaking construction converge strongly to the boundary measurements in empty space. The order in which these limits are taken can not be interchanged.
+II. INTRODUCTION TO THE MAXWELL EQUATIONS
+Let us begin by introducing the Maxwell system of equations and some basic results regarding existence, uniqueness, and stability of solutions. Let Ω⊂R^{3} be a smooth bounded domain with (possibly anisotropic) electric permittivity, magnetic permeability, and conductivity described by real symmetric matrix-valued measurable functions ε̃,μ, and σ, respectively. If J ∈ L^{2}(Ω)^{3} is the intrinsic current density in Ω, the time harmonic Maxwell equations in Ω at frequency ω > 0 are given by
+where E and H are the electric and magnetic fields, respectively. For convenience, we define ε=ε̃+iσ/ω. We say that a medium is regular if ε̃ and μ are uniformly positive definite and σ is non-negative definite over Ω, that is, there exists C > 0 such that
+and
+for all ξ∈R^{3} and a.e. x ∈ Ω. Under these regularity assumptions on ε and μ, it can be shown that the boundary value problem for the Maxwell equations is uniquely solvable in a certain Sobolev-type space, except for a discrete set of values of ω. In this section, we introduce the Maxwell system of equations and related function spaces. We will then note (without proof) some of the important results about these spaces that will be used throughout the paper. The material presented here is classical. The reader can refer to Refs [9],  [10],  [14],  [26],  [41], and  [42] for details.
+A. Function spaces for the Maxwell equations
+Definition II.1. Let Ω⊂R^{3} be open. We define the vector space
+and equip it with the inner product
+Similarly, we define
+with the inner product
+As in the case of the usual Sobolev spaces, H_{0}(curl, Ω) and H_{0}(div, Ω) are defined to be the closures of Cc∞(Ω) in H(curl, Ω) and H(div, Ω), respectively.It is easy to show that H(curl, Ω) and H(div, Ω) are both Hilbert spaces. Moreover, when Ω is Lipschitz, C^{∞}(Ω¯){3} is dense in both of these spaces, and there is a canonical way of taking traces of these functions on the boundary ∂Ω.
+Definition II.2. Let Ω⊂R^{3} be an open set with smooth boundary. Let ν be the outward unit normal vector field on ∂Ω. We define for u∈C^{∞}(Ω¯){3}, the following 3 boundary trace components:
+On the boundary of Ω, we define the following Sobolev spaces of tangential fields: For all s∈R,
+Here Div_{∂Ω} and Curl_{∂Ω} represent the surface divergence and surface curl, respectively, defined by
+where ∇_{T} denotes the tangential component of the gradient and ⟨, ⟩ denotes the standard L^{2}(∂Ω) inner product with respect to the surface measure on the boundary ∂Ω.Note that the surface curl Curl_{∂Ω}u is a scalar function and enjoys the relation
+In particular, when u is smooth,
+Theorem II.3 (Trace Theorem). There exist continuous extensions of the trace operators γ_{τ}: u ↦ ν × u|_{∂Ω}and γ_{T}: u ↦ −ν × (ν × u|_{∂Ω}) to continuous linear operators from H(curl, Ω) → H^{−1/2}(div, ∂Ω) and H(curl, Ω) → H^{−1/2}(curl, ∂Ω), respectively. Moreover, the normal trace operator γ_{n}: u ↦ ν ⋅ u|_{∂Ω}extends to a continuous linear operator from H(div, Ω) → H^{−1/2}(Ω). The kernels of these operators are precisely the closures ofCc∞(Ω){3}in the corresponding domain spaces, that is,
+Moreover, γ_{τ}, γ_{T}, and γ_{n}are surjective and have bounded right inverses η_{τ}: H^{−1/2}(div, ∂Ω) → H(curl, Ω), η_{T}: H^{−1/2}(curl, Ω) → H(curl, Ω), and η_{n}: H^{−1/2}(∂Ω) → H(div, Ω), respectively.
+Lemma II.4 (Duality). The spaces H^{−1/2}(div, ∂Ω) and H^{−1/2}(curl, ∂Ω) are mutually adjoint with respect to the scalar product in TL^{2}(∂Ω). Moreover, for any u_{1}, u_{2} ∈ H(curl, Ω), the following Stokes formula holds,
+where ⟨,⟩ denotes the duality bracket between H^{−1/2}(curl, ∂Ω) and H^{−1/2}(div, ∂Ω) with respect to the L^{2}(∂Ω) inner product.Notice that if u ∈ H_{0}(curl, Ω), it does not imply that u vanishes on the boundary ∂Ω, but only that the tangential component ν × u ≡ 0 on ∂Ω. For example, let B_{1}(0) represent the unit ball centered at the origin in R^{3} and consider the radial vector field u(x) = x in H(curl, B_{1}(0)). Clearly, u does not vanish on the boundary but its tangential component does, and therefore u ∈ H_{0}(curl, B_{1}(0)) by the above theorem. Similarly, if u ∈ H_{0}(div, Ω), we can only conclude that the normal component of u vanishes on ∂Ω.An important property of these Sobolev spaces is the Div-Curl lemma, which is a crucial ingredient of the proof the homogenization result Theorem III.6, as well as the proof of our main theorem in Sec. V. A proof can be found in Ref [8] (Theorem 11.2).
+Theorem II.5 (The Div-Curl Lemma). Suppose
+Then
+that is,
+We can now state the existence and uniqueness theorem for boundary value problems for the time harmonic Maxwell equations.
+Theorem II.6 (Existence and Uniqueness). Letε̃,μ,σsatisfy the conditions (2)–(4) and let J ∈ L^{2}(Ω)^{3}. Then there exists a discrete subsetF⊂Rsuch that for allω∈R\F, the following boundary value problem
+has a unique solution (E, H) ∈ H(curl, Ω) × H(curl, Ω). Moreover, we have the estimate
+On the other hand, if ω ∈ F, there exist non-zero solutions to the corresponding homogeneous system,
+We call F the set of electromagnetic eigenvalues for (Ω; ε, μ).Similar existence-uniqueness result holds if the boundary condition in (5) is replaced by ν×H|_{∂Ω}=f∈H^{−1/2}(div,∂Ω).
+B. Cloaking for the Maxwell system
+In the rest of this paper, we assume that J = 0, that is, there are no internal sources of current in the medium. Suppose ω∈R is not an eigenvalue for (Ω; ε, μ). Define Λ_{ε,μ}: H^{−1/2}(div, ∂Ω) → H^{−1/2}(div, ∂Ω) by
+where (E, H) is the unique solution of (5). In other words, Λ_{ε,μ} (also called the impedance map) maps the tangential component of the electric field on the boundary to the tangential component of the magnetic field on the boundary. It follows from Theorem II.6 that Λ_{ε,μ} is a continuous linear map. It is the analog of the Dirichlet-to-Neumann map for the Maxwell equations and encodes all the possible electromagnetic measurements that can be made at the boundary of Ω.
+Definition II.7. Let D ⋐ Ω be a smooth bounded subdomain and let ε_{c}̃,μ_{c}, and σ_{c} be real symmetric matrix valued measurable functions on Ω\D¯. Define ε_{c}=ε_{c}̃+iσ_{c}/ω as before. We say that (Ω\D¯;ε_{c},μ_{c}) is a cloak for the region D, if for any regular permittivity, permeability, and conductivity ε_{a}̃,μ_{a},σ_{a} defined in Ω, we have
+where I is the 3 × 3 identity matrix and ε_{e}, μ_{e} are the electromagnetic parameters of the extended object,
+In other words, the boundary measurements Λ_{εe,μe} must be indistinguishable from the measurements one would get if Ω was a vacuum (which corresponds to ε = μ = I). We call Ω\D¯ and D the cloaking region and the cloaked region, respectively.The following invariance property of the Maxwell equations forms the basis of the transformation optics method of constructing electromagnetic cloaks: Let Ω̃ be another smooth bounded domain and suppose there exists a smooth diffeomorphism F:Ω→Ω̃.
+Lemma II.8. Suppose (E, H) ∈ H(curl, Ω) × H(curl, Ω) satisfies the Maxwell equations(1)in Ω with J = 0. Define the pushed-forward electromagnetic (EM) fields
+onΩ̃. Then(Ẽ,H̃)∈H(curl,Ω̃)×H(curl,Ω̃)and satisfy
+whereε̃{′},μ^{′},σ^{′}are the push-forwards ofε̃,μ,σunder F, defined by
+A proof can be found in Ref [39]. As an immediate consequence, we have the following corollary.
+Corollary II.9. Let (Ω; ε, μ) be as before and supposeF:Ω¯→Ω¯is a diffeomorphism such that F|_{∂Ω} = Id. Then
+Proof. Fix f ∈ H^{−1/2}(div, ∂Ω). Let (E, H) and (Ẽ,H̃) be the solutions of (1) (with J = 0) and (6), respectively, with the boundary condition
+Note that F|_{∂Ω} = Id and consequently, (DF_{x})|_{Tx∂Ω}=Id for all x ∈ ∂Ω. Therefore,
+Remark II.10. In Lemma II.8 and Corollary II.9, it is sufficient to assume that Ω,Ω̃ are Lipschitz and that F is bi-Lipschitz.We now give a brief account of the singular ideal cloak and the regular approximate cloak constructed in Refs [15] and  [6], respectively. Henceforth, let B_{r} denote {x∈R^{3}:|x|<r}. Consider the map F:B¯{2}\{0}→B¯{2}\B¯{1} given by
+which blows up the origin to the cloaked region B¯{1}. The central idea of transformation optics-based electromagnetic cloaking is to use the invariance properties II.8 and II.9 to “hide” an arbitrary regular electromagnetic object in B_{1}. Notice, however, that F is not a regular change of coordinates, as det(DF) → 0 as |x| → 0. Define the electromagnetic parameters in B¯{2}\B¯{1} to be the push-forwards of the identity under the coordinate transformation F,
+More explicitly,
+where Π(x) is the projection map in the radial direction,
+It is easy to see that one of the eigenvalues of ε (and μ), namely, the one corresponding to the radial direction, goes to 0 as |x| → 1. Therefore, the regularity conditions (2)–(4) no longer hold. Again consider the extended object
+where ε_{a} and μ_{a} are arbitrary. It was shown in Ref [15] that distributional solutions (Ẽ,H̃) of the Maxwell equations corresponding to ε̃{e} and μ̃{e} satisfying certain “finite energy” conditions have the same Cauchy data as the solutions of the Maxwell equations in free space. More precisely, if (E, H) ∈ H(curl, Ω) × H(curl, Ω) is the solution of
+then
+Thus, (B_{2}\B¯{1};ε̃,μ̃) forms a perfect cloak for the region B_{1}. However, the singular nature of the parameters of this cloak poses serious challenges to practical implementation as well as theoretical analysis. Therefore, it is natural to consider regular approximations to the perfect cloak. As a trade-off, we lose the perfect cloaking of the singular construction and instead obtain an approximate cloak.
+Definition II.11. Let D ⋐ Ω be a smooth bounded subdomain and let εc̃{ρ},μcρ, and σcρ be real symmetric matrix valued measurable functions on Ω\D¯, indexed by a positive real number ρ. Define εcρ=εc̃{ρ}+iσcρ/ω as before. We say that (Ω\D¯;εcρ,μcρ) is an approximate cloak for the region D, if for any regular permittivity, permeability, and conductivity ε_{a}̃,μ_{a},σ_{a} defined in Ω, we have
+where I is the 3 × 3 identity matrix and, as before, εeρ,μeρ are the electromagnetic parameters of the extended object,
+Here, ‖⋅‖_{L(H^{−1/2}(div,∂Ω),H^{−1/2}(div,∂Ω))} denotes the standard operator norm on bounded linear maps from H^{−1/2}(div, ∂Ω) to itself.Two different approximation schemes have been proposed for approximate cloaking. In Ref [17], Greenleaf et_al proposed that one use the transformation F to blow up a small ball B_{ρ} to a larger ball B_{R}, where 1 < R < 2, whereas Kohn et_al in Ref [29] use a transformation similar to F to blow up B_{ρ} to B_{1}. In the present paper, we work with the latter approximation scheme. However, it is known that the former approximation scheme gives a similar performance [39].Now, for 0 < ρ < 1, consider the bi-Lipschitz transformation F_{ρ}:B¯{3}→B¯{3} given by
+We see that F_{ρ} dilates B_{ρ} to B_{1} and retracts B¯{3}\B_{ρ} to B¯{3}\B_{1}. Also note that we are working in a slightly larger ball B_{3} rather than B_{2} and that F_{ρ} = Id in the annulus B¯{3}\B_{2}. The advantage of this modification is that the pushed-forward electric permittivity and magnetic permeability will both be identity in a neighbourhood of the boundary of our domain, which will prove useful in the proof of our main theorem in Sec. V.
+Theorem II.12 (Ref [6]). Given 0 < ρ < 1, consider the electromagnetic object(B_{3},εeρ,μeρ)with electromagnetic parameters defined by
+where ε_{a}, μ_{a}are arbitrary and regular. Suppose also thatω∈Ris not an EM eigenvalue of (B_{3}; I, I). Then there exists ρ_{0} > 0 such that for all 0 < ρ < ρ_{0}, ω is not an eigenvalue for(B_{3},εeρ,μeρ)for any choice of regular ε_{a}, μ_{a}. Moreover,
+Remark II.13. The above theorem has been stated in greater generality in Ref [6], with B_{3} and B_{1} replaced by arbitrary bounded simply connected smooth domains. But the specific case we have considered is sufficient for our purposes.Notice that apart from regularizing F, we have added a layer of high conductivity in the region B_{1}\B_{1/2}. This additional layer was shown to be essential in Ref [39] since in the absence of this layer, one can have ε_{a}, μ_{a} that make ω an eigenvalue.
+III. HOMOGENIZATION AND THE MAXWELL EQUATIONS
+In this section, we recall the notion of H-convergence and present a homogenization result for the Maxwell equations.
+Definition III.1. Let 0 < α < β < ∞ and let Ω⊂R^{N} be open. We define M_{R}(α,β;Ω) to be the set of all real N × N matrix-valued measurable functions A(x)=[akl(x)]{1≤k,l≤N} defined almost everywhere on Ω such that
+for all ξ∈R^{N} and a.e. x ∈ Ω.Analogously, in the complex case, we define M_{C}(α,β;Ω) to be the set of all complex N × N matrix-valued measurable functions A(x) defined almost everywhere on Ω such that
+for all ξ∈C^{N} and a.e. x ∈ Ω. Here A(x){†}=(A(x)¯){t}=A(x){t}¯ denotes the Hermitian conjugate of A(x). Note that A(x)∈M_{C}(α,β;Ω) implies that R(A(x)) [real part of the matrix A(x)] is symmetric, i.e., R(A(x)){kl}=R(A(x)){lk} for all 1 ≤ k, l ≤ N.We will say that A∈M(α,β;Ω) if either A∈M_{R}(α,β;Ω) or A∈M_{C}(α,β;Ω).Next, we define the notion of H-convergence [2,46]:
+Definition III.2. Let A^{n}∈M(α,β;Ω) for n∈N and A^{*}∈M(α̃,β̃;Ω). We say
+if for all test sequences u^{n} ∈ H^{1}(Ω) satisfying
+we have A^{n}∇u^{n} ⇀ A^{*}∇u in L^{2}(Ω)^{N}. We call A^{*} the homogenized matrix for the sequence {A^{n}}.To illustrate the utility of H-convergence, let us consider the following sequence of elliptic boundary value problems: Let A^{n} be a sequence of matrices in M(α,β;Ω) such that A^{n}→HA^{*} and let u_{n} be the solutions of
+It is easy to see that ‖u_{n}‖_{H^{1}(Ω)}≤C for some constant C independent of n. Therefore, there exists a subsequence, which we still denote by u_{n} that converges weakly to some u∈H01(Ω). Now, the definition of H-convergence implies that A^{n}∇u_{n} ⇀ A^{*}∇u as n → ∞. Consequently, 0 = −∇⋅(A^{n}∇u_{n}) ⇀ −∇⋅(A^{*}∇u). Therefore, the weak limit u of u_{n} is in fact the solution of the following “homogenized” problem:
+A. Homogenization with periodic micro-structures
+For some types of sequences A^{n}, the homogenized matrix A^{*} can be explicitly computed. Let us consider the class of periodic micro-structures as an example. Let Y denote the unit cube [0,1]^{N} in R^{N}. Let A(y)=[akl(y)]{1≤k,l≤N}∈M(α,β;Y) be such that a_{kl}(y) are Y-periodic functions, ∀k, l = 1, 2, …, N, that is, a_{kl}(y + z) = a_{kl}(y) whenever z∈Z^{N} and y ∈ Y. Now we set
+and extend it to all of R^{N} by 1/n-periodicity. The restriction of A^{n} to Ω is known as a periodic micro-structure. Such micro-structures arise in the study of physical systems where the parameters vary periodically, with a period that is very small compared to the dimensions of the object under consideration.
+In this classical case, the homogenized conductivity A^{*}=[akl*] is a constant matrix whose entries are given by [2,8]
+where we define the χ_{k} through the so-called cell-problems. For each canonical basis vector e_{k}, χ_{k} is defined to be the unique solution of the conductivity problem in the periodic unit cell,
+in the Sobolev space H#,01(Y) defined by
+We can generalize the above case to what are called locally periodic micro-structures. Let A(x,y)=[akl(x,y)]{1≤k,l≤N}∈M(α,β;Ω×Y) be such that a_{kl}(x, ⋅) are Y-periodic functions with respect to the second variable, ∀k, l = 1, 2, …, N and for almost every x in Ω. Now we set
+Then the homogenized conductivity A^{*}(x)=[akl*(x)] is given by [8,25]
+where χ_{k}(x,⋅)∈H#,01(Y) solves the following cell problem for almost every x in Ω:
+Notice that even if each A^{n}(x) is a scalar matrix, the homogenized matrix A^{*}(x) need not be scalar valued. This is the crucial property of homogenization that allows us to approximate anisotropic permittivities and permeabilities by isotropic ones. We note two important properties of H-convergence:
+Proposition III.3. SupposeA^{n}→HA^{*}in Ω. Then we have the following:
+1. A^{n}|_{Ω^{′}}→HA^{*}|_{Ω^{′}}for all open sets Ω′ ⊂ Ω.
+2. For any matrix-valued function M(x), ifMA^{n}∈M(α,β,Ω), thenMA^{n}→HMA^{*}.The proof can be found in Ref [2].
+B. Homogenization of the Maxwell system
+Now, we will show how H-convergence can be used to find the limit of a sequence of Maxwell systems. Let {ε^{n}}, {μ^{n}} be sequences such that ε^{n},μ^{n}∈M_{C}(α,β;Ω)∀n∈N for some 0 < α < β. Then consider the following sequence of time-harmonic Maxwell equations at frequency ω > 0:
+It can be shown (see Proposition III.4) that the above problem admits a unique solution (E^{n}, H^{n}) ∈ H(curl, Ω) × H(curl, Ω) which satisfies
+where the constant C = C(α, β, ω) is independent of n. Therefore, E^{n}, H^{n} have subsequences (still denoted by E^{n}, H^{n}) such that
+Our goal is to get the limiting equation for (E, H) ∈ H(curl, Ω) × H(curl, Ω).
+Let us begin with the existence-uniqueness result for a Maxwell system of the type (11):
+Proposition III.4. Letε,μ∈M_{C}(α,β;Ω)for some 0 < α < β. Then the following Maxwell system in Ω at frequency ω > 0
+admits a unique solution (E, H) ∈ H(curl, Ω) × H(curl, Ω) satisfying
+where the constant C = C(α, β, ω).
+Remark III.5. Note that Theorem II.6 gives us existence and uniqueness when μ,R(ε)∈M_{R}(α,β;Ω),I(ε)≥0 and for ω∈R\F. Here we have instead assumed μ, ε to be in M_{C}(α,β;Ω) and ω > 0 is arbitrary.
+Proof. Let us consider the equation satisfied by H
+The weak formulation of the above problem would be
+Define the sesquilinear form a:H(curl,Ω)×H(curl,Ω)→C by
+We note that, by writing w¯=γ_{T}w¯+(w¯⋅ν)ν on ∂Ω, the right-hand side of (14) becomes
+Then the weak formulation of the problem can be rewritten as
+where ⟨, ⟩ denotes the duality bracket between H^{−1/2}(div, ∂Ω) and H^{−1/2}(curl, ∂Ω) (cf. Lemma II.4) with respect to the TL^{2}(∂Ω) inner product as in (15).We now claim that a(⋅, ⋅) is coercive, that is,
+Indeed, from the definition of M_{C}(α,β;Ω), we have
+Now, for any ζ∈C^{3},
+Setting ζ=(εt){−1}ξ, we conclude that
+Therefore, by (17),
+which proves the claim. Moreover, since |μξ|, |εξ| ≤ β|ξ| for all ξ∈C^{3} we can see that the sesquilinear form a is continuous, i.e.,
+From the standard trace theory (cf. Lemma II.4 and Theorem II.3) it is easy to see that the right-hand side of (16) is continuous on H(curl, Ω), i.e.,
+Therefore, (16) has a unique solution H ∈ H(curl, Ω) by the Lax-Milgram theorem, and from (17) and (18) it enjoys the norm estimate
+Finally, we set E=iωε^{−1}∇×H. It is easy to check that the weak curl of E is iωμH, and therefore (12) and (13) easily follow.We now prove the homogenization result for the Maxwell system (11). Our proof closely follows the method used in Ref [8], though our assumptions on ε and μ are slightly different.
+Theorem III.6 (Homogenization). Letε^{n},μ^{n}∈M_{C}(α,β;Ω)be such that
+Suppose (E^{n}, H^{n}) ∈ H(curl, Ω) × H(curl, Ω) is the unique solution of the Maxwell system(11). Then, up to a subsequence,
+where (E, H) ∈ H(curl, Ω) × H(curl, Ω) is the unique solution of the following homogenized time-harmonic Maxwell system:
+Proof. Consider the equation satisfied by H^{n},
+By the estimate (13), we have ∥H^{n}∥_{H(curl,Ω)} ≤ C(α, β, Ω). Therefore, up to a subsequence,
+Also, since ‖(εn){−1}(∇×H^{n})‖_{L^{2}}≤C(α,β,Ω),
+Similarly, μ^{n}H^{n} is bounded in L^{2}(Ω)^{3}. So assume
+Then, from Eq. (20), we have
+Now, let u^{n} ∈ H^{1}(Ω) solve
+where F ∈ H^{−1}(Ω). Then we know that up to a subsequence, as n → ∞, we have
+where u ∈ H^{1}(Ω) solves
+Let us consider the following identity:
+From (22) and (23), (εn){−1}∇×H^{n}⇀h_{1} in H(curl, Ω). Also from (21) and (24), ε^{n}∇u^{n} ⇀ ε^{*}∇u in H(div, Ω). Therefore, by the Div-Curl lemma, it follows that
+Now, we find the limit of the right-hand side of (25). Since ∇ ⋅(∇ × H^{n}) = 0 and ∇ × (∇u^{n}) = 0, we see that ∇ × H^{n} ⇀ ∇ × H in H(div, Ω) and ∇u^{n} ⇀∇ u in H(curl, Ω). Therefore, again by the Div-Curl lemma,
+Now by equating the limits of the two sides of the equation, we get
+In other words, (ε^{*}h_{1}−∇×H)⋅∇u=0, where u∈H01(Ω) is the solution of (24). Since (−∇⋅(ε*∇)){−1}:H^{−1}(Ω)→H01(Ω) is an isomorphism, by varying F ∈ H^{−1}(Ω), u spans all of H01(Ω). Therefore,
+Next, we show that h_{2}=μ^{*}H. Let w^{n} ∈ H^{1}(Ω) be the unique solution of
+where G ∈ H^{−1}(Ω). Since μ^{n}→Hμ^{*}, up to a subsequence, as n → ∞, we have
+where w ∈ H^{1}(Ω) solves
+Consider the identity
+We have ∇⋅μ^{n}H^{n} = 0. So μ^{n}H^{n}⇀h_{2} weakly in H(div, Ω). Similarly, since ∇ × ∇ w^{n} = 0, ∇w^{n} ⇀∇w weakly in H(curl, Ω). So, applying the Div-Curl lemma again, we get
+From the right-hand side, we have H^{n} ⇀ H in H(curl, Ω) and that μ^{n}∇w^{n} ⇀ μ^{*}∇w in H(div, Ω) by (26). So again by Div-Curl lemma, we have
+Now, by equating the two limits, we get
+Again, by varying G, w spans H01(Ω). So we get h_{2}=μ^{*}H in Ω. Thus, we have the following homogenized equation for H ∈ H(curl, Ω):
+As before, set E=iω(ε*){−1}∇×H. Then we see that (E^{n}, H^{n}) ⇀ (E, H) and (E, H) ∈ H(curl, Ω) × H(curl, Ω) satisfies (19).
+C. Our goal: Main theorem of the paper
+As we have seen, (B_{3}\B¯{1};εcρ,μcρ) forms an approximate electromagnetic cloak for the region B_{1}. Therefore, for any f ∈ H^{−1/2}(div, ∂B_{3}),
+as ρ → 0, where (B_{3};εeρ,μeρ) is the extended object defined as before. We now want to construct isotropic sequences {ε_{m}} and {μ_{m}} such that
+We would like to do this by first constructing sequences of permittivities and permeabilities whose H-limits are εeρ and μeρ and then passing to the limit as ρ → 0. However, as we remarked in the Introduction, we will not be able to directly find sequences whose homogenized limits are (εeρ,μeρ) since μeρ∉M_{C}(α,β;B_{3}) for any α, β. Therefore, we will go through a two-step process: first we fix a small parameter δ > 0 and construct sequences εδn,μ^{n} such that
+Note that both sides of the equations above are in M_{C}(α,β;B_{3}) for some α, β so that Theorem III.6 applies. In the next step, we let δ → 0. We will be able to show in Sec. V that
+where the limit is in the strong topology of H^{−1/2}(div, ∂B_{3}). We note however that the order in which we take the limits cannot be interchanged. Finally, by a diagonal argument, by choosing sequences n_{m} → ∞, δ_{m} → 0, and ρ_{m} → 0, we can construct (ε_{m}, μ_{m}) such that
+IV. CONSTRUCTION OF THE APPROXIMATE CLOAK
+In this section, we shall give an explicit construction of the approximate isotropic cloak. Throughout this section we assume that ρ > 0 is a fixed parameter. Let us define
+where F_{ρ} is as defined in (8). More explicitly,
+where
+and Π(x) = |x|^{−2}xx^{t} is the projection in the radial direction. Given arbitrary regular ε_{a}, μ_{a} in B_{1/2}, we note that the extended object is given by
+We will construct isotropic matrices of the form
+that H-converge to γ^{*}, where γ(x, y) is periodic in y with period 1. Recall that γ^{*} can be computed from γ(x, y) using (10). From γ^{n}, it is straightforward to construct isotropic electric permittivities and magnetic permeabilities for the approximate cloak. Our construction is mostly based on Ref [17]. Let us change to polar coordinates. Let s = (r, θ, φ) and t = (r′, θ′, φ′) be the spherical polar coordinates corresponding to the two scales x and y, respectively. Next we homogenize γ(s, t) in the (r′, θ′, φ′)-coordinates. Let e_{1}, e_{2}, and e_{3} denote the canonical basis vectors of R^{3} in r′, θ′, and φ′ directions, respectively. Then for almost every s ∈ Ω, there exist unique solutions χ_{k}(s, t), k = 1, 2, 3 of the equation
+which satisfies the condition
+where dt = dr′dθ′dφ′ and Y = [0,1]^{3}.
+Since γ(s, t) is independent of θ′ and φ′, (29) and (30) imply that χ_{k} = 0 for k = 2, 3. Now consider Eq. (29) for χ_{1},
+It is clear from the above equation that χ_{1} is independent of θ′, φ′ as well. Moreover, from (31) we get
+where the constant C can be found by using the periodicity of χ_{1} with respect to r′ to be
+Here γ̲(s) denotes the harmonic mean of γ(s, t) in the second variable. Similarly, we let γ¯(s) denote the arithmetic mean of γ(s, t) in the second variable,
+Now, for γ^{*} to be the homogenized limit of γ^{n}, we must have
+which simplifies to
+where, as before, Π(s):R^{3}→R^{3} is the projection on to the radial direction. Comparing this with (27), we see that it suffices to construct a γ(s, t) such that
+and
+Let us now construct such a γ. Our construction is based on the one presented in Ref [17]. However, we are able to work with a simpler construction since we do not need γ to be continuous. It is easy to define γ(s, t) for s ∈ B_{1} ∪ (B_{3}∖B_{2}),
+For s ∈ B_{2}\B_{1}, suppose we can write
+where α and β are positive functions of s. Then (33) and (34) translate to
+Eliminating β from the above equations, we get
+This equation will have two positive roots so long as the discriminant is non-negative,
+which is equivalent to
+But this condition is true for any 0 < ρ < 1/2, as
+Therefore, it follows that (37) can be solved for α and β to obtain positive functions of s on B_{2} ∖ B_{1}. Finally, Eqs. (35) and (36) define a γ(s, t) with all the desired properties.
+A. Construction of isotropic electromagnetic parameters
+We shall now construct the electromagnetic parameters of our approximate isotropic cloak. We continue to assume that the parameter ρ > 0 introduced in the definition of the approximate cloak (cf. Definition II.11) is fixed. Recall that we defined
+We define a sequence of isotropic non-singular magnetic permeabilities {μ^{n}} by
+where
+and μ_{a} is an arbitrary permeability in B_{12} as introduced in the definition of cloaking (cf. Definition II.7).
+Next, we fix δ > 0 and define sequences of isotropic non-singular electric permittivities{ε̃δn} and isotropic conductivities{σδn} as follows:
+where
+and
+Here ε̃{a},σ_{a} are arbitrary electric permittivity and conductivity, respectively, in B_{12} as introduced in the definition of cloaking (cf. Definition II.7) and
+Now consider the following system of Maxwell equations:
+where f ∈ H^{−1/2}(div, ∂B_{3}). Hδn satisfies the equation
+Multiplying throughout by (1 + iδ), we get
+The above equation can be written in the variational form as
+where aδn is the sesquilinear form on H(curl, B_{3}) defined by
+Let us define μ^δn=(1+iδ)μ^{n}. Then we see that
+for all ξ∈C^{3}. Similarly, we define
+We find that
+where c is some positive constant that depends on ω. Note that μ^δn and ε^δn are uniformly bounded in L^{∞}(B_{3}) and we take 0 < δ < 1. So all conditions for H-convergence are satisfied and we have
+by Proposition III.3. We note that
+respectively, where εeρ,μeρ are as in (9). Set
+We now apply Theorem III.6 to conclude that
+where (H_{δ}, E_{δ}) ∈ H(curl, B_{3}) × H(curl, B_{3}) is the solution of the following homogenized equation corresponding to (40):
+Dividing the first equation by 1 + iδ, we get
+Therefore, (E_{δ}, H_{δ}) solve the following homogenized Maxwell system:
+Finally, we pass to the limit as δ → 0. Suppose E, H satisfy
+Subtracting (42) from (41),
+Therefore, by Theorems II.6 and II.12, if ω is not an eigenvalue of (B_{3}; I, I) and if ρ > 0 is small enough, there exists a constant C > 0 that is independent of δ, but dependent on ρ, such that
+Next, we write E_{δ} = (E_{δ} − E) + E and apply the triangle inequality to get
+for small enough δ. In conclusion, we have proved the following theorem:
+Theorem IV.1. Suppose ω is not an electromagnetic eigenvalue for (B_{3}; I, I) and suppose ρ > 0 is small enough. Let(EδnHδn),(E_{δ},H_{δ})be defined as above. Then for any fixed δ > 0,
+and as δ → 0,
+V. CONVERGENCE OF THE IMPEDANCE MAP
+In this section, we prove the main theorem of our paper, showing that our construction does in fact give an approximate isotropic cloak. Recall that we defined the impedance map Λ_{ε,μ}: H^{−1/2}(div, ∂Ω) → H^{−1/2}(div, ∂Ω) by setting Λ_{ε,μ}f = ν × H|_{∂Ω}, where (E, H) is the unique solution of the boundary value problem,
+Main Theorem. Suppose ω > 0 is not an eigenvalue for (B_{3}; I, I), and letεδn,μ^{n}be defined as in (38) and (39) in Sec. IV. Then, given any f ∈ H^{−1/2}(div, ∂B_{3}), we have
+and as a consequence
+We emphasize once again that the order of the limits in the above equation cannot be changed. Now, since H_{δ} → H strongly in H(curl, B_{3}), it follows immediately by the continuity of the trace map H(curl, B_{3}) → H^{−1/2}(div, ∂B_{3}) that
+strongly in H^{−1/2}(div, ∂B_{3}) as δ → 0. So it suffices to prove the following theorem:
+Theorem V.1. For a fixed δ > 0,
+strongly in H^{−1/2}(div, ∂B_{3}) as n → ∞.
+Proof. Let φ∈C^{∞}(B¯{3}) be a non-negative smooth function such that supp φ⊂B¯{3}\B¯{2} and φ ≡ 1 in a neighbourhood of ∂B_{3}. We note that on the support of φ,
+It is clear by the continuity of the trace map that
+We will show that both the terms in the right-hand side of the above equation will go to 0. The proof will follow a series of steps.Step 1. For any ψ∈Cc∞(B_{3}\B¯{2}), we claim that
+Indeed, we already know Eδn−E_{δ}⇀0 in H(curl,B_{3}\B¯{2}). Consequently, we also have Eδn−E_{δ}⇀0 in L^{2}(B_{3}\B¯{2}). Moreover, ∇⋅(Eδn−E_{δ})=iω(1+iδ){−2}∇⋅∇×(Hδn−H_{δ})=0 in B_{3}\B¯{2}. Therefore, Eδn−E_{δ}∈H(div,B_{3}\B¯{2}) and for any v∈H(div,B_{3}\B¯{2}),
+which implies that Eδn−E_{δ}⇀0 in H(div,B_{3}\B¯{2}) as well. Therefore, by the Div-Curl lemma, |Eδn−E_{δ}|^{2}=(Eδn−E_{δ})⋅(Eδn−E_{δ})→0 in D^{′}(B_{3}\B¯{2}). By similar arguments, we also have |Hδn−H_{δ}|^{2}→0 in D^{′}(B_{3}\B¯{2}). This completes the proof of Step 1.Step 2. Next, we want to show that
+Consider the space of functions
+with the following inner product:
+It is well known that V is a Hilbert space and that the inclusion V↪L^{2}(B3){3} is compact [42]. Now, we know that ν×φ(Eδn−E_{δ})|_{∂B3}=0 and φ(Eδn−E_{δ})⇀0 in H(curl, B_{3}). Next, consider
+The first term on the right-hand side vanishes identically since ∇⋅(Eδn−E_{δ})=0 on supp φ. Also, since φ ≡ 1 in a neighbourhood of ∂B_{3}, ∇φ∈Cc∞(B_{3}\B¯{2}). Therefore, from Step 1, ∇φ⋅(Eδn−E_{δ})→0 strongly in L^{2}(Ω). As a consequence, for any w ∈ V,
+as n → ∞. Therefore, φ(Eδn−E_{δ})⇀0 in V as well. By the compactness of the inclusion V↪L^{2}(B3){3}, this further implies φ(Eδn−E_{δ})→0 strongly in L^{2}(B3){3}.Step 3. We now show that
+Note that
+As we have already observed, ∇φ∈Cc∞(B_{3}), and therefore by Step 1, the first term on the right-hand side converges strongly to 0 in L^{2}(B_{3}). On the other hand, ∇×(Hδn−H_{δ})=−iω(Eδn−E_{δ}) on supp φ. Therefore, by Step 2, the second term on the right-hand side also converges to 0 strongly in L^{2}. This completes Step 3.Step 4. The final step is to show that
+Consider the variational equations satisfied by Hδn and H_{δ}: for all w ∈ H(curl, Ω),
+Taking the difference of these two equations and rearranging terms, we get
+Now let w=φ^{2}(Hδn−H_{δ}). By Eqs. (43) and (44),
+It is clear from Step 3 that the right-hand side of the above equation goes to 0 as n → ∞. Therefore, we conclude that φ(Hδn−H_{δ})→0 strongly in L^{2}(B3){3}. Finally, applying the conclusions of Steps 3 and 4 to (45) gives us the desired result.

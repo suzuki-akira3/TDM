@@ -1,0 +1,96 @@
+Coherent states for Kratzer-type potentials
+The coherent states for a particle in Kratzer type potentials are constructed by solving Feynman’s path integral. The action of the generalized Kratzer potential is transformed into two harmonic oscillators by Levi-Civita transformation to derive the parametric time coherent states. Green’s function, energy eigenvalues, and the corresponding wave functions for this potential are calculated. The evaluated results are reduced to the modified Kratzer potentials and Kratzer-Fues oscillators which are special cases of the generalized Kratzer potential.
+I. INTRODUCTION
+Coherent states which were first constructed by Schrödinger [1] are defined as eigenstates of lowering operators for one dimensional linear harmonic oscillators. They are localized nonspreading wave packets and do not spread during the evolution of the system [2–4]. Coherent states are defined in three different ways: The first is the minimum uncertainty coherent states that the Heisenberg uncertainty principle provides; second, they are defined as the eigenfunctions of the lowering operators which have complex eigenvalues; and the last is the displacement operator coherent states, which occur by the operation of the unitary displacement operator in the ground state of oscillator [5–7]. They follow the orbit of the classical particle and maintain their shape. Coherent states are widely used in atoms and molecules, quantum optics, nuclear physics, condensed matter physics, and quantum field theory by several methods. These methods include algebraic approaches, supersymmetric quantum mechanics, and path integrals [3–10].
+Feynman’s path integrals are used to find quantum mechanical amplitude for a point particle at a position x_{a} at time t_{a} to reach a position x_{b} at time t_{b} [11]. Duru and Kleinert used Feynman’s path integral, parametric time [13,14], and Kustaanheimo-Stiefel (KS) mapping for quantization of the hydrogen atom. In this work, we have obtained the coherent states of the generalized Kratzer potential in parametric time using transition amplitudes between the eigenstates of the lowering operator of the linear harmonic oscillator [12,25]. Transition amplitudes between the initial and final eigenstates of the lowering operator of the linear harmonic oscillator were described by Unal in 1998 [16]. Later on, parametric time coherent states for the Kepler problem were constructed using the KS mapping and the transition amplitudes of the harmonic oscillator. The expectation values of the physical position of the electron for parametric time coherent states of the hydrogen atom are satisfied by the Keplerian ellipses [17]. Although the dispersions of the harmonic oscillator variables are constant in physical time, the dispersions of the hydrogen atom oscillate by the classical frequency of the orbits in parametric time. The parametric-time coherent states for the Morse potential [18], Hartmann potential [19], MIC-Kepler potential [20], Smorodinsky-Winternitz potentials [21], and PT-symmetric and non-PT-symmetric non-Hermitian forms of the generalized Morse potential [22] were obtained using the same technique.
+The Kratzer potential is one of the potential energy functions in molecular quantum physics and quantum chemistry that is used to describe molecular structures and interactions. In recent years, the relativistic and nonrelativistic wave equations of the Kratzer potential have been studied by many authors. The bound state energy levels and wave functions were calculated with different methods [23,26]. For the Kratzer-Fues oscillator, the coherent states as eigenstates of the annihilation operator and the displacement coherent states were constructed using the algebraic approach and it has been shown that the generalized position and momentum uncertainty relationship is the minimum.
+The purpose of this article is to establish the parametric time coherent states of the generalized Kratzer potential by the path integral formalism and to obtain energy eigenvalues and corresponding eigenfunctions. In order to achieve this, the action of the generalized Kratzer potential transformed into two harmonic oscillatory action by Levi Civita transformation and parametric time. This paper is organized as follows. In Sec. II, by applying the Levi Civita transformation to the Hamiltonian of the two-dimensional generalized Kratzer problem, the action of the system is written in terms of generalized coordinates. With parametric time and the Lagrange multiplier technique, the problem becomes a two harmonic oscillator problem in polar coordinates. In Sec. III, Kernel and Green’s functions are obtained and their relation to the parametric coherent states, the energy eigenvalues, and eigenfunctions are discussed. In Sec. IV, the coherent states and kernel for the generalized Kratzer potential are obtained in configuration space. In Secs. V and VI, the special cases of the system are the reduced modified Kratzer potential and the Kratzer Fues oscillator. For these potentials, the energy spectrum and coherent states are obtained. In Sec. VII, minimum uncertainty relation is discussed for the parametric time coherent states for the modified Kratzer potential. Numerical calculations are performed for CO, O_{2}, NO, H_{2}, I_{2}, HCl, and LiH diatomic molecules. Finally, the results are discussed in Sec. IX.
+II. THE ACTION
+The modified Kratzer potential is [23,24]
+Here D_{e} is the dissociation energy of the system, a is the equilibrium internuclear separation, and q is a real dimensionless parameter. In this modified Kratzer potential, the case q = 1 corresponds to the Kratzer potentials, the case 2aD_{e} = Ze^{2} and qa^{2}D > 0 to the Sommerfeld potential, and the case 2aD_{e} = Ze^{2} and q = 0 to the Coulomb potential. The shape of this potential is shown in Fig. 1 for various molecules using the values in Table I. We will consider the generalized form of this potential. The above potential can be generalized as
+where A = qa^{2}D_{e}, B = 2aD_{e}, and C is an additional regulation term. The Hamiltonian of a particle with mass m in the generalized Kratzer potential in two dimensions is given by
+In order to use the dynamic symmetry of the harmonic oscillator, we will convert the problem into a 2D harmonic oscillator by applying the Levi Civita transformation. This transformation is defined as
+and
+Under this transformation, using Eqs. (4) and (5) and the Hamiltonian in Eq. (3), we can write action A as
+Here, we got r=u^{2}=u12+u22 and p^{2}=14u^{2}pu2. We need to eliminate the factor 1/u^{2} in front of the kinetic energy term to apply the method in Refs [16–22]. We define a new parametric time as
+The action Eq. (6) becomes
+We used an additional Lagrange multiplier p_{0} due to the presence of a new parametric time. We will only deal with p_{0} < 0 case. We add an auxiliary momentum p_{ϕ} to the action in Eq. (8) to show that the azimuthal momenta are a kinetic energy contribution. Then Eq. (8) can be written as
+where M = 4m and ω=4(C−p_{0})M and p_{0} and p_{ϕ} are conserved quantities. We now define two new coordinates v_{1} and v_{2} as
+Then the action is written with v_{1},v_{2} terms as
+where
+This term corresponds to the Hamiltonian of two isotropic oscillators with ω frequency. We can write the action of the two oscillator systems as
+We define the system in holomorphic coordinates to be able to derive coherent states as eigenstates of the lowering operator. In holomorphic coordinates, the dynamical variables are defined as
+and conjugate dynamical variables are defined by
+where a^{†} is the raising operator and a is the lowering operator. Using the a^{†} and a dynamical variables, the action in Eq. (12) is performed in the form of
+where 12∑j=12p_{vj}v_{j}s_{a}s_{b} total derivative term was neglected.
+III. THE KERNEL
+The kernel of two oscillators with parametric time s in holomorphic coordinates is written by the method in Ref [16],
+Since the Levi-Civita transformation in Eq. (16) has double value, the physical kernel is written as
+If term of ab†a_{a} in Eq. (17) is replaced by
+and expanded into power series of ab†a_{a} then K^{′}(ab†,s_{b};a_{a},s_{a}) is obtained as
+where n_{1} and n_{2} are quantum numbers and can be expression in terms of the radial and angular quantum numbers n_{r} and m of two oscillators
+We have defined two complex parameters related to the a_{∓} final eigenstates,
+and λ_{∓} initial eigenstates,
+To derive coherent states of the physical system, dummy coordinates are eliminated. In order to eliminate dummy angle ϕ, we integrate in the interval −∞,∞ as
+where K′ can be arranged in terms of the parametric-time evolution operator Us_{b}−s_{a} and oscillator energy eigenstates n_{r},m as
+where Us_{b}−s_{a}λ_{∓} corresponds to the parametric time evolution operator between the initial coherent states of the two oscillators and a_{∓} is the final coherent state. They are
+and the physical coherent states become
+where m=2MA and the state n_{r},m is
+Green’s function of the system is given by
+The poles of Green’s function give the energy eigenvalues of the system
+where n^{′}=n_{r}+m+1. In order to obtain Green’s function in physical time, we need to eliminate the dummy coordinate ϕ. In path integral formalism, the way of eliminating auxiliary coordinates is to integrate over all possible final values. In the wave function formalism, the eigenvalue equation corresponding to the conjugate momentum is
+Then Green’s function converts
+The physical coherent states parametrized by n_{r}, m are obtained by
+IV. THE KERNEL AND THE COHERENT STATES IN CONFIGURATION SPACE
+We obtained the kernel between the coherent states in Eq. (23). The kernel of the system as a function of physical coordinates u and t can be shown as
+We can calculate the matrix elements u,ϕ∣a_{∓} using Eqs. (14) and (15) as
+where a^{2} = a_{+}a_{−} + a_{−}a_{+}. If we take integrations over a∓*, a_{∓} and write of the substitute Eq. (31), it will be
+The parametric time dependence of the eigenvalues of the operators a_{j}^ is the form of a_{j}(s)=a_{j}e^{−iωsb−sa}. Let us write Eq. (32) in terms of trigonometric functions as
+Here δ is the complex phase and determined as
+In order to obtain the normalization factor, we can use the following orthogonality relations [27]:
+Therefore the normalization constant becomes
+The kernel can be expressed in terms of Bessel functions as
+Integrating the kernel over the parametric time s, Green’s function can be written as
+The Bessel functions in terms of the associated Laguerre polynomials are expressed by [27]
+The orthogonality relation of the associated Laguerre functions is
+Then Φ_{nr,m}(u) in Eq. (41) can be denoted as
+Then we can obtain the coherent states for the generalized Kratzer potential as the function of physical time t and u coordinates,
+The energy spectrum can be denoted from Eq. (27),
+where n^{′}=n_{r}+m+1 and m=2MA
+V. THE MODIFIED KRATZER POTENTIAL
+In order to obtain the modified Kratzer Potential in Eq. (2), we take A = qa^{2}D_{e}, B = 2aD_{e}, and C = 0. In this case, the coherent states for the modified Kratzer potential as the function of the u coordinate and t physical time are
+where M = 4m and ω=p_{0}M and m=2Mqa^{2}D_{e}. The energy eigenvalues of the potential in Eq. (1) are
+These results for the modified Kratzer potential in Eq. (1) can be shown for different values of the q parameter: for q = 1, reduces to the Kratzer potentials, in the case 2aD_{e} = Ze^{2} and qa^{2}D > 0 to the Sommerfeld potential, and the case 2aD_{e} = Ze^{2} and q = 0 to the Coulomb potential.
+VI. THE KRATZER-FUES OSCILLATOR
+The Kratzer Fues oscillator is defined by [23]
+It is used for description of anharmonic vibrations in the atomic systems. If A = D_{e}a^{2}, B = 2D_{e}a, and C = D_{e} in Eq. (45), we can write the coherent states for the Kratzer-Fues oscillator in terms of the u coordinate and t physical time as
+where M = 4m and ω=−4(D_{e}+p_{0})M and m=2MD_{e}a^{2}. The energy spectrum for the Kratzer-Fues oscillator is
+When we take 2Ma^{2}D_{e} = γ^{2}, Eq. (59) agrees with Ref [6].
+VII. MINIMUM UNCERTAINTY STATES
+One of the important features of coherent states is that they have the minimum uncertainties. We can show it in the following way. Using the definition of the lowering and raising operators in Eqs. (14) and (15), we find the position and momentum operators
+and we can obtain the time dependence of u and p_{u} as
+The expectation values of u and p_{u} can be obtained by
+It is the same with the result of the classical harmonic oscillator for λ=Mω2x(0). To find the dispersion Δu and dispersion Δp_{u}, we first calculate u^{2} and p_{u^{2}} using the commutator a,a^{*}=1. They are
+and
+where ϕ are the arguments of the λ_{±}. Therefore we find
+and
+These results show that Δu and Δp_{u} are not constant, but the system oscillates in parametric time s with the classical frequency of the orbit 2ω for the states with negative energies. So the coherent state represents the closest approximation of a classical oscillator. When λ_{+} = λ_{−} = 0, Δu = const ≠ o, in (56) and (57), the terms 12Mω and Mω2 are ordering contributions. Finally, we can obtain
+We see that it satisfies the minimum uncertainty relation.
+VIII. APPLICATIONS
+The vibrational modes of many diatomic molecules can be identified by using the Kratzer potential. Having the energy eigenvalues for the Kratzer potential, we calculate Δu and Δp_{u} with Eq. (48) using the parameters in Table I for NO, O_{2}, LiH, I_{2}, H_{2}, HCl, and CO diatomic molecules. We took the parameter values for these molecules from Ref [26]. We used the ω values for n = 1 and m = 0 quantum states.
+The results in Table I show that the dispersion in the position is related to the spectroscopically determined properties and energy of the states. For example, when λ_{+} = λ_{−} = 0 then (Δu)^{2} = 0, 216 493 and (Δpu){2}=0,288691 for LiH and uncertainty relation is (Δu){2}(Δpu){2}=0,062499.
+IX. CONCLUSIONS
+In this paper, we studied the parametric coherent states for the generalized Kratzer potentials using path integral formulation. We arranged a two-oscillator system into a 2D generalized Kratzer potential system using the Levi-Civita transforms. We obtained the energy spectrum and the wavefunctions. We discussed the negative energy coherent states. The positive energy coherent states can be obtained by analytic continuation using the negative energy coherent states in Eq. (40) [15]. The special cases of the system are the reduced modified Kratzer potential, the Kratzer Fues oscillator, and the Coulomb potential. We discussed them in Sec. VI. Furthermore we obtained Δu and Δp dispersions using the parametric time coherent states in Eq. (30). Δu is not constant, and the uncertainties are finite. In Sec. VIII, finally, we have shown that it provides the minimum uncertainty relation (Δu){2}(Δpu){2}≈1/4 by making calculations for different diatomic molecules. These analytical results are in agreement with results reported in the literature.
+TABLE I. 
+Values of various diatomic molecules in the ground electronic state.
+TABLE I. -body
+Molecules	D_{e}	r_{0}	μ	Δu	Δp_{u}
+NO	8, 04 378 256	1, 150 800	7, 46 844 100	0, 259 326	0, 964 037
+O_{2}	5, 1 566 588	1, 208 000	7, 99 745 750	0, 255 654	0, 977 884
+LiH	2, 51 528 369	1, 595 600	0, 88 012 210	0, 465 289	0, 5 373 004
+I_{2}	1, 581 791 863	2, 662 000	63, 452 235	0, 149 955	1, 6 671 668
+H_{2}	4, 750 000	0, 741 413	0, 5 039 125	0, 570 775	0, 43 800 096
+HCl	4, 619 061	1, 274 600	0, 9 801 045	0, 449 267	0, 556 462
+CO	10, 84 514 471	1 130	6, 86 058 600	0, 264 467	0, 945 297
+FIG. 1. 
+Shape of the Kratzer potential for different diatomic potentials.

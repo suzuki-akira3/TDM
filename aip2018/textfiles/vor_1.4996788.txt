@@ -1,0 +1,162 @@
+Interplay of the unit-speed constraint and time-delay in Cucker-Smale flocking
+We study the emergence of the mono-cluster flocking due to the interplay between the unit-speed constraint and time-delayed interactions in the evolution of the Cucker-Smale ensemble. Several flocking models with unit-speed constraint have been extensively used in the flocking modeling of self-propelled multi-agent systems in the control theory community. Time-delayed interactions can be caused by the finite propagation speed constraint in communications. In the previous literature, these two physical mechanisms have been studied separately. In this paper, we investigate these combined physical effects in a common framework and study how the interplay between these mechanisms affects asymptotic flocking dynamics. For this, we provide a sufficient framework for a mono-cluster flocking in terms of system parameters (e.g., time-delay, coupling strength, particle numbers) and initial data. We also provide several numerical simulations and compare them with analytical results.
+I. INTRODUCTION
+Collective behaviors of many-body systems are ubiquitous in natural biological systems, e.g., fish motion with the persistent turning walker model involving an Ornstein-Uhlenbeck process [10], active Brownian swarm dynamics [11,25], animal aggregation with a nonlocal hyperbolic model containing a running phase and tumbling phase [12], a two-dimensional pattern formation model [33], and neuroscience applications [22] (see a recent survey paper Ref [35]). Recently, the collective dynamics of many-body systems has received lots of attention in physics and control theory communities due to its possible applications [19,27,32] to the coordinate controls of many-robot systems and unmanned aerial vehicles. In this paper, our main interest lies on the Cucker-Smale (C-S) model with the unit-speed constraint and time-delayed interactions. Time-delay effects are present in most physical and biological systems [8,17] because information cannot travel at an infinite speed during mutual communication process. This finite propagation speed constraint of communication has often been employed in the mathematical biology literature, and time-delay effects generate many rich dynamic patterns. For instance, time-delay effects can lead to amplitude death [30]. As noted in Ref [5], the information for each agent at a given moment that is detected by another agent is already past information. Internal processes also induce a kind of time-delay, for example, transcriptional time-delays in biological systems [26] and control synthesis with time-delay [18]. On the other hand, unit-speed motility is often employed in several flocking models [20,21,34]. In Ref [14], the authors proposed a planar unit-speed model in relation to the C-S flocking model, which can be regarded as a generalization of the Vicsek model. In Ref [4], the authors proposed a multi-dimensional model as a generalization of the C-S planar model, which is given by a dynamical system of second-order ordinary differential equations (ODEs) with a constant speed. Next, we briefly discuss some of the relevant literature. In Refs [20] and  [21], the authors studied the Frenet-Serret equation for unmanned aerial vehicles with the unit speed constraint for two agents. The authors in Ref [29] designed a steering control to obtain collective motion by introducing an oscillatory term and a spacing term (see also Refs [28] and  [31] for the other models of the flocking dynamics). Consider an ensemble of C-S flocking particles moving with a unit speed. Let (x_{i},v_{i})∈R^{2d} be the position-velocity of the ith C-S particle with a unit-speed constraint and uniform time-delay τ > 0. When there is a uniform time-delay in communication, the dynamics of the C-S particles is governed by the following Cauchy problem:
+where xiin and viin are Lipschitz continuous functions and κ and ψ = ψ(r) denote the coupling strength and communication weight, respectively,
+We also use the following handy notation:
+where ||·|| is the standard ℓ^{2}-norm in R^{d}.
+Note that system (1.1) preserves the modulus of the velocity (see Lemma 2.1). Thus, if the initial speed is unity, the speed remains to be unity for the dynamics in (1.1). In the absence of time-delay, i.e., τ = 0, the asymptotic flocking dynamics for (1.1) and (1.2) have been extensively studied in Refs [2] and  [4], where sufficient frameworks for mono-cluster and multi-cluster flockings have been proposed (see Sec. III A for a detailed discussion). The purpose of this paper is to give quantitative estimates for the question stated as below:
+How does the interplay between the unit-speed constraint and time-delay affects the flocking dynamics of the C-S ensemble?
+Next, we briefly discuss our main result of this paper. For the C-S model without time-delay, the Lyapunov functional approach has been extensively employed in the literature [2–5,7,14,15]. In this paper, we also use a Lyapunov functional approach together with a continuity argument. For given position and velocity configurations
+we introduce position and velocity diameters as suitable Lyapunov functions,
+Then, we can derive a Riccati equation (Lemma 4.1) for D(V),
+For well-prepared initial data (X^{in}, V^{in}) under the assumptions of time-delay and a coupling strength with τ ≪ 1, κ ≫ 1, we can show that the position diameter is uniformly bounded and the velocity diameter tends to zero exponentially fast (see Theorem 3.2), i.e., there exists positive constants C and Λ_{0} such that
+The rest of the paper is organized as follows: In Sec. II, we briefly discuss our model and present a priori estimates to be used crucially in our flocking estimate. In Sec. III, we briefly discuss the previous results for system (1.1) with τ = 0 and present a sufficient framework and main result for the asymptotic flocking due to the interplay between time-delay and C-S velocity flocking. In Sec. IV, we present a Proof of Theorem 3.2. In Sec. V, we provide several numerical simulations and compare them with analytical result in Secs. I–IV. Finally, Sec. VI is devoted to the brief summary of our main results.
+Notation. Throughout the paper, we use superscript and subscript indices to denote the component of a vector and the particle number, respectively,
+and for Z,W∈R^{dN}, we set
+where ⟨·, ·⟩ is the standard inner product in R^{d}.
+II. PRELIMINARIES
+In this section, we briefly recall the definition of mono-cluster flocking, and explain how the unit-speed constraint and time-delay can be incorporated in the C-S flocking model. We also provide several a priori estimates to be used in Secs. III–VI. We first recall the definition of mono-cluster flocking for a many-body system as follows.
+Definition 2.1 (Refs [15] and  [16]). LetP={(x_{i},v_{i})}i=1Nbe a time-varying ensemble of a many-body system. The ensemblePtends to a mono-cluster flocking configuration asymptotically, if the following two conditions hold:
+A. Unit-speed constraint and time-delay
+Let (x_{i}, v_{i}) be the phase-space position of the ith C-S particle moving with unit speed. Then, its dynamics is governed by the following system of ODEs [4]:
+By taking the inner product of (2.1)_{2} with 2v_{i}, it is easy to see that the speed of each particle is constant under the flow generated by (2.1) (see Lemma 2.1),
+Now, we consider the time-delay effect on the system (2.1) due to the time-delayed communication between test and field particles. In this case, the test particle receives information from its neighboring field particles after some finite time elapses. Throughout the paper, we do not take into account the self-processing time-delay and assume that the time-delays are uniform over the interacting particles. In this setting, the interaction terms in (2.1) need to be changed as follows:
+Thus, in the presence of communication time-delay, the subsystem (2.1)_{2} needs to be replaced by the following system:
+B. Basic estimates
+In the sequel, we present a priori estimates such as the invariance of speed, propagation of velocity correlation, variations of the position and velocity with respect to time-delay, and velocity variations to be used in the flocking estimates in Secs. III–VI.
+Lemma 2.1. Let (X, V) be a global solution to system (1.1) and (1.2). Then the speed of each particle is time-invariant,
+Proof. We take the inner product of (1.1)_{2} and 2v_{i} to find
+This yields the desired result.Next, we provide the temporal evolution of ⟨v_{i},v_{j}⟩ along the flow (1.1).
+Lemma 2.2. Let (X, V) be a global solution to system (1.1) and (1.2) satisfying the unit speed constraint,
+Then, we have
+Proof. We take the inner product of (1.1)_{2} and v_{j} to obtain
+Similarly, we have
+Finally, we add (2.3) and (2.4) to obtain the desired relation (2.2).
+Lemma 2.3. Let (X, V) be a global solution to system (1.1) and (1.2) satisfying the unit speed constraint,
+Then, we have
+Proof. (i) Let i ∈ {1, …, N} be fixed. Then, we use the unit-speed constraint ||v_{i}|| = 1 and (1.1)_{2} to find
+We again use ψ_{ik} ≤ ψ(0) to bound the RHS. of (2.5),
+We integrate Eq. (2.5) over the time interval [t − τ, t] and use (2.6) to obtain
+(ii) We integrate (1.1)_{1} over the time-interval [t − τ, t] using ||v_{i}|| = 1 to find the desired estimate,
+Lemma 2.4. Let (X, V) be a global solution to system (1.1) and (1.2) satisfying the unit speed constraint,
+Then, we have
+Proof. Note that (1.1)_{2} implies
+We integrate (2.7) with respect to t to obtain
+Then, the relation (2.8) yields
+Then, we again use ψikτ≤ψ(0) to derive the desired estimate.
+III. DESCRIPTION OF THE MAIN RESULTS
+In this section, we briefly review the previous results on the emergent dynamics of the system (2.1) with zero time-delay (τ = 0) and then present our main results on the emergent dynamics of (1.1) with positive and uniform time-delay τ > 0.
+A. Previous results
+In this subsection, we briefly review the previous results on the formation of the mono-cluster flocking dynamics for (2.1). For a more detailed discussion, we refer to Refs [2],  [4], and  [6]. For the emergent dynamics, the authors in Ref [4] introduced spatial and velocity diameters D(X) and D(V) for Lyapunov functionals and identified a proper subset of basin of attractions. By direct estimates, we can see that diameters satisfy a system of differential inequalities,
+where C_{0} is a positive constant independent of t.
+To derive a desired flocking estimate from (3.1), we introduce the following Lyapunov type functionals:
+Then, we use the time-decay estimates of H_{±}(t) to derive the following mono-cluster flocking estimate in a large coupling strength regime κ ≫ 1.
+Theorem 3.1 (Ref [4]). Suppose that the parameters, communication weight, and initial configurations satisfy the following conditions:
+(i) ||viin||=1,1≤i≤N,A(V^{in})≔mini≠j⟨viin,vjin⟩>0.
+(ii) 0<D(V^{in})<κC_{0}A(V^{in})min∫D(X^{in})∞ψ(s)ds,∫0D(X^{in})ψ(s)ds.Then, for any global solution (X, V) to system (1.1) and (1.2) we have
+and
+where D^{∞}is a positive constant implicitly defined by the following relation:
+Remark 3.1. 1. The restrictionA(V^{in})>0in (i) is necessary for the mono-cluster flocking (see a counterexample in Ref [4]).2. The emergence of bi-cluster flocking was also studied in Ref [2]for some restricted class of initial configurations which are close to bi-cluster configurations using a stability argument.
+B. Main result
+Before we present our main results, we briefly discuss our strategy to derive a flocking estimate. As explained in Sec. I, we first derive an evolution equation for D(V), and then using a continuity argument, we derive our desired exponential flocking estimate. The proof can be split into three steps.
+• Step A: Derive a Riccati type differntial inequality for the velocity diameter D(V),
+• Step B: For a small time-delay τ ≪ 1 and under the following a priori conditions:
+we obtain the exponential decay of D(V); there exists a positive constant Λ > 0 such that
+and
+• Step C: By imposing suitable conditions on initial data and system parameters, we get rid of the a priori assumption (3.3) on spatial variations and obtain the desired flocking estimates.
+To implement the above three steps, we introduce the following framework (F):
+• (F1): Initial data (X^{in}, V^{in}) satisfy
+• (F2): Time-delay is sufficiently small, whereas coupling strength is sufficiently large such that
+We are now ready to state our main results in the following theorem.
+Theorem 3.2. Suppose that the framework(F)holds, and let (X, V) be a global solution to system (1.1) and (1.2). Then, we have
+Proof. We leave its proof in Sec. IV.
+IV. EMERGENT FLOCKING DYNAMICS OF SYSTEM (1.1)
+In this section, we perform steps depicted in Sec. III B to present a Proof of Theorem 3.2.
+A. A differential inequality for velocity diameter
+To obtain the differential inequality (3.2) for D(V(t)), we will use the result in Lemma 2.2. As in Ref [4], we use the method of exchange symmetry in each summation containing ψ_{ik} and ψ_{jk}. To exchange the terms, we will need the following sign relations:
+However, because of the time-delay terms, we cannot obtain the desired positivity of the above terms, but instead we have to produce extra terms containing the time-delayed quantities.
+Note that it follows from Lemma 2.2 that we have
+Then, we use (4.1) and the relation
+to obtain
+For a fixed t ≥ 0, we now take indices i_{t} and j_{t} satisfying
+It follows from (4.2) and (4.3) that
+We further split the RHS of (4.4) to see
+Lemma 4.1. For a given T ∈ (0, ∞], let (X, V) be a global solution to system (1.1) and (1.2) satisfying a priori assumptions,
+Then, we have
+Proof. Below, we estimate the terms I_{1i} in (4.5) separately.
+• Case A (Estimate of I_{11}+I_{12}): We use the choice of extremal indices i_{t} and j_{t}, (4.6), and ⟨v_{it},v_{k}⟩≤1 to find
+Similarly, we have
+Then, we use the nonnegativity of ψ_{ij}, (4.8), and (4.9) to obtain
+where we use the following simple relation:
+• Case B (Estimate of I_{13}): In this case, we have
+This implies
+• Case C (Estimate of I_{14}): Similar to Case B, we have
+In (4.5), we combine all estimates in Cases A, B, and C to obtain the desired estimate (4.7).
+Remark 4.1. Note that the unit speed condition in a priori assumptions (4.6) will be guaranteed by the initial assumption in(F1)and Lemma 2.1, and the second a priori condition means that the angle between velocities are less than π/2, i.e., all velocities are confined in a hemisphere. This a priori condition will be verified by initial assumption on the velocity diameter in(F1)and the exponential velocity flocking estimate in Sec. IV C.
+B. Conditional exponential decay of D(V)
+In this subsection, we show that the spatial diameter D(X) is uniformly bounded for some class of initial configurations. For a given positive constant α ∈ (0, ∞), we introduce a set S(α) consisting of admissible time-delays τ,
+Since 0∈S(α), by the continuity argument, we can see that the set S(α) contains a small interval [0, δ) for some δ > 0. Note that the set S is nonempty. Now, we set
+Lemma 4.2. Suppose that initial data satisfy
+and for a given T ∈ (τ, ∞] and α ∈ (0, ∞), there exists a positive constant τ(α) and a solution (X, V) to system (1.1) and (1.2) satisfying the a priori assumption,
+Then, we have
+Proof. For t ∈ [0, τ], we have
+It follows from Lemma 2.3 and (4.11) that
+On the other hand, since τ∈S and ψ(α)ψ(0)≤1, we have
+Then, we use the assumptions (4.10), (4.12), and (4.13) to obtain
+Thus, we have
+We use the fact that τ∈S to obtain
+Finally, we use Lemma 2.3 and
+to get the desired estimate.Note that in Lemma 4.2, the exponential decay of D(V) has been obtained in the time-interval [0, τ]; thus in the following proposition, we extend this local-in-time result to the global one by the continuity argument.
+Lemma 4.3. Suppose that the initial data satisfy
+and for a given T ∈ (τ, ∞] and α ∈ (0, ∞), there exists a positive constant τ(α) and a solution (X, V) to system (1.1) and (1.2) satisfying the a priori assumption,
+Then, we have
+Proof. Since the proof is rather long, we split its proof into two steps.
+• Step A [Bounding the coefficient ψmτ in (4.7)]: We use a priori assumption (4.15) to see that
+Define a set T and its supremum T^{∞} by
+Note that
+Therefore, D(V(t))<12e^{−κψ(α)8t} yields
+Then, Lemma 4.1 and (4.16) imply
+• Step B (T^{∞} = T): Note that once we show T^{∞} = T, then we have time-decay estimates for Δvτ and D(V).It follows from Lemma 4.2 that
+Since Δvτ and D(V) are Lipschitz continuous, there exists some ε > 0 such that
+Thus, τ+ε∈T, i.e., T is non-empty. We claim
+Suppose not, i.e.,
+Then we have
+Now, we use a rough bound D(V)<2 to obtain
+Then, Gronwall’s lemma and (4.17) imply
+Letting t → T^{∞}, we obtain
+On the other hand, we use Lemma 2.4, (4.17), and (4.19) to show that for any t ∈ [τ, T^{∞}),
+where we used relation (4.14),
+In (4.21), we let t → T^{∞} and use the relation 12+ψ(α)16ψ(0)≤916 to obtain
+Finally, note that the relations (4.20) and (4.22) contradict to (4.18). Thus, we have T^{∞} = T and obtain the desired estimates.
+C. Asymptotic flocking estimates
+Under the framework (F) presented in Sec. III B, we claim
+Proof of claim. We use contradiction and standard continuity arguments to derive the above estimates. First, consider a set T_{1} and its supremum T1∞,
+• Step A (T_{1} is not empty): It follows from the assumption and Lemma 4.2 that we have
+Thus, there exists some ε > 0 such that
+Hence, ε∈T_{1}, i.e., T_{1} is non-empty.
+• Step B (supT_{1}=∞): Next we show
+Suppose not, i.e., T1∞<∞ and
+On the other hand, since dx_{i}dt=v_{i} on t∈[0,T1∞), we have
+where we used Lemma 4.3 with α=Dxin+3,
+We use Lemma 2.3 to see that
+In (4.24), we take the maximum over all i, j to obtain
+We let t→T1∞− and use the assumptions on τ and κ to get
+which is contradictory to (4.23). Therefore, we obtain
+We use Lemma 4.3 again with α=Dxin+3 and T = ∞ to obtain
+V. NUMERICAL SIMULATIONS
+In this section, we provide several numerical simulations in order to compare with the analytical results presented in Sec. III. As can be seen in Theorem 3.2, our analytical results provide rough information on the emergence of mono-cluster flocking. This suggests several remaining question, e.g., how does the time-delay affect the resulting asymptotic states? For a small time-delay τ ≪ 1, by our analytical result, the velocity diameter converges to zero exponentially fast. Please see Figs. 2 and 3. Our result does not cover a relatively large time-delay case with τ > 0. However, in numerical simulations (see Fig. 3), we can observe that velocity diameter also converges exponentially but relatively slowly. Moreover, there is an oscillatory phenomenon for a relatively large time-delay case with τ > 0. For numerical simulations, we used the fourth-order Runge-Kutta method and parameters,
+In order to apply the fourth-order Runge-Kutta method to the time delayed model, we need to compute the increment k_{i} (i = 1, 2, 3, 4) from non-delayed terms and delayed terms. For non-delayed terms, we used the typical Runge-Kutta scheme. For delayed terms, we choose the average value between time t − τ and time t − (τ − h), where h is the time step size. Below, we list the fourth-order Runge-Kutta algorithm as follows:
+where h is the step size and D is the delayed time step and
+To see the effect of time-delay in the temporal evolution of the position and velocity diameters, we take the same initial data on the initial time interval [−τ, 0] in all simulations. We randomly choose constant initial data in the two-dimensional box [−1, 1] × [−1, 1] for the position and velocity.
+In Fig. 1, we plotted the temporal evolution of the position diameters from the same initial data set with respect to τ = 0, 0.1, 0.2, 0.4, 0.8. Note that the size of the maximal position diameter lim_{t→∞}D(X) is proportional to the size of the time-delay τ.
+In Fig. 2, we plotted the temporal evolution of the velocity diameters from the same initial data set with respect to τ = 0, 0.1, 0.2, 0.4, 0.8. Note that the relaxation time toward the flocking state is proportional to the size of the time-delay.
+In Fig. 3, we plotted the logplot to see the decay rate of the velocity diameter with respect to τ. log D(V) decreases linearly in t for small τ, and the slopes are proportional to the delay time τ. Moreover, there appear oscillatory phenomena in log D(V) for large time-delay times τ = 0.4, 0.8.
+VI. CONCLUSION
+In this paper, we try to give a quantitative answer for the question “How does the interplay between the unit-speed constraint and time-delay affect the flocking dynamics of the C-S ensemble” posed in the Introduction. More precisely, we provide an explicit framework leading to the asymptotic flocking estimates for the C-S model with the unit-speed constraint and small time-delay in terms of initial data and system parameters such as the coupling strength and time-delay. Our proposed model is an arbitrary d-dimensional model, and we adopt the nonsymmetric velocity coupling introduced by Lohe [23,24] for quantum synchronization. A time-delay effect naturally arises in dynamical systems from several sources such as the finite propagation speed of information or communication, the response time in neurophysiological processes, and mechanical algorithms. Unlike the original C-S model, our model does not preserve the total momentum. Thus, even if asymptotic flocking occurs, it is not a priori clear how to determine the asymptotic flocking velocity in terms of the initial functions and system parameters, including time-delay, coupling strength, and communication weights. For our model with uniform time-delayed interactions, we have presented a sufficient framework for asymptotic flocking estimates. Several Vicsek type flocking models have been proposed in the literature [1,9,13,14,20,21,34]. In the absence of time-delay, the authors in Ref [4] used a Lyapunov function approach consisting of the position and velocity diameters and derived a system of dissipative differential inequalities for the flocking estimate. From this functional approach, the exponential flocking estimate was obtained for some restricted class of initial configurations. Due to the nonlinear terms including time-delay effects in the dynamics, several difficulties can occur. Thus, we cannot use the former neat methodology designed for the presence of a time-delay. To overcome this obstacle, we used a basic a priori estimate method based on a continuity induction argument.
+FIG. 1. 
+Time-evolution of position diameters.
+FIG. 2. 
+Time-evolution of velocity diameters.
+FIG. 3. 
+Decay of D(V) for several time-delays.

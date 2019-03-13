@@ -1,0 +1,210 @@
+Multi-objective bi-level planning of active distribution networks considering network transfer capability and dispersed energy storage systems
+This study proposes an expansion planning method to maximize the benefits of feeder interconnection and distributed generation (DG) allocation in active distribution networks (ADNs). The proposed method considers four active management schemes (i.e., on-load tap-changer voltage control, DG curtailment, DG power factor control, and demand side management) and uncertainties (i.e., contingencies, load fluctuation, and DG output power). The network transfer capability of the ADN after an N-1 contingency and the optimization of dispersed energy storage systems for peak shaving and renewable energy compensation are also integrated in this study. The reinforcements deemed in this method are wiring reformation, new wiring, substation expansion, and DG installation. The objectives of the model in this paper are cost and security. The system security is evaluated by a defined security margin index under restoration after a contingency. Numerical results are presented for a modified 104-bus distribution network to verify the proposed method.
+I. INTRODUCTION
+The large-scale injection of distributed generations (DGs) in distribution networks brings a series of benefits, such as reducing energy losses, shaving peak load, enhancing voltage profile, reducing environmental impacts, improving overall energy efficiency, relieving distribution wiring overloading, and postponing network upgrade investment [1].^{,} [2] However, due to the “fit-and-forget” policies in passive distribution networks, the positive role of DGs to improve the distribution network performance cannot be fully exploited. Even worse, the uncertainty associated with DG output power would severely affect the secure and reliable operation of the distribution network. To better integrate the DGs and other network assets, one alternative is the use of real-time control and communication systems forming an active distribution network (ADN). The active management (AM) schemes, such as on-load tap-changer (OLTC) voltage control, DG curtailment, DG power factor control, and demand side management (DSM), can increase the DG penetration [3–5], improve the system reliability, reduce the short-circuit current, etc. Dispersed energy storage systems (DESSs) can support the optimal operation and control of ADNs, make the intermittent DGs as dispatchable sources, and shave the peak demand [6].^{,} [7]
+Generally, the topological structures of distribution networks can be divided into two types: radial and interconnected. In recent years, the distribution networks in urban areas tended to be interconnected. The interconnections of feeders provide a restoration path for fault power when an N-1 contingency occurs at a feeder or a substation transformer. Furthermore, with the widespread application of distribution automation and management in ADNs, remote switch control would become much faster [8] and feeder loads can be detected by feeder terminal units [9]. This progress makes it possible for power to transfer among different substations through tie lines flexibly [10]. Thus, the network transfer capability (NTC) of ADNs can be utilized in the case of a contingency.
+The distribution network planning problem needs the technical and economic analysis of future operation conditions. Distribution network planning involves determination of the placement, size, and time of allocation of a new resource, such as a feeder or a substation transformer, based on the existing network and demand forecasts [11]. Traditionally, the main objective of distribution network planning is to minimize total investment and operation cost on the premise of power supply security and reliability [12]. However, it is not enough to obtain the most economic planning scheme because it may result in some unnecessary network upgrades (i.e., reinforcements) even though the existing distribution network is well developed. When AM is considered, the planning would allow distribution network operators to determine the most appropriate regulatory, commercial, and technical strategies for future operation to better manage the distribution networks. To handle the uncertainties of the DG output power and load fluctuation during the future operation, ADN planning needs the multi-period AC optimal power flow technique where the scenario-based approach is normally used [1]. [13–15],
+The network planning is a mixed integer nonlinear programming problem. The solution techniques proposed to solve this problem can be divided into three categories: classical mathematical programming methods [11], convex formulation [14], and heuristics [3]. [15–18], With the uncertainties and AM taken into account, solving the planning problem becomes much more difficult and time consuming because of its large increase in the number of decision variables and constraints. A dynamic methodology for ADN planning is proposed in Ref [15], where alternatives, such as rewiring, feeder reconfiguration, allocation of new protection devices, and DG integration, are considered. A long-term multi-objective planning model is presented in Ref [16] to maximize the benefits of distribution feeder reconfiguration and DG allocation in distribution networks. A multi-objective Tabu search algorithm is applied in Ref [17] to solve the multi-stage distribution network planning problem for cost reduction and reliability improvement. A genetic algorithm (GA) to solve the multi-objective ADN planning is proposed in Ref [18] to minimize the cost of reliability, losses, energy injected from substations, and network investment. Recently, with the large-scale penetration of renewable energy sources, the system design framework should integrate their allocation optimization problem. The optimal planning of a static compensator for on-grid hybrid green power systems is investigated in Ref [19] to determine the system size parameters along with the voltage magnitude and angle of the static compensator. A hybrid green power generation system with considerations for economics, reliability, and carbon emissions is optimally designed through the imperial competitive algorithm (ICA) [20]. The coordinated optimal allocation of photovoltaic-thermal, combined heat, and power along with storages in hybrid heat and electricity distribution networks is developed and handled using a combination of shuffled frog leaping algorithm (SFLA) and particle swarm optimization (PSO), namely, hybrid shuffled frog leaping algorithm (HSFLA) [21]. The effects of carbon emissions on coordinated allocation of multiple DGs in heat and electricity distribution networks are illustrated in Ref [22].
+This paper proposes a planning methodology for ADN, based on a hybrid solving algorithm, where wiring reformation, new wiring, substation expansion, and DG installation are considered for expansion. The multi-objective optimization is applied for cost reduction and security improvement. Uncertainties related to DG output power and load fluctuation are represented through the scenario-based approach. AM schemes including OLTC voltage control, DG curtailment, DG power factor control, and DSM are embedded within the formulation. The NTC of the ADN after an N-1 contingency and the optimization of the DESS for peak shaving and renewable energy compensation are also integrated and compared. The proposed methodology is suitable for urban ADNs featured by distribution automation and large-scale interconnection.
+The main contributions of this paper are as follows:
+• A multi-objective bi-level model for ADN planning is proposed. It analyses DG installation together with traditional expansion alternatives, incorporating AM, DESS, and NTC of ADNs, considering economic and secure objectives in one single model at the first time.
+• The operational conditions of ADNs after reinforcements are considered and optimized in the planning process, using the load and DG output power scenarios.
+The remainder of this paper is organized as follows: Section II describes the NTC evaluation method for ADN. Section III presents the proposed planning model. The solving algorithm is explained in Sec. IV. Section V discusses the simulation results, and Sec. VI concludes the paper. All variables and symbols are defined in the Nomenclature.
+II. NTC EVALUATION OF ADN
+A. Distribution system N-1 security
+The N-1 security guideline is a fundamental criterion for distribution network planning. If a distribution system is N-1 secure, it means that the load of normal areas maintains power supply with all the components satisfying network security constraints when an N-1 contingency occurs [23]. In radial distribution networks, N-1 security only considers the reserve capacity of transformers in the same substation and the NTC after an N-1 contingency is ignored. However, with the network reformation in urban areas, the feeder interconnection is widely implemented and the load can be flexibly transferred among substations. Thus, the substation capacity and feeder configuration should be simultaneously considered when guaranteeing N-1 security in interconnected distribution networks. Two types of contingencies, feeder contingency and substation transformer contingency, are considered in this paper.
+After an N-1 contingency, the load transfer process in an interconnected distribution network is illustrated in Fig. 1. As shown in Fig. 1(a), when a fault occurs at the root of F_{1}, SF1 would be transferred from F_{1} to F_{5} by closing TS_{1}. The “feeder section” is defined as the minimum set of lines on which loads have the same transfer path. After the restoration, power flow is calculated to check whether conductor thermal and bus voltage constraints are violated. As shown in Fig. 1(b), when a fault occurs to T_{1} in substation SP_{1}, some loads of T_{1} would be transferred to T_{2} first. If this operation leads to overloading of T_{2}, the rest loads are then on T_{3} and T_{4} by closing TS_{1} and TS_{2}. Also, the power flow calculation is needed to test whether it satisfies thermal capacity and voltage constraints.
+B. Steady-state security constraints
+The basic constraints of NTC are conductor thermal and voltage constraints after a feeder or transformer N-1 contingency.
+1. Feeder N-1 contingency constraints
+where Eqs. (1) and (2) are the capacity constraints of feeder section F_{l} and transformer T_{n}, respectively, after the load transfer. Equation (3) is the bus voltage constraint after the fault power restoration.
+2. Transformer N-1 contingency constraints
+where Eq. (4) means that the sum of ST,trm,n and STn cannot exceed the rated capacity of T_{n}. The feeder capacity and bus voltage constraints are the same as Eqs. (1) and (3), respectively.
+C. Steady-state security region (SSR)
+The SSR for distribution networks is defined as a set of operating points which guarantee system N-1 security [24]. Here, an operating point is the minimum set of state variables representing system N-1 security, which can be stated as [24]
+Thus, the SSR model can be formulated as follows [24]:
+where g(W_{f}) is a series of network security constraints after an N-1 contingency, including feeder and transformer N-1 contingency constraints, as shown in Eqs. (1)–(4).
+For a given distribution system, the dividing phenomenon on security of operating points has been observed by the N-1 approximation method. This suggests that the SSR boundary in the operating space between secure and insecure points exists. The boundary is approximately linear and can be depicted by several hyperplanes [24]. Figure 2 shows a two-dimension SSR in which two feeder loads are selected as variables.
+As shown in Fig. 2, the solid dots and lines represent the boundary points and boundaries, respectively. The area surrounded by the boundaries is the SSR. “Green filled circle” is the secure operating point, and “red plus sign” is the insecure operating point. Only secure points can be found in the SSR while others cannot.
+D. Steady-state security distance (SSD)
+Based on the SSR model, the location of an operating point can reflect the N-1 security of distribution systems and SSD is defined to evaluate it quantitatively. SSD is the minimum distance from an operating point to different SSR boundaries, which can be described as
+In order to enhance the computation efficiency, the algorithm in Ref [25] is flexibly utilized to calculate V_{SD,k}. When V_{SD,k} is negative, it means that the present operating point is N-1 insecure. The smaller the V_{SD,k} value, the more insecure the operating point. When, however, V_{SD,k} is positive, it represents that the present operating point is N-1 secure. The greater the V_{SD,k} value, the securer the operating point.
+III. PROPOSED MODEL
+A. Uncertainties
+The ADN planning needs to consider the uncertainties and AM schemes to fully exploit the potential asset utilization, postpone the network upgrades, and decrease the investment [26]. Besides the two types of contingencies mentioned in Sec. II, the uncertainties of the DG and load are mainly considered in this paper. Here, the types of DGs are the wind turbine generation (WTG) and photovoltaic generation (PVG). The wind speed, illumination intensity, and load for the optimization problems are characterized by various stochastic behaviours over a given time span. To handle these variations, the scenario-based approach could be used and a reasonable number of scenarios should be considered. However, all yearly scenarios considered result in a large-scale and computationally expensive simulation. Due to this computational complexity, the data clustering method is often used to group the input data and reduce the number of input scenarios.
+A matrix A_{x×y} that contains 24 h of data of the wind speed, illumination intensity, and load for all the days of the year is generated by the set of historic data. x and y represent the number of days over a year and data of the wind speed, illumination intensity, and load per day. Here, x equals 365, while y equals 72. The fuzzy C-means method [27] is used here to cluster the historic data. After iterations, the synthesized clusters are used to represent all the samples in the original matrix. The generated power from the WTG and PVG can refer to Refs [28] and  [29], respectively.
+B. Problem formulation
+The problem is to decide wiring reformation, new wiring, substation expansion, and DG installation which provides a trade-off between system economy and security. In this paper, four AM schemes, OLTC voltage control, DG curtailment, DG power factor control, and DSM, are simultaneously considered. The NTC of the ADN after an N-1 contingency and the optimization of the DESS for peak shaving and renewable energy compensation are also integrated. Due to the modelling demand, the problem is formulated as a multi-objective bi-level optimization model. For a given ADN, the upper level is the optimal planning problem, while the lower level is the optimal operation problem. The upper level can provide ADN planning schemes for the lower level, and then, the lower level can optimize the operation mode for every scenario. When all the scenarios are optimized, the lower level simulation results would get back to the upper level to guide the best decision.
+1. Upper level programming model
+The upper level programming model minimizes the annual total cost [16] and average variation coefficient of SSD (AVCS) and is subject to the equipment investment constraints, which can be formulated as
+2. Lower level programming model
+The lower level programming model minimizes the operation cost for every scenario and is subject to the NTC constraints, AM constraints [3], and DESS operation constraints [7], which can be stated as
+C. Constraints
+1. Equipment investment constraints
+where Eq. (24) is the DG installation capacity constraint at bus i [3]. Equations (25) and (26) are the discrete installation capacity constraint of the WTG and PVG at bus i, respectively. Equation (27) is the radial topology structure constraint [15].
+Besides all the above constraints, the equipment investment constraints also include the network connectivity constraint, which means that there is no isolated load or load chain in the distribution network and all the new loads should be supplied from substations.
+2. NTC constraints
+where Eqs. (28) and (29) are the power flow equation constraints [17]. Equation (30) is the NTC constraint, and Eq. (31) is the bus voltage constraint [15].
+3. AM constraints
+where Eq. (32) is the OLTC secondary voltage constraint. Equation (33) is the DG dispatch constraint. Equation (34) is the DG curtailment rate constraint. Equation (35) is the DG power factor angle constraint. Equation (36) is the DSM participation constraint. Equation (37) is the DSM active and reactive power function.
+4. DESS operation constraints
+where Eq. (38) is the DESS power capacity constraint. Equation (39) is the DESS ramp-up and ramp-down power capability constraint. Equation (40) is the DESS energy storage constraint. Equations (41) and (42) are the constraints of the amount of energy storage between two adjacent hours.
+IV. SOLVING METHODOLOGY
+The proposed model is a complicated multi-objective bi-level mixed integer nonlinear programming problem, which is pretty hard to be solved by a single algorithm. Thus, a hybrid solving algorithm combining normal boundary intersection (NBI), dynamic niche differential evolution algorithm (DNDEA), and primal-dual interior point method is put forward in this paper to avoid the difficulty.
+A. NBI method
+The theory of Pareto optimality has been widely applied to solve multi-objective optimization problems. The NBI algorithm is an effective method to form the solution set of uniform Pareto front ends in the criterion space. The generated Pareto solutions are generally evenly distributed, and the Pareto curve could be better represented [30]. The major stages of the NBI method are as follows:
+The first step is to form Φ using the lexicographic optimization method, which can be described as
+where the diagonal elements referred to as ideal values represent the optimal objective values considering F_{1}(x) and F_{2}(x), respectively. The off-diagonal terms known as Nadir values are the evaluation of objectives, using the solution found considering only F_{2}(x) (F_{1}(x)).
+The normalization for objective functions is carried out using the ideal and Nadir values. Any point P(β_{1},β_{2}) in the normalized space, on the line connecting the anchor points (Φ¯_{1}=[Φ¯_{11},Φ¯_{12}], Φ¯_{2}=[Φ¯_{21},Φ¯_{22}]), referred to as the utopia line, can be expressed as [31]
+where β_{1} and β_{2} are positive values and β_{1}+β_{2}=1.
+The original multi-objective optimization problem is transformed into several single-objective sub-problems with the objective of maximizing the distance D^{u} between the utopia line and the Pareto surface [31]
+where F¯(x)=[F¯_{1}(x),F¯_{2}(x)]^{T}; n is the normal unit vector to the utopia line; D^{u} corresponds to a unique combination of β_{1} and β_{2}. A near-uniform spread of the Pareto surface can be generated by solving Eq. (45).
+The NBI method produces a set of Pareto-optimal solutions instead of one optimal solution, and there is no unique solution to optimize all the objectives. Thus, a fuzzy decision-making approach [32]^{,} [33] is used in this paper to obtain the final optimal solution.
+B. Proposed DNDEA
+1. Differential evolution algorithm (DEA)
+DEA [34] is a population-based stochastic search algorithm introduced by Storn and Price in 1995. It can be applied to optimize the real parameter, real-valued functions, and global optimization problems. For the distribution network planning problems, the major stages of DEA can be described as follows:
+(1) Initialization: The control variables of DEA are initialized to construct a population by randomizing individuals within their feasible numerical range. The random initial distribution networks with DGs are feasible if Eqs. (28) and (29) and the following two constraints are simultaneously satisfied [35]:
+Until now, the Prune algorithm has been widely employed to generate feasible initial population in which the topology of each individual is connected and radial like a tree [36]. This heuristic algorithm starts with a completely meshed distribution network and then removes branches until a feasible radial network is obtained. However, it does not consider the solutions as a whole. Thus, they are restricted to a fraction of the solutions' search space. In this paper, this limitation is handled using the following graph theory based rules, which ensure that the aforementioned constraints initialize feasible (i.e., connected and radial) solutions
+All branches that do not belong to any loop vector (i.e., set of elements of the fundamental loops) are closed, and all branches connected to any substation are also closed.
+Only one branch from a common branch vector (i.e., set of elements that are common between any two loop vectors) can be opened to avoid the isolated load or isolated load chain [37].
+Only one branch from a non-common branch vector (i.e., set of elements that are not common with other loop vectors) can be opened to guarantee the connectivity of exterior buses.
+All the common branch vectors of a prohibited group vector (i.e., set of common branch vectors that incident to common interior buses) cannot simultaneously have open branches [37].Only the random initial solutions that meet the above mentioned filtering rules are evaluated using power flow. After the above heuristic process, the feasibility of the solutions randomly generated is checked and the initial population is achieved. It is worth mentioning that heuristic may not provide an adequate number of feasible individuals in certain cases. In such cases, the feasible individuals may be grown to acquire the requisite number using mutation.
+(2) DEA operation: The fitness function is based on the objective function. In this paper, re-initialization is adopted using the problem-specific rules described above to replace the exceeded control variable by a randomly chosen value within its feasible range. To decrease the fitness of the individual that violates the constraints, the quadratic penalty terms are also considered in the proposed objective function.
+The selection strategy is performed to compare the fitness of the trial vector and the corresponding target vector, and selecting the parent will survive in the next generation which provides the best solution.
+The crossover operator is implemented to produce trial vectors by exchanging the components of the mutant vectors and the target vectors. In this paper, the crossover operator adopts binomial crossover which is carried out on each of the variables. This exchange is guided by loop vectors, common branch vectors, and the prohibited group vectors to guarantee radial topology of the network. In this way, the accentuated crossover is improved.
+The mutation process generates mutant vectors at every generation. This mutation operator adopts DEA/best/1 mutation. Here, “/best/” refers to a best chosen base vector that has been mutated by the addition of a single (“/1/”) scaled and randomly chosen difference vector. The generated offspring, if infeasible, is corrected by the loop vectors, common branch vectors, and prohibited group vectors. In this way, the conventional mutation is directionally modified.
+The problem-specific local search operators are the key elements to perform a significant improvement on the set of final solutions using a low computational cost [38]. In this paper, a local search operator has been proposed to increase the global security of the network considerably. Following are the incremental steps to conduct the operator:
+Step 1. Read the set of scenarios of load and DG output power, and copy the set of solutions obtained from the DEA (Input Set) to the Candidate Set.
+Step 2. Set A and D as the first solution of the Input Set and a copy of A, respectively.
+Step 3. Build a list R with the branches of A sorted in descending order of current.
+Step 4. While R is not empty.
+Step 4.1. Replace the first branch of R in D by a securer one that can comply with the same current at least. If it is not possible to replace such a branch, remove it from the list and repeat the step.
+Step 4.2. Insert D into the Candidate Set.
+Step 5. Remove A from the Input Set. If the Input Set is not empty, return to step 2. Otherwise, go to step 6.
+Step 6. Perform the dominance analysis on the Candidate Set to remove dominated solutions.
+Step 7. Evaluate all the solutions of the Candidate Set using the set of scenarios of load and DG output power. If the infeasibility ratio of the distribution network for a certain solution is not bigger than the given maximum acceptable infeasibility ratio, remove the solution from the Candidate Set.
+Step 8. Perform the stochastic dominance analysis [39] on the Candidate Set to remove dominated solutions.
+2. Dynamic niche
+DEA can be adjusted to solve the multimodal optimization problems integrating the dynamic niche strategy. In this paper, the strategy can dynamically adjust the niche radius by a new two-stage annealing schedule. At the first stage, the exploration dominates the search process and the radius narrows in the speed of exponent as
+where r_{initial} is the initial radius as shown in Eq. (49) [40] and d is a variable between 0 and 1 which is determined in Eq. (50)
+where ‖⋅‖ refers to the Euclidean distance between the two vectors x_{i} and x_{j}. r_{cut} is the distance threshold value before turning to the second stage; the value of the feasible domain radius proves reasonable. N_{cut} is the cut-off number of iterations before turning to the second stage, a proper value is one third of the iterations. At the second stage, the radius is set as a constant value and the exploitation is performed to enhance the quality of the acquired optima. When the niche radius is greater than r_{cut}, the radius is equal to r. Otherwise, the radius is equal to r_{cut}.
+3. DNDEA
+In this paper, the DEA/best/1 variant is combined with the dynamic niche strategy. The dynamic niche method is able to adjust the radius according to the annealing schedule and find the global and local optima in the multimodal optimization problems. It can amplify the vector differences and increase the population diversity at the early evolution stage. On the other hand, the local optima can be located effectively in the later process. Moreover, the proposed DEA variant is distinguished with brilliant robustness and high convergence speed due to its great search capability. These features support the ability to prevent from getting trapped in local minima and ensure good convergence at the later stage. The flowchart of the solving methodology is shown in Fig. 3.
+V. SIMULATION AND RESULTS
+The modified 104-bus distribution network is used as a test case. The topology of the case is shown in Fig. 4. The details of the original system can be obtained from Ref [41]. With no changes in the capacity and supplied load of the original transformers, the modified 104-bus distribution network expands the original system from 7 to 20 feeders and 38 to 104 existing load buses. Seven more tie lines are added to form an interconnected distribution network. The types of loads in the case are residential, commercial, and industrial. The simulation parameters can be seen from Tables I to IV. The loads increase every year [16], and the annual load growth rate is considered 3% over the planning horizon. The yearly profiles of wind speed, illumination intensity, and loads for the network are shown in Fig. 5.
+According to the flow chart in Fig. 3, the program is compiled in MATLAB R2013a and runs on a laptop with 3.60 GHz CPU and 8 GB RAM.
+Four different cases are presented in Table V to compare the planning results. DESS is not considered in cases 1 and 3. NTC is not considered in cases 1 and 2.
+The outcomes of the planning problem for different cases are presented in Table VI. It can be observed that the maximum DG capacity is limited without DESS (cases 1 and 3) or NTC (cases 1 and 2). The high penetration of DGs in case 4 offers the system the chance to prevent the substation expansion and reduce the annual total cost. Further to elaborate, NTC (cases 3 and 4) has an impact on reducing the number and length of reformed wirings. This is because the potential supply capability can be exploited through optimizing the existing network and the network upgrade can be appropriately postponed.
+The details of system expansion cost results for different cases are shown in Table VII. As shown in Table VII, from an economic perspective, case 4 is superior to any other case in reducing the total cost. Despite the fact that the DG installation cost is increased in case 4, the increased DG installation and NTC application reduce the energy purchase cost and DSM cost. The reduction in DSM cost is due to restoring part of the loads affected by a contingency, which promises an improvement in the power supply reliability. Moreover, the AVCS decreases largely in cases 3 and 4 with respect to cases 1 and 2, which demonstrates that the NTC considered in cases 3 and 4 can greatly improve the system N-1 security level. From these results, it is obvious that with DESS and NTC achieved simultaneously, the economy and security of the planning system can be totally improved.
+The information of SSD for different cases is shown in Fig. 6. The results in Fig. 6 show that planning actions influence the increase or decrease in SSD. For example, for different cases, the SSD of feeders 7, 13, and 18 remarkably changes, while the SSD of feeders 3, 9, and 14 almost remains constant. This is due to the differential reinforcements including reformation of existing wirings, construction of new wirings, expansion of existing substations, and allocation of DGs. Furthermore, the SSD of feeder 1 in cases 3 and 4 becomes positive with respect to cases 1 and 2. This indicates that with NTC, the system N-1 security can be guaranteed.
+The profiles of energy storage of DESS during a generic summer day in case 4 are shown in Fig. 7. From the results presented in Fig. 7, it can be observed that DESS tends to use its stored energy to achieve the optimality of objective functions since the production of installed WTGs at summer night is much higher. Moreover, the DESS is used to store the power produced by the renewable energy sources in the middle of the day and supply it back to the upstream grid during high peak hours. We can also deduce from these results that the constraints of the daily storage are satisfied.
+Figure 8 shows the power injected from substation, power loss, WTG, PVG, and active load during one summer day in case 4. As shown in Fig. 8, the DESS is used to store energy in the first one third of the day (from both the upstream grid and, when available, WTG and PVG supply) to balance the local energy in the peak hours when the electricity price is high. It is worth mentioning that with AM, DESS, and NTC, the objectives are always reached by supporting the quality of the supply (e.g., voltage limit, feeder congestion, and carbon emission minimization).
+The proposed DNDEA statistics of the best performance indices are recorded for 30 runs to handle case 4. In addition, the mean values of these concerned indices are also calculated. To validate the high performance of the proposed algorithm, DNDEA is compared with HSFLA [21], DEA [34], SFLA [21], PSO [21], ICA [20], and GA [18] in terms of optimization results and algorithm speed, as shown in Table VIII. It can be observed that the proposed DNDEA contributes to reducing the mean total cost by 0.16%, 2.46%, 2.70%, 2.77%, 3.22%, and 4.59% in comparison with HSFLA, DEA, SFLA, PSO, ICA, and GA, respectively. The convergence curves of different optimization algorithms are shown in Fig. 9, where it is found that DNDEA attains the highest accuracy and pretty high speed in comparison with other noted algorithms. It can also be seen from Table VIII that with the exception of HSFLA, DNDEA costs the least computation time compared to other algorithms examined. Note that the difference between the mean computation time results of DNDEA and HSFLA is 4.2% which is acceptable. All these imply the ability of the proposed algorithm to find higher quality solutions with excellent robustness, consistence, and convergence characteristics.
+VI. CONCLUSIONS
+In this paper, a multi-objective bi-level model for ADN planning, integrating NTC and DESS, is proposed. The topology of the ADN is an interconnected form, and loads can be flexibly re-distributed among feeders through tie lines with advanced distribution automation. Given this, the NTC is first embedded in the ADN planning problem to improve system reliability. The objectives of the problem are formulated for cost reduction and security improvement, under practical operation constraints. A hybrid solving algorithm is used to solve the proposed model. The proposed approach is extremely robust to solve multi-objective problems, which drives the ADN planning towards a solution providing the trade-off between cost and security of the planned network.
+From the simulation results, the proposed model proves to be a flexible method to change the AM schemes. It has successfully accomplished preferable economic and technical solutions for optimizing the objective functions simultaneously. With NTC and DESS, the DG penetration level is largely increased and the system objectives are always reached by supporting the power supply quality. When NTC is considered, the network upgrades can be appropriately postponed due to the potential supply capability of the existing network. Moreover, the numerical statistics of the proposed algorithm are recorded and compared, which prove that the proposed algorithm has excellent robustness and convergence characteristics. The practical operation conditions are reasonably integrated in the planning process to make the planning more suitable for a real system.
+TABLE I. 
+Data of OLTCs and wirings.
+TABLE II. 
+Data of existing load buses.
+TABLE III. 
+Data of new load buses.
+TABLE IV. 
+Simulation parameter: the left-hand side number is the DESS installation site, while the right-hand side number in the brackets is the installation number of the unit capacity.
+TABLE V. 
+Analysis cases. √ means that the corresponding AM scheme (column) is considered in the corresponding case (row).
+TABLE VI. 
+Planning schemes for four cases. 10(2,1) represents two WTGs and one PVG installed at bus 10 and others are the same.
+TABLE VII. 
+Comparisons of planning results for four cases.
+TABLE VIII. 
+Performance comparison of various algorithms in case 4.
+TABLE I. -body
+Substation	OLTC	OLTC capacity, MVA	Wiring type	Wiring capacity, MVA	Unit resistance (Ω/km)	Unit reactor (Ω/km)
+SP1	1	16	JKLYJ-150	6.91	0.17	0.365
+2	16	JKLYJ-150	6.91	0.17	0.365
+SP2	3	16	JKLYJ-150	6.91	0.17	0.365
+4	16	JKLYJ-150	6.91	0.17	0.365
+SP3	5	12	JKLYJ-120	5.83	0.22	0.366
+6	12	JKLYJ-120	5.83	0.22	0.366
+TABLE II. -body
+Load bus	Load (MVA)	Type
+1–4, 18–20, 32, 44–47, 68, 94	0.444	Residential
+11–13, 33–36, 51–53, 57–59, 63–65, 69–71, 95–97, 99, 100	0.296	Residential
+48, 49, 72, 73, 98, 101	0.407	Industrial
+14, 15, 21–23, 37, 54, 60–62, 102, 103	0.271	Industrial
+8–10, 29, 43, 90	0.815	Residential
+26–28, 74-88, 91, 92	0.326	Residential
+30, 31, 39–42, 89, 93	0.611	Commercial
+5–7, 16, 17, 24, 25, 38, 50, 55, 56, 66, 67, 104	0.336	Commercial
+TABLE III. -body
+Load bus	Load (MVA)	Type	Alternative site	Load bus	Load (MVA)	Type	Alternative site
+105	0.336	Commercial	7, 43	110	0.407	Industrial	28, 73, 80
+106	0.407	Industrial	43, 56	111	0.336	Commercial	67, 76
+107	0.611	Commercial	10, 50, 62	112	0.336	Commercial	31, 89
+108	0.296	Residential	17, 25	113	0.407	Industrial	93, 104
+109	0.296	Residential	28, 73, 85	114	0.296	Residential	38, 98
+TABLE IV. -body
+Alternative reformed wiring	F_{1}, F_{3}, F_{7}, F_{9}, F_{10}, F_{11}, F_{13}, F_{20}	Carbon emission cost	10 $/t
+New wiring type	JKLYJ-150, JKLYJ-120	DSM incentive price	350 $/MWh
+Wiring annual value factor	0.073	DESS installation site and size	7(4), 10(4)
+DG alternative site	7, 10, 38, 43, 73, 93, 98, 104	DESS power rating capacity	1 MW
+Maximum DG installation capacity at each bus	5 MW	DESS energy reservoir capacity	5 MWh
+DG unit capacity	0.5 MW	DESS ramp-up/down rate	0.3 MW/h
+DG annual value factor	0.087	DESS power injection and extraction efficiency	0.95
+Cut-in/rated/cut-out wind speed	3, 13, 20 m/s	OLTC secondary voltage	0.95 p.u.–1.05 p.u.
+Rated illumination intensity	0.5 kW/m^{2}	DG curtailment rate	0%–50%
+WTG investment cost	1500 $/kW	DG power factor	0.98 (lagging)–0.98 (leading)
+WTG operation cost	30 $/MWh	DSM participation rate	0–1 p.u.
+WTG AM cost	22.5 $/MWh	Iterations	50
+PVG investment cost	1750 $/kW	Population	50
+PVG operation cost	40 $/MWh	Scaling factor/crossover probability	0.9–0.1 (linearly decreasing)
+PVG AM cost	30 $/MWh	Clustering number	50
+Bus voltage limit	0.95 p.u.–1.05 p.u.	Power reference	20 MW
+Electricity price	70 $/MWh (6:00–21:00) 35 $/MWh (other time)	Energy reference	20 MWh
+Carbon emission intensity	639.2 kg/MWh	Planning horizon	5 years
+TABLE V. -body
+Case	OLTC voltage control	DG curtailment	DG power factor control	DSM	DESS	NTC
+1	√	√	√	√		
+2	√	√	√	√	√	
+3	√	√	√	√		√
+4	√	√	√	√	√	√
+TABLE VI. -body
+Case	Reformed wiring	New load allocation site	DG installation site and size
+1	F_{3}, F_{9}, F_{11}, F_{20}	7, 43, 10, 25, 73, 80, 76, 89, 93, 38	10(2,1), 43(2,0), 73(4,2), 93(2,3)
+2	F_{3}, F_{9}, F_{10}, F_{20}	7, 43, 10, 17, 73, 80, 76, 31, 104, 98	10(2,1), 43(2,0), 73(3,2), 98(4,3)
+3	F_{1}, F_{3}, F_{7}	7, 43, 10, 25, 28, 80, 76, 89, 104, 38	7(3,1), 38(3,3), 43(2,1), 93(1,2), 104(2,1)
+4	F_{1}, F_{7}, F_{10}	7, 43, 10, 17, 28, 73, 76, 31, 104, 98	7(3,2), 10(2,1), 38(2,2), 43(3,1), 98(2,2), 104(2,0)
+TABLE VII. -body
+Case	Total cost (×10^{4} $)	DG installation cost (×10^{4} $)	Energy purchase cost (×10^{4} $)	DSM cost (×10^{4} $)	AVCS
+1	2212.4	110.9	1589.3	104.2	0.705
+2	2196.0	117.5	1571.3	91.8	0.697
+3	2189.0	132.7	1524.1	90.7	0.454
+4	2162.5	152.3	1470.4	75.4	0.433
+TABLE VIII. -body
+Algorithm	Minimum total cost (×10^{4} $)	Mean total cost (×10^{4} $)	Minimum AVCS	Mean AVCS	Mean iterations	Mean computation time (s)
+DNDEA	2162.5	2169.1	0.433	0.440	27.8	1464.8
+HSFLA [21]	2163.2	2172.6	0.433	0.441	23.6	1402.9
+DEA [34]	2164.7	2223.8	0.439	0.450	38.4	1859.4
+SFLA [21]	2165.8	2229.3	0.440	0.452	31.5	1536.5
+PSO [21]	2166.1	2230.8	0.440	0.454	39.7	1916.3
+ICA [20]	2166.1	2241.2	0.441	0.455	29.3	1693.2
+GA [18]	2166.3	2273.4	0.444	0.457	47.2	2273.6
+FIG. 1. 
+Two types of contingencies. (a) Feeder N-1 contingency. (b) Transformer N-1 contingency.
+FIG. 2. 
+Schematic diagram of the SSR boundary.
+FIG. 3. 
+Flowchart of the solving methodology.
+FIG. 4. 
+Modified 104-bus distribution network.
+FIG. 5. 
+Initial annual wind speed, illumination intensity, and load curve.
+FIG. 6. 
+Comparisons of SSD of twenty feeders for four cases.
+FIG. 7. 
+Profiles of energy storage of DESS during a generic summer day in case 4.
+FIG. 8. 
+Profiles of active power of load, WTG, PVG, and power loss during a generic summer day in case 4.
+FIG. 9. 
+Convergence comparison of various algorithms in case 4.

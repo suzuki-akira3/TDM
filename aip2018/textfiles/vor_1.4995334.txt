@@ -1,0 +1,202 @@
+Deep learning to predict the generation of a wind farm
+One of today's greatest technological challenges is adding renewable energies to an electric grid, with the goal being to achieve sustainable and environmentally friendly electricity generation that is also affordable. In order for the incorporation of renewables to be successful, however, predictive tools are required which can be used to determine sufficiently far in advance how much renewable energy will be available to be injected into the grid so that the remaining generation sources, including those based on fossil fuels, can be adjusted in order to fill the demand. This would limit the environmental impact and the dependence on this type of fuel in a foreseeable shortfall scenario. This paper seeks to advance in the creation of these predictive generation models for wind farms using deep learning. We present a predictive model based on a deep, multi-layered neural network that based on a forecast for atmospheric conditions is capable of estimating the generation produced by a wind farm 24 h in advance. These models were trained and validated with data from a wind farm located on the island of Tenerife and show that the best of these predictors is more precise than the reference estimator and the prediction model currently used at the farm. We also note that the problem does not require models based on truly deep neural networks. However, the workflow for correctly developing, training, validating, and tuning these models is greatly enhanced by the advantages that deep learning techniques and tools can offer.
+I. INTRODUCTION
+One of today's greatest challenges is making electrical generation sustainable and the distribution of that energy in an environmentally friendly, affordable, and socially acceptable manner. Obviously, the main goal is to transition toward an energy system that allows reducing the dependence on fossil fuels as part of a scenario that simultaneously considers (i) the shortage of fossil fuels, (ii) the increased demand for energy worldwide, and (iii) the serious impact that using these types of fuels has on the environment.
+It is thus essential to incorporate renewable energies into the electricity grid. For this to be successful, however, predictive tools are needed that allow us to learn sufficiently far in advance the amount of renewable energy that will be available to inject into the grid at any given time. By correctly predicting the amount of renewable energy generated, the need for other generation sources can be planned ahead of time so that the demand for electricity can be met while at the same time minimizing the use of energies based on fossil fuels.
+In general, electricity grids can be classified into two types: continental and isolated [1]. In the former, increasing the generation with renewables is a fairly robust practice thanks to the interconnected grids, which make it easier to manage the unpredictability of the renewable sources. However, isolated electrical grids (like those used in many islands) pose many obstacles to using renewables to increase generation while maintaining the required reserve. For example, in an isolated electrical system that is heavily weighted toward wind or photovoltaic energy, unexpected variations in the generation due to changes in wind speed or available sunlight could lead to an imbalance between the energy generated and the energy demanded, with no connections to other systems that can help to offset the imbalance.
+In isolated systems, it is essential that the different sources of energy be coordinated to ensure the supply. For example, during times of low wind generation, other sources of energy must be used to offset the demand. These sources can be renewable or fossil, as the case may be. In either case, it is clear that for this coordination to be viable, it is crucial to be able to accurately predict the generation of renewable energy sources in order to plan the needs of the system ahead of time.
+Unfortunately, wind energy, which is one of the most widely used energy sources around the world, has the important disadvantage of being very difficult to predict accurately. This results from its strong dependence on atmospheric conditions, which are very hard to foresee. For example, on the island of Tenerife, the Institute of Technology and Renewable Energies (ITER) is the agency that runs the island's largest wind farm. Its generation predictions are estimated using polynomial regression based on the anticipated wind speed derived from the weather forecast for the location of the farm. The generation forecasts are provided to the grid operator 24 h in advance and have a margin of error of 20%–60%, which can translate into significant losses due to fines imposed by the operator. In the end, these forecast errors often require increased generation using conventional plants.
+In this paper, we present a prediction model based on a multi-layered deep neural network that by forecasting atmospheric conditions is capable of estimating with a 24-h lead time the amount of energy produced by a wind farm located on the island of Tenerife. The goal is to improve the generation forecast for this wind farm in comparison to the regression technique currently used.
+II. STATE OF THE ART
+The relationship between the electricity generated by a turbine and wind speed is given by the generator's power curve, which is supplied by its manufacturer [2]. Figure 1 shows a sample of power curve for a wind turbine.
+This is a simplification; however, because in fact, while the electrical power P generated by a turbine is determined fundamentally by the wind speed w, it is also affected by the area A swept by the generator and the air density ρ [3]
+which is in turn affected by the relative humidity in the air and the ambient temperature. The relationship between the electricity generated and the atmospheric conditions is thus evident.
+Several techniques are currently available for predicting short-term wind generation. The simplest rely on historical records of generated power P, but in general, the starting point is the weather forecast. Once a forecast is made, different techniques vary in terms of how the forecast is used to turn it into wind generation predictions, but in general, there are two approaches to this problem, those based on physical models and those based on statistical models [4].
+The techniques based on physical models involve simulating variations in wind flow throughout the farm to estimate its speed and direction at each generator. This then allows using the power curves provided by the manufacturer to estimate the total generation at the park. In contrast, the approach that relies on statistical models does not require having a physical model of the farm; instead, the statistical model is used to directly predict the power generated based on the weather conditions. The parameters in the statistical model are estimated by adjusting the model to historical generation and weather data. In some cases, a combination of the two approaches may be necessary to yield sufficiently accurate predictions. In such cases, the physical model is used to obtain the best estimate for the local wind speed and direction at each generator, and a statistical model is then used to lower the prediction error even more.
+A. 4–6 h prediction
+In most cases, statistical approaches make use of time-series analysis although there are other alternatives. The reference estimator against which a comparison is made is based on assuming that future generation will be the same as the current generation, measured as the average for a previous time window. Despite its simplicity, it is very difficult to obtain better results than the reference estimator for horizons between a few minutes and 4–6 h.
+Various authors have made proposals that improve on the results of the reference estimator. For example, Bossany [5] used a Kalman filter to obtain a 10% improvement in the root mean square error (RMSE) of the prediction for the next instant in time with respect to the reference estimator with a 1-min time window. This improvement is lost when the reference estimator uses 1-h averages. Tantareanu [6] estimated that autoregressive moving average (ARMA) models applied directly to wind generation data can improve performance by up to 30% for 3–10 subsequent time periods with respect to the reference estimator in 4-s averages with data sampled at 2.5 Hz. Dutton et_al [7] used an autoregressive linear model and an adaptive fuzzy logic model that offered improvements of up to 20% in the RMSE for an 8-h prediction timeline. For longer horizons, however, the 95% confidence interval contained most of the likely wind speed values, and thus, an approach based on weather forecasts was deemed to be more promising.
+In general, time-series models like ARIMA or Box-Jenkins [8], which tend to be useful in prediction tasks for certain industrial processes, provide reasonably good wind energy prediction results for horizons of up to 6 h by using only previous generation data. There are other authors who have tried to use models with techniques that better resemble artificial intelligence, such as the case of models based on neural networks, but few benefits obtained over the reference estimator do not seem to be sufficient to offset the extra effort required to train these models.
+B. Predictions in excess of 6 h
+None of the above models is useful for making predictions over horizons of 24–48 h, which are of most interest to the operation of the system and to trade in the energy market. For these horizons, it is better to obtain forecasts of weather conditions, which are then used as inputs for the wind generation prediction model. These predictors can be based on single time series models or on the combination of several models [9]. But success has also been reported using techniques closer to artificial intelligence, such as models based on neural networks or support vector regression (SVR). In this regard, various authors have tried different approaches. For example, Yan et_al [10] presented a comparison of three wind power forecast models based on radial basis function (RBF) neural networks, support vector machine (SVM), and genetic algorithm back propagation (GA-BP). They showed that generally the first two kinds of models have higher prediction accuracy than the last one.
+Of note is the ARMINES/École des Mines de Paris system [11], which integrates models based on time series with neuro-fuzzy models. The time-series models allow predicting generation over 10-h horizons since the autoregressive component significantly improves the prediction for periods in which the exclusive use of estimated meteorological conditions is not sufficient, whereas the neuro-fuzzy models allow extending the time horizon up to 72 h. A smart system weighs the two types of predictions to obtain the maximum performance throughout the interval, with an average error of about 10% of the installed power. Another example is the Wind Power Management System (WPMS), which provides predictions for 95% of the power installed in Germany. In this case, the weather forecast is an input to the artificial feed-forward neural network, which handles the task of estimating the generated power [12].
+Many researchers have focused on using the capabilities of recurrent neural networks (RNNs) to predict time series. Varanasi and Tripathi [13] used nonlinear autoregressive exogenous (NARX) networks to predict the wind speed and power generation based on the weather forecast and on historical generation data. To improve the efficiency, Varanasi and Tripathi [13] proposed a new forecast engine that uses particle swarm optimization (PSO), an evolutionary technique, to select the network's training parameters and its structure. Di Piazza et_al [14] used a NARX network to predict the hourly solar irradiation and wind speed forecast 8–24 h in advance. The network architecture is selected by a combination of genetic algorithms and network pruning. Gurubel et_al [15] also used neural networks and evolutionary techniques for forecasting and optimal sizing of hybrid renewable energy systems with a grid-connected storage system.
+Echo state networks (ESNs) have also been employed successfully in short-term wind speed predictions using records of the Nevada Department of Transportation's Road Weather Information Systems [16]. Wu et_al [17] used a long short term memory (LSTM) RNN to make wind power generation predictions that are further analyzed and evaluated in order to perform probabilistic forecasts. The use of gated recurrent unit (GRU) networks is expected to yield results that are similar to those obtained with LSTM networks for these types of problems [18]. In any event, selecting the best predictor based on RNN is complicated since in most studies, they are generally compared with standard estimators and not with other RNN-based estimators.
+Estimators who make probabilistic forecasts, such as the one made by Wu et_al [17], have the advantage of providing additional quantitative information on the uncertainty associated with the predicted wind power generation. Sideratos and Hatziargyriou [19] obtained this probabilistic prediction by using a RBF neural network and self-organized map (SOM), while Nielsen [20] proposed the use of a new estimator for this purpose called conditional parametric autoregression extraneous (CPARX).
+C. Deep learning
+In this paper, we want to advance in the creation of generation prediction models for wind parks by employing deep learning instead of the techniques that are currently in use.
+Deep learning comprises a set of techniques and algorithms that facilitate the creation of neural networks with a significant number of layers and neurons. One of the main differences in deep learning with respect to other automatic learning techniques is that selecting and preparing the best characteristics of the data to be used as inputs to the model (the so-called feature engineering) must not be required. Instead, the network itself, through its multiple layers, is able to extract for itself the increasingly abstract features based on the data used during the training.
+The use of techniques based on neural networks with a large number of layers and parameters poses three fundamental problems. The first is the need to have a high number of training samples, which must be processed by the current architectures, but that, most of all, make it impossible to use classical batch learning (in which all the samples are considered at the same time in each training step). The second is the significant computational cost of training this kind of network. The third is the fact that during the training, the backward propagation of errors undergoes a phenomenon called the vanishing gradient [21], which makes it considerably more difficult to train the entire network.
+To overcome these limitations, alternative training methods to gradient descent have been proposed. Some examples include LevenbergMarquardt and the methods based on the Kalman filter, like extended Kalman filter (EKF) [22] or unscented Kalman filter (UKF) [23]. The training methods based on the Kalman filter provide a significant improvement in the convergence of the training [24] although they are more complex and require properly grouping their parameters. Some authors addressed this problem by using a method based on evolutionary techniques. For example, Alanis et_al [25] used PSO to adjust the parameters of the EKF algorithm used to train the RNN for forecasting in smart grids.
+In order to be able to handle large sets of samples and escape for local minima, training techniques based on online learning were eventually used, specifically, one variant of the stochastic descent gradient that uses mini-batches of samples selected at random [26]. Some research [27] on the proper initialisation of weights helped to resolve the problem of the vanishing gradient. New ideas also arose, such as rectified linear unit (ReLU) activation functions [28], the dropout regulation techniques [29], mechanisms for stopping the training when no significant further improvement of the results can be expected, proposals for selecting a suitable learning rate or even for not having to select one at all, and more efficient optimisers. All this made the problem of properly initializing the model less important and allowed for the possibility of using simpler alternatives.
+The increased network size also underscored the significant computational needs for this type of solution. It thus became necessary to leverage the parallelisation offered by multiprocessor and multicore architectures and especially the tremendous possibilities of modern graphic processing units (GPUs). Modern GPUs have thousands of cores that can carry out millions of mathematical operations in parallel. Both graphic rendering and deep learning require computers that are able to do a large number of matrix operations every second. This is why deep learning relies on computers with high-end GPUs that help to accelerate the training of neural networks.
+Due to the problems involved in developing techniques and algorithms and implementing them in such a wide range of architectures, various libraries and environments were created to facilitate development without having to know the implementation details for the underlying hardware architecture. These libraries include Caffe, Torch, Theano, and TensorFlow [30], the last of which is the one employed in our work.
+Currently, most deep learning applications focus on speech recognition, artificial vision, and natural language processing. This is in part due to the development of convolutional layers [31], which are particularly efficient at extracting highly abstract features from inputs, similar to what happens with the visual cortex [32]. Fortunately, this ability of deep neural networks to extract increasingly abstract features is very useful in the simpler regression problems.
+For example, in the problem of predicting wind generation, the results of forecasting meteorological conditions are available. This prediction can contain errors that a deep neural network could learn to predict and correct by analysing input data. Similarly, the relationship between weather conditions and wind generation is not linear. The theoretical power curves of generator manufacturers do not always match reality, and they can vary over time. Finally, the relationship between the weather conditions and the farm's total output is undoubtedly affected by other factors, such as the layout of the generators and the topography of the terrain. Therefore, the initial hypothesis is that deep neural networks can learn these abstract relationships and use them to better predict wind generation.
+D. TensorFlow in time-series forecasting
+In time-series forecasting, the use of deep-learning frameworks, such as TensorFlow, could be of interest, even when models based on deep neural networks are not going to be used.
+TensorFlow is a generic symbolic math library. The computations are expressed as static graphs of operations that are connected through multidimensional data arrays called tensors. The tensors take on values only when the graph is being executed, which first requires compiling it for the computer processor (CPU) where it will be executed. This makes it very easy to accelerate the training and evaluation of large time-series forecasting models by making use of the latest multiprocessor and multicore CPU and GPU architectures. As if this was not enough, TensorFlow allows for the distributed training of models in a server farm. The TensorFlow tool is broadly employed in research, but it also has production-ready deployment options even for embedded and mobile platforms, which makes it very simple to apply any prediction model in real environments.
+There are some examples on the use of TensorFlow in time-series forecasting. For example, it has been used to train LSTM networks for fault detection in industry applications [33] and anomaly detection [34] in time-series. It has also been used recently to train RNN for improved time-series forecasting when some values are missing [35] or with an enhanced ability to capture long-term temporal dependencies [36] with respect to traditional NARX models and to map time-series of electrocardiography (ECG) samples to sequences of rhythm classes [37].
+III. CASE STUDY
+The ITER runs three wind farms, including the MADE farm, which has a rated power of 4800 kW provided by eight MADE AE-46 generators. A weather forecast for the following 48 h in one-hour periods is generated twice a day. Once a day, the forecast wind speed for the following 24–48 h is taken and a polynomial regression is performed that is used to estimate the generation for each hour of said interval. This estimate is sent to the grid operator.
+In order to compare the accuracy of different methods, we use the mean absolute error (MAE) and the mean absolute scaled error (MASE) [38]. As we can see in Eq. (2), MAE is the average of the absolute errors |y_{t}−x_{t}| across samples, where y_{t} is the prediction and x_{t} the true value
+whereas MASE shows the relative absolute error for a predictor compared to a one-step naive forecast estimator that uses the real generation measured at t – 1 for its prediction at time t, as shown in following equation:
+To give an idea of the accuracy of the polynomial regression, Table I shows the MAE and the MASE for some estimators using the historical data available.
+As Table I shows, the polynomial estimator is a little over two times worse than the 1-h naive forecast reference estimator; however, this naive estimator would never be able to be used because the prediction has to be done and sent to the grid operator 24 h in advance.
+To obtain a more realistic comparison, it was compared with another naive estimator that uses the actual generation measured 24 or 48 h earlier for its prediction at a given time. This naive estimator could be used at the farm although Table I shows that the polynomial regression is considerably better than the second naive estimator.
+The goal of our work is to improve on this prediction by using deep neural networks instead of the polynomial regression currently in use. The input to the new model is a series of variables pertaining to the forecast weather conditions, and the model's output is a prediction of the generation for the entire farm.
+IV. METHODOLOGY AND DATA
+This section describes the set of data used to train and validate the models and the methodology used to develop and evaluate them.
+A. Inputs
+Based on Eq. (1), we decided to use the forecast wind speed w as an input to the model. We also included the relative humidity and temperature, due to their effect on the air density ρ. We did not, however, consider the area swept by the generator A, which is assumed to be constant.
+Although not shown in Eq. (1), it is obvious that the wind direction is also highly related to the amount of electricity generated, and, thus it, too, was included among the inputs. We likewise included atmospheric pressure, the day of the year, and the time of day so that the model would have information to consider local daily wind cycles.
+Finally, we included the fraction of generators not in service at a given time since some of the samples for the total farm output, which were used to adjust the model's output, were obtained when some of the generators were out of service. When the validation and test sets were configured, however, only those samples taken when all the generators were in service during the period measured were used.
+The day of year, time of day, and wind direction parameters were represented using the pair of values for their sine and cosine in an effort to capture their periodic nature. Equation (4) shows an example of this using the time of day
+The remaining inputs were normalised by min-max scaling between 0 and 1, with the goal being to achieve maximum efficiency during training. The inputs to the model are summarised in Table II.
+For the training, we had data sampled each hour from January 2014 to April 2016, which were randomly divided into three sets. 60% comprised the data training set, 20% the validation set and the remaining 20% the test data. The data were stored in TFRecords files for efficiency purposes for use with the TensorFlow framework. Subsection 3 of the Appendix provides an example of the input function for piping samples into models.
+B. Neural networks
+The models used were multi-layer perceptron (MLP) neural networks, fully connected with the ReLU activation function. In fully connected MLP networks, every neuron in one layer receives as its input all the outputs from the neurons in the previous layer.
+The output ajl of the j-th neuron in the l-th layer can be expressed as indicated in the following equation:
+where wjkl is used to denote the weight for the output of the k-th neuron in the (l−1)-th layer as the input to the j-th neuron in the l-th layer, bjl for the bias of the j-th neuron in the l-th layer, and σ_{l} for the activation function of the neurons in the l-th layer.
+In our specific case, the activation function for both the input layer and the hidden layers is ReLU [28], while the output layer is linear. The ReLU activation function is very practical in regression problems because it is not limited to outputs between 0 and 1 and thus favours the dispersity of the solution in the hidden neurons. It also does not suffer from the vanishing gradient problem mentioned earlier. Equation (6) shows the expression for the activation function for the l-th layer of a neural network with N layers
+where x is used to indicate the input to the activation function, that is, the weighted sum of the inputs to the neuron, as shown in Eq. (5).
+To avoid overadjusting the models when training them, the cost function features an L2-norm to regularise the parameters. In some specific cases, we used dropout [29] to check its effects when attempting to further generalise the trained models. When dropout is used during training, only a selection of neurons chosen with probability P_{keep} can be activated. Equation (7) shows the generalisation of the output expression for neuron ajl when dropout is used
+where p∼U(0,1). In the Appendix, Subsection 4 shows how a TensorFlow deep neural network model is built with these characteristics.
+The learning was done using the Adam optimiser [39] because this algorithm does not require a learning rate to be specified for it. The learning used batches [26] of 150 samples chosen at random. The adjusted model was validated every 5000 trained batches. The stopping criterion employed was for the evaluation of MAE not to decrease during three consecutive iterations. A shows a complete example of how the estimators were built, trained, and validated using the TensorFlow framework.
+Table III shows the minimum time that TensorFlow needs to execute 120 000 training steps for neural networks of different sizes.
+For the tests, we used a computer with an Intel Core i7-2600 k processor and an Nvidia GeForce GTX 750 GPU although in the end, the GPU was not used. The training times for networks with a small number of neurons are generally determined by the operations for the input pipeline (see the Appendix, Subsection 3), followed by the time needed to transfer data between the main and graphics memories when the GPU is used. The training times would undoubtedly be reduced if the GPU were used and the set of samples were stored in its entirety in the memory during the training.
+C. Sensitivity to disturbances
+An important aspect in this paper is to analyse the behaviour of our model in the presence of input disturbances. We show the expression for the input x_{j} in Eq. (8), assuming that it sustains a small incremental change Δx_{j}
+where xj* is the j-th value of the input sample without disturbance.
+It is important to note that the input to the model x_{j} is the j-th input to the layer l = 1, that is, aj0 in Eq. (5). Similarly, y is the output of the single neuron of the last layer a0N. When there is no perturbation in any of the inputs of the model, the output of the neural network is y^{*}.
+A perturbation Δx_{j} in the input x_{j} induces a disturbance in the output y of the neural network. In order to know if the model is robust against perturbations in the j-th input, the sensitivity s_{j} has to be calculated [40]. We show its expression in the following equation:
+where Δy is the corresponding change in the value of the output variable y and δ_{j}=Δx_{j}/xj* is the input perturbation ratio.
+If the sensitivity s_{j} is equal to 1.0, it means that the model neither attenuates nor amplifies disturbances, whereas if it is greater than 1.0, it means that the network amplifies them. On the other hand, if it is lower, it means that the network attenuates the input disturbances.
+V. RESULTS AND DISCUSSION
+Different single-layer MLP neural network models of different sizes were trained and evaluated using TensorFlow. Figure 2 shows how the MASE evolved over the course of the iterations for networks containing between 10 and 40 neurons in a single hidden layer. We can easily see that the best results are obtained after 20 neurons, with a MASE of around 0.67. This is better than the error obtained for both the polynomial model that is currently used at the wind farm and the reference estimator (see Table I).
+The above models were trained by including samples collected even when some of the generators were stopped for some reason (such as malfunctions or scheduled maintenance activities). Figure 3 compares this case with the same model, with one 20-neuron hidden layer, but trained by only considering the samples gathered when all the generators were operating. As we can see, while the training converges in both cases, the model trained with the data that include stopped generators generalises much better.
+Figure 3 also compares these models with the one trained with generation problems but where, based on the parameters for the weather forecast for the specific moment in time, the parameters from the weather forecasts for the previous 5 h are added to the input. Once again we see that the model does not generalise as well due to being unable to leverage the information obtained from the additional inputs.
+As Eq. (1) indicates, the determining factor in the generation involves the weather conditions at the time, not the weather conditions at previous times. Knowing the previous conditions would, in any case, be important from the standpoint of obtaining a better weather forecast. But that is already done very well by the physical models used to obtain the weather forecast for the time for which the generation is to be predicted. Neural networks, thus, are unable to extract any advantages from this additional information.
+We trained and validated neural network models with different numbers of layers and sizes. Figure 4 shows the trend in the validation error for a selection of these models. In no case do we see a significant improvement in the MASE over the neural networks with a single hidden layer. Therefore, increasing the model's complexity does not offer any advantages in terms of the accuracy of the prediction.
+Finally, we analysed the behaviour of the models in response to disturbances in the input. As we discussed in Sec. IV C, we ran the model with and without perturbations in the inputs in order to calculate the sensitivity. The perturbations were applied into the matching inputs for the forecasts of wind velocity and direction because these are the inputs with the greatest influence in model output. In this paper, the input perturbation ratio and the sensitivity values obtained are shown in percentages.
+Figure 5 compares the average sensitivity of three networks with single hidden layers for different levels of disturbance in wind speed. We can see that the three networks attenuate the input perturbations, reducing their influence in the output. In contrast to what intuitively would be expected, the models show a slight slope. This indicates that the networks attenuate the disturbances a little more when they are more intense. Probably, the small differences in the sensitivity of each network are explained by the differences between their adjusted parameters.
+Figure 6 shows the average sensitivity of the same three models for different values of perturbation ratios in the wind direction input. The neural networks attenuate the disturbances, as in Fig. 5, but with more sensitivity. Therefore, it is a little more important to have in the model input a precise wind direction than wind speed forecast.
+VI. CONCLUSIONS
+This paper considers the problem of improving the predicted generation of the MADE wind park run by the ITER by using deep learning techniques, due to the increased relevance that said techniques have had in recent years.
+The conditions were the same as those employed for the farm with the polynomial model now in use; namely, relying on the weather forecast at least 24 h in advance to output a predicted generation for the farm. The methodology was checked by training and validating the model with samples taken every hour during the past three years.
+The results were adequate, yielding better results than with the 1-h reference naive forecast estimator and with the polynomial model used at the farm. However, despite using techniques like the ReLU activation function, dropout, and mini-batch training, all commonly identified with deep learning, we concluded that there is no real need to employ deep neural networks. In other words, a single layer of around 20 neurons is sufficient for the problem considered.
+We also found that inputting weather forecasts for times prior to the desired forecast generation time does not reduce the error, probably because the neural networks cannot improve on the weather forecast obtained via physical models.
+Finally, we performed a sensitivity analysis of the models which revealed that trained neural networks are able to attenuate some input disturbances. For disturbances in the wind speed input, the sensitivity of the network was 4.5% for a neural network of a single hidden layer of 20 neurons. On the other hand, the same model had a sensitivity of 16% for a 5% disturbance in the wind direction input.
+Future work will be necessary to study and include in the comparison more complex models and optimization-based training techniques to better evaluate the limits of neural network-based techniques for wind power forecasting.
+APPENDIX: TENSORFLOW EXAMPLE
+In this section, we provide an example of how the estimators used in the case study are built, trained, and evaluated using the TensorFlow framework high-level application programming interface (API).
+These are the modules that must be imported to run the code in Subsections 2–6 of this appendix. Each module is assigned an alias to clarify the example. For example, we used “tf” and “learn” as the aliases for “tensorflow” and “tensorflow.contrib.learn,” respectively.
+import tensorflow as tf
+import tensorflow.contrib.learn as learn
+import tensorflow.contrib.metrics as metrics
+This is the description of the features of each sample stored in the TFRecords data files. Specifically, it shows that the inputs are eleven real values (see Sec. IV A) and that there is a single output, the real power generated by the farm at that time
+FEATURE_COLUMNS = [
+ # Input features.
+ layers.real_valued_column(“day_of_year_sin”),
+ layers.real_valued_column(“day_of_year_cos”),
+ layers.real_valued_column(“time_of_day_sin”),
+ layers.real_valued_column(“time_of_day_cos”),
+ layers.real_valued_column(“wind_direction_sin”),
+ layers.real_valued_column(“wind_direction_cos”),
+ layers.real_valued_column(“wind_speed”),
+ layers.real_valued_column(“humidity”),
+ layers.real_valued_column(“temperature”),
+ layers.real_valued_column(“pressure”),
+ layers.real_valued_column(“out_of_services”),
+ # Output features.
+ learn.real_valued_column(“power_generated”),
+]
+This is the input function for piping samples from a TFRecords file into a model. This function must be provided to the methods charged with training and evaluating the model.
+def input_pipeline(filename, batch_size=150,
+ randomize_input=True, num_epochs=None):
+ # Build sample feature specification for data file parsing
+ # from feature description.
+ feature_spec = learn.create_feature_spec_for_parsing(
+ FEATURE_COLUMNS)
+ # Read batches of samples.
+ feature_map = learn.read_batch_record_features(filename,
+ batch_size, features_spec, randomize_input,
+ num_epochs=num_epochs)
+ # Split input and output features.
+ target = feature_map.pop(“output”)
+ return feature_map, target
+This section shows how to create an estimator for a TensorFlow Deep Neural Network (DNN) model with two hidden layers with 20 and 10 neurons and the ReLU activation function.
+estimator = learn.DNNRegressor(
+ hidden_units= [20, 10], # Hidden layer sizes
+ activation_fn=tf.nn.relu, # Activation function
+ dropout=None, # Without dropout
+ enable_centered_bias=True, # Enable bias units
+ feature_columns=FEATURE_COLUMNS[0:11] # Input features
+)
+Here, we see how the model created earlier using the Adam optimiser and 5000 batches taken from the “train.tfrecords” data file is trained.
+estimator.fit(
+ input_fn=lambda: input_pipeline(“train.tfrecords”),
+ steps=5000
+)
+This is how a model previously trained using the samples from the “validation.tfrecords” is trained. The validation outputs both the loss value of the objective function and the MAE. The latter metric was used in this paper to estimate the accuracy of the estimator.
+# Build evaluation metric description.
+metrics= {
+ “mae”: learn.MetricSpec(
+ metric_fn=metrics.streaming_mean_absolute_error,
+ prediction_key=learn.PredictionKey.SCORES
+ )
+}
+# Model validation.
+eval = estimator.evaluate(
+ input_fn=lambda: input_pipeline(“validation.tfrecords,”
+ randomize_input=False, num_epochs=1),
+ metrics=metrics
+)
+# Show the validation metrics.
+print “Loss: %d, MAE: %d” % (eval[“loss”], eval[“mae”])
+TABLE I. 
+Accuracy of current estimators.
+TABLE II. 
+Summary of inputs.
+TABLE III. 
+Training time for 120 000 steps.
+TABLE I. -body
+Estimator	MAE (kWh)	MASE
+Naive 1 h	261	1.00
+Naive 24 h–48 h	780	2.99
+Polynomial	552	2.11
+TABLE II. -body
+Number	Description	Data type	Dimension
+1	Day of year (sin)	Real (float32)	1
+2	Day of year (cos)	Real (float32)	1
+3	Time of day (sin)	Real (float32)	1
+4	Time of day (cos)	Real (float32)	1
+5	Wind speed (m/s)	Real (float32)	1
+6	Wind direction (sin)	Real (float32)	1
+7	Wind direction (cos)	Real (float32)	1
+8	Relative humidity	Real (float32)	1
+9	Temperature (°C)	Real (float32)	1
+10	Atmospheric pressure (Pa)	Real (float32)	1
+11	Generators out of service	Real (float32)	1
+TABLE III. -body
+Total number of neurons	Hidden layers	Minimum time
+18	10↦7	1 m 22 s
+30	10↦7↦3	1 m 25 s
+40	20↦10↦7↦3	1 m 36 s
+41	40	1 m 23 s
+101	100	1 m 29 s
+201	200	1 m 36 s
+1000	1000	2 m 45 s
+2000	2000	4 m 18 s
+FIG. 1. 
+Example of the power curve for a wind turbine.
+FIG. 2. 
+Evolution of the error for different sizes of a single hidden layer.
+FIG. 3. 
+Comparison of the error between models trained with no generation problems, with problems, and with a 6-h weather forecast.
+FIG. 4. 
+Trend in error for models of different depths.
+FIG. 5. 
+Trend in sensitivity for different disturbances in the wind speed.
+FIG. 6. 
+Trend in sensitivity for different disturbances in the wind direction.

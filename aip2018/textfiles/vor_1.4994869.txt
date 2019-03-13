@@ -1,0 +1,258 @@
+Upper semicontinuity of attractors of stochastic delay reaction-diffusion equations in the delay
+A system of stochastic delayed reaction-diffusion equations with multiplicative noise and deterministic non-autonomous forcing is considered. We first prove the existence and uniqueness of a bi-spatial pullback attractor for these equations when the initial space is C−ρ,0,L^{2}O and the terminate space is C−ρ,0,H01O. The asymptotic compactness of solutions in C−ρ,0,H01O is established by combining “positive and negative truncations” technique and some new estimates on solutions. Then the periodicity of the random attractors is proved when the stochastic delay equations are forced by periodic functions. Finally, upper semicontinuity of the global random attractors in the delay is obtained as the length of time delay approaches zero.
+I. INTRODUCTION
+The concept of random attractor, originally introduced in Refs [12],  [13], and  [17], has received much attention due to their wide usages in characterizing the effects of random inputs on a system. There is an extensive literature on this subject [2,3,6,11,19–22,25–27,33,38]. Recently, the concept of pullback attractor for stochastic systems with non-autonomous deterministic forcing terms was introduced in Ref [28] as an extension of random attractor for autonomous stochastic systems and has drawn great attention [4,5,23,24,29,30,37]. Time-delays are frequently encountered in many practical systems, which may induce instability, oscillation, and poor performance of systems. Recently, attractors of delay equations have been considered in Refs [9],  [31], and  [32] in the deterministic case, and in Refs [7],  [8],  [10],  [15],  [34],  [36], and  [39] in the stochastic case, where delay equations are driven by additive noise.
+However, not so much has been developed in the direction of the existence of a random attractor for stochastic delay systems driven by multiplicative white noise. Until now only Wang et_al in Ref [35] discussed the existence of a random attractor for non-autonomous stochastic delay lattice systems driven by multiplicative white noise and upper semicontinuity of the global random attractors as time delay approaches zero. Motivated by the above discussions, given τ∈R, in this paper we study the limit of asymptotical behavior of the following stochastic delay reaction-diffusion equation with multiplicative noise defined on the bounded smooth domain O in R^{n} as time delay tends to 0:
+with the initial condition
+where h is a superlinear source term, f:O×R→R is a nonlinearity capturing the time delay, ρ_{0}(t):R→[0,ρ], where ρ is a positive constant, is an adequate given delay function, g is a function defined on R×O, c_{j}∈R for j = 1, …, m, w_{j}, j = 1, 2, …, m, are independent two-sided real-valued Wiener processes on a probability space, and the symbol ○ indicates that the equation is understood in the sense of Stratonovich integration.
+In Ref [34], the authors studied Eq. (1) with constant delay and additive noise and obtained the sufficient conditions for the existence and upper semicontinuity of C−ρ,0,L^{2}O-pullback attractors as time delay tends to zero. We should note that the impact of these two types of noise on the solutions of stochastic equations is quite different. When dealing with random attractors of a stochastic reaction-diffusion equation, we usually first transform the stochastic equation into a determined equation with random coefficients. If the noise is additive noise, then the transformation does not change the structure of the original equation very much. However, if it is multiplicative noise, then the structure of the original equation is changed very much after the equation is transformed and hence has great effect to derive uniform estimates of solutions.
+Compared with Ref [34], we prove the existence and uniqueness of bi-spatial pullback attractor for Eq. (1) when the initial space is C−ρ,0,L^{2}O and the terminate space is C−ρ,0,H01O. The asymptotic compactness of solutions in C−ρ,0,H01O is established by combining “positive and negative truncations” technique and some new estimates on solutions. Finally, upper semicontinuity in C−ρ,0,H01O of the global random attractors is obtained as time delay approaches zero.
+The outline of this paper is as follows. In Sec. II, we introduce notation and review basic concepts and results on random dynamical systems. In Sec. III, we define a continuous non-autonomous random dynamical system in C−ρ,0,L^{2}O for (1), which is also a non-autonomous random dynamical system in C−ρ,0,H01O. Section IV is devoted to uniform estimates of the solutions for system (1). The existence and uniqueness of bi-spatial random attractors for the stochastic equations are presented in Sec. V, and the upper semi-continuity in C−ρ,0,H01O of random attractors of (1) as the delay ρ → 0 is finally proved in Sec. VI.
+Let X be a Banach space. The norm of X is written as ∥·∥_{X}. Especially, we use ⋅ and ⋅,⋅ to denote the norm and inner product of L^{2}O, respectively. The norm of L^{p}O is written as ⋅_{p}. For each fixed ρ > 0, we use C([−ρ, 0], X) to denote the set of all continuous functions from [−ρ, 0] to X with norm φ_{C−ρ,0,X}=sup−ρ≤s≤0φ_{X} for φ∈C−ρ,0,X. For simplicity, we denote N=C−ρ,0,L^{2}(O). Given τ∈R, T > τ, and a function u:τ−ρ,T→X, for each t ∈ [τ, T), let u_{t}:−ρ,0→X denote the function defined by u_{t}s=ut+s for s∈−ρ,0. The letter c is generic positive constant which may change its values from line to line or even in the same line.
+II. PRELIMINARIES
+For the reader’s convenience, in this section, we recall the theory of bi-spatial pullback attractors for nonautonomous random dynamical systems from Ref [14]. The reader is also referred to Ref [22] for such results for autonomous random dynamical systems.
+Hereafter, let (Ω,F,P,(θt){t∈R}) be a metric dynamical system and (X, d) be a complete separable metric space with Borel σ-algebra B(X). Suppose D is a collection of some families of nonempty subsets of X.
+Definition 2.1. A mapping ϕ:R^{+}×R×Ω×X→X is called a continuous nonautonomous random dynamical system on X over (Ω,F,P,(θt){t∈R}) if for all τ∈R, ω ∈ Ω, and t,s∈R^{+} the following conditions (i)-(iv) are satisfied:
+(i) ϕ⋅,τ,⋅,⋅:R^{+}×Ω×X→X is (B(R^{+})×F×B(X),B(X))-measurable;
+(ii) ϕ0,τ,ω,⋅ is the identity on X;
+(iii) ϕt+s,τ,ω,⋅=ϕt,τ+s,θ_{s}ω,⋅◦ϕs,τ,ω,⋅ for all s,t∈R^{+};
+(iv) ϕt,τ,ω,⋅:X→X is continuous for all t∈R^{+}.If, in addition, there exists a positive number T such that for every t∈R^{+}, τ∈R, and ω ∈ Ω
+then ϕ is called a periodic random dynamical system on X with period T.In this section, we always assume that Φ is a continuous non-autonomous dynamical system on X over R and (Ω,F,P,(θt){t∈R}) such that its values belong to a separable Banach space Y ⊆ X, i.e.,
+Remark 2.1. In this paper, in order to express convenience, we assume that Y ⊆ X. Actually, most of the time we just study this situation.
+Definition 2.2. A family K={Kτ,ω:τ∈R,ω∈Ω}∈D is called a D-pullback absorbing set for Φ if for all τ∈R,ω∈Ω and for every B∈D there exists T = T(B, τ, ω) > 0 such that
+If, in addition, for all τ∈R and ω ∈ Ω, K(τ, ω) is a closed nonempty subset of X and K is measurable in ω with respect to F, then we say K is a closed measurable D-pullback absorbing set for Φ.
+Definition 2.3. The nonautonomous random dynamical system Φ is said to be D-pullback asymptotically compact in Y if, for all τ∈R and ω ∈ Ω, Φt_{n},τ−t_{n},θ_{−tn}ω,x_{n}n=1∞ has a convergent subsequence in Y whenever t_{n} → ∞ and x_{n}∈Bτ−t_{n},θ_{−tn}ω with {Bτ,ω:τ∈R,ω∈Ω}∈D.
+Definition 2.4. A family A={Aτ,ω:τ∈R,ω∈Ω}∈D is called a D-pullback (X, Y)-attractor for Φ if the following conditions are satisfied:
+(i) A is measurable with respect to F in Ω and A(τ,ω) is compact in Y for all τ∈R,ω∈Ω.
+(ii) A is invariant, that is, for every τ∈R and ω ∈ Ω,
+(iii) A attracts every set in D under the topology of Y, that is, for every B=Bτ,ω:τ∈R,ω∈Ω∈D and for every τ∈R and ω ∈ Ω,
+where d_{Y} is the Hausdorff semi-metric given by d_{Y}E,F=sup_{u∈E}inf_{v∈F}u−v{Y} for any E, F ⊂ Y. If, in addition, there exists T > 0 such that
+then we say A is periodic with period T.The following result on the existence and uniqueness of the D-pullback (X, Y)-attractor for Φ can be found in Refs [14] and  [18].
+Theorem 2.1. Φ has a unique D-pullback (X, Y)-attractor if and only if Φ has a closed measurable D-pullback absorbing set K in D and Φ is D-pullback asymptotically compact in Y. If, in addition, both Φ and K are T-periodic, then so is the attractor A.
+III. NONAUTONOMOUS RANDOM DYNAMICAL SYSTEMS ASSOCIATED WITH NON-AUTONOMOUS STOCHASTIC DELAY EQUATIONS
+Here we show that there is a continuous nonautonomous random dynamical system generated by the delay reaction-diffusion equation defined on O with multiplicative noise and deterministic non-autonomous forcing,
+with the initial condition
+where g:R×O→R belongs to Lloc2(R,L^{2}(O)), c_{j}∈R, j = 1, …, m, w_{j}, j = 1, 2, …, m, are independent two-sided real-valued Wiener processes on a probability space which will be specified later, f:O×R→R is a continuous function and satisfies that there exist a positive constant K and a function ψ_{1}∈L^{2}(O) such that
+and there exists L_{f} > 0 such that
+for all x∈O and s_{1},s_{2}∈R,ρ_{0}:R→[0,ρ] is a continuous differential function with |ρ^{′}t|≤ρ^{*}<1, and h is a nonlinear function satisfying the following conditions: for all x∈O and s∈R,
+where p ≥ 2, α_{1}, α_{2}, and α_{3} are positive constants, ψ_{2}∈L^{∞}(O), and ψ_{3},ψ_{4}∈L^{2}(O).
+Given t∈R, define a translation θ_{1,t} on R by
+Then {θ1,t}{t∈R} is a group acting on R. We now specify the probability space. Denote by
+Let F be the Borel σ-algebra induced by the compact-open topology of Ω and P be the corresponding Wiener measure on (Ω,F). There is a classical group θt{t∈R} acting on (Ω,F,P), which is defined by
+Then (Ω,F,P,{θt}{t∈R}) is a metric dynamical system (see Ref [1]). On the other hand, let us consider the one-dimensional stochastic differential equation
+for α > 0. This equation has a random fixed point in the sense of random dynamical systems generating a stationary solution known as the stationary Ornstein-Uhlenbeck process (see Refs [7] and  [16] for more details). In fact, we have
+Lemma 3.1. There exists a {θt}{t∈R}-invariant subset Ω^{′}∈F of full measure such that
+and, for such ω, the random variable given by
+is well defined. Moreover, for ω∈Ω^{′}, the mapping
+is a stationary solution of (13) with continuous trajectories. In addition, for ω∈Ω^{′},
+Denote by zj* the associated Ornstein-Uhlenbeck process corresponding to (13) with α = 1 and w replaced by w_{j} for j = 1, …, m. Then for any j = 1, …, m, we have a stationary Ornstein-Uhlenbeck process generated by a random variable zj*(ω) on Ωj′ with properties formulated in Lemma 3.1 defined on the metric dynamical system Ωj′,F_{j},P_{j},θ. We set Ω̃,F,P,θ, where
+and θ is the flow of the Wiener shifts.We denote for every ω∈Ω̃
+which is clearly a homeomorphism in L^{2}O. The inverse operator is well defined by
+These operators can be easily extended to linear homeomorphisms T̃ω and T̃{−1}(ω) on N. Indeed, for any ξ∈N, let us define
+It easily follows that ‖T^{−1}(θ_{t}ω)‖ has sub-exponential growth as t → ±∞ for any ω∈Ω̃. Hence ‖T^{−1}‖ is tempered. Analogously, ‖T‖ is also tempered. Obviously, sups∈s_{0}−a,s_{0}+aTθ_{s}ω is still tempered for every s_{0}∈R and a∈R^{+}.On the other hand, since zj*,j=1,…,m, are independent Gaussian random variables, by the ergodic theorem we still have a θt{t∈R}-invariant set Ω^∈F of full measure such that
+and
+Remark 3.1. We now consider θ defined in (12) on Ω̃∩Ω^ instead of Ω. This mapping possesses the same properties as the original one if we choose for F the trace σ-algebra with respect to Ω̃∩Ω^ denoted also by F for a metric dynamical system defined on Ω̃∩Ω^ for which we use the old notation (Ω,F,P,θ).Next, we define a continuous nonautonomous random dynamical system for systems (3) and (4) in N. This can be achieved by transferring the stochastic system into a deterministic one with random parameters in a standard manner. Let u be a solution to (3) and (4) and denote by v(t)=T^{−1}θ_{t}ωu(t) and δω=∑j=1mc_{j}zj*ω. Then v satisfies
+with the initial conditions
+where ψ=T̃{−1}θ_{τ}ωϕ.Since (16) is a deterministic equation, by a Galerkin method, one can show that if f satisfies (5) and (6) and h satisfies (7)–(10), then we easily show that for every ω ∈ Ω, τ∈R, and ψ∈N, (16) has a unique solution v⋅,τ,ω,ψ∈Cτ−ρ,τ+T,L^{2}(O)∩L^{2}τ,τ+T,H01(O)∩C[τ+ϵ,τ+T),H01(O) with v_{τ}⋅,τ,ω,ψ=ψ for every T > 0 and 0 < ϵ < T. Furthermore, one may show that v_{t}(⋅, τ, ω, ψ) is (F,B(N))-measurable in ω ∈ Ω and continuous with respect to ψ in N for all t ≥ τ. Since u_{t}⋅,τ,ω,ϕ=Tθ_{t+⋅}ωv_{t}⋅,τ,ω,ψ with ϕ=T̃θ_{τ}ωψ, we find that u_{t} is continuous in both t ≥ τ and ϕ∈N and is (F,B(N))-measurable in ω ∈ Ω. In addition, it follows from (16) that u is a solution of problem (3) and (4). We now define a non-autonomous random dynamical system Φ:R^{+}×R×Ω×N→N by
+By the properties of u, then it is easy to check that Φ is a continuous nonautonomous random dynamical system in N over (R,{θ1,t}{t∈R}) and (Ω,F,P,{θt}{t∈R}), where {θ1,t}{t∈R} and {θt}{t∈R} are given by (11) and (12), respectively. In other words, the mapping Φ given by (18) satisfies all conditions (i)-(iv) in Definition 2.1. For the Φ, the initial space is N and the terminate space is C([−ρ,0],H01(O)). Obviously, Φ is a nonautonomous random dynamical system in C([−ρ,0],H01(O)).Furthermore, we suppose that there exists λ_{0} > 0 such that
+Let us consider the mapping
+By the ergodic (Ref [8], Theroem 2.1) and (19) we have
+We will use Poincare’s inequality on O: there exists a positive constant λ such that
+Throughout this paper, we always assume
+Let D=Dτ,ω:τ∈R,ω∈Ω be a family of nonempty subsets of N. Such a D is said to be tempered in N if for every σ > 0,
+Throughout the rest of this paper, we always use D to denote the collection of all families of tempered nonempty subsets of N.The following condition will be needed when deriving uniform estimates of solutions:
+When constructing tempered pullback attractors, we will also assume
+IV. UNIFORM ESTIMATES OF SOLUTIONS
+In this section, we derive uniform estimates of solutions of problem (3) which are needed for proving the existence of D-pullback absorbing sets and the D-pullback asymptotic compactness in C([−ρ,0],H01(O)) of the nonautonomous random dynamical system Φ. The estimates of solutions of problem (16) in N are provided below.
+Lemma 4.1. Assume that (5)–(10), (19), (22), and (23) hold. Then for every τ∈R, ω ∈ Ω, and D={Dτ,ω:τ∈R,ω∈Ω}∈D, there exists T = T(τ, ω, D) > ρ such that for all t ≥ T and ψ∈Dτ−t,θ_{−t}ω, the solution v of (16) with ω replaced by θ_{−τ}ω satisfies
+where R_{1}(τ, ω) is determined by
+where c is a positive constant independent of τ, ω, and D. Moreover, c is uniform with respect to ρ in (0, ρ_{⋆}) for every positive ρ_{⋆}.
+Proof. Taking the inner product of (16) with v in L^{2}(O), we find from (22) that
+For the second term on the right-hand side of (27), by (7), we have
+For the last term on the right-hand side of (27), we have
+Consequently, it follows from (27)–(29) that
+It follows from (30) that
+Then, we have for any σ ≥ τ,
+Now we evaluate the third term on the right-hand side of (32) by means of (5). Given ϵ > 0 we have
+where we use the fact that γω≤λ_{0}. Let ϵ=11−ρ^{*}Ke^{12λ0ρ}, and then we obtain from (32) and (33) that
+which implies that
+Considering time τ − t instead of τ, and then replacing ω by θ_{−τ}ω, we have
+Replacing σ by τ + s in (35) and taking supremum when s ∈ [−ρ, 0], we obtain for t > ρ
+Notice that γω≤λ_{0}, and we get
+By (21), for any ε_{1} > 0 and ω ∈ Ω, there is a T_{1}(ε_{1}, ω) > 0 such that for all |t| ≥ T_{1}(ε_{1}, ω), we have
+Since ‖Tθtω‖{2} and ‖T^{−1}θtω‖{2} are tempered, for any ε_{2} > 0 and ω ∈ Ω there exists T_{2}(ε_{2}, ω) ≥ 0 such that for |t| ≥ T_{2}(ε_{2}, ω),
+Taking ε_{1}=ε_{2}=14γ¯, we get from (38) and (39) that for all t ≥ max {T_{1}, T_{2}}
+and
+Since ψ ∈ D(τ − t, θ_{−t}ω) and D∈D, we find from (40) and (41) that
+Furthermore, by (23), (39), and (40), we have
+and
+Thus for every τ∈R, ω ∈ Ω, and D∈D, there exists T = T(τ, ω, D) > ρ such that for all t ≥ T,
+As a consequence of Lemma 4.1, we have the following inequality which is useful for deriving the uniform estimates of solutions in C−ρ,0,H01O.
+Lemma 4.2. Assume that (5)–(10), (19), (22), and (23) hold. Then for every τ∈R, ω ∈ Ω, and D={Dτ,ω:τ∈R,ω∈Ω}∈D, there exists T = T(τ, ω, D) ≥ 2ρ + 1 such that for all t ≥ T and ψ∈Dτ−t,θ_{−t}ω, the solution v of (16) with ω replaced by θ_{−τ}ω satisfies
+where R_{1}(τ, ω) is given by (26) and c is a positive constant independent of τ, ω, and D. Moreover, c is uniform with respect to ρ in (0, ρ_{⋆}) for every positive ρ_{⋆}.
+Proof. Notice that γω≤λ_{0}, and we have for t ≥ 2ρ + 1,
+from which and Lemma 4.1 the proof is complete.
+Lemma 4.3. Assume that ( [5])–(10), (19), (22), and (23) hold. Then for every τ∈R, ω ∈ Ω, and T > 0, the solution v of (16) satisfies, for all t ∈ [τ, τ + T],
+where c is a positive constant depending on τ, ω, ρ*, and T and is uniform with respect to ρ ∈ (0, 1].
+Proof. It follows from (34) that for t ∈ [τ, τ + T],
+Moreover, notice that γ(ω) ≤ λ_{0}, and we have for t ∈ [τ, τ + T]
+which together with (47) and the continuity of T^{−1}(θ_{t}ω) and γ(θ_{t}ω) completes the proof.Now, we estimate the solution of (16) in C−ρ,0,H01O.
+Lemma 4.4. Assume that ( [5])–( [10]), ( [19]), ( [22]), and ( [23]) hold. Then for every τ∈R, ω ∈ Ω, and D={Dτ,ω:τ∈R,ω∈Ω}∈D, there exists T = T(τ, ω, D) ≥ 2ρ + 1 such that for all t ≥ T and ψ∈Dτ−t,θ_{−t}ω, the solution v of (16) with ω replaced by θ_{−τ}ω satisfies
+where R_{2}(τ, ω) is determined by
+where r_{1}(ω) is a tempered function, R_{1}(τ, ω) is given by (26), and c is a positive constant independent of τ, ω, and D. Moreover, c is uniform with respect to ρ in (0, ρ_{⋆}) for every positive ρ_{⋆}.
+Proof. Taking the inner product of (16) with −Δv in L^{2}(O), we find that
+We first estimate the second term on the right-hand side of (50), and we have from (10) that
+We now estimate the nonlinear delay term in (50) for which, by (5), we have
+On the other hand, the last term on the right-hand side of (50) is bounded by
+By (50)–(53) we get that
+which implies that
+Given τ∈R,ω∈Ω, and j ∈ (τ − ρ, τ + s), where s ∈ [−ρ, 0], integrating (55) on (j, τ + s), we get
+Now integrating the above with respect to j over (τ − ρ − 1, τ + s), we find that
+Replacing ω by θ_{−τ}ω, we obtain that
+Let T = T(τ, ω, D_{1}) ≥ 2ρ + 1 be the positive number found in Lemma 4.2. Then it follows from the above inequality and Lemma 4.2 that, for all t ≥ T and for all ω ∈ Ω,
+The last term on the right-hand side of (58) satisfies
+which is bounded by the same argument as (42). Thus, Lemma 4.4 follows from (58), (59), and Lemma 4.1.The following estimate is needed to obtain the equicontinuous of the solution of (16).
+Lemma 4.5. Assume that (5)–(10), (19), (22), and (23) hold. Then for every τ∈R, ω ∈ Ω, and D={Dτ,ω:τ∈R,ω∈Ω}∈D, there exists T = T(τ, ω, D) ≥ 2ρ + 1 such that for all t ≥ T, s_{1}, s_{2} ∈ [−ρ, 0] and ψ∈Dτ−t,θ_{−t}ω, the solution v of (16) with ω replaced by θ_{−τ}ω satisfies
+where R_{3}(τ, ω) is determined by
+where r_{2}(ω) is a tempered function, R_{1}(τ, ω) and R_{2}(τ, ω) are given by (26) and (49), respectively, and c is uniform with respect to ρ in (0, ρ_{⋆}) for every positive ρ_{⋆}.
+Proof. Without loss of generality, we assume s_{1} < s_{2}. Integrating (54) over the interval [τ + s_{1}, τ + s_{2}] leads to
+Replacing ω with θ_{−τ}ω, we find that
+For the last term on the right-hand side of (61), we have
+which together with (61), (49) and Lemmas 4.2 and 4.4 completes the proof.The following estimates are needed to prove the asymptotic compactness in C([−ρ,0],H01(O)) of the solutions of (3).
+Lemma 4.6. Assume that ( [5])–( [10]), ( [19]), ( [22]), and ( [23]) hold. Then for every τ∈R, ω ∈ Ω, and D={Dτ,ω:τ∈R,ω∈Ω}∈D, there exists T = T(τ, ω, D) ≥ 2ρ + 1 such that for all t ≥ T and ψ∈Dτ−t,θ_{−t}ω, the solution v of (16) with ω replaced by θ_{−τ}ω satisfies
+where R_{4}(τ, ω) < ∞ for every τ∈R and ω ∈ Ω.
+Proof. Taking the inner product of (16) with v^{p−2}v in L^{2}(O), we get
+Integrating by parts, we find that
+By (7) and Young’s inequality, we have
+By (5), we get
+Similarly, the last term is bounded by
+Combining (63) and (64)–(67), we get that
+Let τ∈R, t ≥ ρ + 1, ω ∈ Ω, and σ ∈ (τ + s − 1, τ + s) for s ∈ [−ρ, 0]. Integrating (68) over (σ, τ + s) we find that
+Integrating (69) with respect to σ over (τ + s − 1, τ + s) and replacing ω by θ_{−τ}ω, we get for all s ∈ [−ρ, 0]
+Next, integrating (68) over (τ − ρ, τ) and replacing ω by θ_{−τ}ω, we get that for all t ≥ T = T(τ, ω, D_{1}) ≥ 2ρ + 1
+which along with Lemma 4.2 and (70) yields (62).We are now in a position to establish the uniform estimates for the solution u of the stochastic equation (3) by using those estimates for the solution v of (16).Consider the eigenvalue problem
+Then the problem has a family of eigenfunctions e_{j}j=1∞⊆H01(O) with corresponding eigenvalues λ_{j}j=1∞ such that e_{j}j=1∞ is an orthonormal basis of L^{2}O and λ_{1} ≤ λ_{2} ≤ ⋯ ≤ λ_{j} →∞ as j → ∞. Given n∈N, let X_{n}=spane_{1},e_{2},⋯e_{n} in H01(O) and P_{n}:H01O→X_{n} be the projection operator.Let u = u_{1} + u_{2} and v=v_{1}+v_{2}, where u_{1} = P_{n}u, u_{2} = (I − P_{n})u, v_{1} = P_{n}v, and v_{2} = (I − P_{n})v, respectively, and let ϕ = ϕ_{1} + ϕ_{2} and ψ = ψ_{1} + ψ_{2}, where ϕ_{1} = P_{n}ϕ, ϕ_{2} = (I − P_{n})ϕ, ψ_{1} = P_{n}ψ, and ψ_{2} = (I − P_{n})ψ.
+Lemma 4.7. Assume that (5), (6), (19), (22), and (23) hold. Then for every τ∈R, ω ∈ Ω, and D=Dτ,ω:τ∈R,ω∈Ω∈D, there exists T = T(τ, ω, D) ≥ 2ρ + 1 such that for all t ≥ T and ϕ∈Dτ−t,θ_{−t}ω, the solution u of (3) with ω replaced by θ_{−τ}ω satisfies
+where r_{3}(ω) is a tempered function and R_{2}(τ, ω) is given by (49), and for s_{1}, s_{2} ∈ [−ρ, 0],
+where the function ηs_{1},s_{2} has the property that ηs_{1},s_{2}→0 as |s_{2} − s_{1}| → 0, i.e., u_{1,τ}⋅,τ−t,θ_{−τ}ω,ϕ_{1} is equicontinuous in H01(O).
+Proof. Given D=Dτ,ω:τ∈R,ω∈Ω∈D, define a new family D^ for D as
+Since D∈D and ‖T̃{−1}‖ is tempered, one can check that D^ also belongs to D, i.e., D^ is tempered. Since ϕ∈Dτ−t,θ_{−t}ω, we find that ψ=T̃{−1}θ_{−t}ωϕ satisfies
+By (73) and (74) we see that ψ∈D^τ−t,θ_{−τ}ω. Since D^∈D, by Lemma 4.4, there exists T = T(τ, ω, D) ≥ 2ρ + 1 such that for all t ≥ T
+Notice the fact that
+we can find for all t ≥ T
+So we get (71).By (5), (8), and Lemmas 4.4-4.6, it follows from (16) that there exists T = T(τ, ω, D_{1}) ≥ 2ρ + 1 such that for all t ≥ T
+where c = c(τ, ω) is a positive number. Note that Δv1{2}≤λ_{n}∇v1{2}≤λn2v1{2}. Without loss of generality, we assume that s_{1}, s_{2} ∈ [−ρ, 0] with 0 < s_{1} − s_{2} < 1. Then for any fixed τ∈R and ω ∈ Ω,
+By (75) and (25) we get, for all t ≥ T and s_{1}, s_{2} ∈ [−ρ, 0],
+which together with the continuity of ‖Tθ_{t}ω‖ obtains (72).
+Lemma 4.8. Assume that (5), (6), (19), (22), and (23) hold. Then for every ε>0τ∈R, ω ∈ Ω, and D=Dτ,ω:τ∈R,ω∈Ω∈D, there exist T = T(τ, ω, D) ≥ 2ρ + 1, a large M and a small μ such that for all t ≥ T and ψ∈Dτ−t,θ_{−t}ω, the solution v of (16) with ω replaced by θ_{−τ}ω satisfies that for r ∈ [−ρ, 0],
+where A_{+} and A_{−} denote the positive and negative truncations, respectively, which is defined by
+Proof. We now take the scalar product of (16) with (v−M)+p−1 and replace ω by θ_{−τ}ω to find that for t ∈ [τ − 1, τ]
+For the first term on the right side, we have for t ∈ [τ − 1, τ]
+It follows from (7) that there exists a large M_{1} > 0 such that if s > M_{1}, then hx,ss≤−α_{1}2s^{p} for a.e. x∈O, which implies
+For every ω ∈ Ω, choose M≥min−1≤r≤0‖T^{−1}θ_{r}ω‖M_{1}, then for v ≥ M, t∈[τ−1,τ],‖Tθ_{t−τ}ω‖v≥min−1≤r≤0‖Tθ_{r}ω‖M≥M_{1}, which together with (81) derives that for t ∈ [τ − 1, τ],
+To estimate the delay term, we obtain from (5) that for t ∈ [τ − 1, τ]
+For t ∈ [τ − 1, τ], the last term in (79) is bounded by
+All above estimates yield for t ∈ [τ − 1, τ]
+It is clear that
+We rewrite (85) as
+By the similar arguments in Lemma 4.4, we find from (86) that for r ∈ [−ρ, 0] and 0<μ≤13,
+For the first term on the right side of (92), for ε > 0, by (62), and the inequality (a + b)^{p} ≤ 2^{p−1}a^{p} + 2^{p−1}b^{p}, where a, b > 0, we get that there exist T ≥ 2ρ + 1 and a small 0 < μ < μ_{1} such that if t ≥ T and 0 < μ < μ_{1}, then for any ψ ∈ D we have
+By the continuity of ρ on R^{+} and (71), we can find an T = (τ, ω, D) ≥ 2ρ + 1 and a small 0 < μ_{2} < μ_{1} such that if t ≥ T and 0 < μ < μ_{2}, then for any ψ ∈ D we have
+Notice that ψ_{1}∈L^{2}(O) and g satisfies the condition (23). By using the Lebesgue theorem, we have that there exist T ≥ 2ρ + 1, a small 0 < μ_{3} < μ_{2}, and a large M_{2} > M_{1} such that if t ≥ T, 0 < μ < μ_{2}, and M ≥ M_{2}, then for any ψ ∈ D we have
+which together with (92)–(89) completes the proof of (77). The proof of (78) is similar.
+Lemma 4.9. Assume that (5), (6), (19), (22), and (23) hold. Then for every ε>0,τ∈R, ω ∈ Ω, and D=Dτ,ω:τ∈R,ω∈Ω∈D, there exists T = T(τ, ω, D) ≥ 2ρ + 1, 0<μ≤13, and κ_{0} > 0 such that for all t ≥ T, κ ≥ κ_{0}, and ψ∈Dτ−t,θ_{−t}ω, the solution v of (16) with ω replaced by θ_{−τ}ω satisfies that for r ∈ [−ρ, 0]
+Proof. By Lemma 4.8, for each ε > 0, we find M ≥ 1, 0<μ≤13, and T ≥ 2ρ + 1 such that for all t ≥ T and r ∈ [−ρ, 0]
+The solution can be decomposed as follows:
+We estimate the first term on the left side of (92) as follows:
+By (92), (93), and Lemma 4.6, we get that there exist κ_{0} > 0 and T ≥ 2ρ + 1 such that for all κ ≥ κ_{0} and t ≥ T
+which proves the lemma.
+Lemma 4.10. Assume that (5), (6), (19), (22), and (23) hold. Then for every τ∈R, ω ∈ Ω, and D=Dτ,ω:τ∈R,ω∈Ω∈D, there exists T = T(τ, ω, D) ≥ 2ρ + 1, and N = N(τ, ω, D) such that for all t ≥ T, n > N and ϕ∈Dτ−t,θ_{−t}ω, the solution u of (3) with ω replaced by θ_{−τ}ω satisfies
+Proof. Taking the inner product (16) with −Δv_{2} in L^{2}O, we get
+For the first term, we have
+For the superlinear term, we have from (8) that
+For the delay term, by (5) we get
+Note that ‖Δv2‖{2}≥λ_{n+1}‖∇v2‖{2} on O, and we obtain from all the above estimates that
+By the similar arguments in Lemma 4.4, we find from (98) that for r ∈ [−ρ, 0] and 0<μ≤13
+which together with g∈Lloc2(R,L^{2}(O)) and Lemmas 4.4 and 4.9 completes the proof.
+V. EXISTENCE OF PULLBACK ATTRACTOR
+In this subsection, we establish the existence of the D-pullback attractor for the nonautonomous random dynamical system Φ associated with the stochastic problem (3) and (4). We first show that problem (3) and (4) has a tempered pullback absorbing set as stated below.
+Lemma 5.1. Suppose (5)–(10), (19), (22), and (24) hold. Then the continuous nonautonomous random dynamical system Φ associated with problem (3) and (4) has a closed measurable D-pullback absorbing set K={Kτ,ω:τ∈R,ω∈Ω}∈D.
+Proof. We first notice that, by Lemma 4.7, Φ has a closed D-pullback absorbing set K in C−ρ,0,H01O. More precisely, given τ∈R and ω ∈ Ω, let
+where Lτ,ω is the constant given by the right-hand side of (71). It is evident that, for each τ∈R,L(τ,⋅):Ω→R is (F,B(R))-measurable. In addition, for every τ∈R, ω ∈ Ω, and D∈D, there exists T = T(τ, ω, D) ≥ 2ρ + 1 such that for all t ≥ T
+Thus we find that K=Kτ,ω:τ∈R,ω∈Ω is a closed measurable set and pullback-attracts all elements in D. We now verify that K is tempered. For an arbitrary positive number σ, we have
+Take ε_{1} = ε_{2} = ϵ in (38) and (39) with 0<ϵ<min{14σ,14γ¯}. Consequently, by (38), (39), and the temperedness of |r_{1}(θ_{t}ω)|, we have
+This together with (24) yields that
+Hence r_{3}(ω)R_{2}(τ, ω) is tempered, i.e., K=Kτ,ω:τ∈R,ω∈Ω is tempered. The proof is complete.To study the pullback asymptotically compactness of the cocycle Φ on C−ρ,0,H01O, we borrow some techniques directly from Ref [36].
+Theorem 5.1. Let D be a collection of some families of nonempty subsets of X and Ψ be a nonautonomous random dynamical system on X over (Ω,F,P,{θt}{t∈R}). Suppose that for any fixed τ∈R and ω ∈ Ω, every B=Bτ,ω:τ∈R,ω∈Ω∈D, and any ε > 0 there exist η=ηB,τ,ω,ε>0, a finite-dimensional subspace X_{ε}of X and a δ > 0 such that
+(i) for each s ∈ [−ρ, 0],
+(ii) for all t ≥ η, u_{t}⋅∈Ψt,τ−t,θ_{−t}ω,Bτ−t,θ_{−t}ω, s_{1}, s_{2} ∈ [−ρ, 0] with |s_{2} − s_{1}| < δ,
+(iii) for all t ≥ η, u_{t}⋅∈Ψt,τ−t,θ_{−t}ω,Bτ−t,θ_{−t}ω,
+where P: X → X_{ε} is the canonical projector. Then Ψ is D-pullback asymptotically compact in C_{X}.
+Lemma 5.2. Assume that (5), (6), (19), (22), and (24) hold. Then, the nonautonomous random dynamical system Φ is D-pullback asymptotically compact in C−ρ,0,H01O; that is, for all τ∈R and ω ∈ Ω, Φt_{n},τ−t_{n},θ_{−tn}ω,x_{n}n=1∞ has a convergent subsequence in C−ρ,0,H01O whenever t_{n} →∞, and x_{n}∈Dτ−t_{n},θ_{−tn}ω with {Dτ,ω:τ∈R,ω∈Ω}∈D.
+Proof. (71) and (72) in Lemmas 4.7 and 4.10 coincide with the conditions (i)-(iii) of Theorem 5.1, respectively. Then the conclusion of this theorem follows from Theorem 5.1 immediately.
+Theorem 5.2. Assume that (5)–(10), (19), (22), and (24) hold. Then, the nonautonomous random dynamical system Φ has a unique D-pullback (N,C−ρ,0,H01O)-attractor A={A(τ,ω):τ∈R,ω∈Ω}. If, in addition, g and ρ are T-periodic with respect to t, where T > 0, then the attractor A is also T-periodic.
+Proof. First, we know from Lemma 5.1 that Φ has a a closed measurable D-pullback absorbing set Kτ,ω. Second, it follows from Lemma 5.2 that Φ is D-pullback asymptotically compact in C−ρ,0,H01O. Hence, the existence of a unique D-pullback (N,C−ρ,0,H01O)-attractor for the nonautonomous random dynamical system Φ follows from Theorem 2.1. If g and ρ are T-periodic with respect to t, the continuous nonautonomous random dynamical system Φ and the absorbing set K are also T-periodic, which implies the T-periodicity of the attractor.
+VI. UPPER-SEMICONTINUOUS
+The following in this section is devoted to the upper semicontinuity of random attractors of problem (3) and (4) as ρ → 0. From now on, we consider only ρ ∈ (0, 1], and we write the solution and nonautonomous random dynamical system of problem (3) and (4) with initial data ϕ^{ρ} as u^{ρ} and Φ_{ρ}, respectively. Let A_{ρ} be the bi-spatial attractor of Φ_{ρ}. The following estimates are needed when we derive the convergence of pullback attractors.
+For ρ = 0, problem (3) and (4) reduces to the following equation without delay:
+with the initial condition
+We use Φ_{0} to denote the nonautonomous random dynamical system generated by problem (103) and (104) in H01(O), and we use D_{0} for the collection of all tempered families of nonempty subsets of L^{2}(O). Since all estimates in Sec. IV are valid for ρ = 0, we find that Φ_{0} has a unique D_{0}-pullback (L^{2}(O),H01(O))-attractor A_{0}={A_{0}(τ,ω):τ∈R,ω∈Ω} and an absorbing set K_{0}=K_{0}τ,ω:τ∈R,ω∈Ω given by
+where L(τ, ω) is the same as in (100). It is trivial from (100) and (105) that for all τ∈R and ω ∈ Ω,
+Next, we compare the dynamics of Φ_{ρ} and Φ_{0}. For this, we further assume the function h satisfies, for all x∈O and s∈R,
+where α_{4} is a positive constant and ψ_{5}∈L^{∞}(O). Note that the function χ_{ρ}(r) = r − ρ(r) is invertible since |ρ^{′}(t)|<1.
+The following lemma is concerned with convergence of solutions as ρ → 0.
+Theorem 6.1. Suppose (5)–(10), (19), (22), (23), and (106) hold, τ∈R, ω ∈ Ω, and T > 0. Then for every ε ∈ (0, 1], there exists ρ_{0} ∈ (0, 1] depending on τ, ω, T, and ε such that for all ρ ≤ ρ_{0} and t ∈ [τ, τ + T]
+where c is independent of ρ and ε.
+Proof. Let u^{ρ}t,τ,ω,ϕ^{ρ}=Tθ_{t}ωv^{ρ}t,τ,ω,ψ^{ρ} and u^{0}t,τ,ω,ϕ^{0}=Tθ_{t}ωv^{0}t,τ,ω,ψ^{0}, where ϕ^{ρ}=T̃θ_{τ}ωψ^{ρ} and ϕ^{0}=T̃θ_{τ}ωψ^{0}. Let ṽ(t)=v^{ρ}t+s−v^{0}t, for s ∈ [−ρ, 0]. Then ṽ satisfies that for t > τ − s and s ∈ [−ρ, 0]
+We get for t > τ − s and s ∈ [−ρ, 0]
+For the first term on the right-hand side of (108), we have
+By (9) we get
+It follows from (106) that
+It follows from (8) that
+By (110)–(112),
+For the delay term, by (5) and (6),
+Note that
+By (108), (109), and (113)–(115) we obtain for t > τ − s and s ∈ [−ρ, 0]
+Let t ∈ [τ, τ + T] and t ≥ τ − s. Integrating (116) over (τ − s, t) we get
+On the other hand, we have
+Meanwhile, we have
+Combining (118) with (119), we get
+Therefore, we get
+By (117) and (120) we obtain for t > τ − s and s ∈ [−ρ, 0]
+Note that δ(θ_{r}ω), ‖Tθ_{r}ω‖, and ‖T^{−1}θ_{r}ω‖ are uniformly continuous on [τ − 1, τ + T]. Therefore, given 0 < ε < 1, there exists ρ_{1} ∈ (0, 1] such that for all ρ ≤ ρ_{1} and s ∈ [−ρ, 0]
+Since lim_{ρ→0}∫ττ+2ρ‖u0r−ϕ0‖{2}dr=0 and lim_{ρ→0}∫ττ+ρ‖uρr−ϕ0‖{2}dr=0, we see that there exists ρ_{2} ≤ ρ_{1} such that for all ρ ≤ ρ_{2}
+Note that u^{0}:τ,τ+1+T→L^{2}O is uniformly continuous and r ≤ χ_{ρ}(r) ≤ r + ρ. Therefore, there exists ρ_{3} ≤ ρ_{2} such that for all ρ ≤ ρ_{3} and r ∈ [τ, τ + T]
+Note that u^{ρ}:τ,τ+T→L^{2}O is uniformly continuous. Therefore, there is ρ_{4} ≤ ρ_{3} such that for all ρ ≤ ρ_{4} and s ∈ [−ρ, 0]
+Due to the fact g∈Lloc2R,L^{2}O, we have
+and thus there exists ρ_{5} ≤ ρ_{4} such that for all ρ ≤ ρ_{5} and s ∈ [−ρ, 0]
+By Lemma 4.3, after simple calculations, we get for ρ ∈ (0, 1] and s ∈ [−ρ, 0]
+Similarly, by (103) we can also get
+It follows from (121)–(127) that for all ρ ≤ ρ_{5}, t ∈ [τ, τ + T], t ≥ τ − s, and s ∈ [−ρ, 0],
+By Gronwall’s lemma, we get, for all ρ ≤ ρ_{5}, t ∈ [τ, τ + T], t ≥ τ − s, and s ∈ [−ρ, 0],
+Note that
+which along with the continuity of u and T^{−1}θ_{τ}ω at τ shows that there exists ρ_{6} ≤ ρ_{5} such that for all ρ ≤ ρ_{6},
+which together with (129) yields, for all ρ ≤ ρ_{6}, t ∈ [τ, τ + T], t ≥ τ − s, and s ∈ [−ρ, 0],
+Note that
+which together with (131) concludes the proof.The next result is concerned with uniform compactness of attractors with respect to ρ.
+Lemma 6.1. Assume that (5)–(10), (19), (22), (24), and (106) hold. If ρ_{n} → 0 and u_{n}∈A_{ρn}τ,ω, then there exist a subsequence {u_{nm}} of {u_{n}} and u∈H01O such that
+Proof. Take a sequence t_{n} → ∞. By the invariance of A_{ρn}, there exists u^{n}∈A_{ρn}τ−t_{n},θ_{−tn}ω such that
+By Lemma 5.1, we have u^{n}∈Kτ−t_{n},θ_{−tn}ω. Since all estimates in Sec. IV are uniform with respect to bounded ρ, by the arguments of Lemma 5.2, we can verify the following:
+(i) Φ_{ρn}t_{n},τ−t_{n},θ_{−tn}ω,u^{n}0 is precompact in H01O.
+(ii) Given any ε > 0, there exists N_{1} ≥ 1 and K∈N such that for all n ≥ N_{1}, k > K, and s ∈ [−ρ_{n}, 0]
+By (i) we find that there exists u∈H01O such that, up to a subsequence,
+Therefore, there exists N_{2} ≥ N_{1} such that for all n ≥ N_{2},
+By (ii) and (134) we get, for all n ≥ N_{2} and s ∈ [−ρ_{n}, 0],
+which along with (132) completes the proof.Now we are in a position to prove the main result of this paper.
+Theorem 6.2. Assume that (5)–(10), (19), (22), (24), and (106) hold. The attractors A_{ρ} are upper-semicontinuous at ρ = 0, that is, for every τ∈R and ω ∈ Ω,
+where the distance dist_{H} is defined for any subset E of C([−ρ,0],H01(O)) and S of H01(O) by
+Proof. If the theorem is not true, there exist ε > 0, a sequence (ρn){n∈N} of positives constants, ρ_{n} → 0, and a sequence (un){n∈N}, u_{n}∈A_{ρn}(τ,ω) for all n∈N, such that
+It follows from Lemma 6.1 that there exists u in H01(O) and a subsequence of (un){n∈N}, again denoted by (un){n∈N}, such that
+By the invariance property of the attractor A_{ρn}(τ,ω), for every t > 0 there exists ynt∈A_{ρn}τ−t,θ_{−t}ω such that
+It also follows Lemma 6.1 that there exists y*t in H01(O) and a subsequence of (ynt){n∈N}, again denoted by (ynt){n∈N}, such that
+which together with Theorem 6.1 implies that
+By (137), (138), (140), and uniqueness of limits, we obtain
+Notice that A_{ρn}(τ−t,θ_{−t}ω)⊆K(τ−t,θ_{−t}ω) and ynt∈A_{ρn}(τ−t,θ_{−t}ω) for all n∈N. Thus by (100) we have
+By (139) and (142) we get, for every t > 0,
+We obtain from (141) and (143) that
+This implies that u∈A_{0}(τ,ω) since A_{0}(τ,ω) is compact. Therefore, we have
+a contradiction with (136). This completes the proof.

@@ -1,0 +1,228 @@
+Quantitative characterization of uncertainty levels of intermittent power sources
+This paper establishes a statistical quantification of the uncertainty levels of intermittent power sources. We first construct a negative exponential function, referred to as a statistical function, to represent the relationship between the statistical regularity of the forecast error of a single intermittent power source and the time ahead of the forecast. Subsequently, we generalize this negative exponential function to a family of statistical functions, namely, the sum statistical functions, the equivalent statistical functions, and the contour statistical functions, which are proposed to characterize the overall statistical forecast uncertainty levels of multiple intermittent power sources and all power sources. Based on historical observations, parameters of these functions are estimated to represent the statistical regularity of the forecast uncertainty levels of all the power sources of interest. Historical data sampled from real wind farms and solar power sites demonstrate the effectiveness of the proposed method.
+I. INTRODUCTION
+Intermittent Power Sources (IPSs), such as wind and solar power generators, have been extensively integrated into power systems [1–6]. However, power generation from these sources is highly unpredictable due to their intermittency, randomness, and volatility of energy supply [7–11]. The overall uncertainty of a power system depends on the uncertainty of each IPS and the proportion of IPS generation within the total energy generation [12–16]. In 2014, a report from the National Renewable Energy Laboratory predicted that renewable electricity generation would be more than adequate to supply 80% of the total electricity generation in the USA in 2050 [17]. However, such a large amount of unpredictable power generation may jeopardize the security and stability of power systems. Indeed, the uncertainty of IPSs has been widely acknowledged as one of the most significant challenges to real-time power balancing of load and supply [18–23].
+The main source of the uncertainty of IPSs is the unpredictability due to forecasting the power available for the “time ahead,” such as 1 h ahead or 24 h ahead. This can be represented by a forecast error. Several algorithms for day-ahead forecasts of IPS generation have been developed [24–29]. However, to the best of our knowledge, obtaining satisfactory forecast accuracy for IPS generation is still an unsolved problem. The intrinsic reason is that the 24-h ahead forecast that is traditionally utilized for other non-IPSs is not useful for IPSs because it is too long into the future to produce an accurate forecast. In an attempt to address this, the most direct method is to shorten the time ahead of forecast for IPSs. However, this imposes higher requirements on the efficiencies of dispatch and market operations. To determine the best time ahead of forecast for IPSs, a quantitative and statistical evaluation of the overall uncertainty of all power sources is highly desirable. Specifically, we are interested in the temporal characteristics of the statistical forecast uncertainty level.
+There have been many publications investigating the statistical regularity of power generation uncertainty [30–37]. In Ref [30], Xu et_al employed a maximum entropy spectrum estimation method to study the temporal and spatial distribution characteristics of wind power periodicity. In Ref [31], Sideratos et_al presented an advanced statistical method for wind power forecast based on artificial intelligence technologies. In Ref [32], Li et_al studied the statistical regularity of wind power fluctuation in different spatial-temporal scales from the aspects of smoothness and correlation. Even more closely related to the subject of this paper, Refs [33–37] presented statistical studies of the relationship between the forecast error of IPS generation and the time ahead of forecast. For example, Refs [35] and  [36] show that as the time ahead increases, the forecast error increases quickly initially but then grows much more slowly after a certain point (called point b). Based on the statistical regularity, the randomness of individual examples was eliminated, and a relationship between the uncertainty and the time ahead of forecast was established.
+The statistical quantification of the uncertainty levels of multiple IPSs and all power sources is still an unsolved problem. Unlike the existing literature reviewed above, the objective of this paper is to focus on analytical formulas for the statistical regularity of forecast uncertainty levels of IPSs with respect to time ahead. These formulas can quantitatively characterize the uncertainty levels of power generation from wind or solar power sources. With regard to the relationship between the forecast error of IPS generation and the time ahead of forecast, the original contributions of this paper are to first establish statistical quantification of the uncertainty levels of IPSs and then to extract the statistical regularity of the uncertainty level of IPS generation by quantitatively characterizing a large number of historical observations from the above statistical functions and finally to demonstrate the effectiveness of the statistical functions by sampling historical data from real wind farms and solar power sites.
+We first define the relative Root Mean Square Error (RMSE) of IPSs as the statistical forecast uncertainty level of IPSs and then employ a family of negative exponential functions to represent the temporal characteristics of the statistical forecast uncertainty level. Specifically, we define statistical functions of the forecast error of a single IPS, the sum statistical function (SSF) of multiple IPSs, and all power sources that can be represented by the equivalent statistical function (ESF) with a variant scaling factor, and the contour statistical function (CSF), to portray a closure of the sum statistical function. We compare these functions with a large amount of real data from Refs [36] and  [37] and present a method for estimating the parameters of these statistical functions. The functions can succinctly represent the temporal trend of the statistical forecast uncertainty level of all power sources. Comprehensive assessment of the IPS quality can be achieved by considering statistical functions with other factors such as wind speed, wind direction, irradiation time, and irradiation intensity. Moreover, the proposed statistical functions can provide quantitative characterization of the intermittent power uncertainty level corresponding to different methodologies of power network planning and operation with a high proportion of IPS generation, such as power system security analysis, reliability assessment, and economical operation.
+The remainder of this paper is organized as follows: based on statistical regularity, we first propose a statistical function of the forecast error in Sec. II. The uncertainty of IPSs with statistical functions is quantified in Sec. III. The uncertainty of all power sources with statistical functions is further quantified in Sec. IV. The simulation results are demonstrated in Sec. V. Section VI discusses some properties and applications, and conclusions are finally drawn in Sec. VII.
+II. QUANTIFYING THE STATISTICAL FORECAST UNCERTAINTY LEVEL OF WIND OR SOLAR POWER SOURCES
+A. Statistical regularity
+Based on a large amount of real on-site data, previous studies have established the statistical relationship between the RMSE of wind and solar power source forecasts and the time ahead of day-ahead scheduling and look-ahead dispatch [34–37]. In this paper, such a relationship is defined as the uncertainty level of IPS generation and is referred to as the α^{rmse} curve.
+Figure 1 shows the statistical regularity of the α^{rmse} curve from a wind farm in the northwestern USA, wherein each point is based on 25,560 observations and represents the mean of the RMSE of the forecast with a given time ahead (X-axis) over 3 years (Ref [36], p. 62, Fig. 16). The possible time ahead ranges from 1 h to 24 h, with a step size of 1 h. Figure 2 exhibits a similar α^{rmse} curve from a photovoltaic power plant in northern France, wherein each point is based on 3285 observations and represents the mean of the RMSE of the forecast with a given time ahead (X-axis) in 2013 (Ref [37], p. 9–12, Tables III–V). The time ahead ranges from 1 h to 6 h, with a step size of 30 min within the first 2 h and a step size of 1 h afterwards. The “Δ” symbol in Fig. 2 represents the RMSE of the 24-h ahead forecast. Note that the RMSE in this paper represents the percentage of the relative forecast error with respect to both the forecast power values and the actual power values.
+Such α^{rmse} curves represent the statistical regularity of the change in forecast error with respect to the time ahead, which is a noisy random process. As the time ahead of the forecast shortens from 24 h ahead, the event in the future will gradually become clearer. In particular, if the time ahead of forecast reduces to a certain point t_{b}, the clarity of the event will increase rapidly. By utilizing a sufficient amount of historical data, the α^{rmse} curve eliminates the randomness of individual examples and reveals the statistics for the prediction of events in the future.
+Although the α^{rmse} curves can represent a relationship between the statistical regularity of the change in forecast error with respect to the time ahead, no analytical formulas have been proposed to theoretically and quantitatively characterize the uncertainty of IPS, which are quite necessarily required in terms of appropriately adjusting the dispatch control system for power systems with high proportional IPSs, such as the design of the real-time dispatch timescale.
+From Figs. 1 and 2, we can see that the α^{rmse} curves of both the wind farm and the photovoltaic power plant are similar in shape to a negative exponential function. Therefore, a negative exponential function, α, i.e., a statistical function that is consistent with the general rule of the prediction of future events, is proposed to describe the statistical regularity of the forecast uncertainty level of IPS generation.
+B. Statistical functions of forecast error
+In this subsection, we first define the Statistical Function of Forecast Error (SFFE) of IPSs to characterize the statistical forecast uncertainty level of a single IPS with respect to the time ahead t, represented by α(t), which is shown as follows:
+Herein, the amplitude A∈(0,+∞) and the time coefficient τ∈(0,+∞) satisfy the following boundary conditions:
+where α^{(1)}(0) is the first derivative of α(t) with respect to t when t is 0.
+To better demonstrate the influence of the statistical forecast uncertainty level with respect to the time ahead t, we normalize α(t) in Eq. (1) and define the following Normalized Statistical Function of Forecast Error (NSFFE), which is represented by λ(t) as follows:
+Next, we establish some important properties for the SFFE and the NSFFE, i.e., the α function and the λ function.
+Proposition 1.The NSFFE (λfunction) yields the following conservation principle:
+whereλ^{(i)}is the ith-order derivative of theλfunction.
+Proof. Please see the detailed proof in the Appendix.
+Corollary 1.The SFFE (αfunction) yields the following conservation principle:
+Proof. Please see the detailed proof in the Appendix.
+In real-world terms, parameters A and τ in Eq. (1) can be interpreted as follows.
+The amplitude A represents the statistical forecast error of IPS generation when the time ahead tends to infinity. Assuming that different forecast techniques converge to similar performances when the time ahead tends to infinity, the parameter A actually describes the objective uncertainty level of IPS generation. In practice, the statistical forecast error of IPSs usually approaches its amplitude with a time ahead of around 24 h. Thus, parameter A can be approximated by the day-ahead statistical forecast error of IPSs.
+The time coefficient τ defines the growth rate of α(t) when t =0. It represents how advanced the forecast technique is in leveraging temporal correlations to better infer future IPS generation, i.e., to reduce the growth rate of the uncertainty level with respect to the time ahead. A greater τ value indicates a slower growth rate of the uncertainty level of IPSs, i.e., a better credibility of the forecast. Consequently, α(t) represents a quantitative characterization of the statistical forecast uncertainty level of IPSs as a function of the time ahead t.
+C. Statistical functions of the forecast errors of wind or solar power sources
+The α^{rmse} curve is used to show the relationship between the statistical forecast error of IPSs and the time ahead of forecast. For a specific wind farm or photovoltaic power plant, the point with time ahead t_{i} in the α^{rmse} curve is defined as follows:
+where t_{i} is the forecasting time ahead, m is the number of forecasting time ahead, and the scalar r is the number of statistical samples. ε_{k}(t_{i}) is the relative error in the power prediction of sample k when the time ahead is t_{i} and can be expressed as follows:
+where Pfk(t_{i}) and Pak(t_{i}) represent the forecast power value and the actual power value of sample k when the time ahead is t_{i}, respectively.
+Taking Fig. 1 as an example, α^{rmse} reveals the statistical uncertainty level of IPS generation, and its quality is related to the number of samples. The IPS generation curve is a continuous curve with respect to time ahead, and the discrete time ahead points on it are the predicted ones. For time ahead t_{i}, r is equal to the predicted points of IPS generation. Assume that the number of daily predicted points, i.e., the number of daily samples, is q and the forecasting period is p years; then, the number of samples for forecasting the time ahead t_{i} is
+Assume that the forecasting period is 1 year and the predicted points of IPS generation are 1, 2, …, 23, and 24 h(s) of each day, respectively, and then
+Obviously, if the forecasting sequence of time ahead is
+then the number of samples for each time ahead t_{i} in each year is 8760.
+As shown in Fig. 3, there are q daily samples for each time ahead t_{i} in each day. In terms of each different time-ahead of forecast, there should be 24 different forecasting curves on the Z-axis starting from 1-h ahead to 24-h ahead, respectively. However, due to the visual distraction that might be caused by presenting 24 curves together on the Z-axis, we simply take 12-h ahead and 24-h ahead for examples and present the corresponding curves on the Z-axis of Fig. 3. Compared with the actual curve, we can see that the forecasting curve of 12-h ahead is much clearer and more accurate than that of 24-h ahead.
+The α^{rmse} curve is represented by a time sequence comprising α^{rmse}(t_{i})
+where α^{rmse}(t_{0}) is set to zero.
+For all possible t_{i} values, we employ an α function, i.e., the SFFE of Eq. (1), to approximate the real α^{rmse} curve. We set the parameters A and τ such that the resultant α function yields the following conditions:
+1. Amplitude condition:
+2. Time coefficient condition:
+These conditions customize the SFFE (α function) as a profile of the α^{rmse} curve. Although there is no rigorous proof, this suggests that such an α function can include all points in the α^{rmse} curve underneath, which will be further demonstrated in Sec. V. Hereafter, such a customized α function will be used as a mathematical model for the description of quantifying the uncertainties of power generation from wind or solar power sources.
+More specifically, we define the NSFFE (λ function) of a wind power source as
+and the corresponding SFFE (α function) as
+where A_{w} is the amplitude of the SFFE of the wind power source.
+Similarly, we define the NSFFE (λ function) of a solar power source as
+and the corresponding SFFE (α function) as
+where A_{s} is the amplitude of the SFFE of the solar power source.
+For wind and solar power sources, the time coefficients are expressed in terms of τ_{w} and τ_{s}, respectively. Their values can be obtained using Eq. (13).
+In practice, the values of τ_{w} and τ_{s} are usually far less than 24 h. There are only minor differences between the day-ahead uncertainty level
+and the amplitude of the SFFE. Therefore, the amplitudes can be approximated as
+In order to quantitatively characterize the statistical forecast uncertainty level of multiple IPSs and all power sources, other statistical functions are proposed in Sec. III.
+III. STATISTICAL FORECAST UNCERTAINTY LEVELS
+A. SSFs
+In order to characterize the sum statistical forecast uncertainty level of all IPSs, we define the SSF with respect to the time ahead t, represented by α_{Σ}(t) and shown as follows:
+where n represents the quantity of α functions.
+Let
+and
+where ρ_{i} represents the distribution coefficient.
+Then
+Similarly, we normalize α_{Σ}(t) in Eq. (20) and define the following Normalized Sum Statistical Function (NSSF), which is represented by λ_{Σ}(t) as follows:
+Consequently, Eq. (23) can be transformed into
+B. Equivalent statistical functions
+α_{Σ}(t) in Eq. (20) is the sum of multiple negative exponential SFFEs. For simplicity, in this subsection, we denote the SSF by a single negative exponential function with a variant time coefficient τ(t). Such a function is referred to as the Equivalent Statistical Function (ESF), represented by α(t,τ(t)) and shown as follows:
+where the time coefficient τ(t) is a function of the time ahead t.
+For ∀t∈[0,+∞) and n given SFFE (α functions), there exists a τ(t) value such that the following equation holds:
+where the SSF α_{Σ}(t) (or the n given SFFE) can be expressed as the ESF α(t,τ(t)) that is defined in Eq. (26).
+Similarly, we normalize α(t,τ(t)) in Eq. (26) and define the following Normalized Equivalent Statistical Function (NESF), which is represented by λ(t,τ(t)) as follows:
+Obviously
+Proposition 2.Given n NSFFEs (λfunctions), the time coefficient functionτ(t)defined in Eq. (29) monotonically increases.
+Proof. Please see the detailed proof in the Appendix.
+Proposition 3.The values of the two boundary conditions of the scale factor functionτ(t)are
+where
+Proof. Please see the detailed proof in the Appendix.
+To better demonstrate the properties established above, we depict a possible group of curves in Fig. 4 as an example. In this example, we assume that there are two NSFFEs (λ(t) functions), say λ_{1}(t) and λ_{2}(t). Their time coefficients are set as τ_{1}=4 and τ_{2}=2, and their distribution coefficients ρ_{1} and ρ_{2} are set as 0.8 and 0.2, respectively. Thus, according to Eq. (24), the NSSF (λ_{Σ}(t) function) can be expressed as
+According to the first term in Eq. (30), the initial value of τ(t) is
+The curves in Fig. 4(a) show that, in this example, the time coefficient function τ(t) indeed monotonically increases. The initial value τ(0) is equal to τ_{0}=3.33, and τ(+∞) converges to τ_{1}=4. The curves in Fig. 4(b) indicate that the curve of the NESF (λ(t,τ(t)) function) matches the curve of the NSSF (λ_{Σ}(t) function). Hence, these observations are consistent with the propositions established in this subsection.
+C. Contour statistical functions
+Given a group of SFFEs (α(t)) with {τ_{1},τ_{2},…,τ_{n}}, we define the Contour Statistical Function (CSF) as follows:
+The corresponding λ function is referred to as the Normalized Contour Statistical Function (NCSF), i.e.,
+Proposition 4.The NCSF (λ(t,τ_{0})function) is greater than or equal to the NESF (λ(t,τ(t)) function), and the maximum deviation pointt^{*}satisfies the following equation:
+Proof. Please see the detailed proof in the Appendix.
+Similarly, the time coefficient of the CSF (α(t,τ_{0}) function) is the constant τ_{0}; according to Proposition 2, the time coefficient function τ(t) of ESF monotonically increases, and the initial value is τ_{0}. Therefore, the ESF is an upper bound for the SSF.
+Corollary 2. The inequality of the upper bound of the SSF (α_{Σ} function) satisfies
+Proof. The corollary is self-evident. This ends the proof. □
+Δλ(t) can be transformed into
+where
+This indicates that the difference between the NESF and the NCSF, i.e., Δλ(t), is related to the difference between the reciprocal of the time coefficients. A smaller differential value can be helpful in reducing Δλ(t).
+The CSF defined in this subsection provides an upper bound for the ESF. Specifically, the CSF is equal to the ESF at points t=0 and t=+∞. At other points, the CSF lies strictly above the ESF.
+Since the statistical functions are proposed to quantitatively characterize the statistical forecast uncertainty level, the statistical functions are next employed in real power systems to quantify the statistical uncertainty level of multiple IPSs (combinations of wind and solar power sources) and all power sources (combination of intermittent and controllable power sources).
+IV. QUANTIFYING STATISTICAL FORECAST UNCERTAINTY LEVELS OF POWER SYSTEM SOURCES
+A. Statistical forecast uncertainty level of IPSs
+1. SSFs of IPSs
+In this paper, it is assumed that IPSs consist of wind and solar power sources. Let P_{w} and P_{s} be the power generation of the wind and solar power sources, respectively, and then, we merge them into the overall power generations from IPSs, say P_{ips}, i.e.,
+The proportion of the power generation P_{w} of wind farms in the overall IPS generation P_{ips} is represented by β_{w}, which is defined as
+The proportion of the solar power is
+As described in Sec. III, here we define α_{ips}(t) as the SSF of the IPS (which is α_{Σ}(t)) to represent the overall statistical uncertainty level of IPSs. Consequently, Eq. (20) becomes
+In this paper, β_{w}(t) represents the proportion of the wind power generation in IPS generation when the time ahead is zero. Hence, we assume that β_{w}(t)=β_{w}(0)=β_{w}, and then, the SSF of the IPS (α_{ips}(t) function) can be simplified as
+The equation above is equivalent to
+and thus, we get
+where A_{ips} is the amplitude of SSFs of IPSs.
+We further define the γ coefficient as follows:
+and then, the NSSF of the IPS (λ_{ips}(t) function) can be written as
+2. ESFs of IPSs
+The ESF that is equivalent to the SSF (α_{ips}(t) function) is as follows:
+where A_{ips} denotes the amplitude of the SFFE of the IPS.
+The NESF that corresponds to the ESF (α(t,τ(t)) function) is as follows:
+3. CSFs of IPSs
+Furthermore, we employ the CSF of the IPS to establish a closure of the ESF. The CSF (α(t,τ_{0}) function) is
+where
+The NCSF (λ(t,τ_{0}) function) is expressed as
+B. Statistical forecast uncertainty level of all power sources
+Besides IPSs, the power system also comprises controllable generation assets such as thermal power, hydropower, nuclear power, and energy storage facilities. If the power generation of the controllable generation assets is P_{c}, then the overall power generation from the power system, P_{g}, can be expressed as follows:
+Herein, the IPS power proportion P_{ips}(t) relative to P_{g}(t) is referred to as β_{ips}
+In this paper, β_{ips}(t) represents the proportion of the IPS generation in the overall power generation when the time ahead is zero. Here, we assume that β_{ips}(t) is a constant β_{ips}. We define α_{g}(t) as the SSF of all power sources (α_{Σ}) to represent the overall statistical uncertainty level of all power sources. Hence
+The ESF of all power sources (α_{g}(t,τ(t)) function) is
+where A_{g} is the amplitude of the SFFE of all power sources and satisfies
+Note that in Eq. (57), the NESF (λ_{g}(t,τ(t)) function) that corresponds to the SSFs of all power sources α_{g}(t,τ(t)) is the same as that of the IPS. This indicates that β_{ips} has nothing to do with the time coefficient function, i.e., the time coefficient function exhibits “inheritance.” In Eq. (58), the amplitude A_{g} of the SSF of all power sources is β_{ips} times less than the amplitude A_{ips} of the IPS, which exhibits “dilution.”
+The CSF of all power sources is
+From the perspective of power systems, the SFFE of the wind or solar power source (α_{w} function or α_{s} function) and the SFFE of the IPS (α_{ips} function) will ultimately be merged as the SFFE of all power sources (α_{g} function), which quantifies the statistical uncertainty level in the overall power generation. This function provides an important reference for many power system applications such as real-time power balancing, security analysis, and electric power quality control.
+V. EXAMPLES OF STATISTICAL FUNCTIONS OF POWER SYSTEMS WITH IPSs
+A. Uncertainty levels of wind or solar power sources
+Taking a real wind power farm in the northwestern USA [36] and a real solar power park [37] as examples, the SFFEs of the wind or solar power sources (α function) can be determined based on the curves of αwrmse and αsrmse shown in Figs. 1 and 2, respectively. According to Eqs. (12) and (13), the resulting SFFEs can be obtained as follows:
+In this example, both the amplitude constraint and the derivative constraint are satisfied. In Fig. 5, the purple curve αsrmse represents the experimental data of the solar power source, and the black curve represents the corresponding SFFE of the solar power source α_{s}(t). Similarly, the blue curve αwrmse represents the experimental data of the solar power source, and the red curve represents the corresponding SFFE of the solar power source α_{w}(t).
+Compared with the experimental data from wind and solar power sources, the following observations show that the SFFEs are also consistent with the general rule of the prediction of future events: First, the values of SFFEs α_{w}(t) and α_{s}(t) are the same with αwrmse and αsrmse when the time-ahead is 24 h. Second, the SFFEs also gradually drop as the time ahead of the forecast shortens from 24 h ahead. Finally, the SFFEs also drop rapidly when the time ahead of forecast reduces to a certain point.
+As a result, the resulting SFFEs (α_{w}(t) function and α_{s}(t) function) define reasonable closures for the real αwrmse and αsrmse curves, respectively. In other words, the α_{w} and α_{s} functions “adhere” to the curves αwrmse and αsrmse “from the outside towards the inside,” respectively; this shows that the α function can well describe the statistical uncertainty level of the wind or solar power source.
+B. Uncertainty levels of IPSs
+For a power system with an IPS, the SFFE of the wind and solar power sources (α_{w} function and α_{s} function) is shown in Eq. (60). Set β_{w} to 80%. From Eq. (44), the SSF of the IPS (α_{ips}(t) function) is expressed as
+and
+The γ coefficient is
+The time coefficient τ_{0} of the CSF of the IPS can be obtained as
+Therefore, the CSF of the IPS is
+Figure 6 shows that the CSF of the IPS “adheres” to the SSF of the IPS “from the outside towards the inside,” and the maximum deviation between the two is 2.24% (as denoted by “*” in the figure). This indicates that the CSF of the IPS can well depict the statistical uncertainty level of the IPS.
+C. Uncertainty levels of all power sources
+For a power system consisting of an IPS and controllable generators, the corresponding SSF of the IPS is shown in Eq. (61). Set β_{ips} to 60%. Then, based on Eq. (58), the CSF of all power sources is
+VI. DISCUSSION
+A. Statistical regularity uncertainty levels
+To quantitatively characterize the statistical forecast uncertainty of a single IPS or multiple IPSs or all power sources, we consider the long-term uncertainty level of IPS generation. By long-term, we mean the statistical regularity of forecast errors based on a large number of historical observations. Note that the statistical forecast uncertainty represents the average forecast error in a wide time window. Our work is relevant to, but different from, the assessment of short-term uncertainty, in which as much information as possible is utilized to infer the output of IPSs in 15 min or the following day. Short-term uncertainty analysis is a crucial function in real-time dispatch, look-ahead dispatch, and day-ahead scheduling. For comparison, the long-term uncertainty studied in this paper lends itself to mid- or long-term operations and planning of power systems to be able to deal with every possible individual example that might occur; hence, it should be incorporated into the statistical regularity of long-term uncertainty. In particular, the SSF represents the overall statistical uncertainty of a power system with an IPS, which is an important indicator of predictability.
+B. “Proximity” property of statistical functions
+Statistical functions (α functions) have the “proximity” property. First, the amplitude condition and the time coefficient condition guarantee that α functions can include all points underneath the α^{rmse} curve. Second, Proposition 4 guarantees that the CSF includes all points underneath the SSF.
+The “proximity” property represents conservativeness, namely, all points on the α^{rmse} curve are guaranteed to be no larger than those in the α functions. Similarly, all points in the SSF are guaranteed to be no larger than those in the CSF. In other words, the α function characterizes an upper bound of the uncertainty level estimated from a large number of historical observations. Such conservativeness is necessary for long-term planning of power systems.
+Conservativeness has somehow exaggerated the statistical forecast uncertainty level. For power systems with IPSs, the statistical uncertainty level would rather be appropriately exaggerated to a certain degree to deal with power systems with larger uncertainties, so that power systems with smaller uncertainties can also be dealt with.
+C. Applications
+As what we discussed in Sec. I, the proposed statistical functions can be utilized not only in improving IPS quality and providing a theoretical characterization of the IPS uncertainty level to different power network methods but also in important practical applications such as on adjusting the dispatch control system and designing the real-time dispatch, which are listed in detail below.
+1. Real-time dispatch timescale
+The hierarchy of power system operation typically comprises short-term scheduling, real-time dispatch, and automatic generation control (AGC). Due to the integration of intermittent power sources, the increasing penetration of IPSs may result in larger discrepancies between the AGC and the actual power flow. The AGC is the last-level defense of the system-wide power balance and has limited power adjustment capability, which makes it difficult for the AGC to address the rest of power imbalance. Therefore, from the perspective of power balance, real-time dispatch in power systems with a high penetration of IPSs should be considered and employed in the process of power balance, to eliminate as much power imbalance as possible from short-term scheduling. The capability of doing so depends on the timescale.
+Many publications have acknowledged the importance of timescale design in the power balancing architecture, offering suggestions on possible timescales of real-time dispatch such as 4 h, 1 h, and 15 min [38–42]. Nevertheless, neither analytical formulas nor theoretical or systematic studies have yet been proposed on the timescale of real-time dispatch. This could lead to two consequences. First, the inappropriate timescale of real-time dispatch might make AGC difficult to balance the rest of power imbalance. Second, with the decrease in the real-time dispatch timescale, more accurate real-time forecast of IPS power can be obtained, whereas the computation burden would be exacerbated as well.
+Adequate power sources to accommodate the uncertainty level of IPS and proper design of timescales are the fundamental insurances for the real-time dispatch to achieve the best possible function of power balancing. Therefore, it is highly desirable to design a proper timescale, which essentially represents the tradeoff between the forecast accuracy and the computation efficiency.
+Based on the statistical functions proposed in this paper, the parameters of the timescale of real-time dispatch with a high proportion of IPS generation can be determined. Combined with the power balance capability of AGC, a quantified relationship between the uncertainty level of the power system and the critical timescale for real-time dispatch has been further established and applied to dispatching systems. This application has been particularly extended and accomplished in a paper [43]. We briefly introduce how to design the real-time dispatch timescale as follows.
+To satisfy the AGC constraint, that is, to balance the actual power imbalance from the real-time dispatch level, by utilizing the CSF of all power sources α_{g}(t), we obtain the following inequality which explicitly characterizes the restriction on the timescale of real-time dispatch imposed by AGC limits
+where α_{A} represents the AGC power adjustment capability range of a power system. Generally, it is not greater than 10% of the maximum system power generation, and here, we assume it as 8%.
+When the equality holds in (67), the corresponding timescale is referred to as the “critical” real-time dispatch timescale, denoted by Tcrr
+where Tcrr represents the critical timescale of real-time dispatch and the ratio η is defined as
+The selection of the real-time dispatch timescale T_{R} needs to satisfy two conditions
+The first formula is easy to understand; the second formula is to connect with the dispatching period of short-term (day-ahead) scheduling.
+2. Comparative case study
+A comparative case study is presented to show the effectiveness of this application on designing the real-time dispatch timescale.
+The real power system in Zhangjiakou, which is a zonal network with the highest penetration level of IPS (β_{ips}=60.82%) in China, is tested. Currently, its real-time dispatch timescale is 1 h, and the AGC power adjustment capability range is 8%.
+From a large amount of observations over 1 year, the CSF of IPS α_{ips} and the CSF of all power sources α_{g} can be obtained as follows:
+The critical real-time dispatch timescale can be calculated according to (68) and (69) as
+According to (70), the real-time dispatch timescale T_{R} can be designed as 1 h. This result is consistent with the current real-time dispatch timescale. Our simulation indicates that the current real-time dispatch timescale is suitable from the perspective of power balancing.
+However, even more IPS will be integrated into the power system in the future. According to Ref [17], a report from the National Renewable Energy Laboratory predicted that renewable electricity generation would be more than adequate to supply 87% of the total electricity generation in the global in 2050. Here, we assume that the β_{ips} of Zhangjiakou power network will be increased to 87%, and then, the CSF of all power sources will be
+The critical real-time dispatch timescale will be
+The result is smaller than the current real-time dispatch timescale. This indicates that the current real-time dispatch timescale needs to be shortened in the future to accommodate more power generations from IPS.
+According to Eq. (70), the new real-time dispatch timescale T_{R} can be properly designed as 0.6 h. Therefore, adequate power sources can be utilized to accommodate the IPS uncertainty level; the AGC can balance the power imbalance left from real-time dispatch within its power adjustment capability range; and the proper design timescale can also avoid the frequently modulation of the dispatch system, which might exacerbate the computation burden in consequence. In other words, to achieve the goal of power balancing, the proposed statistical functions should be utilized to properly design the real-time dispatch timescale.
+VII. CONCLUSIONS
+The conclusions of this paper are as follows:
+(1) A negative exponential statistical function has been proposed to statistically quantify the uncertainty level of a single IPS. Several basic properties of the statistical function have been established.
+(2) To statistically quantify the uncertainty level of multiple IPSs and all power sources, an SSF has been defined as the sum of multiple forecast uncertainty level functions, which can also be represented with a single ESF with a variant time coefficient. A CSF with a constant time coefficient has also been designed to provide a closure of the ESF.
+(3) Historical observations of forecast errors match well with the proposed statistical functions in terms of temporal properties. This is not an incidental phenomenon but reflects the general statistical law of the prediction of future events.
+(4) The proposed statistical functions of forecast error have been leveraged to quantify the statistical uncertainty levels of a single IPS, multiple IPSs, and all power sources, whose parameters have been estimated based on historical data. The final CSF is a succinct representation of the statistical uncertainty level of all power sources in the power system.
+In summary, the CSF represents the overall statistical uncertainty level of all power sources. The amplitude A and time coefficient τ are the two numerical characteristics that can well depict the statistical uncertainty level.
+VIII. HIGHLIGHTS
+(1) This paper establishes the statistical quantification of the uncertainty levels of IPSs.
+(2) The proposed statistical functions have been leveraged to quantify the statistical uncertainty levels of a single IPS, multiple IPSs, and all power sources.
+(3) Historical data sampled from real wind farms and solar power sites demonstrate the effectiveness of the proposed functions.
+APPENDIX: PROOFS OF STATISTICAL FUNCTION FAMILY
+This Appendix contains proofs of the propositions and corollaries given in the text above.
+Proposition 1.The NSFFE (λfunction) yields the following conservation principle:
+whereλ^{(i)}is theith-order derivative of theλfunction.
+Proof. The first-order derivative of the λ function is
+and the following equation holds:
+Note that Eq. (A3) holds for ∀t∈[0,+∞). Continuously differentiating the above equation gives
+This ends the proof. □
+Corollary 1.The SFFE (αfunction) yields the following conservation principle:
+Proof. Since the following equation holds for all i
+substituting the above equation into Eq. (4) gives
+Note that
+Therefore, Eq. (A5) holds. This ends the proof. □
+Proposition 2.Given n NSFFEs (λfunctions), the time coefficient functionτ(t)defined in Eq. (15) monotonically increases.
+Proof. According to Eqs. (14) and (15), the following equation can be obtained:
+For ∀t_{1},t_{2}∈[0,+∞), if t_{1}<t_{2}, then
+where
+Since it is easy to prove that −lnλ_{Σ}(t) is a monotonically decreasing function, then
+Thus
+Note that because the dominator of Eq. (A10) is always positive, τ(t_{2}) is always greater than τ(t_{1}). Hence, the time coefficient function τ(t) that satisfies Eq. (15) monotonically increases. This ends the proof. □
+Proposition 3.The values of the two boundary conditions of the scale factor functionτ(t)are
+where
+Proof. When t=0, Eq. (A9) is indefinite. Therefore, we define τ(0) using L'Hôpital's rule
+Hence, the first condition of Eq. (A14) holds.
+When t→+∞, Eq. (A9) is also indefinite. Similarly, we define τ(+∞) using L'Hôpital's rule
+Note that the greater the τ is the slower the term e^{−tτ} converges to zero. If
+then
+where τ̂ represents the maximum among n given values of τ.
+Thus
+Hence, the second condition of Eq. (A14) holds. This ends the proof. □
+Proposition 4.The NCSF (λfunction) is greater than or equal to the NESF (λfunction), and the maximum deviation pointt^{*}satisfies the following equation:
+Proof. The time coefficient of the NCSF (λ(t,τ_{0}) function) is the constant τ_{0}, the time coefficient function τ(t) of equivalent error function monotonically increases, and the initial value is τ_{0}. Therefore
+i.e., the NCSF is not less than the NESF.
+Since Δλ(0)=0 and Δλ(+∞)=0, the maximum deviation will not occur at the boundary.
+Since Eq. (15) holds,
+Because both λ_{Σ}(t) and λ(t,τ(t)) are monotonic, Δλ(t) only has one maximum value. Thus, the corresponding zero derivative equation is
+Therefore, Eq. (A21) holds. This ends the proof.
+FIG. 1. 
+αwrmse curve of a wind farm in the northwestern USA [36].
+FIG. 2. 
+αsrmse curve of a photovoltaic power plant in northern France [37].
+FIG. 3. 
+Time-ahead curves and actual curve for daily samples.
+FIG. 4. 
+Examples of the τ(t) and λ functions.
+FIG. 5. 
+α^{rmse} curves and α functions of wind and solar power sources.
+FIG. 6. 
+SSFs and CSFs of IPSs.

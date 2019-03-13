@@ -1,0 +1,220 @@
+Improving battery lifetime and reducing life cycle cost of a PV/battery system using supercapacitor for remote agricultural farm power application
+One of the challenges in utilizing photovoltaic systems in agricultural applications is the cost of batteries. Batteries are often replaced when used for farm power compared to residential applications due to the incessant high current that is drawn from the battery as a result of the nature of operation in agricultural applications. This increases the overall life cycle cost (LCC) of the system, which makes generation of electricity from renewable energy sources unattractive. This paper proposes the use of supercapacitors (SCs) to improve the battery lifetime and reduce the life cycle cost of a standalone Photovotaic (PV)/battery system for a remote farm power application. Two scenarios are created: PV/battery system only (i.e., without SC) and PV/battery/SC (i.e., with SC) for a typical remote agricultural feedmill. The sizes of PV, battery, and SC are optimally matched with the load profile of the feedmill using genetic algorithm, while the battery lifetime was estimated based on Schiffer's technique. The analysis is carried out through simulation in the Matlab™ environment. Some of the key results reveal that PV/battery only has a slightly lower initial capital cost of $5010 compared to PV/battery/SC with an initial capital cost of $5480. However, the battery lifetimes with and without the use of SC are 5 and 2 years, respectively, denoting an improvement of 40% in the battery lifetime when SC is adopted. The LCC values of the PV/battery system with and without SC are obtained to be $6423 and $11 037, respectively, indicating a significant reduction of 58% in the LCC when SC is utilized.
+NOMENCLATURE
+A_{Tcf}	Temperature correction factor
+C_{bat(init)}	Initial cost of the battery
+C_{deg(t)}	Capacity loss due to degradation
+C_{deg.limit}	Degradation limit
+C_{init}	System initial cost
+C_{N}	Nominal capacity of the battery
+C_{nom}	Cost of system components
+C_{o&m}	Lifetime operation and maintenance cost
+C_{(o&m)0}	Initial operation and maintenance cost
+C_{pv(init)}	Initial cost of PV modules
+C_{r}	Remaining battery capacity
+C_{rep}	Lifetime replacement cost
+C_{sc(init)}	Initial cost of the supercapacitor
+C_{unit}	Unit cost of a system component
+C_{0}	Initial nominal battery capacity
+E_{bat}	Monthly energy supplied by the battery
+E_{L}	Total energy demand of the farm (kWh)
+E_{line}	Line voltage of the motor
+E_{pv}	Monthly energy supplied by PV
+E_{sc}	Monthly energy supplied by the supercapacitor
+f_{acid(t)}	Impact of acid stratification on battery lifetime
+f_{soc(t)}	Impact of SOC on battery lifetime
+f_{0}	Inflation rate of the replaced component
+f_{1}	Inflation rate of operation and maintenance
+H	Heaviside function
+I_{disch(t)}	Discharge current
+I_{peak}	Peak current demand of the load
+I_{sc(charge)}	Supercapacitor charging current
+I_{sc(discharge)}	Supercapacitor discharging current
+I_{sc(max)}	Maximum supercapacitor current
+k_{d}	Real interest rate of the replaced component
+LCC	Life cycle cost of the system
+n	Lifetime
+N_{i}	Number of years
+Nrep	Number of replacements
+P_{b(t)}	Base power of the farm (kW)
+P_{h}	Rated power of the motor in horse power
+P_{pv}	Power needed to be generated
+T	Battery lifetime
+V	System voltage (kV)
+X_{bat}	Number of batteries
+X_{f}	Motor running at full load
+X_{n}	Motor running at no load
+X_{pv}	Number of PV modules
+X_{s}	Motor stating
+X_{sc}	Number of supercapacitors
+Z_{IEC}	Lifetime number of the IEC cycle given in the battery data sheet
+Z_{w}	Weight of the impact of acid stratification, discharge current, and SOC
+I. INTRODUCTION
+As the world's population increases, food consumption is also on the rise [1]. The demand for food is expected to grow by 70%–100% by 2050, and hence, it is imperative to have a sustainable agricultural system that will meet the increasing demand [2]. Various challenges militating against food production in recent years such as the cost of energy have pushed food security to its stability limits. Agriculture requires energy as one of its key inputs. In farms, energy is used by machineries to prepare the field, plant seeds, and harvest agricultural products. Similarly, energy is required for processes like heating, irrigation, crop drying, and pumping. Since most commercial farm productions are mechanized, adequate energy supply is needed to improve yields, which is crucial to meeting the increasing food demand. Hence, the role of energy in achieving sustainable agricultural systems that will meet the increasing worldwide food demand cannot be discounted. Energy costs cover a significant percentage of the total agricultural production expenses. In 2003, it was reported that energy costs accounted for 14.4 percent of the total annual US farm production expenses [3]. Since a reduction in energy cost by having an efficient energy system can improve the net revenue of agricultural systems, hence, an efficient energy system is crucial to having sustainable agricultural systems.
+Electricity is one of the direct energy sources used in agriculture. It is used by machineries for milling, pumping, irrigation, and shelling. Also, it is used for heating, lighting of farm houses, barns, and sheds, and for powering farm household appliances. Due to limited land in the cities and noise pollution from agricultural processes, most farms are located in remote areas. One challenge that comes with this is the inability to access electricity from the grid. Extending grids to some of these remote places could sometime be challenging due to the cost of extending the grid to such locations and unfavourable terrains [4]. This makes most remote farms result in the use of diesel generators. However, the high cost of energy and high carbon emission resulting from such generation could adversely result in cost intensive operation and air pollution with the resultant effect on the health of both the personnel and animals. To surmount these challenges, renewable energy generators are usually utilized to meet the electricity demands of remote locations. While renewable energy sources are environmentally friendly, they are intermittent in nature which makes their output power less reliable [5]. To improve all time availability of renewable power, storage devices are usually combined with renewable energy systems to meet load demands reliably [6]. Traditionally, batteries are employed as a storage technology in a Photovotaic (PV) system to enhance its overall performance.
+The machines employed in performing the operations of agricultural processes (i.e., irrigating, shelling, milling, etc.) are mainly electric motors. Electric motors by design draw high inrush current during starting, leading to transient peaks. This high inrush current has a negative impact of reducing the lifetime of a battery due to high discharge current drawn during the transient periods [7]. Batteries are usually sized to meet this high inrush current demand. However, inrush current only exists at motor starting, and at every other time, nominal current is drawn. Consequently, the initial cost and the life cycle cost (LCC) of the PV based agricultural project will be high due to high numbers of batteries that will be required to cater for the starting current. This often discourages renewable energy deployment in these kinds of agricultural applications. In addressing the technical and cost limitations of batteries and other energy storage technologies, some authors have worked on understanding the characteristics of different energy storage technologies [8,9]. This led to the idea of developing hybrid energy storage systems. In hybrid energy storage systems, the energy storages are combined so that their characteristics are complementary. For instance, in an application that requires high power and high energy, high-power energy storage devices such as flywheels and supercapacitors (SCs) [10] can be combined with the battery so that the characteristics of both will complement each other. Recently, some authors have considered the application of hybrid energy storage devices in electric vehicles [11]. Since optimal combination of energy storage devices is an optimization problem, some authors have worked on the optimal sizing of hybrid energy storage devices. For example, Gavin and Hurley [12] conducted optimal sizing of batteries and ultra-capacitors using the loss of power Supply probability approach. The authors concluded that the approach could improve the state of charge (SOC) of the battery. Similarly, Zhou and Sun [13] developed an optimization technique for sizing the PV/battery system using simulated annealing particle swarm optimization with the aim of minimizing the operating cost. They revealed that the proposed technique could help to achieve the optimal size of the PV/battery system.
+Some authors have worked in the area of hybrid energy storage systems for other applications such as residences and hospitals. For example, a hybrid energy storage system which combines batteries for long-term energy management and supercapacitors for fast dynamic power regulation has been proposed for remote area renewable energy power supply systems by Ma et_al [14] The authors assessed the possibility and benefit of combining supercapacitors and traditional batteries for achieving a complementary performance between the two devices. Their results demonstrated that the hybrid system led to improved energy storage performance. The authors revealed that the combination allowed energy storage that has both high power and energy density capability with the additional benefit of extending the battery life. Zhang et_al [15] presented an active hybrid energy storage system that comprises a rechargeable battery, a supercapacitor bank, and two corresponding DC/DC power converters for residential application. The battery and the supercapacitor may be charged or discharged simultaneously with the current or power appropriately split between them. Three different control strategies for power sharing between them were developed for the hybrid energy storage system and compared against each other under some certain operating conditions. In another application of hybrid battery-supercapacitor storage systems, Trieste et_al [16] conducted a techno-economic approach that aims to optimize the overall cost of the energy storage system used in ships. The choice of supercapacitors was motivated and then compared with other energy storage units for different kinds of ship exploitation. A generic ageing model of supercapacitors was presented and used in cycle operation. The authors revealed that the cost of an optimized solution can be decreased by 6%, thereby reducing by 15% the number of storage elements. Similarly, a new control scheme was proposed to control the power sharing between batteries and supercapacitors in the work of Guerrero-Martínez [17]. The authors concluded that the control system reduced the stress levels in the battery and hence increased its life span. They also revealed that the control scheme provided constant power injection to the grid during a defined time interval.
+All the aforementioned authors have done well. This paper further extends the hybrid storage system to the area of agricultural application. Batteries are often replaced when used for farm power compared to residential application due to the incessant high current that is drawn from the battery as a result of the nature of operation in an agricultural application. This paper therefore investigates a technique that will improve the lifetime of batteries as well as reduce the life cycle cost of PV/battery systems using supercapacitors for agricultural applications. In this way, the deployment of PV/battery in agricultural processes is made more attractive. The sizing of PV/battery and associated supercapacitors is optimally determined using genetic algorithm. The lifetime of the battery under different operating conditions is achieved using Schiffer's battery lifetime estimation model. The benefit and applicability of the proposed technique are tested using a feedmill farm located in Ibadan, Nigeria.
+II. ELECTRICAL POWER DEMAND OF AGRICULTURAL PROCESSES
+Electricity is needed in agriculture for heating, pumping, crop drying, milling, shelling, and irrigation. The machines used in performing some of these processes such as shelling, milling, and irrigation require induction motors. Due to the nature of some of these processes, induction motors are required to be switched ON and OFF frequently. For example, the milling process requires a grinding machine and a mixing machine to be switched ON at different times during the process. This frequent switching increases the stress on the battery, leading to reduced lifetime as a result of high starting current of induction motors. The induction motors differ from other loads in that their starting current is very high compared to their full-load current. The full load current (I_{f}) can be expressed as [18]
+where P_{h} is the rated power of the motor in horse power (HP) and E_{line} is the line voltage of the motor.
+The starting current (I_{s}) is about six times the full load current [18], and hence, it can be written as
+similarly, when the induction motor has no load, it consumes about 0.3 times the full load current [18]. Therefore, the total electric power demand (P_{t}) in watt of loads in a given farm at any time (t) with the agricultural process that requires the use of induction motors (assuming a power factor of 1) can be generally expressed as
+where P_{b(t)} is the base power of the farm at any time t. P_{b(t)} is the electric power demand of loads which do not have induction motors which include lighting bulbs, heating filaments, etc. V is the system voltage (volt), X_{s}X_{f}, and X_{n} which have values of 0 and 1 are used to denote motor starting, motor running at full load, and motor running at no load.
+The total energy demand (E_{L}) in kWh of the farm can be determined by multiplying the power demand by the operation hours (T) of the loads as follows:
+The starting current drawn by these induction motors poses a challenge in the cost effectiveness of a standalone PV system due to its high starting current which reduces the lifetime of the battery. Consequently, batteries would have to be replaced many times before the lifecycle of the PV/battery system. This impacts negatively the life cycle cost of the system, which discourages the use of renewable energy generators for such agricultural processes.
+III. MODELLING OF SYSTEM COMPONENTS
+The mathematical models of the system components such as photovoltaic modules, batteries, and supercapacitors that make up the PV/battery/SC as used in the system algorithm are presented in this section.
+A. PV system
+The Output power of solar PV depends on the available solar irradiance, its area of coverage, and the efficiency of the module. The hourly electrical power generated from a PV module can be estimated as [19]
+where P_{pv} is the hourly electrical power generated, H_{t(AV)} is the hourly solar irradiance of the site, η_{pv} is the efficiency of the PV modules, and A_{pv} is the area of the PV modules.
+The area of the PV modules needed to meet a particular load demand is given as [20]
+where E_{L} is the estimated total energy demand, η_{batt} and η_{inv} are the efficiencies of the battery and the inverters, respectively, and A_{Tcf} is the temperature correction factor. This factor takes into account the drop of cell voltage due to temperature and corrects to the testing conditions. The value is taken to be 0.8 in this paper [19].
+Since most PV modules have custom peak power that they can generate, given the P_{pv} power needed to be generated, the number of PV modules that will supply the needed power can be calculated using
+where nPV and PV_{peak} are the number of PV modules and the peak power of each module, respectively. The solar irradiation used for the simulation in this paper was obtained from the International Institute of Tropical Agriculture located in Ibadan. The solar irradiation is depicted in Fig. 1 and has an average solar irradiation of 250 W/m^{2}/day. The datasheet of the PV module used in this paper is depicted in Table I.
+B. Battery
+The total capacity of the battery (Wh) needed for a particular application can be calculated, given the system voltage (v_{s}), the depth of discharge (DOD) of the battery, the efficiency of inverter η_{inv}, and the efficiency of the battery η_{bat} as follows [21]:
+where D_{d} is the number of days of autonomy.
+The number of batteries required by the system can be determined using
+where C_{sg} is the storage capacity of a single battery in Ah. The parameter of the battery as utilized in this paper is furnished in Table II.
+C. Supercapacitor
+Supercapacitors are high power density storage devices, and so, they can be used to deliver the high current required by the induction motors when turned ON [5]. However, they have low energy density [22] and hence cannot be used alone for such an application. They can therefore be combined with batteries (which have higher energy density [23]). The voltage of supercapacitors is usually small [13], and hence, in application with system voltage greater than the voltage of a single supercapacitor, supercapacitors are connected in series to make up for the needed voltage. To increase the quantity of charge that can be stored, the supercapacitors are connected in parallel.
+The total capacitance C of any combination of supercapacitors in series and in parallel is given as [13]
+where n is the number of supercapacitors in series and m is the number of supercapacitors in parallel. C_{f} is the capacitance of each supercapacitor.
+The total energy that can be delivered by the supercapacitor in Joule is given as [13]
+where V_{max} and V_{min} are the maximum and minimum voltages of the supercapacitor, respectively. The energy delivered by the supercapacitor can be converted to kWh using 1J=2.78×10^{−7}kWh. The parameter of the supercapacitor as used in this paper is furnished in Table III.
+IV. ESTIMATION OF BATTERY LIFETIME
+Estimating the lifetime of batteries in applications with irregular operating conditions such as partial state-of-charge cycling, varying depth-of-discharge, and different times between full charging is known as a difficult task. Different models have been proposed by authors such as the model proposed by Sikha et_al [24] and Schiffer weighted Ah through-put model [25]; however, the level of complexity and completeness differ. The battery lifetime can be affected by the operating condition to which it is subjected [3]. In this paper, the lifetime of the battery was determined using the Schiffer weighted Ah through-put model. This is because of its simplicity and completeness [26]. The model was used as part of the optimization algorithm developed and applied in this paper.
+A. The Schiffer weighted Ah through-put model
+This model estimates the lifetime of the battery based on the assumption that actual operating conditions of the battery are different from the ones given by the manufacturer. It was assumed that the operating conditions are more severe than the standard float and cycle lifetime. Hence, the actual through-put value is weighted based on the actual operating conditions. The model estimates the lifetime of the battery by considering the losses by corrosion (C_{c}) and degradation (C_{deg}) of the battery materials.
+1. Corrosion
+The lifetime of the battery usually decreases as it is being used in the float mode due to the corrosion of the grid of the battery. Since the oxidized grid has lower conductivity, the overall capacity of the battery is thereby reduced, which eventually results in the decrement of the battery lifetime. Layers of less conductivity are formed as the battery is being used. Basically, the capacity loss due to corrosion is given as [26,27]
+where W_{limit} is the corrosion layer thickness when the battery has reached the end of its float lifetime and C_{c(limit)} is the limit of the loss of capacity by corrosion. ΔW_{t} can be determined as [28]
+where X=(ΔW(t−Δt)K_{s})^{10.6}+Δt, U_{corr} = Corrosion Voltage, and K_{s} = Corrosion Speed Parameter.
+2. Degradation
+In addition to corrosion, the battery lifetime is also reduced as a result of degradation. Degradation constitutes the battery capacity loss due to the shedding of the active mass material as a result of cycling. The degradation capacity loss is given as [26]
+where Z_{IEC} is the number of IEC cycles of a battery during its lifetime, this is when the battery capacity is 80% of its nominal capacity, and its value can be obtained in the battery datasheet. C_{deg(limit)} is the degradation limit reached when the remaining battery capacity is 80% of the nominal capacity taking into account only cycling and not corrosion, C_{z} is a constant equal to 5 [29], and Z_{w}(t) is a weight that depends on the impact of the state of charge (SOC), discharge current, and acid stratification. This value without corrosion can be calculated as [29]
+where f_{acid(t)} gives the impact of the acid stratification, while f_{soc(t)} accounts for the influence of the SOC and current, I_{disch(t)} is the discharge Ah of the battery, C_{N} is the nominal capacity of the battery, and Δt is the duration of one time step.
+B. Lifetime of the battery
+The lifetime of the battery is reached when the remaining capacity (C_{r}) of the battery is 80% of the nominal capacity (C_{0}). The remaining battery capacity can be determined as
+The battery lifetime (T_{B}) can therefore be estimated as
+V. SIZING OPTIMIZATION OF THE PV/BATTERY SYSTEM WITH THE SUPERCAPACITOR
+One of the goals of this paper is to determine the right sizes of combination of system components that will give the minimum life cycle cost which will meet the power demand requirement for the agricultural farm application.
+A. System cost
+The cost of the system is divided into three which are: the initial Cost, the present value replacement cost, and the operation and maintenance cost.
+1. Initial cost
+The initial cost is the preliminary capital cost incurred in buying the system components for the first time. The initial cost of this system is given as
+where C_{pv(init)} is the initial cost of the PV panels, C_{bat(init)} is the initial cost of the batteries, and C_{sc(init)} is the initial cost of the supercapacitors (Table IV).
+2. Present value replacement cost
+The present value replacement cost of the system components accounts for the cost of replacing components that reach the end of their lifetime within the life cycle of the system. This cost also takes into account factors such as inflation and interest which can influence the present value cost of the system. The replacement cost (C_{rep}) can be calculated as [30]
+where C_{nom} is the cost of a system component, Nrep is the number of replacements, f_{0} is the inflation rate of the replaced component, k_{d} is the real interest rate of the replaced component, and N_{i} is the number of years.
+3. Present value of operation and maintenance cost
+This cost accounts for the cost of maintaining and operating all the system components throughout the system lifetime. It is given as
+where C_{(o&m)0} is the initial operation and maintenance cost, f_{1} is the inflation rate of operation and maintenance, and n is the lifetime in years.
+4. Life cycle cost
+The life cycle cost (LCC) [31,32] includes the initial capital cost of the system, the present value replacement cost of the system component throughout the system lifetime, and the present value of operation and maintenance cost throughout the system lifetime. Hence, the life cycle cost is given as
+B. Optimization constraints
+Determination of appropriate sizes of a system component such that it has minimum LCC is an optimization problem. Therefore, in optimizing the LCC of the system, the following constraints were taken into consideration: charge/discharge current of the SC constraint, the maximum power surplus constraint, and maximum power deficit constraint.
+1. Charge/discharge current constraint on the supercapacitor
+In view of the fact that the battery has low power density, the SC must be carefully sized such that it provides the maximum instantaneous currents and the sharp peak current during motor starting. Mathematically, the constraint can be written as
+Also, the charging current must be less than the maximum current of the SC. Hence
+2. Maximum power surplus constraint
+To fully and effectively utilize the energy storages, the energy storages must be charged when the output of the PV is greater than the load demand. Hence, the constraint is given as
+E_{pv} is the electrical energy generated from PV modules, and E_{bat} and E_{sc} are the energy stored in the battery and SC, respectively.
+3. Maximum power deficit constraint
+In days of autonomy when there is no PV output due to cloudy weather or situations when the PV output is less than the load demand, the battery and the supercapacitor must be available to meet the load demand.
+The constraint is given as
+C. Decision variables
+The decision variables in any optimization problems are the variables that are optimized to minimize the cost function. In this project, the decision variables when the battery alone is used as the energy storage are the number of PV modules and the number of batteries, while the decision variables when both the supercapacitor and the battery are used are the number of PV modules, the number of batteries, and the number of supercapacitors.
+D. Objective function
+The objective function of the system is given as
+Figures 2 and 3 depict the flowchart of the system optimal component sizing algorithm based on genetic algorithm and system lifetime estimation algorithm using Schiffer's technique, respectively. The output of the battery lifetime estimation (Fig. 3) serves as part of the process of the genetic algorithm based optimization algorithm (Fig. 2). The lifetime of the battery is reached when the remaining capacity of the battery is 80% of the nominal capacity. In estimating the lifetime of the battery, the capacity loss due to both corrosion and degradation is subtracted from the nominal capacity of the battery on every 1 h iteration. The lifetime is obtained as the hourly number of iterations. The result of the lifetime obtained in Fig. 3 is then taken to the optimization algorithm (Fig. 2) to calculate the LCC of the entire system which is the objective function of the optimization algorithm.
+VI. APPLICATION OF THE SYSTEM DESIGN AND ALGORITHM TO A TYPICAL AGRICULTURAL FEEDMILL
+To demonstrate the applicability of the proposed system configuration and algorithm, a feedmill farm in Ibadan, Nigeria, was used as a case study. The main operations in the feedmill process include grinding, conveying, and mixing. The grinding process involves the crushing of the grains by the grinding machine. Thereafter, the ground grains are transported by the conveyor to the mixing machine where the ground grains are added to the feed additives. The grinding machine, conveyor, and mixing machine are implemented using individual drive arrangements; as such, each of the processes uses its own electric motor. The process is illustrated in Fig. 4.
+The PV/battery system and the supercapacitor were appropriately sized in such a way that the system provides the required electrical power needed to support the operation of the feedmill. To achieve this, the DC power from the PV modules and the energy storage are controlled and inverted to deliver the necessary AC output power to the load. The system configuration with and without the supercapacitor is depicted in Fig. 5.
+A. Load profile of the feedmill agricultural farm
+In order to determine the energy requirement of the feedmill, a walk through energy audit was conducted. The electrical devices which constitute the load of the feedmill and their ratings are shown in Table V.
+The time of operation of the electrical devices is also recorded. This is used to determine energy usage at different times. The feedmill begins daily operation by 8.00 and ends daily operation at 5:00 pm. The operational time of the feedmill process is depicted in Table VI.
+An energy profile was developed for the feedmill based on the required loads and time of operation of the loads, and the results are depicted in Fig. 6. From the figure, it is found that three load demands can be observed: the base load, the full load, and the peak load. Base-load is the minimum level of electricity demand required by the PV/battery system (with or without SC) over the entire period of operation. It is needed to provide power to the components that keep running at all times such as the fans and the bulbs which are utilized throughout the operation of the feedmill (i.e., 8:00 am–5.00 pm). The PV system supplies base load for a duration of 5 min at the end of successive operation (when motors are switched off). Full load is the largest electrical demand that the PV/battery system (with or without SC) is designed to carry under particular conditions. Under these conditions, the motors run at their rated capacity. Peak load on the other hand is the time of sudden high electrical energy demand from the PV/battery system (with or without SC). These peaking demands are often for only short durations. The peak load occurs in the feedmill when the motor starts, and this occurs for a short time after every interval of 45 min (at the beginning of every new process, i.e., grinding new ton of grain).
+VII. RESULTS AND DISCUSSION
+To appreciate the influence of SC on the overall lifetime of the Battery and on the LCC of the PV/battery system, two scenarios were created: a system of PV/battery only and a system of PV/battery/SC. The number of system components was optimally determined for both scenarios using the algorithm described in Fig. 2, and the results are depicted in Table VII. The solar irradiation of Ibadan (where the feedmill is located) was utilized for the simulation.
+The table reveals that for the load demand of the feedmill to be met using the system configuration in scenario 1 (PV/battery only), 7 numbers of SW 315 Mono PV panels with a rated output power of 315 Wp are required with 2 numbers of 250 Ah batteries. However, when using scenario 2 (PV/battery/SC), 6 numbers of PV panels, 1 battery, and 7 numbers of supercapacitors are required.
+A. The impact of SC on battery lifetime
+SC has been found to be suitable for high power, short-discharge applications [33,34]. This is because of its high energy discharge rate (5%–40%/day), better speed of response compared to conventional battery systems [35], and energy density (10 000 W/kg) that is high compared to conventional capacitors with a durability of 8–10 years. The battery gets to the end of its lifetime when the remaining battery capacity (C_{r}) is 80% of its nominal capacity. To demonstrate the effect of SC on the battery lifetime, C_{r} was observed as a function of time, and the results are shown in Fig. 7. From the simulation results, it is found that the battery lifetime was about 2 years and 8 months when the battery alone was used as the energy storage system. However, the battery lifetime was determined to be 5 years and 2 months when SC was utilized with the battery, indicating an improvement of about 40%. The reason is that the nature of operation of the feedmill requires incessant starting of electric motors over its entire daily operation. This draws high initial current from the battery, which increases the degradation of the battery due to cycling. Consequently, the lifetime of the battery is reduced. However, with the use of SC alongside the battery, the high starting current is not drawn from the battery rather it is supplied by the supercapacitor. This reduces battery degradation due to cycling and consequently improves the battery lifetime.
+1. The effect of corrosion on the battery lifetime
+During charging and discharging, several processes can occur that changes the structure or the shape of the electrode. In most battery reactions, the electrode materials undergo a physical change during the discharge/charge cycle. The changes to the electrode, both physical changes as the original electrode material is re-formed and chemical changes of the materials on the electrodes, give rise to numerous non-idealities. The battery fails due to corrosion of the positive grid structure due to oxidation of the grid and plate materials. This degradation mechanism is unavoidable and is the most common natural failure mode for batteries. The effect of corrosion on the battery lifetime with and without SC is depicted in Fig. 8. The figure reveals the rate at which battery capacity decreases as a result of corrosion. For example, when the battery only is used as a storage device for the feedmill application, the battery capacity decreased by a factor of 1.6 in 2.5 years as a result of corrosion. However, with the use of SC, the capacity of the battery decreases only by a factor of 0.7 of the original battery capacity in 5 years. In general, the rate at which the battery capacity decreases as a result of corrosion is higher with the battery only configuration compared to when SC is combined with the battery. This explains the reason why SC increases the lifetime of the battery.
+B. Impact of SC on the LCC of the PV/battery system
+The impact of SC on the LCC of PV/battery was also evaluated. The initial cost and the LCC of the 2 system configurations were determined over a period of 20 years using Eqs. (18) and (19)–(21), respectively. The results are depicted in Fig. 9. The figure reveals that the PV/battery system has a lower initial cost compared to the PV/battery/SC configuration. This is expected because of the cost of SC which increases the initial cost of scenario 2. However, the cost of PV/battery only (scenario 1) begins to increase faster compared to scenario 2 by the 3rd year and throughout the 20 years life cycle of the system. This is because the number of replacements of the battery over the life cycle of the system is higher without the use of SC. This is easily related to the high initial current that is drawn from the battery directly during motor starting. However, with the use of SC, the high starting current is supplied by the SC rather than the battery, and hence, the battery lifetime is improved. In this way, the number of replacements of the expensive battery is reduced, which then has a positive impact on the overall LCC.
+The actual initial cost and the LCC of the two configurations are depicted in Table VIII.
+From the table, it is found that scenario 1 has a lower initial cost of $5010 compared to scenario 2 with an initial cost of $5480. However, the life cycle cost (over a period of twenty years) of scenario 2 (when SC is utilized) is $6423. This is cost effective compared to scenario 1 with LCC of $11 037, and hence, the use of SC improved the overall LCC by about 58%.
+VIII. CONCLUSION
+The effect of SC on the battery lifetime and LCC of the PV/battery standalone system for a typical feedmill agricultural farm application is presented in this paper. Electrical load in the feedmill was estimated through a walk through load audit, and appropriate sizes of PV, Battery, and SC were obtained using genetic algorithm. The study concludes that for the typical feedmill operation, the use of SC can increase the battery lifetime by about 40% compared to when SC is not utilized. Also, the LCC of a PV/battery standalone system can be reduced by about 58% with the use of SC. In general, the combination of batteries and supercapacitors for storage purpose is more cost effective compared to the battery only storage system. The use of SCs in addition to batteries can be one solution to achieving a cost-effective energy system for farm power application. This could impact positively in achieving a sustainable agricultural system. The authors in the future study would compare different models used in estimating the lifetime of batteries based on model complexity, computational speed, ease of use, and computer memory requirement.
+TABLE I. 
+PV datasheet.
+TABLE II. 
+The parameter of the battery.
+TABLE III. 
+The parameter of the supercapacitor.
+TABLE IV. 
+Initial system component cost.
+TABLE V. 
+Electrical load ratings as obtained during load audit exercise.
+TABLE VI. 
+The operating time of the feedmill process.
+TABLE VII. 
+Number of system components as determined using genetic algorithm.
+TABLE VIII. 
+Initial and life cycle cost of the system configurations.
+TABLE I. -body
+Model number	Maximum power (Wp)	Open circuit voltage (V)	Maximum power point voltage (V)	Short circuit current (A)	Maximum power point current (A)	Module efficiency (%)	Dimensions (L × B × H) (in.)	Nominal operating cell temperature (NOCT) (°C)
+SW 315 Mono	315	45.9	36.8	9.16	8.63	16.03	78.15 × 38.98 × 1.81	46
+TABLE II. -body
+Parameters	D_{d} (days)	DoD (80)	V_{s} (V)	η_{bat}	C_{sg} (A h)	η_{inv}
+Values	2	60%	12	0.9	250	0.9
+TABLE III. -body
+Parameters	Voltage	Capacity (F)
+Values	2.16 V	50 F
+TABLE IV. -body
+System component	PV [C_{pv(init)}]	Supercapacitor [C_{sc(init)}]	Battery C_{bat(init)}
+Unit cost ($)	630	200	300
+TABLE V. -body
+S/N	Electrical equipment	Quantity	Rating
+1	Electric motor for grinding	1	2.25 kW
+2	Electric motor for mixing	1	2.25 kW
+3	Conveyor electric motor	1	2.25 kW
+4	Fan	2	40 W
+5	Bulb	4	30 W
+TABLE VI. -body
+Operations	Time
+Start of daily operation	8:00 am
+Break time	12:05–1 pm
+End of daily operation	5.00 pm
+Time required to process 1 ton of grain	45 min
+Time between successive processes	5 min
+TABLE VII. -body
+System components	Scenario 1 PV/battery only	Scenario 2 PV/battery/SC
+No. of PV modules	7	6
+No. of batteries	2	1
+No. of supercapacitors	0	7
+TABLE VIII. -body
+Scenarios	Initial cost ($)	Life cycle cost (LCC) ($)
+(1) PV/battery only	5010	11 037
+(2) PV/battery/SC	5480	6423
+FIG. 1. 
+Hourly solar irradiance for Ibadan: the location of the farm.
+FIG. 2. 
+Optimal component system sizing algorithm flowchart.
+FIG. 3. 
+Battery lifetime block.
+FIG. 4. 
+The feedmill process.
+FIG. 5. 
+Battery/PV system with and without the supercapacitor.
+FIG. 6. 
+Energy profile of the feedmill.
+FIG. 7. 
+Scenario comparison of battery lifetime.
+FIG. 8. 
+Effect of corrosion on the battery lifetime.
+FIG. 9. 
+The cost comparison of PV/battery and PV/battery/SC systems.

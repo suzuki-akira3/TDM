@@ -1,0 +1,198 @@
+Hawking radiation from acoustic black holes in two space dimensions
+We study the Hawking radiation for the acoustic black hole. In the beginning, we follow the outline of Jacobson but then we use a different 2 + 1 vacuum state similar to the vacuum state constructed by Unruh. We also use a special form of the wave packets. The focus of the paper is to treat the 2-dimensional case, in particular, the case when the radial and angular velocity are variable.
+I. INTRODUCTION
+Consider the acoustic wave equation of the form
+where x_{0}∈R is the time variable, x=(x_{1},x_{2})∈R^{2},g(x)=(det[gjk]j,k=02){−1},
+v=(v_{1},v_{2})=Aρx^+Bρθ^ is the velocity flow in a vortex, ρ=|x|,x^=x|x|,θ^=−x_{2}|x|,x_{1}|x|. We assume, for the simplicity, that the density and the sound speed are equal to 1. We assume also that
+Equation (1.1) describes the wave propagation in the moving fluid with velocity (v_{1},v_{2})=Aρx^+Bρθ^ (cf. Ref [27]). The metric corresponding to (1.1) has the form
+where x = (x_{1}, x_{2}), v = (v_{1}, v_{2}).
+It is a Lorentzian metric in R^{2}×R called the acoustic metric. It is one of many examples of analog gravity metrics (see, for example, the survey [2] where many other physical examples of analog gravity are given).
+In the general relativity, the metric is a solution of the Einstein equation and this sets the analog metrics apart. From other side, analog metrics exhibit many properties of metrics in general relativity, in particular, they both may have black holes. This fact spurred the interest of physicists in the theoretical and experimental studies of analog gravity (cf. Refs [15],  [25],  [27], and  [28]).
+The black hole, by the definition, is a domain in a spacetime where the signals or particles cannot escape from. It was a remarkable discovery of Hawking that when quantum effects are added, the black hole emits particles [13]. This phenomenon is called the Hawking radiation and there is a large literature devoted to this subject (cf. Refs [1],  [4],  [5],  [12],  [15],  [18], and  [28]). Hawking radiation holds for analog black holes too and this ignites an additional interest in analog gravity. Note that it is possible to demonstrate the Hawking radiation for analog black holes while the experimental verification of Hawking radiation in general relativity is not realistic. The pioneering work in this direction was done by Unruh in Ref [25]. For more recent experimental results, see Refs [3],  [10],  [21],  [22], and  [30].
+Hawking radiation from acoustic black holes was considered in Refs [17] and  [26].
+In all preceding studies on Hawking radiation, the case of 1 + 1 dimensions or the spherically symmetric case in 3 + 1 dimensions was studied.
+The focus of this paper is to investigate the Hawking radiation in 2 + 1 dimensions, primarily the rotating acoustic black holes with variable radial and angular velocities.
+Note that classical acoustic black holes with the variable velocity were treated in Refs [6],  [9],  [19],  [20], and  [29].
+As an introduction to the quantum field theory on curved spacetimes, we use the lecture notes of Jacobson [16] (see also Ref [14] and references there).
+The main departure from Ref [16] in this paper is a new definition of the vacuum state that follows the definition of the Unruh vacuum (cf. Refs [23] and  [24]).
+Another novelty is a special construction of wave packets that is used in the computation of the Hawking radiation. For comparison, Fredenhagen and Haag [11] in one of few rigorous derivations of Hawking radiation used a limiting procedure when x_{0} → −∞ to obtain the expression for the Hawking radiation. Using special wave packets, we avoid taking the time limit. Instead, we use the limit a → ∞ of some parameter a that characterizes the closeness of the wave packet to the black hole.
+The plan of the paper is the following:
+In Sec. II, we describe needed facts from the quantum field theory on curved spacetimes and define the new vacuum state.
+In Sec. III, we study a more simple case of the acoustic black hole when A < 0 and B ≠ 0 are constant. We introduce wave packets of a special form and compute the Hawking radiation produced by such wave packets.
+Finally, in Sec. IV, we consider the acoustic black holes with the variable velocity. In Sec. IV A, we study the Hawking radiation in the case when A < 0 is constant and |B(φ)| > 0 is periodic in φ, and in Sec. IV B we study the case of the general acoustic black hole where A( ρ, φ) < 0, |B( ρ, φ)| > 0.
+Some A( ρ, φ), B( ρ, φ) have direct physical meaning (cf. Ref [27]). In order for Aρx^+Bρθ^ to represent a fluid flow, there should be a harmonic function Ψ( ρ, φ) such that A=ρ∂Ψ∂r and B=∂Ψ∂φ (see Ref [27]). If we take Ψ = A_{0} log ρ + B_{0}φ + C_{1}ρ cos φ + C_{2}ρ sin φ, then A( ρ, φ) = A_{0} + C_{1}ρ cos φ + C_{2}ρ sin φ, B( ρ, φ) = B_{0} − C_{1}ρ sin φ + C_{2}ρ cos φ (cf. Ref [9] and Sec. IV).
+Note that one can take any harmonic polynomials instead of C_{1}ρ cos φ + C_{2}ρ sin φ.
+II. ELEMENTS OF THE SECOND QUANTIZATION
+For the elements of the quantum field theory on the curved space-time used in this paper, see the lectures notes of Jacobson [16] (see also Ref [14] and the further references there).
+Denote by fk+(x_{0},x) the solution of □_{g}u = 0 in R^{2}×R with the initial conditions having the following form in polar coordinates ( ρ, φ):
+where k = (η_{ρ}, η_{φ}), x = ( ρ, φ), k·x = η_{ρ}ρ + η_{φ}φ,
+where
+The normalization factor γ_{k} will be chosen later. Also denote by fk−(x_{0},x) the solution of □_{g}u = 0 with the initial condition
+where λ0+(k)=−Aρη_{ρ}−Bρ^{2}η_{φ}+ηρ2+ηφ2d^{2}. Note that
+since −λ^{+}( ρ, η_{ρ}, η_{φ}) = λ^{−}( ρ, −η_{ρ}, −η_{φ}) and γ_{k} = γ_{−k} is positive.
+Let
+The bracket (2.6) is called the Klein-Gordon (KG) inner product. Since the acoustic metric (1.4) is stationary, the inner product (2.6) is independent of t when f, h are solutions of □_{g}u = 0 (cf. Ref [16]). We have, in ( ρ, φ) coordinates,
+where k=(η_{ρ},η_{φ}),k^{′}=(ηρ′,ηφ′). Note that γ_{k} is real-valued. Then derivatives of γ_{k} do not contribute to the KG norm. Also note that λ0−(k)+Aρη_{ρ}+Bρ^{2}η_{φ}=−ηρ2+1d^{2}ηφ2. Therefore
+We choose a normalizing factor γ_{k}=1ρηρ2+ηφ2d^{2}{14}2(2π){2}. Then ⟨fk+,fk^{′}+⟩=1(2π){2}∫R^{2}e^{−i(k−k′)⋅x}dρdφ=δ(k−k^{′}). Analogously,
+Note that φ ∈ [0, 2π] and η_{φ}=m∈Z. Therefore ∫−∞∞()dη_{φ} is, in fact, a sum ∑m=−∞∞ and δ(η_{φ} − η_{φ′}) = δ_{mm′}, δ_{mm′} = 1 when m = m′ and δ_{mm′} = 0 when m ≠ m′.
+We shall continue to use η_{φ}∈R as in (2.1)–(2.4) simply for the shortness of notations.
+Let Φ be the field operator, i.e.,
+where
+are the annihilations and creations operators, respectively.
+It follows from (2.7), (2.8) (cf. Ref [16]) that operators αk+ and α−k− satisfy the following commutation relations:
+Let C(x_{0}, ρ, φ) be a solution of (1.1) with initial conditions at x_{0} = 0 having a support in the exterior of the black hole {ρ > |A|}. We shall call C a wave packet.
+Expanding C in a basis fk+(x_{0},x),f−k−(x_{0},x), we have
+where dk = dη_{ρ}dη_{φ}. As it was mentioned above, the integration in η_{φ} is indeed a summation ∑m=−∞∞. In (2.12),
+Note that integrals in (2.9) are understood in a distribution sense but C^{+}(k), C^{−}(k) are decaying if the initial conditions for C are smooth. It follows from (2.9), (2.12) that
+It will be convenient to split fk+(x_{0},x) and f−k−(x_{0},x) into two parts
+where θ(η_{ρ}) = 1, for η_{ρ} > 0, θ(η_{ρ}) = 0, for η_{ρ} < 0. Analogously
+Note that fk++¯=f−k−θ(η_{ρ})=f−k−+,fk+−¯=f−k−(1−θη_{ρ})=f−k−−.
+Remark 2.1. We shall describe the behavior of null-bicharacteristics starting at x_{0} = 0 and corresponding to fk++,fk+−,f−k−+,f−k−− that will show a huge difference between fk++,f−k−− and fk+−,f−k−+.The Hamiltonian corresponding to fk+ is λ0−=−Aρη_{ρ}−Bρ^{2}η_{φ}−ηρ2+ηφ2d^{2} [cf. (2.3)].Denote by γ^{++} the null-bicharacteristic with the initial data (ρ,φ,λ0−,η_{ρ},η_{φ}) for η_{ρ} > 0, ρ > |A| and by γ^{+−} the null-bicharacteristic with the same initial data except η_{ρ} < 0.It is not difficult to show (cf. Ref [8]) that γ^{+−} crosses the event horizon {ρ = |A|} when x_{0} → +∞ and γ^{++} approaches spiraling the event horizon when x_{0} → −∞. One can say that γ^{++} “emerges” from the black hole when x_{0} increases.Analogously, the Hamiltonian for f−k− is λ0+=−Aρη_{ρ}−Bρ^{2}η_{φ}+ηρ2+ηφ2d^{2} [cf. (2.4)].If γ^{−+}(γ^{−−}) are the null-bicharacteristics starting at (ρ,φ,λ0+,η_{ρ},η_{φ}) where η_{ρ} > 0 for γ^{−+} and η_{ρ} < 0 for γ^{−−}, then γ^{−+} crosses the event horizon when x_{0} → +∞ and γ^{−−} approaches spiraling the event horizon when x_{0} → −∞ (cf. Ref [8]).Therefore the null-bicharacteristics corresponding to fk++(x) and fk−−(k) and the null-characteristics corresponding to fk+−(x) and fk−+(x) have drastically different behavior.Using (2.15), (2.16) we can rewrite (2.12) in the following form:
+where
+Denote
+Changing η_{ρ} to −η_{ρ} in the second integral in (2.18), we get
+Therefore ρC_{+}(ρ,φ) admits an analytic continuation in ρ to the half-plane Iρ>0. Analogously
+Thus ρC_{−}(ρ,φ) has an analytic continuation in ρ to the half-plane Iρ<0. Note that
+Hence ρC=ρC_{+}+ρC_{−}. Therefore, by the well-known formula (cf., for example, Ref [7]),
+Using (2.15), (2.16) we can rewrite (2.14) in the form
+where
+We shall define now the vacuum state |Ψ⟩. In the case of the Minkowski metric, the vacuum space is defined by the conditions αk++|0=0,αk+−|0=0, for all k. The need to modify the definition of the vacuum states in different situations was emphasized by Unruh [25] and Jacobson [16]. We shall define, similar to Refs [23] and  [24], the vacuum state |Ψ⟩ by the requirements
+Note that (αk+−){*}=α−k−−.It follows from (2.22), (2.24) that
+Let
+be the number of particle operators (cf. Refs [14] and  [16]).The expectation value of the number operator
+is the average number of particles created by the wave packet C.
+Theorem 2.1. The average number of particles created by the wave packet C is given by the formula
+where C_{−}is given by (2.19).
+Proof. We have from (2.24) that
+Therefore
+Hence, combining (2.30) and (2.25), we get
+Therefore
+We used that
+It follows from (2.19) that
+Therefore
+where C_{−} is given by (2.19).
+III. HAWKING RADIATION IN THE CASE OF ROTATING BLACK HOLE
+The Hamiltonian of (1.1) has the following form in polar coordinates ( ρ, φ): H(ρ,φ,ξ_{0},ξ_{ρ},m)=ξ_{0}+Aρη_{ρ}+Bρ^{2}m{2}−ξρ2−m^{2}ρ^{2}=0, where (ξ_{0}, η_{ρ}, m) are dual variables to (x_{0}, ρ, φ).
+Let S = −η_{0}x_{0} + S_{1}( ρ) + mφ be the solution of the eikonal equation
+We are looking for the solution of (3.1) such that S_{1ρ} → +∞ when ρ → |A|. Solving the quadratic equation (3.1), we get
+Let
+Since we are looking for S_{1ρ} → +∞ when ρ − |A| → 0, we have
+Thus S_{1} = ξ_{0}|A| ln( ρ − |A|) + O( ρ − |A|).
+We define a wave packet C_{0}(x_{0}, ρ, φ) as the exact solution of the wave equation (1.1) with the following initial conditions:
+where a > 0, ε > 0,
+We used in (3.7) that A < 0 and ξ_{0}=η_{0}−Bm|A|^{2}.
+The convenience of this choice of the initial conditions (3.5), (3.6) will be clear later.
+We shall compute the KG norm of C_{0}.
+Let, as in (2.6), {v_{1},v_{2}}=∑j=02v¯{1}∂v_{2}∂x_{j}−∂v¯{1}∂x_{j}v_{2}. Note that if C_{0} = h( ρ, φ)C_{01}, where h(ρ,φ)=f(ρ)ρ is real-valued, then {C_{0}, C_{0}} = h^{2}( ρ, φ){C_{01}, C_{01}}. Therefore
+Thus
+since f( ρ) = ( ρ − |A|)^{ε}e^{−a(ρ−|A|)}.
+We are going to compute ⟨Ψ|N(C_{0})|Ψ⟩ [cf. (2.26)], i.e., the average number of particles created by the wave packet C_{0}.
+It follows from (2.32) that
+where
+We have [cf. (2.1), (2.2), (3.5), and (3.6)]
+where
+k = (η_{ρ}, m′), η_{ρ} < 0.
+Analogously,
+where while computing the KG inner product, we used that [cf. (3.9)]
+Since ∫02πe^{−im′φ+imφ}dφ=2πδ_{mm^{′}}, where δ_{mm′} = 1 when m = m′ and δ_{mm′} = 0 when m ≠ m′, we get
+Change variable ρ − |A| = x in (3.13) and perform the Fourier transform in x. Using the well-known formula
+(see, for example, formula (11.10) in Ref [8]), we get, having λ = iξ_{0}|A| + ε,
+Analogously,
+Noting that η_{ρ} < 0, a > 0, we get
+Also Γ(λ + 1) = λΓ(λ). Therefore
+Note that
+Using the Cauchy theorem, we can replace the integration over the real semiaxis by the integration over the imaginary semiaxis,
+where
+Therefore
+Consider now C^{−+}(k)=⟨f−k−θ(η_{ρ}),C_{0}⟩. When we change η_{ρ} to −η_{ρ}, then the only difference with (3.10), (3.11) is that ηρ2+m^{2}d^{2}{14} in (3.11) is replaced by −ηρ2+m^{2}d^{2}{14}.
+Therefore
+We have
+Therefore
+It follows from (3.20) that
+Making the change of variable η_{ρ} → aη_{ρ}, we get
+We now normalize C_{0}, replacing it by C_{n}=C_{0}⟨C0,C0⟩{12}.
+We have N(C_{n})=N(C_{0})⟨C_{0},C_{0}⟩.
+Noting that ⟨C_{0},C_{0}⟩=4πξ_{0}|A|Γ(ε)(2a){12} [see (3.8)], we get from (3.23) that
+Theorem 3.1. Letξ_{0}=η_{0}−Bm|A|^{2}and let C_{0}(x_{0}, ρ, φ) be the solution of (1.1) with the initial conditions (3.5), (3.6). Then the average number of particles created by the normalized wave packet C_{n}(x_{0}, ρ, φ) is given by (3.24) when a → ∞.
+Remark 3.1. Fredenhagen and Haag (see Ref [11]) used the limit when the time T tends to −∞ to find the Hawking radiation in a spherically symmetric case. Note that when T → −∞, the wave packet becomes closer and closer to the black hole. In our approach, the time is fixed and in ( ρ − |A|)^{ε}e^{−a(ρ−|A|)}, the parameter a characterizes the closeness to the black hole. Thus, as a → +∞, we get the value of the Hawking radiation.
+IV. HAWKING RADIATION FOR ANALOG BLACK HOLES WITH VARIABLE A AND B
+In this section, we extend the results of Sec. III to the case when A and B depend on ( ρ, φ), ρ > 0, φ ∈ [0, 2π] (see Refs [6],  [9],  [19],  [20],  [24],  [27], and  [29], where physically relevant examples of such acoustic metrics are studied).
+A. The case of A < 0 constant and B(φ) > 0 periodic
+Consider first a more simple case when A < 0 is a constant and B(φ) is a periodic function of φ, |B(φ)| > 0. In this case, ρ=A^{2}+B^{2}(φ) is an ergosphere and {ρ < |A|} is a black hole.
+The eikonal S = −x_{0}η_{0} + S_{1}( ρ, φ) is the solution of the equation
+Solving the quadratic equation (4.1), we get [cf. (3.2)]
+We shall find a simple approximation for the eikonal near ρ = |A|.
+Assuming that S_{1φ}( ρ, φ) is continuous at ρ = |A|, we get from (4.2)
+Denote by S_{2}( ρ, φ) the solution of the first-order partial differential equation
+There is an alternative way to obtain the approximation of S_{1}( ρ, φ) by S_{2}( ρ, φ): Consider the eikonal equation
+We are looking for S_{1} such that S_{1} → +∞ when ρ → |A|. Then S1ρ2+1ρ^{2}S1φ2=S_{1ρ}1+§1φ2ρ^{2}S1ρ2{12}, where §1φ2ρ^{2}S1ρ2 is small. Replacing S1ρ2+1ρ^{2}S1φ2 by S_{1ρ}, we get the linear equation
+which becomes (4.3) when ρ is replaced by |A|.
+Equation (4.3) can be solved explicitly and we take S_{2}( ρ, φ) as the approximation of S_{1}( ρ, φ). We have
+where S_{3}( ρ, φ) is the solution of the homogeneous equation
+Consider the characteristic equation
+Then
+is the general solution of a homogeneous equation for arbitrary g(t). We take g(t) = a_{0}t, where a_{0} is such that S_{3}(ρ,φ+2π)=S_{3}(ρ,φ)+2πm,m∈Z. Thus a_{0} satisfies the equation a_{0}∫02πdφB(φ)|A|=2πm, i.e.,
+Therefore
+where
+Finally,
+Define the wave packet Ĉ_{0} as the solution of the wave equation □_{g}u = 0 having the initial conditions [cf. (3.5) and (3.6)]
+where a_{0} and S_{4}(φ) are the same as in (4.4), (4.5), f(ρ)=1ρ(ρ−|A|){ε}e^{−a(ρ−|A|)}, and [cf. (3.7)]
+The computation of ⟨Ψ|N(Ĉ_{0})|Ψ⟩ is the same as in Sec. III with ξ_{0}|A| replaced by η_{0}|A| + a_{0} and e^{imφ} replaced by e^{iS4(φ)}. Let
+[cf. (3.10)]. Then, as in (3.11),
+Analogously [cf. (3.12)]
+Let
+Then, integrating in ρ and in φ as in (3.15), (3.16), we get
+Analogously,
+Therefore, integrating in η_{ρ} and summing in m′, we get [cf. (3.23)]
+Parseval’s equality gives
+If we replace Ĉ_{0} by the normalized wave packet Ĉ_{n}=Ĉ_{0}⟨Ĉ_{0},Ĉ_{0}⟩ and take the limit as a → ∞, we get
+We proved the following theorem:
+Theorem 4.1. Let a_{0}be the same as in (4.4). The average number of particles of created by the normalized wave packet Ĉ_{n}(x_{0}, ρ, φ) is given by (4.17) when a → ∞.
+B. General acoustic metric
+Now consider acoustic metrics of the general form, i.e., when A(ρ, φ), B( ρ, φ) are functions of (ρ, φ), A(ρ, φ) < 0, |B( ρ, φ)| > 0. The equation of the ergosphere is A^{2}+B^{2}ρ^{2}=1 and we assume that the ergosphere is a smooth Jordan curve. It was shown in Refs [6] and  [9] that there exists a black hole {ρ < ρ_{0}(φ)} inside the ergosphere where ρ = ρ_{0}(φ) is a smooth Jordan curve that is a characteristic curve for the spatial part of the wave operator □_{g}. Let
+be the eikonal equation [cf. (4.1)].
+Make change of variable
+Let S̃(ρ̃,φ)=S(ρ,φ). The eikonal equation (4.18) has the following form in (ρ̃,φ) coordinates:
+where ρ=ρ_{0}(φ)+ρ̃,ρ0′(φ)=dρ_{0}(φ)dφ.
+We shall rewrite (4.20) as a quadratic equation in S̃{ρ̃} as
+where
+Since ρ̃=0 is a characteristic curve, we have
+where Ã_{0}(0, φ) ≠ 0.
+We have
+The root S̃{ρ̃} that tends to ∞ when ρ̃→0 has the form
+It follows from (4.20) that 2B(η_{0},0,φ,S̃{φ})Ã_{0}(0,φ)=B̃{1}(φ)η_{0}+B̃{2}(φ)S̃{φ}.
+As in (4.3), we approximate S̃(ρ,φ) by the solution of linear first-order partial differential equation
+We shall solve (4.26) explicitly. We look for a particular solution S̃{2}(ρ̃,φ) of nonhomogeneous equation (4.26) in the form
+where b_{0} will be determined below and S̃{3}(φ) is periodic in φ. For S̃{3}(φ), we get an equation
+A necessary and sufficient condition of the existence of a periodic solution of (4.27) is
+Thus (4.28) determines b_{0}. Note that B̃{2}(φ)≠0 and
+Consider the homogeneous equation (4.26),
+As in (4.3), the general solution of (4.25) has the form
+where g(t) is arbitrary.
+We choose g(t) = b_{1}t, where b_{1} is such that
+Therefore finally the solution of (4.26) has the form
+where b_{0}, b_{1} are determined in (4.29) and (4.31) and S̃{5}(φ) has the form
+Note that S̃{5}(φ+2π)=S̃{5}(φ)+2πm,m∈Z.
+Now we shall define the wave packet C̃{0} as the solution of □_{g}u = 0 having the following initial conditions in (ρ̃,φ) coordinates:
+where
+Let f̃k+(x_{0},x),f̃0−(x_{0},x) be the solutions of □_{g}u = 0 with the initial conditions [cf. (2.1) and (2.2)]
+where [cf. (2.3) and (4.13)]
+Analogously [cf. (2.4)]
+and
+where λ0+(k) is similar to λ0−(k) with a positive square root. Note that f̃k± satisfy “orthogonality conditions” of the forms (2.7), (2.8).
+Expanding C̃{0} with respect to the basis f̃k++,f̃k+−,f̃−k−+,f̃−k−−, we get, as in (2.17),
+where k = (η_{ρ}, m′) and dk means integration in η_{ρ} and the summation in m′ [cf. (2.12)]. Note that
+have the same form as (3.12), (3.13) with ξ_{0}|A| replaced by (η_{0}b_{0} + b_{1}), e^{imφ} replaced by e^{iS5(φ)}, and ρ − |A| replaced by ρ̃.
+Let, as in (4.12),
+If we replace C̃{0} by C̃{n}=C̃{0}⟨C̃{0},C̃{0}⟩, then analogously to (4.15), we have
+Thus we proved the following theorem:
+Theorem 4.2. Let b_{0}, b_{1}be the same as in (4.29), (4.30). Then⟨Ψ|N(C̃{n})|Ψ⟩has the form (4.42) when a → ∞.
+V. CONCLUSION
+In this paper, we study the Hawking radiation for the rotating acoustic black holes with variable radial and angular velocities.
+In the general case of rotating black holes, i.e., when A(ρ,φ)<0,|B(ρ,φ)|>0, there are always black holes (see Refs [6] and  [9]). Some of them have a direct physical meaning as it was shown in Sec. I.
+There are two main steps in the derivation of the Hawking radiation: finding an appropriate vacuum state and finding appropriate vacuum wave packets, more precisely, sequence of wave packets, for the computation of the Hawking radiation.
+The choice of vacuum state is not the same as in the Minkowsky space.
+We used a vacuum state similar to the one found by Unruh in Refs [23] and  [24]. As in Refs [23] and  [24]; we split the set of the eigenfunctions of four subsets instead of two.
+Regarding the wave packets, we are looking for the wave packets having the initial condition of the form u = C( ρ)e^{iS(ρ,φ)}, where S( ρ, φ) is a simplified eikonal function and
+When the parameter a increases, the wave packets becomes closer and closer to the black hole {ρ < |A|}.
+Assuming that the KG norm of the wave packet is one and taking the limit when a → ∞, we get the Hawking radiation. Note that in a rigorous derivation of the Hawking radiation in the spherically symmetric case, Fredenhagen and Haag [11] also used the limiting procedure when the time T → −∞ to obtain the Hawking radiation.

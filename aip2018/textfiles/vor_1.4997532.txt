@@ -1,0 +1,172 @@
+Exact analytical solutions of the Schrödinger equation for a two dimensional purely sextic double-well potential
+Exact analytical solutions of the Schrödinger equation for a two-dimensional purely sextic double-well potential are proved to exist for a denumerably infinite set of the geometry parameter of the well. First, the geometry values which allow exact solutions are determined. Then, explicit wave functions and corresponding energies are calculated for the allowed geometry values. Concrete exact solutions are given for the principal quantum number n up to 10. Moreover, some interesting rules for the obtained exact analytical solutions are also given; particularly, the number of negative energy levels for a given geometry parameter is obtained. For analyzing the obtained exact solutions and for their classification by quantum number, we also use numerical calculations by the Feranchuk-Komarov operator method.
+I. INTRODUCTION
+The double-well anharmonic oscillator (DWAO) holds a great importance because of its relation to many problems of quantum chemistry, field theory, etc [1–3]. There are some one-dimensional model potentials for which the DWAO has analytical exact solutions: sextic potential combining with quartic terms [4–13], purely sextic double-well potential [14], or even higher order (up to ten) of polynomial potential [15]. Interestingly, for the studies, we have known the lowest order of polynomial potentials allowed to have exact analytical solutions is six [6–8]. For the quartic double-well anhamonic oscillator, the Schrödinger equation can be solved only by numerical methods [16–18]. We are particularly interested in the purely sextic double-well potential for which exact solutions of the Schrödinger equation have been constructed in the compact form for the one-dimensional case [19]. The exact solvability of the problem in one-dimensional space leads to the idea that there may exist exact solutions of the two-dimensional case. However, the two-dimensional case is not trivial due to its symmetry. The inspiration to consider the two-dimensional case is the connection between the two-dimensional hydrogen atom in the magnetic field and the two-dimensional purely sextic double-well problem by the Levi-Civita transformation [20–22] since the former has exact solutions investigated in Ref [23]. This connection, which is often used to relate exact solutions of a family of Schrödinger equations together (for example, see Ref [24]), gives a clue for finding exact solutions of the two-dimensional purely sextic double-well problem.
+In this paper, we first point out the existence of exactly solvable cases of the Schrödinger equation for the purely sextic double-well potential problem in two-dimensional space, then construct an eigenvalue equation to find energy and wave function at these exactly solvable cases. We also determine the quantum states at which the exact solutions are and some rules that these exact solutions obey including the number of energy levels and states of exact solutions. In addition, some important discussions are also given on the obtained results. For this purpose, numerical solutions for any geometry parameters are also given by the Feranchuk-Komarov operator method [25].
+II. TWO-DIMENSIONAL PURELY SEXTIC DWAO
+The Schrödinger equation for a two-dimensional sextic DWAO can be written as follows:
+with variables u, v determined in infinite range (−∞, +∞). Here, in Eq. (1), M > 0 is the mass; λ > 0 is an anharmonicity constant; parameter ω is real and positive. For simplicity, we rewrite this equation into a dimensionless one,
+where β = M^{3/2}ω^{2}/ℏλ^{1/2} is dimensionless and is referred to as a geometry parameter of the well. The units of coordinates (u, v) and energy E are ℏ^{1/4}M^{−1/8}λ^{−1/8} and ℏ^{3/2}λ^{1/4}M^{−3/4}, respectively.
+It is easy to verify that the Hamiltonian of Eq. (2) commutes with the angular momentum operator of the system described by Eq. (2) which possesses the SO(2) symmetry. This means that there is a conservation of angular momentum for the considered system. Therefore, it is better to rewrite this equation into the polar coordinate system (ρ, θ) by the following transformation:
+In the polar coordinates, the variables in the Schrödinger equation are separated and the wave functions can be presented in the form Ψ(ρ, θ) = R(ρ) Θ_{m}(θ), where the angular wave function Θ_{m}(θ) is an eigenfunction of the angular momentum operator,
+with the magnetic quantum number m = 0, ±1, ±2, …. Then, the radial wave function R(ρ) is a solution of the following equation:
+With considering the asymptotic behavior of the wave function at the point ρ = 0 and at the infinity: ρ → +∞, the radial wave function can be rewritten in the form
+Here, the function f(ρ) is a solution of the following differential equation:
+with the notation μ=m=0,1,2,….
+Solutions of Eq. (7) can be obtained in the form of Taylor expansion
+which leads Eq. (7) to an equation for the coefficients C_{k} as follows (C_{k<0} = 0):
+From Eq. (9), it is easy to see that
+and for k ≥ 2 the following recursion relation is obtained for the coefficients C_{k}:
+Due to Eq. (11), the odd coefficients C_{2j+1} can be linearly expressed via C_{1} and C_{3}, and then because of (10) they all have to vanish: C_{2j+1} = 0. Therefore, in the expansion (8), there exist only the even terms,
+It is more convenient to define new coefficients D_{j}j=0,1,2,… by the following formula:
+By substituting (12) into (11), we have a recurrence equation for D_{k},
+for k ≥ 1; and D_{0} = 1, D_{1} = −E. The recurrence equation (13) is well known and can be solved analytically to get solutions under the form of the determinant of a tridiagonal matrix [23,26],
+where b_{j} = (β − μ)/2 − j; c_{j} = 2j(μ + j) with j = 1, 2, …, k − 1.
+Now we can rewrite the function f(ρ) and then the wave function in a general form
+The coefficient C_{0} can be defined by the normalization condition of wave functions. Thus, for any given energy E and magnetic quantum number m, we have the wave function in an explicit form (15). However, the function (15) is only a mathematical solution of Eq. (2) and to describe the real physics, this wave function needs to be normalizable. The normalization condition of wave functions leads to a constraint for energy E to make it discrete. Unfortunately, based on our best knowledge, this problem cannot be solved analytically in general. In Sec. III, we will solve the problem partially for a set of specific geometry values β of the double-well potential which allows the normalization of the wave function (15). We also note for further consideration that the radial wave function for the case of a polynomial double-well potential V (ρ) = −βρ^{2} + a_{1}ρ^{4} + a_{2}ρ^{6} + ⋯ + ρ^{2n} can be given in the form R(ρ)=ρ^{μ}e^{b1ρ2+b2ρ4+⋯+bn−1ρ2n−2}∑k=0∞C_{k}ρ^{2k}.
+III. EXACT SOLUTIONS FOR SPECIFIC GEOMETRY VALUES
+In this section, we consider specific geometry values β for which the function f(ρ) is able to become a polynomial of the value ρ [19,23]. For these cases, the wave function (15) is definitely normalizable because the polynomial of ρ goes to infinity slower than the term exp {−ρ^{4}/8} that goes to zero as ρ → +∞. In order that the function f(ρ) becomes a polynomial at a certain order N,
+all coefficients D_{k} with k ≥ N + 1 should vanish: D_{N+1} = D_{N+2} = D_{N+3} = ⋯ = 0. On the other side, the recursion relation (13) makes it possible to satisfy the equality D_{k} ≡ 0 for all k ≥ N + 3 if only
+Thus, conditions on (17) are sufficient for the function (16) to become a polynomial. Notice that for a fixed quantum magnetic number m coefficients D_{k}(E, β, μ) are functions of the energy E and the geometry parameter β, and we have two equations for two variables. Hence, (17) is the equation for defining a geometry value and an energy of systems which allow the exact solutions (15) with the function f(ρ) having a form of polynomial as (16).
+Let us consider Eq. (17) for determining allowed geometry values and the corresponding energies. The recurrence equation (13) for the case of k = N + 1 is as follows:
+and due to D_{N+1} = D_{N+2} = 0 and D_{N} ≠ 0 this equation is satisfied only if (β − μ − 2N − 2) = 0. In other words, the geometry parameter of the double-well potential which allows exact solutions should have the following values:
+These values are actually positive integers. Now, the geometry parameter is specified by Eq. (18), then only energy needs to be determined. As mentioned previously, two equations on (17) are enough for defining the geometry value and energy of the systems. Hence, to define the energy which leads to exact solutions, we only need one of the two equations in (17). From Eq. (17), we obtain an equation,
+Here, with the values (18) for the geometry parameter, the functions D_{k}(N, E, μ) in Eq. (19) now depend on energy only for fixed values N, μ.
+Equation (19) is a polynomial equation of degree (N + 1) with respect to the variable E. Interestingly, this equation can be solved analytically and we have done that for the cases of degree up to 20 using Mathematica [27]. We notice that for one value of N there are more than one values E corresponding to different quantum states. Thus, the number N does not have any meaning regarding to the description of quantum states. We consider n=n_{r}+m+1 a principal quantum number, where n_{r} is the number of wave function nodes. Hereafter we use this definition to define the quantum state to which the solutions of Eq. (19) belong.
+We show here the solutions for the cases of N = 0, 1. The case of N = 0 corresponds to the allowed geometry values: β=2+m. From (19), the energy is equal to zero: E = 0. The wave function for this case is
+describing the quantum state with principal quantum number n=1+m and magnetic number m. For the case of N = 1, the allowed geometry values are β=4+m. There are two solutions of Eq. (19) for energy E_{nm} as follows:
+corresponding to the wave functions Ψ_{n,m}(ρ, θ),
+In Appendix A, the cases of N = 2, 3 are also given for illustration purpose; other cases for bigger N can be provided upon request. Also, numerical results are particularly shown in Table I for the DWAO with geometry values β ≤ 7 and in Appendix D for the values β = 8, 9, 10 (Tables II–IV).
+The above-given exact analytical solutions of the 2D purely sextic DWAO problem for some certain allowed values of geometry parameter β correspond to the bound states. The wave functions are obtained in the form as a multiplication of the factor ρ^{|m|}⁡exp−ρ^{4}/8 and the polynomial f(r). The question is whether the bound states exist for the function f(r) not being a polynomial anymore. To answer this question, we need to find values of the energy E for the wave function to become square integrable (normalizable). Unfortunately, we cannot solve this problem analytically for arbitrary geometry parameters. Nevertheless, we will use in this paper numerical methods to solve the Schrödinger equation (2) for arbitrary values of the geometry parameter and the answer is the bound states exist for other cases. Besides, exact numerical solutions are also used as a reference for our exact analytical solutions and to analyze the appearance of the exact analytical solutions given in Sec. V.
+For a numerical method, we use the FK operator method described in detail in Refs [20],  [ 21], and  [25]. This method is based totally on algebraic calculations and has been used for some two dimensional problems (for example, see Refs [20],  [ 21],  [25], and  [28–30]). The main idea of the FK operator method of solving the Schrödinger equation is to use the basis set of wave functions of the harmonic oscillator with the frequency ω, serving as a free parameter which is useful for controlling the convergence rate of the solutions. By this method, matrix elements of the Hamiltonian can be calculated algebraically. The problem now becomes finding eigenvalues of the Hamiltonian matrix. Then, the exact numerical solutions for the ground state and some low-lying excited states can be obtained for any values of the geometry parameter by a computational program in FORTRAN 90 with the precision up to twelve decimal places. Figure 1 shows the exact-solution-points (at allowed geometry values and corresponding energies) with the energies obtained by numerical calculations using the FK operator method. The numerical solutions are also used in Sec. IV for analyses.
+IV. SOME RULES FOR THE EXACT SOLUTIONS
+Analyzing the obtained data for β up to 20 and N up to 9, we point out some interesting rules. These rules are showed here as an observation from numerical data (see Fig. 2) but then are proved mathematically in Appendixes B and C.
+(i) First, we verify that the number of exact energy for each fixed N, μ is
+Moreover, all non-zero values of energy in these (N + 1) solutions come in pair: ±E and thus, for even values of N, the zero-energy (E = 0) exists. In (N + 1) solutions of Eq. (19), there are
+solutions of negative energy: E < 0. Here, the notation x is the floor function.
+We also calculate n_{r}—the number of nodes of the wave functions, corresponding to each of the (N + 1) solutions found for any allowed β. These numbers n_{r} are different, and thus if they are sorted by ascending order of energy, then compose an integer sequence from 0 to N,
+Apparently, for solutions of negative energy, the numbers n_{r} are in the range from zero to (N−1)/2. For convenience, the notation n_{r,E<0} is used for these numbers,
+For solutions of zero energy, the number of nodes of the wave functions n_{r,E=0} has only one value,
+(ii) Now, from the rules given above, we calculate the number of energy levels for any given value of β which allows exact solutions. It is easy to see that the number of the pair (N, μ) corresponding to a value of β satisfied Eq. (18) is n_{N}=β/2−1. Taking into account the fact that only for even integer N there exists zero-energy-exact solutions, we have only n_{N}/2=β/4−1/2 cases (from β/2−1) of N which allow the existence of zero-energy-levels, E = 0. This is the degeneracy order of the zero-energy-level. Hence, from (23), the number of exact-solution-energy-levels is
+Also, the number of exact-solution-negative-energy-levels equals
+(iii) From (25), we can also calculate the number of exact-solution-states for given β. Indeed, the number of exact-solution-states corresponding to certain angular momentum m is N+1=β−μ/2, then the total number of exact-solution-states for each β equals
+and the total number of exact-solution-states whose energy E < 0 or E = 0 (if exist) for each β is
+Some cases are shown in Fig. 2 for demonstration purpose.
+V. NEGATIVE ENERGY LEVELS FOR GIVEN PARAMETER β
+Because the two-dimensional double-well potential considered in this work is infinite for any positive geometry parameter, the eigenstates of the system are always bounded. Hence, the energy levels of these eigenstates are always discrete. An important task is to count the number of negative energy levels E < 0 for any given geometry parameter. The formula would be useful for other important analyses [9,19]. We note that Eq. (29) describes only the number of exact-solution-negative-energy levels and thus valid only for allowed values of β which is an integer only. Hence, it is important to calculate the similar equation but for any given β and then to compare with Eq. (29) in the cases of integer values.
+For each quantum state (n, m), we always find only one value of geometry parameter β_{n,m}, corresponding to zero-energy E_{n,m} = 0 by Eqs. (18) and (27). The equation E_{n,m}β=β_{n,m}=0 leads to
+Taking the derivative of the Hamiltonian in Eq. (2) with respect to β, we have ∂Ĥ/∂β = −(u^{2} + v^{2})/2, which means that the expectation value of ∂Ĥ/∂β is always negative. The Hellmann-Feynman theorem states that the expectation value of ∂Ĥ/∂β is also the derivative of expectation energy [31]; thus, ∂E/∂β < 0. It means that for any quantum state the larger geometry parameter β is given, and the smaller energy of the state corresponds. For simpler explanation, the geometry parameter β relates to how deep the potential is, and the deeper potential shifts the energy levels down; so obviously, the increase of geometry parameter β makes energy levels decrease. This effect is demonstrated in Fig. 3 for β from 4 to 5.
+Because energy is a decreasing function of the geometry parameter β, the energy of the quantum state (n, m) for β > β_{n,m} is always negative. Therefore, the problem of counting how many negative-energy levels for certain β is equivalent to counting how many states (n, m) whose β_{n,m} defined by Eq. (33) is smaller than β. Also, it should be noted that E_{n,m>0}β=E_{n,m<0}β. Then, the total number of negative-energy levels for each given geometry value β equals the total number of pair (n ≥ μ + 1, μ ≥ 0) whose β_{n,}_{μ} defined by (33) is smaller than β. Denoting this number by g(β), we have
+Here, x is the ceiling function.
+This function g(β) is drawn in Fig. 4 for β from zero to 10.5. We also compare the theoretical prediction (34) with the numerical calculation whose results are shown in Fig. 4 too. We can see in the graphic that there is a value of β about 8.0218 where the theory predicts 10 for the number of negative-energy-levels but numerical calculation gives 9. This can be understood that Eq. (34) is obtained with an assumption that there is no degeneracy of energy beside the degeneracy by magnetic quantum number m = ±μ. However, the energy degeneracy can happen and we call them “accidential degeneracy” where the theoretical prediction should be minus one.
+VI. CONCLUSION
+In this work, we first show the existence of exactly solvable cases of the Schrödinger equation for the purely sextic double-well potential problem in two-dimensional space and give equations for the calculation of geometry values of the well for which the system is exactly solvable. Then, we construct an eigenvalue equation to find energy and wave function at these allowed values of the geometry parameter. We also determine the quantum states at which the exact solutions are obtained and provide some important rules for the number of energy levels and quantum states of exact solutions. In addition, we make a prediction about the number of negative energy levels, not only for exactly solvable cases but also for any given geometry values.
+APPENDIX A: ANALYTICAL SOLUTIONS FOR THE CASES OF N = 2, 3
+For the case N = 2
+The allowed geometry values β are β=6+m. Three solutions for energy E_{nm} and their corresponding wave functions are calculated, respectively, as follows:
+For the case N = 3
+The allow geometry parameter β are β=8+m. Three solutions for energy E_{nm} and their corresponding wave functions are calculated, respectively, as follows:
+APPENDIX B: THE PROOF OF EQS. (23) AND (24)
+Equation (19) helps us to determine the energy levels of exact solutions for our double well problem,
+The tridiagonal determinant on the left-hand side of this equation does not change its values if its off-diagonal elements k(μ + k) and N−k+1 are replaced by δ_{k}=k(μ+k)N−k+1 due to the fact that the explicit form of the determinant contains only in terms of the multiplication between up-diagonal elements and their corresponding down-diagonal elements [23,26]. Then, Eq. (19) can be rewritten as
+Equation (B1) can be understood as the eigenvalue equation
+where I_{N+1} is the N+1 identity matrix and M_{N+1} is an N+1 symmetry tridiagonal matrix,
+M_{N+1} is a symmetric self-adjoint tridiagonal matrix whose off-diagonal elements are non-zero. Then the Sturm sequence theorem tells us that all N+1 eigenvalues are real and different [23,32],
+This proves Eq. (23) which states that the number of solutions of Eq. (19) must be
+If we replace the off-diagonal elements δ_{k} by −δ_{k}, the value of the symmetry tridiagonal determinant is still unchanged because multiplication between up-diagonal elements and their corresponding down-diagonal elements, δk2, does not change. Then (B1) can be written as
+We also know that if we change the sign of all elements of the determinant on the left-hand side of (B5), the determinant just changes its sign (or not), then Eq. (B5) is equivalent to
+which can be understood as an eigenvalue equation,
+Equation (B7) tells us that if E is an eigenvalue of M_{N+1}, then −E is also an eigenvalue of M_{N+1}. Then the eigenvalue of M_{N+1} or the solution of Eq. (19) always comes in pair ±E (for more detailed proof, see Ref [23]). If N is even, the number of solutions is odd. This means that there must be a zero energy solution E = 0 of Eq. (19). Then, the number of negative energy solutions of Eq. (19) is N/2. In the opposite case, the zero energy solution does not exist and the number of negative energy solutions of Eq. (19) is N+1/2. In general, the number of negative energy solutions of Eq. (19) must be
+as Eq. (24) is.
+APPENDIX C: THE PROOF OF EQS. (25) AND (27)
+From Eq. (7) for the case β = 2N + 2 + μ, we have
+Changing variable by r = 2^{−1/3}ρ^{2} transform this equation into
+The first two terms of (C1) can be written as rf^{″}{r}+2^{1/3}μ+1−r^{2}f^{′}{r}=rp^{−1}pf′r{′}{r}, where pr=r^{21/3μ+1}e^{−r2/2} is always positive in 0,+∞. Then, Eq. (C2) is equivalent to a Sturm-Liouville equation [33],
+where wr=pr/r is the weight of Eq. (C3). Because wr is also always positive in 0,+∞ like pr and p0=p+∞=0, Eq. (C3) describes a singular limit-circle-non-oscillatory Sturm-Liouville system [33].
+The energy levels E of the double well are discrete eigenvalues of a Sturm-Liouville system described by Eq. (C3). In Appendix B, we have shown that there are N+1 different eigenvalues E, which can be chosen in order
+According to the Sturm-Liouville theory for eigenvalue spectrum E_{k} of the singular limit-circle-non-oscillatory Sturm-Liouville system, the eigenfunction f_{k} corresponding to the k-th eigenvalue E_{k} has k−1 zero-points in the interval 0,+∞ [33]. Then the node number of the eigenfunction, n_{r}, must be in the interval from 0 to N or Eq. (25) is proved mathematically.
+As we mention in the end of Appendix B, in the case N is even, there must be a zero eigenvalue E = 0 and N/2 negative eigenvalues E < 0,
+Then, n_{r,E<0}—the number of nodes of wave functions corresponding to these eigenfunctions is from 0 to N/2−1, respectively, for the negative energy cases; and n_{r,E=0} = N/2 for the case of zero eigenvalue.
+In the opposite cases, the zero energy solution does not exist and the number of negative eigenvalues is N+1/2,
+Therefore, n_{r,E<0}—the number of nodes of eigenfunctions is from 0 to N−1/2.
+Hence, in general, the values of the nodes number n_{r} corresponding to N_{E<0} negative eigenvalues are all in the range from 0 to N−1/2and the one in the case of E = 0 eigenvalue (if exists) equals to N/2. This means that Eqs. (26) and (27) are also proven mathematically.
+APPENDIX D: EXACT-SOLUTION-ENERGY LEVELS FOR THE WELL WITH GEOMETRY PARAMETER β = 8, 9, AND 10
+TABLE I. 
+Exact-solution-points for the DWAO with geometry parameter β = 2–7; quantum states of the exact-solution-points and the corresponding energy E obtained by solving Eq. (19). For simplicity, the numbers are shown in the table with only twenty decimal places.
+TABLE II. 
+Exact-solution-points for the DWAO with geometry parameter β = 8. The quantum states of exact-solution-points and the corresponding energy E are obtained in the exact formulae such as (19)–(22) and the formulae in Appendix A; for simplicity, we show in the table only the number with twenty decimal places.
+TABLE III. 
+Exact-solution-points for the DWAO with geometry parameter β = 9. The quantum states of exact-solution-points and the corresponding energy E are obtained in the exact formulae such as (19)–(22) and the formulae in Appendix A; for simplicity, we show in the table only the number with twenty decimal places.
+TABLE IV. 
+Exact-solution-points for the DWAO with geometry parameter β = 10. The quantum states of exact-solution-points and the corresponding energy E are obtained in the exact formulae such as (19)–(22) and the formulae in Appendix A; for simplicity, we show in the table only the number with twenty decimal places.
+TABLE I. -body
+β	N	State	n=n_{r}+m+1	m	E
+2	0	1s	1	0	0.000 000 000 000 0
+3	0	2p±	2	±1	0.000 000 000 000 0
+4	1	1s	1	0	−1.414 213 562 373 1
+4	1	2s	2	0	1.414 213 562 373 1
+4	0	3d±	3	±2	0.000 000 000 000 0
+5	1	2p±	2	±1	−2.000 000 000 000 0
+5	1	3p±	3	±1	2.000 000 000 000 0
+5	0	4f±	4	±3	0.000 000 000 000 0
+6	2	1s	1	0	−3.464 101 615 137 8
+6	2	2s	2	0	0.000 000 000 000 0
+6	2	3s	3	0	3.464 101 615 137 8
+6	1	3d±	3	±2	−2.449 489 742 783 2
+6	1	4d±	4	±2	2.449 489 742 783 2
+6	0	5g±	5	±4	0.000 000 000 000 0
+7	2	2p±	2	±1	−4.472 135 954 999 6
+7	2	3p±	3	±1	0.000 000 000 000 0
+7	2	4p±	4	±1	4.472 135 954 999 6
+7	1	4f±	4	±3	−2.828 427 124 746 2
+7	1	5f±	5	±3	2.828 427 124 746 2
+7	0	6h±	6	±5	0.000 000 000 000 0
+TABLE II. -body
+N	State	n=n_{r}+m+1	m	E
+3	1s	1	0	−6.089 992 404 809 3
+3	2s	2	0	−1.706 456 125 824 8
+3	3s	3	0	1.706 456 125 824 8
+2	3d±	3	±2	−5.291 502 622 129 2
+3	4s	4	0	6.089 992 404 809 3
+2	4d±	4	±2	0.000 000 000 000 0
+2	5d±	5	±2	5.291 502 622 129 2
+1	5g±	5	±4	−3.162 277 660 168 4
+1	6g±	6	±4	3.162 277 660 168 4
+0	7i±	7	±6	0.000 000 000 000 0
+TABLE III. -body
+N	State	n=n_{r}+m+1	m	E
+3	2p±	2	±1	−7.398 556 193 860 1
+3	3p±	3	±1	−2.293 766 824 743 5
+3	4p±	4	±1	2.293 766 824 743 5
+2	4f±	4	±3	−6.000 000 000 000 0
+3	5p±	5	±1	7.398 556 193 860 1
+2	5f±	5	±3	0.000 000 000 000 0
+2	6f±	6	±3	6.000 000 000 000 0
+1	6h±	6	±5	−3.464 101 615 137 8
+1	7h±	7	±5	3.464 101 615 137 8
+0	8j±	8	±7	0.000 000 000 000 0
+TABLE IV. -body
+N	State	n=n_{r}+m+1	m	E
+4	1s	1	0	−9.190 613 465 880 7
+4	2s	2	0	−3.941 145 026 609 9
+4	3s	3	0	0.000 000 000 000 0
+3	3d	3	2	−8.518 077 317 810 6
+4	4s	4	0	3.941 145 026 609 9
+3	4d	4	2	−2.728 068 695 579 5
+4	5s	5	0	9.190 613 465 880 7
+3	5d	5	2	2.728 068 695 579 5
+2	5g	5	4	−6.633 249 580 710 8
+3	6d	6	2	8.518 077 317 810 6
+2	6g	6	4	0.000 000 000 000 0
+2	7g	7	4	6.633 249 580 710 8
+1	7i	7	6	−3.741 657 386 773 9
+1	8i	8	6	3.741 657 386 773 9
+0	9k	9	8	0.000 000 000 000 0
+FIG. 1. 
+[(a)–(c)] Comparison between exact-solution-points and the numerical results for the states n = 1, 2, and 3. The curves represent the exact numerical results from the FK operator method [29]. The dots represent the exact-solution-points governed by formula (18) and Eq. (19).
+FIG. 2. 
+[(a)–(f)] The exact-solution-levels inside the DWAO potential in the x-plane for geometry values β from 4 to 7. The labels for states are given above the corresponding energy levels. These figures are from the data calculated by formula (18) and Eq. (19). Formulae (28)–(32) are all confirmed by these figures.
+FIG. 3. 
+An example of moving down of the energy levels when increasing geometry parameter β from 4.0 to 5.0. Here only 10 lowest levels are considered in the DWAO potential when β = 4.0–5.0. The red levels are exact-solution-levels when β = 4.0 and 5.0.
+FIG. 4. 
+[(a) and (b)] Comparison between the predicted number of the negative-energy levels for given geometry parameter β and numerical results. The red line is from theoretical prediction by Eq. (34) with the filled dots represent the number of negative-energy levels for integer β. The triangle dots represent the number of the negative-energy levels obtained by numerical calculation for some certain β. There is one value near β = 8.0128 where the disagreement is observed due to the accidential degeneracy between 2s and 6h states. The number of negative-energy levels is just 9, not 10 as the theoretical prediction (34).

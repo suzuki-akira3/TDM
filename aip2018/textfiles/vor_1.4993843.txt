@@ -1,0 +1,112 @@
+Formation mechanisms of pores and spatters during laser deep penetration welding
+During laser deep penetration welding process, defects cannot be completely avoided yet. Due to the dynamic process, especially process pores and spatters occur. Keyhole dynamics are assumed to be responsible for the initiation of both pores and spatters. However, it is not completely clear yet how spatters and pores are formed. A semianalytical model of a keyhole is used to simulate dynamic keyhole properties of laser beam welding of aluminum. These are related to characteristics of spatters and pores occurring during laser deep penetration welding recorded using high-speed-imaging technique and x-ray analysis, respectively. Correlations of keyhole shapes and pore formation show that the volume underneath a keyhole collapse can be sufficient to capture the gas that is necessary for the formation of a pore and a keyhole expansion is not necessarily needed to produce the pores found in the weld seam. Calculated keyhole wall fluctuations are found to be not sufficient to detach spatters from the keyhole wall without additional forces from the melt pool.
+I. INTRODUCTION
+Process pores and spatters are unwanted effects during laser deep penetration welding. It is assumed that the dynamic behavior of the keyhole, the vapor channel occurring during deep penetration welding, is the origin of these defects [1]. In order to create a pore, ambient gas needs to be trapped in the keyhole and captured as a gas bubble [2]. If the gas bubble remains in the melt pool until solidification of the material, a pore can form [3]. Two main pore formation mechanisms are discussed in the literature. First, the keyhole can entrap gas before it collapses. Its diameter is reduced in its middle regions and a gas bubble can form [4]. Another observed mechanism is the enlargement of the lower keyhole section that leads to a bulging and a gas suction into the keyhole. When the bulged keyhole expansion is cut off, a gas bubble can be created and can remain in the weld seam as a pore after solidification of the melt pool [5]. Pores can reduce the strength of the weld seam and can lead to damage of the joint under stress [6]. Pore size is, e.g., affected by laser and processing parameters. A smaller weld cross-sectional area leads to smaller pores [7].
+Another critical process defect is the spatter formation. This phenomenon can lead to a loss of melt, resulting in poor joining (e.g., Ref [8]). Furthermore, ejected spatters can remain on the specimen's surface, which can make post-treatment necessary to clean the surface for following process steps (e.g., Ref [9]). Spatters are melt ejections that can form either from melt pool waves or keyhole wall ejections. The bulging of the keyhole can cause melt pool forces that lead to surface waves [10]. Also reflected surface waves that reach the keyhole opening can be the origin of spatters [11]. Melt pool waves can be detached from the surface or by the metal vapor from the keyhole [12]. The metal vapor inside the keyhole is assumed to be able to detach small spatters directly from the keyhole wall by friction forces [13]. Directed vapor and microspatter flows can initiate keyhole wall movements that result in keyhole wall waves that can interact with the melt pool surface waves and produce spatters. The necessary condition for a melt drop to be detached is summarized in Eq. (1). The phenomenon is based on the surface tension that needs to be overcome by the melt speed [14], while ρ describes the material density, v_{melt} the melt pool speed, σ the surface tension coefficient and S the radius of the melt pool swelling.
+There are several methods described that help to reduce process defects, but usually cannot completely avoid their occurrence yet. The occurrence of spatters is reduced when welding through the specimen (full penetration welding) instead of partial welding [15]. A very efficient way is also welding in reduced ambient pressure [16]. Pores are known to be reduced by widening the keyhole opening. For this purpose, an additional gas flow [17] or modulation of the laser power [18] can be used. Also, beam oscillation has the potential to influence spatter characteristics [19]. Defocusing the laser beam slightly underneath the surface of the specimen could be shown to reduce pores [1]. In the author's earlier works [20], it could be shown that the spatial laser intensity distribution also influences the keyhole shape and dynamic behavior.
+Besides process observation, using, e.g., high-speed-imaging or temperature recording [9], a method for gaining knowledge about parameters that cannot be measured is the process modeling. Numerical models can help giving a deeper insight into the underlying process behavior (e.g., Ref [21]). Ki et_al [22] managed to implement all known physical effects taking place in the keyhole and melt pool in their numerical fluid dynamic model. The complexity of the keyhole process results in high calculation times (e.g., Ref [23]). The dynamic keyhole has been studied, e.g., by Otto et_al [24] Keyhole oscillations could be found at frequencies around 3 kHz by comparing the modeling with the experimentally determined optical process emissions.
+Analytical descriptions of effects are more time efficient, but there are limitations due to necessary simplifications. Andrews and Attay [25] developed an analytical model that describes keyhole oscillations by considering the vapor flow in the keyhole in order to obtain different radii in different depths. Kroos et_al [26] and Klein et_al [27] created an analytical, self-consistent model of a cylindrical keyhole, showing that keyhole oscillations take place in a range from 600 Hz (Ref [28]) to 1.5 kHz (Ref [29]).
+In order to find proper ways to avoid the formation of process defects, their formation mechanisms need to be identified. Therefore, in this work, a semianalytical model is used to receive parameters that help explain the formation mechanisms of pores and spatters.
+II. METHODOLOGY
+A. Modeling keyhole dynamics
+A semianalytical model is used for calculating the keyhole properties. It is based on analytical descriptions of pressure and energy impacts on the keyhole to model the quasistatic keyhole properties. For the calculation of the dynamic behavior, several time steps were calculated depending on the previous time step results.
+The model is described in detail in Ref [30]. It contains two steps. First, the quasistatic keyhole properties are calculated based on the energy balance on cylindrically assumed keyhole elements of the same height. The keyhole is virtually split into ten sections. The actual spatial laser intensity distribution of the laser beam is the basis for the energy input calculation in each section. The energy input by Fresnel absorption as well as multiple reflections in the keyhole are used to calculate the energy inputs. Energy losses due to radial heat conduction in the surrounding material and due to vaporization of material are considered. Solving the energy equation, the temperature in each keyhole section is calculated. These temperature values are needed in order to calculate the pressure balance in the keyhole sections. The temperature dependent vapor pressure counteracts mainly against the surface tension pressure of the surrounding melt pool sections. The result of the pressure equation is the radius in each individual keyhole section.
+In a second step, the results from the quasistatic modeling are used as input for the dynamic model. The dynamic model consists of a system of two differential equations that describe the influences on the radial keyhole wall movement and the keyhole pressure, respectively. First, the force from the ablation pressure and the surface tension pressure from the surrounding melt pool and from bulging of the cylinder surface in radial direction are implemented. Second, the pressure decrease due to exiting vapor, the pressure increases due to the evaporation on the keyhole wall depending on the local laser beam intensity in the element, and the volume change due to radius deviations are considered. The equations are numerically solved (solver: ode45) in matlab simulink (Version R2009a).
+The results of the dynamic modeling are the frequencies and amplitudes of the radial keyhole section wall movement. These are used for characterizing the process. The average and maximum of these dynamic characteristics as well as the values in the single keyhole sections are evaluated.
+B. Spatter detection
+A high-speed camera (recording frequency 6 kHz; resolution 256 × 512 pixel) has been used to observe the area above the process zone during welding (Fig. 1). An illumination with a pulsed laser (808 nm wave length) in combination with a notch filter on the camera guaranteed that only reflected light of the illumination laser is captured by the camera.
+Spatters are detected in images of the videos and are processed using matlab (Version R2009a). More than 500 frames (>0.25 s process time) are used for the analysis of each video. The routine recognizes spatters in every image separately (Fig. 2). The gray scale image is converted into a black/white binary image by setting a brightness dependent threshold of a gray scale level above which the value is set to be white and recognized as a spatter. The brightness threshold is calculated as 40% of the actual brightness range. The plume is removed from the image by blackening the lower part of the images. The spatter size is recorded for each found spatter at its first occurrence to minimize measuring errors due to reduced brightness of the spatter after cooling. The size of each spatter is determined by automated counting of the number of pixels related to the spatters and calculating the area since the scale of the figures is known. The average size of all found spatters in the video is calculated.
+The spatter positions in each frame are compared with the spatter distribution in the previous frame. Each individual spatter in the current frame is related to the closest individual spatter in the previous frame. In case of a higher spatter amount in the new frame, additional spatters that could not be related to a spatter in the previous frame are determined as newly developed spatters. That way, the absolute number of spatters can be recorded and the number of spatters per time can be evaluated.
+C. Pore detection
+The weld seams are analyzed by a subsequent x-ray analysis for pore detection. The weld seams are scanned from the top of the weld (Fig. 3).
+Density differences in the weld seams are visible in the pictures and can be analyzed using a matlab (Version R2009a) routine that calculates the size and number of the pores. The pore number is used to calculate the pores per second (PPS) (Eq. (2))
+D. Parameters and material
+A Gaussian beam profile (single-mode fiber laser IPG YLR-1000SM) is collimated with a lens of 160 mm focal length and focused with a lens of 560 mm focal length (Fig. 4(a)). The Top Hat intensity distribution (Fig. 4(b)) is created using a beam shaper (Focal-piShaper 36_1064 by Adloptica GmbH) as collimator and a focusing lens with a focal length of 200 mm. The Donut profile is produced using the Focal-piShaper NA 0 1_50_80_1064 in combination with a collimator of 160 mm focal length.
+Equations (3) (Gaussian, gs), 4 (Top Hat, th), and 5 (Donut, do) are used for modeling the beam profiles i_{j} including the laser power P_{L} and the wave length λ.
+The reference parameters in Table I are used for the experiments and modeling. From these parameters, the laser power (from 800 to 1000 W) and the welding speed (from 0.5 to 2 m/min) are varied. The focal point is selected to −2 mm due to the more stable beam shape above the focal position. No shielding gas has been used in order to avoid influences on the spatter movement. The used base material is aluminum alloy EN AW-1050 (Table II).
+The selected material properties used for simulation are shown in Table III.
+The specimens are of the size 40 × 6 x 100 mm, while an 80 mm long weld seam is produced.
+III. RESULTS
+A. Keyhole calculation
+The keyhole geometry is calculated using the semianalytical model. Figure 5 shows the comparison of the keyhole shapes at different beam profiles.
+The exaggerated bulging of the keyhole tips comes from the increased intensity by multiple reflections in combination with the fixed depth of the keyhole to an average seam depth at the parameter set. The Gaussian profile leads to the widest keyhole geometry, while the Donut profile leads to a narrow area where the keyhole almost collapses.
+The calculated dynamic behavior of the keyhole is exemplarily shown in Fig. 6 comparing frequencies and amplitudes calculated for different beam profiles. While the amplitudes are in the same range, the frequencies increase at Top Hat and Donut profile compared with a Gaussian beam.
+B. Spatter evaluation
+Spatter characteristics are evaluated at all varied process parameters. Donut and Top Hat profile welds show a tendency to higher amounts of spatter ejected per time (Fig. 7).
+The evaluated spatter sizes are shown in Fig. 8. The Donut welds show the tendency to the highest values of the spatter size followed by the Top Hat and the Gaussian profile welds.
+C. Pore evaluation
+Pores per second are evaluated by x-ray analysis. In general, a Gaussian beam weld shows fewer pores per second than a Top Hat and Donut weld (Fig. 9).
+The measurements of the pore size shows that all found pore sizes are in the same range, while the Donut profile shows the tendency to slightly smaller pores (Fig. 10).
+IV. DISCUSSION
+A. Keyhole properties and pore formation
+The results can be used to get a better understanding of the pore formation mechanisms. The hypothesis to be examined in this section is that the keyhole can create pores by a keyhole collapse.
+It can be found that the size of the keyhole correlates with the size of the resulting pores (Fig. 11). A correlation of experimentally determined pore areas and calculated keyhole dimensions shows that bigger keyhole dimensions lead to bigger pores. That means that the quasistatic keyhole dimension without considering the dynamics influences the pore dimension.
+It is assumed that the keyhole section that shows the smallest diameter should be the critical element if the dominating pore formation mechanism is the keyhole collapse. The critical element is defined as the keyhole section showing the smallest diameter in the quasistatic modeling. The calculated frequencies in the critical keyhole sections seem to correlate to the frequencies of pore occurrence (Fig. 12).
+When comparing the calculated volume of all keyhole sections underneath the critical element with the experimentally resulting pore volume (assuming spherical pores), it can be seen that in most cases, the keyhole volume in the lower sections is big enough to form the pores (Fig. 13).
+This means that in the observed experiments, the dominating mechanism of pore formation should be the collapse of the keyhole in the critical sections of the keyhole.
+B. Keyhole properties and spatter formation
+The hypothesis discussed in this section is that spatters can form by detachments from the keyhole wall movement.
+The speed of the keyhole wall radial movement v_{max} can be calculated using Eq. (6) assuming a sinusoidal keyhole wall movement, as it has been seen in the calculations, while f denotes the frequency and A the amplitude in the actual keyhole section.
+The necessary keyhole wall movement speed is calculated using Eq. (1).
+Figure 14 gives the hint that the volume which is pushed into the keyhole area by the amplitude of the keyhole wall movement in the single keyhole sections is mainly not detachable from the keyhole wall.
+In addition, Fig. 15 shows the amplitudes of the keyhole wall movement compared with the spatter size observed in high-speed-imaging. It can be seen that the simulated amplitudes are much smaller than the size of the observed spatters.
+Therefore, it needs to be assumed that there are different mechanisms necessary that provide the melt material and provide the force to detach the melt material. Interacting keyhole and melt pool waves could be responsible for pushing the melt into the exiting vapor to be detached.
+V. CONCLUSIONS
+The mechanisms of pore and spatter formation have been identified by comparing simulation results of the dynamics of the keyhole created during laser deep penetration welding and experimental observations using high-speed-imaging technique and x-ray analysis. The following conclusions can be drawn:
+• The experimentally evaluated pore sizes can form by keyhole collapses without additional keyhole bulging.
+• Keyhole wall movements cannot produce the necessary melt volume and the forces to overcome the surface tension of melt to form the observed spatters. Therefore, it needs to be assumed that additional forces are necessary to produce keyhole wall detachments.
+• Spatter characteristics observed using high-speed videography can be correlated to dynamic keyhole behavior, which can possibly help for developing process quality control systems.
+TABLE I. 
+Reference parameters.
+TABLE II. 
+Chemical composition of EN AW-1050.
+TABLE III. 
+Selected material properties.
+TABLE I. -body
+Laser power	P_{L}	1	kW
+Welding velocity	v	1	m/min
+Focal position	z_{f}	−2	mm
+TABLE II. -body
+Wt. %	Al	Si	Fe	Cu	Mn	Mg	Zn	Ti
+EN AW-1050	99.5	0.25	0.4	0.05	0.05	0.05	0.07	0.05
+TABLE III. -body
+Parameter	Symbol	Value	Unit
+Density (Ref.  [32])	ρ	2.7	g/cm^{3}
+Molar mass	M	24.3	g/mol
+Thermal conductivity (Ref.  [33])	k	235	W/(m K)
+Specific heat capacity (Ref.  [36])	c_{p}	897	kJ/(kg K)
+Boiling temperature (Ref.  [32])	T_{b}	2792	K
+Melting temperature (Ref.  [32])	T_{m}	933	K
+Latent heat (vaporization) (Ref.  [34])	L_{v}	10 800	kJ/kg
+Latent heat (melting) (Ref.  [34])	L_{m}	386	kJ/kg
+Surface tension coefficient (at T_{s}) (Ref.  [35])	γ	288	mN/m
+FIG. 1. 
+Scheme of the welding setup with high-speed-camera observation (Ref [31]).
+FIG. 2. 
+Recognition procedure for spatter detection (Ref [31]).
+FIG. 3. 
+Pore detection method (Ref [31]).
+FIG. 4. 
+Measured intensity profiles (Gaussian, Top Hat and Donut).
+FIG. 5. 
+Keyhole shapes at different beam profiles.
+FIG. 6. 
+Dynamic behavior of the keyhole at different beam profiles.
+FIG. 7. 
+Spatters per second evaluated at different (a) laser power and (b) welding speed.
+FIG. 8. 
+Spatter diameter evaluated at different (a) laser power and (b) welding speed.
+FIG. 9. 
+Pores per second evaluated at different (a) laser power and (b) welding speed.
+FIG. 10. 
+Pore area in x-ray analysis evaluated at different (a) laser power and (b) welding speed.
+FIG. 11. 
+Correlation of keyhole radii and pore area.
+FIG. 12. 
+Modeled frequencies in the critical element correlated to the occurring pores per second.
+FIG. 13. 
+Volumes under the critical elements compared to the experimentally determined pore volume.
+FIG. 14. 
+Maximum keyhole wall speed evaluated in all single elements at the different beam profiles compared with necessary keyhole wall speeds for detachment.
+FIG. 15. 
+Calculated amplitudes correlated to the average spatter diameters in the experiments.

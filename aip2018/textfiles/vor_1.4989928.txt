@@ -1,0 +1,151 @@
+Singular solutions in nonlinear parabolic equations with anisotropic nonstandard growth conditions
+In this paper, we study extinction and blow-up properties of weak solutions for the doubly nonlinear parabolic problem involving p(x, t)-Laplacian operator, subject to homogeneous Dirichlet boundary conditions. We first prove the existence and uniqueness of weak solutions in some anisotropic Orlicz-Sobolev spaces and also establish suitable regularity of weak solutions with respect to the introduced control functional. Second, we use the energy estimate and the comparison principle of the ordinary differential equation to study the extinction or non-extinction of solutions. Third, we combine some new energy functions with the embedding inequalities to show blow-up criteria of solutions. Moreover, the singular rates of weak solutions are determined. It is interesting that blow-up or extinction phenomena depend sensitively on the sign of the precise relationship among the different anisotropic variable exponents, which discovers a key clue to the different effects of diffusion and reaction of the equations on the singularities of weak solutions.
+I. INTRODUCTION
+In this paper, we consider the following doubly nonlinear parabolic equation involving p(x, t)-Laplacian operator and anisotropic nonstandard growth inner source:
+subject to homogeneous Dirichlet boundary condition on the cylinder ∂Ω × (0, T), with the initial data u(x, 0) = u_{0}(x) in Ω, where Ω⊂R^{N} is an open bounded domain with Lipschitz-continuous boundary ∂Ω; T denotes the maximal existence time of solutions; u_{0} is continuous and nonnegative in Ω; constant a represents the diffusion coefficient; m ∈ (0, 1) denotes a constant; and variable exponents p(x, t) and q(x, t) satisfy that
+with a continuous function ω satisfying limτ→0^{+}¯ω(τ)log(1/τ)=C<+∞. The nonlinear equation (1.1) belongs to formally parabolic type and might be degenerate or singular at the point where u and/or |∇u| vanish or become infinite.
+In this paper, the weight of the diffusion term is a constant. Up to now, most studies are dealt with the semilinear equations in the literature. There are some related studies on the behavior of solutions to semilinear equations degenerating on the boundary [22,25,33,34,36,41,42]. As for the nonlinear equations with constant exponents, there is a large amount of literature on singularities of solutions, which arises in the mathematical modeling of various physical processes, such as flows of incompressible turbulent fluids or gases in pipes and processes of filtration in porous media. For example, Yin and Jin studied the extinction and blow-up properties of solutions for the fast diffusive p-Laplacian with sources in Ref [37]; Liu and Wang considered the blow-up solutions in a p-Laplacian equation with positive initial energy in Ref [27]; Zhou and Mu dealt with global existence and blow-up for a non-Newton polytropic filtration system with a nonlocal source in Ref [40]; Hu and Yin in Ref [24] studied some semilinear parabolic equations with prescribed energy; for the topic on weighted p-Laplacian equations, we refer the readers to the work in Refs [23],  [31],  [32],  [38], and  [39] by Yin and his co-authors and in Ref [43] by Zhan and Wen.
+Nonlinear parabolic problems with nonstandard growth conditions come from several branches of applied mathematics and physics, such as flows of electro-rheological [1,2,29] or thermo-rheological fluids, and the processing of digital images [3,13,26], which might possess the properties of vanishing in a finite time, finite speed of propagation on disturbances from the data or waiting time phenomena which are intrinsic for the solutions of nonlinear equations with constant exponents (see Refs [5],  [6],  [10], and  [11]).
+Guo, Li, and Gao in Ref [21] considered the following p(x)-parabolic problem:
+subject to homogeneous Dirichlet boundary condition on ∂Ω × (0, T), where constant exponent r > 1. The authors in Ref [21] improved the regularity of weak solutions and then proved that the weak solutions blow up in finite time for some positive initial energy and vanish in finite time by using the energy estimate method.
+Antontsev, Chipot, and Shmarev in Ref [4] studied the homogeneous Dirichlet boundary problem for the doubly nonlinear parabolic equation with nonstandard growth conditions,
+They established conditions on the data which guarantee the comparison principle and the uniqueness of bounded weak solutions in suitable function spaces of Orlicz-Sobolev type subject to some additional restrictions but under weaker conditions on the existence of weak solutions.
+Antontsev and Shmarev in Ref [8] considered the behavior of energy solutions of the homogeneous Dirichlet boundary problem for the anisotropic doubly degenerate parabolic equation as follows.
+where m(x, t) > 0, p_{i}(x, t), σ(x, t) > 1 are given functions. They obtained the sufficient conditions on the finite time blow-up or extinction and established the decay rates as t → ∞. It was shown that the possibility of singularity depends on the properties of m_{t} and that the anisotropy of the diffusion terms in the equation may cause extinction in finite time even in the absence of the absorption term. The readers can refer to Refs [7],  [12],  [15–20],  [28],  [30], and  [35] for the other results on singular solutions for the nonlinear equations with isotropic or anisotropic variable nonlinearities.
+Inspired by the above studies [4,8,21], we want to study the singular solutions of the doubly nonlinear parabolic problem (1.1) involving anisotropic nonstandard growth conditions. To our knowledge, the finite-time blow-up or extinction properties of weak solutions to problem (1.1) have not been obtained before. In this paper, we need to overcome some essential difficulties caused by the anisotropic nonstandard growth conditions and doubly nonlinear diffusion, such as the failure of the scaling method and the gap between the modular and the norm. In Sec. II, we prove the existence and uniqueness of weak solutions in some anisotropic Orlicz-Sobolev spaces and also establish suitable regularity of weak solutions with respect to the introduced control functional in Secs. III, IV, and V. In Sec. III, we use the energy estimate and the comparison principle of the ordinary differential equation (ODE) to study the extinction or non-extinction of solutions. The embedding inequalities between different variable Sobolev spaces are established there. In Sec. IV, we combine some new energy functional with the embedding inequalities to show blow-up criteria of solutions. Moreover, the upper bound of the blow-up rate and the lower bound of the extinction rate are obtained in the integral sense. In Sec. V, the global existence results are proved by using the comparison method. It is interesting that the blow-up or extinction phenomena depend sensitively on the sign of m(p^{+} − 1) − q^{−} and q − 1, which discovers a key clue to the different effect of diffusion and reaction of the problem on the singular properties of weak solutions.
+II. WELL-POSEDNESS OF WEAK SOLUTIONS
+We first give some notations and inequalities in Sobolev spaces with variable exponents. Let p(x, t) be a measurable function in Ω × (0, T). The set
+equipped with Luxemburg’s norm
+becomes a reflexive and separable Banach space (see Theorem 3.2.7 in Ref [14]). The set C^{∞}(Ω × (0, T)) is dense in L^{p(x,t)}(Ω × (0, T)), provided that p(x,t)∈P_{log}(Ω×(0,T)). There are some relationships between the module and the norm,
+For every f ∈ L^{p(x)}(Ω) and g ∈ L^{p}′^{(x)}(Ω) with the conjugate exponent p^{′}(x):=p(x)p(x)−1, there is a generalized Hölder’s inequality,
+For every 1 < p(z) < +∞ and some constant ε ∈ (0, 1), the following Young’s inequality holds:
+Now we discuss the well-posedness of weak solutions of (1.1) in some Orlicz-Sobolev spaces. The nonlinear equation of (1.1) can be rewritten in the following form:
+It suffices to prove that problem (2.1) indeed admits a unique weak solution. Following the procedure in Sec. 7 of Ref [4], we would establish the solution as the limit of the sequence of the weak solutions of the approximated regularized problems,
+with the coefficient taken of the form
+depending on the given parameters ε, K ∈ (0, 1). It can be found that A_{ε,K}(x, t, u_{ε}) is separated away from zero and infinity, and the weak solution of (2.2) is obtained as the limit as n → ∞ of the sequence of Galerkin’s approximations,
+where the family {ψ_{i}} is dense in V^{+}(Ω):={u∈L^{2}(Ω)∩W01,1(Ω),|∇u|∈L^{p+}(Ω)} and forms the orthogonal basis of L^{2}(Ω). By using the results in Refs [4] and  [6], problem (2.2) admits at least one weak solution
+such that ∂_{t}u_{ε} ∈ W′(Ω × (0, T)), where the Banach space and the corresponding norm are defined as follows:
+Denote W′(Ω × (0, T)) as the dual space of W(Ω × (0, T)),
+The space W′ is equipped with the norm
+By using the similar procedure in the proof of Theorems 7.1 and 7.2 in Ref [4], problem (1.1) admits a unique weak solution, and the comparison principle also holds. That is to say, for every u_{0} ∈ L^{2}(Ω), there exists a unique weak solution
+and for any test function φ ∈ L^{∞}(0, T; L^{2}(Ω)) ∩ W(Ω × (0, T)) such that ∂_{t}φ ∈ W′(Ω × (0, T)) and for any t_{1}, t_{2} ∈ [0, T],
+Moreover, if u_{0} ∈ L^{∞}(Ω), the solution belongs to L^{∞}(Ω × (0, T)).
+Following, we need to prove some suitable regularity of weak solutions with respect to the introduced energy functional in Secs. III, IV, and V. Let us introduce the function v(x, t) := u^{m}(x, t). The equation in (1.1) might be transformed into the following form:
+and v = 0 on ∂Ω × (0, T) in the sense of trace. Then v be the weak solution of the parabolic problem (9.3) in Ref [9] with the notations
+It can be checked that the coefficients and the variable exponents satisfy the conditions (9.6)–(9.8) in Ref [9]. The weak solution v is constructed as the limit of the sequence of solutions of the regularized problems of (9.3). By using the similar procedure of Galerkin’s approximations in Sec. 9.2 of Ref [9], one can obtain from Theorem 9.2 that
+provided that u^{m}(x, 0) ∈ Ṽ_{0}(Ω) ∩ L^{l+1}(Ω), l := (m + 1)/m, and
+III. EXTINCTION AND NON-EXTINCTION IN FINITE TIME
+In order to obtain the extinction properties of weak solutions, we introduce an auxiliary lemma on the ordinary differential inequality as follows.
+Lemma 3.1. Assume that a nonnegative continuous function φ(t) satisfies that
+Then there exists a constant T_{1} > 0 such that
+where
+Moreover, let S_{0}be the root of the equation
+with
+Then, when a ≥ S_{0}, a lower bound for extinction rate is representable as the following inequality:
+Proof. For simplicity, we denote that
+First, it is easy to observe that the following fact remains true:
+Combing (3.1) with (3.2) and ignoring the nonnegative term in (3.1), we have
+Gronwall’s inequality in Ref [9] and inequality (3.3) imply that
+Hence, the following estimates hold:
+Subsequently, collecting (3.1) and (3.4) gives a new inequality
+Multiplying (3.5) by e^{M1(q+−q−)q−−1t}, we derive the following differential inequality:
+where
+It is not difficult to prove that (3.6) is equivalent to the inequality
+with
+Considering
+and φ(0) > 0, we have
+Moreover, the continuity of Φ(t) implies that there exists a constant T_{1} > 0 such that
+The estimates (3.7) and (3.8) indicate that H′(t) ≤ Φ(0)/2, which implies that
+Next, we prove the last result of this lemma. Utilizing Z(t) ≤ Z(0) and mp^{+} ≤ m + q^{−}, we obtain that
+By (3.6) and (3.9), we have
+Due to a ≥ S_{0}, we have
+and hence,
+Integrating (3.10) with respect to t over (t, T_{1}) for 0 < t ≤ T_{1}, we obtain that
+Theorem 3.1. If the following conditions hold:
+then the weak solution u of (1.1) vanishes in finite time with the nonnegative initial data u_{0}(x) satisfying that
+More precisely, we have the following estimates:
+where
+Moreover, if a ≥ S_{0}, a lower bound of extinction rate for u may be written as
+Proof. Multiplying the nonlinear equation in (1.1) by u^{m} and integrating it over Ω × (t, t + h), we obtain that
+Dividing (3.11) by h and applying Lebesgue differentiation theorem in Ref [9], we have
+where G(t) := ∫_{Ω}u^{m+1}dx. By means of the embedding results (see Refs [9] and  [14])
+we have
+By (3.12)–(3.14), we get
+By Lemma 3.1 and the definition of G(t) above, we obtain that
+In the following, we show a result on non-extinction of solutions.
+Theorem 3.2. Suppose that m + q^{−}≤ mp^{+}. Then the solution u of problem (1.1) does not vanish in finite time if the following conditions be in force:
+In order to prove this theorem, we need the following lemma:
+Lemma 3.2. Suppose that constants p > q > 0, α > 0, β > 0 and that h(t) be a nonnegative and absolutely continuous function satisfying that
+Then there exists an estimate as follows:
+Proof. First, we consider the case β ≤ α.
+Case 1. If h(0)>(βα){1q}, then we have h(t)≥(βα){1q} for t ≥ 0. If not, there would exist some t_{0} > 0 and t_{1} > 0 such that
+Thus there exists a t_{2} ∈ (t_{0}, t_{1}) such that
+Due to αh^{q}(t_{2}) < β, we have
+This is a contradiction.
+Case 2. If h(0)≤(βα){1q}, then we have the following claim:
+or there exists a t^{*} > 0 such that
+If (3.15) holds, we obtain that
+Therefore,
+For (3.16), the proof of this part is analogous to that in Case 1 and (3.15). In summary, we have
+In case of β > α, following the proof of the first part in this lemma, we have
+This completes the proof of the lemma.
+Proof of Theorem 3.2. Let G(t) := ∫_{Ω}u^{m+1}dx. According to the definition of E(t) and applying the results in Lemma 3.2, we have
+Moreover, q(x, t) ≤ 1 and Hölder’s inequality imply that
+By (3.17) and (3.18) and m + q^{−} ≤ mp^{+},
+By (3.19) and Lemma 3.2, we show that
+with
+This completes the proof.
+IV. BLOW-UP IN FINITE TIME
+Let us introduce the energy function
+By Corollary 3.3.4 in Ref [14], we know
+with m+q(x,t)m<Np^{−}N−p^{−}. Let B be the constant of the embedding inequality
+Denote that
+where B_{1} := B + 1. Our main result is given as follows:
+Theorem 4.1. Assume that p(x, t), q(x, t) satisfy the following conditions:
+(H_{1}) E(0)+amp^{−}|Ω|+1m+q^{−}|Ω|<E_{1},∫_{Ω}|∇u0m|^{p(x,0)}dx>α_{1};
+(H_{2}) 1 < p^{−}< N,maxm+1,mp^{+}<m+q^{−}<mNp^{−}N−p^{−};
+(H_{3}) p_{t}≤0,q_{t}≥0,p_{t}(x,t)mp(x,t){2}+q_{t}(x,t)(m+q(x,t)){2}∈Lloc1(0,∞);L^{1}(Ω).Then the solution of problem (1.1) blows up in finite time.In order to prove this theorem, we first give some lemmas.
+Lemma 4.1. Let the condition (H_{3}) be in force. The solution of problem (1.1) satisfies the estimate
+Proof. Multiplying the equation in (1.1) by u^{m}{t}/m, and integrating it over Ω, we obtain that
+A simple calculation shows that
+Using (4.2)–(4.4), we have
+Due to p_{t} ≤ 0 and q_{t} ≥ 0, it follows that
+Here, we use the inequality −1e≤s⁡ln⁡s≤0,0≤s≤1, A:=x∈Ω:|∇u^{m}|^{p(x,t)}≤e, and
+By (4.5)–(4.7), we have
+Lemma 4.2. Suppose that u(x, t) be the solution of (1.1). If the condition (H_{1}) holds andm+q^{−}>maxm+1,mp^{+}, then there exists a positive constant α_{2}> α_{1}such that for all t ≥ 0,
+Proof. It is not difficult to check that
+where α(t) := ∫_{Ω}|∇u^{m}|^{p(x,t)}dx.Now, we give a simple analysis about the properties of the function h(α). It is easy to check that h(α) satisfies the following properties:
+Although the function h(α) is not differentiable at α = 1, a simple analysis shows that h(α) is strictly increasing for 0 ≤ α < α_{1}, and h(α) → −∞ as α → +∞. Due to
+there exists a positive constant α_{2} > α_{1} such that
+By α_{0}:=∫_{Ω}|∇u0m|^{p(x,0)}dx>α_{1} and h(α(t)) ≤ E(t), t ≥ 0. We get h(α_{0}) ≤ E(0) < h(α_{2}).Once again applying the monotonicity of h(α), we have α_{0} > α_{2}. We prove (4.8) by contradiction. Suppose that there would exist a t_{0} > 0 such that α(t_{0}) < α_{2} if α(t_{0}) > α_{1}, by using the definition of E(t) and the monotonicity of h(α), we would have
+It is a contradiction to (4.2). If α(t_{0}) < α_{1}, then there would be a t_{1} ∈ (0, t_{0}) such that α(t_{1}) = α_{1} by the assumption α(0) > α_{1}. The same contradiction can be obtained at t_{1}.By (4.1), we have
+Proof of Theorem 4.1. Let G(t) := ∫_{Ω}u^{m+1}dx. We have
+Inequality (4.9) shows that
+Moreover, m + q^{−} > m + 1 and Hölder inequality imply that
+Using (4.10)–(4.12), we get
+where
+Integrating (4.13) with respect to t over (0, τ), we have
+which shows that G(t) blows up at the finite time T_{*}≤‖u_{0}‖m+11−q^{−}C_{0}q^{−}−1m+1. Moreover, a upper bound for blow-up rate is given as follows:
+V. GLOBAL EXISTENCE FOR ANY INITIAL DATA
+In this section, we first show the global existence result for N ≥ 1 with constant p and then show another global results for N = 1 with variable exponent p(x, t). Let φ(x) satisfy the following elliptic problem:
+By using the result in Ref [40], we can see that the above nonlinear problem has a unique solution, and the following inequalities hold:
+where ν is the unit outer normal vector on ∂Ω.
+Theorem 5.1. Let u be a solution of (1.1).
+(i) For any initial data u_{0}(x), if q^{+} < m(p − 1), u remains globally bounded.
+(ii) For any initial data u_{0}(x), if q^{+} = m(p − 1), u remains globally bounded with the diffusion coefficienta≥M^{q+}.
+(iii) If q^{+} > m(p − 1), u remains globally bounded for any initial data u_{0}(x) with the diffusion coefficient
+Proofs of Theorem 5.1 (i) and (ii). Define ū= Aφ(x), where constant A satisfies that
+If q^{+} < m(p − 1), then
+If q^{+} = m(p − 1), the following inequality is true:
+provided that a≥M^{q+}. Moreover, ū ≥ 0 on ∂Ω × (0, T) and ū(x, 0) ≥ u_{0}(x) in Ω. By the comparison principle, ū is a globally bounded supersolution of (1.1).
+Proof of Theorem 5.1 (iii). Define ū= Aφ(x), with a≥A^{q+−m(p−1)}M^{q+} and A:=maxmaxΩu_{0}(⋅),1. It can be checked that
+By the comparison principle, ū(x) is a bounded supersolution of (1.1).
+Theorem 5.2. For any initial data u_{0}(x) and diffusion coefficient a, we assume that N = 1. If mp^{+}≤ 1 and q^{+}≤ 1, the solution of problem (1.1) is globally bounded.
+Proof. Define ū=Ae^{lt+1mx}. When mp^{+} < 1 and q^{+} < 1, we choose A≥maxmaxΩu_{0}(⋅),1. Let
+By direct computation, we arrive at
+And ū ≥ 0 on ∂Ω × (0, T). Hence, the solution exists globally by the comparison principle.
+VI. CONCLUSION
+The nonlinear equation (1.1) involves m, p(x, t)-Laplacian operator and nonlinear reaction with anisotropic variable exponents. The anisotropy of the diffusion terms in the equation may cause extinction of the solutions in finite time, while the nonnegative source may cause blow-up in finite time. From the main results of this paper, the blow-up or extinction regularity depends sensitively on the sign of m(p^{+} − 1) − q^{−} and q − 1, which discovers a key clue to the different effect of diffusion and reaction on the properties of weak solutions of (1.1).
+The condition m(p^{+} − 1) < q^{−} means that the effect of reaction on the solutions is higher than that of the diffusion. Additionally, if q > 1, the weak solution would blow up in finite time (see Theorem 4.1). While if q < 1, the solution would vanish in finite time (see Theorem 3.1). It should be remarked that the weak solution could blow up with positive initial energy [see (H_{2}) in Theorem 4.1].
+When m(p^{+} − 1) ≥ q^{−}, the nonlinear diffusion dominates the property of weak solutions, which have some positive lower bound at any finite time, provided that q < 1 (see Theorem 3.2).
+For any initial data u_{0}(x) and constant p, if q^{+} < m(p − 1), the nontrivial solution of (1.1) remains globally bounded. If the effect of reaction equals to or is greater than that of the nonlinear diffusion (i.e., q^{+} ≥ m(p − 1)), any nontrivial solution also remains globally bounded, provided that the diffusion coefficient was suitable large (see Theorem 5.1). For any diffusion coefficient and any initial data, we need that both mp^{+} and q^{+} were not greater than one such that any nontrivial solutions remain globally bounded (see Theorem 5.2 with N = 1).

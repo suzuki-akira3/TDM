@@ -1,0 +1,120 @@
+Adaptive aperture for Geiger mode avalanche photodiode flash ladar systems
+Although the Geiger-mode avalanche photodiode (GM-APD) flash ladar system offers the advantages of high sensitivity and simple construction, its detection performance is influenced not only by the incoming signal-to-noise ratio but also by the absolute number of noise photons. In this paper, we deduce a hyperbolic approximation to estimate the noise-photon number from the false-firing percentage in a GM-APD flash ladar system under dark conditions. By using this hyperbolic approximation function, we introduce a method to adapt the aperture to reduce the number of incoming background-noise photons. Finally, the simulation results show that the adaptive-aperture method decreases the false probability in all cases, increases the detection probability provided that the signal exceeds the noise, and decreases the average ranging error per frame.
+I. INTRODUCTION
+Geiger-mode avalanche photodiode (GM-APD) arrays have been widely used in flash laser detection (ladar) systems, mostly because of their high sensitivity and simple readout circuitry [1]. A single photon impinging on a GM-APD array biased in the Geiger mode can trigger an electron avalanche, whether this photon comes from an incoming signal, background noise, or dark current. The output signal is 0 or 1, independent of the total number of incoming photons. If sufficient noise photons impinge on a GM-APD array detector before the arrival of the laser signal, a false detection is likely to occur [2,3]. Even if the signal-to-noise ratio (SNR) is increased (e.g., by increasing the laser firing power), the system performance can still be low because the signal arrival time within the gate is unpredictable. To reduce the probability of false detection, the number of noise photons to ignore before the arrival of the laser signal must be decreased.
+To control the total input flux and improve contrast or gray scale, the adaptive aperture method is widely used in passive imaging systems, such as CCD or CMOS cameras [4]. First, such passive imaging systems acquire a test frame; second, the frame-contrast parameter is calculated by using a certain algorithm, such as a gray-level histogram; next, the frame-contrast parameter is translated into aperture size; and finally, the aperture is adjusted and another raw image is acquired. Another method to reduce the noise in a GM-APD flash ladar system is to evaluate the test frame to estimate the noise, and then adjust the aperture to reduce the noise.
+This paper introduces (i) a method to reduce the noise by adjusting the aperture and (ii) an algorithm to evaluate the number of noise photons based on a test frame. Simulations of ladar systems indicate that this method leads to improved performance.
+II. BACKGROUND
+The GM-APD detection model is illustrated in Fig. 1(a). The laser photons are generated in fraction f within the gate, defined as S[f]. The background photons are generated equally within each sampling interval in the gate, and the total number of photons in the gate is Nb. The photons pass through the lens with optical transmission τ, then through the aperture, and finally arrive at the GM-APD array. The total signal and background photons are converted into photoelectrons as per S[f] and Nb and with quantum efficiency η. Additionally, the dark current Nd is continuously generated in the gate of the GM-APD, mostly by thermal excitation or quantum tunneling. Then, the signal photoelectrons S[f] arrive at sample interval f, and the noise photoelectrons N/b = (Nb + Nd)/b arrive in each sample interval, as shown in Fig. 1(b). All of these electrons produce avalanche events in the APD biased in the Geiger mode. Finally, the binary output signal is output together with a time stamp.
+The performance of a GM-APD detector array is determined by the probability of detection at the target, the probability of false-detection events, and the probability of no photons being detected. These three probabilities sum to unity.
+If the laser degree of freedom is sufficiently large, the GM-APD detection probability and false-detection probability follow Poisson statistics [5]. Equations (1)–(3) express the discrete Poisson statistical models, which are based on the Poisson distributed model [5–7]. This model is accurate when the mean number of photoelectrons is much less than the level of speckle diversity [8],
+In Eqs. (1)–(3), S is the number of signal photons, N is the total number of noise photons (N = Nb + Nd), f is the ratio between (i) the time interval between the beginning of the gate and the arrival of the signal photon and (ii) the total gate time (i.e., f = 0 when a signal photon arrives at the beginning of the gate and f = 1 when a signal photon arrives at the close of the gate), b is the sampling number of the gate, P_{target} is the detection probability, P_{false} is the false-detection probability, and P_{none} is the probability of no photons being detected.
+The GM-APD flash ladar system described in Ref [12] operates in the near infrared (λ = 1.5 μm) with a 1.5 nm narrowband optical filter and a 10 cm receiver aperture operating at twice the diffraction limit, and its rate of background-noise photoelectrons is estimated to be ∼8 MHz in daytime conditions and 0.1 Hz at night. Typical dark-noise count rates are 100 kHz [10]. The range gate is 10 m. Thus, the total number of background-noise photons within the gate is ∼0.27 in the daytime and 0 at night, and the total number of dark-noise photons is around 0.003. For the simulation reported herein, we assume a maximum number of background-noise photons of 10 and a number of dark-noise photons of 0.03.
+III. GM-APD PERFORMANCE
+Generally, the SNR of the input radiation is a critical parameter for ladar system performance. However, for the GM-APD ladar system, the detection and false probabilities are significantly affected not only by the SNR but also by the absolute number of noise photons. The detection probability is low when noise is large. Except when the signal arrives at the beginning of the gate (f = 0), all of the signal and noise photons that arrive at the beginning of the gate are detected as signal photons, so the detection probability at f = 0 is high, even when the noise is large. This is illustrated in Figs. 2 and 3.
+In this work, the SNR is defined as the ratio of the total number of signal photons to the total number of noise photons, and a sampling number b = 200 is used within the gate. For all detection systems, the signal should exceed the noise, so SNR = [1, 5, 20, 100] in Figs. 2 and 3.
+A. f≠ 0
+Figure 2 shows the system performance when the signal does not arrive at the beginning of the gate (i.e., f ≠ 0).
+The detection probability decreases, and the false-detection probability increases for large noise-photon number and for a given SNR. The reason for this is that, when a noise photon impinges on the GM-APD sensor before a signal photon, the GM-APD may fire a false detection signal, and a larger number of noise photons make it more probable that false detection occurs.
+The blue curves in Fig. 2 show the similar monotonically increasing relation between the false probability and noise-photon number for various SNRs. This means that the false probability is only influenced by the total number of noise photons but not by the SNR. The false probability decreases rapidly from about 0.85 to 0.095 as the number of noise photons decreases from 2 to 0.1. In addition, an approximate one-to-one match exists between the number of noise photons and the false probability. We thus conclude that the false detection probability may be decreased simply by decreasing the total noise.
+Reducing the noise by using an adaptive aperture also proportionally reduces the signal, so the SNR remains essentially unchanged. To maintain the target-detection probability above 0.2 and reduce false-detection probability to 0.1, the optimized total noise should be at most 0.1 photons.
+B. f = 0
+Figure 3 shows the performance of each GM-APD pixel when the signal arrives at the beginning of the gate (f = 0). GM-APDs fire immediately when the gate opens for either large signal or large noise, and this detection falls into the signal-sampling interval. This characteristic ensures that the detection probability always exceeds the false probability.
+C. Dark current
+In this paper, the dark current is defined as the sum of the noise that does not come from background light, including thermal noise, crosstalk, and dark current from the APD. The dark current significantly affects the GM-APD performance because it can directly trigger firing if it is sufficiently large. The dark current can be eliminated not only by adjusting the aperture but also by the sensor design, temperature control, and so on. In this paper, as described in Sec. II, the number of dark-noise photons within the gate is estimated to be 0.03.
+IV. ADAPTIVE APERTURE METHOD
+A. Noise estimation
+First, the noise is estimated for a GM-APD flash ladar by calculating the firing percent in the GM-APD sensor array in the absence of laser firing. In this case, only noise can trigger a response. The response percent in the array is regarded as the false-detection probability, as per sampling theory: for a sufficiently large sample number, the probability of the event is the event percentage of the sampling.
+The firing percentages of 8 × 8 and 32 × 32 GM-APD arrays for different noise-photon numbers and without laser firing are simulated by a Monte Carlo method, with the results shown as the red curves in Figs. 4 and 5. These are compared with the theoretical false probabilities (blue curves in Figs. 4 and 5) calculated by using Eq. (2). The result shows that, for a sufficiently large array (e.g., 32 × 32), the firing percentage approximately equals the false probability of the GM-APD, and a one-to-one match exists with the noise-photon number.
+When S = 0, the false probability in Eq. (3) simplifies to
+This one-to-one relationship between the noise-photon number and false probability may be simplified to the following hyperbolic approximation:
+Figure 6 compares the hyperbolic fitting function with the theoretical Poisson relation.
+Because the firing percentage equals the false probability, the total number of noise photons can be represented by the firing percentage of the array as follows:
+The noise of GM-APDs may be divided into two types: (i) one from the input light through the aperture (e.g., background light and laser speckles reflected by the target), which are closely related with aperture size, defined as Nb, and (ii) the other generated inside the GM-APD detector array (e.g., dark current, thermal noise, cross talk, and tunneling effects), which is not related to the aperture size but is defined as Nd, where
+When the GM-APD flash ladar operates with no incoming light (i.e., when the receiving optics are covered completely, for example, with a black cloth), the only input for the GM-APD flash ladar is dark current, and both S and Nb are zero. The firing percentage when only dark current is present is P_{firingD}, and Eq. (6) becomes
+When the GM-APD flash ladar operates without laser firing, the firing percentage under background and dark current is P_{firingN}, and Eq. (6) becomes
+The number of background-noise photons is estimated by
+B. Estimation of adaptive aperture
+To reduce the total number of noise photons to the optimized value of 0.1, the aperture diameter Δ_{ap} should be decreased as follows:
+The decreased ratio of aperture diameter Δ_{ap} is defined as
+Figure 7 shows the ratio of the aperture diameter as a function of firing percentage without signal for a dark current of 0.03.
+C. Adaptive aperture procedure
+We propose the following procedure involving the adaptive aperture (AA) for the GM-APD flash ladar (Fig. 8):
+First, measure the firing pixel percentage P_{firingD} in the GM-APD array for only dark current and calculate Nd by using Eq. (8).
+Second, measure the firing pixel percentage P_{firingN} in the GM-APD array under background light and dark current without laser firing and calculate Nd + Nb using Eq. (9).
+Third, calculate the ratio of the aperture diameter Δ_{ap} using Eq. (10).
+Finally, adjust the aperture diameter of the GM-APD flash ladar system.
+V. SIMULATION
+A. Performance analysis with adaptive aperture
+1. f = 0
+We now compare GM-APD detection and false probability with the AA method with the original probability for f = 0. In Fig. 9, SNR = 1.5 and the dark current is 0.03 photons, the false probability is kept low, and the detection probability decreases to zero for less than two background photons. In Fig. 10, SNR = 5 and dark current is 0.03 photons, the false probability is kept low, and the detection probability decreases to zero for less than 0.5 background photons.
+When f = 0, the firing percentage of the array without laser firing no longer equals the false probability but the detection probability. When the noise increases, the firing percentage increases along the detection-probability curve, and the aperture is calculated to be reduced. As a result, the detection probability decreases.
+2. f≠ 0
+As mentioned in Sec. III, when f ≠ 0, the detection and false probabilities have similar characteristics. We use f = 0.7 here.
+Figure 11 compares the GM-APD detection and false probabilities with and without the AA method, for a dark current of 0.03 photons, SNR = 1.5, and f = 0.7. When the AA method is used, the false probability decreases to less than 0.2 for all numbers of background photons, and the detection probability increases when the number of background photons exceeds 3.5.
+When the AA method is used and the dark current is 0.03, SNR = 5, and f = 0.7 (Fig. 12), the false probability decreases to less than 0.2 photons, and the detection probability increases when the number of background photons exceeds 1.5.
+The difference between Figs. 11 and 12 is the SNR. Adjusting the aperture reduces the background and the signal proportionally at the same time. Thus, when the SNR is small, the detection probability decreases significantly.
+In conclusion, the AA method decreases the false probability in all cases and increases the detection probability for a sufficiently large SNR, except for f = 0.
+B. Flash-ladar imaging simulation
+The results of simulated three-dimensional imaging by 32 × 32 GM-APD flash ladar are shown in Figs. 13, 15, and 16. The target is defined as a slope in Fig. 13, and the distance from one side to the other is 1000 m − 1010 m = 10 m. This exactly satisfies the ladar-range gate of 10 m, which is divided into 200 bins. The laser is normalized, and the reflectivity is the same for the whole target. The dark current is 0.03 photons, the background light is one photon, and the SNR is 5.
+The three-dimensional imaging simulation is performed using a Monte Carlo simulation method [1] (see Fig. 14), as described below [10,11,13–18]:
+First, input the GM-APD flash ladar system parameters (e.g., Nb, Nd, SNR, b, gate, and target range).
+Second, calculate the probability that the detector fires in bin j for each pixel,
+Third, calculate the cumulative distribution function (CDF)
+Fourth, use the Monte Carlo technique to choose the range over which the detector measures by selecting a random number from 0 to 1 and mapping it to a range via the Cumulative Distribution Function (CDF).
+Finally, show the ranging image and calculate the ranging error.
+Figure 15 shows a three-dimensional image obtained without using the AA method. To compare with the target surface, most of the detection occurs before the signal arrives because the background light is sufficiently intense to trigger the firing.
+The calculated firing percentage without laser firing is 63.28%, and the decreased aperture-diameter ratio is calculated to be 0.0667. Figure 16 shows the image obtained with the AA method. The background light is reduced by the aperture, as is the signal. The total false detection number decreases, and false detection occurs randomly before and after the signal arrives.
+C. Range accuracy
+To evaluate the accuracy of the three-dimensional image for all situations, the average ranging error for a frame of GM-APD flash ladar is defined as the sum of the absolute value of the difference between measured range r_{m} and target range r_{t} divided by the number of pixels that detect a signal,
+The average errors are calculated under different conditions of background light and SNR and with and without using the AA method; the results are listed in Table I. The average errors are all reduced by using the AA method, especially when the number of background photons exceeds 1. When the SNR remains the same, a greater number of background photons correspond to a greater decrease in average error. When the number of background photons remains constant, a higher SNR corresponds to less reduction in average error.
+The three-dimensional-imaging results demonstrate that the AA method reduces the average ranging error of the GM-APD flash ladar.
+VI. CONCLUSIONS
+We have discussed herein the performance of the GM-APD ladar and the monotonic increase in false probability with increasing number of noise photons. A hyperbolic approximation function was deduced to calculate the number of noise photons based on the firing percentage of the GM-APD flash ladar for two special cases: without laser firing and with the receiving optics covered. Furthermore, an adaptive aperture method has been introduced that is based on optimizing the number of noise photons to 0.1. Application of this method reduces the number of noise photons and gives better performance.
+The results of simulations show that the adaptive aperture method decreases the false probability in all cases and increases the detection probability when the SNR is sufficiently large. In addition, simulated three-dimensional images show that the use of the adaptive aperture method reduces the average ranging error.
+TABLE I. 
+Average error from one frame of the GM-APD flash ladar.
+TABLE I. -body
+Background			
+light (photons)	SNR	θ_{range} (m)	θ_{range} with AA (m)
+0.1	1.5	1.4441	1.3898
+1	1.5	1.7067	1.6381
+10	1.5	4.2280	1.4549
+0.1	5	0.4595	0.5279
+1	5	1.4317	0.7497
+10	5	4.1504	0.7673
+0.1	10	0.450	0.3627
+1	10	1.4297	0.4441
+10	10	4.2150	0.5302
+FIG. 1. 
+(a) GM-APD detection apparatus. (b) GM-APD photon generation model.
+FIG. 2. 
+Detection and false probability versus number of noise photons and for various SNRs when b = 200 and f ≠ 0.
+FIG. 3. 
+Detection and false probability versus number of noise photons and for various SNRs when b = 200 and f = 0.
+FIG. 4. 
+Comparison of theoretical false probability and firing percentage as a function of noise without laser firing. The firing percentage was obtained from a Monte Carlo simulation for a GM-APD 8 × 8 array.
+FIG. 5. 
+Same as Fig. 4 but for a GM-APD 32 × 32 array.
+FIG. 6. 
+Hyperbolic approximation function compared with the theoretical Poisson relationship between the false probability and noise, for zero signal.
+FIG. 7. 
+Ratio of aperture diameter as a function of firing percentage without signal for a dark current of 0.03.
+FIG. 8. 
+Adaptive aperture procedure.
+FIG. 9. 
+Estimate of the aperture ratio based on the firing percentage without signal.
+FIG. 10. 
+Estimate of the aperture decreasing ratio based on the firing percentage without signal.
+FIG. 11. 
+Estimate of the aperture decreasing ratio based on the firing percentage without signal.
+FIG. 12. 
+Estimate of the aperture decreasing ratio based on the firing percentage without signal.
+FIG. 13. 
+Three-dimensional target.
+FIG. 14. 
+Simulation procedure.
+FIG. 15. 
+Three-dimensional image for a dark current of 0.03, background light of 1, and SNR of 5.
+FIG. 16. 
+Three-dimensional image obtained with the AA method, with a dark current of 0.03, background light of 1, and SNR of 5.

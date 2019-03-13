@@ -1,0 +1,247 @@
+Quasi-periodic solutions for generalized Kaup system with quasi-periodic forcing
+In this paper, a one-dimensional quasi-periodically forced Kaup system ∂_{t}u=∂_{x}v,∂_{t}v=∂_{x}u−13∂_{xxx}u−εϕ(t)(u+u^{3}){x} with periodic boundary conditions is considered, where ε is a small positive parameter and ϕ(t) is a real analytic quasi-periodic function in t with frequency vector ω^{*}=(ω1*,ω2*,…,ωm*). It is proved that, under a suitable hypothesis on ϕ(t), there are many quasi-periodic solutions that correspond to finite dimensional invariant tori. The proof relies on a Birkhoff normal form and an infinite dimensional Kolmogorov-Arnold-Moser theorem.
+I. INTRODUCTION
+In 1870s, Boussinesq derived some water wave equations which could explain the phenomena of Scott Russell’s solitary wave mathematically [7–9]. The variant of the classic Boussinesq system given by
+for the nonlinear perturbation f(u, v) = u^{2}v describes the two-dimensional propagation of surface wave in a uniform horizontal channel of finite length, filled with an incompressible inviscid fluid. When α = 1/3, the system is known as the Kaup system. Moreover, it also models other physical systems, such as the propagation of long-crested waves on large lakes or on the ocean. This model has been extensively studied by several authors. See Refs [6],  [12],  [13],  [16],  [24],  [25], and  [27] for details and further references.
+In this paper, we consider the variant of the system (1.1) of the form
+that is α=13,f(u,v)=εϕ(t)(u^{2}2+u^{4}4). We have chosen this system since it has the advantage of being linearly well-posed, the nonlinearity is of fourth order, the computations are much less involved, and the vector field is bounded.
+It is well-known that under periodic boundary conditions the Kaup system (1.2) possesses a Hamiltonian structure. Moreover, the linear operator L(u,v)=(∂_{x}v,∂_{x}u−13∂_{xxx}u) of (1.2) only has a discrete spectrum with some asymptotically increasing property. This important information reminds us of Kolmogorov-Arnold-Moser (KAM) theory for an infinite dimensional Hamiltonian system.
+We also mention some papers where periodic or quasi-periodic solutions for partial differential equations (PDEs) with forcing are concerned. For quasi-linear, also fully nonlinear forced perturbations, the first KAM results have been recently obtained by Baldi, Berti, and Montalto in Refs [2–4] for Hamiltonian perturbations of Airy, Korteweg-de-Vries (Kdv), and modified Korteweg-de-Vries (mkdv) equations. In Refs [5],  [19], and  [20], the authors obtained the existence of periodic or quasi-periodic solutions for completely resonant wave equations with periodic forcing by using a variational method. Also the KAM method [11,15,17,21–23] and Lyapunov-Schmidt reduction method [1,2,5,10] can be applied to study quasi-periodic solutions for Hamiltonian PDEs with forcing terms. Compared to the Lyapunov-Schmidt reduction method, the KAM method has its own advantages. Besides obtaining the existence of quasi-periodic solutions, it also provides more information on the dynamics. Based on the infinite dimensional KAM theory, Zhang and Si [29] focused on the existence of quasi-periodic solutions of quasi-periodically forced nonlinear wave equations
+with Dirichlet boundary conditions, where ϕ(t) is a real analytic quasi-periodic function and
+Wang [26] studied the quasi-periodically forced nonlinear beam equation
+with hinged boundary conditions. However, little is known about periodic solutions, quasi-periodic solutions, and almost-periodic solutions of the problem (1.2). We will study the existence of quasi-periodic solutions of the problem (1.2). To this end, we first introduce some definitions and notations.
+Definition 1.1. A functionf:R→Ris called real analytic quasi-periodic with the frequencies ω = (ω_{1}, …, ω_{m}), if it can be represented as f(t) = ∑_{k}f_{k}e^{i⟨k,ω⟩t}, where k = (k_{1}, …, k_{m}), ⟨k, ω⟩ = ∑k_{j}ω_{j}≠ 0 if k ≠ 0, and the coefficients f_{k}decay exponentially with |k| = |k_{1}| + ⋯ + |k_{m}|.Denote by F(𝜗)=∑_{k}f_{k}e^{i⟨k,𝜗⟩},F:𝜗=(𝜗_{1},…,𝜗_{m})∈R^{m}→R the shell function of f. It is obvious that F is 2π periodic in each variable and bounded in a complex neighborhood of R^{m}:|Im𝜗_{j}|≤r.
+Definition 1.2. Letv(t) be a quasi-periodic function with rationally independent frequencies ω = (ω_{1}, …, ω_{m}) and shell function V, satisfyingv(t) = V (ω_{1}t, …, ω_{m}t). Define [v] by
+then [v] denotes the average ofv.
+Definition 1.3. Denote by Q(ω) the set of real analytic quasi-periodic functions with the frequencies ω. LetQ_{σ0}(ω)⊂Q(ω)be the set of real analytic functions f such that the corresponding shell functions F are bounded on the subsetΘ(σ_{0})={(𝜗_{1},…,𝜗_{m})∈C^{m}:|Im𝜗_{j}|≤σ_{0}}with the sup-norm
+The following is the main result of this paper. The proof is based on an infinite dimensional KAM theorem proved in Ref [18].
+Theorem 1.1. (Main Theorem) Let σ_{0}> 0, ϱ > 0 be positive constants and assume ϕ(t) a real analytic quasi-periodic function in t with frequency vectorω^{*}=(ω1*,ω2*,…,ωm*),ϕ(t)∈Q_{σ0}(ω^{*}),and its average satisfying [ϕ] ≠ 0. Then for any index setJ̃={1<j_{1}<j_{2}<⋯<j_{n}}⊂N(n≥2),and arbitrary 0 < γ < 1, there is a small enough positiveε^{*}such that for 0 < ε < ε^{*}, there exists a Cantor subset Ω ⊂ [ϱ,2ϱ]^{m}with meas (Ω) > (1 − γ)ϱ^{m}, and there is a subsetΣ̃{ε}⊂Σ̃=Ω×[0,1]{n}withmeas(Σ̃\Σ̃{ε})≤ε.Such that for each(ω1*,ω2*,…,ωm*,ξ̃{1},ξ̃{2},…,ξ̃{n})∈Σ̃{ε},the problem (1.2) possesses a quasi-periodic solution with frequency(ω1*,ω2*,…,ωm*,ω̆{1},ω̆{2},⋯ω̆{n}),whereω̆=α̃+ε^{2}Aξ̃,α̃=(μ_{1},…,μ_{n}),ξ̃=(ξ̃{1},ξ̃{2},…,ξ̃{n})are in (4.4).
+Remark 1.1. Similar to Refs [24], for each index setJ̃={1<j_{1}<j_{2}<⋯<j_{n}}⊂N(n≥2),one could also obtain the result. While for the case n = 1, as the non-degeneracy condition is not satisfied, thus one could not obtain the existence of quasi-periodic solutions.
+Remark 1.2. To satisfy the non-degeneracy condition thatξ↦ω^(ξ)is lieomorphism in Sec. V, the assumption that the average of ϕ satisfying [ϕ] ≠ 0 is imposed.The rest of this paper is organized as follows. In Sec. II, we discuss the Hamiltonian setting and reducibility of (1.2). The partial Birkhoff normal form is obtained in Sec. III. In Sec. IV, we state an infinite dimensional KAM theorem proved in Ref [18] and apply it to prove our main result in Sec. V. In the Appendix, Lemmas 2.4 and 3.1 are proved.
+II. THE HAMILTONIAN SETTING AND REDUCIBILITY OF GENERALIZED KAUP SYSTEM
+We consider the system (1.2) with zero mean,
+Let P=H01([0,2π])×L02([0,2π]). It is easy to see that if we introduce the variable w=(u,v)∈P with u∈H01([0,2π]) and v∈L02([0,2π]), then the Hamiltonian
+is well-defined. We note that in the sequel, only the subspace P_{1}=H0,odd1([0,2π])×L0,even2([0,2π]) consisting of functions of the form (u,v)∈P with u odd and v even is considered.
+Let
+be a weak derivative operator with respect to the L^{2}-inner product on the space L^{2}([0, 2π]) × L^{2}([0, 2π]). It is defined in the following sense: for w(x)=(u(x),v(x))∈L^{2}([0,2π])×L^{2}([0,2π]),Jw is a generalized function such that for any z(x)=(ϕ(x),ψ(x))∈C0∞(0,2π)×C0∞(0,2π), we have
+Denote by ∇_{w}H the weak derivative of H with respect to the L^{2}-inner product. Then Eq. (1.2) formally becomes
+Since that J is an anti-selfadjoint operator in L^{2}([0, 2π]) × L^{2}([0, 2π]), Eq. (2.2) is a Hamiltonian system with Hamiltonian H and phase space P. The corresponding Poisson structure is defined by
+where F(w),G(w)∈C^{∞}(P).
+Now we study the linear part of (2.2), let
+Then L:w∈D=H^{3}×H^{1}∩P→Lw∈L^{2}×L^{2} is a linear operator in L^{2}([0, 2π]) × L^{2}([0, 2π]). We recall that the operator is tacitly restricted to the space H0,odd3×H0,even1 and thus the spectrum of L becomes in this way simple, simplifying the problem considerably. Note that under the boundary conditions, we obtain that L has eigenvalues λ̃{j} and eigenfunctions φ_{j}, where
+with
+Denote by P_{0}={(0,c)|c∈constant}⊂P_{1} the zero space of the operator L, and let Σ=P_{1}/P_{0} be the quotient space of P_{1} over P_{0}. Then, the Poisson product is not degenerate on the space Σ. Moreover, L has eigenvalues λ̃{±j} with eigenfunctions φ_{±j}, j ≥ 1.
+Note that Σ=span{φ_{±j},j≥1}¯. Let w ∈Σ and w = ∑_{j≠0}r_{j}q_{j}φ_{j}, where r_{j}=r_{−j}=j2πα_{j}β_{j}(j≥1) and {qj}{j≠0} are the coordinates of w with respect to the bases {φ±j}{j≥1}. The weights {rj}{j≠0} are chosen so that {qj}{j≠0} can be standard symplectic coordinates.
+In the setting above, it follows
+In these coordinates, the Hamiltonian equation (2.2) is written as
+with Hamiltonian
+where λ_{j}=j1+13j^{2}. Note that if q_{−j}=q¯{j},j≥1, where q¯{j} is the conjugate of q_{j}, then the Hamiltonian H is real.
+Below we want to show that (1.2) can be reduced to (2.3) in the coordinates (q_{1}, q_{2}, ⋯) with q_{−j}=q¯{j},∀j≥1. To describe the regularity of solutions in these coordinates, we define a complex symplectic space l^{a,s} = {q: ∥q∥_{a,s} < ∞}, where q = (q_{1}, q_{2}, ⋯) is a complex valued sequence with the weighted norm defined by
+The symplectic structure on l^{a,s} is defined to be ω=i∑_{j≥1}dq¯{j}∧dq_{j}.
+Lemma 2.1. Let a, s > 0. Ift∈I↦q(t)=(q_{1}(t),q_{2}(t),⋯)∈l^{a,s}withq_{−j}(t)=q¯{j}(t)(∀j≥1)is a solution of (2.3), then
+are solutions of (1.2), whereγ_{j}=12πj^{2}1+13j^{2}4,ς_{j}=12πj^{2}(1+13j^{2})4.
+Proof. Let w = (u, v) = ∑_{j≠0}r_{j}q_{j}φ_{j}. Since q(t) = (q_{1}(t), q_{2}(t), …, q_{n}(t), ⋯) ∈ l^{a,s}, it follows that u(t, x), v(t, x) are analytic in x. By (2.3), we have
+Note that q_{−j} is the conjugate of q_{j}, then u is a real function, while v is purely complex. So
+And
+Note that
+and u^{3} can be expanded in the bases {sin jx}_{j≥1} as u^{3} = ∑_{j≥1}a_{j} sin jx with a_{j}=1π∫02πu^{3}⁡sin⁡jxdx. Since ς_{j} = λ_{j}γ_{j}/j and ς_{j}γ_{j}=λ_{j}γj2/j=j2π, it follows that
+hence, w = (u, v) is a solution of (1.2).Let φ(ϑ) be the shell function of ϕ(t). One can introduce a pair of action-angle variables (J,𝜗)∈R^{m}×T^{m}(T^{m}=R^{m}\2πZ^{m}) to obtain an equivalent Hamiltonian that does not depend on the time variable t. And we obtain the autonomous formulation of Hamiltonian system (2.3), that is
+with
+where
+with
+By basic computation, it is easy to verify that Gijdl4(𝜗)=0 unless i ± j ± d ± l = 0. In particular, one has
+In the following, we will investigate the reducibility of Hamiltonian (2.8), that is, by a symplectic coordinate transformation, (2.8) is changed into a new Hamiltonian with constant coefficients (independent of the time variable t). To this end, we introduce the following notations and spaces.Define the sequences
+where Γ > 0, 0 < ρ < 1 are some fixed constants, c > 0 is a constant which will be decided later. It is easy to see that σ_{v} > σ_{v+1} > σ_{0}/2. Let ε_{0}=ε,ε_{v}=ε^{(1+ρ)v},v≥1,
+and define
+where |·| denotes the sup-norm for complex vectors and l^{a,s} denotes now complex Hilbert space. For a one order Whitney smooth function F(ω) on closed bounded set Ω^{*}, we define
+If F(ω) is a vector function from Ω^{*} to l^{a,s}, which is one order Whitney smooth on Ω^{*}, we define
+For arbitrary σ_{D^{a,s}}>0,Γ_{D^{a,s}}>0, we let
+Let w̃=(𝜗,J,z,z¯)∈D^{a,s}, the weighted norm for w̃ is defined by
+If F(η; ω) is a vector function from D^{a,s} × Ω^{*} to l^{a,s}, which is one order Whitney smooth in ω, we define
+To function F, its corresponding Hamiltonian vector field is X_{F}={F_{J},−F_{𝜗},iF_{q¯},−iF_{q}} and the weighted norm of X_{F} is defined by
+Lemma 2.2. There is a set Ω_{00} ⊂ [ϱ,2ϱ]^{m}(ϱ > 0) such that every ω ∈ Ω_{00}satisfies
+andmeas(Ω_{00})≥(1−γ3)ϱ^{m},if C_{*}is large enough.
+Proof. The proof is similar to Lemma 5 of Ref [18].
+Lemma 2.3. For given σ_{0} > 0 and arbitrary fixed 0 < γ < 1, 0 < ρ < 1, there are aε^{*}(γ) > 0 and a setΩ̲⊂Ω_{00}⊂[ϱ,2ϱ]{m},ϱ>0withmeas(Ω̲)≥(1−2γ3)ϱ^{m}such that for any 0 < ε< ε^{*}(γ) andω∈Ω̲,there is a real analytic canonical transformationΣ∞0defined onD∞a,s×Ω̲such that the following statements hold:
+(i) There is some absolute constant C > 0 independent of j such that
+where id is identity mapping.
+(ii) The transformationΣ∞0changes Hamiltonian (2.8) into
+whereμ_{j}=λ_{j}−ε[ϕ]πγj2+ε^{1+ρ}μj*,‖μj*‖Ω̲*≤C,j=1,2,⋯.
+Proof. First of all, we will construct iteratively a series {H_{l}} of Hamiltonian functions of the form
+where
+with n_{1},n_{2}∈N,ζ_{j,l,n1,n2}(𝜗;ω)=∑_{k∈Z^{m}}ζ_{j,l,k,n1,n2}(ω)e^{i⟨k,𝜗⟩},ζ_{j,0,2,0}=ζ_{j,0,0,2}=−φ(𝜗)2πγj2 and ζ_{j,0,1,1}=−φ(𝜗)πγj2. Furthermore
+here
+Clearly, we have that H_{0}=H¯ for l = 0 and ‖ζ_{j,0,n1,n2}‖Θ(σ_{0})×Ω_{0}*≤C,n_{1},n_{2}∈N,n_{1}+n_{2}=2.C is an absolute constant independent of j, l.Moreover, for positive number ϱ, we can prove that there exists a constant C_{*} and a family of closed subset Ω_{l}(l = 0, 1, 2, ⋯v), Ω_{v} ⊂ ⋯ ⊂ Ω_{l+1} ⊂ Ω_{l} ⊂ ⋯ ⊂ Ω_{0} ⊂ Ω_{00} with
+such that, for arbitrary k∈Z^{m},j∈N,ω∈Ω_{l},l=0,1,…,v, we have
+where δ(0) = 1 and δ(x) = 0 for x ≠ 0. Let Ω̲=⋂l=0∞Ω_{l}, then measΩ̲≥(1−2γ3)ϱ^{m}. The proof will be given in Lemma 2.4.Let X_{Fv} be the Hamiltonian vector field corresponding to F_{v},
+with β_{j,v,n1,n2}(𝜗;ω)=∑k∈Z^{m}β_{j,v,k,n1,n2}(ω)e^{i⟨k,𝜗⟩} and [β_{j,v,1,1}] = 0, and denote by XF_{v}t its time-t map. We look for a change of variables S_{v} defined in a domain Dv+1a,s by the time-one map XF_{v}1 of the Hamiltonian vector field X_{Fv} such that the system (2.12) (l = v) is transformed into the form (2.12) (l = v + 1) and satisfies (2.13)–(2.17) with l = v + 1. In fact, the new Hamiltonian H_{v+1} can be rewritten as
+The function F_{v} is determined by the homological equation
+which is equivalent to
+In view of β_{j,v,n1,n2}(𝜗;ω)=∑k∈Z^{m}β_{j,v,k,n1,n2}(ω)e^{i⟨k,𝜗⟩}, one has
+By Cauchy’s estimate and (2.13), we get
+and
+Note that ω ∈ Ω_{v} ⊂ Ω_{00} and (2.17) with l = v, we have
+and
+for (n_{1}, n_{2}) = (2, 0) or (0, 2). So by Lemma 3.3 in Ref [28], we get for (ϑ; ω) ∈Θ(σ_{v+1}) × Ω_{v},
+where C_{1} = C·C_{*}·ϱ^{−1}. Moreover by (2.14) and (2.15) with l = v, it follows that |∂_{ω}λ_{j,v}| ≤ C · ε. Thus for (ϑ; ω) ∈ Θ(σ_{v+1}) × Ω_{v}, we have
+and
+for (n_{1}, n_{2}) = (2, 0) or (0, 2), where C_{2}=2CC*2ϱ^{−2}. As
+where k is an m column vector and k·k^{T} is an m × m matrix. Similar to the above discussion, for (n_{1}, n_{2}) = (0, 2), (1, 1), (2, 0), we get the following estimates:
+Let λ_{j,v+1} = λ_{j,v} + ε_{v}[ζ_{j,v,1,1}], then by (2.13) it is easy to see that λ_{j,v+1} satisfies the (2.14) and (2.15) with l = v + 1.To get the estimates for the flow XF_{v}t, we let
+In view of (2.19)–(2.21), we have
+We define a sequence of matrices as follows:
+that is Bvj(𝜗;ω)(j=1,2,⋯) are the sequences of matrices with elements 0 except the diagonal elements and skew diagonal elements. Let
+where E_{∞×∞} is a matrix in which the other elements are 0 except the skew diagonal elements which are 1. Moreover, we note that the vector field X_{Fv} is as follows:
+or equivalently
+Integrating the above equation from 0 to t, we get XF_{v}t:
+where (𝜗^{C},J(0),q(0)) is the initial value. In view of ε_{v}=ε^{(1+ρ)v}, we have |εv1−ρ(v+1){6m+14}(C*ϱ−1){2v}|≤C,v=0,1,2,…, as ε < 1, where C is an absolute constant independent of v, ε. From (2.19), we obtain for ϑ ∈Θ(σ_{v+1}),
+where ‖Bj,v*(𝜗;ω)‖Θ(σ_{v+1})×Ω_{v}*≤C, thus we have
+From (2.20), we obtain
+where ∂_{𝜗}Bj,v*(𝜗;ω)⋅q_{j}q_{−j}Θ(σ_{v+1})×Ω_{v}*≤C(|q_{j}|+|q_{−j}|), thus we have
+Therefore by (2.23) and (2.24), we have exp(ε_{v}JB_{v}(𝜗;ω)t)=Id+fv∞(𝜗;ω,t), where
+Let
+then
+from the above discussion, for t ∈ [0, 1], one has
+and for arbitrary q^{′}∈lba,s, one has
+Let XF_{v}t=Π_{Y}+f_{v}(ω,t):Dv+1a,s×Ω_{v+1}↦Dva,s, by (2.22) and (2.26), we have
+where Π_{Y},Π_{ω} denote the projections Π_{Y}:Y^{a,s}×Ω_{0}↦Y^{a,s},Π_{ω}:Y^{a,s}×Ω_{0}↦Ω_{0}, and Π_{ϑ}, Π_{J}, Π_{q} denote the projectors of Y^{a,s}=C^{m}/2πZ^{m}×C^{m}×lba,s on the first, second, and third factors, respectively. In view of (2.25), (2.27), and (2.29), we get
+where C = 3C_{1}. In view of (2.29), we have
+where D is the differentiation operator with respect to (ϑ, q, J). By (2.25), (2.27), and (2.28), for q̃=(𝜗^{′},q^{′},J^{′}),(𝜗,q,J)∈Dv+1a,s, we have
+where C = 3C_{2}. Therefore we have |DXF_{v}t−Id|_{a,s,s,Dv+1a,s×Ωv+1}<Cεvρ, similarly, we get |∂_{ω}(DXF_{v}t−Id)|_{a,s,s,Dv+1a,s×Ωv+1}<Cεvρ and
+We now estimate the smaller term in (2.18). Note that these terms are a polynomial of degree 2 of q,q¯. Thus, we can write the smaller term in (2.18) as
+where ζ̃{j,v+1,n1,n2}(𝜗;ω){′}s are a linear combination of the product of β_{j,v,n1,n2}(𝜗;ω) and ζ_{j,v,m1,m2}(𝜗;ω){′}s with n_{1},n_{2},m_{1},m_{2}∈N and n_{1} + n_{2} = 2, m_{1} + m_{2} = 2. In view of (2.19) and (2.13),
+Then ζ_{j,v+1,n1,n2}=εv1−ρζ̃{j,v+1,n1,n2},‖ζ_{j,v+1,n1,n2}‖Θ(σ_{v+1})×Ω_{v}*≤C.As εv1−ρ(v+1){6m+10}≤1 as ε < 1. In view of εv2−(1−ρ)=ε_{v+1}, this implies (2.12) (with l = v + 1) is defined in Dv+1a,s and λ_{j,v+1} satisfies (2.14) and (2.15) (with l = v + 1), and ζ_{j,v+1,n1,n2}’s satisfies (2.13) (with l = v + 1).Obviously, we know D0a,s⊃D1a,s⊃⋯⊃Dva,s⊃⋯⊃D∞a,s. Denote
+then we have
+Now we are ready to prove the limiting transformation S_{0} ○ S_{1} ○⋯ convergent to a transformation Σ∞0 and that this transformation integrates Eq. (2.8). For ω∈Ω̲ and 0 ≤ r ≤ N, denote ΣNr the map
+Σrr is the identity mapping. Similar to Ref [29], for r, l ≥ 0, we have
+Let Dr+lr=|Σr+lr−Π_{Y}|a,s,Dr+la,s×Ω_{v+l}*, as
+in view of (2.31), then it follows Dr+lr=cεrρ(Dr+lr+1+1)+Dr+lr+1. By induction and Dr+1r+1=0, we get
+for ε small enough. From (2.31), we have |DΣr+lr−Id|a,s,,sDr+la,s×Ω_{v+l}*≤cεrρ. Let η_{0}∈D∞a,s,η_{j}=Σl+jl(η_{0};ω),j≥1. By (2.31) and (2.33), we have
+So the sequence {η_{j}} is fundamental and converges to a point η_{∞}∈Y^{a,s}. As the right hand side of (2.34) is independent of η_{0}, so in D∞a,s, the sequence {Σl+Nl(⋅;ω)} converges uniformly to an analytic map Σ∞l(⋅;ω):D∞a,s↦Dla,s, which sends η_{0} to η_{∞}. From (2.33), we have the estimate |Σ∞l−Π_{Y}|a,s,D∞a,s×Ω̲*≤cεlρ. This proves (i). As the Hamiltonian (2.8) satisfies the condition (2.12)–(2.17) with v = 0, the above iterative procedure can run repeatedly. Thus, we can get (ii).
+Lemma 2.4. Fork∈Z^{m},j∈Z^{+},l∈N,let
+where δ(0) = 0 and δ(x) = 1 for x ≠ 0. Then the setΩl2is measurable and
+if C_{*} ≫ 1 large enough.The Proof of Lemma 2.4 is postponed in the Appendix.Let Ω_{0}=Ω_{00}\Ω02,Ω_{l+1}=Ω_{l}\Ωl+12,l=0,1,…, and Ω̲=⋂l=1∞Ω_{l}, then we have measΩ̲≥(1−2γ3)ϱ^{m}.Set Gijdl4=G|i||j||d||l|4. As Σ∞0 is linear transformation, then from Lemma 2.3, we obtain
+where |f̃j,∞*|Θ(σ_{0}/2)×Ω̲*,|f̃∞,j*|Θ(σ_{0}/2)×Ω̲*≤C. Hence by Lemma 2.3, Hamiltonian (2.8) is changed into
+and Hamiltonian (2.9) is changed into
+where G̃ijdl4(𝜗;ω)=Gijdl4(𝜗)(1+ε^{ρ}Gijdl4*(𝜗;ω)),‖Gijdl4*(𝜗;ω)‖Θ(σ_{0}/2)×Ω̲*≤C. This implies that the Hamiltonian (2.7) is changed into
+Lemma 2.5. (Ref [14] Lemma 2) Fora≥0,s>12,the spacelba,sis a Hilbert algebra with respect to convolution of sequences(p*p^{′}){j}=∑_{k}p_{j−k}pk′and
+with a constant c depending only on s.
+Lemma 2.6. Fora≥0,s≥12,the gradientG̃q4is real analytic as a map from some neighborhood of the origin in l^{a,s}into l^{a,s}, with
+uniformly for(𝜗,ω)∈Θ(σ_{0}/2)×Ω̲.The HamiltonianG̃{4}depends on ϑ = (ω_{1}t, …, ω_{m}t).
+Proof. Due to (2.37), for (𝜗,ω)∈Θ(σ_{0}/2)×Ω̲,
+Let q̃{j}=|q_{j}|+|q_{−j}|, then we have
+That is, ‖G̃q4‖{a,s}≤c‖q‖a,s3.
+III. PARTIAL BIRKHOFF NORMAL FORM
+In this section, we transform the Hamiltonian (2.38) into some partial Birkhoff form of order four so that it becomes a small perturbation of some nonlinear integrable system in a sufficiently small neighborhood of the origin.
+For J̃={1<j_{1}<j_{2}<⋯<j_{n}}⊂N(n≥2), let L={(i,j,d,l)∈Z^{4},iorjordorl∈J̃}, and N⊂L be a subset in which every element has a permutation taking the form (p, −p, q, −q). We write μi′=sgn i⋅μ_{|i|} and λi′=sgn i⋅λ_{|i|}.
+Lemma 3.1. If i, j, d, l are nonzero integers such thati±j±d±l=0,(i,j,d,l)∈L\Nor(i,j,d,l)∈Nand k ≠ 0. Let ϱ > 0, 0 < γ < 1 and C_{*}large enough, εsmall enough, then for the parameter set [ϱ, 2ϱ]^{m}, there is a setΩ¯⊂[ϱ,2ϱ]{m}withmeas(Ω¯)>(1−γ3)ϱ^{m},such that for∀ω∈Ω¯,
+The Proof of Lemma 3.1 is postponed in the Appendix.Denote by Ω=Ω̲⋂Ω¯, then meas(Ω) ≥ (1 − γ)ϱ^{m}.
+Proposition 3.1. For arbitrary fixed integer n, J̃={1<j_{1}<j_{2}<⋯<j_{n}}⊂N(n≥2),there exists a real analytic, symplectic coordinate transformation Ψ defined in some neighborhood of the origin in l^{a,s}, which transforms the HamiltonianH=H̃{0}+εG̃{4}with nonlinearity (2.37) into its Birkhoff normal form up to order four. More precisely,
+whereX_{G̃},X_{Ĝ}, and X_{K}are real analytic vector fields near the origin in l^{a,s},
+with uniquely determined coefficients
+where ϖ_{ij}(ω, ε) depends smoothly onεand ω, and there is an absolute constant c such that‖ϖ_{ij}(ω,ε)‖Ω*≤cε^{ρ}forεsmall enough, and we have|Ĝ|=O(‖q^‖a,s4),|K|=O(‖q‖a,s6),uniformly for |Im ϑ| < σ_{0}/3, ω ∈ Ω, q^=(qj){j∈N^{+}\J̃}.
+Proof. Let G̃ijdl4(𝜗,ω)=∑_{k∈Z^{m}}G_{ijdl,k}(ω)e^{i⟨k,𝜗⟩}. Consider a Hamiltonian function
+with coefficients
+Denote by Ψ=XεFt|_{t=1}=XεF1 the time-1-map of flow generated by the Hamiltonian εF. Then
+Note that
+Then G̃{4}+{H̃{0},F}=G̃+Ĝ, where
+By counting the multiplicities, we have
+with G̃{ij} being defined in Proposition 3.1. Obviously, Ĝ is independent of the coordinates q_{1}, q_{2}, ⋯q_{n}. Moreover, K obviously consists of the sixth order terms in q.In the following, we prove the analyticity and regularity of the transformation Ψ. For (ϑ; ω) ∈ Θ(σ_{0}/2) × Ω, we have
+By Lemma 3.1, for ω ∈ Ω, we have |f_{ijdl,k}|≤C_{*}c_{2}ϱ|k|^{6m+5}e^{−|k|σ0/2}. Then for (ϑ; ω) ∈ Θ(σ_{0}/3) × Ω, we obtain |f_{ijdl}(𝜗;ω)|≤∑_{k∈Z^{m}}C_{*}c_{2}ϱ|k|^{6m+5}e^{−16|k|σ0}≤C.Let q̃{j}=|q_{j}|+|q_{−j}| for j ≠ 0 and q̃{0}=0, then for (ϑ; ω) ∈ Θ(σ_{0}/3) × Ω, we have
+If q∈lba,s, then
+The analyticity of F_{q} follows from the analyticity of each component function and its local boundedness.We take (z_{1},z_{2},…,z_{n})=(q_{j1},q_{j2},…,q_{jn}) and Z = (z_{n+1}, z_{n+2}, ⋯) be the rest of the components of q = (q_{1}, q_{2}, ⋯) by deleting (q_{j1},q_{j2},…,q_{jn}). Denote by I=(z_{1}z_{−1},z_{2}z_{−2},…,z_{n}z_{−n}),Z^=(z_{n+1}z_{−n−1},z_{n+2}z_{−n−2},⋯),ξ̃=(ξ̃j){1≤j≤n} and ρ̃=(ρ̃j){1≤j≤n}. Now we introduce the action-angle-normal variables by setting
+with I_{j}=εξ̃{j}+ρ̃{j}, where ξ̃{j}∈[0,1],|ρ̃{j}|<ε^{2},1≤j≤n. Then the new Hamiltonian is
+where m(j) is defined by q_{m(j)} = z_{j} for j ≥ n + 1 and P = εĞ + εĜ + ε^{2}K with Ğ=O(|ρ̃|^{2})+O(|ρ̃|‖Z^‖).Set χ = ϑ⊕θ with θ=(θj){1≤j≤n},y=J⊕ρ,̃ and ζ=ω⊕(ξ̃j){1≤j≤n}. Let us introduce the phase space
+where T^{m+n} is the complexation of the usual (m + n) torus T^{m+n}. Set
+For W=(χ,y,Z,Z¯)∈P^{a,s}, we define the weighted norm
+With respect to the symplectic structure dχ∧dy+idZ∧dZ¯, denote by X_{P}=(∂_{y}P,−∂_{χ}P,i∇_{Z¯}P,−i∇_{Z}P) the vector field corresponding to the Hamiltonian P, and Σ̃=Ω×[0,1]{n} the parameter set.
+Lemma 3.2. The perturbationP(χ,y,Z,Z¯;ζ)is real analytic for(χ,y,Z,Z¯)∈D(s^{′},r)for s′, r > 0, Lipschitz inζ∈Σ̃.And for∀ζ∈Σ̃,∂_{Z}P,∂_{Z¯}Pare real analytic as maps from some neighborhood of the origin in l^{a,s}into l^{a,s}. Moreover,
+where s′ = σ_{0}/3, r = ε.
+Proof. For 1 ≤ j ≤ n, from (3.2) we have |∂_{θj}w_{j}|≤cε^{1/2},|∂_{ρj}w_{j}|≤cε^{−1/2}, where w_{j} = z_{j} or w_{j} = z_{−j}. From (3.2) and ∥Z∥_{a,s} ≤ r = ε, we have ∥z∥_{a,s} ≤ cε{1/2}, where z=z̲⊕Z with z̲=(z_{1},…,z_{n}). Then |Ğ| = O(ε^{4}), |Ĝ| = O(ε^{4}) and |K| = O(ε^{3}), so it follows that |P| = O(ε^{3}) on D(s′, 2r). By Cauchy’s estimate, we have |∂_{χ}P|=O(ε^{5}),|∂_{y}P|=O(ε^{3}),|∂_{z}P|=|∂_{z¯}P|=O(ε^{4}). Hence, we have sup_{D(s,r)×Σ̃}|X_{P}|_{r}≤cε^{3}. Using Cauchy’s estimates with respect to ζ, we obtain sup_{D(s,r)×Σ̃}|∂_{ζ}X_{P}|_{r}≤cε^{3}.
+IV. AN INFINITE-DIMENSIONAL KAM THEOREM FOR PARTIAL DIFFERENTIAL EQUATIONS
+In this section, we state the KAM theorem that has been proved in Ref [18]. Consider ξ∈Π⊂R^{n} with meas (Π) > 0 and Hamiltonian H = H_{0} + P, where
+in n-dimensional angle-action coordinates (x, y) and infinite-dimensional Cartesian coordinates (u, v) with the symplectic structure ∑j=1ndx_{j}∧dy_{j}+∑j=n+1∞du_{j}∧dv_{j}. The tangent frequencies ω^=(ω^{1},…,ω^{n}) and normal ones Ω^=(Ω^{n+1},Ω^{n+2},⋯) depend on ξ.
+Assumption A (Non-degeneracy). The map ξ→ω^(ξ) is a Lipeomorphism between Π and its image. Moreover, for all integer vectors (k,l)∈Z^{n}×Z^{∞} with 1 ≤ |l| ≤ 2,
+Assumption B (Spectral Asymptotics and the Lipschitz Property). There exist ς ≥ 1 and δ < ς − 1 such that
+where the dots stands for fixed lower order term in j, also allowing negative exponents. More precisely, there exists a fixed, parameter-independent sequence Ω̃ with Ω̃{j}=j^{ς}+⋯ such that the tails Ω^{j}−Ω̃{j} give rise to a Lipschitz map Ω^{j}−Ω̃{j}:Π→l∞−δ, where l∞p is the space of all real sequences w = (w_{1}, w_{2}, ⋯) with finite norm |w|_{p} = sup_{j}|w_{j}|j^{p}.
+Assumption C (Regularity). The perturbation P(χ,y,Z,Z¯;ξ) is real analytic in the space coordinates and Lipschitz in the parameters, and for each ξ∈Π,P_{Z},P_{Z¯} are real analytic as maps from some neighborhood of the origin in l^{a,p} into l^{a,p¯}, where p¯≥pforς>1 and p¯>pforς=1.
+We assume that
+In addition, we introduce the notations
+where τ > n + 1 is fixed later. Finally, let Z={(k,l)≠0,|l|≤2}⊂Z^{n}×Z^{∞}.
+Theorem 4.1. (Ref [18] Theorem A) Suppose H = H_{0}+ P satisfies Assumptions A,B, and C, and
+where 0 < α ≤ 1 is a parameter, and γ depends on the parameters described below. Then there is a Cantor set Π_{α} ⊂ Π with meas (Π ∖Π_{α}) → 0 as α → 0, a Lipschitz continuous family of torus embeddingΦ:T^{n}×Π_{α}→P^{a,p¯},and a Lipschitz continuous mapω̃:Π_{α}→R^{n}such that for each ξ ∈ Π_{α}the map Φ restricted toT^{n}×{ξ}is a real analytic embedding of an elliptic rotational torus with frequenciesω̃(ξ)for the Hamiltonian H at ξ.Each embedding is analytic on|Imχ|<s2and
+uniformly on that domain and Π_{α}, whereΦ_{0}:T^{n}×Π→T0n=T^{n}×{0,0,0}is the trivial embedding, and c ≤ γ^{−1}depends on the same parameters as γ.Moreover, there exist a family of Lipschitz mapsω^{j}and Λ_{j}on Π for j ≥ 0 satisfyingω^{0}=ω^,Λ_{0}=Ω^, and
+such thatΠ\Π_{α}⊂⋃Rk,lj(α),where
+and the union is taken over all j ≥ 0 and(k,l)∈Zsuch that |k| > K_{0}2^{j−1}for j ≥ 1 with a constant K_{0} ≥ 1 depending only on n and τ.
+Theorem 4.2. (Ref [18] Theorem D) Suppose that in Theorem 4.1 the unperturbed frequencies are affine functions of the parameters. Then there is a constantc¯such that
+for all sufficiently small α, where ϖ is any number in[0,min(p¯−p,1)),and in the case ς = 1, κ is a positive constant such that
+uniformly on Π.In order to apply the above theorems to our problem, we need to introduce a new parameter ω¯ below.For arbitrarily fixed ω_{−} ∈ Ω and ω∈Ω¯¯={ω∈Ω:|ω−ω_{−}|≤ε}. We introduce a new parameter ω¯ by setting
+Hence the Hamiltonian (3.3) becomes
+where ω^(ξ)=ω⊕ω̆ with ω̆=α̃+ε^{2}Aξ̃,Ω^=β̃+ε^{2}Bξ̃,
+m(l) is defined as q_{m(l)} = z_{l} for l ≥ n + 1 and ξ=ω¯⊕ξ̃,ŷ=J⊕ρ̃,α̃=(μ_{j1},…,μ_{jn}),β̃=(β̃{1},β̃{2},⋯) which consists of the rest of the terms of {μ_{j}}.
+Lemma 4.1. Let Π = [0,1]^{m+n}. Then X_{P}is real analytic as a map in a neighborhood of the origin in l^{a,s}and
+Proof. The proof is similar to that of Lemma 3.2.
+V. PROOF OF THEOREM 1.1
+In the following, we will verify the Assumptions A, B, and C for the Hamiltonian (4.4). Recalling J̃={1<j_{1}<j_{2}<⋯<j_{n}}(n≥2), the definition of G̃{ij} in (3.1) and the definitions of A, B in (4.5), then we obtain
+Since det(D)=−(4n−1)Πi=1nγj_{i}4(34π[ϕ]){n}≠0, so we get det A ≠ 0 provided that 0 < ε ≪ 1. Moreover, from the definition of ω^, we obtain
+where I_{m} denotes the unit m × m matrix. Then ξ↦ω^(ξ) is a lipeomorphism between Π and its image.
+For any k∈Z^{m+n}, we write k=(k_{1},k_{2}),k_{1}∈Z^{m},k_{2}∈Z^{n}. Let △={ξ∈Π:Y(ξ)=0}, where
+to satisfy the Assumption A, we need to prove meas (△) = 0. We discuss in the following two cases:
+Case 1:k_{1} ≠ 0. As
+thus
+which implies meas (△) = 0.
+Case 2:k_{1} = 0. Then
+Since limε→0(Ak_{2}+B^{T}l)=Dk_{2}+D̃{T}l, by the proof of contradiction, then we have Dk_{2}+D̃{T}l≠0. Hence, we get Ak_{2} + B^{T}l ≠ 0 as 0 < ε ≪ 1. By the Fubini theorem, we could obtain meas (△) = 0. Moreover, it is easy to have ⟨l,Ω^(ξ)⟩≠0 as 0 < ε ≪ 1, with 1 ≤ |l| ≤ 2 and ξ ∈ Π. The Assumption A is satisfied.
+As μ_{j}=λ_{j}−ε[ϕ]πγj2+ε^{1+ρ}μj*,‖μj*‖Ω̲*≤c,λ_{j}=j^{2}+j^{4}/3, then Assumption B is satisfied with ς = 2, δ = 0. By Lemma 4.1, we get that Assumption C is fulfilled by p¯=p=s. Using ω^(ξ)=ω⊕(α̃+ε^{2}Aξ̃) and Ω^(ξ)=β̃+ε^{2}Bξ̃, then we find that (4.1) is satisfied with M = C_{1}ε and L = C_{2}ε^{−1}.
+Let α = ε^{2}, so the small condition (4.2) is satisfied. Then for Hamiltonian (4.4), by Theorems 4.1 and 4.2, there is a subset Π_{α} ⊂ Π with
+and a Lipschitz continuous family of tori embedding Φ:T^{n}×Π_{α}→P^{a,s}, a Lipschitz continuous map ω̃:Π_{α}→R^{n}, such that for each ξ ∈ Π_{α} the map Φ restricted to T^{n}×{ξ} is a real analytic embedding of an elliptic rotational torus with frequencies ω̃(ξ) for the Hamiltonian H at ξ. By (4.3), we return from the parameter set Π to Π^{*}(ω_{−})=Ω¯¯×[0,1]{n}. Denote by Π^{*}=⋃_{ω−∈Ω}Π^{*}(ω_{−}), where ω_{−} is chosen such that Π^{*}(ω−1)∩Π^{*}(ω−2)=∅ if ω−1≠ω−2. Hence, we get a subset Πε*⊂Π^{*} such that Σ̃{ε}=Πε*⊂Ω×[0,1]{n}=Σ̃ with meas(Σ̃\Σ̃{ε})≤ε.
+Therefore, for the new parameter set, we obtain that there is a Lipschitz continuous family of tori embedding Φ:T^{n}×Σ̃{ε}→P^{a,s} and a Lipschitz continuous map ω̃:Σ̃{ε}→R^{m+n} such that for each ξ∈Σ̃{ε} the map Φ restricted to T^{m+n}×{ξ} is a real analytic embedding of an elliptic rotational torus with frequencies ω̃(ξ)=(ω,(ω̃j){1≤j≤n}) for the Hamiltonian H at ξ. This proves Theorem 1.1.
+APPENDIX: MEASURE ESTIMATE AND SMALL DIVISOR
+For k ≠ 0, denote by
+where T(t)=(⟨k,ω⟩+2λj,l){ω=η̃+tk⋅|k|^{−1}},η̃∈R^{m}, observe (∂/∂t)ω · k = |k|, as |∂_{ω}λ_{j,l}| ≤ C · ε, for t_{1} > t_{2}, we have
+as ε is small enough, thus meas(A(k))≤2ϱC_{*}|k|(δ(l)+l^{2})(|k|+δ(|k|)){m+1}. By the Fubini theorem, one obtains
+similarly, one has measRk,j,l2,−≤ϱ^{m−1}2ϱC_{*}|k|(δ(l)+l^{2})(|k|+δ(|k|)){m+1}. As λ_{j,l}=λ_{j}−ε[ϕ]πγj2+ε^{1+ρ}λj,l*,‖λj,l*‖Ω_{l}*≤C, then we get
+If k = 0, then |⟨k,ω⟩±2λ_{j,l}|≥2λ_{j}−cε>23−cε≥ϱ/C_{*} holds provided ε is small enough and C_{*} is large enough. Note |O(ε) + ⟨k, ω⟩| ≤ 1 + |k||ω|, when j>21+|k||ω|, we have
+which implies that the sets Rk,j,l2,+,Rk,j,l2,− are empty. Therefore
+where [·] stands for the integer part of · and c_{0} depends on |ω| only. We have (2.35), if C_{*} is large enough.
+Case 1: Assume i±j±d±l=0,(i,j,d,l)∈L\N. First of all, from Lemma 3.1 in Ref [24], we have
+where M=36(11+47)(47−7). Let g(ε)=μi′+μj′+μd′+μl′, then by μ_{j}=λ_{j}−ε[ϕ]πγj2+ε^{1+ρ}μj*, we get g(ε)=λi′+λj′+λd′+λl′−ε[ϕ]π⋅(sgn i⋅γi2+sgn j⋅γj2+sgn d⋅γd2+sgn l⋅γl2)+O(ε^{1+ρ}).
+Case 1.1k = 0. Then
+provided that ε is small enough and C_{*} is large enough.
+Case 1.2k ≠ 0. Assume i = min{i, j, d, l} without loss of generality. Then 1 ≤ i ≤ j_{n}. Denote by
+and Ω^{3}=⋃_{0≠k∈Z^{m}}⋃_{i,j,d,l}Rijdl,k3. Similar to the discussion in Ref [29], then we have meas(Rijdl,k3)≤2ϱ^{m}C_{*}|k|^{6m+6}.
+Case 1.2.1 When j, d, l have the same sign, denote by f_{jdl} = sgn j·(μ_{|j|} + μ_{|d|} + μ_{|l|}), then gε=f_{jdl}+μi′. Let
+then meas(Rijdl,k3,1)≤2ϱ^{m}C_{*}|k|^{m+4}. Note |μi′+⟨k,ω⟩|≤2jn2+jn43+2|k|ϱ by 1 ≤ |i| ≤ j_{n}. Therefore, when |f_{jdl}|>3jn2+jn43+2|k|ϱ, it follows that
+which implies that the set Rijdl,k3,1 is empty. Then we obtain
+Hence, we have meas(Ω^{3,1})≤γ21ϱ^{m}, if C_{*} is large enough.
+Case 1.2.2 When j, d, and l have different signs, we assume f_{jdl}=sgn j⋅(μ_{|j|}+μ_{|d|}−μ_{|l|})=f̃{jd}+sgn l⋅μ_{|l|}, then g(ε)=f̃{jd}+sgn l⋅μ_{|l|}+μi′. Observe that there is a combination of plus or minus such that i ± j ± d ± l = 0.
+where [i^{2}] equals to either −2i^{2} or 0. Obviously, there does not exist any difference in the measure estimate whether [i^{2}] = −2i^{2} or [i^{2}] = 0. Thereby, we only consider the case [i^{2}] = 0 for convenience. Let
+we consider two cases (I) and (II) as follows.
+Case I If |j|>Cj−1/2|k|^{m2+1} for C_{j}C_{*} = ϱ, then for fixed i, d, we have |341j^{2}+13j^{4}+13j^{2}+32|,|341l^{2}+13l^{4}+13l^{2}+32|<C_{j}|k|^{m+2}<ϱC_{*}|k|^{m+1}. It follows that, for fixed i, d, denote by
+then for |j|>Cj−1/2|k|^{m2+1},l=±i±j±d, we have Rijdl,k3,2,1⊂Rid,k3,2,1. Thus, we obtain ⋃_{l=±i±j±d}⋃_{|j|>Cj−1/2|k|^{m2+1}}Rijdl,k3,2,1⊂Rid,k3,2,1. Similar to the discussion in Ref [29], we have meas(Rid,k3,2,1)<6ϱ^{m}C_{*}|k|^{m+2}. For |d|>2j_{n}+3|k|ϱ+4, it is obvious that the set Rid,k3,2,1 is empty. Let
+it follows that
+Hence, we have meas(Ω^{3,2,1})≤γ21ϱ^{m}, if C_{*} is large enough.
+Case II Now let us consider |j|≤Cj−1/2|k|^{m2+1}. Denote by
+then we have Rijdl,k3,2,2⊂Rijd,k3,2,2. Similar to Ref [29], we have meas(Rijd,k3,2,2)<6ϱ^{m}C_{*}|k|^{2m+4}.
+Case II-i Assume |i| < |j|. For |d|>(j_{n}+1)[3|k|ϱ+j_{n}+4], it is obvious that the set Rijd,k3,2,2 is empty. Let
+It follows that
+Hence, we have meas(Ω^{3,2,2})≤2γ21ϱ^{m}, if C_{*} is large enough.
+Case II-ii |i| = |j|. We consider the two cases (II-i-a) and (II-i-b) as follows.
+Case II-ii-a Let |d|>Cd−1/2|k|^{m2+1} for C_{d}C_{*} = ϱ, then we have
+It follows that, for fixed i, let
+then we obtain ⋃_{|d|>Cd−1/2|k|^{m2+1}}Rijdl,k3,2,2,1⊂Rij,k3,2,2,1. Similar to Ref [29], we have meas(Rij,k3,2,2,1)<6ϱ^{m}C_{*}|k|^{m+1}.
+Let
+then
+Hence, we have meas(Ω^{3,2,2,1})≤γ21ϱ^{m}, if C_{*} is large enough.
+Case II-ii-b Now we consider 1≤|d|≤Cd−1/2|k|^{m2+1}. Denote by
+and
+so we have Rijdl,k3,2,2,2⊂Rijd,k3,2,2,2. Similar to Ref [29], we have meas(Rijd,k3,2,2,2)<4ϱ^{m}C_{*}|k|^{2m+2}. Let
+Hence, we have meas(Ω^{3,2,2,2})≤γ21ϱ^{m}, if C_{*} is large enough.Case II-iii |i| > |j|. Denote by
+so we have Rijdl,k3,3⊂Rijd,k3,3. Similar to Ref [29], we have meas(Rijd,k3,3)<4ϱ^{m}C_{*}|k|^{m+2}. For |d|>j_{n}[3|k|ϱ+j_{n}+4], it is obvious that the set Rijdl,k3,3 is empty.
+Let
+then
+Hence, we have meas(Ω^{3,3})≤γ21ϱ^{m}.
+Case 2: Assume (i,j,k,l)∈N and k ≠ 0. In this case, obviously, we have
+provided ε is small enough and C_{*} is large enough.
+Let
+then Ω¯ satisfies the assumptions in Lemma 3.1 and meas(Ω¯)≥(1−γ3)ϱ^{m}.

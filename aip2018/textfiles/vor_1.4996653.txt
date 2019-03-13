@@ -1,0 +1,335 @@
+Modeling of carbon credit prices using regime switching approach
+In this study, we analyze the price dynamics of carbon certificates that are traded under the European Union's Emissions Trading System (EU-ETS). With the aim of investigating the joint relations among carbon, electricity, and fuel prices, we model historical prices using several methods and incorporating structural changes, such as econometric time series, regime switching, and multivariate vector autoregression models. We compare the results of the structural model with the results of traditional Markov switching and autoregressive models with breaks and present performance analysis based on the mean average percentage error, root mean squared error, and coefficient of determination. According to these performance tests, models with regimes outperform the approaches where breaks are defined using ex ante dummy variables. Moreover, we conclude that among regime switching models, univariate models are better than multivariate counterparts for modeling carbon price series for the analysis of both in-sample and out-of-samples.
+I. INTRODUCTION
+There exist different mechanisms in operation around the world which are devised for mitigating the effects of climate change, which occurred as a result of the emissions of greenhouse gases (GHGs). The European Union's Emissions Trading System (EU ETS) is the largest of these mechanisms, where the member institutions trade carbon allowances. While EU ETS is an important mechanism to address climate change, it is also a major market for investors to decentralize their investment risks [43]. Stylized markets, where various carbon price dependent financial instruments ranging from spot contracts to exotic options are traded, serve as safe playgrounds of carbon trading [30]. These instruments are heavily used by the practitioners either for hedging purposes or as alternative investment tools, where the overall value of the global carbon market totaled to $52.8 billion in 2015 [32]. Therefore, we need accurate carbon price forecasts to reduce risk and uncertainty.
+Carbon markets are highly volatile, and they are subject to abrupt changes as a consequence of their policy-based nature and relative infancy. Within this setting, the mechanisms that lead companies in managing their decisions produce various pricing approaches and structural breaks in the pricing models. EU ETS has witnessed rapid progress through phases since it became operational in 2005. EU ETS is planned in three phases. The pilot phase, which is also called the learning phase, covers the years between 2005 and 2007. The cap values assigned to institutions during this phase appeared to be loose, and as a result, the carbon allowance price decreased [3]. Then, the Clean Development Mechanism and the Joint Implementation Mechanism became effective during the second phase, which cover the years between 2008 and 2012. This resulted in an increase in allowance prices at the beginning; however, prices dropped because of the 2008 economic crises. As a result, investments for clean energy generation remained below the targeted levels. After the aviation industry was incorporated into the market in 2012 in addition to the sectors encompassed in Phase I, the market observed an increased activity. Currently, EU ETS is in its third phase, covering the years between 2013 and 2020. In 2015, the Paris Agreement was adopted, and since then, it has been expected to play a significant role in accelerating the pace and scale of change [26].
+The aim of this study is to analyze the price dynamics of carbon certificates that are traded under EU-ETS. In order to model the historical prices of carbon certificates, we use various methods, including econometric time series, regime switching, and multivariate vector autoregression models.
+Carbon markets have been raising researchers' interest since carbon is an inevitable byproduct of the essential activities of corporates that should be balanced via financial products or new technologies. There are numerous studies devoted to analyzing the conditions that affect carbon prices in the literature as summarized in the study by Chevallier [10]. We refer the reader to studies by Zhang and Wei [40] and Nelson et_al [27] for reviews on EU ETS and Australian markets, respectively.
+We classify the research on carbon price modeling into four main classes: (i) structural models, which use the relationship between carbon prices and other commodities; (ii) pure econometric models, which fit autoregressive models to the price process; (iii) stochastic models, which use stochastic processes to model price series; and (iv) game theoretic models, which model market participants as independent agents. Mansanet-Bataller et_al [25] conduct one of the early studies that characterize the relationship among carbon contract prices, other energy commodities (natural gas, electricity, and oil), and weather related elements (rain, precipitation, and temperature). The main price drivers used for carbon price modeling are weather [1,3], energy prices [11,28], and some additional components, such as industrial indicators [2], stock index, and exchange rates [19]. Carraro and Favero [7] compare the relationship between carbon and energy prices, both in the short term and the long term, and infer that the global policies exhibit long term effects, whereas weather and energy prices have a short term impact on carbon prices.
+Due to their simple structure traditional autoregressive (AR) type, models are only used as a benchmark [5]. The vector autoregression (VAR) model, which is a more general AR modeling approach, takes into account the interrelations of variables simultaneously. Aatola et_al [1] and Fell [16] select various VAR models of carbon series with energy prices. Fezzi and Bunn [18] propose a structural co-integrated VAR model that takes carbon, electricity, and gas prices as endogenous variables and temperature as an exogenous variable. They obtain the residual matrix and devise a structural co-integrated VAR model via auxiliary regression by imposing the restrictions that are decided in advance. Chevallier [8] proposes a factor augmented VAR model to explain the price volatility and concludes that among various elements, financial and commodity series make the highest contribution to the price volatility.
+Both AR and VAR models assume homoscedasticity with constant variance or covariance function. However, this assumption may not hold since, compared to the other commodity and financial markets, the carbon trading market is young and is highly affected by international negotiations and economic cycles [41]. As an example, Alberola et_al [3] identify two structural breaks in Phase I of EU-ETS which overlap with the announcement of restrictions in April and October 2006. Similarly Zhu et_al [41] identify structural changes due to the financial crisis of 2008 and the European debt crisis of 2011 during Phase II. Structural breaks and/or supply and demand abnormalities occur as a result of changes in the regulations, causing irregularities in price series. Therefore, vector or structural approaches are enhanced via generalized autoregressive conditional heteroskedasticity (GARCH) models [12,39]. Venmans [38] summarizes further studies about variation distributions of GARCH models for carbon prices.
+Hamilton [20] uses regime switching, and Kilian [22] applies structural vector autoregression for modeling breaks in stochastic processes. Benz and Trück [5] compare standard AR(1)-GARCH(1,1) and regime switching models for carbon prices in the 2005–2006 interval. They apply two different regime switching mechanisms. The first model proposes a two-state regime switching model with a separate Gaussian innovation structure in each regime. In the second model, the system oscillates between a mean-reversion and a jump process. They conclude that both AR-GARCH and regime switching models outperform other models with constant variance. Lanne et_al [23] obtain residual matrices via switching regimes and the corresponding covariances, and Maciejowska [24] uses this methodology for electricity prices and its drivers such as demand, gas price, and weather. Feng et_al [17] deal with the volatility of carbon prices using several identifications such as random walk and chaos theory and conclude that price fluctuation is not only influenced by the internal market mechanism but is also impacted by the heterogeneous environment. Sanin et_al [34] give an ARMAX-GARCH formula with explanatory variables to understand the jump structure of Phase II and Phase III of the Kyoto Protocol. They conclude that prices are sensitive to regulatory issues.
+There are various studies that employ other modeling techniques in addition to the econometric pricing approaches in the literature, such as stochastic models [1,44] and hybrid models. Zhu and Wei [43] utilize ARIMA(p, d, q) and a support vector machine (SVM) approach to explain the price structure. Additionally, Sousa et_al [35] use multivariate wavelet analysis to define carbon-energy price relation for distinct phases and Zhu et_al [42] employ a Zipf analysis to identify the future price components.
+In this study, we first analyze the structural breaks in the period between 2009 and 2017. Then, we implement various models to represent the structural changes in the carbon price. Our main contributions to the literature are as follows: (i) developing a structural vector autoregression model that uses a Markov switching model to investigate the joint relations between carbon, electricity, and fuel prices and (ii) comparing the results of the structural model with traditional Markov switching and autoregressive models.
+The remainder of this paper is organized as follows: We analyze historical carbon price data and derive formulations for simulating the prices in Sec. II. We test model accuracies under various performance measures and examine the results in Sec. III A. Finally, we provide concluding remarks in Sec. IV.
+II. DATA AND METHODOLOGY
+In this section, we first introduce the data we use for our analysis. Then, we analyze the historical price series and derive different models that capture the heteroscedasticity of carbon prices and the structural properties of the historical series.
+A. Data description
+We use daily carbon future prices that were traded at European Climate Exchange (ECX) during Phase II and Phase III—during the period of January 2009 and June 2017. For multivariate models, we include the natural gas (NG), coal, and electricity price series as explanatory variables as in the study by Creti et_al [13] and Mansanet-Bataller et_al [25] We obtain the price data from the Bloomberg database [6]. Energy series represent the daily price of 1-month forward for electricity (ELUBMON1), natural gas (NBPDAHD), and coal (API21MON). We use the data obtained from the UK market for the electricity and natural gas prices, and they are quoted in GBP. Coal price values, which consist of cost, insurance, and freight (CIF) inclusive prices for steam coal delivered from various countries to Amsterdam, Rotterdam, and Antwerp (ARA) regions of North West Europe, are listed in EUR. We convert all price series to USD for consistency using 2017 exchange rates. Since the relative changes are more important than the absolute values in commodity prices, we use the logarithms of all series in our analysis. We present these log price series in Fig. 1 and descriptive statistics for log prices in Table I.
+B. Structural breaks
+Unexpected events may affect the supply demand balance of commodities, which may lead to changes in price mechanisms. A structural break can be defined as an unexpected shift in a price series that can lead to a change in model parameters or model characteristics. Since the carbon market has been created by the regulations that are applied through international negotiations, external effects influence the prices in the market, which in turn cause structural breaks.
+In this paper, we model the price series using ARMA-GARCH, VAR, MS-AR, MS-VAR, and SVAR. The MS-AR and MS-VAR are regime switching models, and they include the effects of the structural shift endogenously. Similarly, the SVAR model incorporates the shocks and changes in the model parameters. However, although ARMA-GARCH is a nonlinear model, it does not include appropriate mechanisms to model the external structural and policy changes. Likewise, the VAR model lacks the parameters for modeling the nonlinear structure of the data. Therefore, for both ARMA-GARCH and VAR, we derive two separate models: (i) one without structural breaks and (ii) one with phase shifts that are modeled through dummy variables. We analyze the historical data by applying both models in order to see the effect of structural break modeling.
+Following the approach of Zhu et_al [41], we analyze two possible breaks caused by (1) the European Debt Crisis when Fitch downgraded Greece's credit rating from BBB− to BB+ in June 2011 and (2) the change from Phase II to Phase III in January 2013. For regression based models, the Chow Test is used to test for a single break in the mean if the break date is known. In order to apply the Chow Test for two different break points, we use two subsets of price series. First, we apply the Chow Test for the period between January 2009 and January 2013 to test for a possible break in June 2011 as a result of the Debt Crisis. The test result shows that there is actually a break in the carbon price series during the debt crisis. We then implement the same test for the period between June 2011 and June 2017 for a possible break during phase change and conclude that there is also a structural break between Phases II and III.
+C. Seasonal and break components
+In addition to random changes in price series, there are also possible breaks caused by seasonal changes in the supply or demand. For this reason, we assume logarithmic price series log(S_{t}) for all variables in the model, consisting of deterministic (F_{t}) and stochastic (X_{t}) parts as follows:
+The deterministic component consists of the seasonal effects and the long range trend in the process, defined as F_{t}=fttr+fts. In this study, we utilize two different trend component models. In the first model, we assume that the trend component (fttr−NB) does not include the structural break, while in the second one, we model the trend component (fttr−B) consisting of two dummy variables for the structural breaks introduced in Sec. II B. Xtd and Xtp dummy variables correspond to the debt crisis and phase shift break points, respectively. These dummy variables are equal to 0 for the time periods that cover the durations until the breaks occur, and they are equal to 1 for the time periods after the corresponding breaks transpire. For both models, the trend term consists of a slope, β_{1}, and an intercept, β_{0}, component, as well as dummy variables defined for different periods of data for the corresponding models. We can write the equation for the trend component of the carbon price processes as
+We use a regression equation via the ordinary least squares method to estimate the trend and break coefficients as presented in Table II. β_{0} and β_{1} represent the intersect and slope of the trend terms, respectively, and β_{d} and β_{p} denote the effect of structural breaks caused by in debt crisis and phase transition on the prices, respectively. In the model without breaks, there is a 0.175 yearly decrease in the logarithmic prices (16% decrease on average over the absolute prices). However, for the model with breaks, the trend component value is −0.0244/year (2.5% decrease on average over the absolute prices). This difference shows that there are structural changes, and they are successfully captured through breaks. For example, the logarithmic change in the prices after debt crisis is −0.4298, which corresponds to a 35% decrease over the carbon prices. Similarly, there is an additional 38% decrease over the carbon prices from Phase II to Phase III.
+After removing the trend component, we employ a deseasonalization approach, as in the study by Keles et_al [21], for each of the price series. The seasonal component includes the annual cycle as the effect of seasons, which includes the temperature changes throughout the year or increased/decreased industrial production in certain months of the year. For energy prices, another cycle, which is a result of the price changes between weekdays and weekends due to the different levels of demand, may exist. We calculate the annual component as the historical average of each price series for the given month and present them in Table III. We also analyze the data for the weekly component, but we do not observe any weekly effect in the carbon price.
+We obtain stochastic residues in price series after removing the trend, structural change, and annual effects. We define the stochastic component for the first model without breaks as XtNB and for the second model as XtB. We present the autocorrelation function (ACF) and partial autocorrelation function (PACF) graphics for both XtNB and XtB in Fig. 2. It is clear that autocorrelation properties still exist in the residuals for both models. Carbon instruments are traded only on weekdays; therefore, the weekly cycle can be observed from ACF and PACF values for 5 days. This result shows the non-existence of a weekly cycle on carbon prices. We analyze the residual stochastic component in the prices by either using dummy variables in univariate and multivariate series or using the regime switching models. The details of univariate and multivariate series approaches are given in Secs. II D and II E, yet the regime switching models are explained in Sec. II F.
+D. Univariate pricing models
+One of the most widely used univariate econometric models in commodity pricing is the autoregressive-moving average, ARMA(p, q), a process where the future price of the commodity depends on both p periods of past price (autoregressive component) and q periods of past effects (moving average component). It is defined as
+where p and q are the order of autoregressive and moving average components, respectively, and ϵ_{t} is the independent and identically distributed error process.
+When we employ the Box-Jenkins methodology, given in the study by Enders [15], we observe that ARMA(1,1) with normal residual distribution processes fits to the historical daily carbon price residuals for both XtNB and XtB. We test the heteroskedasticity of ARMA(1,1) residuals via the Engle test and reject the null hypothesis of the non-existence of heteroskedasticity with a p-value of 0.0023 at a significance level of 0.01 for the no break case, XtNB. Therefore, we use the GARCH process to model the nonlinearity in the error process for XtNB. These processes are widely used to reflect the dynamics of time-varying variance in the literature [12,39]. However, the Engle test for XtB results in a value of 0.0856, and we fail to reject the non-existence of heteroskedasticity. Therefore, we use ARMA(1,1) without any heteroskedasticity component for XtB.
+The time dependent variance for a GARCH(P,Q) process is defined as
+In order to select the number of lags, we check the residual autocorrelation graphs, the Akaike Information Criterion (AIC), and the Bayesian Information Criterion (BIC). We report AIC and BIC results in Table IV.
+According to AIC and BIC results, we conclude that the (2,2) lag pair outperforms the others, and the (1,1) pair is the second best; however, the latter is not much distant from the former, which casts a doubt on the AIC's reaction to the increased number of parameters. Although it is the second best, for the sake of model parsimony and considering the study by Chevallier [8], P and Q values are selected as 1. We present the ACF and PACF graphics for the residuals of the ARMA(1,1)-GARCH(1,1) process in Fig. 3. The function values for both ACF and PACF are within the confidence interval bounds, which suggest that the GARCH(1,1) process is suitable to model the heteroskedasticity in the carbon future price changes. We present the parameter values for ARMA(1,1)-GARCH(1,1) coefficients in Table V.
+E. Multivariate pricing models
+The carbon price is subject to local and global conditions, as it was the case in 2008 world crisis, and regulations [41]. Each of these events results in nonlinearities in the structure of historical prices. Additionally, the interdependence of carbon and energy prices is emphasized in numerous studies.
+In Sec. II D, we assume that the carbon price is not affected by the changes in other factors, such as energy prices and market conditions. The ARMA(1,1)–GARCH(1,1) model is a univariate price process; therefore, it cannot capture the dependencies between carbon series and other energy prices such as electricity and fuel prices. However, there is a strong relationship between these factors as stated by Obermayer, Carraro, and Favero [7,28]. To deal with such a co-movement behavior, multivariable linear and vector autoregression models are used.
+We select electricity, gas, and coal prices as explanatory variables, which is in line with the study by Fezzi and Bunn [18]. We give a reduced form of the VAR(p) model in Eq. (6) for both stochastic components XtNB and XtB, with the stochastic components for electricity, natural gas, and oil prices. In this equation, D_{t}, y_{t}, and u_{t} represent the deterministic part, observations, and error terms with zero mean and covariance matrix Σ_{u}, respectively,
+In this VAR model, the y_{t} vector stores carbon and energy prices. We select Lag as 1 by considering the related AIC and BIC results (Table XX) and by inspecting both autocorrelation and partial autocorrelation functions (Fig. 6) of the carbon residuals for various numbers of lag candidates. We obtain the values of parameters given in Tables VI and VII via maximum likelihood estimation. According to Jarque-Bera test results, the residuals do not exhibit Gaussian properties for any of the series XtNB and XtB with a p-value of 0.001 at a significance level of 5% (see Fig. 4) because of the heavy tails of the price changes.
+F. Regime switching models
+Historical carbon prices have different structures that result in high and low priced periods depending on the policies in the market, macroeconomic conditions, and the perceptions of the investors. In Secs. II D and II E, we use dummy variables to include different structural breaks at different periods. Using dummy variables requires defining the structural break days ex ante. Shifts on the price series are assumed to exist only at these break points. An alternative approach that is capable of capturing the effect of structural changes is the regime switching model. Regime switching models address the irregularities in time series, and they are employed in various fields of academic literature, economics, energy, etc. Different phases in time series models are called regimes. Each regime has different characteristics, and it is possible to use different price models for each regime. A regime is determined by an unobservable variable whose probability of occurrence is estimated at each point in time. In the regime switching context, the system evolves within the predetermined states, i.e., expansion and contraction cycles. Transitions are governed by a hidden process with probabilities that are extracted from the historical time series [9].
+We consider a Markov switching model with a hidden governing process with 2 states. This implies that if the current regime is of type 1, then with p_{11} probability, it will remain in the same regime, and with probability p_{12}, where p_{12} = 1 − p_{11}, it will continue with regime type 2. Due to the Markovian property, the next regime only depends on the current regime. In other words, there exists a transition matrix as follows:
+We eliminate the deterministic part from log prices and derive the stochastic part XtNB as we did in the previous estimations. We model the stochastic component using two different processes: (i) Markov switching univariate process with an autoregressive component (MS-AR) and (ii) Markov switching VAR model (MS-VAR) using electricity, oil, and natural gas prices as explanatory variables. Then, with the aid of MS–Regress (MATLAB Package for Markov Regime Switching Models [31]), we obtain state dependent coefficients and covariance matrices using maximum likelihood estimation. In the MS-AR model, we use 1 period lagged autoregressive process where the autoregression coefficient depends on the regime. The estimated autoregression parameters are α_{1} = 0.9359 for the first state and α_{2} = 0.7631 for the second state. Variances of error terms are 0.0004 and 0.0041 at the first and second states, respectively. The transition probability values are p_{11} = 0.9298 and p_{22} = 0.8140. In addition to the coefficients, MS–Regress allows a smoothed probability for each state at each time period. Since in our model we have two regimes, we assume that the state is equal to 1 if the smoothed probability of the first regime is higher than the smoothed probability of the second regime and vice versa.
+We derive historical regimes between 2009 and 2017 as presented in Fig. 5. We conclude that there is a change in the structure when there are consecutive periods of state 2. We observe a break around July 2011 (Debt crisis) and another around January 2013 (Phase change). The regime switching model indicates another structural effect around the first half of 2016 which may be due to Brexit.
+We also analyze the multivariate regime switching model. The VAR model with regime switching properties has the following structure:
+where u_{t} has a zero mean and a covariance matrix Σ(S_{t}). In this representation, both covariance matrices and regression coefficients A are state dependent. The transition probability values for the multivariate model are p_{11} = 0.9611 and p_{22} = 0.7706. We provide the regime switching VAR model coefficients and covariance matrix coefficients in the MS-VAR model in Tables VIII and IX, respectively.
+G. Structural vector autoregression model
+In this section, in order to cope with the inadequacy of providing structural insights of VAR models [36], we use variance decomposition for the associated characterizations, i.e., identifying instantaneous interactions. These structural VAR models have widely facilitated the investigation of macroeconomic phenomena [22]. Maciejowska [24] and Paschen [29] implement the SVAR models for British and German electricity markets, respectively. Fezzi and Bunn [18] also consider carbon, electricity, and coal prices in a structural co-integrated VAR model. SVAR based methods provide a means of gaining a detailed understanding of component interdependencies and allow to make assumptions beforehand and test them [33]. However, traditional SVAR models fail to diagnose the structural shocks effectively [23]. To deal with this drawback of SVAR models, orthogonalization or heteroskedasticity is particularly useful in refining the models. In line with these methods, SVAR models are enriched with the Markov switching properties of the historical data. These models are preferred especially in the macroeconomic context in order to draw reasonable conclusions about co-movements and the relationships between other determinants and shocks. Statistical identification is selected to analyze and verify the quality of the parameters in recent works (see, for example, the study by Tang [37]). Lanne et_al [23] test the efficacy of the Markov switching feature in parameter estimation and show that state-dependent covariances allow us to describe the shocks properly without making further restrictions. They start the procedure with estimating covariance matrices using maximum likelihood estimation and continue with Hamilton's [20] Expectation Maximization algorithm to derive the parameters and covariance matrices.
+The structural VAR model can be given as follows:
+where, in contrast to RS-VAR, the correlation coefficients depend on the state s. According to the findings of Lanne et_al [23], once the covariances of the states are estimated, a structural matrix is found uniquely if the diagonal elements of Λ_{i} in Eq. (10) are different from each other
+In this study, we adopt the methodology described by Lanne et_al [23] and estimate the parameters in the MATLAB environment by using the package given by Perlin [31]: initially, we obtain regime switching parameters of the VAR(1) model, and then, we decompose the covariance matrix and obtain the B coefficient. It is worth noting that we derive a separate regime switching VAR such that only covariance matrices switch, not the A coefficient. We obtain structural parameters via numeric methods instead of statistical estimation. We solve the nonlinear system by using the trust-region reflective algorithm and select the Cholesky decomposition of covariance matrices as a starting point for the algorithm. We present the results in Tables X and XI.
+We estimate λ_{1} = 24.9495, λ_{2} = 13.3121, λ_{3} = 260.9018, and λ_{4} = 5.2668. Considering that the model is unrestricted and λ_{i}'s are different from each other (in line with the study by Lanne et_al [23]), we conclude that the shocks are characterized properly.
+III. COMPUTATIONAL ANALYSIS
+In this section, we first apply validation tests to evaluate the simulation performances. Then, we compare the models through performance tests over the period of 2009–2017.
+A. Validation tests
+We evaluate the simulation performances of the suggested models via mean average percentage error [MAPE, see Eq. (11)], root mean squared error [RMSE, see Eq. (12)], and the coefficient of estimations (R^{2}). In the equations below, N, T, and P represent the number of simulations, the number of observations, and prices, respectively,
+In order to test the validation of regime switching models in terms of quality of regime classification, we use the RCM (Regime Classification Measure) method proposed by Ang and Bekaert [4]. In an ideal RS model, the classification should be sharp, and at each time period, the probabilities for being in a certain state should be close to either one or zero. The RCM metric is defined as
+where K is the number of different states. In inferior models, in terms of regime classification, the probabilities are all around 1/K. Therefore, ∏i=1Kp_{i,t} will be 1/K^{2}, and hence, the metric takes values between 0 and 100, where 0 represents an ideal model. We obtain RCM results for MS-AR and MS-VAR models as 30.4991 and 2.4232, respectively. In our case, we conclude that 2-state regime switching models of univariate and multivariate cases can represent the underlying structure.
+B. In-sample and out-of-sample results
+We provide forecasting performances of 100 simulations in terms of MAPE, RMSE, and RS values in Table XII. The presented results are for the comparison of sorted one period ahead forecast data and real historical values. We generally carry out the price forecasts for medium horizon for strategic decision making and risk management. The distributions of prices and extreme values are more important than pinpointing the price for a given day for both purposes. Therefore, we compare the sorted unseasonalised prices in the given time horizon with 100 different stochastic price forecast series.
+Both Markov switching models and the structural VAR model fit to the in-sample data better than any other model. The main reason for this is there have been structural and policy changes between 2009 and 2017, and the Markov switching based models represent these changes better than any other alternative. When we compare the univariate and multivariate models both with and without the dummy variable for the in-sample data, using dummy variables provide better performance. Univariate models have superior performance to their multivariate counterparts in all settings including the Markov modulated models. Considering all values, we conclude that MS-AR gives the best results.
+We also analyze the out-sample forecasts in a 60 day interval between July 2017 and September 2017 by using the estimated coefficients for February 2009 to June 2017. Similar to the in-sample analysis, we generate 100 random paths for the next 60 day period and compare the performance of different models in Table XIII.
+In the out-of-sample analysis, the regime switching models and the SVAR model still perform well. Compared to the in-sample analysis, the vector autoregression without breaks also function satisfactorily as the regime switching models in the out-of-sample data. Moreover, the multivariate model without breaks runs better than the one with breaks. This result is expected since the out-of-sample analysis is performed for the last 60 days of data where there is no structural change in the carbon prices. In a 60 day period, the relationship of the carbon price with the explanatory variables is more important compared to the policy changes in the market. Both for the in-sample and the out-of-sample, the performances of SVAR and MS-VAR models are similar. These two models have similar constructions but different assumptions. The results show that using either of these two models would be appropriate for multivariate regime switching processes.
+We implement the Wilcoxon test [14] to calculate the performance differences of the modeling approaches. We provide the tabulated results in Appendix C. According to these results, we observe that the order of MS-AR, SVAR, and MS-VAR for in-sample comparison is statistically significant. Performances of models with breaks do not yield statistically different results from each other, both in terms of MAPE and RMSE, for in-sample estimation results. Also, the performances of the univariate models are statistically similar for in-sample tests.
+We carry out in-sample and out-sample tests for different periods in order to verify the test results. We consider 8 different periods, all of which start in January 2009, and the first period ends in June 2015 and others end with 3 month intervals with the last one ending in June 2017. Then, for each term, we calculate the in-sample and out-of-sample fit performances of different models using three measures: MAPE, RMSE, and RS (see Appendix A). Similar to the entire horizon results, MS-AR outperforms all other models, including simple models such as ARMA and more complicated ones such as MS-VAR, for all in-sample periods. Forecast performances of the models at out-sample tests differ for different terms. While the models with break components give the best performances for first four terms, the models without break components produce accurate results in terms of the measures at other terms.
+IV. CONCLUSION
+In this paper, we present various approaches to model carbon prices with respect to other energy prices. We first analyze the possible effects of two major incidents (Debt Crisis and the phase change) in the carbon market and conclude that these structural breaks changed the structure of carbon price processes. We use dummy variables to capture structural changes in the prices. In this case, we observe that the error terms in the autoregressive process are homoscedastic, and hence, the GARCH model is not needed. However, if the structural breaks are not considered, the model is no longer linear and GARCH model is required. When we compare the results of two models, we observe that the model with breaks is superior to the model with a GARCH process. Therefore, we conclude that since there are structural changes in the carbon prices, a model that captures these changes should be used.
+Regime switching models have the power to capture structural changes. The main contribution of this study is the application of regime switching and structural VAR models to the carbon allowance prices as an alternative to dummy variables. We model carbon prices using the Markov switching autoregressive process. In our analysis, the MS-AR model resulted in the best in-sample fit to data for different periods. Moreover, we conclude that the carbon price is related to gas and coal prices because of the market equilibrium equation for marginal electricity prices. We built vector autoregression models with and without dummy variables. We extend this knowledge by defining the relationship with vector based models that allow for the dependent (MS-VAR) and independent (SVAR) price shocks. The empirical results show that MS-AR and SVAR produce the lowest error measures; therefore, they are very useful at explaining the historical prices for backward analysis. However, the SVAR approach is more robust for the forward analysis carried out through out-of-sample tests. Hence, the proposed method is a promising methodology for carbon price forecasting.
+In 2020, Phase 4 of the EU-ETS scheme will start, and allocation to installations will be redefined. The reduction factor will increase to 2.2% from 2021 onwards. Changes in policies will eventually alter the structure of the market, which will in turn change the parameters of the price process. Therefore, a robust pricing method, as the methods introduced in this paper, which can capture the market evolution is inevitable.
+APPENDIX A: RESULTS FOR DIFFERENT TERMS
+The different terms for analysis are defined as follows: Term 1: January 09–March 15, Term 2: January 09–June 15, Term 3: January 09–September 15, Term 4: January 09–January 16, Term 5: January 09–March 16, Term 6: January 09–June 16, Term 7: January 09–September 16, and Term 8: January 09–March 17.
+APPENDIX B: IN-SAMPLE AND OUT-SAMPLE RESULTS—UNSORTED AND LAG SELECTION CRITERION
+APPENDIX C: WILCOXON TEST RESULTS
+APPENDIX D: AUTOCORRELATION (ACF) AND PARTIAL AUTOCORRELATION (PACF) RESULTS FOR LAG SELECTION
+TABLE I. 
+Descriptive statistics of log-prices.
+TABLE II. 
+Trend and break coefficients.
+TABLE III. 
+Monthly averages of carbon series.
+TABLE IV. 
+Akaike Information Criterion (AIC) and Bayesian Information Criterion (BIC) results.
+TABLE V. 
+ARMA(1,1)-GARCH(1,1) coefficients of carbon prices.
+TABLE VI. 
+VAR-NB coefficients and standard errors in parenthesis.
+TABLE VII. 
+VAR-B coefficients and standard errors in parenthesis.
+TABLE VIII. 
+MS-VAR(1) coefficients (state 2 coefficients are given in parenthesis).
+TABLE IX. 
+MS-VAR(1) covariance matrices (state 2 coefficients are given in parenthesis).
+TABLE X. 
+SVAR coefficients [A].
+TABLE XI. 
+SVAR coefficients [B].
+TABLE XII. 
+In-sample sorted test results.
+TABLE XIII. 
+Out-sample sorted test results (60 days).
+TABLE XIV. 
+In-sample sorted results for various terms.
+TABLE XV. 
+Out-sample sorted results of various terms.
+TABLE XVI. 
+In-sample unsorted results for various terms.
+TABLE XVII. 
+Out-sample unsorted results of various terms.
+TABLE XVIII. 
+In-sample unsorted test results.
+TABLE XIX. 
+Out-sample unsorted test results (60 days).
+TABLE XX. 
+Akaike Information Criterion (AIC) and Bayesian Information Criterion (BIC) VAR-NB lag results.
+TABLE XXI. 
+Akaike Information Criterion (AIC) and Bayesian Information Criterion (BIC) VAR-B lag results.
+TABLE XXII. 
+In-sample Wilcoxon Test, p-values for MAPE, RMSE, and coefficient of determination (R^{2}). Term: Feb 2009–June 2017.
+TABLE I. -body
+Variable	Mean	Standard deviation	Min	Max	Skewness	Excess Kurtosis
+Carbon	2.3022	0.4968	1.2670	3.1890	0.2616	1.7378
+Electricity	4.1961	0.1735	3.7838	4.6760	−0.1942	2.2443
+Gas	4.2592	0.3211	3.4215	4.7782	−0.3565	1.9103
+Coal	4.3604	0.2598	3.7377	4.8873	−0.1185	2.6710
+TABLE II. -body
+Model	β_{0}	β_{1}	β_{d}	β_{p}
+No break (NB)	3.0213	−0.0007	…	…
+Break (B)	2.9758	−0.0001	−0.4298	−0.4781
+TABLE III. -body
+Months	1	2	3	4	5	6
+Value	0.0186	−0.0739	−0.0396	−0.0184	0.0630	0.0179
+Months	7	8	9	10	11	12
+Value	−0.0649	−0.0712	0.0056	0.0116	0.0483	0.0460
+TABLE IV. -body
+(P, Q)	(1, 1)	(1, 2)	(2, 1)	(2, 2)
+AIC	−8456.9	−8456.8	−8450.8	−8524.1
+BIC	−8414.0	−8405.8	−8399.7	−8461.7
+TABLE V. -body
+Model	α	β	ω	e	f
+ARMA-B	0.7945	0.1115	…	…	…
+ARMA-GARCH-NB	0.8005	0.0485	2.495e-05	0.9190	0.0671
+TABLE VI. -body
+	Carbon	Electricity	Gas	Coal
+Carbon	0.7092 (0.0135)	0.0178 (0.0153)	0.0024 (0.0170)	0.0918 (0.0131)
+Electricity	0.0152 (0.0084)	0.9498 (0.0095)	0.0071 (0.0105)	0.0085 (0.0081)
+Gas	0.0190 (0.0111)	0.0900 (0.0126)	0.8179 (0.0139)	−0.0074 (0.0107)
+Coal	0.0116 (0.0067)	0.0094 (0.0076)	−0.0087 (0.0084)	0.9657 (0.0065)
+TABLE VII. -body
+	Carbon	Electricity	Gas	Coal
+Carbon	0.7912 (0.0135)	0.0322 (0.0157)	−0.0004 (0.0172)	0.0594 (0.0126)
+Electricity	0.0195 (0.0083)	0.9469 (0.0096)	0.0068 (0.0105)	0.0099 (0.0077)
+Gas	0.0186 (0.0109)	0.0888 (0.0127)	0.8179 (0.0139)	−0.0043 (0.0102)
+Coal	0.0057(0.0066)	0.0099 (0.0077)	−0.0083 (0.0084)	0.9688 (0.0062)
+TABLE VIII. -body
+	Carbon	Electricity	Gas	Coal
+Carbon	0.7750 (0.0434)	−0.0001 (−0.0335)	−0.0023 (−0.0293)	0.0264 (−0.0267)
+Electricity	0.0273 (0.0090)	0.9588 (−2.2442)	0.0820 (−0.3127)	0.0281 (0.0074)
+Gas	−0.0018 (0.040)	−0.0031 (−0.0057)	0.9076 (−0.7061)	−0.0164 (0.0030)
+Coal	0.2362 (−0.0618)	0.07402 (−0.0213)	−0.0191 (0.0073)	0.9663 (0.0971)
+TABLE IX. -body
+	Carbon	Electricity	Gas	Coal
+Carbon	0.0015 (0.0035)	0.0002 (0.0012)	−0.0003 (0.0006)	−0.00000 (0.0003)
+Electricity	−0.0002 (0.0012)	0.0003(0.0181)	0.0001 (0.0169)	0.00001 (0.0040)
+Gas	0.0003 (0.0006)	0.0001 (0.0169)	0.0005 (0.0213)	0.00001 (0.0036)
+Coal	−0.00000 (0.0003)	0.00001 (0.0040)	0.00001 (0.0036)	0.0002 (0.0042)
+TABLE X. -body
+	Carbon	Electricity	Gas	Coal
+Carbon	0.7270	−0.0032	0.0304	0.0616
+Electricity	−0.0113	0.9447	−0.0043	0.0291
+Gas	0.0001	0.0057	0.8931	−0.0732
+Coal	0.2060	0.0354	0.0126	0.9725
+TABLE XI. -body
+	Carbon	Electricity	Gas	Coal
+Carbon	0.0241	−0.0197	0.0006	0.0135
+Electricity	0.0025	0.0014	−0.0103	0.0111
+Gas	0.0073	0.0042	0.0079	0.0220
+Coal	−0.0078	−0.0076	0.0006	0.0062
+TABLE XII. -body
+Model	MAPE	RMSE	R^{2}
+ARMA-GARCH-NB	2.2921	0.3573	0.9961
+ARMA-B	1.7914	0.4166	0.9951
+VAR-NB	2.6241	0.4051	0.9961
+VAR-B	2.178	0.3484	0.9969
+MS-AR	0.2306	0.0411	0.99
+MS-VAR	0.8295	0.1734	0.9991
+SVAR	0.5678	0.1041	0.997
+TABLE XIII. -body
+Model	MAPE	RMSE	R^{2}
+ARMA-GARCH-NB	27.0257	1.7977	0.8881
+ARMA-B	14.4420	0.856	0.9119
+VAR-NB	9.1202	0.7272	0.9474
+VAR-B	16.2575	1.0048	0.9442
+MS-AR	8.0799	0.6526	0.9233
+MS-VAR	11.4541	0.8477	0.9322
+SVAR	11.6513	0.889	0.955
+TABLE XIV. -body
+Method	Term 1	Term 2	Term 3	Term 4
+MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}
+ARMA-G-NB	1.6919	0.301	0.997	2.6255	0.456	0.991	2.3801	0.4179	0.995	3.529	0.6334	0.991
+ARMA-B	2.2195	0.5941	0.99	2.2818	0.6339	0.98	1.8973	0.5929	0.989	3.3142	0.7857	0.9866
+VAR-NB	1.7919	0.3066	0.997	2.6606	0.4386	0.995	1.3159	0.2482	0.998	2.6852	0.4722	0.994
+VAR-B	1.4793	0.264	0.998	1.7531	0.3245	0.997	1.3082	0.2518	0.998	2.9114	0.5335	0.993
+MS-AR	0.2849	0.0519	0.99	0.2383	0.045	0.99	0.2961	0.052	0.99	0.1913	0.0405	0.99
+MS-VAR	2.1913	0.5143	0.993	7.2402	1.6166	0.948	1.3812	0.3038	0.997	9.106	2.4893	0.908
+SVAR	0.6182	0.1418	9.994	0.7736	0.1685	0.991	0.4615	0.0939	9.99	0.6836	0.1512	0.99
+Method	Term 5	Term 6	Term 7	Term 8
+MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}
+ARMA-G-NB	5.2122	1.006	0.9828	2.4665	0.3341	0.995	2.135	0.3341	0.997	2.1613	0.3687	0.995
+ARMA-B	4.0256	0.9394	0.9849	5.3736	1.1072	0.9818	1.8420	0.4572	0.9938	1.8930	0.4326	0.994
+VAR-NB	3.3668	0.5673	0.993	5.0306	0.8587	0.989	1.9888	0.3733	0.9964	2.4	0.3733	0.996
+VAR-B	3.9766	0.6733	0.992	5.133	0.8939	0.987	1.9716	0.3221	0.9972	2.2228	0.3446	0.996
+MS-AR	0.1917	0.0387	0.99	0.1902	0.043	0.99	0.2422	0.043	0.99	0.2767	0.045	0.99
+MS-VAR	5.9176	1.583	0.9527	2.8817	0.7306	0.987	1.5151	0.3654	0.991	2.1869	0.535	0.992
+SVAR	1.7548	0.349	0.996	2.2749	0.4826	0.994	0.7013	0.1519	0.99	0.4336	0.0866	0.998
+TABLE XV. -body
+Method	Term 1	Term 2	Term 3	Term 4
+MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}
+ARMA-G-NB	33.2515	2.9389	0.923	46.5892	4.3479	0.929	18.7989	1.8301	0.877	10.3442	0.7317	0.899
+ARMA-B	8.1515	1.4694	0.94	8.1329	1.4694	0.939	7.4809	1.3926	0.9426	11.1869	1.825	0.9101
+VAR-NB	25.8474	2.288	0.8607	38.2431	3.5966	0.9477	20.6938	1.3771	0.9752	22.3788	1.4287	0.9689
+VAR-B	8.704	0.7796	0.8646	15.3448	1.484	0.9647	10.0738	0.637	0.983	6.9545	0.4989	0.964
+MS-AR	25.3539	2.2510	0.8182	36.0359	3.3644	0.98	25.1698	1.7948	0.98	22.2971	1.4234	0.98
+MS-VAR	24.686	2.1624	0.835	60.85	5.7473	0.895	22.2907	1.4333	0.9692	23.67	1.609	0.8139
+SVAR	24.6375	2.1802	0.8643	37.945	3.5653	0.95	22.2654	1.4488	0.95	22.3643	1.426	0.9689
+Method	Term 5	Term 6	Term 7	Term 8
+MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}
+ARMA-G-NB	10.2882	0.6327	0.896	14.3221	0.909	0.9142	14.6427	0.8847	0.8184	4.3437	0.2011	0.9268
+ARMA-B	13.1631	2.0141	0.8957	15.7271	2.2844	0.877	7.5864	1.2286	0.9555	7.7616	1.2079	0.9570
+VAR-NB	15.4452	0.8179	0.96	1.933	0.1524	0.953	4.3842	0.2751	0.9517	3.5234	0.2102	0.9515
+VAR-B	11.5852	0.7384	0.9608	36.4479	2.2104	0.95	29.0139	1.6928	0.9527	36.3552	1.8624	0.957
+MS-AR	16.4469	0.8585	0.96	2.5830	0.1955	0.95	6.1692	0.3667	0.9542	3.2425	0.1839	0.97
+MS-VAR	17.1284	0.9746	0.8048	3.9831	0.3486	0.90	5.2334	0.3632	0.912	4.8401	0.3631	0.8518
+SVAR	18.4092	0.9754	0.93	3.9303	0.3005	0.933	4.4184	0.2801	0.949	2.1975	0.1381	0.941
+TABLE XVI. -body
+Method	Term 1	Term 2	Term 3	Term 4
+MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}
+ARMA-G-NB	6.892	1.1226	0.9629	8.3094	1.3174	0.9484	8.7195	1.3458	0.947	10.8791	1.6468	0.9254
+ARMA-B	6.0465	0.5758	0.9068	16.5951	1.6499	0.9305	42.9711	2.6266	0.8267	38.3599	2.5578	0.9121
+VAR-NB	6.9331	1.1079	0.669	7.9209	1.2359	0.5971	6.427	1.0251	0.5181	9.1561	1.3971	0.4809
+VAR-B	6.7975	1.0964	0.6603	7.1582	1.1383	0.5928	6.4824	1.0414	0.515	9.8263	1.5048	0.4742
+MS-AR	2.4422	0.4265	0.994	2.4168	0.4257	0.994	2.3508	0.4102	0.994	2.4077	0.4179	0.9946
+MS-VAR	7.7688	1.4223	0.943	16.8791	2.9745	0.7927	5.9116	1.039	0.9674	20,4854	4.0919	0.6788
+SVAR	4.153	0.7008	0.9856	4.469	0.7516	0.9831	3.3808	0.7516	0.99	4.3222	0.7086	0.9847
+Method	Term 5	Term 6	Term 7	Term 8
+MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}
+ARMA-G-NB	13.9911	2.136	0.887	8.6249	2.0055	0.9031	7.7835	1.1432	0.96	7.8406	1.1799	0.9578
+ARMA-B	60.8667	3.2077	0.8970	29.7361	1.8786	0.9178	20.8427	1.2143	0.8091	38.1855	1.9657	0.9583
+VAR-NB	10.6031	1.4865	0.4464	11.9648	1.7412	0.4381	7.3884	1.1022	0.4506	7.8121	1.1244	0.4557
+VAR-B	11.2108	1.6449	0.4393	13.3284	1.9035	0.4291	7.3379	1.0944	0.4501	7.6195	1.1153	0.4559
+MS-AR	2.4083	0.4143	0.994	2.41	0.4087	0.994	2.4108	0.3996	0.994	2.43	0.3942	0.995
+MS-VAR	14.7381	2.9049	0.8034	9.2158	1.7239	0.9188	6.5839	1.1557	0.961	7.9171	1.4183	0.9429
+SVAR	6.7757	1.1036	0.9637	8.1737	1.2217	0.9488	4.4395	0.7004	0.985	3.3922	0.5258	0.91
+TABLE XVII. -body
+Method	Term 1	Term 2	Term 3	Term 4
+MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}
+ARMA-G-NB	32.6478	2.9887	0.1535	46.2348	4.3512	0.1375	20.0159	1.9982	0.3047	11.4704	0.8995	0.1015
+ARMA-B	8.7772	0.9440	0.1113	16.8102	1.7566	0.0424	46.3730	2.8844	0.1436	40.5792	2.7102	0.1344
+VAR-NB	25.5003	2.3039	0.0802	38.129	3.6096	0.0741	18..9735	1.2644	0.9264	22.0893	1.4429	0.7085
+VAR-B	8.5686	0.8914	0.0669	15.2175	1.5458	0.1073	12.4849	0.8577	0.916	7.9836	0.6253	0.678
+MS-AR	25.1149	2.2517	0.3115	35.8815	3.3538	0.954	23.5433	1.6944	0.98	22.0808	1.4409	0.93
+MS-VAR	24.0293	2.2459	0.065	59.9652	5.6783	0.344	20.4038	1.3531	0.8831	25.948	1.9287	0.1202
+SVAR	24.286	2.195	0.1708	37.7568	3.4787	0.11	23.5308	1.3363	0.9454	22.0744	1.4563	0.7912
+	Term 5	Term 6	Term 7	Term 8
+Method	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}	MAPE	RMSE	R^{2}
+ARMA-G-NB	12.9904	0.8008	0.2935	17.8581	1.2743	0.2032	14.4126	0.9822	0.1551	6.3572	0.4202	0.0929
+ARMA-B	62.7653	3.3129	0.2702	33.2983	2.2566	0.1739	22.3577	1.3765	0.0871	39.0900	2.0396	0.0921
+VAR-NB	14.6163	0.8201	0.6255	6.2814	0.4558	0.4914	6.121	0.4276	0.5886	6.2273	0.4334	0.5911
+VAR-B	13.2913	0.8324	0.627	37.2897	2.3069	0.4724	30.3639	1.804	0.585	36.8996	1.8995	0.4028
+MS-AR	15.6444	0.8574	0.777	6.1785	0.4438	0.7616	7.1895	0.4822	0.8425	3.8582	0.2466	0.92
+MS-VAR	18.6873	1.1557	0.1958	11.4999	0.9135	0.2146	8.7896	0.6509	0.4754	8.0669	0.578	0.166
+SVAR	17.7295	0.9954	0.55	10.4568	0.7807	0.3275	7.0234	0.5094	0.7443	3.8968	0.2459	0.7232
+TABLE XVIII. -body
+Model	MAPE	RMSE	R^{2}
+ARMA-GARCH-NB	7.9076	1.1467	0.9605
+ARMA-B	7.6214	1.1759	0.9596
+VAR-NB	7.999	1.1398	0.4696
+VAR-B	7.6337	1.0984	0.476
+MS-AR	2.4171	0.392	0.99
+MS-VAR	4.8703	0.755	0.983
+SVAR	3.7992	0.5748	0.99
+TABLE XIX. -body
+Model	MAPE	RMSE	R^{2}
+ARMA-GARCH-NB	25.6327	2.0463	0.3632
+ARMA-B	18.8445	1.1981	0.2929
+VAR-NB	9.3438	0.7985	0.6734
+VAR-B	16.7532	1.0946	0.594
+MS-AR	8.0660	0.7056	0.8600
+MS-VAR	11.6419	0.9664	0.5361
+SVAR	11.5939	0.9661	0.6473
+TABLE XX. -body
+Lag	1	2	3	4	5
+AIC	−38888.7	−39000.4	−39045.1	−39035.7	−39003.7
+BIC	−38741.2	−38762.1	−38716.0	−38615.9	−38493.1
+TABLE XXI. -body
+Lag	1	2	3	4	5
+AIC	−38828.8	−38939.3	−38980.5	−38969.5	−38937.5
+BIC	−38681.3	−38701.1	−38651.5	−38549.7	−38426.9
+TABLE XXII. -body
+	MS-AR	ARMA-B	ARMA-G-NB	VAR-B	VAR-NB	MS-VAR	SVAR
+MS-AR	1	0	0	0	0	0	
+ARMA-B	0	1	0.7984	0	0.0447	0	0
+ARMA-G-NB	0	0.7984	1	0.0338	0.0504	0	0
+VAR-B	0	0	0.0338	1	0	0	0
+VAR-NB	0	0.0447	0.0504	0	1	0	0
+MS-VAR	0	0	0	0	0	1	0
+SVAR	0	0	0	0	0	0	1
+	MS-AR	ARMA-B	ARMA-G-NB	VAR-B	VAR-NB	MS-VAR	SVAR
+MS-AR	1	0	0	0	0	0	0
+ARMA-B	0	1	0	0	0.4613	0	0
+ARMA-G-NB	0	0	1	0	0	0	0
+VAR-B	0	0	0	1	0.0009	0	0
+VAR-NB	0	0.4613	0	0.0009	1	0	0
+MS-VAR	0	0	0	0	0	1	0
+SVAR	0	0	0	0	0	0	1
+	MS-AR	ARMA-B	ARMA-G-NB	VAR-B	VAR-NB	MS-VAR	SVAR
+MS-AR	1	0	0	0	0	0	0
+ARMA-B	0	1	0	0.2482	0.0993	0	0
+ARMA-G-NB	0	0	1	0	0	0	0
+VAR-B	0	0.2482	0	1	0.0099	0	0
+VAR-NB	0	0.0993	0	0.0099	1	0	0
+MS-VAR	0	0	0	0	0	1	0
+SVAR	0	0	0	0	0	0	1
+FIG. 1. 
+Time series of carbon and energy log-prices.
+FIG. 2. 
+ACF (top) and PACF (bottom) of the stochastic part (left: XtNB and right: XtB) for daily carbon prices.
+FIG. 3. 
+ACF and PACF of the ARMA(1,1)-GARCH(1,1) process for carbon prices.
+FIG. 4. 
+Normal plot of VAR residues (left: XtNB and right: XtB) for carbon prices.
+FIG. 5. 
+Estimated historical states calculated using smoothed probabilities for regime switching models.
+FIG. 6. 
+ACF and PACF of stochastic part for carbon prices.

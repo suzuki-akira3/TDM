@@ -1,0 +1,159 @@
+Almost global existence for the nonlinear Klein-Gordon equation in the nonrelativistic limit
+We study the one-dimensional nonlinear Klein-Gordon equation with a convolution potential, and we prove that solutions with small H^{s} norm remain small for long times. The result is uniform with respect to c ≥ 1, which however has to belong to a set of large measure.
+I. INTRODUCTION
+In this paper, we study the nonlinear Klein-Gordon (NLKG) equation in the nonrelativistic limit, namely, as the speed of light c tends to infinity. Formal computations going back to the first half of the last century suggest that, up to corrections of order O(c^{−2}), the system should be described by the nonlinear Schrödinger (NLS) equation. Subsequent mathematical results have shown that the NLS equation describes the dynamics over time scales of order O(1).
+The nonrelativistic limit for the Klein-Gordon equation on R^{d} has been extensively studied over more than 30 years, and essentially all results only show convergence of the solutions of NLKG to the solutions of the approximate equation fortimes of order O(1). The typical results, from the work of Masmoudi, Machihara, Nakanishi, and Ozawa, ensure convergence locally uniformly in time, either with loss of regularity [see  [Tsutsumi (1984)],  [Najman (1990)], and  [Machihara (2001)]] or without loss of regularity [see  [Machihara et_al (2002)] and  [Masmoudi and Nakanishi (2002)]].
+We also mention the recent papers ( [Lu and Zhang, 2016] and  [Pasquali, 2017]), which discuss the long-time convergence of the solution of NLKG in the nonrelativistic limit on R^{d}: however, the results proved both papers have some limitations, either on the nonlinearity [in  [Lu and Zhang (2016)], the authors studied only the quadratic NLKG] or on the particular form of the solution [in  [Pasquali (2017)]].
+Concerning the nonrelativistic limit of the NLKG equation on the d-dimensional torus T^{d}, we mention the work by Faou-Schratz ( [Faou and Schratz, 2014]), in which the authors were able to justify the approximation of the solutions of NLKG by solutions of the NLS equation over time scales of order O(1) through a variant of the Birkhoff normal form theory. In  [Pasquali (2017)], Birkhoff normal form Theory was exploited in order to recover the result by Faou-Schratz and to generalize it to all smooth compact Riemannian manifolds.
+Actually,  [Faou and Schratz (2014)] dealt with the construction of numerical schemes which are robust in the nonrelativistic limit; we refer also to  [Bao and Dong (2012)],  [Bao and Zhao (2016)], and  [Baumstark et_al (2017)] for the numerical analysis of the nonrelativistic limit of the NLKG equation.
+In this paper, we generalize the techniques developed in  [Bambusi and Grébert (2006)] in order to prove a long-time existence result for the NLKG equation with a convolution potential with Dirichlet boundary conditions, uniformly in c ≥ 1.
+An immediate corollary of our result allows us to show that for any α > 0 any solution in H^{s} with initial data of size O(c^{−α}) remains of size O(c^{−α}) up to times of order O(c^{α(r+1/2)}) for any r ≥ 1; however, we have to assume that both the parameter c and the coefficients of the potential belong to a set of large measure. The main limitation of such a result is that it holds only for solutions with initial data which are small with respect to c.
+The new ingredient in the proof with respect to  [Bambusi and Grébert (2006)] is a diophantine type estimate for the frequencies, which holds uniformly when c → ∞.
+An aspect that would deserve future work is the study of the nonrelativistic limit of the NLKG equation without potential. This is expected to be a quite subtle problem since, for c ≠ 0, the frequencies of NLKG are typically non-resonant, while the limiting frequencies are resonant. The issue of long-time existence for small solutions of the NLKG equation without potential on compact manifolds has received a lot of interest; see, for example,  [Delort and Szeftel (2004)],  [Delort (2009)],  [Fang and Zhang (2010)],  [Fang et_al (2017)], and  [Delort and Imekraz (2017)]. However, all results in the aforementioned papers rely on a nonresonance condition which is not uniform with respect to c.
+The paper is organized as follows. In Sec. II, we state the results of the paper, together with some examples and comments. In Sec. III, we prove our result for the NLKG equation with a convolution potential on I ≔ [0, π].
+II. STATEMENT OF THE MAIN RESULTS
+Now consider the following equation:
+with c ∈ [1, +∞), x ∈ I, f∈C^{∞}(R) a real-valued function with a zero of order four at the origin, with Dirichlet boundary conditions. The potential has the form
+By using the same approach of  [Bambusi and Grébert (2006)], we fix a positive s, and for any M > 0, we consider the probability space
+and we endow the product probability measure on the space of (c,(vj′){j}).
+We recall that in this case the frequencies are given by
+where λ_{j}=j^{2}+v_{j}. Now we introduce the following change of coordinates:
+where Ṽ is the operator that maps u to V*u. The Hamiltonian of (1) now reads
+Therefore the Hamiltonian takes the form
+where
+where N_{l} ∈ C^{∞} for each l (since V ∈ C^{∞}), and
+is a smoothing pseudodifferential operator, which can be estimated uniformly in c ≥ 1.
+Theorem II.1. Consider Eq. (1) and fix γ > 0 and τ > 1. Then for any r ≥ 1, there exists s* > 0, and for any s > s*, there exists a setR_{γ}≔R_{γ,s,r}⊂[1,+∞)×Vsatisfying
+and there exists R_{s} > 0 such that for any(c,(vj){j})∈([1,+∞)×V)\R_{γ}and for any R < R_{s}there exist N ≔ N(r, R) > 0 and a canonical transformation
+such that
+where Z^{(r)}is a polynomial of degree (at most) r + 2, such that
+and such that
+and we have that Z^{(r)}depends on the actionsI=ψψ¯only. Moreover, there existKs*>0and K′ > 0 such that if the initial datum satisfies
+withK<Ks*, then
+Finally, there exists a smooth torus I_{c}such that for any s_{1} < s − 1/2 there existsK_{s1}>0such that
+where r_{1} ≤ r, andd_{s1}is the distance inH^{s1}.
+Remark II.2. The fact that Z depends only on the actions is a direct consequence of the non-resonance property established in Theorem III.3.
+Remark II.3. It would also be interesting to study the dependence of I_{c}on c. One could expect that it should converge to an invariant torus of the NLS equation with a convolution potential. We expect this fact to be true, but it needs further investigation for a proof. This is due to the fact that the NLS equation is the singular limit of NLKG and to the fact that c is only allowed to vary in Cantor-like sets, so that one can only expect a Whitney-smooth dependence.By exploiting the same argument used to prove Theorem II.1, one can immediately deduce the following almost global existence result for solutions with small (with respect to c) initial data.
+Corollary II.4. Fix α > 0, γ > 0, and τ > 1. Then for any r ≥ 1, there exists s* > 0, and for any s > s*, there exists a setR_{γ,τ,s,α,r}⊂[1,+∞)×Vsuch that there exists c* > 0 such that for any(c,(vj){j})∈([1,+∞)×V)\R_{γ,τ,s,α,r}with c > c* the following holds: there existKs*>0and K′ > 0 such that if the initial datum satisfies
+withK<Ks*, then
+III. PROOF OF THEOREM II.1
+In order to prove Theorem II.1, we need to show some nonresonance properties of the frequencies ω=(ωj){j>0}: it will be crucial that these properties hold uniformly (or at least, up to a set of small measure) in (1,+∞)×V since this will allow us to deduce a result which is valid in the nonrelativistic limit regime.
+We use the notation “a ≲ b” (respectively, “a ≳ b”) to mean “there exists a constant K > 0 independent of c such that a ≤ Kb” (respectively, a ≥ Kb).
+Proposition III.1. Let r ≥ 1, c ≥ 1 be fixed. Then ∀γ > 0 ∃Vs,M,γ′⊂Vwith|V\Vs,M,γ′|=O(γ), and ∃τ > 1 s.t.∀(vj){j≥1}∈Vs,M,γ′and ∀N ≥ 1,
+for 0 < |k| ≤ r, supp(k) ⊆ {1, …, N}, and ∀ n∈Z.
+Proof. Let p_{k,n}((vj){j≥1})≔∑j=1Nω_{j}k_{j}+n and assume that k_{h} ≠ 0 for some h. Then
+and hence by Lemma 17.2 of  [Rüssmann (2001)],
+and by choosing γ_{0}=γN^{τ} with τ > s + r + 2 + max(s, 2)/2, we get that the left hand side of (20) is bounded, and therefore the thesis holds.
+Proposition III.2. Let r ≥ 1 be fixed. Then ∀γ > 0, there exists a setR_{γ}≔R_{γ,s,r}⊂[1,+∞)×Vsatisfying
+and ∃τ > 1 such that∀(c,(vj){j})∈([1,+∞)×V)\R_{γ}and ∀N ≥ 1,
+for 0 < |k| ≤ r, supp(k) ⊆ {1, …, N}, σ = ±1, and l ≥ N.
+Proof. Without loss of generality, we can choose σ = −1.Now fix k∈Z^{N} with 0 < |k| ≤ r and fix l ≥ N. Set p_{k,l}(c,(vj){j≥1})≔∑j=1Nω_{j}k_{j}−ω_{l}. We can rewrite the function p_{k,l} in the following way:
+where α≔(∑j=1Nk_{j})−1∈{−r−1,…,r−1}. Now we have to distinguish some cases:
+Case α = 0: In this case, we have that p_{k,}_{l} can be small only if l^{2}≤3(N2+Ns){2}r^{2}. So to obtain the result, we just apply Proposition III.1 with N^{′}≔3(N^{2}+N^{s})r, r′ = r + 1.
+Case α ≠ 0, c≤λN1/2r1/2: We have that
+so |∑j=1Nω_{j}k_{j}−ω_{l}| can be small only for l^{2} < rN^{2}. Therefore, in order to get the thesis, we apply Proposition III.1 with N^{′}≔rN, r′ ≔ r + 1.
+Case α > 0, c>λN1/2r1/2: First notice that if we set f(x)≔x^{2}21+x(1+1+x){2}, and we put x_{j} ≔ λ_{j}/c^{2}, in this regime, we get
+Now define p̃{k,l}(c^{2})≔αc^{2}−λ_{l}1+1+λ_{l}/c^{2}. One can verify that
+and that
+Besides, in an interval cl,α2−ϱα(α+2),cl,α2+ϱα(α+2)=:[cl,α,−2,cl,α,+2], we have that
+Then, by exploiting Lemma 17.2 of  [Rüssmann (2001)], we get that
+for any γ > 0 s.t. γ2(r+1)(r+2)α<ϱα(α+2), γ<(r+2)ϱ2(r+1)(α+2).Now, since in this regime ∂(p_{k,l}−p̃{k,l})∂c^{2}≤12, we can deal with p_{k,}_{l} in a similar way as before, and we can conclude that
+Case α < 0, c>λN1/2r1/2: Since
+we have that p_{k,}_{l} can be small only if λ_{N} < rλ_{N}. So, in order to get the result, we apply Proposition III.1 with N′ ≔ r^{1/2}N, r′ ≔ r + 1.
+Theorem III.3. Let r ≥ 1 be fixed. Then ∀γ > 0, there exists a setR_{γ}≔R_{γ,s,r}⊂[1,+∞)×Vsatisfying
+and ∃τ > 1 such that∀(c,(vj){j})∈([1,+∞)×V)\R_{γ}and ∀N ≥ 1,
+for 0 < |k| ≤ r, supp(k) ⊆ {1, …, N}, σ_{1}, σ_{2} ∈ {±1}, and m > l ≥ N.
+Proof. If σ_{i} = 0 for i = 1, 2, then we can conclude by using Proposition III.2.Now, consider the case σ_{1} = −1, σ_{2} = 1 and denote
+Now fix δ > 3. If m ≲ N^{δ}, then we can conclude by applying Propositions III.1 and III.2. So from now on, we will assume that m, l > N^{δ}.We have to distinguish several cases:
+Case c<λlα: We point out that since
+we get (denote m = l + j)
+that is, the integer multiples of c are accumulation points for the differences between the frequencies as l, m → ∞, provided that α<16.
+Case c > λ_{m}: In this case, we have (again by denoting m = l + j) that λ_{m} − λ_{l} = j(j + 2l) + (v_{m}−v_{l}) = 2jl + j^{2} + a_{lm}, with |a_{lm}|≤Cl, so that
+If l > 2 CN^{τ}/γ, then the term a_{lm} represents a negligible correction, and therefore we can conclude by applying Proposition III.1. On the other hand, if l ≤ 2 CN^{τ}/γ, we can apply the same proposition with N′ ≔ 2CN^{τ}/γ and r′ ≔ r + 2.
+Case λl1/6≤c≲λl1/2: If we rewrite the quantity to estimate
+where α≔∑h=1Nk_{h}, we distinguish three cases:
+• if α > 0, then we notice that
+thus |p_{k,l,m}|>|λl1/3−r2λ_{N}|>0, since l > N^{3};
+• if α = 0, then we just notice that
+which is greater than γ_{0}/N^{τ} for τ > −1, since l > N^{3};
+• if α < 0, then we just recall that |ω_{m}−ω_{l}|>γ_{0}λl1/2, and by choosing γ_{0} sufficiently small (actually γ_{0} ≤ |α|), we get that also in this case p_{k,l,m} is bounded away from zero.The proof of Theorem II.1 is based on the method of Lie transform. Let s > s* be fixed.Given an auxiliary function χ analytic on H^{s}, we consider the auxiliary differential equation
+and denote by Φχt its time-t flow. A simple application of the Cauchy inequality gives
+Lemma III.4. Let χ and its symplectic gradient be analytic in B_{s}(ρ). Fix δ < ρ and assume that
+Then, if we consider the time-t flowΦχtof X_{χ}, we have that for |t| ≤ 1,
+The map Φ≔Φχ1 will be called the Lie transform generated by χ.Given a homogeneous polynomial f of degree r, we denote, following  [Bambusi and Grébert (2006)], its modulus
+where f_{j} is given by
+Furthermore, given a multivector
+we introduce the following norm:
+Definition III.5. Let X: H^{s} ⊕ H^{s}→ H^{s} ⊕ H^{s}be a homogeneous polynomial of degree r,
+Consider the r-linear symmetric formX̃{l}such thatX̃{l}(ψ,ψ¯,…,ψ,ψ¯)=X_{l}(ψ,ψ¯)and set
+so thatX̃(ψ,ψ¯,…,ψ,ψ¯)=X_{l}(ψ,ψ¯).Let s ≥ 1, then we say that X is an s-tame map if there exists K_{s} > 0 such that
+If a map is s-tame for any s ≥ 1, then it will be said to be tame.
+Definition III.6. Let us consider a vector field X: H^{s} ⊕ H^{s} → H^{s} ⊕ H^{s}and denote by X_{l}its l-th component. We define its modulus by
+A polynomial vector field X is said to have s-tame modulus if its modulus⌊X⌉is an s-tame map. The set of polynomial functions f whose Hamiltonian vector fields have s-tame modulus will be denoted byTMs. Iff∈TMsfor any s > 1, we will write f ∈ T_{M}and say that f has tame modulus.
+Remark III.7. The property of having tame modulus depends on the coordinate system.
+Definition III.8. Let X be an s-tame vector field homogeneous polynomial of degree r. The infimum of the constants K_{s}such that the inequality
+holds will be called tame s norm of X and will be denoted by|X|sT.The tame s norm of a polynomial Hamiltonian f of degree r + 1 is given by
+where the sup is taken over all multivectors ϕ = (ϕ^{(1)}, …, ϕ^{(r)}) such that ϕ^{(j)} ≠ 0 for any j.
+Definition III.9. Letf∈TMsbe a non-homogeneous polynomial, and consider its Taylor expansion
+where f_{m}is homogeneous of degree m. Let R > 0, then we denote
+Such a definition extends naturally to analytic functions such that (29) is finite. The set of functions of classTMsfor which (29) is finite will be denoted by T_{s,R}.With the above definitions,
+It is easy to check that the set T_{s,R} endowed with the norm (29) is a Banach space.Now we introduce the Fourier projection
+and we split the variables (ψ,ψ¯) into
+The use of Fourier projection is important in view of the following result, whose proof can be found in Appendix A of  [Bambusi and Grébert (2006)].
+Lemma III.10. Fix N and consider the decomposition ψ = ψ_{l} + ψ_{h}as above. Letf∈TMsbe a polynomial of degree less or equal than r + 2. Assume that f has a zero of order three in the variables(ψ_{h},ψ¯{h}), then one has
+Lemma III.11. Letf,g∈TMsbe homogeneous polynomial of degrees n + 1 and m + 1, respectively. Then one has{f,g}∈TMs, and
+The proof of this lemma can be found again in Appendix A of  [Bambusi and Grébert (2006)].
+Remark III.12. Given g analytic on H^{s} ⊕ H^{s}, consider the differential equation
+where by X_{g}we denote the vector field of g. Now define
+In the new variables(ϕ,ϕ¯)defined by(ψ,ψ¯)=Φ(ϕ,ϕ¯), Eq. (32) is equivalent to
+Using the relation
+we formally get
+In order to estimate the terms appearing in (34), we exploit the following results.
+Lemma III.13. Let h, g ∈ T_{s,R}, then for any d ∈ (0, R) one has that {h, g}∈ T_{s,R−d}, and
+Proof. Write h = ∑_{j}h_{j} and g = ∑_{k}g_{k}, with h_{j} homogeneous of degree j and similarly for g. Then we have
+where {h_{j}, g_{k}} has degree j + k − 2. Therefore by (31) in Lemma III.11,
+where we exploited the inequality k(R − d)^{k−1} < R^{k}/d, which holds for any positive R and d ∈ (0, R).
+Lemma III.14. Let g, χ ∈ T_{s,R}be analytic functions; denote by g_{l}the functions defined recursively by(34); then for any d ∈ (0, R) one has that g_{l} ∈ T_{s,R−d}, and
+Proof. Fix l and denote δ ≔ d/l. We look for a sequence Cm(l) such that
+By (37) in Lemma III.13, we can define the sequence
+One has
+and using the inequality l^{l} < l!e^{l}, one can conclude.
+Lemma III.15. Letf∈TMsbe a polynomial which is at most quadratic in the variables(ψ_{h},ψ¯{h}).Then ∀γ > 0, there exists a setR_{γ}⊂[1,+∞)×Vsatisfying
+and ∃τ > 1 such that∀(c,(vj){j})∈([1,+∞)×V)\R_{γ}and ∀N ≥ 1 the following holds: there exist χ, Z ∈ T_{s,R}such that
+and such that Z depends only on the actions and satisfies (12). Moreover, χ and Z satisfy the following estimates:
+Proof. Expanding f in the Taylor series, namely, f(ψ,ψ¯)=∑_{j,l}f_{j,l}ψ^{j}ψ¯{l}, and similarly for χ and Z, Eq. (39) becomes an equation for the coefficients of f, χ, and Z,
+Then we define
+By construction and by Theorem III.3, we get estimates (40) and (41). Furthermore, since f is at most quadratic in (ψ_{h},ψ¯{h}), we obtain that ∑_{k>N}(j_{k} + l_{k}) ≤ 2, and thus Z satisfies (12).
+Remark III.16. Let s > s*, and assume that χ, F are analytic on B_{s}(R). Fix d ∈ (0, R) and assume also that
+Then by Lemma III.4 for |t| ≤ 1,
+Lemma III.17. Let χ ∈ T_{s,}_{R}be the solution of Eq. (39), withf∈TMs. Denote by H_{0,l}the functions defined recursively via (34) from H_{0}. Then for any d ∈ (0, R) one has that H_{0,l} ∈ T_{s,R−d}, and
+Proof. Using (39), one gets H_{0,1}=Z−f∈TMs. Then, arguing as for (38), one can conclude.The main step of the proof of Theorem II.1 is the following result that allows increasing by one the order of the perturbation. As a preliminary step, we take the Taylor series of N(ψ,ψ¯) up to order r + 2,
+where N_{l} is a homogeneous polynomial in ψ and ψ¯ of degree l + 2 with variable C^{∞}-coefficients (since V ∈ C^{∞}).Now we consider the analytic Hamiltonian
+Then for R sufficiently small, one has that
+Lemma III.18. Consider the Hamiltonian (51) and fix s > s*.Then ∀γ > 0, there exists a setR_{γ}⊂[1,+∞)×Vsatisfying
+and ∃τ > 1 such that∀(c,(vj){j})∈([1,+∞)×V)\R_{γ}and ∀N ≥ 1 the following holds: for any m ≤ r, there existsRm*≪1, and for any N > 1, there exists an analytic canonical transformation
+such that
+where for anyR<Rm*/N^{τ}the following properties are fulfilled:
+1. The transformationT{(m)}satisfies
+2. Z^{(m)}is a polynomial of degree (at most) m + 2 that depends only on the actionsI=ψψ¯and satisfies (12); f^{(m)}is a polynomial of degree (at most) r + 2. Moreover
+3. The remainder termsRN(m)andRT(m)satisfy
+Proof. We argue by induction. The theorem is trivial for the case m = 0, by setting T{(0)}=id, Z^{(0)} = 0, f^{(0)} = N^{(1)}, and RN(m)=RT(m)=0.Then we split f^{(m)} into two parts, an effective one and a remainder. Indeed, we perform a Taylor expansion of f^{(m)} only in the variables (ψ_{h},ψ¯{h}), namely, we write
+where f0(m) is the truncation of such a series at second order, and fN(m) is the remainder. Since both f0(m) and fN(m) are truncations of f^{(m)}, one has that
+Now consider the truncated Hamiltonian H_{0}+Z^{(m)}+f0(m): we look for a Lie transform T_{m} that eliminates the non-normalized part of order m + 4 of the truncated Hamiltonian. Let χ_{m} be the analytic Hamiltonian generating T_{m}. Using (34), we have
+with Zl(m) the lth term in the expansion of the Lie transform of Z^{(m)} and similarly for the other quantities. It is easy to see that the terms in the first line are already normalized, that the term in (60) is the non-normalized part of order m + 3 that will vanish through the choice of a suitable χ_{m}, and that the last lines contain all the terms having a zero of order m + 4 at the origin.Now we want to determine χ_{m} in order to solve the so-called “homological equation”
+with Z_{m+1} depending only on the actions and satisfying (12). The existence of χ_{m} and Z_{m+1} is ensured by Lemma III.15, and by applying (41) and (56), we get
+In particular, in view of (46), we can deduce (55) at level m + 1. Now define Z^{(m+1)} ≔ Z^{(m)} + Z_{m+1} and fC(m+1)≔(61). By (62), recalling that R<Rm*/N^{τ}, we can deduce (56) at level m + 1. Moreover, provided that Rm*<2^{−(m+1)/2}, one has
+By (38) and (56), one thus gets
+Write now fC(m+1)=f^{(m+1)}+R_{m,T}, where f^{(m+1)} is the Taylor polynomial of order r + 2 of fC(m+1), and where R_{m,T} has a zero of order r + 3 at the origin. Clearly f^{(m+1)} satisfies (57) at level m + 1 since it is a truncation of fC(m+1). The remainder may be bounded by using Lagrange and Cauchy estimates,
+Now define RT(m+1)≔RT(m)◦T_{m}+R_{m,T}. By (46), we can deduce (58) at level m + 1. Then set RN(m+1)≔(RN(m)+fN(m))◦T_{m}. By (57) and (59), together with (46) and (30) in Lemma III.10, we obtain (59) at level m + 1.Now we conclude the proof of Theorem II.1.By taking the canonical transformation T{(r)} defined in the iterative Lemma III.18, we have that
+with Z^{(r)} depending only on the actions and satisfying (12), and for any R<Rm*/N^{τ}, the following holds
+To conclude, we have just to choose N and s such that RN(r) and RT(r) are of the same order of magnitude. First take N = R^{−a}, with a still to be determined; then, in order to obtain that RT(r) is of order O(R^{r+3/2}), we choose a≔12τ(r+2). By taking s > 2τr(r + 2) + 1, we get that also N^{(1,r)} is of the same order of magnitude.Now take K* = 1/24 and construct the canonical transformation (ψ,ψ¯)=T{(r)}(ψ^{′},ψ¯{′}). Denote by I^{′} the actions expressed in the variable (ψ^{′},ψ¯{′}) and define the function N(ψ^{′},ψ¯{′})≔‖I^{′}‖s2. By (14), one has that N(ψ^{′}{0},ψ^{′}¯{0})≤3231R^{2}, provided that R is sufficiently small. Since
+and therefore, as far as N(ψ^{′},ψ¯{′})<649R^{2},
+Denote by T_{f} the escape time of (ψ^{′},ψ¯{′}) from B_{s}(R/3); observe that for all times smaller than T_{f}, (65) holds. So one has
+which shows that T_{f} should be of order (at least) R^{r+1/2}. Going back to the original variables, one gets (16). To show (17), one has to recall that
+and that by (14) and (16), one can estimate the first term and the third term; the second term can be bounded by computing the time derivative of ‖I^{′}‖s2 with the Hamiltonian, and observing that it is of order O(R^{r+5/2}).Now, consider the initial actions (I_{0}, Ī_{0}) ≔ (I(0), Ī(0)). By passing to the Fourier transform,
+we have that for any r_{1} ≤ r
+If we define the torus
+we get
+and by using (66), we obtain
+which is convergent for s_{1} < s − 1/2.

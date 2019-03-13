@@ -1,0 +1,262 @@
+Half theory fractional angular momentum and the application of fractional derivatives to quantum mechanics
+In this paper, we review the fractional derivative and apply it to various problems in quantum mechanics. Among other things, we find fractional angular momentum, with “fractional spherical harmonics” as solutions to the squared quantum mechanical angular momentum operator, but with non-integer eigenvalues. These fractional functions might be interpreted as intermediary states visited by an orbiting electron as it jumps between the more stable, integer angular momentum values in an atom. Alternatively, these fractional states may be of interest in the mechanisms of chemical bonding. The justification for these new states, which are normalizable solutions to Hermitian operators, depends of course on experiment. We remember Feynmann’s statement about quantum mechanics, “Everything that is not expressly forbidden, is mandatory.”
+I. INTRODUCTION
+The standard quantum mechanical squared angular momentum operator, applied to the eigenstate ψ_{l,m}, is written as L^{2}ψ_{l,m} = ℏ^{2}l(l + 1)ψ_{l,m}, where l is a non-negative integer. Similarly, for the z–component we have L_{z}ψ_{l,m} = mℏ ψ_{l,m}, where m is an integer satisfying −l ≤ m ≤ l. In what follows, we extend these eigenvalues to non-integer values, that is, we replace l → l + α and m → m + α, where α is real and 0 ≤ α < 1. This generates a fractional angular momentum with modified angular momentum eigenstates, which we call “fractional spherical harmonics.” The eigenvalues form a spectrum which is a hybrid between being discrete and continuous. We provide a proof that these fractional spherical harmonics separate into sequences of orthogonal eigenfunctions in l, where each such sequence corresponds to a given value of α. Inserting these fractional eigenstates into the standard quantum mechanical problems (e.g., the particle in a box, the hydrogen atom), we find similar hybrid eigenenergy spectra, where the corresponding states vary smoothly between the quantized, discrete states.
+II. THE FRACTIONAL DERIVATIVE
+A. Formula for the fractional derivative
+To begin, we write the first derivative of a monomial, x^{a}, as
+and then generalize to the nth derivative as
+With the nth derivative written as in (2), we find that it can be analytically continued to the so-called fractional derivatives, where n → b, with b any constant b ∈ C,
+where a−b!≡Γa−b+1 is the gamma function (see Refs [5] and  [6] for a general discussion of fractional derivatives).
+Let us check this for, say, b=13,
+Since, in general, these fractional derivatives do not obey the product rule of the single derivative, fractional derivatives must differentiate functions term by term, or monomial by monomial, with all monomials written with a single exponent, e.g., we always write
+Note that the fractional derivative of a constant is, in general, non-zero,
+but a useful relation, which we shall use frequently, is that for positive integer n, we have
+Thus, x^{b−n} will be used below as the first term in the series solutions of the fractional derivative extension of some of the functions in mathematical physics.
+B. Another derivation of the fractional derivative and modified Taylor and binomial expansions
+It is well known that the nth derivative of a function (analytic on and inside a closed path C) is given by Cauchy’s integral formula,
+For use below, we see how (8) can be seen to be consistent with a Taylor series expansion of the function f. First deform the path C to a circle enclosing the point z,
+Then inserting this into (8) yields
+Now for integer n, we expand fz+re^{iθ} in a Taylor Series as
+The only term that survives the θ integration is j = n, and we have the identity
+Note that this formula also allows integration (i.e., n = −|n|) since the infinite negative factorials cancel. This is why we summed from negative infinity in (11).
+We now extend this analysis to non-integer derivatives, say ∂xn+α. We disregard issues dealing with analyticity. Then we begin with (8), using (9),
+where n is an integer and α is a non-integer. To evaluate heuristically the integral over θ, as was done in (11) and (12), we first postulate a modified, or shifted, Taylor expansion of f as
+Inserting (14) into (13) gives
+which is again an identity (note that δ_{j,n} is the Kronecker delta).
+So the postulated results of this section are the extension of Cauchy’s integral formula (13) to non-integral derivatives and a modified Taylor series (14) which we rewrite as
+In the same vein, we postulate a modified binomial expansion as
+We will be using these series expansions below.
+C. Fractional extension of some simple functions
+In this section, we derive generalized trigonometric functions called “generalized cosine,” cos⁡gx,sn, and “generalized sine,” sin⁡gx,sn. We begin with the “generalized exponential function,” exp⁡gβx,sn, defined as
+where the peculiar exponent is explained in the following digression.
+We would like our new functions to behave as do the standard cosβx, sinβx, and expβx. That is, if our new generalized functions are to be useful, we find that we need them to satisfy the familiar relations
+A key requirement in series functions satisfying relations of these sorts is that the derivative of the first term in the series must vanish. We demonstrate this with the derivative of the standard exponential function. We write
+As this is differentiated term by term, we see that the derivative of a given term reproduces the preceding term. That is,
+This behavior is what is needed for the series representation of the exponential function to be equal to its own derivative. The first term at j = 0 obviously vanishes, which is necessary to preserve the form of the exponential. In constructing our generalized functions, we attempt to mimic this. Our particular generalization utilizes fractional derivatives. That is, we make the replacement
+To build a series function whose first term vanishes, we recall (7), which we employ here as
+We have written a question mark at the end because after the 3rd equal sign in the above equation, we see that upon continuing the differentiation, we have upon using the rule (3)
+Thus we see that the factor, −1+sn!−1!, which is zero, has been resurrected by the factor produced by the next fractional derivative, −1!−2+sn!, where the infinite factors, −1!, cancel each other. To circumvent this, we must generalize to fractional derivatives the fact that the integer derivative of a constant is zero, that is,
+The generalization of this constant to arbitrary fractional derivatives is
+where we have used
+Thus, away from x = 0, the third equality in (25) becomes
+Now choosing the arbitrary constants as
+we see that (30) becomes
+which is unable to be resurrected. Note that by Eq. (29), we must stay away from x = 0, so we now have two distinct domains of definition, x < 0 and x > 0. In what follows, we choose the domain x > 0 since then our generalized functions will be real valued.
+With this generalization of the differentiation constant, we differentiate (18) as
+and we have the familiar differential property of the exponential function. Note that the first term in the series, in the 4th line above, has necessarily vanished, using (32).
+We now find the corresponding generalized trigonometric functions using a technique analogous to the DeMoivre theorem. We set β → iβ and then split the summation index, j, in (18), into even and odd parts,
+Note that these reduce to the standard cosine and sine functions when sn=1.
+We would like to have
+and
+We check by computing the fractional derivative
+where we have written
+for ease in typing. In an analogous manner, we show that
+That is,
+Collecting results, we have for the generalized exponential and trigonometric functions
+These functions will be used below for a fractional quantum mechanical particle in a box.
+III. APPLICATION: PARTICLE IN A BOX
+In this part, we apply the relations (41)–(46) to the quantum mechanical particle in a box. The standard hamiltonian for a particle in a one-dimensional infinite potential well is given by
+where
+In operator form, (47) becomes
+with boundary conditions
+Moving to the fractional domain, we redefine the operators on both sides of (49), giving
+(for an alternate, modified, Schrodinger operator, see Refs [3] and  [1]). To solve this, we separate variables, letting ψx,t=TtXx, with energy as the separation constant, E. Then we have the two separated equations
+Note that since ∂x†=−∂_{x}, we define ∂xsn{†}≡−1{sn}∂xsn in order that (52) and (53) be Hermitian. Equation (52) can be solved using (41) with β=Eiℏ giving
+Equation (53) can be solved by defining Xx=singβx,sn. Then from (45) and (46)
+which implies
+Then our fractional solution for a particle in a box is given in general by
+We now need to determine the allowable eigenenergies, E. To do so, we use the boundary conditions ψ0=ψL=0. To satisfy ψ0=0, we see from (43) that sn must be greater than zero. To satisfy ψL=0, we must find the roots, r_{k}, to
+Having done so, we then set
+and solving for the kth eigenenergy, E_{k}, we get
+Plots of sin⁡gx,sn for sn=14,12,34 are given in Fig. 1.
+The first three positive roots of sin⁡gx,14 occur at r_{k}=1.923,5.115,8.242, while the first three positive roots of sin⁡gx,34 occur at r_{k}=2.701,5.911,9.019.
+We plot the first three eigensolutions for sn=14, X_{k}x=singβ_{k}x,14. These are plotted below in Fig. 2, for L → 1.
+Next we plot the first three eigensolutions for sn=34 in Fig. 3.
+We finish this section with a plot of the energy vs. the root for sn=14, ℏ = 1, L = 1, m=12, which is plotted in Fig. 4.
+We note that the energy seems to increase parabolically, just as for the standard case, where sn=1 and the kth root is given by πk,
+IV. QUANTUM ANGULAR MOMENTUM
+A. Fractional angular momentum eigenvalues
+Here we follow closely, and modify, Liboff [4]. The standard operator of angular momentum is
+where
+If we define the squared angular momentum as
+then it can be shown that
+We further define the raising/lowering operators
+where, from (66), we also have
+Since [L^{2},L_{z}]=0, we can define the simultaneous eigenfunctions as
+and
+Note that since
+and because of (68), we can link together states with the same L^{2} eigenvalue, but with differing L_{z} eigenvalues. To see this we write
+So we see that L_{±} raises or lowers the L_{z} eigenvalue and we write
+To find the proportionality constant, c_{±}, we note that L^{2} can be written as
+or
+Then for normalized ψ_{lm}, we sandwich this as
+or
+So we can raise and lower m in unit steps without changing the L^{2} eigenvalue, ll+1. But since Lz2≤Lx2+Ly2+Lz2=L^{2}, this raising and lowering must terminate at some point. Thus, from (73) and (77), we must have
+and
+This is solved by assigning
+and
+Since the L_{z} eigenvalues are separated by ±1, we see that we must have
+where N_{l} is a non-negative integer. This implies that l is either an integer or a half-integer. The drawing below Fig. 5 shows the allowed values of m.
+We now attempt a consistent scheme for fractional angular momentum. We propose in-between states with
+and
+where 0 ≤ α < 1. We will see below that both signs of α will be needed in the derivation. We proceed as before,
+We will see that the raising and lowering operators must be adjusted as
+where L±α must be used to raise and lower the states ψ_{lα,mα} and L±−α must be used to raise and lower those of ψ_{l−α,m−α}. Our picture of allowed eigenvalues thus becomes more complex as shown in the as shown in Fig. 6.
+Note in this figure that we have grouped the states with equal L^{2} eigenvalues. That is, the states residing on m→±m_{α}=±m+α are given the L^{2} eigenvalue, ℏ^{2}l_{α}l_{α}+1. Similarly, the states occupying m→±m_{−α}=±m−α are given the L^{2} eigenvalue, ℏ^{2}l_{−α}l_{−α}+1. Using this grouping, we see from (87) that our eigenfunctions do terminate at the extreme limits of ±m_{±α} = ±l_{±α}. For example, on the top-left portion of the figure, we must have L−−αψ_{l−α,−l−α}=0. We check this using (87),
+which vanishes, as we wished. The remaining extremal m_{±α} states also vanish, when operated on by the appropriate ladder operator, as can be checked.
+But we have trouble. In the top-right portion of Fig. 6, we see that by lowering the m-value from m = α to m=−1+α=−1−α, the L^{2} eigenvalue abruptly changes from the ℏ^{2}l_{α}l_{α}+1 group to the ℏ^{2}l_{−α}l_{−α}+1 grouping. Defining L^{2},L±±α=0, these two groups cannot be linked by L±±α. For example, consider a given state ψ_{α} with square angular momentum eigenvalue ℏ^{2}l_{α}l_{α}+1. Then the state ψ_{−1+α}, obtained from ψ_{α} by operation with L−α, must have the same square angular momentum value. That is, we have
+But we group the state ψ_{−1+α}=ψ_{−1−α} to have L^{2} eigenvalue ℏ^{2}l_{−α}l_{−α}+1, not ℏ^{2}l_{α}l_{α}+1, since its sequence is eventually terminated by L−−αψ_{l−α,−l−α}=0. Thus, there is no available state, ψ_{lα,−1+α}, into which the state, ψ_{lα,α}, can decay. We thus temporarily define the origin crossing operations
+and
+These definitions will be altered below. So, presently, we have four trapped groupings of permissible fractional angular momentum functions, two with eigenvalue ℏ^{2}l_{α}l_{α}+1 and two with eigenvalue ℏ^{2}l_{−α}l_{−α}+1. The eigenvalues of the first two groups can be summarized as
+where, for now, the plus and minus states, m_{±α}, can be linked by L±α, only if α = 0 or if α=12. This is so because L±α increments the states by ±1. Similarly, the eigenvalues of the second two groups are given by
+These second two groups also, for now, can only be linked by L±−α, if α = 0 or if α=12.
+The possible values of the L_{z} and L^{2} eigenvalues are summarized in the sketch in Fig. 7. We have flipped the two groupings on the left from the previous sketch (Fig. 6) to create two horizontal disjoint sets with equal L^{2} eigenvalues. In general, only those states belonging to one of the four given line segments are linked by L±α or L±−α.
+But note that the “negative” states ψ_{l−α,m−α} are degenerate to the “positive” states ψ_{lα,mα}. This can be seen by drawing a straight, vertical line anywhere in the above Fig. 7 and identifying the two intersected states as degenerate (for given l_{α}=l_{−α^{′}}+1, where α′ = 1 − α). There is thus a one-to-one correspondence between the positive and negative groupings, and below we consider only the positive states of Eqs. (94)–(97).
+At this point, we must amend some of the definitions above, particularly Eqs. (90)–(93). We find that for the consistency of our theory, the positive states, m_{α}, must be linked to the negative states, −m_{α}. To do so, the transition between α ↔ −α must be handled with care since, in general, the interval between them is not unity. Now for general l_{α} and m_{α}, we have as before
+But to link ψ_{lα,−α} to the neighboring ψ_{lα,α}, we must postulate the following connection rules:
+and
+The consistency of these definitions is tested by examining the expectation values of L^{2} in these states. Now it can be shown that
+Setting l and m to zero, Eqs. (102)–(104) become, when operating on the appropriate states,
+Writing ψ_{α,α} ≡ |α, α⟩, the expectation value of (105) becomes for this state
+as desired. The same result is obtained for the state ψ_{α,−α} ≡ |α, −α⟩. Note that had we used the definitions (90)–(93) all ladder operators in (108) would annihilate the states, leaving the erroneous answer ⟨L^{2}⟩ = ℏ^{2}α^{2}.
+Testing (102) for the general ψ_{lα,mα}≡|l_{α},m_{α}, we have
+as we wished for. The proof goes the same for ψ_{lα,−mα}≡|l_{α},−m_{α}.
+B. Fractional angular momentum eigenfunctions
+Now that we have the fractional eigenvalues, let us see if we can find the corresponding eigenfunctions. For L^{2}, the equation to be solved is
+Rewriting Yθ,φ as
+separating variables, and writing the separation variable as −mα2 lead to the two equations
+and
+Now (112) has the solution
+Turning attention to (110), we first rewrite it, setting x = cos θ and Θθ→fx, giving
+which is solved in two steps immediately below.
+C. Fractional Legendre equation
+As adapted from the work of Arfken and Weber [2], it proves easier to solve (115) by first considering the simpler equation obtained by setting m_{α} → 0, i.e., we solve the fractional Legendre equation
+where 0 ≤ α < 1. Having solved for the P_{lα} functions, the solutions for non-zero m_{α} in (115) are obtained by the fractional derivative
+as generalized from the standard case when m_{α} → m. This procedure of first finding P_{lα}x and then finding Pl_{α}m_{α}x through (117) is in direct analogy to the standard case, where in our case, we send l → l_{α} ≡ l + α and m → m_{α} ≡ m + α. Again from the work of Arfken and Weber, we have a formula for the standard Legendre polynomials
+where
+We now move the fractional domain by setting
+and shifting the index variable as
+Then, as a generalization of (17), Eq. (119) becomes
+where l_{α}−j_{α}!=l+α−j+α!=l−j! causes the series to terminate at j = l. Using this, (118) becomes
+or performing the fractional differentiation, we have for our fractional Legendre function
+which is not a polynomial, but an infinite sum. This can be rewritten in terms of (120) and (121) as
+where we remember that we are summing over j (i.e., the “α” is not changed throughout the summing procedure). A detailed proof that this satisfies the fractional Legendre equation (116) is given in Appendix A.
+Note that due to the factor j_{α}! in the denominator, this expression for the fractional Legendre function diverges for large negative j. But this does not matter to us. This function is an intermediate step to the solution of the fractional associated Legendre equation (115). The solution to this equation will be shown to be finite.
+D. The fractional associated Legendre functions and fractional spherical harmonics
+Our main aim is to find the eigenfunctions to the fractional squared angular momentum operator. As described above, for the θ part of the solutions, we are following a two-step process of first solving the fractional Legendre equation and then differentiating these to find the solutions to the more pertinent Eq. (115). To be more precise, we use (117) as applied to (125). So writing these down, we have our fractional associated Legendre functions immediately,
+Note that the infinite lower limit in the sum becomes finite, as can be seen by examining that factorial in the denominator
+This diverges when
+where
+Recognizing this, (126) becomes
+To facilitate a proof (to be given in Appendix B) that (130) solves (115), we shift the summation index as j→j+l+m2 and write finally for our fractional associated Legendre functions
+Thus combining these with (114), using the product (111), we have the fractional spherical harmonic solutions
+where I have heuristically, without any proof or justification, extended the standard normalization, N, of the spherical harmonics to the fractional case, by substituting l → l_{α} and m → m_{α}.
+Using the above normalization, N, for the associated Legendre functions, we plot |2πNPl_{α}m_{α}cos⁡θ|^{2} for various values of α, l, and m. The vertical axis is the z-axis, and the horizontal axis is the xy-plane. We first plot Fig. 8, for l = 1, m = 1.
+We next plot l = 2, m = 0, for α = 0 and α = 1/2.
+Note from Figs. 9 and 10, the separation of the vertical lobe in going from α = 0 to α = 1/2. This might be useful in considering chemical bonding.
+Finally, we plot for l = 3, m = 2, in Fig. 11.
+E. Orthogonality of the fractional spherical harmonics
+In this section, we establish the orthogonality of the Yl_{α}m_{α}x. The linear operator corresponding to the fractional associated Legendre equation (115) is given by
+That this is self-adjoint can be shown by integrating by parts twice,
+where, for ease in notation, I have substituted, u_{i}=Pl_{α,i}m_{α,i}x, u_{j}=Pl_{α,j}m_{α,j}x, and where l_{αi}=l_{i}+α_{i} and m_{α,i} = m_{i} + α_{i}. To prove orthogonality, we write (135) twice as
+where careful attention is made in distinguishing between the operators L_{αi}≠L_{αj}. Subtracting (137) from (136) yields
+Using (135) on the LHS gives
+Now to establish orthogonality, the LHS of the last equality must vanish, that is, we must have mα_{j}2=mα_{i}2 or
+Inserting these into (139) and integrating over the appropriate domain gives
+where l_{α,i} = l_{i} + α. Thus for l_{α,i} ≠ l_{α,j}, the integral vanishes, and we have finally
+where we must have α_{i} = α_{j} ≡ α and m_{i} = m_{j} ≡ m. Multiplying Pl_{α,i}m_{α}x→Pl_{α,i}m_{α}cos⁡θ by the z-component angular momentum eigenstate, e^{imαφ}, gives the obvious generalization to the fractional spherical harmonics
+for given α. Thus we have a kind of hybrid spectrum, where for each chosen, continuous value of α, we have a tower of orthogonal eigenvalues in the integer l.
+V. HYDROGEN ATOM: APPLICATION OF FRACTIONAL ANGULAR MOMENTUM
+As an application of the above fractional spherical harmonics, we calculate the wave functions and energies of the hydrogen atom. We find energies intermediate to the standard E_{n}=−13.6eVn^{2}. In the following, we follow closely Arfken and Weber.
+With the proton at the origin, the Schrodinger equation for the hydrogen atom is given by
+and the radial equation becomes
+where I have separated variables as
+and where
+Setting
+(145) becomes
+To solve this, we first define the following radial function:
+and solving this for Lp_{α}k_{α}=e^{ρ2}ρ^{−kα+12}Φp_{α}k_{α}ρ, we substitute it into the following associated Laguerre equation of which Lp_{α}k_{α} is the solution and is given by
+Making this substitution yields
+This is identical to our radial hydrogen atom equation (151) if we make the replacements
+and
+Making the further assignment
+then p_{α} becomes
+which is an integer.
+Thus, with the above assignments, Rr=1rΦp_{α}k_{α}κr≡e^{−κr2}κr{lα}Lp_{α}k_{α}κr is the solution to the fractional radial wave equation, given by (145). We only need to find the function Lp_{α}k_{α}ρ which is the solution to the fractional equation (153). This is done in Appendix C.
+By combining Eqs. (148), (150), and (157), we may solve for the continuous energy spectrum of these fractional states, with the result
+In summation, we have for the fractional hydrogen atom the following states:
+A. Orthogonality of the radial fractional hydrogen eigenstates
+To establish the orthogonality of the radial hydrogen states, we first write down the radial operator
+or setting u_{i}=rRl_{i},n_{i}α_{i}r,
+It is easy to see that this is self-adjoint, by writing
+where we have integrated by parts twice. Then writing (166) twice, we have
+To provide orthogonality, we must set l_{αi}l_{αi}+1=l_{αj}l_{αj}+1 or
+In such case, we integrate over the appropriate range in (167), which gives
+or replacing the above definitions for the u_{i} and u_{j},
+and the fractional radial hydrogen eigenstates are orthogonal. We thus again have a superposition spectrum, where we have a tower of states labeled by the integer n, with each such family labeled by the continuous index α.
+APPENDIX A: FRACTIONAL LEGENDRE FUNTION
+Here we check that our candidate fractional Legendre function (125) actually solves the fractional Legendre equation (116). For convenience, we rewrite this equation,
+We begin the proof by writing down the function and its first two derivatives, neglecting the constant prefactors,
+where the last equality holds (l − 1 → l, in the upper summation limit) by virtue of a negative integer factorial in the denominator at the limit j = l. Using these, the three terms in (A1) become
+and the second term becomes
+while the third term becomes
+where I have used two of the sums in (A4) as appropriate to write (A7).
+We now add these three terms to see if we have, in fact, a solution to (A1).
+Extracting the common factorials, we have
+The term in braces must vanish for all j. These terms do in fact vanish for all j, as can be verified by lengthy algebra. Thus our candidate fractional Legendre function (125) is seen to be a solution to the fractional Legendre equation (A1).
+APPENDIX B: FRACTIONAL ASSOCIATED LEGENDRE FUNCTION
+We check if Pl_{α}m_{α}x, as given by (131), l + m ∼ even, solves the associated Legendre equation. Rewriting this equation, we have
+The function and its first two derivatives are given as
+where “S” stands for the cumbersome summation. Then the first two derivatives are
+and
+Inserting (B2)–(B4) into (B1) gives
+Collecting terms gives after simplification
+To go any further, we must compute S′ and S″. From (B2),
+where we do not alter the summation limits when differentiating, but let some of the terms corresponding to the extreme values of the sum vanish naturally (e.g., through negative integer factorials in the denominators). Now we insert these into (B6), which must vanish, giving
+The summations group together as
+In performing the messy algebra on the above, we find that the terms in curly braces cancel each other and that our even fractional associated function given by (131) is the solution to the fractional associated Legendre equation. The proof for m + n ∼ odd is performed in the same fashion.
+APPENDIX C: FRACTIONAL LAGUERRE POLYNOMIALS
+In this appendix, we extend the standard associated Laguerre polynomials to those with fractional indices, which are needed to solve (153) in the derivation of the fractional hydrogen atom. For convenience, I rewrite (153) as
+Now in the standard case, for α = 0, this has the known solution
+From (155)–(157),
+and
+Substituting these into (C2) gives
+This function has been successfully checked, in a similar manner as was the fractional Legendre functions in Appendixes A and B. However, it can be more easily seen to be a solution by noting that all that has changed in going from (C2)–(C5) is the replacement k → k_{α}. Also, since p_{α} = p, all that has been changed in (C1) is k → k_{α}. Thus, with no further work (C5) must solve (C1). For a brute-force proof, see Appendix D.
+APPENDIX D: FRACTIONAL RADIAL HYDROGEN FUNCTIONS
+In this last appendix, we prove in detail that the solutions to the radial hydrogen atom hamiltonian are given by the functions (160) and (161). We first rewrite this hamiltonian in “atomic units” (a.u.), where we set ℏ = e = m → 1 for ease in typing,
+Then from (160) we have the postulated solutions
+where in atomic units
+From (161), Lp_{α}k_{α}κr and its first two derivatives are given by
+where I have simplified writing Lp_{α}k_{α}κr as simply L. We now find the second derivative of ur as given by (D2),
+Inserting (D8) into (D1) gives
+Setting
+and noting that the squared momentum terms cancel, Eq. (D9) becomes the Laguerre equation for L,
+But 2κ=n_{α}, and redefining κr → r gives finally
+where the expression in brackets is the fractional Laguerre equation.
+We solve this by brute-force, to compliment Appendix C, by substituting (D4)–(D6) into the first line of (D11). Upon doing so, and keeping close track of the κ′s, we have the sum
+We manage this by pulling out factors from the factorials to equalize the terms in square brackets,
+The terms in curly braces must vanish. That they do so can be verified by lengthy algebra, while remembering that, from (D3), κn_{α} = 2 and that n − l − 1 − j = n + α − l − α − 1 − j = n_{α} − l_{α} − 1 − j.
+Thus we have shown that our postulated functions, given in (160) and (161), are solutions to the hydrogen atom hamiltonian, but with fractional eigenvalues.
+FIG. 1. 
+Sample plots of the sin g functions.
+FIG. 2. 
+First three eigensolutions for sn=14.
+FIG. 3. 
+First three eigensolutions for sn=34.
+FIG. 4. 
+Eigenenergies for sn=14.
+FIG. 5. 
+Allowed values of m for given l.
+FIG. 6. 
+Naive display of the fractional states.
+FIG. 7. 
+Correct grouping of the fractional states.
+FIG. 8. 
+Polar plot of Pl_{α}m_{α}(/cos⁡θ) for l = m = 1.
+FIG. 9. 
+Polar plot of Pl_{α}m_{α}(cos⁡θ) for l = 2, m = 0, α = 0.
+FIG. 10. 
+Polar plot of Pl_{α}m_{α}(cos⁡θ) for l = 2, m = 0, α=12.
+FIG. 11. 
+Polar plot of Pl_{α}m_{α}(cos⁡θ) for l = 3, m = 2.

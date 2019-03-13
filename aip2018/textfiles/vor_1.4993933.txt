@@ -1,0 +1,210 @@
+An electron beam linear scanning mode for industrial limited-angle nano-computed tomography
+Nano-computed tomography (nano-CT), which utilizes X-rays to research the inner structure of some small objects and has been widely utilized in biomedical research, electronic technology, geology, material sciences, etc., is a high spatial resolution and non-destructive research technique. A traditional nano-CT scanning model with a very high mechanical precision and stability of object manipulator, which is difficult to reach when the scanned object is continuously rotated, is required for high resolution imaging. To reduce the scanning time and attain a stable and high resolution imaging in industrial non-destructive testing, we study an electron beam linear scanning mode of nano-CT system that can avoid mechanical vibration and object movement caused by the continuously rotated object. Furthermore, to further save the scanning time and study how small the scanning range could be considered with acceptable spatial resolution, an alternating iterative algorithm based on ℓ_{0} minimization is utilized to limited-angle nano-CT reconstruction problem with the electron beam linear scanning mode. The experimental results confirm the feasibility of the electron beam linear scanning mode of nano-CT system.
+I. INTRODUCTION
+Nano-computed tomography (nano-CT or sub-micro-CT), which utilizes X-rays to research the inner structure of some small objects and has been widely utilized in biomedical research, electronic technology, geology, material sciences, etc., is a high spatial resolution and non-destructive research technique, for example, the in vivo imaging of small laboratory animals to accelerate human drug development and evaluation process ( [Badea et_al, 2008]), the bone ultra-structure research on the animal models for osteoporosis ( [Peyrin et_al, 2014];  [Peyrin, 2009];  [Schneider et_al, 2007]; and  [Davis et_al, 2014]), the kidney vascular corrosion cast research ( [Wagner et_al, 2011]), the solid oxide fuel cell electrode microstructure research ( [Shearing et_al, 2010]), the microstructure of the nonwoven polishing wheel research ( [Wang et_al, 2014]), and the subacute cerebral venous thrombosis research ( [Stolz et_al, 2011]).
+Practically, three major parts, which contain a nano-focus X-ray source, an object manipulator, and a detector, are included in the scanners of commercial nano-CT system. In traditional CT imaging system, the detector and the nano-focus X-ray source are fixed in a certain distance; the object manipulator is installed between the nano-focus X-ray source and detector; the scanned object is continuously and horizontally rotated around the center of object using an accurate object manipulator ( [Masschaele, 2007];  [Kim et_al, 2007];  [Withers, 2007];  [Sasov, 2004];  [Singhal et_al, 2013]; and  [Masschaele et_al, 2007]) (see Fig. 1 in Sec. II). The object can be preferably reconstructed using an analysis algorithm if the projection data are completed.
+One of the key technologies of the nano-CT system is how to make the object manipulator system to be stabilized. To make the object location very highly accurate and stable, an air-bearing, which includes a stepping motor and an optical encoder, is utilized to make the object manipulator’s rotatable part floats separate with the static part, and in the top of the object manipulator, a special microprocessor controller is utilized to continuously measure local temperature and to control the accuracy of the object location ( [Sasov, 2006]). This method can improve the spatial resolution; however, about 15–100 min will be taken for the projection data acquisition, which is limited to the high accuracy of the spatial resolution required, from the scanning range [0°, 360°].
+To improve acquisition efficiency without compromising scanning time and achieve a chosen magnification, Sasov et_al developed an adaptive geometry approach in the commercial SkyScan-1172, where the distances between the X-ray source, the detector, and the object manipulator are adjusted automatically to obtain the projection data from the scanning range [0°, 360°] ( [Sasov et_al, 2008b]). To change the field of view of a micro-CT scanner, Wang proposed a continuously adjustable field of view method, which displaces a detector array by an amount of greater than 0% but less than 50%, to obtain the projection data from the scanning range [0°, 360°], and formulate a weighting scheme for artifact-free reconstruction ( [Wang, 2002]). To improve temporal resolution and material contrast in small animal imaging studies, Johnston et_al described a dual tube/detector micro-CT system. In their system, a geometric calibration technique, which uses two projection images acquired with the two imaging chains while a phantom contains metallic beads, was utilized to obtain the high resolution reconstruction image. Two projection matrices for each imaging chain, which can be obtained by the geometric parameters, were used to obtain the combination of projection data by a transformation ( [Johnston et_al, 2008]).
+The above scanning modes are traditional scanning modes in which the object manipulator is continuously rotated between 0° and 360°. The traditional nano-CT scanning model with a very high mechanical precision and stability of object manipulator, which is difficult to reach when the scanned object is continuously rotated, are required for high resolution imaging ( [Sasov et_al, 2008a]). The mechanical vibration and object movement may occur when the object manipulator is continuously and horizontally rotated, and then, these geometrical inaccuracies will reduce achievable high spatial resolution of the reconstruction image and may present some artifacts in the reconstruction image. To avoid the mechanical vibration and the object movement, the object manipulator must be very slowly rotated between 0° and 360° that will lead to take a long time for acquiring the projection data. There are some other scanning models that were proposed, for example, an electron beam linear scanning model in which the slip ring replaced by a translation based setup was proposed for developing countries ( [Liu et_al, 2014]), and a straight-line-trajectory-based imaging system at high speed and with low-cost equipment was proposed, in which the source and detector were kept stationary while the scanned object moved along a straight line ( [Gao et_al, 2013]).
+To reduce the scanning time and achieve stable and high-resolution imaging during the projection data acquisition in industrial non-destructive testing, we study an electron beam linear scanning mode of nano-CT system that can reduce the scanning time and avoid the mechanical vibration and the object movement caused by the continuously rotated object. Three major parts, which contain a line array with multiple targets (the multiple targets, which are utilized to produce multiple nano-focus X-ray sources, are activated one by one), a long detector, and an object manipulator, are included in the electron beam linear scanning mode of nano-CT system. In this system, a fixed acquisition system, where the line array with multiple targets and the detector stay parallel statically in a certain distance, and the object manipulator is fixed (i.e., the scanned object stays statically rather than being continuously and horizontally rotated) between the nano-focus X-ray source and detector when the system is scanning, is utilized to obtain the projection data (see Fig. 2 in Sec. II). In nano-CT imaging, the object is very small; it is easy to be covered by an X-ray beam, but for getting high spatial resolution, the scanning time is longer for the scanning range [0°, 360°] (full scan). In this paper, to further save the scanning time, we consider the scanning range [0, θ] (θ < 180°); this mode may reduce resolution because of less limited-angle projections, so we study how small the scanning range could be considered with acceptable spatial resolution using a proper reconstruction algorithm.
+In the electron beam linear scanning mode of nano-CT system, the distance between the nano-focus X-ray source and the rotation center of object is changed with the target that is activated one by one. What’s more, to further save the scanning time and study how small the scanning range could be considered with acceptable spatial resolution, the projection data from the scanning range will be fixed between 0 and β (β < 180°), which will lead to a limited-angle reconstruction problem; the classical filtered backprojection algorithm (FBP) will not work well. In this paper, we will focus on the limited-angle reconstruction problem of the electron beam linear scanning mode of nano-CT system.
+The algebraic reconstruction technique (ART) and simultaneous algebraic reconstruction technique (SART) ( [Kak and Slaney, 1988] and  [Andersen and Kak, 1984]), can be used for the complete projection data. However, some artifacts and noise are presented in the reconstruction images if the projection data are incomplete. Because the iteration reconstruction (IR) algorithms are not influenced by the geometrical structure of scanning mode and can be incorporated with some prior knowledge, they have been widely researched in CT image reconstruction from incomplete data. Recently, total variation (TV) based methods had been utilized to the CT image reconstruction ( [Sidky et_al, 2006];  [Sidky and Pan, 2008];  [Yu and Wang, 2009];  [Yang et_al, 2010];  [Sidky et_al, 2011]; and  [Yu and Zeng, 2015]). Total variation (TV) based algorithm can be well performed for the mild incomplete projection data. However, some limited-angle artifacts near edges of the object will be presented if the projection data from limited-angle CT reconstruction are seriously incomplete.
+In this paper, we study an electron beam linear scanning mode of nano-CT system that can save scanning time and avoid the mechanical vibration and the object movement caused by the continuously rotated object. To solve the limited-angle nano-CT reconstruction problem with the electron beam linear scanning mode, we use the ℓ_{0} minimization model ( [Wang and Zeng, 2016]) that includes a quadratic term, a data fidelity term, and a ℓ_{0} regularization term, which was proposed in our previous work for the traditional scanning mode. The quadratic term of the reconstructed image will maintain the smoothness of the reconstructed image and make the minimum energy of reconstruction image. Furthermore, an alternating iterative algorithm is utilized to deal with the ℓ_{0} minimization model.
+The rest of the paper is organized as follows. In Sec. II, we first illustrate the geometrical structure of the electron beam linear scanning mode of nano-CT system, and then a discrete imaging model and our algorithm are given. In Sec. III, some experiments are given to verify the feasibility of the electron beam linear scanning mode of nano-CT system within a limited-angle scanning range. Conclusions are given in Sec. IV.
+II. METHODS
+A. Geometrical structure of the electron beam linear scanning mode of nano-CT system
+In this section, we focus on the 2D nano-CT system. In the traditional nano-CT system, a fixed acquisition system is utilized to obtain the projection data from the scanning range [0°, 360°]. In this imaging system, the detector and the nano-focus X-ray source are fixed in a certain distance; the object manipulator is installed between the nano-focus X-ray source and detector; the scanned object is continuously and horizontally rotated around the center of object using an accurate object manipulator, and the geometrical magnification can only be changed by moving the object manipulator; the bigger the distance between the object and the detector, the bigger the geometrical magnification is ( [Masschaele, 2007]).
+Figure 1 shows the geometrical structure of the traditional scanning mode of nano-CT system; S denotes the X-ray source, D denotes the detector, O denotes the object, and M denotes the object manipulator. Because the projection data are obtained from the scanning range [0°, 360°], the FBP algorithm can be used to reconstruct the object.
+In this traditional nano-CT system, the object manipulator is continuously and slowly rotated; about 15–100 min (the scanning time depends on the number of projections, resolution, exposure time, materials, voltage, and so on) will be taken for the projection data acquisition, which is limited to the high accuracy of the spatial resolution required, from the scanning range [0°, 360°].
+However, the scanners of the electron beam linear scanning mode of nano-CT system include three major components: a line array with multiple targets, a long detector, and an object manipulator. In this system, the multiple targets, which are utilized to produce multiple nano-focus X-ray sources, are activated one by one (see Fig. 2); the detailed process of the generation of multiple nano-focus X-rays is shown as follows:
+(1) Electrons are emitted from the heated filament of the X-ray tube which is directly heated to approximately 2400 K to overcome the binding energy of the electrons ( [Buzug, 2008]).
+(2) The direction and velocity of electrons are controlled in the electric filed. The electrons are accelerated between the anode and cathode in the electric field; the electrons will travel along a straight line if there is no potential difference between the deflector plates; and the electrons will be deviated with a certain angle β if there is a potential difference between the deflector plates. Let the distance between the deflector plates be d, the long of the deflector plates be l, the potential difference between the deflector plates be V_{d}, the potential difference between the deflector plate and filament be V_{2}, the horizontal velocity of electrons in the electric field be v_{x}, the vertical velocity of electrons in the electric field be v_{y}, and the distance between the deflector plates and target be L. By the conservation of energy in the electric field, we have mv_{y}=eV_{d}ldv_{x}, and then, tan(β)=eV_{d}ldm(vx){2}. By the conservation of energy between the deflector plate and filament, we have 12m(vx){2}=eV_{2}, and then, we have tan(β)=V_{d}l2dmV_{2}. So, the deviation distance of nano-focus X-ray is D^{′}=LV_{d}l2mdV_{2}.
+(3) Electrons are steered onto a nano focal point on the target by a focusing cup. The electron beam is focused on the target using a cup-shaped electrode (This electron optics is called a focusing cup or Wehnelt cylinder) which contains the cathode with opposite potential ( [Buzug, 2008]).
+By the above three steps, changing the potential difference V_{d} in the electric field, a line array with multiple nano-focus X-ray sources which are activated one by one will be formed; the bigger the electric filed V_{d}, the bigger the deviation distance of nano-focus X-ray is. In this system, a fixed acquisition system, where the line array with multiple targets and the detector stay parallel statically in a certain distance, and the object manipulator is fixed (i.e., the scanned object stays statically rather than is continuously and horizontally rotated) between the nano-focus X-ray source and detector when the system is scanning, is utilized to obtain the projection data from the scanning range [0, θ] (θ < 180°). The electron beam linear scanning mode can sweep with far greater speed than the traditional scanning mode because the nano-focus X-ray sources are swept electronically rather than mechanically, and the scanned object stays statically when the system is scanning. The scanning time of electron beam linear scanning mode is far less than that of the traditional nano-CT system for the scanning range [0, θ]. In the electron beam linear scanning system, a long detector, which is equipped with many detector bins and stays parallel statically with the line array with multiple nano-focus X-ray sources, is used to avoid moving the detector during the process of scanning. The electron beam linear scanning mode of nano-CT system can reduce the scanning time and avoid the mechanical vibration and the object movement caused by the scanned object that is continuously rotated. The geometrical magnification only can be changed by moving the object manipulator; the bigger the distance between the object and the detector, the bigger the geometrical magnification is (see Fig. 2). To obtain projection data from the scanning range between 0 and 2θ, the object manipulator, which is with a high repositioning precision turntable, need to be rotated θ after the previous scanning and before the next scanning. For acquiring more projection data, we need to repeat this process again. Although the electron beam linear scanning mode takes a little time for the scanning range [0, θ], rotating the object manipulator will take more time than the scanning time under the scanning range [0, θ], which is limited to the high accuracy of the spatial resolution required. So we consider the limited-angle problem to further save the scanning time.
+Figure 2 shows the geometrical structure of the scanners of the electron beam linear scanning mode of nano-CT system; S_{i}(i = 1,2, …, p) denotes the ith X-ray sources (p is an odd number), D denotes the long detector, O denotes the object, O′ denotes the object rotation center, θ denotes the angle between S_{1}O′ and S_{p}O′, and M denotes the object manipulator. Because the distance between S_{i} and O′ is changed with the nano-focus X-ray sources that are activated one by one, the classical FBP algorithm will not work well. What’s more, to reduce the scanning time, the projection data from different views will be fixed between 0 and β (β = nθ < 180°, n ∈ N_{+}), which will lead to a limited-angle reconstruction problem. The distance between S_{i} and O′ can be calculated as follows:
+The multiple nano-focus X-ray sources are evenly distributed in the line array with equal angle θ/(p−1), where p is an odd number, then we have that
+where S_{p+12}O^{′} is given in the electron beam linear scanning mode of nano-CT system and perpendicular to the line array.
+IR algorithms are not influenced by the geometrical structure of the scanning mode and can better control the noise and deal with the incomplete data problem. We will focus on the IR algorithms to solve the limited-angle reconstruction problem of the electron beam linear scanning mode of nano-CT system in this work.
+B. Imaging model discretization
+The CT image reconstruction model can be expressed as follows ( [Kak and Slaney, 1988];  [Beck and Teboulle, 2009]):
+where g ∈ R^{M} denotes the projection data, f ∈ R^{N} denotes the image, A ∈ R^{M×N} is the system matrix for the electron beam linear scanning mode of nano-CT system within a limited-angle scanning range. The limited-angle CT image reconstruction problem is reconstructing f (a CT image) from the incomplete projection data g. In this paper, to save the scanning time and study how small the scanning range could be fixed with acceptable spatial resolution, the projection data from the scanning range will be fixed between 0 and β (β < 180°).
+C. Iterative reconstruction algorithm
+IR algorithms, which can avoid the instabilities, suppress the noise, and preserve the edge of an image, are to modify the objective function so that the a priori knowledge about the solution can be incorporated. The images can be sparsely approximated under wavelet frames that can be considered as a priori knowledge and be incorporated into the reconstruction model. To solve the limited-angle reconstruction problem of the electron beam linear scanning mode of nano-CT system, we introduce a ℓ_{0} minimization model, which was proposed in our previous work for traditional scanning model ( [Wang and Zeng, 2016]). In our previous work, we use the following minimization model:
+where λ is a scalar parameter, Ω={ff≥0} is a convex set, W is the wavelet tight frame transform, Wf{0} is the number of nonzero terms #{i(Wf){i}≠0}, and the quadratic term γ2f22 of objective function will maintain the smoothness of the reconstruction image and make the minimum energy of reconstruction image. The piecewise constant B-spline framelet is used in this paper, and the filters are given as follows:
+We use a splitting technique to de-couple the ℓ_{2} and ℓ_{0} portions of the objective function (3), and then we can obtain that
+To solve problem (4), the augmented Lagrangian method is used, and then we can obtain that
+where v is the dual variable.
+Now we solve the optimization problem (5) efficiently using the alternating minimization method. Three steps that should be performed are
+Steps 1-3 are the Alternating Direction Method of Multipliers (ADMM) ( [Glowinski, 1984]).
+For convenience, we use some notes as follows:
+To solve step 1, we linearize θ(f) at a given point f^{n}, and then, (6) can be written as follows:
+and after that we can obtain that
+where t̃=tτ and γ̃=γτ. Problem (11) with constraints can be solved using the projection and contraction method (PCM) ( [He and Xu, 2008]).
+To solve step 2, we use the hard thresholding (HT) method ( [Blumensath and Davies, 2008];  [Zhang et_al, 2013]). We denote λ̃=2λt, and then the minimum of (7) can be expressed as
+where
+Next, we will summarize the process of the alternating minimization in the form of a pseudo-code. There is a difference between this alternating iterative algorithm and that in the work of ( [Wang and Zeng, 2016]); γ is a constant in this work. N_{ite} denotes the iteration numbers; the implementation steps of the alternating minimization for limited-angle nano-CT with the electron beam linear scanning mode are shown in the following:
+III. EXPERIMENTAL RESULTS
+In the experiments, the parameters and iteration numbers of our algorithm are selected by trial and error. The simulated phantom 1 that consists of 1024 × 1024 voxels of each size 976.6 nm × 976.6 nm, shown in Fig. 3, is used to the electron beam linear scanning mode of nano-CT system. And the parameters of simulated phantom 1 are given in Table I. In Table I, I denotes the additive intensity value of the ellipse, h denotes the length of the horizontal semi-axis of the ellipse, v denotes the length of the vertical semi-axis of the ellipse, x_{0} denotes the x-coordinate of the center of the ellipse, and y_{0} denotes the y-coordinate of the center of the ellipse. Our algorithm is utilized to verify the validity of the limited-angle 2D reconstruction problem of this scanning system.
+The geometrical scanning parameters for the simulated electron beam linear scanning mode of nano-CT system are listed in Table II. In this work, three different scanning ranges (i.e., [0°, 150°], [0°, 120°], and [0°, 90°]) for the electron beam linear scanning mode of nano-CT system are studied using phantom 1. For three different cases, the sparse projection views are 130, 104, and 78, respectively, and the max number of reconstruction iterations is 600, 800, and 800, respectively. The projection data with the Gaussian noise are considered in this work. The standard deviation and the mean value of the Gaussian noise are 0.1%g_{∞} and zero, respectively.
+Figures 4–6 show the reconstructed results using our algorithm for the scanning range [0°, 90°], [0°, 120°], and [0°, 150°], respectively. As shown in Fig. 4, some limited-angle artifacts nearby edges, which are indicated by red arrows, are presented in the reconstructed image using our algorithm. From these results, with the increase in scanning range for the electron beam linear scanning mode of limited-angle nano-CT system, the reconstructed results gradually become better. The experimental results confirm that the electron beam linear scanning mode of nano-CT system is feasible.
+For quantitative characterization of the reconstruction results, we use the root mean square error (RMSE) ( [Zhang et_al, 2013]), the peak signal-to-noise ratio (PSNR) ( [Storath et_al, 2015]), and the mean structural similarity index (MSSIM) ( [Wang et_al, 2004]). The RMSE, PSNR, and MSSIM values for the reconstructed images are given in Table III.
+In addition, the simulated phantom 2 that consists of 1024 × 1024 voxels, shown in Fig. 7, is used to the electron beam linear scanning mode of nano-CT system. And the parameters of simulated phantom 2 are given in Table IV. In Table IV, A is the additive intensity value of the rectangle, H is the horizontal length of the rectangle, W is the vertical width of the rectangle, and (X_{0},Y_{0}) is the center location of the rectangle.
+The geometrical scanning parameters for the simulated electron beam linear scanning mode of nano-CT system are listed in Table II. In this work, three different scanning ranges (i.e., [0°, 90°], [0°, 120°], and [0°, 150°]) for the electron beam linear scanning mode of nano-CT system are studied using phantom 2. For three different cases, the sparse projection views are 78, 104, and 130, respectively, and the max number of reconstruction iterations is 600 for all scanning ranges. The projection data with the Gaussian noise are considered in this work. The standard deviation and the mean value of the Gaussian noise are 0.1%g_{∞} and zero, respectively.
+Figures 8–10 show the reconstructed results using our algorithm for the scanning range [0°, 90°], [0°, 120°], and [0°, 150°], respectively. As shown in Fig. 8, where the region of interest (ROI) is shown in a red rectangle, for the scanning range [0°, 90°], some limited-angle artifacts nearby edges are presented in the reconstructed image. The limited-angle artifacts occur in vertical bar, which is related to the scanning range. From the reconstructed results of Figs. 9 and 10, where the region of interest (ROI) is shown in a red rectangle, we can see that the limited-angle artifacts are better suppressed for the scanning range [0°, 120°] and [0°, 150°]. From these results, with the increase in scanning range for the electron beam linear scanning mode of nano-CT system, the reconstructed results gradually become better. The experimental results confirm that the electron beam linear scanning mode of nano-CT system is feasible. The RMSE, PSNR, and MSSIM values of the reconstructed images using our algorithm are given in Table V.
+Next, we verify the feasibility of the electron beam linear scanning mode of nano-CT system for the limited-angle 3D reconstruction problem. A modified 3D Shepp-Logan phantom ( [Liu et_al, 2001]) with size 256 × 256 × 48 is utilized for this experiment. The geometrical scanning parameters for the simulated electron beam linear scanning mode of nano-CT system are listed in Table VI.
+In this work, the scanning range [0°, 150°] and [0°, 120°] are studied using the modified 3D Shepp-Logan phantom for the limited-angle 3D reconstruction problem. The max number of reconstruction iterations is 2000 for all scanning ranges. Figures 11 and 12 show the three slices of reconstructed results using our algorithm for the scanning range [0°, 150°] and [0°, 120°], respectively. The first row is the 10th slice of the reconstructed image, and the following rows are the 20th slice and 28th slice of the reconstructed image, respectively. As shown in Figs. 11 and 12, we can see that the limited-angle artifacts are better suppressed for the scanning range [0°, 150°]; however, the limited-angle artifacts are presented in the reconstructed image for the scanning range [0°, 120°] (see the red arrow and zoom-in views). Table VII shows the RMSE and PSNR values for the reconstructed images. The experimental results confirm that the electron beam linear scanning mode of nano-CT system is feasible within a proper scanning range (the object manipulator need to be rotated at least five times, i.e. the scanning range [0°, 150°], for obtaining a high quality image in 3D reconstruction problem). For the scanning range [0°, 150°], the nano-CT (SkyScan nano-CT 2001) takes about 6 min, which is estimated according to the system in  [Sasov et_al (2008b)]. The scanning time obtained using our CT system is only about 1/10 of that obtained using the SkyScan nano-CT 2001 because the X-ray source-point in our system is swept electronically, not mechanically. We should note that the scanning time is estimated for the simulated electron beam linear scanning CT system in this paper; the real scanning time depends on the practical CT system.
+IV. CONCLUSIONS
+In this paper, to reduce the scanning time and achieve stable and high-resolution imaging in industrial non-destructive testing, we study an electron beam linear scanning mode of nano-CT system that reduces the scanning time and avoids the mechanical vibration and the object movement. Furthermore, an alternating iterative algorithm based on ℓ_{0} minimization is utilized to the limited-angle reconstruction problem of nano-CT system with the electron beam linear scanning mode. The experimental results show that our algorithm can suppress the limited-angle artifacts of the limited-angle nano-CT reconstruction problem with the electron beam linear scanning mode within a proper scanning range. The reconstructed images will present some limited-angle artifacts using our algorithm if the scanning range is insufficient (i.e., for obtaining a high quality image, the object manipulator need to be rotated at least four and five times in 2D and 3D reconstruction problems, respectively). The experimental results confirm that the electron beam linear scanning mode of nano-CT system is feasible within a proper scanning range.
+Algorithm 
+TABLE I. 
+The parameters of simulated phantom 1.
+TABLE II. 
+Geometrical scanning parameters for a simulated electron beam linear scanning mode of nano-CT system.
+TABLE III. 
+RMSE, PSNR, and MSSIM values for the reconstructed images.
+TABLE IV. 
+The parameters of simulated phantom 2.
+TABLE V. 
+RMSE, PSNR, and MSSIM values for the reconstructed images.
+TABLE VI. 
+Geometrical scanning parameters for the simulated electron beam linear scanning mode of nano-CT system.
+TABLE VII. 
+RMSE and PSNR values for the reconstructed images.
+Algorithm -body
+Initialization:
+Given λ, t, γ, f^{1} = 0, α^{1} = 0, n = 1.
+whilen < N_{ite}
+Updatingf:
+Solving (11) using the PCM algorithm.
+Updatingα:
+Solving (12) using the HT method.
+Updating v:
+Updating v using (8).
+n = n + 1.
+end while
+TABLE I. -body
+I	h	v	x_{0}	y_{0}
+1	0.999	0.999	0	0
+−1	0.1	0.1	0.62	0.62
+−1	0.1	0.1	−0.62	−0.62
+−1	0.1	0.1	−0.62	0.62
+−1	0.1	0.1	0.62	−0.62
+TABLE II. -body
+Parameter	Value
+Distance between the center source and detector (mm)	200
+Distance between the center source and rotation axis (mm)	3
+Sampling interval between two adjacent projection views (deg)	0.145
+The angle between the first source and the last source (deg)	30
+Number of the source	207
+Number of the detector	1472
+Diameter of the field of view (mm)	1
+Size of each detector element (mm^{2})	0.065
+Voxel size of the object (nm)	976.6 × 976.6
+Matrix size of the reconstruction image	1024 × 1024
+TABLE III. -body
+Index (deg)	[0, 90]	[0, 120]	[0, 150]
+RMSE	0.0299	0.0126	0.0063
+PSNR	30.49	37.96	44.00
+MSSIM	0.9976	0.9996	0.9999
+TABLE IV. -body
+A	W	H	X_{0}	Y_{0}
+1	0.000 48	0.019 2*1.5	0.000 48	0
+1	0.000 48	0.019 2*1.5	0.000 48*12	0
+1	0.000 48	0.019 2*1.5	0.000 48*23	0
+1	0.000 48	0.019 2*1.5	0.000 48*34	0
+1	0.000 48	0.019 2*1.5	0.000 48*45	0
+1	0.000 48	0.019 2*1.5	0.000 48*88	0
+1	0.000 48	0.019 2*1.5	0.000 48*98	0
+1	0.000 48	0.019 2*1.5	0.000 48*108	0
+1	0.000 48	0.019 2*1.5	0.000 48*118	0
+1	0.000 48	0.019 2*1.5	0.000 48*128	0
+1	0.000 48*5	0.019 2*1.5	0.000 48*228	0
+1	0.000 48*5	0.019 2*1.5	0.000 48*258	0
+1	0.000 48*5	0.019 2*1.5	0.000 48*288	0
+1	0.000 48	0.019 2*1.5	−0.000 48*88	0
+1	0.000 48	0.019 2*1.5	−0.000 48*98	0
+1	0.000 48	0.019 2*1.5	−0.000 48*108	0
+1	0.000 48	0.019 2*1.5	−0.000 48*118	0
+1	0.000 48	0.019 2*1.5	−0.000 48*128	0
+1	0.000 48*5	0.019 2*1.5	−0.000 48*228	0
+1	0.000 48*5	0.019 2*1.5	−0.000 48*258	0
+1	0.000 48*5	0.019 2*1.5	−0.000 48*288	0
+1	0.019 2*1.5	0.000 48	0	0.000 48*100
+1	0.019 2*1.5	0.000 48	0	0.000 48*110
+1	0.019 2*1.5	0.000 48	0	0.000 48*120
+1	0.019 2*1.5	0.000 48	0	0.000 48*130
+1	0.019 2*1.5	0.000 48	0	0.000 48*140
+1	0.019 2*1.5	0.000 48	0.000 48*260	0.000 48*100
+1	0.019 2*1.5	0.000 48	0.000 48*260	0.000 48*110
+1	0.019 2*1.5	0.000 48	0.000 48*260	0.00048*120
+1	0.019 2*1.5	0.000 48	0.000 48*260	0.000 48*130
+1	0.019 2*1.5	0.000 48	0.000 48*260	0.000 48*140
+1	0.019 2*1.5	0.000 48	−0.000 48*260	0.000 48*100
+1	0.019 2*1.5	0.000 48	−0.000 48*260	0.000 48*110
+1	0.019 2*1.5	0.000 48	−0.000 48*260	0.000 48*120
+1	0.019 2*1.5	0.000 48	−0.000 48*260	0.000 48*130
+1	0.019 2*1.5	0.000 48	−0.000 48*260	0.000 48*140
+1	0.019 2*1.5	0.000 48	0	−0.000 48*100
+1	0.019 2*1.5	0.000 48	0	−0.000 48*110
+1	0.019 2*1.5	0.000 48	0	−0.000 48*120
+1	0.019 2*1.5	0.000 48	0	−0.000 48*130
+1	0.019 2*1.5	0.000 48	0	−0.000 48*140
+1	0.019 2*1.5	0.000 48	0.000 48*260	−0.000 48*100
+1	0.019 2*1.5	0.000 48	0.000 48*260	−0.000 48*110
+1	0.019 2*1.5	0.000 48	0.000 48*260	−0.000 48*120
+1	0.019 2*1.5	0.000 48	0.000 48*260	−0.000 48*130
+1	0.019 2*1.5	0.000 48	0.000 48*260	−0.000 48*140
+1	0.019 2*1.5	0.000 48	−0.000 48*260	−0.000 48*100
+1	0.019 2*1.5	0.000 48	−0.000 48*260	−0.000 48*110
+1	0.019 2*1.5	0.000 48	−0.0004 8*260	−0.000 48*120
+1	0.019 2*1.5	0.000 48	−0.000 48*260	−0.000 48*130
+1	0.019 2*1.5	0.000 48	−0.000 48*260	−0.000 48*140
+TABLE V. -body
+Index (deg)	[0, 90]	[0, 120]	[0, 150]
+RMSE	0.0368	0.0002	0.0002
+PSNR	28.68	38.84	38.96
+MSSIM	0.7916	0.9998	0.9998
+TABLE VI. -body
+Parameter	Value
+Distance between the center source and detector (mm)	150
+Distance between the center	5
+source and rotation axis (mm)	
+Sampling interval between two	0.5
+adjacent projection views (deg)	
+The angle between the first source	30
+and the last source (deg)	
+Number of the source	61
+Number of detector (horizontal)	500
+Number of detector (vertical)	300
+Diameter of field of view (mm)	0.41
+Size of each detector element (mm^{2})	0.075
+Voxel size of the object (nm)	3200 × 3200 × 3200
+Matrix size of the reconstruction image	256 × 256 × 48
+TABLE VII. -body
+Index (deg)	[0, 120]	[0, 150]
+RMSE	0.0273	0.0217
+PSNR	35.86	37.27
+FIG. 1. 
+Scanning mode of commercial nano-CT system.
+FIG. 2. 
+Electron beam linear scanning mode of nano-CT system.
+FIG. 3. 
+Simulated phantom 1.
+FIG. 4. 
+Reconstruction results of phantom 1 for the scanning range [0°, 90°] and the standard deviation 0.1%g_{∞} of the Gaussian noise. The display window is [0, 1].
+FIG. 5. 
+Reconstruction results of phantom 1 for the scanning range [0°, 120°] and the standard deviation 0.1%g_{∞} of Gaussian noise. The display window is [0, 1].
+FIG. 6. 
+Reconstruction results of phantom 1 for the scanning range [0°, 150°] and the standard deviation 0.1%g_{∞} of the Gaussian noise. The display window is [0, 1].
+FIG. 7. 
+Simulated phantom 2.
+FIG. 8. 
+Reconstruction results of phantom 2 for the scanning range [0°, 90°] and the standard deviation 0.1%g_{∞} of Gaussian noise. The display window is [0, 1].
+FIG. 9. 
+Reconstruction results of phantom 2 for the scanning range [0°, 120°] and the standard deviation 0.1%g_{∞} of Gaussian noise. The display window is [0, 1].
+FIG. 10. 
+Reconstruction results of phantom 2 for the scanning range [0°, 150°] and the standard deviation 0.1%g_{∞} of Gaussian noise. The display window is [0, 1].
+FIG. 11. 
+Reconstruction results for the scanning range [0°, 150°]. The display window is [0, 1].
+FIG. 12. 
+Reconstruction results for the scanning range [0°, 120°]. The display window is [0, 1].

@@ -1,0 +1,401 @@
+Iterated elliptic and hypergeometric integrals for Feynman diagrams
+We calculate 3-loop master integrals for heavy quark correlators and the 3-loop quantum chromodynamics corrections to the ρ-parameter. They obey non-factorizing differential equations of second order with more than three singularities, which cannot be factorized in Mellin-N space either. The solution of the homogeneous equations is possible in terms of _{2}F_{1} Gauß hypergeometric functions at rational argument. In some cases, integrals of this type can be mapped to complete elliptic integrals at rational argument. This class of functions appears to be the next one arising in the calculation of more complicated Feynman integrals following the harmonic polylogarithms, generalized polylogarithms, cyclotomic harmonic polylogarithms, square-root valued iterated integrals, and combinations thereof, which appear in simpler cases. The inhomogeneous solution of the corresponding differential equations can be given in terms of iterative integrals, where the new innermost letter itself is not an iterative integral. A new class of iterative integrals is introduced containing letters in which (multiple) definite integrals appear as factors. For the elliptic case, we also derive the solution in terms of integrals over modular functions and also modular forms, using q-product and series representations implied by Jacobi’s ϑ_{i} functions and Dedekind’s η-function. The corresponding representations can be traced back to polynomials out of Lambert–Eisenstein series, having representations also as elliptic polylogarithms, a q-factorial 1/η^{k}(τ), logarithms, and polylogarithms of q and their q-integrals. Due to the specific form of the physical variable x(q) for different processes, different representations do usually appear. Numerical results are also presented.
+I. INTRODUCTION
+Many single scale Feynman integrals arising in massless and massive multi-loop calculations in Quantum Chromodynamics (QCD) [1] have been found to be expressible in terms of harmonic polylogarithms (HPLs) [2], generalized harmonic polylogarithms [3,4], cyclotomic harmonic polylogarithms [5], square-root valued iterated integrals [6], and more general functions, entering the corresponding alphabet in integral iteration. After taking a Mellin transform, they can be equivalently expressed in terms of harmonic sums [7,8] in the simpler examples and finite sums of different kinds in the other cases [3–6], supplemented by special numbers like the multiple zeta values [10] and others appearing in the limit N → ∞ of the nested sums, or the value at x = 1 of the iterated integrals in Refs [2–8]. The Mellin transform for functions is defined by
+In QCD, also D-distributions [9] like the δ-distribution and +-distributions contribute. Their Mellin transform is given by
+In many higher-order calculations, a considerable reduction of the number of integrals to be calculated is obtained using integration-by-parts identities (IBPs) [11], which allow us to express all required integrals in terms of a much smaller set of the so-called master integrals. Differential equations satisfied by these master integrals [12,13] can then be obtained by taking their derivatives with respect to the parameters of the problem and inserting the IBPs in the result. What remains is to solve these differential equations, given initial or boundary conditions, if possible analytically. One way of doing this is to derive an associated system of difference equations [14–18] after applying a mapping through a formal Taylor series or a Mellin transform. If these equations factorize to first-order equations, we can use the algorithm presented in Ref [18] for general bases to solve these systems analytically and to find the corresponding alphabets over which the iterated integrals or nested sums are built. The final solution in N and x space is found by using the packages Sigma [19,20] and EvaluateMultiSums and SumProduction [21].
+However, there are physical cases where full first-order factorizations cannot be obtained for either the differential equations in x or the difference equations in N [23–40,187].
+In the present paper, we will address the analytic solution of typical cases of this kind, related to a series of master integrals appearing in the 3-loop corrections of the ρ-parameter in Ref [41]. It turns out that these integrals are more general than those appearing in the sunrise and kite diagrams due to the appearance of also the elliptic integral of the second kind, E(z), which cannot be transformed away. The corresponding second-order differential equations have more than three singularities, as in the case of the Heun equation [42]. For the sake of generality, we will seek solutions of the second-order homogeneous differential equations which are given in terms of Gauß’ _{2}F_{1} functions [43] within the class of globally bounded solutions [44], cf. also Ref [45]. Here the parameters of the _{2}F_{1} function are rational numbers and the argument is a rational function of x. The complete elliptic integrals K(z) and E(z) [46–49,188] are special cases of this class.
+The hypergeometric function obeys different relations like the Euler- and Pfaff-transformations [50,51], the 24 Kummer solutions [52,53], and the 15 Gauß’ contiguous relations [50,51]. There are more special transformations for higher than first-order in the argument [52,54–56]. In the present case, equivalent _{2}F_{1} representations are obtained by applying arithmetic triangle groups [57]. The corresponding algorithm has been described in Ref [58] in its present most far reaching form. The relations of this type may be useful to transform a found solution into another one, which might be particularly convenient. In the case a function space of more solutions is considered, these relations have to be exploited to check the independence of the basis elements.
+The main idea of the approach presented here is to obtain the factorization of a high-order scalar difference or differential equation, after uncoupling [59–61] the corresponding linear systems, to all first-order parts and its second-order contributions. While the first-order parts have been algorithmically solved in Ref [18], the treatment of second-order differential equations shall be automated. [189] The class of _{2}F_{1} solutions has an algorithmic automation to a wide extent [58], and it seems that this class constitutes the next one following the iterated square-root valued letters in massive single-scale 3-loop integrals. Applying this method, we obtain the corresponding _{2}F_{1} functions with (partly) fractional parameters and rational argument, and ir(rational) pre-factors, forming the new letters of the otherwise iterated integrals. These letters contain a definite integral by virtue of the integral representation of the _{2}F_{1} function, which cannot be fully transformed into an integral depending on the follow-up integration variable only through its integration boundaries. In general, we have therefore to iterate new letters of this kind. Through this, we obtain a complete algorithmic automation of the solution also when second-order differential operators contribute, having _{2}F_{1} solutions.
+As it will be shown, in a series of cases, the reduction of the _{2}F_{1} functions to complete elliptic integrals E(r(z)) and K(r(z)) is possible. Therefore we also study special representations in terms of q-series, which have been obtained in the case of the sunrise graph, cf. Refs [32],  [34],  [35],  [37], and  [39], before. More general representations are needed for the integrals considered in the present paper, and we describe the necessary extension.
+In performing a higher loop calculation, in intermediary steps, usually more complicated nested integrals and sums occur than in the final result. [190] Various necessary decompositions of the problem that have to be performed, such as the integration-by-parts reduction and others, account for this in part. It appears therefore necessary to have full control on these occurring structures first, which finally may simplify in the result. Moreover, experience tells that in more general situations, more and more of these structures survive, cf. Ref [17] in comparison to Ref [62]. If the mathematical properties of the quantities occurring are known in detail, various future calculations in the field will be more easily performed.
+The paper is organized as follows. In Sec. II, we present the linear systems of first-order differential equations for master integrals in Ref [41] which cannot be solved in terms of iterated integrals. We first perform a decoupling into a scalar second-order equation and an associated equation for each system. Using the algorithm of Ref [18], the non-iterative solution in both the x- and Mellin-N-space is uniquely established. In Sec. III, we first determine the homogeneous solutions of the second-order equations, which turn out to be _{2}F_{1} solutions [44] and obey representations in terms of weighted complete elliptic integrals of the first and second kinds at rational argument. In Sec. IV, we derive the solutions in the inhomogeneous case, which are given by iterated integrals, in which some letters are given by a higher transcendental function defined by a non-iterative, i.e., definite, integral in part. We present numerical representations for x ∈ [0, 1] deriving overlapping expansions around x = 0 and x = 1. The methods presented apply to a much wider class of functions than the ones being discussed here specifically. These need to have a representation in terms neither of elliptic integrals nor of just a _{2}F_{1} function. The respective letter can be given by any multiple definite integral.
+Owing to the fact that we have elliptic solutions in the present cases, we may also try to cast the solution in terms of series in the nome
+where
+denotes the ratio of two complete elliptic integrals of the first kind. In the following, we consider the case that z(x) is a rational function associated with the elliptic curve of the problem. It is now interesting to see which closed form solutions the corresponding series in q obey. All contributing quantities can be expressed in terms of ratios of Riemann’s Dedekind η(τ) function [63], cf. Eq. (6.14). However, various building blocks are only modular forms [64–76] up to an additional factor of [191]
+We seek in particular modular forms which have a representation in terms of Lambert–Eisenstein series [84,85] and can thus be represented by elliptic polylogarithms [86], forming a frame of representation. However, the η-factor (1.6) in general remains. Thus the occurring q-integrands are modulated by a q-factorial [51,87] denominator in these cases.
+Structures of the kind for k > 0 are frequent even in the early literature. A prominent case is given by the invariant J, see, e.g., Ref [88],
+with G_{2}(q) being an Eisenstein series, cf. Eq. (6.63), and the discriminant Δ,
+In the more special case considered in Refs [32],  [34],  [35],  [37], and  [39], terms of this kind are not present.
+For the present solutions, we develop the formalism in Sec. V. We discuss possible extensions of integral classes to the present case in Sec. VI and of elliptic polylogarithms [86], as has been done previously in the calculation of the two-loop sunrise and kite-diagrams [32,34,35,37,39]. Here the usual variable x is mapped to the nome q, expressing all contributing functions in the new variable. This can be done for all the individual building blocks, the product of which forms the desired solution. Section VII contains the conclusions.
+In Appendix A, we briefly describe the algorithm finding for second-order ordinary differential equations _{2}F_{1} solutions with a rational function argument. In Appendix B, we present for convenience details for the necessary steps to arrive at the elliptic polylogarithmic representation in the examples of the sunrise and kite integrals [32,34,35,37,39]. Here we compare some results given in Refs [32] and  [37]. In Appendix C, we list a series of new sums, which simplify the recent results on the sunrise diagram of Ref [89].
+In the present paper, we present the results together with all necessary technical details and we try to refer to the related mathematical literature as widely as possible, to allow a wide community of readers to apply the methods presented here to other problems.
+II. THE DIFFERENTIAL EQUATIONS
+The master integrals considered in this paper satisfy linear differential equations of second-order
+with rational functions r(x) = p(x), q(x), which may be decomposed into [192]
+The homogeneous equation is solved by the functions ψ1,2(0)(x), which are linearly independent, i.e., their Wronskian W obeys
+The homogeneous Eq. (2.1) determines the well-known differential equation for W(x),
+which, by virtue of (2.2), has the solution
+normalizing the functions ψ1,2(0) accordingly. A particular solution of the inhomogeneous equation (2.1) is then obtained by the Euler-Lagrange variation of constants [90]
+with
+and two constants C_{1,2} to be determined by special physical requirements. We will consider indefinite integrals for the solution (2.6), which allows for more singular integrands. For the class of differential equations under consideration, N(x) can be expressed by harmonic polylogarithms and rational functions, W(x) is a polynomial, and the functions ψ1,2(0)(x) turn out to be higher transcendental functions, which are even expressible by complete elliptic integrals in the cases considered here. Therefore Eq. (2.6) constitutes a nested integral of known functions [2–6] and elliptic integrals at rational argument.
+We consider the systems of differential equations [41] for the O(ε^{0}) terms of the master integrals,
+and
+with × here denoting matrix multiplication and
+By applying decoupling algorithms [59–61], one obtains the following scalar differential equation:
+and the further equation
+Likewise, one obtains for the second system
+The above differential equations of second-order contain more than three singularities. We seek solutions in terms of Gauß’ hypergeometric functions with rational arguments, following the algorithm described in Appendix A. It turns out that these differential equations have _{2}F_{1} solutions.
+Two more master integrals are obtained as integrals over the previous solutions. They obey the differential equations
+with ζ_{k},k∈N,k≥2, being the values of the Riemann ζ-function at integer argument and the harmonic polylogarithms H_{a→}(x) are defined by [2]
+Subsequently, we will use the shorthand notation H_{a→}(x)≡H_{a→}. The harmonic polylogarithms occurring in the inhomogeneities of Eqs. (2.18) and (2.19) can be rewritten as polynomials of
+cf. Ref [91].
+III. SOLUTION OF THE HOMOGENEOUS EQUATION
+In the following, we will derive the solution of the homogeneous part of Eqs. (2.14) and (2.16) as examples in detail, using the algorithm outlined in Ref [58]; see also Appendix A.
+The homogeneous solutions of Eq. (2.14) read
+with
+The Wronskian for this system is
+The solutions are shown in Fig. 1.
+Equivalent solutions are found by applying relations due to triangle groups [57], see Appendix A,
+where
+These solutions have the Wronskian (3.4) up to a sign [193] but differ from those in (3.1) and (3.2). The ratios of the homogeneous solutions are given by
+The hypergeometric functions appearing in (3.5) and (3.6) are given in terms of complete elliptic integrals [47],
+We also used the relation [92]
+noting that it is always possible to map a _{2}F_{1}(a, b; c; x) function with 2a,2b,c∈Z,c>0 into complete elliptic integrals. Their integral representations in Legendre’s normal form [93] read
+In going from [(3.1) and (3.2)] to [(3.5) and (3.6)], also a contiguous relation had to be applied, leading to a linear combination of two hypergeometric functions. The solutions are shown in Fig. 2.
+The ratio ψ1b(0)/ψ2b(0) exhibits the interesting form
+with
+Whether _{2}F_{1} solutions emerging in single scale Feynman integral calculations as solutions of differential equations for master integrals are always of the class to be reducible to complete elliptic integrals a priori is not known. However, one may use the algorithm given in Appendix A to map a solution to one represented by elliptic integrals, if the parameters of the respective _{2}F_{1} solution match the required pattern.
+The homogeneous solutions of (2.16) read
+with
+The argument 1 − z appeared already in complete elliptic integrals by Sabry in Ref [23], Eq. (68), with x = −λ, calculating the so-called kite-integral at 2 loops, 55 years ago; see also Ref [26], Eq. (A11), for the sunrise-diagram and Ref [38], Eq. (D18), with x=1/u for the kite-diagram. The latter aspect also shows the close relation between the elliptic structures appearing for both topologies, which has been mentioned in Ref [39].
+Using the Legendre identity [93]
+one obtains the Wronskian of the system [(3.17) and (3.18)],
+cf. (2.5).
+The homogeneous solutions [(3.17) and (3.18)], which are complex for x ∈ [0, 1], are shown in Fig. 3. The real part of ψ3(0)(x) has a discontinuity at x = 1/3 moving from −(4/9)2/(3π) to (4/9)2/(3π), while Re(ψ4(0)(x)) vanishes for x > 1/3. Likewise, Im(ψ4(0)(x)) vanishes for 0 ≤ x ≤ 1/3.
+We finally consider the ratio ψ3(0)/ψ4(0),
+where
+This structure is the same as in (3.15) and (3.16) up to the pre-factor.
+The solution of the inhomogeneous equations [(2.14) and (2.16)] are obtained from (2.6) specifying the constants C_{1,2} by physical requirements. The previous calculation of the corresponding master integrals in Ref [41] used expansions of the propagators [94,95], obtaining series representations around x = 0 and x = 1. The first expansion coefficients of these will be used to determine C_{1} and C_{2}. The inhomogeneous solutions are given by
+with
+Equation (3.24) is an integral which cannot be represented within the class of iterative integrals. It therefore requires a generalization. We present this in Sec. IV. Efficient numerical representations using series expansions are given in Sec. V.
+IV. ITERATED INTEGRALS OVER DEFINITE INTEGRALS
+The elliptic integrals [(3.13) and (3.14)] cannot be rewritten as integrals in which their argument x only appears in one of their integral boundaries, writing all the appearing integrals in explicit form [96,194]. All integrands considered here are either elementary or hyperexponential functions. Therefore, the integrals of the type of Eq. (3.24) do not belong to the iterative integrals of the type given in Refs [2] and  [4–6] and generalizations thereof to general alphabets, which have the form
+with b ∈{0, 1, −1} and
+for the harmonic polylogarithms and are generalized to alphabets appearing in more general classes, as discussed in Refs [3–6]. For a given difference equation, associated with a corresponding differential equation, the algorithms of Refs [19] and  [20] based on Ref [97] allow us to decide whether or not the recurrence is first-order factorizable. In the first case, the corresponding nested sum-product structure is returned. In the case the problem is not first-order factorizable, integrals will be introduced whose integrands depend on variables that cannot be moved to the integration boundaries and over which one will integrate by later integrals. This is the case if the corresponding quantity obeys a differential equation of order m ≥ 2, not being reducible to lower orders. Examples of this kind are irreducible Gauß’ _{2}F_{1} functions, to which also the complete elliptic integrals E(z) and K(z) belong.
+The new iterative integrals are given by
+and cases in which more than one definite integral F_{m} appears. Here the f^{ai}(y) are the usual letters of the different classes considered in Refs [2] and  [4–6], multiplied by hyperexponential pre-factors
+and F[r(y)] is given by
+such that the y-dependence cannot be transformed into one of the integration boundaries completely. We have chosen here r(y) as a rational function because of concrete examples in this paper, which, however, is not necessary. Specifically we have
+or its analytic continuation.
+The new iterated integral (4.3) is not limited to the emergence of the functions (4.6). Multiple definite integrals are allowed as well. They emerge, e.g., in the case of Appell functions [50,51] and even more involved higher functions. These integrals also obey relations of the shuffle type with respect to their letters f^{am}(y_{m})(F_{m}[r(y_{m})]), cf., e.g., Refs [91],  [98], and  [99].
+Within the analyticity region of the problem, one may derive series expansions of the corresponding solutions around special values, e.g., x = 0, x = 1, and other values to map out the function for its whole argument range. In many cases, one will even find convergent, widely overlapping representations, which are highly accurate and provide a numerical solution in terms of a finite number of analytic expansion coefficients. We apply this method to the solution of the differential equations in Sec. II in Sec. V and return to the construction of a closed form analytic representation using q-series and Dedekind η functions in Sec. VI.
+V. THE SOLUTION OF THE INHOMOGENEOUS EQUATION BY SERIES EXPANSION
+The inhomogeneous solutions of type (3.24) can be expanded into series around x = 0 and x = 1 analytically using computer algebra packages like Mathematica or Maple. One either obtains Taylor series or superpositions of Taylor series times a factor ln^{k}(x),k∈N. For all solutions, both expansions have a wide overlap [195] and one may obtain in this way a highly accurate representation of all solutions in the complete region x ∈ [0, 1].
+In the following, we present the first terms of the series expansion for the functions f_{8(9,10),a(b)}(x) around x = 0 and x = 1.
+For f_{8a}, we obtain
+around x = 0. Here we also applied a series of relations for ψ^{(k)}-functions at rational argument, cf. Ref [5].
+Likewise, one may expand around y = 1 − x = 0. In this case, we can rewrite the inhomogeneous solution given in (3.24) as
+with
+One obtains
+The solution of Eq. (2.15) around x = 0 reads
+The corresponding expansion around x = 1 is given by
+Here the integration constants C_{1,2} and C¯{1,2} are [196]
+The solution of (2.18) is an integral containing the functions f_{8a}(x) and f_{9a}(x). Its series around x = 0 reads
+Likewise, one obtains the expansion around x = 1, which is given by
+with, see also Ref [100],
+where [101]
+as integration constants in this case.
+The series expansion of the solution of Eq. (2.16) is given by
+The solution of Eq. (2.17) reads
+Here the constants in (3.24) have been fixed by comparing to the first expansion coefficients in Ref [41],
+The solution of (2.19) is given as an integral containing f_{8(9)b}(x) with the constant
+and reads
+The corresponding solutions around x = 1 have the expansions
+with the integration constants
+obtained by comparing again to the first expansion coefficients in Ref [41]. The constants are complex here.
+The solutions are illustrated in Figs. 4–9. The expansions around x = 0 and x = 1 have wide overlapping regions in all cases. We use expansions up to O(x^{50}) and O(y^{50}), respectively. Due to the constants C_{i}(C¯{i}),i=1,2,3, which are imposed by the physical case studied, all solutions are real in the region x ∈ [0, 1]. The fact that the homogeneous solutions in the cases b, have a branch point has, however, consequences for the solutions around x = 0, as will be shown below.
+The function f_{8a}(x) is shown in Fig. 4. Its boundary values at x = 0, 1 read
+At very small x, the expansion around x = 1 delivers too small values, while at large x the small x expansion evaluates to somewhat larger values, however, well below double precision. f_{9a}(x) is shown in Fig. 5 with the values
+at x = 0, 1 and a very similar behaviour for the approximation around x = 0 and 1 as in the case of f_{8a}. Figure 6 shows the function f_{10a}, for which the boundaries are
+Here somewhat larger deviations of the series solutions around x = 0 at 1 and x = 1 at 0 are visible. In the following, we also illustrate the relative accuracy of the approximations expanding around x = 1 and x = 0 taking into account 50 expansion coefficients. Within the respective convergence region, the accuracy can be enlarged expanding analytically to a higher number of terms.
+In Fig. 7, the behaviour of f_{8b}(x) is illustrated. The series expansion around x = 0 starts to diverge at x ∼ 0.4, while the expansion around x = 1 still holds at x ∼ 0.1. The boundary values of f_{8b} at x = 0, 1 are
+There is a numerical artefact in Fig. 7(b) at x ∼ 0.14 implied by the zero-transition of f_{8b} in this region.
+A similar behaviour to that of f_{8b} is exhibited by f_{9b}(x) shown in Fig. 8. Again the series-solution around x = 0 starts to diverge for x ∼ 0.4. However, the one around x = 1 holds even below x ∼ 0.1. The boundary values of f_{9b} at x = 0, 1 are
+f_{10b}(x) is shown in Fig. 9. The validity of the serial expansions around x = 0 and 1 is very similar to the cases of f_{8(9)b}(x), discussed above.
+The boundary values at x = 0, 1 are
+Notice that the representations [(2.16) and (5.2)] allow for the analytic determination of the Nth expansion coefficient of the corresponding series around x = 0 (y = 0) using the techniques of the package HarmonicSums.m Refs [4–6],  [102], and  [103].
+The series expansions agree with those obtained by solving the differential equations through series Ansätze in Ref [41]. In an attachment to this paper, we present the expansion of the solutions around x = 0 and x = 1 up to terms of O(x^{50}) for further use. The solutions are well overlapping in wider ranges in x. In the case of the functions f_{8(9,10)a}(x), the power series expansion around x = 1 reflects the branch point at x = 1/3 in the homogeneous solution. Our general expressions easily allow expansions around other fixed values of x, which may be useful in special numerical applications.
+The above representations constitute a practical analytic solution in the case of iterative non-iterative integrals. Indeed it applies to the whole class of these functions within their analyticity regions. Thus the method is not limited to cases in which elliptic integrals contribute. Since, however, the case in which _{2}F_{1} solutions may be related in a non-trivial manner, see (ii) and (iii) in Sec. VI, to solutions through elliptic integrals with rational argument is very frequent, we turn now to a more detailed discussion of this case.
+VI. ELLIPTIC SOLUTIONS
+As we have seen, in special cases, the solutions of a second-order differential equation having a _{2}F_{1} solution may be expressed in terms of the complete elliptic integrals E(r(z)) and K(r(z)). Our general goal is to represent the emerging structures in terms of q-series with explicit predicted expansion coefficients in closed form as far as possible, if not even simpler representations can be found.
+Different levels of complexity can be distinguished, depending on the structure of r(z) and whether only elliptic integrals of the first kind or also of the second kind necessarily contribute. Furthermore, there are requirements to other building blocks emerging in the solutions, which we will discuss below.
+(i) If the complete elliptic integrals are given by K(z) or K(1 − z), choosing the case z ∈ [0, 1], and similarly for E, one may solve the difference equation, obtained from the differential equation by a Mellin transform. It turns out that this difference equation factorizes to first order, unlike the differential equation in x-space; see Ref [104], for example. The Mellin transforms (1.1) are given by
+since
+Here the Mellin convolution is defined by
+Equations (6.1) and (6.2) are hypergeometric terms in N, which has been shown already in Ref [22] for K(1 − z); see also Ref [6]. As we outlined in Ref [18], the solution of systems of differential equations or difference equations can always be obtained algorithmically in the case either of those factorizes to first order. The transition to z-space is then straightforward. In z-space, also the analytic continuation to the other kinematic regions is performed.
+(ii) In a second set of cases, only the elliptic integrals K(r(z)) and K^{′}(r(z)) contribute, with r(z) being a rational function. In transforming from z- to q-space, furthermore, no terms in the solution emerge which cannot be expressed in terms of modular forms [64–83], except terms ∝ln^{k}(q),k∈N. This is the situation, e.g., in the cases having been discussed in Refs [32],  [37], and  [39]. We will show below that here both the homogenous solution and the integrand of the inhomogeneous solution can be expressed by Lambert–Eisenstein series [84,85], also known as elliptic polylogarithms, modulo eventual terms ln^{k}(q). The remaining q-integral in the inhomogeneous term can be carried out in the class of elliptic polylogarithms [86]; see Ref [39]. Note, however, that in the case of both the sun-rise and kite diagram for the whole set of master integrals, both the elliptic integrals K and E contribute, cf. Ref [38].
+(iii) In the cases presented in Sec. III, the solutions depend on both the elliptic integrals K(r(z)), E(r(z)) and K^{′}(r(z)), E^{′}(r(z)); see also Sec. VI B. Both E(r(z)) and E^{′}(r(z)) can be mapped to modular forms representing them by the nome q according to Eqs. (1.4) and (1.5), powers of ln(q), and polylogarithms, like Li_{0}(q), [105] and the η-factor given in Eq. (1.6). These aspects lead to a generalization with respect to the cases covered by (ii) since in a series of building blocks the factor 1/η^{k}(τ) has to be split off to obtain a suitable modular form. This factor is a q-Pochhammer symbol and also emerges in the q-integral in the inhomogeneous solution.
+Since the topic of analytic q-series representations is a very recent one and it is only on the way to be algorithmized and automated for the application to a larger number of cases appearing in Feynman parameter integrals, we are going to summarize the necessary definitions and central properties for a wider audience in Sec. VI A. Then we will show in Sec. VI B that in the case of the differential equations [(2.14) and (2.16)] both the elliptic integrals K and E are contributing, which implies the appearance of the additional η-factor (1.6). In Sec. VI C, we will then construct the building blocks for the homogeneous and inhomogeneous solutions of all terms through polynomials of η-weighted Lambert–Eisenstein series, referring to the examples [(3.17) and (3.18)]. Here we use methods of the theory of modular functions and modular forms.
+A. From elliptic integrals to Lambert–Eisenstein series
+There are various sets of functions which can be used to express the complete elliptic integrals and their inverse, the elliptic functions, which have been worked out starting with Euler, [106] Legendre [93], and Abel [48], followed by Jacobi’s seminal work [49,107] and the final generalization by Weierstraß [108,109,197]. We first present a collection of relations out of the theory of elliptic integrals, their related functions, and modular forms [64–66] for the convenience of the reader. They are essential to derive integrals over complete elliptic integrals at rational arguments, which can be represented in terms of elliptic polylogarithms. Later, we will consider the different steps for a representation of the inhomogeneous solution based on the homogeneous solutions ψ_{3} and ψ_{4} given before.
+We first summarize a series of properties of Jacobi ϑ_{i} and the Dedekind η functions in Sec. VI A 1, followed by the representation of the complete elliptic integrals of the first and second kinds by the parameters of the elliptic curve and by the Jacobi ϑ_{i} and the Dedekind η functions in Sec. VI A 2. Basic facts about modular functions and modular forms are summarized in Sec. VI A 3 for the later representation of the building blocks of the homogeneous and inhomogeneous solutions of the second-order differential equations of Sec. II. In Sec. VI A 4, we collect some relations on elliptic polylogarithms and give representations of η-ratios in terms of modular forms weighted by a factor 1/η^{k}(τ) in Sec. VI A 5. The modular forms are expressed over bases formed by Lambert–Eisenstein series and products thereof.
+1. The Jacobi ϑ_{i} and Dedekind η functions
+As an entrance point, we use Jacobi’s ϑ_{i} functions. [107] The ϑ functions possess q-series and product representations [198]
+The elliptic polylogarithms, introduced in (6.55) and (6.58), are also q-series, containing a specific parameter pattern which allows accommodating certain classes of q-series emerging in Feynman integral calculations. The product representations associated with (6.7)–(6.9) read
+They are closely related to Euler’s totient function [116]
+the first emergence of q-products, and to Dedekind’s η function [63,110–115,199]
+One has [200]
+In the following, we will make use of series representations of both Jacobi ϑ- and Dedekind η-functions. We list a series of important relations for convenience,
+Many other identities hold and can be found, e.g., in Refs [70],  [71], and  [120–126].
+2. Representations of the modulus and the elliptic integrals
+For later use, we also consider the structure of the differential equation of the Weierstraß’ function ℘(z), [108]
+The functions g_{2}, g_{3}, e_{1}, e_{2}, and e_{3} are given by
+and the following representation in terms of Jacobi ϑ functions holds:
+with
+being Jacobi’s ω function. Here Jacobi’s identity is implied by (6.31) with
+The r.h.s. of (6.28) parameterizes the elliptic curve
+of the corresponding problem. Setting e_{1} − e_{2} = 1 for the purpose of illustration, the elliptic curves corresponding to the module k are shown in Fig. 10, choosing specific values.
+The modulus k can be represented in terms of the functions e_{i} by
+cf. [(3.7) and (3.19)]. k and k^{′}=1−k^{2} are given by
+cf. (6.28), which implies the following relation for η functions:
+Furthermore, one may express the elliptic integral of the first kind K by
+Sometimes one also introduces the Jacobi functions ω^{′},η¯ and η¯{′}, which are defined by [201]
+with
+The function η¯{′} can be obtained using Legendre’s identity (3.20) in the form
+One obtains the representations of the elliptic integrals of the second kind as follows:
+Later on, we will use the relation [127,128] for E,
+and the Legendre identity (3.20) to express E^{′},
+3. Modular forms and modular functions
+All building blocks forming the homogeneous solutions and the integrand of the inhomogeneous solutions of the second-order differential equations considered above can be expressed in terms of η-ratios. They are defined as follows.
+Definition 6.1. Letr=rδ{δ|N}be a finite sequence of integers indexed by the divisors δ ofN∈N\{0}. The function f_{r}(τ)
+is called η-ratio.These are modular functions or modular forms. In the following, we summarize a series of basic facts on these quantities in a series of definitions and theorems needed in the calculation of the present paper, cf. also Refs [64–76].
+Definition 6.2. Let
+where SL{2}(Z)is themodular group.For g=abcd∈SL{2}(Z) and z∈C∪∞, one defines the Möbius transformation
+Let
+These elements generate SL{2}(Z), and one has
+Definition 6.3. ForN∈N\{0}, one considers the congruence subgroups ofSL{2}(Z), Γ_{0}(N), Γ_{1}(N), and Γ(N), defined by
+withSL{2}(Z)⊇Γ_{0}(N)⊇Γ_{1}(N)⊇Γ(N)and Γ_{0}(N) ⊆Γ_{0}(M), M|N.
+Proposition 6.4. IfN∈N\{0}, then theindexof Γ_{0}(N) in Γ_{0}(1) is
+The product is over the prime divisors p of N.
+Definition 6.5. For any congruence subgroup G ofSL_{2}(Z), acuspof G is an equivalence class inQ∪∞under the action of G, cf. Ref [71].
+Definition 6.6. Letx∈Z\{0}. The analytic functionf:H→Cis amodular formofweight w = k for Γ_{0}(N) andcharactera↦xaif
+(i) 
+(ii) f(z) is holomorphic inH,
+(iii) f(z) is holomorphic at the cusps of Γ_{0}(N), cf. Ref [129], p. 532. Herexadenotes the Jacobi symbol. [130,131^{202}]A modular form is called acusp formif it vanishes at the cusps.
+Definition 6.7. Amodular functionf is of w = 0 and can be represented as the ratio of two modular forms.In particular, we will also have modular quantities, which are given by the ratio of a modular form andη^{l}(τ),l∈N,l>0. The q expansion of these quantities has the form
+Lemma 6.8. The set of functionsM(k;N;x)for Γ_{0}(N) and character x obeying Definition 6.6 forms a finite dimensional vector space overC. In particular, for any non-zero functionf∈M(k;N;x), we have
+cf., e.g., Refs [65],  [70], and  [132].The bound (6.53) on the dimension has been refined, cf., e.g., Refs [66],  [68],  [72],  [133],  [134], and  [203]. The number of independent modular forms f∈M(k;N;x) is ≤b, allowing for a basis representation in finite terms.For any η-ratio f_{r} (6.52), one can prove that there exists a minimal integer l∈N, an integer N∈N, and a character x such that
+is a modular form. All quantities which are expanded in q-series below will be first brought into the form (6.54). In some cases, one has l = 0. The form (6.54) is of importance to obtain the Lambert-Eisenstein series (Sec. VI A 5), which can be rewritten in terms of elliptic polylogarithms (Sec. VI A 4).The following theorems provide conditions for η-ratios being modular forms.
+Theorem 6.9 (Refs [135] and  [136]).Let f_{r}be an η-ratio of weight w = 12∑_{δ|N}r_{δ}. f_{r}∈M(w;N;1)if the following conditions are satisfied:
+(i) ∑_{δ|N}δr_{δ} ≡ 0 (mod 24),
+(ii) ∑_{δ|N}Nr_{δ}/δ ≡ 0 (mod 24),
+(iii) ∏δ|Nδ^{rδ}is the square of a rational number,
+(iv) ∑_{δ|N}r_{δ} ≡ 0 (mod 4),
+(v) ∑_{δ|N} gcd^{2}(δ, δ_{1})r_{δ}/δ ≥ 0, ∀δ_{1}|N.
+Theorem 6.10 (Ref [137]).Let an η-product(6.52), letk=12∑_{δ|N}r_{δ}, r_{δ} ≥ 0, ands=∏_{δ|N}δ^{rδ}, let124∑_{δ|N}δr_{δ}=c/eand124∑_{δ|N}Nδr_{δ}/δ=c_{0}/e_{0}, both in lowest terms, and put F(τ) = f(eτ). If k is an integer and thenA=abcdin Γ_{0}(ee_{0}N), we have
+where ϵ is the Dirichlet character (mod(Ne_{0}e)) defined by
+for a > 0 and gcd(a, 6) = 1.If we refer to modular forms, they are thought to be those of SL{2}(Z), if not specified otherwise.
+4. Elliptic polylogarithms
+The elliptic polylogarithm is defined by [86,138,204]
+It appears in the present context, because it is a function which allows representing the different Lambert–Eisenstein series, cf. Sec. VI A 5, spanning the η-ratios f¯{r}(τ). In the following, we briefly describe a few of its properties, which will be applied later on. One should note, however, that in the following often, but not always, ELi_{n;m}(x; y; q) will appear with non-positive indeces n, m. In the polylogarithmic case, this would correspond to rational functions, rather than to genuine polylogarithms. Clearly, the Eisenstein series play the main role here and we use the ELi_{n;m}-notation rather as a frame to allow for the comparison to the foregoing literature, e.g., Refs [32] and  [37]. Real elliptic polylogarithms appear upon integrating these structures over dq/q or in the inhomogeneities, which contain harmonic polylogarithms in the x-representation. In some cases, even various integrals have to be performed.
+Sometimes it appears useful, cf. Ref [39], to refer also to
+The multiplication relation of elliptic polylogarithms is given by [86]
+with
+In the present derivation, elliptic polylogarithms form rather a frame to deal with the Lambert-Eisenstein series. In the latter case, the argument q^{m},m∈N,m>1 may occur and the synchronization to the argument q is necessary. We will describe this below referring to the mth root of unity weights, cf. Sec. VI A 5.
+The logarithmic integral of an elliptic polylogarithm is given by
+Similarly, cf. Ref [39],
+holds.
+The integral over the product of two more general elliptic polylogarithms is given by
+Integrals over other products are obtained accordingly.
+5. Representations in terms of η-weighted Lambert–Eisenstein series
+We turn now to the basis representation of the η-ratios representing the different building blocks of the integrands of Eq. (2.6). They will be given by modular forms of M(k;N;x) and in some cases by an additional factor of 1/η^{12}(τ). The contributing modular forms M(k;N;x) turn out to be given by the Eisenstein series [84,85] for weight w = k and products of the Eisenstein series of total weight k. In the cases dealt with below, products of at most two Eisenstein series turned out to be sufficient.
+The Eisenstein series are defined by
+which can be rewritten in a normalized form by
+with B_{2k} being the Bernoulli numbers. The Eisenstein series are modular forms for k ≥ 2,
+is not a modular form but one has
+Lemma 6.11. The function E_{2}(τ) − NE_{2}(Nτ) is a modular form of weight w = 2 for the group Γ_{0}(N) with the trivial character x = 1.The Eisenstein series are associated with the earlier Lambert series [84,139–142], which are defined by
+Equation (6.64) can be obtained from (6.63) by applying the Lipschitz summation formula. [143] Finally, Eq. (6.66) can be rewritten in terms of elliptic polylogarithms, cf. Eq. (6.55), by
+In the derivation, often the argument q^{m},m∈N,m>0, appears, which shall be mapped to the variable q. We do this for the Lambert series using the replacement
+with
+One has
+Relations like (6.68) and (6.70) and similar ones are the sources of the mth roots of unity, which correspondingly appear in the parameters of the elliptic polylogarithms through the Lambert series.Furthermore, the following sums occur:
+and
+Likewise, one has
+In intermediate representations, also Jacobi symbols appear, obeying the identities
+In the case of an even value of the denominator, one may factor −12=1 and consider the case of the remaining odd-valued denominator.We also found Lambert series of the kind
+in intermediate steps of the calculation.For later use, we also introduce the functions
+keeping the q-dependence implicit. The functions Y, Z, and T allow for more compact representations for a series of building blocks given below. Note that (part of) the parameters (x; y) of the elliptic polylogarithms can become q-dependent.
+B. The emergence of E(r(z))
+The solutions of the homogeneous part of Eqs. (2.14) and (2.16) needed the elliptic integrals of the first and second kinds. The question arises, whether one would also find solutions based on the elliptic integral of the first kind only, as it was possible, e.g., in the case considered in Ref [37]. There the reason is that the corresponding integral can be written as an integral over 1/y^{2} where y^{2} defines an elliptic curve. Let us first transform (2.14) and (2.16) into Heun equations with four singularities setting t = x^{2},
+One may now consult Refs [144],  [145], and  [205]. In this form, both equations do not belong to the cases for which the solution can be found as an integral over an algebraic curve, as one finds inspecting the tables given in Refs [144] and  [145]. However, one may investigate the solution of differential equations associated with (2.14) and (2.16), which obey the conditions of Refs [144] and  [145]. We found equations of this type, but needed an additional differential operator to map them back to the original equations. The differentiation of an elliptic integral of the first kind will now imply that an elliptic integral of the second kind is present, as already the well-known relation [47]
+shows. In general, the derivative is for x, where k = k(x). One retains nonetheless the dependence on E, which has no representation in terms of Lambert–Eisenstein series only, as we show in Sec. VI C.
+We remark that in the case considered in Refs [32],  [37], and  [39] one obtains elliptic integrals of the first kind only. The solution obeys a corresponding second-order differential equation in accordance with Refs [144], and  [145].
+C. The q-series of the η-ratio representations of the basic building blocks
+In the following, we seek a series representation in the nome q (1.4) of the different building blocks of the solutions [(2.14)–(2.19)]. We will as widely as possible apply an algorithmic approach, which is applicable to a wide class of systems emerging in calculations of Feynman integrals of a similar type, i.e., being solutions of second-order differential equations leading to solutions in terms of (complete) elliptic integrals. In this context, the theory of modular forms and modular functions [64–69,72–76,132] plays a central role.
+The different building blocks depend on the kinematic variable x, which we discuss first. All contributing functions are mapped to modular forms f¯{r}, splitting off a factor 1/η^{k}(τ) if necessary. They are obtained as polynomials of the Lambert-Eisenstein series and are mapped to elliptic polylogarithms following Secs. VI A 4 and VI A 5.
+1. The kinematic variable x
+We consider the representation of one of the sets of homogeneous solutions ψ_{3,4}(z(x)), with z(x) given by (3.19) and set x¯=−x.
+maps the modulus
+into
+obeying Legendre’s modular equation, cf. Ref [64],
+cf. Refs [29],  [30],  [146], and  [147]. The nome q_{k} = exp(−πK(k′{2})/K(k^{2})) is the cube of the nome q_{l} ≡ q = exp(−πK(l′{2})/K(l^{2})) and is obtained by a cubic Legendre-Jacobi transformation [148–154,206].
+According to Refs [29],  [30],  [146], and  [147]
+is solved by
+Both the expressions [(6.87) and (6.88)] are modular functions. For definiteness, we consider the range in q,
+in the following. Here the variable x lies in the unphysical region. However, the nome q has to obey the condition (6.89). Other kinematic regions can be reached performing analytic continuations [156,207].
+We would like to make use of the method of proving conjectured η-ratios by knowing a finite number of terms in their q-series expansion. For this purpose, we refer to modular forms. In general, it will be therefore necessary to split off an η-factor from the respective quantity such that the η-ratio is analytic at the cusps, cf. (v) in Theorem 6.9. We can achieve this by separating off a common factor of
+A basis in the corresponding spaces M(k;N;χ), with character χ, is used to represent the corresponding quantities.
+To give a first example, we consider the η-representation for x. The associated η-ratio can be represented in terms of Lambert–Eisenstein series at different powers of q as follows:
+Following (6.70), one obtains
+One may synchronize the arguments to q using the relations given in Sec. VI A 5, and the products in (6.92) may be formally collected using Eq. (6.57). For
+both sides are modular forms, and the r.h.s. is expressed as a polynomial of the Lambert series. According to Lemma 6.8, they agree if the first b non-vanishing expansion coefficients of their q-series agree. Here we have extracted the power of 1/η^{12}(τ), to choose a factor often appearing. It is also the minimal factor necessary.
+2. How to find the complete q-series of the building blocks?
+After having found an exact representation of the kinematic variable x in terms of an η-ratio in Sec. VI C 1, we are in the position to perform the variable transformation from x- to q-space by series expansion at any depth. However, we still have to find the associated η-ratios for the corresponding building blocks. An empiric way to derive the η-ratio would consist, e.g., in systematically enlarging an Ansatz using larger and larger structures (6.52) and to compare their q-series to the one required for a sufficiently large number of terms according to Lemma 6.8, after having projected on to a suitable modular form, cf. Sec. VI A 3. This is a possible but time-consuming way. Quite a series of q-series expressions of η-ratios are, however, contained in Sloan’s On-line Encyclopedia of Integer Sequences, [157] often with detailed references to the literature, which one therefore should consult first. Lemma 6.8 will then allow us to prove the corresponding equality of the two modular forms comparing their q-series up to the necessary number of non-vanishing expansion coefficients. All the relevant q-series needed in the following could be found in this way. η-ratios can also be found from q-series by using the Maple package described in Ref [158].
+3. The ingredients of the homogeneous solution
+Let us now construct the individual q-series of the further building blocks. The representation of the elliptic integral of the first kind K(z) using (6.42) and (6.66) is well known,
+cf. Ref [157]A002654 by Somos, [159] and Ref [70], Eq. (13.10). K^{′}(z) is given by (6.43). Another quantity, which enters the representation of E(k^{2}) (6.50), can also be obtained in terms of Lambert-series directly,
+We still need the following η-weighted q-series:
+to express E(k^{2}) by Eq. (6.50). E^{′}(k^{2}) is then obtained by (3.20) and (6.51).
+Next we express the square root factor appearing in (3.17) and (3.18), for which the following representation in an η-ratio holds [157]A256637:
+The corresponding q-series is given by
+The polynomials (x + 1)(3x^{2} + 1) and (x − 1)^{2}(3x + 1) can be assembled using (6.92).
+Let us also list the q-series for Jacobi’s η¯ function, cf. also Ref [157]A000203,
+which is related to
+4. The inhomogeneity
+The integral over the inhomogeneity (3.25) in the case of the homogeneous solutions ψ_{3,4}(x) has the following structure:
+and
+For the functions f^{m}, the relation
+holds because of the structure of x, Eq. (6.88).
+For convenience, we introduce the variable ξ,
+Under this change of variables, the harmonic polylogarithms H_{a→}(x) can be transformed using the command TransformH of the package HarmonicSums [4–6,102,103].
+One obtains the following η-ratios, cf. A187100 and A187153 of Ref [157],
+for which we get the representation in terms of an η-factor and elliptic polylogarithms using the relations to the Lambert–series given in Sec. VI A 5,
+For both (6.107) and (6.108), 38 Lambert–series of the kind [(6.77) and (6.78)] contribute in our present basis representation. If expanded in Li_{0}(q^{n}) and the elliptic polylogarithms, many more functions would appear. The expressions [(6.98), (6.107), and (6.108)] are rather large. Due to a large number of relations between modular forms, we cannot currently exclude that these expressions can be simplified. We leave this for a later study. Here our first goal has been to find valid representations algorithmically in all cases.
+Let us now turn to the harmonic polylogarithms appearing in the inhomogeneities. We first change the measure for the integral (6.101) to
+The Jacobian J(q) is given by
+This is easy to see since the relation
+holds, which can be generalized to any η-ratio.
+Integrating (6.110), one obtains
+Since also other harmonic polylogarithms may occur in the inhomogeneities, let us briefly discuss the next possible cases.
+Similar to (6.110), one has
+and
+H_{−1}(x) and H_{1}(x) are obtained by integrating (6.113) and the relation (6.115),
+with
+There are similar symmetry relations at higher weight. One also applies the shuffle algebra [91,99], and it is therefore sufficient to calculate the q-representations for H_{0,1}, H_{1,−1}, H_{0,0,1}, H_{0,1,1}, H_{0,1,−1}, and H_{1,1,−1} up to weight w = 3.
+In (6.101), we first transform to ξ as the integration variable through which the HPLs H_{a→}(x) are replaced by
+By iteration, the different harmonic polylogarithms (2.20) are obtained as follows:
+with H¯{a→}(q¯)=H_{a→}ξ¯(q¯) and
+To express the solution f_{9b}(x), one needs to differentiate f_{8b}(x),
+For the solution of f_{10b}(x), integrals of the type
+are performed. Here, the integrand of (6.127) has to be expressed in terms of q.
+In the case of (2.6), integrals of the kind
+contribute. For k = 0, these integrals are given by polynomials of q and ln(q) and the integration relations of the type Eq. (6.59) can be used.
+Because of
+cf. Refs [75] and  [87], q-Pochhammer symbols are appearing, which requires a corresponding generalization of the integration relation with respect to q. Here p(k) denotes the partition function. There is no (known) finite rational closed form expression for p(k) [75], cf. also Ref [160].
+In Ref [39], Eqs. (50) and (69), only harmonic polylogarithms over the alphabet {0, 1} occurred, which all could be expressed in terms of elliptic polylogarithms. However, the kinematic variable in Ref [39] is different from that in the present case. This implies different representations for the harmonic polylogarithms in terms of q-series.
+We finally remark that there is a multitude of equivalent representations of the q-series of a modular form, which obey many relations [161,208]. It would be worthwhile to find minimal representations. One criterion could be to minimize the number of elementary elliptic polylogarithms (6.55) contributing. Still one would have to decide whether in this representation different arguments are synchronized or not, bearing in mind that the latter step is straightforward and only needed if the corresponding expression shall be integrated over q.
+VII. POSSIBLE EXTENSIONS
+In Sec. IV, we have obtained a representation of new iterative integrals containing also letters which are impossible to be rewritten as integrals such that the next integration variable does only appear in one boundary of this integral. In the present study, only the complete elliptic integrals were forming the new letters of this kind. Due to this, it is possible to express the corresponding integrands in terms of η-weighted Lambert-Eisenstein series, given the type of inhomogeneities are of the class as in the present examples. For other irreducible differential equations of order o = 2, it may happen that we end up with _{2}F_{1} solutions which cannot be reduced to complete elliptic integrals modulo some (ir)rational pre-factor.
+In more general cases, the _{2}F_{1} solutions will not appearm but other higher transcendental solutions might be found, obeying higher-order differential equations, which are the result of the corresponding integration-by-parts reductions [11]. They will usually have also definite integral representations and appear as new letters other than the ones we mentioned earlier. Whether or not a mathematical way exists to come up with an analog to the case of the elliptic polylogarithm will depend on the class of functions. In various cases, the representation of Sec. IV will be the final one.
+Still the case of the elliptic polylogarithm
+may get some generalizations in the case of Feynman integral calculations, as has been the case before for the polylogarithms. The two summand terms
+appearing are those of the generalized harmonic sums, i.e., the Mellin transforms of Kummer-iterative integrals, [162] connected with the nome term q^{jk}. One may think of a cyclotomic extension [4,5] in the sense of real-valued representations, where the two infinite sums allow for periodic gaps choosing summands of the kind
+Further extensions, which occurred in the non-elliptic case, may be binomially weighted sums, cf. Ref [6]. Here, additional factors of the kind
+may occur in (7.2).
+A reliable guide to find new structures consists in analyzing the appearing integrals by applying dispersion relations [26,163]. The cuts immediately relate to a series of relevant Landau variables [164] of the problem, which are usually only revealed at a much later stage using differential or difference equations directly to solve the same problem. [209] In higher-order graphs, one cannot exclude that hyperelliptic and Abel integrals [167] are going to appear at some level, which are known to be multi-periodic compared to the double periodicity in the elliptic case; see Ref [168] for the corresponding theory. The corresponding integrals will require new classes of functions for the analytic representations.
+We finally mention that in Φ^{4} theory at eight loops more complicated structures are occurring related to K3-surfaces [169,170,210], compared to those implied by elliptic curves.
+VIII. CONCLUSIONS
+A central problem in calculating higher loop Feynman integrals in renormalizable quantum field theories consists in solving the differential equations obtained from the IBPs, which rule the master integrals. In the present paper, we have solved master integrals which correspond to irreducible differential equations of second order with more than three singularities fully analytically. They appear in the calculation of the QCD corrections to the ρ-parameter at 3-loop order in Ref [41]. They form typical examples for structures which appear in solving IBP-relations for Feynman diagrams beyond the well-understood case of singly factorizing integrals given as iterative integrals over a general alphabet. The latter case has been already algorithmized completely in Ref [18], even not needing any special choice of the basis. The second-order structures can be mapped to _{2}F_{1} solutions under conditions presented in this paper. We have outlined the algorithmic analytic solution in this case in terms of iterative integrals over partly non-iterative letters. Indeed this holds even for much more general solutions than those of the _{2}F_{1} type. One is usually interested in representing the analytic solution for a certain interval of a (dimensionless) kinematic variable x∈R, e.g., for x ∈ [0, 1]. The solutions may have different singularities in this range, including branch points. Yet piecewise analytic series expansions of the type
+are possible, which overlap in finite regions allowing us to obtain a very high accuracy by expanding to a sufficient finite degree. The simple form of (8.1) is very appealing for many physics applications, despite the potentially involved structure described by the corresponding differential equations.
+The question arises whether one may find a fully analytic diagonalization of the integral describing the solution in the inhomogeneous case. If the _{2}F_{1} solutions can be mapped to complete elliptic integrals using triangle group relations for the homogeneous solution and the inhomogeneity normalized by the Wronskian can be represented in terms of elliptic polylogarithms, the inhomogeneous solution is given in terms of elliptic polylogarithms of the nome q, solving the integral over the inhomogeneity. Also here, all necessary steps are known. The building blocks appearing in the present case are not all of this type due to which modifications are necessary.
+In the present case, the kinematic variable x is determined from the rational function k^{2} = z(x) appearing in the complete elliptic integral K(k^{2}). A related, but different, approach has been followed in Ref [37]. Our choice has the advantage to obey the symmetry
+by sign change in deriving the q-forms of the harmonic polylogarithms. The kinematic variable x is obtained applying a cubic elliptic transformation. Next, one has to derive the elliptic integral representation of all factors appearing in the integrand of the inhomogeneous solution, and in some cases further integrals and derivations of the inhomogeneous solution in the q-representation. We map all building blocks to modular forms separating off a factor 1/η^{k}(τ) if necessary and obtain analytic solutions in terms of η-weighted Lambert-Eisenstein series. As we have shown, in the present case, the emergence of the elliptic integral of the second kind, E(k^{2}), cannot be avoided in the solutions. This is one source of the η-factor mentioned. While the multiplication relation (6.57) allows forming the final elliptic polylogarithms in the case of ∀k = 0, in general one obtains η-weighted elliptic polylogarithms. Because of the appearance of the q-Pochhammer symbol in the denominator, the occurring q-integrals are not of the class of the elliptic polylogarithms in general.
+The main work went into the determination of elliptic polylogarithm representations of the q-series for the different building blocks. In the present case, we also had to represent a square root term, which was possible using the structure of the rational function z(x). In this way, functions of Dedekind η-ratios are expanded into q-series trying to match them into linear combinations of elliptic polylogarithms. This is done for the most elementary factors, building the more complex ones using the relations (6.57). Here an essential issue is to prove the equality of two q-series, which can be done mapping to modular forms and comparing a number of non-vanishing coefficients up to the predicted bound.
+We have referred to a special choice for a basis in representing the occurring modular forms in M(k,N,x). In this way, we were able to find the representation of every η-ratio for any modular form completely algorithmically. This has been our main goal here. As it is well known, there are a very large number of relations between modular forms, which may be used to derive potentially shorter representations. One possible demand would be to find a minimal representation in terms of elliptic polylogarithms of, e.g., the kind
+referring to the class of elliptic polylogarithms which appeared in the present paper. To synchronize the q-argument of the occurring elliptic polylogarithms is easily possible, but will usually lead to a proliferation of terms.
+We remark that the Mellin moments in the case of elliptic contributions to the solutions also contribute, cf. Ref [165], map for fixed values of the Mellin variable N to rational numbers and multiple zeta values. Large amounts of moments can be calculated using the algorithm of Ref [171], also providing a suitable method to quantify the corresponding physical problem, cf. also Ref [172].
+For higher topologies, we envisage extensions to more general structures, as has been briefly discussed in Sec. VII. Structures of this kind are expected in solving differential equations of higher than second order, which may arise from Feynman diagrams, in the ongoing adventure to map out the mathematical beauty of the renormalizable quantum field theories of the microcosmos, as initiated by Stueckelberg [173] and Feynman. [174]
+Note added. After completion of the present paper, the preprint [186] appeared. In this paper, more special cases, compared to those in the present paper, are considered, which allow representations in terms of modular forms and powers of ln(q) only. The latter terms, appearing also in the present case, are related to Eichler integrals [180] in Ref [186].
+In Ref [186], Eq. (195), Weinzierl et_al changed their earlier representation for τ(x) to the convention we have introduced in (6.91) in 2017, which we have derived exactly, cf. Sec. VI A 3, by identifying m^{2}/t=x. In this way, they now also refer to the congruence subgroup Γ_{1}(6) if compared to Γ_{1}(12) earlier. Accordingly, their representation of the harmonic polylogarithms, in case of the kite-graph, will change to the ones we use, upon observing obvious relations [2,102].
+APPENDIX A: _{2}F_{1} SOLUTIONS OF SECOND-ORDER DIFFERENTIAL EQUATIONS WITH MORE THAN THREE SINGULARITIES
+In the following, we describe an algorithm which allows mapping an ordinary second-order differential equation into _{2}F_{1} solutions. We are going to explain it referring to an extended example. For this reason, we consider the following homogeneous linear differential equation with rational function coefficients:
+A hypergeometric solution of (A1) is a closed form solution
+where r(x),r_{0}(x),r_{1}(x),f(x)∈Q(x)¯, and a_{1},a_{2},b_{1}∈Q. The algorithm in Ref [58] first tries to find solutions of (A1) of the form
+If it finds no solutions of the form (A3), then it tries to transform (A1) to a simpler differential operator L̃ and tries to find solutions of L̃ of the type (A3), which then leads to solutions of (A1) of type (A2).
+If (A1) has solutions of type (A3), then there exists a Gauß hypergeometric differential operator L_{B} such that solutions of (A1) can be obtained from solutions of L_{B} via a change of variables and an exp-product transformations. This means that
+is a solution of L_{B}, and the change of variables x ↦ f(x) sends L_{B} to an equation LBf with a solution
+and the exp-product transformation sends LBf to an equation with solutions (A3).
+The operator (A1) has four non-removable singularities at x = −4, −10/3, 0, 4/15 and no removable singularities. The exponent-differences are 1/2, 1/4, 3/8, and 1/4, respectively. For example at x = 0, there are formal solutions (power series solutions) x^{0}⋅(1+1564x+…) and x^{3/8}⋅(1+249320x+…), so the exponents are 0 and 3/8 and the exponent-difference is 3/8.
+Section 3.3 of Ref [58] gives relations between deg(f), exponent-differences of L_{B}, and exponent-differences of (A1). If f(x) is a rational function, then sub-algorithm 3.2 in Sec. 3.4 of Ref [58] produces candidates L_{B}’s compatible with those relations. The algorithm in Ref [58] finds the following candidates:
+Here e_{0}, e_{1}, e_{∞} are the exponent-differences of a Gauß hypergeometric differential operator L_{B} at x = 0, x = 1, and x = ∞. They determine L_{B} up to an exp-product transformation. The deg(f(x)) of a rational function f(x) is the maximum of the degree of its numerator and degree of its denominator. For (A1), the algorithm finds six Gauß hypergeometric differential operators. Then the algorithm loops over each case and tries to recover f(x) in (A3).
+The fourth case (e_{0}, e_{1}, e_{∞}) = (1/8, 1/4, 1/2) and deg(f(x)) = 5 gives a Gauß hypergeometric differential operator L_{B}, where
+with an associated degree 5 for f(x). One can always compute formal solutions of differential operators around a singular point. The algorithm in Ref [58] chooses a true singularity of (A1), moves it to x = 0, and then computes formal solutions of (A4) and (A1) at x = 0. The point x = 0 is a true singularity of (A1). Formal solutions of (A4) at x = 0 are
+The exponents at x = 0 are 0 and −1/8; see (A5) and (A6). Formal solutions of (A1) at x = 0 are
+After a change of variable transformation x ↦ f(x) and exp-product transformation, one gets
+If one takes the quotients of formal solutions of Y_{1}(x), Y_{2}(x) of (A1) and y_{1}(x), y_{2}(x) of (A4), then the effect of exp∫r(x)dx disappears,
+where
+This suggests f(x) = q^{−1}(Q(x)); however, the quotients of formal solutions, (A9) and (A10), are unique up to a constant. So, the correct equation is
+where c∈C^{*} (here c∈Q^{*}). If one knows the value of c, then (A11) gives a power series expansion for f(x). That can be converted to a rational function, provided that one has a degree (bound) for f(x), which is 5. However, the value of c∈Q is unknown and there are infinitely many candidates for c. If one chooses a suitable prime number p and works modulo p, then there are a finite number of candidates for the unknown constant c. The algorithm in Ref [58] chooses p = 13 as the first suitable prime number and it loops over c = 1, …, p − 1 and for each c tries to recover f(x) modulo p from its series expansion (A11) modulo p. If this succeeds for at least one c, then the algorithm uses Hensel lifting techniques [175] to obtain f(x) modulo higher powers of p. After that, it tries rational function and rational number reconstruction to find f(x)∈Q(x). After five Hensel lifting steps, the algorithm finds
+Note that deg (f(x)) = 5.
+In order to find r(x)∈Q(x)¯, one can use Sec. 3.7 of Ref [58]. The algorithm in Ref [58] finds
+and so
+In the last step, the algorithm in Ref [58] forms solutions of (A1) from solutions (A5), (A6) of (A4). Then (A7) and (A8):
+are solutions of (A1) of type (A3) with exp∫r(x)dx as in (A13) and f(x) as in (A12).
+Remark A.1. The algorithm in Ref[58]first simplifies the homogeneous parts of the differential equations studied, cf., e.g.,(2.14)and(2.16). Then it finds the hypergeometric solutions of the simplified equations of type(A3), and then uses these solutions to form the solutions of their homogeneous parts of type(A2).Since the differential equation (A1) has more than three singularities, the argument f(x) of the _{2}F_{1} solution has to have singularities. The expression in _{2}F_{1} form has the advantage, that various properties of Gauß’ hypergeometric functions can be used in subsequent calculations, would not be known otherwise.The parameters a, b, c of the solution are rational numbers, and we will now investigate whether it is possible to map the homogeneous solutions (A14), (A15) into complete elliptic integrals, which has been possible in all examples being discussed in Sec. III.We would like to finally discuss a series of _{2}F_{1} transformations in the case of the appearance of special rational parameters a, b, c, illustrated by the graph, Fig. 11, cf. Refs [56],  [57], and  [176].If (a, b; c) and (a′, b′; c′) are the endpoints of an edge labeled l in the diagram, with the latter endpoint above the former, then
+for x sufficiently close to 0, where R, f are given in Table I.Here ω solves
+and d is the degree of f, the maximum of the degrees of the numerator and denominator. The relations displayed in the above diagram can be used to map a wider class of _{2}F_{1} solutions to elliptic solutions. In various cases, also the other relation obeyed by _{2}F_{1} has to be applied and one often ends up with complete elliptic integrals of the first and second kinds, as in the cases dealt with in the present paper.
+APPENDIX B: THE EQUAL MASS SUNRISE: FROM KINEMATICS TO ELLIPTIC POLYLOGARITHMS
+Bloch and Vanhove [32] perform a treatment comparable to Ref [37], but with differences in the definition of the variable t, leading to a somewhat different expression for I(q) and also finally leading to elliptic polylogarithms. In obtaining their rational expressions of η functions, they refer to the work of Maier [155] and obtain
+I(q) is of w = 3 and belongs to Γ_{0}(3). We first transform (B1) using the relation by Rogers, [177] Eq. (4.21), and obtain
+A generating function representation in q, using the first terms, is given in Ref [157]A106402, which finally yields
+This result is now transformed into a generalized Lambert series representation [84,139–141] by using
+with
+where one has
+Further logarithmic q-integrals, cf. (6.59), lead to higher weight elliptic polylogarithms. Equation (B5) is closely related to corresponding expressions given in Ref [37] to which we turn now.
+In Ref [37] the variable τ
+is related to the integration variable t=m^{2}⁡y by the product of the modules squared
+in Ref [37] while calculating the sunrise-integral. Equation (B8) is a modular function for Γ_{0}(4) which is inverted for y
+a modular function for Γ_{0}(12). It is also the variable of the inhomogeneity, and in general of harmonic polylogarithms and related functions, depending on the complexity of the problem. The validity of (B9) can be proven by applying a similar treatment, as shown in Sec. IV. Note that the cubic Legendre-Jacobi cubic transformation, cf. Ref [30], cannot be used directly, unlike the case in (6.87) and (6.88).
+The integrand of the special solution has been obtained by
+It is useful to consult Sloan’s On-line Encyclopedia of Integer Sequences [157] for this example. The corresponding solution has been given by Zagier in 2009 [178] by entry A214262 [157] for the series [179,181,211]
+where ab denotes the Legendre symbol. [182] The inner sum in (B11) can be carried out, resulting in
+Note that somewhat different integrands I(q) appear in the treatment in Refs [32] and  [37], which are related, however. The modular form (B10) is of Γ_{0}(12).
+Next the q-dependent part of (B12) is again transformed into the Lambert form, cf. (B4), and two integrals are performed to obtain a special solution [37],
+where we have dropped a common pre-factor.
+To be able to incorporate the inhomogeneity into the solution, it is necessary to express the harmonic polylogarithms depending on y as a function of q. The lowest weight HPLs are in this case [37]
+They are different to those obtained in the case presented in Sec. VI. In Ref [37], only HPLs over the alphabet {0, 1} occur. We note that the kinematic variable (B9) does not have the symmetry like the one obtained in (6.103).
+APPENDIX C: A SERIES OF SUMS
+In a recent paper [89], on the sunrise graph, which belongs to the context of the present paper, several sum-representations were presented, which could not yet be calculated. In the following, we give the solutions for all single infinite sums in terms of polylogarithmic expressions with root arguments, limited to at most Li_{2}(z). They can be calculated with the techniques made available in the package HarmonicSums.m, which were developed in the context of binomial sums [6,18,183,184,185,212].
+These sums may be represented referring to harmonic sums [7,8], defined by
+We use the replacements for the poly-gamma functions [7],
+with γ_{E} being the Euler-Mascheroni number. Furthermore, single cyclotomic harmonic sums contribute [5]. They are defined by
+with
+as one example.
+One obtains the following relations:
+The last sum does not form a genuine generalized hypergeometric function, but obeys a logarithmic representation. All the yet uncalculated double sums in Ref [89] cannot be solved completely in terms of iterative integrals, as has been checked by the algorithms used in Ref [18], and will therefore involve non-iterative integrals.
+TABLE I. 
+The functions R and f for the different hypergeometric transformations of degree d depicted in Fig. 11.
+TABLE I. -body
+l	d	R	f
+A	2	1	4x(1 − x)
+B	2	(1 − x)^{−1/6}	14x^{2}/(x−1)
+C	2	(1 − x)^{−1/8}	14x^{2}/(x−1)
+D	2	(1 − x)^{−1/12}	14x^{2}/(x−1)
+E	2	(1 − x/2)^{−1/2}	x^{2}/(x − 2)^{2}
+F	3	(1 + 3x)^{−1/4}	27x(1 − x)^{2}/(1 + 3x)^{3}
+G	3	(1 + ωx)^{−1/2}	1−(x+ω){3}/(x+ω¯){3}
+H	4	(1 − 8x/9)^{−1/4}	64x^{3}(1 − x)/(9 − 8x)^{3}
+FIG. 1. 
+The homogeneous solutions [(3.1) and (3.2)] ψ1a(0) (dashed line) and ψ2a(0) (full line) as functions of x.
+FIG. 2. 
+The homogeneous solutions [(3.5) and (3.6)] ψ1b(0) (dashed line) and ψ2b(0) (full line) as functions of x.
+FIG. 3. 
+The homogeneous solutions [(3.17) and (3.18)] ψ3(0) (dashed lines) and ψ4(0) (full lines) as functions of x; left panel: real part and right panel: imaginary part.
+FIG. 4. 
+The inhomogeneous solution of Eq. (2.14) as a function of x. Left panel—red dashed line: expansion around x = 0; blue line: expansion around x = 1. Right panel—illustration of the relative accuracy and overlap of the two solutions f_{8a}(x) around 0 and 1.
+FIG. 5. 
+The inhomogeneous solution of Eq. (2.15) as a function of x. Left panel—red dashed line: expansion around x = 0; blue line: expansion around x = 1. Right panel—illustration of the relative accuracy and overlap of the two solutions f_{9a}(x) around 0 and 1.
+FIG. 6. 
+The inhomogeneous solution of Eq. (2.18) as a function of x. Left panel—red dashed line: expansion around x = 0; blue line: expansion around x = 1. Right panel—illustration of the relative accuracy and overlap of the two solutions f_{10a}(x) around 0 and 1.
+FIG. 7. 
+The inhomogeneous solution of Eq. (2.16) as a function of x. Left panel—red dashed line: expansion around x = 0; blue line: expansion around x = 1. Right panel—illustration of the relative accuracy and overlap of the two solutions f_{8b}(x) around 0 and 1.
+FIG. 8. 
+The inhomogeneous solution of Eq. (2.17) as a function of x. Left panel—red dashed line: expansion around x = 0; blue line: expansion around x = 1. Right panel—illustration of the relative accuracy and overlap of the two solutions f_{9b}(x) around 0 and 1.
+FIG. 9. 
+The inhomogeneous solution of Eq. (2.19) as a function of x. Left panel—red dashed line: expansion around x = 0; blue line: expansion around x = 1. Right panel—illustration of the relative accuracy and overlap of the two solutions f_{10b}(x) around 0 and 1.
+FIG. 10. 
+The elliptic curve for k = 0 (dashed blue line), k = 1/2 (dotted black lines), and k=1/2 full red lines.
+FIG. 11. 
+The transformation of special _{2}F_{1} functions under the triangle group.

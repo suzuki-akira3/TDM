@@ -1,0 +1,121 @@
+Simultaneous determination of different ruthenium species by rate differential kinetic spectrophotometry
+With increasing nuclear fuel burning up, the yield of fission products increases and the reaction of high-yield fission products comparatively stands out. The precious metal ruthenium is one of the main fission products and a very important indicator in reprocessing and recovery, but the removal of this metal in the first co-decontamination step of plutonium uranium recovery by extraction is difficult. To rapidly determine the ruthenium concentrations in a uranium purification cycle and radioactive waste treatment processes, a simple and sensitive differential kinetic spectrophotometry that allows the simultaneous determination of ruthenium and nitrosyl ruthenium in a complex system is proposed. Based on the determination of the initial apparent rate constant, the reaction order in terms of the Ru^{3+} and [Ru(NO)]^{3+} concentrations, the equilibrium constant for the reaction of bipyridyl with Ru^{3+} and [Ru(NO)]^{3+} in the presence of hydroxylamine hydrochloride, and the measurement of the initial formation rate and equilibrium concentration of products [Ru(bipy)_{3}]^{2+}, Ru^{3+}, and [Ru(NO)]^{3+} in the complex system were analyzed using mathematical models, obtaining satisfactory results. The recovery rates ranged from 95.5% to 105%, and the relative standard deviations ranged from 2.9% to 4.3%.
+INTRODUCTION
+Nuclear power is widely considered to be an economical energy supply because of its high energy density and large fuel reserves. However, the sustainable use of nuclear energy requires the reprocessing of spent nuclear fuel to separate fissile and fertile nuclides (mainly ^{235}U, ^{239}Pu, and ^{238}U), as well as precious metals and useful radioisotopes in a complex environment with strong radioactivity and acidity. The precious metal ruthenium is one of the main fission products, which has a long half-life. Removing ruthenium via the co-decontamination of plutonium uranium recovery by extraction (PUREX) is difficult because ruthenium dissolves into [Ru(NO)]^{3+} and Ru^{3+} in nitric acid [1]. In addition, the chemical behavior and speciation of ruthenium in aqueous solution are complicated and difficult to analyze [2]. The existing methods can only determine the total concentration of various ruthenium species or analyze a system with a single ruthenium species without simultaneously determining different ruthenium species, e.g., Ru^{3+} and [Ru(NO)]^{3+}, in a complex system [3–5]. The ability to form complexes with variable compositions is one of the remarkable characteristics of ruthenium, and the chemical bond in Ru-NO is quite stable. The complex[Ru(bipy)_{3}]^{2+} (bipy = 2,2′-bipyridine) that forms in the presence of bipyridine is water soluble and has a stable color [6,7]. Based on this information about Ru^{3+}, [Ru(NO)]^{3+}, and [Ru(bipy)_{3}]^{2+}, a rate differential kinetic spectrophotometry was established to simultaneously determine Ru^{3+} and [Ru(NO)]^{3+} in a complex system using bipyridine as a complexing agent and to provide a reliable method for quantitatively analyzing the chemical behavior of ruthenium in reprocessing and radioactive waste treatments.
+THEORY
+In a rate differential kinetic analytical method, each component concentration is determined using the differential between the reaction rates of various components in a complex system [8]. Spectrophotometry is one of the most attractive analytical methods because of its advantages, such as its simplicity and quick response time [9]. The combination of the two methods has been applied in various analytical applications recently, and the principles are as follows [10–16]:
+(1) Under certain conditions, different substances, M and ML, simultaneously react with the same complexing agent, R, to form chromogenic compounds as follows [17]:
+The rate formula for the complexation reaction can be calculated as
+where c(M)_{0} and c(ML)_{0} are the initial concentrations of M and ML, respectively, (dc(P_{1})dt)_{t=0} and (dc(P_{2})dt)_{t=0} are the reaction rates of products P_{1} and P_{2} at the initial time, respectively, n_{1} and n_{2} are the reaction order, and k_{1} and k_{2} are the apparent reaction rate constants for the two reactions.When P_{1} and P_{2} are the same, the reactions can be complied using the principle of independent coexistence, and the rate formula can be expressed by the following equation:
+(2) Under certain conditions, two equilibrium reactions can be written as follows [18]:
+where m_{1} and m_{2} are stoichiometric coefficients and K_{1} and K_{2} are the equilibrium constants of the balanced reactions
+Since the product concentration in the complexation equilibrium, c(P)_{eq}, can be measured, c(M)_{eq}, c(ML)_{eq}, and c(R)_{eq} can be calculated and obtained as follows:
+where c(R)_{0} is the initial concentration of the complexation agent.
+When the two complexation reactions proceed in the same system and reach equilibrium and m_{1}= m_{2}= m, the products are the same product, P, and then
+where
+For c(R)_{0} ≫ c(M)_{0}, c^{m}(R)_{eq} ≈ c^{m}(R)_{0}, and the following formula can be obtained from Eq. (16):
+By measuring K_{1}, K′_{2}, and c(P)_{eq}, the total concentration of the reactants (M and ML), c_{0}, can be computed from Eqs. (17) and (18).
+After measuring k_{1}, k_{2}, n_{1}, n_{2}, K_{1}, K′_{2}, c(P)_{eq}, and (dc(P)dt)_{t=0} and computing the total concentration, c_{0}, the initial concentrations of M and ML, c(M)_{0} and c(ML)_{0}, can be obtained from Eqs. (5) and (15).
+According to Beer's law (A = εCL, where A is the absorbance, ε is the molar absorption coefficient, C is the concentration of the object under test, and L is the thickness of the solution under test), the initial apparent rate (dc(P)dt)_{t=0} and c(P)_{eq} can be obtained by measuring the absorbance of complexation reaction using a spectrophotometer at 2 min and at equilibrium, respectively [The initial apparent rate (dc(P)dt)_{t=0} can be replaced by the average concentration of product at 2 min for simplifying the experimental equipment (Compared to the initial apparent rate calculated by extrapolation, the analytical results have not been affected)].
+In a single component system, the component concentration, c(M)_{0} or c(ML)_{0}, can be obtained from Eq. (3) or Eq. (4) after measuring the parameters and the initial reaction rate (In this work, P_{1} and P_{2} were quantified only as P; k_{1}, k_{2}, n_{1}, n_{2}, K_{1}, and K′_{2} are constants; the unit for c(P)_{eq}, c(M)_{0}, and c(ML)_{0} is mol·l^{–1}; and the unit of (dc(P)dt)_{t=0} is mol·l^{–1}·s^{–1}.).
+EXPERIMENTAL
+Reagents and apparatus
+Absorbance spectra were recorded on a LabTech UV-2000/2001 UV-VIS spectrophotometer with a 1 cm glass cell. A 50 l thermostated water bath was used to control the reaction temperature, and a stopwatch was used to record the reaction time.
+A standard ruthenium solution (GSBG62036–90, with uncertainty of 0.3%), a standard nitrosyl ruthenium solution (NEWBURYPORT, MA 01950 USA), doubly distilled water, and analytical reagent grade chemicals, such as bipyridyl, ethylene diamine tetra-acetic acid (EDTA), hydroxylamine hydrochloride, and anhydrous sodium acetate, were used throughout for the preparation of solutions.
+Selection of the maximum rate differential timing
+Selecting the timing to measure the reaction rate is critical in rate differential kinetic analysis methods. In this research, the variation in the reaction rate as a function of the reaction time is shown in Fig. 1. Figure 1 shows that a shorter sampling time results in a larger rate differential, but a sampling time that is too short will result in larger errors. When the sampling time was 2 min, the chromogenic development is relatively stable, and the rate differential between the two species is approximately 4.6, which meets the requirements of at least 3 to 4 times. Therefore, the sampling time was set to 2 min.
+Experimental method
+After a series of optimization experiments, a standard ruthenium solution or nitrosyl ruthenium solution, 3 × 10^{−4 }l of a 10 mmol/l 2,2′-bipyridine solution as the complexing and chromogenic agent, 2 × 10^{−4 }l of a 1 × 10^{−4 }l EDTA solution as the masking agent, 5 × 10^{−4 }l of a hydroxylamine hydrochloride (10%) solution as the reductant, and 3 × 10^{−3 }l of a 1 mol/l sodium acetate solution as the pH buffer (to stabilize the absorbance) were successively added into a colorimetric tube, diluted to scale with water, and mixed. The solutions were placed in a thermostated water bath to maintain the reaction in boiling water for a certain time, cooled down to room temperature with flowing water, diluted to scale with a buffer solution, and mixed. Finally, the absorbance at 452 nm after 2 min and at the reaction equilibrium time was measured. The product absorbance peak (tris(bipyridine)ruthenium) was located between 450 and 470 nm, and the other reagents do not have an absorbance peak in that region [19]. Beer's law was valid for the measurements under the experimental conditions.
+RESULTS AND DISCUSSION
+The ruthenium and 2,2′-bipyridine reaction parameters
+Determination of the ruthenium and 2,2′-bipyridine product composition
+An eight-surface structure with a coordination number of six is the most stable for ruthenium, and this structure can be formed by connecting three 2,2′-bipyridine to ruthenium [20]. The absorbance peaks of tris(2,2′-bipyridine)ruthenium [Ru(bipy)_{3}]^{2+} are located at 240, 280, 324, 352 nm, and 450 ∼ 470 nm. A comparison between the spectra of [Ru(bipy)_{3}]^{2+} and the ruthenium and 2,2′-bipyridine product is shown in Fig. 2. The absorbance peak positions and shapes are consistent, indicating that the reaction ruthenium and 2,2′-bipyridine product is [Ru(bipy)_{3}]^{2+}.
+Determination of the equilibrium constant and stoichiometric coefficient
+Because the Ru-NO bond must first break before the reaction between nitrosyl ruthenium and 2,2′-bipyridine can occur, the equilibrium time will be longer than 3 h, and the reaction equilibrium time was set at 3.5 h [22].
+Based on the previous literature [23], the complexation ratio of nitrosyl ruthenium and 2,2′-bipyridine is 1:3, and the equilibrium reaction of nitrosyl ruthenium and 2,2′-bipyridine should be
+Then, the following equation can be obtained from Eqs. (10), (12), and (13)
+Different concentrations of a standard solution of nitrosyl ruthenium were used to measure the product concentration at equilibrium, and the linear regression results are shown in Fig. 6.
+Based on the regression results, m_{2} = 3 and K′_{2} = 1.39 × 10^{11} (mol/l)^{−3} were obtained from Fig. 6, which further proved that the complexation ratio of nitrosyl ruthenium and 2,2′-bipyridine is 1:3.
+Determination of the apparent reaction rate constant and reaction order
+Based on the nitrosyl ruthenium and 2,2′-bipyridine complexation reaction, the following rate equation was obtained from Eq. (4):
+After taking the logarithm, the above equation can be expressed as
+Different concentrations of a standard solution of nitrosyl ruthenium were taken to measure the initial apparent rate at 2 min, and the linear regression results are shown in Fig. 7.
+Based on the regression results, k_{2} = 3.7 × 10^{−3} (mol/l)^{0.214}(min)^{−1} and n_{2} = 0.786 were obtained from Fig. 7, and the rate equation for the nitrosyl ruthenium and 2,2′-bipyridine complexation reaction can be expressed as
+Then, the following equations can be established using Eqs. (15), (24), and (29)
+Based on the above calculation results, the ruthenium and nitrosyl ruthenium concentrations can be obtained by measuring the initial formation rate and equilibrium concentrations of the product, [Ru(bipy)_{3}]^{2+}.
+Determination of the nitrosyl ruthenium and 2,2′-bipyridine product composition
+Similar to Fig. 2, a comparison between the absorbance spectra of [Ru(bipy)_{3}]^{2+} and the nitrosyl ruthenium and 2,2′-bipyridine product is shown in Fig. 5. The absorbance peak positions and shapes are consistent, indicating that the nitrosyl ruthenium and 2,2′-bipyridine reaction product is [Ru(bipy)_{3}]^{2+}.
+Analytical application
+Recovery rate and precision
+Three groups with different volumes of standard solutions of ruthenium and nitrosyl ruthenium were added to ruthenium solutions with specific concentrations. Then, the solutions were measured at 2 min and 3.5 h using the above procedures. After measuring the equilibrium concentration of the product, [Ru(bipy)_{3}]^{2+}, the total ruthenium concentration can be obtained; additionally, the mixture proportions can be obtained using Eq. (30) and are shown in Table I. Table I shows that the relative standard deviation (RSD) of all the tests was less than 4.3%, and the recovery rates of ruthenium and nitrosyl ruthenium were 96.8%–105.0% and 95.5%–103.0%, respectively. One of the main reasons for the error is the inaccuracy due to measuring the initial reaction rate for approximate processing, as mentioned in footnote 2. This leads to deviations in the apparent reaction rate constant, k, and the reaction order, n, based on the formula relation. Because of the exponential relation between the concentration and the reaction order, n, a larger error will be introduced.
+Interference of coexisting ions
+Interference experiments with the most common coexisting ions were performed to evaluate the robustness of the determination and the role of EDTA, as shown in Table II.
+The results show that EDTA can be used to mask interference ions, but iron ions still interfere to a certain degree. These values are in good agreement, indicating that the proposed method is more selective and the presence of most common coexisting ions in the practical fuel solution does not contribute any significant interference in the analysis of ruthenium by this method. Hence, this method can be employed for monitoring the ruthenium concentration in highly complicated samples generated in various steps during the aqueous reprocessing of spent fuel from a fast reactor.
+Comparison between this study and other studies
+So far, there have been a lot of studies reporting the ruthenium determination via different mechanisms; however, few of them are suitable for simultaneous determination of different ruthenium species in a complex environment. Table III summarizes the comparison between this study and other studies.
+As shown in Table III, due to the highly catalytic and stable chemiluminescent activities, even all the methods were performed via spectrophotometry based on the characteristic of ruthenium to form various adsorptive collection of chromogenic chelates with different indicators. Even though the detection limit and RSD performed in this study is a little higher than that of some studies using flow injection or on-line methods, it is comparable to or even lower than those of most other studies for versatile application.
+In addition, these recent flow injection methods for determining the ruthenium concentration are all based on separation or pre-concentration procedures due to the conventional commercial importance of ruthenium but are not suitable for determining the respective concentration of [Ru(NO)]^{3+} and Ru^{3+} dissolved in nitric acid in the co-decontamination cycle of spent nuclear fuel reprocessing [42,43]. Besides, the Achilles heel of these flow analysis techniques is continuous reagent consumption and continuous generation of chemical waste limited in the laboratories considering the possible applications [33,44]. The distribution behaviors of [Ru(NO)]^{3+} and Ru^{3+} in the tributyl phosphate-kerosene and the water phase are quite different [45,46], and thus, monitoring the fission radionuclides in the post-processing and treatment of radioactive wastes is of great significance because it not only provides the necessary means to detect and control the co-decontamination of fission products but also constitutes an important part of the monitoring and control of radiation safety. Adopting the flow injection and on-line methods in practice would contaminate more instruments, making it difficult to guarantee the resistance of these instruments to high-intensity radiation, whereas the application of the simultaneous determination based on rate differential kinetic spectrophotometry would be easier.
+Finally, the good recovery results and the experimental validation of the proposed method indicate that it can be used under the extremely harsh measuring conditions of spent nuclear fuel processing, such as long-term and high-intensity radioactivity, high nuclide toxicity, and heat release. In other words, the proposed method based on a stable color expression of complex [Ru(bipy)_{3}]^{2+} and numerical equations for determining the Ru^{3+} and [Ru(NO)]^{3+} concentrations in a complex system by rate differential kinetic spectrophotometry can reliably provide the chemical behavior of ruthenium in reprocessing and radioactive waste treatments, which is necessary for detecting and controlling the complex co-decontamination processes in PUREX.
+CONCLUSIONS
+The best conditions for the rate differential kinetic spectrophotometry to determine the concentration of different ruthenium species in a complex system were determined. Two minutes was the best sampling time to measure the absorbance at 452 nm. Bipyridine was the complexing and chromogenic agent; EDTA was the masking agent; hydroxylamine hydrochloride was the reductant; and HAc-NaAc was the buffer system used to maintain a pH between 4 and 6.5 in the boiling water bath. This new method has a measurement range of 1.5 × 10^{−6 }mol/l to 1.3 × 10^{−4 }mol/l for the simultaneous determination of Ru^{3+} and [Ru(NO)]^{3+}. The method is useful and realistic for the determination of ruthenium in uranium purification cycles and radioactive waste treatments because the chemical behaviors and formation of ruthenium complexes are complicated in radioactive aqueous solutions and most coexisting ions, including iron, do not interfere with the detection of ruthenium. In addition, this new method with a good sensitivity is also relatively simple with recovery rates from 95.5% to 105% and RSD values from 2.9% to 4.3%, and the ruthenium composition in a complex system can be quantified with satisfactory results using this method.
+TABLE I. 
+Experimental recovery rates and RSDs in a complex system.
+TABLE II. 
+Interference of coexisting ions.
+TABLE III. 
+Comparison between this study and other studies.
+TABLE I. -body
+Certified sample	Added/μmol·l^{−1}	c(Ru)_{t}/μmol·l^{−1}	Measured average (n = 6)/μmol·l^{−1}	Recovery rate/%	RSD/%
+Ru^{3+}	12.5	44.5	12.1(13)	96.8	4.3
+[Ru(NO)]^{3+}	32.0	31.4(21)	98.1	3.9
+Ru^{3+}	56.0	154.0	54.9(25)	98.0	3.3
+[Ru(NO)]^{3+}	98.0	101.0(3)	103.0	2.9
+Ru^{3+}	135.0	235.5	142.0(6)	105.0	3.0
+[Ru(NO)]^{3+}	100.5	95.5(5)	95.5	3.1
+TABLE II. -body
+Ion	c(Ion) /g·l^{−1}	c[Ru(NO)]^{3+}_{mea}/c_{T}/%	Error/% free EDTA	Interference	Error/% add EDTA	Interference
+Ca^{2+}	1.4	53.0	0.4	−	1.2	−
+Ba^{2+}	1.0	53.0	0.3	−	0.5	−
+Zr^{4+}	2.0 × 10^{−2}	53.0	6.4	+	2.4	−
+Ni^{2+}	2.0 × 10^{−2}	53.0	7.9	+	4.8	−
+Co^{2+}	2.0 × 10^{−3}	53.0	8.2	+	4.6	−
+Cu^{2+}	4.0 × 10^{−3}	53.0	6.5	+	1.3	−
+Fe^{3+}	4.0 × 10^{−3}	53.0	9.6	++	5.6	+
+Mg^{2+}	2.0 × 10^{−4}	53.0	3.2	−	2.3	−
+Cd^{2+}	8.0 × 10^{−2}	53.0	4.5	−	0.5	−
+TABLE III. -body
+Determination method	λ/nm	Detection limit or range	Recovery rate/%	RSD/%	Reference
+Rate differential kinetic spectrophotometry	452.0	1.5–130.0 μmol·l^{−1}	95.9–105.0	<4.3	This study
+Kinetic spectrophotometry	524	5.0–800.0 ng·l^{−1}	99.0–103.0	2.8–4.0	 [24]
+High-resolution continuum source graphite furnace atomic absorption spectrometry	343.7	1.9 μg·l^{−1}	90.1±2.5	<6.0	 [25]
+Electrothermal atomic absorption spectrometry	349.9	0.5–5.0 ng·l^{−1}	…	7.2	 [26]
+Flame atomic absorption spectroscopy	349.9	0.5–500 mg·l^{−1}	…	…	 [27]
+Reversed-phase HPLC	560	0.2–5.0 ppm	…	0.3–3.2	 [28]
+Extraction spectrophotometry	590.0	7.6–39.8 ng·l^{−1}	…	0.23	 [29]
+Extractive second derivative spectrophotometry	539.7	1.79 ng·ml^{−1}	…	1.5	 [30]
+Flow injection catalytic kinetic spectrofluorimetry	284.0, 377.0	2.0–400.0 ng·ml^{−1}	…	1.8	 [31]
+Spectrophotometric flow injection determination	521.0	0.4–100.0 ng·ml^{−1}	…	1.84	 [32]
+Flow injection-spectrophotometric method	615.0	0.005–0.500 ng·l^{−1}	93.0–105.0	<3	 [33]
+Flow injection spectrophotometric catalytic method	505	0.12 ng·l^{−1}	…	3	 [34]
+On-line microwave flow injection analysis (FIA)	538.0	5.0–200.0 ng·ml^{−1}	94–95.3	…	 [35]
+Catalyzed oxidation followed spectrofluorimetry	420.0	3.2–252.7 ng ml^{−1}	…	2.2	 [36]
+Catalytic kinetic method followed spectrofluorimetry	526.0	0.1–2.5 ng·ml^{−1}	101.4–104.0	1.2–1.8	 [37]
+Catalytic oxidation followed spectrofluorimetry	555.0	0.1–100.0 ng·ml^{−1}	…	2.4	 [38]
+Selective spectrophotometry	560	0.2–2.8 mg·l^{−1}	86.0–101.5	0.7–4.8	 [39]
+Direct and derivative spectrophotometric determination	375	0.5–8.1 ng·l^{−1}	99.4–102.6	1.56	 [9]
+Spectrofluorimetric determination	347.0, 486.0	1.0–400.0 ng·l^{−1}	…	2.4	 [40]
+Titrimetric and spectrophotometric determination	350	0.05–1 mg·l^{−1}	99±2	0.5–3.4	 [41]
+FIG. 1. 
+The variation in the reaction rate was plotted as a function of the reaction time to determine the suitable sampling time.
+FIG. 2. 
+Absorbance spectra comparison between standard [Ru(bipy)_{3}]^{2+} and the product of ruthenium and 2,2′-bipyridine.
+FIG. 3. 
+Linear relation used to determine the equilibrium constant and stoichiometric coefficient for the complexation reaction between ruthenium and 2,2′-bipyridine.
+FIG. 4. 
+Linear relation used to determine the apparent reaction rate constant and reaction order for the complexation reaction between ruthenium and 2,2′-bipyridine.
+FIG. 5. 
+Absorbance spectra comparison between [Ru(bipy)_{3}]^{2+} and the nitrosyl ruthenium and 2,2′-bipyridine product.
+FIG. 6. 
+Linear relation used to determine the equilibrium constant and stoichiometric coefficient for the complexation reaction between nitrosyl ruthenium and 2,2′-bipyridine.
+FIG. 7. 
+Linear relation used to determine the apparent reaction rate constant and reaction order for the complexation reaction between nitrosyl ruthenium and 2,2′-bipyridine.

@@ -1,0 +1,79 @@
+A multifunctional energy-saving magnetic field generator
+To improve the energy utilization of magnetic field generators for biological applications, a multifunctional energy-saving magnetic field generator (ESMFG) is presented. It is capable of producing both an alternating magnetic field (AMF) and a bipolar pulse magnetic field (BPMF) with high energy-saving and energy-reuse rates. Based on a theoretical analysis of an RLC second-order circuit, the energy-saving and energy-reuse rates of both types of magnetic fields can be calculated and are found to have acceptable values. The results of an experimental study using the proposed generator show that for the BPMF, the peak current reaches 130 A and the intensity reaches 70.3 mT. For the AMF, the intensity is 11.0 mT and the RMS current is 20 A. The energy-saving and energy-reuse rates for the AMF generator are 61.3% and 63.5%, respectively, while for the BPMF generator, the energy-saving rate is 33.6%. Thus, the proposed ESMFG has excellent potential for use in biomedical applications.
+I. INTRODUCTION
+In recent decades, interest has grown in biomagnetism and its applications in biotechnology. A variety of magnetic field generators for use in biological research have been proposed, including alternating magnetic field (AMF) and pulsed magnetic field (PMF) generators. PMFs are widely used in studies of biological tissues and in clinical applications such as transcranial magnetic stimulation (TMS) and cancer treatment [1]. Since the development of TMS in 1985, it has been found to be effective in the treatment of depression and of neurological and other disorders [2]. Bouda et_al [3] designed a magnetic field generation system for TMS applications with an adjustable pulse width using insulated gate bipolar transistors (IGBTs) and metal–oxide–semiconductor field effect transistor (MOSFET) technology. To induce magneto-permeabilization of biological cells, Novickij et_al [4] proposed a PMF generator based on an array of high-power MOSFET switches. This generator can produce 10–100 μs pulses with a predefined repetition frequency of 1–100 Hz and a magnetic field amplitude of up to 5.5 T. Peterchev et_al [1] developed a device that can induce a near-rectangular pulsed electric field with width controllable from 5 to 100 μs and a coil current of up to 6 kA. To investigate the possible inhibition of tumor cell growth by PMFs, Mi et_al [5] developed a high-rate PMF generator with a magnetic field amplitude of 0.92 T and a rate of change of 1.1 × 10^{7} T/s. For magnetic field measurement, Chen et_al [6] proposed an improved 3-D magnetic field generator with a compact structure and a larger region of uniform field.
+Murabayashi et_al [7] studied the effects of a 50 Hz PMF with an intensity of 2.2 mT on the macrophage, monocyte, and lymphocyte activation in vitro. Peterchev et_al [8] proposed a flexible and practical method for pulse parameter control in TMS that can provide a flexible pulse shape, including a bipolar PMF (BPMF). Zhao et_al [9] designed and produced an oscillating magnetic field generator and used it to show that a BPMF can be used for efficient magnetic targeting of drug delivery. Ju et_al [10] presented a power supply system for exciting a PMF with a specially designed solenoid. Their approach to the solenoid design can also be applied to the development of high-power microwave devices and other applications.
+AMFs have been investigated for applications in biomedicine, industry, and agriculture [11]. To evaluate the biological effects of an AMF, Wada et_al [12] designed a time-varying magnetic field generator based on single-phase inverter technology and producing a field with amplitude 6.5 mT and frequency 80 kHz. Espejo et_al [13] presented an AMF generator that is based on a cylindrical nanostructure and has possible applications in telecommunications, among other areas.
+In agriculture, it has been found that application of an AMF increases seed germination rates and promotes root and seedling growth [14,15], as well as improving disease resistance of crops [16]. Kogure et_al [17] used single-phase inverter technology and a series LC resonant circuit to produce an AMF with amplitude 8 mT and frequency 20 kHz for biological research.
+Novickij et_al [18] found that repetitive pulsing can result in strong Joule heating during biomedical magnetic stimulation experiments, which is a problem because most biological samples are susceptible to high temperatures. Therefore, they developed a programmable magnetic field system with cooling equipment for the coil. Peterchev et_al [19] presented a novel stimulator for transcranial magnetic stimulation. It can produce near-rectangular electric field pulses with adjustable polarity, duration, and amplitude. This device decreases coil heating while also saving energy.
+Few of the devices described earlier include any energy-saving functions, and there is also a lack of experimental data on how they should be used in a clinical context. There is therefore a need to develop energy-saving magnetic field generators with reduced Joule heating of the coil and improved stability that can tailor to particular biomedical applications.
+This paper presents a design for an energy-saving magnetic field generator (ESMFG) and describes an experimental investigation of its capabilities. In contrast to conventional magnetic field generators, the proposed ESMFG can produce both an AMF and a BPMF with an adjustable amplitude and frequency. Meanwhile, the energy utilization rate is improved and coil heating is reduced.
+II. SYSTEM CONFIGURATION
+The basic circuit topology of the proposed ESMFG is shown in Fig. 1. It can not only produce both an AMF and a BPMF but can also save energy from the coil for reuse. The switches Q_{1}, …, Q_{8} are implemented with a semiconductor device such as a MOSFET. The voltage and current are controlled by the two H-bridge circuits. When Q_{5} and Q_{6} are closed, an RLC circuit is formed by the energy-storage capacitor C_{1}, the stimulating coil L_{1}, and the sample resistor R_{2}. Under a condition of underdamping, the energy in L_{1} flows to C_{1}, and then C_{1} starts charging. When energy is reused, the capacitor C_{1} discharges to L_{1}. The required magnetic field is then generated. The circuit system is divided into an AMF generator and a BPMF generator, which we shall now describe in detail.
+A. Energy saving AMF generator
+The working process of the energy-saving AMF generator is shown in Fig. 2. For the production of an AMF in the single-phase inverter circuit, the forward and reverse currents are as shown in Figs. 2(a) and 2(b), respectively. In this process, a dc current source is applied. The controller generates a pulse-width modulation (PWM) signal to control the switching states of Q_{1}, Q_{4} and Q_{2}, Q_{3}. The energy of L_{1} can be expressed as
+where L is the inductance of L_{1} and I is the current through L_{1}.
+When the dc current source ceases to be applied, the AMF generator begins to save energy. The RLC circuit is formed when Q_{5} and Q_{6} are turned on. The current flow in the RLC circuit is as shown in Fig. 2(c). At the same time, the energy-storage capacitor is charged. The capacitor voltage and coil current can be expressed as
+where δ = R/2 L_{1}, ω_{0}=1/L_{1}C_{1}, and ω=ω02−δ^{2}. δ is the attenuation coefficient, ω is the angular frequency, and R is the sum of the internal resistance of the switches, the internal resistance of the stimulating coil, and the sample resistance. The waveforms of the capacitor voltage and the coil current during the energy-saving process are shown in Fig. 3(a). When the capacitor voltage reaches its maximum value, the coil current falls to zero. The energy in the coil is then recovered by the capacitor. By taking the time derivative of the current and setting it equal to zero, we find that the time at which this happens is given by
+Then, on disconnecting the RLC circuit, the energy released by the stimulating coil is stored in the energy-storage capacitor.
+The energy stored in the capacitor can then be reused the next time the AMF is generated. Switches Q_{5} and Q_{6} are again turned on, creating an RLC circuit with current flow as shown in Fig. 2(d). The coil current and capacitor voltage are given by
+where U_{0} is the initial voltage of the energy-storage capacitor. The initial energy stored in the energy-storage capacitor is
+The waveforms of the capacitor voltage and the coil current during the process of energy reuse are shown in Fig. 3(b). When the capacitor discharges to the coil, the energy stored in the capacitor is reused. According to Eq. (5) and taking di/dt = 0, the first peak time of the current is given by
+The RLC circuit is then disconnected, and the inverter circuit starts working. The current rapidly reaches its rated value, and thus the magnetic field reaches its rated strength.
+B. Energy-saving BPMF generator
+The generation process of the energy-saving BPMF is shown in Fig. 10. The rated voltage of C1 is 100 V, and the maximum current produced in the coil is 130 A according to Eq. (10). From the Biot–Savart law, the magnetic field amplitude is directly proportional to the current in the coil. Thus, the magnetic field intensity on the coil surface is 70.3 mT. At time A, the capacitor, with 100 V initial voltage, discharges to the coil. The initial energy is 0.25 J according to Eq. (7). At the same time, the bipolar pulse current is increasing. At time B, the pulse current falls from its peak value to zero. The energy-storage capacitor is reverse-charged to a maximum voltage of 58 V, and the energy stored in it is 8.41 × 10^{−2} J according to Eq. (7). The energy-saving rate η_{3}, as calculated from
+is 33.64%.
+At time C, the energy-storage capacitor, with 58 V initial voltage, is reverse-charged to its rated voltage of 100 V. At time D, the capacitor discharges to the coil to generate a bipolar pulse current.
+In addition, different energy-storage capacitors can be selected to change the pulse width of the bipolar pulse. The frequency of the BPMF can be adjusted by changing the dead time of the energy-storage capacitor.
+III. EXPERIMENTAL SETUP
+The main circuit parameters from Fig. 1 are shown in Table I.
+The power supply system consists of two parts: a dc current source (with a maximum output current of 30 A) applied to the AMF generator and a dc voltage source (with a maximum voltage of 100 V) applied to the BPMF generator. The stimulating coil is made from 2 mm enameled wire with a turn number of 20. To protect the power switches Q_{1}, …, Q_{8} from damage by the high reverse voltage, RC snubber circuits are included.
+The circuit system is controlled by an NXP KL25Z128 32-bit microcontroller with a clock frequency of 40 MHz. Experiments are performed to confirm the energy-saving capabilities of the AMF and BPMF generators.
+IV. RESULTS
+A. Energy-saving AMF generator
+Figure 5 shows the experimental waveform of the alternating current. R_{2} is used for estimating the current in the coil. The coil current I_{L} is given by
+where U_{R2} is the voltage of the sample resistance. The frequency of the alternating current in Fig. 5 is 50 Hz, and the amplitude is 20 A. When the frequency of the Q_{1}, Q_{4} and Q_{2}, Q_{3} switch states is changed, ac currents of various frequencies will be obtained. An AMF can thus be generated with adjustable frequency. An alternating current with adjustable amplitude can be generated by changing the output of the dc current source.
+When the AMF generation is complete, the energy-saving process begins, as shown in Fig. 6. During this process, the alternating current decreases and then the energy-storage capacitor voltage rises rapidly, as shown in Fig. 7
+Switches Q_{1}, …, Q_{4} are turned off at time A, and an RLC circuit is formed when Q_{5} and Q_{6} are turned on. The stimulating coil then discharges to the energy-storage capacitor with an initial energy 3.9 × 10^{−3} J according to Eq. (1), and the capacitor is charged to a maximum voltage at time B. The voltage of the energy storage capacitor is 9.8 V with a stored energy of 2.4 × 10^{−3} J according to Eq. (7). The energy-saving rate η_{1}, as calculated from
+is 61.3%.
+Finally, the time from A to B, as calculated from Eq. (4), is 48 μs.
+When the AMF is generated again, the energy stored in the energy-storage capacitor can be reused as shown in Fig. 8. The energy-reuse process is shown in Fig. 9. At time C, the energy-storage capacitor discharges to the stimulating coil. The current in the RLC circuit is then increasing. At time D, the current reaches a maximum of 12.5 A. The energy-reuse rate η_{2}, as calculated from
+is 63.5%.
+When Q_{5} and Q_{6} are turned off, the AMF reaches its rated value rapidly. The time from C to D, as calculated from Eq. (8), is 48 μs.
+V. DISCUSSION AND CONCLUSION
+In this paper, a high-energy-utilization multifunctional magnetic field generator has been proposed that can generate both an AMF and a BPMF with an adjustable amplitude and frequency. The peak current for the BPMF is 130 A, and the RMS current for the AMF is 20 A. The field intensities of the BPMF and AMF are 70.3 and 11.0 mT, respectively.
+In addition, we have demonstrated the implementation of the energy-saving function of the magnetic field generator and have confirmed experimentally the high energy utilization indicated by the analytical results. For the AMF generator, the energy-saving rate is 61.3% and the energy-recycling rate is 63.5%, while for the BPMF generator, the energy-saving rate is 33.6%. Heating of the coil is reduced, and the coil temperature can be effectively controlled [3]. Thus, the deleterious effects of high coil temperature on biological cells can be reduced. At present, the current generated by the circuit system is 130 A, but this could be improved with the use of IGBTs [1,8].
+Thus, the experimental results presented in this paper show that the proposed ESMFG has considerable potential for biological applications.
+TABLE I. 
+Parameters of the proposed ESMFG.
+TABLE I. -body
+Device	Designed type and value
+R_{1}	Current-limiting resistor, 5 Ω
+R_{2}	Sample resistance, 0.1 Ω
+C_{1}	Energy-storage capacitor, 50 μF, 450 V
+L_{1}	Stimulating coil, 19.52 μH, 0.023 Ω
+Q_{1}, Q_{2}, Q_{3}, Q_{4}, Q_{5}, Q_{6}, Q_{7}, Q_{8}	N-channel MOSFET, 171 A, 150 V
+Power supply system	DC current source 30 A and dc
+voltage source 100 V
+C_{2}, …, C_{5}	Snubber, 1.0 μF, 250 V
+R_{3}, ..., R_{6}	Snubber, 3.3 Ω
+FIG. 1. 
+Circuit diagram of the ESMFG system.
+FIG. 2. 
+Schematic diagrams of the ac generation process and the energy-saving and energy-reuse processes: (a) forward-current diagram, (b) reverse-current diagram, (c) energy-saving scheme (d) energy-reuse scheme.
+FIG. 3. 
+Waveforms of capacitor voltage and coil current in the RLC circuit: (a) the coil discharges to the capacitor; (b) the capacitor discharges to the coil.
+FIG. 4. 
+Schematic diagrams of bipolar pulse generation: (a) forward charging of the energy-storage capacitor, (b) forward current pulse generation, (c) reverse charging of the energy-storage capacitor, (d) reverse current pulse generation.
+FIG. 5. 
+Experimental ac signal.
+FIG. 6. 
+Experimental results for the capacitor voltage and coil current of the energy-saving AMF generator.
+FIG. 7. 
+Experimental results for the energy-recovery process of the energy-saving AMF generator.
+FIG. 8. 
+Experimental results for the AMF generated by the energy-saving AMF generator.
+FIG. 9. 
+Experimental results for the energy-reuse process of the energy-saving AMF generator.
+FIG. 10. 
+Experimental results for the coil current and capacitor voltage of the energy-saving BPMF generator.

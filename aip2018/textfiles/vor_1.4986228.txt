@@ -1,0 +1,338 @@
+From phase space to multivector matrix models
+Combining elements of twistor-space, phase space, and Clifford algebras, we propose a framework for the construction and quantization of certain (quadric) varieties described by Lorentz-covariant multivector coordinates. The correspondent multivectors can be parametrized by second order polynomials in the phase space. Thus the multivectors play a double role, as covariant objects in D = 2, 3, 4 Mod 8 space-time dimensions and as mechanical observables of a non-relativistic system in 2^{[D/2]−1} Euclidean dimensions. The latter attribute permits a dual interpretation of concepts of non-relativistic mechanics as applying to relativistic space-time geometry. Introducing the Groenewold-Moyal *-product and Wigner distributions in phase space induces Lorentz-covariant non-commutativity, and it provides the spectra of geometrical observables. We propose also new (multivector) matrix models, interpreted as descending from the interaction term of a Yang-Mills theory with minimally coupled massive fermions, in the large-N limit, which serves as a physical model containing the constructed multivector (fuzzy) geometries. We also include a section on speculative aspects on a possible cosmological effect and the origin of space-time entropy.
+I. INTRODUCTION
+It is expected that, at scales of the order of the Planck length, the theoretical description of the structure of the space-time must combine aspects of geometry and quantum mechanics. Black hole information (loss) paradox (see, e.g., Refs [1] and  [2]) and AdS/CFT correspondence [3,4] have motivated new ways to look at the problem of quantum gravity [5–8] (see also Refs [9] and  [10]). Reference  [11] pointed out that gravity may appear as an entropic (reaction) force, a product of distributions of information/entropy in space. Since entropy often appears from phase space probability distributions, the latter point of view suggests that there should be a hidden phase space from which entropy does emerge. In this spirit, we present here a construction in which phase spaces of several dimensions appear as underlying multivector spaces, i.e., whose coordinates are labeled by antisymmetric Lorentz indices. This permits the application of concepts and tools of non-relativistic mechanics to space-time geometries in a novel way. Indeed, we shall extend the notion of twistor-space [12,13] to phase spaces of several dimensions such that we will be able to construct relativistic geometries beyond the light-cone. We shall refer to this notion of phase space as twistor–phase space (TPS).
+The inclusion of D-dimensional Lorentz algebras in the algebra of symplectic transformations so(D − 1, 1) ↪ sp(2^{[D/2]}) induces the action of Lorentz transformations on functions in phase space. Among these functions, there will be sets of them transforming as anti-symmetric multivectors of the form x^{μ[n]}≔x^{[μ1,…,μn]}, μ = 0, 1, …, D − 1, for several n’s. Complementing these classes, there will appear also Wigner distributions in phase space. We shall identify the rank-1 tensors as coordinates of events in Minkowski space which together with higher order tensors will span coordinates of an algebraic multivector variety of dimension 2^{[D/2]}, to be denoted as X[M_{D}], D = 2, 3, 4 mod 8. In general, the single-index components (x^{μ}′s) of these coordinates will label points on subspaces of the Minkowski space, on the light-cone for D = 2 + 1, 3 + 1, and in the non-negative–time sub-space R^{⩾0}×R^{D−1} in higher dimensions. We shall elaborate more on this in Secs. II–VI.
+We quantize the space X[M_{D}] using the phase space formulation of quantum mechanics, i.e., in the framework of deformation quantization [14–21]. As a result, we obtain a non-commutative geometry which generalizes the Snyder space [22] and other non-commutative extensions of space-time (cf. Ref [23]). The non-commutative multivector space constructed so far, denoted as X[M_{D},*], is extended with Wigner distributions which will allow us to measure the mean values of functions in TPS and of functionals of multivectors. In this formalism, the product of functions in phase space is given by the *-product, a non-local convolution-like product of functions which respect symplectic and Lorentz covariance. The quantization constant, referred to as Heisenberg-Planck length, enters as the central charge of the Heisenberg algebra of TPS.
+A natural question is, what is underlying model for the non-commutative geometry X[M_{D},*]? We shall propose a matrix model in zero dimensions analogous to the IKKT model [24] with a multivector target space. We shall see that X[M_{D},*] appears as a solution of this matrix model. We also show that these geometries enjoy (infinite) higher-spin-gravity-type of symmetries [25].
+Applying concepts of thermodynamics, we shall observe that the volume/entropy (for constant statistical distribution) of a solid ball in 2^{[D/2]}-dimensional TPS is proportional to the area of a 2^{[D/2]−1}-sphere. The relation is holographic for D = 3, 4, i.e., the respective spheres are S^{1} and S^{2} but it is projective for D > 4, i.e., where the entropy is proportional to a sphere of dimension higher than the space-time.
+We shall see that in D = 3 + 1, X[M_{4}] is equivalent to a subvariety of the Grassmannian Gr(2, 4) since the correspondent rank-2 tensor coordinates are Plücker coordinates, i.e., they label planes through the origin of the Minkowski space-time, and are generated by at least one light-ray. We shall also compute the entropy of a solid ball in four-dimensional TPS and observe that for a constant probability distribution it is proportional to the area of a 2-sphere immersed in D = 3 + 1 space-time. This observation suggests that the origin of the holographic principle is a consequence of twistor space as the underlying structure of space-time.
+In summary, we present a basis for the development of a theory in which the space-time appears as a mechanical observable in TPS, where the tools of mechanics (classical, quantum and statistical) can be used in a novel way to derive statistical/information properties of the space-time. We expect that our approach will be useful to elaborate new frameworks for quantum gravity along similar lines than Verlinde’s ideas [11].
+A. Plan of the paper
+• In Sec. II, we review some elements of phase space formulation of quantum mechanics [14–16,19,21]. The Groenewold-Moyal *-product is defined, and we solve the Harmonic oscillator problem as an useful example.
+• In Sec. III, we introduce the twistor–phase space. Using Clifford algebras, we construct the multivector coordinates of the variety X[M_{D}] in terms of second order homogeneous polynomials in phase space. We identify the algebraic constraints satisfied by these coordinates.
+• In Sec. IV, we quantize X[M_{D}] in TPS in the Groenewold-Moyal formalism, and we introduce the geometrical Wigner distribution. We compute the spectrum of some observables, such as the time coordinate and the area/volume of spheres. In Subsection IV F, we show that the non-commutative version of X[M_{D}], i.e., X[M_{D},*], enjoys higher spin symmetries.
+• In Sec. V, we construct a new multivector matrix model, from which X[M_{D},*] appears as solution.
+• In Sec. VI, we present some ideas on physical implications of non-commutative light-cones and a possible origin of space-time entropy.
+• In Sec. VII, we present our conclusions.
+II. ELEMENTS OF THE PHASE SPACE FORMULATION OF QUANTUM MECHANICS
+Quantization in Hilbert spaces assigns operators to functions on the phase space provided a prescription of ordering. In contrast, in deformation quantization, a *-product is introduced which deforms the pointwise product of functions, thus implying non-commutativity of phase space. The Wigner distribution is introduced to measure the expectation values of observables, and it is obtained as the solution of the *-genvalue problem [16,19]. In what follows, we will present some elements of this approach which are necessary for our main task. The reader may use Refs [17–19] and  [26] for further details.
+Consider a 2d-dimensional phase space, spanned by coordinates,
+composed of d positions (q’s) and d momenta (p’s). For two arbitrary functions f and g, the Groenewold-Moyal *-product is defined as
+where ξ¯ζ=ξ^{α}ζ_{α}, ℓ_{HP} is the quantum (Planck scale) deformation parameter, and we have used the symplectic matrix
+to rise the phase space index according to the following conventions:
+Note that we use a bar for phase space coordinates with the index up, e.g., L¯{α}≔L^{α}=C^{αβ}L_{β}. The complex conjugation acts on the *-product of two functions f and g as an anti-automorphism,
+The *-product of two vectors yields
+where the symmetric part, L_{α}L_{β}=L_{β}L_{α}, is just the “classical product” of commuting variables. For any function f and a vector L_{α},
+The *-commutator is defined as
+From (7), we obtain
+We define the *-anti-commutator,
+Note that if a phase-space vector is involved, the anti-commutator extracts the classical component of the product (7),
+The Poisson bracket is obtained in the limit
+Fully symmetric product of phase space vectors,
+where σ belongs to the permutation group of n elements, do not generate quantum corrections,
+i.e., the r.h.s. is just a real-valued monomial in the phase space.
+It is convenient to use the following notation for the product (13):
+The algebra of these generators, with the *-product, spans a representation of the associative Weyl algebra, denoted as U_{2d}, i.e., the universal enveloping algebra of the Heisenberg algebra
+with central charge ℓ_{HP}. The second order generators
+with the Moyal bracket (8) product, generate a representation of the sp(2d) algebra.
+An essential element of quantization in phase space is the Wigner distribution, denoted by W=W(q,p)=W(L), which represents the state of a physical system with respect to the Hamiltonian function. The Wigner distribution is not necessarily positive definite, and it is not a bona fide probability distribution, but it has a probabilistic meaning. The reader may consult Ref [27] for a didactic explanation of the physical meaning of the Wigner function and of its experimental observation.
+The uncertainty of position and momentum follows from non-commutativity in phase-space (15) (see the proof in Ref [19] or Ref [21]),
+The Wigner distribution is normalized such that
+and the expectation value of an observable f(L) is given by the integral
+For pure states, the Wigner distribution can be expressed in terms of wave functions [28]. For instance, in the one-dimensional case,
+The marginal probabilities in coordinate or momentum space are respectively given by the shadows,
+Non-negative expectation values are obtained for expressions of the form (see the proof, e.g., in Refs [21] and  [26])
+A function f(λ) can be promoted to a *-function replacing its Taylor expansion
+for constant f_{l}’s, by
+In particular, a Weyl ordered *-function
+where f^{α(n)} are constants with symmetric indices α(n), is by the property (14) equivalent to the classical function
+The temporal evolution of observables in phase space is generated by the Hamiltonian H by means of the equivalent of the Heisenberg equation,
+In the classical limit ℓ_{HP}→0, the latter is reduced to the Hamilton equation.
+The solution of (24) is
+for the boundary value f(0, q, p).
+The Moyal equation,
+implies that the Wigner distribution is a constant of motion, and its classical limit reproduces the Liouville equation.
+The static Wigner function satisfies ∂W/∂t = 0 and hence,
+which is solved also by solutions of the *-genvalue equation [16],
+which provides the spectrum of the Hamiltonian. (28) is, after an explicit computation of the *-product, equivalent to the eigenvalue problem of a differential operator.
+The following lemmas may be useful for the computations performed in this paper:
+• The multiplication of a function by the square of phase space coordinates (1) yields
+• The fourth order *-product of a symplectic vector is as follows:
+where we made use of the relations ∂L_{β}∂L^{α}=C_{αβ} and C_{αβ}∂f(L)∂L_{β}=∂f(L)∂L^{α}.
+Example. Quantization of the harmonic oscillatorHere we will review quantization of the harmonic oscillator (see Refs [18] and  [26]). The harmonic oscillator in d spatial dimensions has the Hamiltonian
+Here we introduced a standard notation for the SO(d) invariant product in R^{d},
+With the help of (29), we find the *-eigenfunctions of H,
+where
+is the classical product of solutions of the d = 1-dimensional problem,
+being L_{n} polynomials of Laguerre. They satisfy the completion identity,
+Note that though the resulting spectrum of energies is the same as in canonical quantization, the *-genfunctions of the Hamiltonian involve Laguerre and not Hermite Polynomials. The relation between both kinds of polynomials is given by (19).
+III. TWISTOR–PHASE SPACE (TPS)
+Points on light-cone embeddings in 2 + 1 and 3 + 1 space-time dimensions can be parametrized by Penrose’s [12,13] twistor space. The coordinates of twistor space are also equivalent to coordinates of phase spaces (up to reality conditions). Indeed, two- and four-dimensional phase spaces have the same number of components than spinors in the respective dimensions and they transform accordingly under the respective (isomorphic) Lorentz algebras, so(2, 1) ≅ sp(2) and so(3, 1) ⊂ so(3, 2) ≅ sp(4). Here we extend this twistor–phase space correspondence to higher dimensional phase spaces, which therefore will serve as moduli space for the construction of higher dimensional algebraic geometries beyond light-cones. To the phase space regarded as the underlying space of these new algebraic geometries, we shall refer to as twistor–phase space (TPS). This means that phase space vectors will be regarded as commuting spinors; the symplectic matrix in phase space will be used as the conjugation matrix; and with the help of the elements of the exterior algebra of Dirac matrices, we will construct maps from square products of phase space variables to sets of multivectors in Minkowski space, to be regarded as defining the coordinates of the algebraic geometry to be denoted as X[M_{D}]. There will be quadric identities satisfied by the multivectors as consequence of the Fierz identities of the exterior algebra of Γ-matrices. These identities will characterize the space X[M_{D}].
+We start studying the lower dimensional cases, D = 2 + 1 and D = 3 + 1 dimensions, on which the spaces X[M_{D}] consists of the light-cone and a subspace of the Grassmannian Gr(2, 4). Then we generalize these results to dimensions D = 2, 3, 4 Mod 8, in correspondence with the existence of Majorana representations of Clifford algebras.
+A. The light-cone in 2 + 1 dimensions
+The light-cone in 2 + 1 dimensions is defined by the algebraic constraint,
+where the indices of the coordinates x^{μ} are contracted using the Minkowski metric η_{μν}, with diagonal elements (−1, 1, 1).
+Equation (38) can be solved parametrizing the two-dimensional light-cone using quadratic polynomials in phase space, i.e.,
+The coordinate x^{0}, the time, takes only positive values; hence (39) parametrizes the upper sheet of the light-cone. The map (39) covers the cone twice, which is reflected in the symmetry (q, p) → (−q, −p) as we can observe when we pass to polar coordinates,
+so
+Hence the phase space is a double cover of the (positive-time) light-cone. Phase space vectors will transform in a spin-1/2 representation of the Lorentz algebra, and therefore their symmetric quadratic products (39) will transform in a spin-one representation. This is more evident when we express (39) in the form
+where L¯{α}≔C^{αβ}L_{β} is obtained from the phase space coordinates (1) and the convention (4) to rise and lower indices, and where the 2 + 1D Dirac matrices are in the Majorana representation
+They satisfy
+where for the Levy-Civita pseudo-tensor ϵ_{012} = 1.
+Now L looks like a twistor and the symplectic matrix C_{αβ} appears as the conjugation matrix. We raise and lower spinor indices in North-West–South-East convention [the same than in (4)]: (γμ){βα}=C^{αξ}(γμ)_{ξ}^{β}, or (γμ)_{α}^{ξ}C_{ξβ}, obtaining symmetric real matrices, (γμ){αβ}=(γμ){βα}, (γμ){αβ}=(γμ){βα}, τ^{*} = τ_{μ}.
+That (42) solves (38) can be verified also using the Fierz identity,
+and that L_{α}L^{α}=0.
+The Sp(2) transformations in phase space,
+are generated by the matrices
+which satisfy the so(2, 1) ≅ sp(2) algebra,
+and with parameters ε^{μ}. (44) induces the transformation,
+which is equivalent to
+i.e., the exponential of the spin-1 Lorentz algebra generated by the Levy-Civita pseudo-tensor,
+B. The light-cone in 3 + 1 dimensions and the Grassmannian Gr(2, 4)
+To be systematic, consider now a four-dimensional twistor–phase space, spanned by vectors [cf. (1)]
+and proceed as before. The embedding of the light-cone in four dimensions is now given by
+where
+are Dirac matrices in a Majorana representation. They have the symmetry,
+and are real-valued. Again, we have used the symplectic matrix (3) as the conjugation matrix of the Clifford algebra generated by γ^{μ}’s, which is possible owing to the algebra isomorphism sp(4) ≅ so(3, 2).
+From (51), we obtain
+It can be verified that
+The light-cone in four dimensions is a three-dimensional manifold, the “world volume” of a sphere expanding at the speed of light. Since the phase space behind its construction is four dimensional, one degree of freedom is missed by the map (53). Indeed, it is contained in the remaining second-order polynomials
+Only gamma matrices and their commutators yield a non-trivial result when the double contractions (51)–(55) are performed.
+By their construction,
+where we have defined
+and ϵ_{ijk} is the Euclidean Levy-Civita pseudo-tensor.
+The tensor Z^{μν} has four non-equivalent degrees of freedom. The redundancy of its six components is reflected in the identities Z_{01}Z_{23} + Z_{12}Z_{03} + Z_{20}Z_{13} = 0, equivalent to
+and
+where the Levi-Civita pseudo-tensor is such that ϵ_{0123} = 1. The identity (60) is the consequence of the identities
+The constraints of the form (59) are known as the Plücker constraints, and the respective bivector coordinates describe planes passing through the origin of a four dimensional space. The space of all these planes form the Grassmannian Gr(2, 4) variety. The generalization of this variety to higher dimensional k-planes through the origin of a n-dimensional vector spaces was studied by H. Grassmann and denoted as Grassmannian Gr(k, n).
+The bivector (55) describes in reality a subspace of Gr(2, 4) since the identity, also satisfied from definitions (53) and (55),
+means that the planes Z^{μν} contain at least one light-ray. However, in Gr(2, 4), there are also other planes which do not contain light-rays. To the subspace of Gr(2, 4) of planes containing light-rays, we refer to as Gr_{LC}(2, 4).
+In more detail, Plücker coordinates are equivalent to the exterior product
+of two non-parallel defining vectors v^{1} and v^{2}. To obtain (55), we identify
+which demonstrate that the light-ray X^{μ} is in the plane Z^{μν}.
+C. Phase space and the multivector-extended space-time
+Similarly to the coordinates of the light-cone in D = 3, 4 and of the bivector (55), the Dirac matrices permit more generally the construction of mappings from 2^{[D/2]}-dimensional phase space to a geometry formed by multivector in D-Minkoswki space-time. Here we shall construct the correspondent multivector coordinates and identify the quadratic identities that they satisfy.
+The multivector coordinates appear from the contraction of polynomials of second order in phase space and the exterior algebra of Dirac-gamma matrices,
+where P(⋅) denotes an element of the permutation group P{n} of n elements and P = 0, 1 its parity. We assume the convention {Γ_{μ}, Γ_{ν}} = 2 η_{μν} with metric diagonal entries (−1, 1, …, 1). The multivector coordinates are given by the double contraction of phase space vectors (1) and the matrix indices of (Γμ[n])_{α}^{β},
+The reality condition implies that the gamma matrices should be in the Majorana representation which implies the correspondent restrictions on the dimension of the space-time and the rank n of the multi-vectors (see Ref [29]). Indeed, only for n = 1, 2 Mod 4, (66) yields a non-trivial result. This can be seen by rising one of the spinor indices, using the conjugation matrix C defined in (3). According to the convention (4), they satisfy
+In particular, we chose a representation, in which (Γ0){αβ}=δ^{αβ}, so that X^{0}⩾0 since
+is proportional to the energy of a harmonic oscillator [see also (32)]. Therefore, the coordinates X^{μ} correspond to points on the non-negative-time half hyper-plane of the D-Minkoswki space. The chiral gamma matrix is defined as
+which upon Γ^{μ[n]} produced the Hodge duals,
+Equation (67) implies sp(2^{[D/2]})-algebra reality conditions for the symmetric case,
+Thus there are dim(sp2^{[D/2]}) non-trivial multivector coordinates X^{μ[n]}. The space parametrized by multivector coordinates,
+has, by construction, dimension
+since X[M_{D}] has 2^{[D/2]} phase space ℒ-parameters. Hence there must be dim(sp2^{[D/2]})−2^{[D/2]} identities to be satisfied by the multivectors (69).
+Let us define the unconstrained multivector space
+which is formed by the direct sum of spaces V^{[n]} of unbounded multivectors Y^{μ[n]} of rank n. Here n_{max} is the supremum of integers n of types 1, 2 Mod 4 such that n⩽D for D even or n⩽[D/2] for D odd. Thus V[M_{D}] is an extension of space-time with multivector extra dimensions and X[M_{D}]⊂V[M_{D}].
+V[M_{D}] has dimension
+The
+algebraic identities satisfied by multivectors in X[M_{D}] can be regarded as restrictions on the space which define it as a subspace of V[M_{D}], i.e.,
+where {Λ} represents the 2^{[D/2]−1}2^{[D/2]}−1 quadratic algebraic restrictions to be found. The TPS parametrization (69) should be regarded as an efficient way to solve the system of constraints, analogously to twistor space with respect to light-cones. These identities will be derived from Fierz identities in the space of matrices Γ^{μ[n]} and the symmetry of the classical product of phase space vectors.
+Using the matrices Γ, we can decompose the square products of phase space vectors in terms of Minkowski space multivectors as
+where prime-′ in the sum means as in Ref [29] that it should be restricted to integers n⩽D for D even and n⩽[D/2] for D odd. (75) can be verified contracting on both sides of (75) with (Γμ[n]){αβ}, which yields the definition of X^{μ[n]} on the l.h.s., and on the r.h.s. it yields traces of products of gamma matrices, i.e.,
+Here δν[n]μ[n]=δν_{1},…,ν_{n}μ_{1},…,μ_{n} is the Kronecker symbol.
+Since ℒ in (75) are continuous parameters, we can take two derivatives to obtain the identity
+and from the latter, multiplying by gamma matrices and appropriate contraction of spinor indices, we obtain
+Here the coefficient
+where l takes values in the rank of integers that does not yield ill-defined binomial coefficients, can be obtained using the constant of structure of the associative algebra of gamma matrices A and from the identity (see, e.g., Ref [29])
+Contraction of (75) with the product ℒ^{α}ℒ^{β}, and from the identity ℒ^{α}ℒ_{α}=0, implies that
+This equation reproduces the light-cone constraint in 2 + 1. In 3 + 1 dimensions, we obtain the sum of terms proportional to (54) and (60), i.e., X^{μ}X_{μ} = 0 and Z^{μν}Z_{μν} = 0, which therefore solve the respective constraints. The latter case shows however that (81) is not an independent constraint. Indeed, (81) is just the simplest algebraic relation satisfied by multivectors X^{μ[n]}. In what follows, we shall present a systematic way to identify a subset of independent linear combinations of square products of multivectors.
+D. The multivector quadric
+We can obtain a linear system of equations for the squares of multivector coordinates replacing ℒ_{α}ℒ^{β} in the product
+by (75). Now using (80) we obtain
+where
+Let us define M_{D} as the matrix with the latter entries and subtract the identity matrix
+This together with the column matrix
+permits to express (83) as a homogeneous equation
+Since V_{D} belongs to the kernel of the matrix Λ_{D}, there should be rank(M_{D}) independent constraints on linear combinations of the Lorentz-scalars X^{μ[n]}X_{μ[n]}. This reasoning applies also to linear combinations of quadratic products of multivectors of different orders.
+Let us multiply on both sides of the equality (78) by the matrix T=T_{κ}^{α}≔τ^{μ[n]}(Γμ[n])_{κ}^{α}, where τ^{μ[n]} are constant (multivector) parameters. Then we contract the spinor index labeled by α,
+resulting in an expression that has four free spinor indices. Similarly, using the chiral matrix, we define T̃=T̃_{κ}^{α}≔Γ̃T, multiply (78) by T̃, and contract the index α. In both cases, the four free spinor indices can be contracted with the product of four phase space coordinates ℒ^{κ}ℒ^{α′}ℒ_{β}ℒ_{β^{′}}, which will induce, from identity (78), new identities among multivectors,
+where
+are defined analogously to (66) but now in terms of the phase space coordinates (1) and the matrix T, which is either T=T or T=T̃, for all parameters τ^{ν[n]}. Since in odd dimensions Γ̃ is proportional to the identity, the constraints (88) yielded by T and T̃ are equivalent. In any case, the introduction of Γ̃ allows us to summarize (88) in a single equation,
+which in particular contains (87) for T=1/4. Observe that the system of constraints (90) are all encoded in the matrix Λ_{D} (85), which therefore characterizes the space X[M_{D}], up to some redundancies produced by degeneracy of the matrices Λ_{D} and the linear dependence among the Z^{T} in odd dimensions since from the absence of a non-trivial chiral gamma matrix. Finally, we can regard (90) as the definition of {Λ}(X^{μ[n]}) = 0 in (74).
+In summary, the system of constraints (90) that restrict (71) to (69) can be systematically constructed as kernels of the matrix Λ_{D} in all space-time dimensions D = 2, 3, 4 Mod 8, and they can be solved by (66) in terms of TPS variables.
+Examples. D = 2, 3, 4, 10, 11, 12In 1 + 1 dimensions, we obtain from (84) and (87)
+Since its rank is 1, only one independent set of equations is produced,
+for fixed T in (89). It can be verified that only for T=1 a non-trivial and independent constraint is produced, while for other T’s it either reproduces the case T=1 or it yields trivial relations.In 2 + 1 dimensions, Λ_{3} is a scalar; thus
+Indeed, (92) and (93) are equivalent. More generally, for a fixed dimension of the phase space, the characteristic constraints of multivectors X^{μ[n]} in dimension D = 2 Mod 8 and in one dimension higher D = 3 Mod 8 are equivalent. The latter is a consequence of the equivalence of the exterior algebra of gamma matrices in the respective dimensions. Thus the spaces X[M_{D}]≅X[M_{D+1}] for D = 2 Mod 8 are equivalent up to Lorentz covariant labels in the respective dimensions.In the 3 + 1 dimensional case,
+Since Λ_{4} has rank two (90), the independent constraints are just
+which for different choices of T yields the previous results: (54), (59), (60), and (62).For the cases D = 9 + 1, 10 + 1, 11 + 1, the respective matrices Λ_{D} can be found in Appendix B. The resulting independent constraint, i.e., after elimination of redundant rows of the matrix Λ_{D}, can be chosen as
+In order to obtain scalar identities, i.e., on the norms X^{μ[n]}Zμ[n]T=X^{μ[n]}X_{μ[n]}, for different n’s, we should choose T=1/4. Note that in the 9 + 1 dimensional case, because there are four independent constraints and six products X^{μ[n]}X_{μ[n]}, n = 1, 2, 5, 6, 9, 10, only two of them can be chosen to be independent, say X^{μ}X_{μ} and X^{μ[2]}X_{μ[2]}. Because X^{0}⩾0, the event-coordinates X^{μ} parametrize a half of the Minkowski space. Analogous analysis follows for D > 10. Hence, the multivector varieties constructed here contain the non-negative time half of the D-dimensional Minkowski space-time for D⩾9+1.
+IV. QUANTIZATION IN TPS
+The first example of non-commutative space-time was proposed by Snyder [22,30], as a quantization of the quadratic constraint that defines the de Sitter space as an embedding in 5 dimensions. Snyder constructed differential operators (acting on a Hilbert space) as representing the coordinates of the de Sitter space together with the rank-two tensor operators generating Lorentz transformations, altogether spanning a representation of the algebra so(4, 1). Here we shall proceed in a different way. On the one hand, we will treat higher rank multivectors as in the same category than (vector) coordinates, i.e., similarly to Plücker (planes) coordinates. On the other hand, we shall use TPS as moduli of the multivector space already in the classical level, and then applying the phase space formulation of quantum mechanics presented in Sec. II, we shall quantize them. Thus non-commutativity will enter, not by means of an operator-correspondence but by means of the *-product. This is convenient regarding the classical limit since the *-product becomes the standard commutative product of numbers and while multivectors will be kept invariant.
+Expressing the coordinates of the multivector geometries (69) in terms of TPS variables facilitates their quantization. First of all, the *-product in TPS provides Lorentz covariant constants of structure to the associative algebra of multivectors. Without the TPS, the task of constructing a suitable *-product convolution-like covariant formula [cf. (2)] defined in terms of multivectors by themselves is a difficult task. Second, the *-genvalue equation (solved by the Wigner function) provides natural prescription for the measurement of the expectation values of multivector coordinates and their functionals. Indeed, the “star-genvalue” equation is given by
+where g is the *-genvalue of the geometrical observable G. Here G represents a function of TPS variables, or of multivectors, and g is a number belonging to its spectrum. If a function f is such that [f,G]_{*} = 0, then W is also its *-genfunction. To mention an example, to measure the time, we should use G = X^{0} in Eq. (99). Since X^{0} is, as a function of phase space coordinates, proportional to the d-dimensional Harmonic oscillator (32), i.e., X^{0} = H_{d}/2, solving the problem (99) yields
+Thus the Wigner functions encode the perspective of a “time-observer” on non-commutative space-like foliations, at constant discrete values of time, of spacetime.
+The expectation (average) values of any observable in TPS, say f, will be measured with respect to the Wigner function by integrating
+The variance of f is then defined as
+For G solving (99) and any f such that [f,G]_{*} = 0, then their variance (101) vanishes. Hence the Wigner function provides the spectrum of the operators which are diagonal with respect to it and it minimizes their variance. This can be expressed as a variational principle,
+In this sense, Var_{W}(G) can be regarded as an “action functional” for the Wigner function, and the operator G as providing its “kinetic” term. Note that due to the presence of the term ⟨G⟩W2 this principle is bi-local.
+In what follows, we omit the label W in ⟨⋅⟩_{W}.
+A. Quantization of the light-cone in 2 + 1 dimensions
+From the definition of x^{μ} in terms of TPS (42) and Lemma (31), we obtain the following deformation of the product of light-cone coordinates:
+which involves only Lorentz-covariant structures, the coordinates, the Levy-Civita pseudo-tensor, and the metric tensor. Note that, though non-perturbative, the *-product provides corrections to the classical product x^{μ}x^{ν} up to order ℓHP{2}.
+Now, the quantum deformation of the light-cone constraint (38) yields
+equivalent to the one-sheet fuzzy hyperboloid, the non-compact counterpart of the fuzzy sphere [31,32] (see also Refs [33] and  [34]). (104) can be regarded also as defining a two-dimensional fuzzy de Sitter space [35,36] embedded in three dimensions. In any case, note that the conical singularity of the light-cone is smoothed out.
+The anti-symmetric part of the *-product (103) contains the commutation relation of the algebra so(2,1)≅sp(2)≅sl(2,R),
+Extending this algebra with the following relations:
+we obtain a representation of the osp(1|2) superalgebra (105)–(107). The Casimir operator of the sl(2,R)≅so(2,1) is equivalent to the hyperboloid constraint (104),
+with “quartion” spins [37]. Indeed, the so(2, 1) representation spanned by x^{μ} consists of the direct sum of spins 1/4 and 3/4 irreducible representations which are intertwined by the supersymmetry generated by the TPS vectors L_{α}. Indeed, the spin Casimir is left invariant,
+The time direction x^{0} coincides with the expression of the Harmonic oscillator Hamiltonian [cf. (32) and (39)]. Hence we can use the result for the one-dimensional harmonic oscillator to obtain the correspondent Wigner distributions (36), ℓ_{HP} now with units of a length scale. Thus the spectrum of the time coordinate reads
+It follows that the expectation values of time are
+Therefore the spectrum of the time is positive definite and bounded from below,
+The expectation value of the square of the radial coordinate,
+and the time are related through Eq. (104),
+hence
+Thus we obtain the quantization of time and the square of the radius of the fuzzy hyperboloid. From (115), the area of a disc, defined as
+is also quantized.
+B. Quantization of the light-cone in 3 + 1 dimensions and the Grassmannian Gr(2, 4)
+In 3 + 1 dimensions, endowing the algebra of multivectors (51) and (55) with the *-product, the deformation of the constraints (54), (59), and (62) is given by
+Like in the 2 + 1 dimensions, the light-cone is deformed into a fuzzy hyperboloid, alternatively (117) into a 2 + 1 dimensional quantum de Sitter space, while extra directions will appear along the coordinates Z^{μν}.
+The quantum equivalent of the constraint (59) that defines the Grassmannian subspace Gr_{LC}(2, 4) is preserved; hence there exists the notion of quantum Pluckër constraints and of a fuzzy Gr_{LC}(2, 4).
+Let us note here that, more generally, any Lie algebra containing a bi-vector which respect the non-commutative versions of Plücker constraints can be regarded as containing the quantization of a Grassmannian space Gr(2, n) or some related sub-variety. In particular, this is the case of the bi-vectors in Refs [22] and  [38] where (anti-) de Sitter spaces of 4 and 5 dimensions were quantized.
+The constraint (62) remains undeformed after quantization, which means that a fuzzy hyperboloid is contained in the plane Z^{μν}. The identity (60) is however changed,
+which is related to the change of the norm of the vectors generating the plane Z^{μν} with respect to the combined Lorentz-scalar product and the *-product.
+With the help of the relations (31) and the expressions (51) and (55), we can derive the associative products,
+Hence, using the Moyal bracket, one finds the following commutation relations:
+thus spanning a representation of so(3, 2) algebra. The operator analogous of this representation is known as the harmonic oscillator, metaplectic, or singleton representation [39] (introduced by Majorana [40,41] but often attributed to Dirac [42]). Thus this remarkable so(3, 2) representation is associated with the quantiztion of the light-cone and Grassmannian subspace Gr_{LC}(2, 4).
+The (anti)commutators,
+extend the so(3, 2) algebra to the osp(1|4) superalgebra. The operator equivalent of this representation of supersymmetry was studied in Refs [43] and  [44].
+The quadratic products (117)–(120) are osp(1|4) invariant since the infinitesimal transformations generated by ℒ_{α} leave invariant the whole set of constraints satisfied by the light-cone and Plücker coordinates,
+The Wigner function associated with the time X^{0} (53) is found by considering its equivalence with the two-dimensional harmonic oscillator Hamiltonian (35). That is,
+where
+Thus the time expectation values are given by
+The square of the radius of the sphere spanned by the front of light-rays,
+from the constraint (117) equivalent also to
+is quantized, as it follows from the spectrum of the time,
+Thus their area is given by
+For every fixed time, X^{i} span fuzzy spheres as positions on their surface cannot be determined exactly, from quantum uncertainty.
+The values of the time and the radius of the fuzzy hyperboloid are bounded from below,
+Since [X^{0},Z^{3}]{*}=0 (125), the Wigner function for the time coordinate is also a *-eigenfunction of Z^{3} (58),
+and hence
+C. Quantization of area and volume
+Using the light-cone and Plücker coordinantes, we can construct three independent vectors,
+which are orthonormal,
+Here “⋅” is the scalar product in R^{3}. By introducing the cross product in R^{3}, we can verify from the definitions (51) and (55) that
+The products (142) and (143) can be deformed using the *-product among vectors in addition to the scalar and cross product in R^{3}, denoted respectively as ⋅_{*} and ×_{*}. Then, making use of the expressions (121)–(123), we obtain
+and
+From (144), the orthonormality relations between the vectors (141) are deformed. Now the length of the vectors is
+n, m = 0, 1, 2, … [cf. (136)].
+From the cross products (145), we obtain a spectrum of the area of the squares with edges X^{1} and Y^{2}, i.e.,
+The volume of the box with edges (X⃗,Y⃗,Z⃗) can be associated with the cyclic combination,
+which insures positive (discrete) expectation values, i.e.,
+D. Quantization of the multivector variety X[M_{D}], D = 2, 3, 4 Mod 8
+In order to construct the non-commutative version of the geometry X[M_{D}], the juxtaposition product of real numbers should be deformed using the *-product given in Sec. II.
+From (31) and the definition of the multivectors (66), the *-product of multivectors and any function yields in general
+The second line can be obtained from the complex conjugation of the first line. Indeed, the complex conjugation, i.e., changing i by − i, of the *-product of two functions is an anti-authomorphism, i.e., (f*g)^{*} = g^{*}*f^{*}. Thus, complex conjugation is the equivalent of the † operator in quantization in Hilbert space.
+We are now interested in the deformation of the constraint (90). First of all, using (148), we obtain
+This result reproduces the 2 + 1D case (104), and in 3 + 1D this equivalent to X^{μ}*X_{μ}−12Z^{μν}*Z_{μν}=54ℓH2, which can be corroborated using (117) and (120).
+For a more general result, let us define
+where T is a multivector parameter entering in the definition (89). Expanding the components of (151) in terms of classical functions, we obtain
+The latter expression allow us to obtaine the deformed version of (88),
+and hence of (90) which takes the form
+Thus, quantization sources the original homogeneous equation (90) with the vector UD{T}, whose entries are
+The respective traces of products of gamma matrices can be converted in numerical factors using the identities (76) and (80). Noting that ℒ¯Tℒ=ℒ¯Γ^{μ[n]}TΓ_{μ[n]}ℒ=0 for T ∉ sp(2^{[D/2]}) and Tr T = 0, and for T non-propotional to the identity, we obtain
+So, in these cases, the quadratic relations satisfied by the multivector coordinates remain undeformed in spite of quantization Λ_{D}V*D{T}=0. If T∝1, the star product yields a scalar shift from the classical relations, that is,
+E. Multivector metric in space V[M_{D}]
+Let us define the multivector arrangement
+where n = 1, 2 mod 4 and n⩽D for D even and n⩽[D/2] for D odd.
+For any two multivectors of the type (162), we define the bilinear forms, with or without *-product activated,
+The identities (81) and (150) can be re-expressed simply as
+The bilinear form with components η_{μ[n] ν[n]} will be referred to as a multivector metric. It is defined in the space of unbounded multivectors V[M_{D}] (71).
+Note that η(X,Y)=limℓ_{HP}→0η_{*}(X,Y). It is evident that the products (163) and (164) are Lorentz invariant. It is less straightforward that with the respective laws of transformation this product will be also sp(2^{[D/2]}) invariant. We shall see this in Sec. IV F.
+The restrictions (166) can be regarded as embeddings of a higher dimensional cone, or or its fuzzy deformation, in the linear space V[M_{D}] of dimension 2^{[D/2]−1}(2^{[D/2]} + 1). The additional restrictions (90) define the embedding of the variety X[M_{D}] in the latter space.
+F. Higher-spin symmetries of X[M_{D}]
+Quantum oscillators are essential in the construction of higher spin gravity [45–49]. The theory of Vasiliev extends gauge gravities with generalized spin connections and frame fields which carry not only spin two but all possible spin. Besides standard statistics [50–54], in 2 + 1 dimensions, the Chern-Simons higher spin gravity [55,34] can be extended with fractional spin gauge fields [56–58]. The gauge algebras of these theories are referred to as (fractional) higher spin algebras. The latter are constructed out of Weyl algebras (w) (14) and the star product (2). Vasiliev’s higher algebras for AdS_{D>4} spaces [59] consist of the quotient w/sl(2). Indeed in Vasiliev’s theory, the amount of oscillator degrees of freedom is proportional to the dimension of the AdS space. We have observed here that the Weyl algebra of dimension 2^{[D/2]} is used to construct multivectors in D dimensions. Thus the amount of oscillator degrees of freedom grows exponentially with the dimension D of the space-time to which it serves as the underlying space for multivectors. A natural question is therefore, whether the multivector space admits higher spin symmetries generated by the whole Weyl algebra, i.e., as symmetries of multivector invariant forms in D space-time dimensions. As we shall see, the answer is yes. We will still refer to as higher spin symmetries to those generated by the whole Weyl algebra as these generators transform in the adjoint representation of spin-n/2 of the Lorentz algebra in D dimensions.
+The algebraic constraints satisfied by the coordinates X^{μ[n]} of the algebraic variety X[M_{D}], i.e., (104), (117)–(120), and (156), are the consequence of Fierz identities in the algebra of gamma matrices (65), and the triviality of the contraction L^{α}L_{α}=0. These constraints vanish identically, not as imposed. Expressing the latter constraints in the homogeneous form
+and taking the commutator,
+where we used (9), means that (167) are invariant under infinitesimal TPS transformations. It follows from (168) that C_{*}(L) will commute with any powers of L_{α},
+so these constraints are invariant with respect to the infinitesimal transformation generated by any monomial L_{α(n)} (14). The algebraic constraints (167) will also be invariant also under finite transformations [cf. (22)],
+where ε^{α1,⋯,αn} are constants. Thus the transformations of functions in phase space,
+leave invariant the system of constraints (167). Hence the algebraic varieties denoted as X[M_{D}] are higher-spin symmetric. In particular, the sp(2^{[D/2]}) transformations are generated by the X^{μ[n]}’s multivectors,
+Here ε_{ν[m]} are real parameters and C^{ν[m]μ[n]}{λ[s]} is the constant of structure of the sp(2^{[D/2]}) algebra generated by X^{μ[n]}’s and the *-commutator product. The constant of structure can be obtained from the associative algebra of Γ-matrices and (148)–(149). More generally, for any multivector Y^{μ[n]} in the space V[M_{D}], the bilinear forms (164) are invariant under the infinitesimal sp(2^{[D/2]}) transformations,
+V. MULTIVECTOR MATRIX MODELS
+A natural question is, whether the multivector space X[M_{D}] is a solution of any physical model. Since this multivector space consists of non-commutative coordinates and algebraic constraints, it is suggestive to look for relations to matrix models. In Ref [24], a supersymmetric matrix-model in 0-dimensions was proposed, the large-N reduced super-Yang-Mills model, which was conjectured to describe type IIB strings in a non-perturbative regime. This is the IKKT model. The authors claim that in this limit the theory should become equivalent to a theory of quantum mechanical operators, on a Hilbert space, which followed by the classical limit should reproduce the Schild action of type IIB strings [60]. Here we would like to show that a similar matrix model, but with a fermion mass term and without chemical potential, contains as solutions the non-commutative geometries found so far. Indeed, this model can be obtained using similar arguments than in the IKKT model.
+Let us consider the Yang-Mills theory with minimally coupled fermions
+where D_{I}ψ = ∂_{I}ψ + [A_{I}, ψ] is the covariant derivative and F_{IJ} = ∂_{I}A_{J} − ∂_{J}A_{I} + A_{I}A_{J} − A_{J}A_{I} is the non-Abelian gauge curvature. The formal contraction of the D̃-dimensional space-time, trivializing the space-time derivative, ∂_{I} = 0, will produce the projection of (173) to
+Like in the IKKT model [24], we can argue that in the large-N limit the system (174) can be written as a theory of quantum operators. But now, instead of a Hilbert space formalism, we can chose a *-product realization such that the following model will be obtained:
+where we relabeled the fields as Ψ and Y^{I}, and α, β, κ are new constants, necessary to produce the correct dimensions of the action, in correspondence with the dimensions of the fields, [Ψ]=ℓHP1/2 and [Y^{I}]=ℓ_{HP}. The supertrace operation will be denoted as ⟨⋅⟩.
+Here we shall use the supertrace definition introduced in Ref [34] by Vasiliev for Heisenberg algebras, which admit Wigner-deformations [61], and their associated universal enveloping algebras. In our case, where the Heisenberg algebras are undeformed, the supertrace operation is reduced to
+which means that the function f(L) must be valued in L=0. As it was shown in Ref [34], the Z_{2} degree of these functions under the supertrace, even or odd, respectively, for |f| = 0, 1, corresponds to the parity of the functions in phase space,
+such that, given two functions, under supertrace they will satisfy the cyclic property,
+For example,
+as it can be deduced from (6). We observe that with respect to the defined supertrace operation the phase space coordinates, i.e., L_{α}, have odd degree. This is in some sense remarkable, as at the difference of classical Grassmann variables, which are anti-symmetric with respect to the pointwise product, the phase space coordinate pointwise product L_{α}L_{β} is symmetric, and L_{α}*L_{β} has a symmetric and an anti-symmetric part, but the supertrace (178) is anti-symmetric.
+In order to show that the model (175) describes the variety X[M_{D}], let us identify the labels of fields I, J in (175) with sets of multivector labels,
+Here, each set [μ]{n}≔{[μ1μ2,…,μn],μ=0,…,D−1}{n}, consists of all independent labels of multivectors of fixed rank-n, i.e., ordered increasingly from left to right. To perform the latter correspondence, we need to split the set of indices I∈{0,1,2,…,D̃−1} in sub-intervals
+such that the elements of the interval I_{n} will be in one-to-one correspondence with the Dn elements of the set [μ]_{n}. The rank of the multivectors is n⩽D for D even or n⩽[D/2] for D odd. Indeed, D̃=2^{[D/2]−1}(2^{[D/2]}+1) is the dimension of the space of mutivectors X[M_{D}] (69). Hence, to every index I, we assign an independent multivector index,
+where
+represents the label of a multivector increasingly ordered. Thus we have the following correspondence between single-index fields and multivector fields:
+The signature of the metric η_{IJ}, such that Y_{I} = Y^{I}η_{IJ}, is related to the multivector metric (165) as follows:
+where the sub-indices have been ordered. Using this new notation, we can rewrite (175) as
+which is a multivector matrix model in D = 2, 3, 4 Mod 8 dimensions. The bosonic and fermionic nature of the fields is given by their degree with respect to the supertrace (176), |Y| = 0, |Ψ| = 1. For example,
+Equation (184) provides the following equations of motion:
+from the variation of Y, and
+from the variation of Ψ. Note that the contraction ψ¯{α}*(ΓI)_{α}^{β}ψ_{β}=−(ΓI){αβ}ψ¯{α}*ψ_{β}, where (ΓI){αβ}=(ΓI){βα}, does not vanish in general. This is in contrast with the classical pointwise product of Grassmann variables (say θ_{α}θ_{β} = −θ_{β}θ_{α}), which is the reason why there are no Majorana currents ((ΓI){αβ}θ_{α}θ_{β}=0).
+These equations of motion admit solutions of the form
+where λ and b are constants to be fixed and X^{μ[n]} are the multivector coordinates (66). Using (188), we can evaluate the first addend of (186), obtaining
+To prove this, we need to use the relation (31), for the *-product of quadratic monomials in L, and the identity of Γ-matrices (77). When the solution for the fermion field (188) is used in the second addend of (186), we obtain that
+Both terms, (189) and (190), when replaced in the equation of motion (186) produce the following constraint on the constants b and λ:
+When the solutions (188) are replaced in the equation of motion (187), the term [Y^{μ[n]},Ψβ]{*} produces a term proportional to the derivative of Y^{μ[n]} with respect to ℒ^{β}, which is proportional to ℒ. Since the second term in (187) is also proportional to ℒ_{α}, according to (188), (187) yields another constraints on the coefficients β, λ, and κ,
+To obtain (192) from (187), we made also use of the identities (A4) and ℒ^{α}*ℒ_{α}=iℓ_{HP}2^{[D/2]−1}. Thus, from (191) and (192), we obtain the following values of the constant coefficients in (188):
+Hence the solutions (188) are completely determined.
+As a consequence of the cyclic property of the supertrace (177), the action (175)–(184) enjoys the symmetry (171), generated by the Weyl algebra (170). That is, one can always move the (even function) g^{−1} in an expression like ⟨g*f*g^{−1}⟩ to the left ⟨g^{−1}*g*f⟩ and obtain ⟨g*f*g^{−1}⟩ = ⟨f⟩. This implies that new solutions of the theory (175) can be generated from (188) by means of the transformations (171) and parameters (170),
+A. Multivector matrix model in D = 3 + 1
+Let us review the case D = 3 + 1 for illustration. The action (184) takes the form
+The equations of motion (186) are in this case given by
+and from (187),
+The solutions given in (188), with the respective parameters (193), now take the specific form
+where X^{μ} and Z^{μν} were given in (51) and (55), respectively. To prove (196) and (197), we need to use the osp(1|4) algebra (124)–(129). In both cases, the bosonic sector exactly compensates the fermionic sector, adding therefore zero. To prove (198), we need to use (9), i.e., the property that says that the adjoint action of the operator [Lα,⋅]{*} yields a derivative with respect to L^{α}, and the identity,
+which can be obtained from (A4), for D = 3 + 1, or using the explicit representation of the gamma matrices given below Eq. (51).
+Note that the bosonic sector of the multivector matrix model (195) can be expressed in the form of (175), i.e., as the model in D̃=6+4 dimensions, identifying the D = 3 + 1 multivector indices with D̃=6+4 vector indices (181). That is,
+where I ∈ I_{[1]} ⊕ I_{[2]} is decomposed in I_{[1]} = {0, 1, 2, 3} and I_{[2]} = {4, 5, 6, 7, 8, 9}, and [μ]_{1} = {0, 1, 2, 3} and [μ]_{2} = {[01] [02], [03], [12], [13], [23],}. Hence Y^{I} = Y^{μ} for I = μ = 0, 1, 2, 3, Y^{4} = Y^{01}, Y^{5} = Y^{02}, Y^{6} = Y^{03}, Y^{7} = Y^{12}, Y^{8} = Y^{13}, Y^{9} = Y^{23}. And the ten-dimensional metric reads diag η_{IJ} = (− + + + + + + − − −). This identification yields a model like (175), which suggests an equivalence with a D̃=6+4 dimensional Yang-Mills theory (the interaction part). However, the fermionic term is subtle. In (195), the Ψ-field has four components, in agreement with the dimensions of spinors in D = 3 + 1, but in the D̃=6+4 perspective the spinor fields must have 32-components (up to reality conditions). This indicates that the correspondence of the multivector matrix model (184) in D = 3 + 1 with a D̃=6+4 off-shell model (175) is up to the fermionic terms. This suggests that to a D̃=6+4 matrix model of the type (175), with 32 spinor fermion (matrix) fields, there should be an extended version of the multivector matrix model (195), in 3 + 1 dimensions, with 8 spinor matrix fields, i.e., 32 fermionic matrix degrees of freedom. The similar conclusions are valid for the most general cases, i.e., for mutivector matrix models (184) in D-dimensions and matrix models (175) in D̃=2^{[D/2]−1}(2^{[D/2]}+1). Note that there may be pairs of mutivector matrix models in dimensions D and D ± 1 which have associated the same D̃-dimensional matrix model, whenever [D/2] = [(D ± 1)/2].
+VI. SPECULATIVE ASPECTS: DEFORMATION OF CAUSAL SPACE-TIME STRUCTURE AND ENTROPY OF SPACE-TIME
+In this section, we explore possible cosmological effects of the quantum deformation of light-cones. We also conjecture on a possible origin of the entropy of space-time, as encoded in the twistor–phase space.
+A. Quantum causal structure
+Since light-cones support massless particles, a natural question is, how quantum deformations of light-cones may affect their propagation. As we do not count yet with a theory of particles on non-commutative spaces, even less a field theory, we can just try to look for physical effects of non-commutativity using heuristic arguments. Here we shall do this.
+Let us define the effective hyperboloid,
+where the radius-square and time-square match the expectation values of X^{0}*X^{0} and X^{i}*X_{i} of the respective non-commutative hyperboloids (104) and (117), and t_{min} and r_{min} are the minimal values allowed by the spectrum of the respective observables, i.e., (111)–(115) and (133)–(136). That is, for D = 2 + 1 and D = 3 + 1,
+where ℓ is obtained from the respective equations (104)–(117).
+From (202), one can estimate the average speed of propagation of light,
+and its acceleration,
+Note that the vanishing speed of light and infinite acceleration cannot be observed since there is a bound at r=ℓ (t=0). We can evaluate the effective speed of light and its acceleration,
+Since in infinity the hyperboloid is asymptotically equivalent to a light-cone, the acceleration limr→∞a^{ℓ}=0 vanishes. These computations suggest that at small distances light-like signals may look, for a given observer, as propagating with an effective speeds smaller than the classical value c = 1, but accelerating a_{ℓ} > 0.
+B. Bits, entropy, and the area of spheres
+The fact that the space X(M_{D}) makes use of the phase space suggests to implement some notions of statistical mechanics, e.g., distributions and statistical averages already in the classical level. Let us introduce the distribution ρ(L) such that
+Note that even-parity distributions can be expressed directly in terms of multivectors X∈X(M_{D}), i.e., ρ(L)=ρ(X), from (75). The associated entropy functional is given by
+where k_{B} is the Boltzmann constant and (2πℓHP){d} is the volume of the fundamental cell in TPS. The discrete version of the Gibbs entropy is given by
+where p_{i} is the inverse of the number of states in the cell i, and Ω is the total number of cells in the correspondent volume of TPS.
+There is an intrinsic probability distribution associated with the degeneracy of the coordinates X^{μ[n]} in terms of TPS variables, which is reflected in the symmetry L_{α}→−L_{α} of (66). That is, for given values of the coordinates X^{μ[n]}, there are in correspondence two points in TPS, i.e., L_{α} and the antipodal −L_{α}, which yield the same values of X^{μ[n]}. Therefore the cells L_{α} and −L_{α} occur with probability 1/2 each (assuming equal probability weights), whenever the coordinates X^{μ[n]}’s are measured. Hence we can define a bit-state distribution ρ(X) in the multivector space such that it is even with respect to TPS variables, which gives the probability of finding the bit at coordinates X^{μ[n]} in the state either “0” or “1,” i.e., depending if the respective TPS coordinate is found in the “lower” or “upper” TPS half-hyper-plane. Thus, from (211) with p_{i} = 1/2, we obtain
+Now consider a solid 2d-ball in phase space of radius
+which has volume
+Hence the number of fundamental unit cells of TPS in this volume is given by
+Replacing the above equation in (212) yields
+Now, from the definition of the time coordinate (66) [see also the comment above (100)],
+the entropy (216) is also equivalent to
+where in the second equality we have used the relation 2d = 2^{[D/2]} between phase space and space-time dimensions. Note that the entropy (218) increases monotonically with the time,
+The entropy (218) is proportional to the area of a d-sphere of radius R = X^{0},
+in spacetime length units. Hence the entropy in TPS can also be expressed in terms of the area of a d-sphere,
+Recalling the fact that the dimension of TPS and the dimension of the space-time are related by the formula 2d = 2^{[D/2]}, in dimensions D = 3 and 4, the formulas (218) and (220) yield an entropy-area relation.
+In more detail, in D = 3 + 1 dimensions, the entropy of the four-dimensional phase space reads
+which reminds us the Bekenstein-Hawking entropy of a black-hole, or of cosmological horizons [62–64]. This suggests that twistor (phase) space may provide suitable variables for understanding the origin of the entropy of black-holes since it is tempting to compare the entropy/area in TPS (221) and the Bekenstein-Hawking entropy,
+where the Planck length is defined as
+Comparing (221) and (222), we obtain the proportionality relation between the Heisenberg length and the Planck length,
+which can be used to express the deformation quantization parameter ℓ_{HP} in TPS [see (6)] in terms of the Planck length instead.
+Note that in dimensions D = 2 + 1 (3 + 1) a constant bit-state distribution yields for the Gibbs/Shannon entropy a perimeter (area)-like Bekenstein-Hawking law. However, in D > 4, the entropy of constant bit-state distributions is proportional to the area of S^{d}-spheres of dimensions greater than the space-time dimensions D [cf. (225)]. This observation suggests a holographic scenario in D⩽4 in contrast with D > 4.
+Finally, let us comment on that the existence of lowest bounds for the measurement of time and space distances at Planck length order of magnitude which together with space-time non-commutativity, implying uncertainty of positions, may overcome the space-time singularities appearing in classical theories of gravity. As discussed in Ref [65], non-commutativity can also prevent complete evaporation of black holes. Indeed, we can expect that a black-hole should not continue radiating after its event horizon reaches the minimal bound of distance imposed by quantization. Indeed, below this bound, the notion of causality does not make sense. In the final state, a black-hole must contain just one bit of information. This also suggests a possible particle-like nature of a black-hole, as proposed in Refs [66] and  [67].
+VII. CONCLUSIONS
+We proposed a formalism that permits a covariantization of phase spaces of dimensions 2d as relativistic objects in D-dimensional space-time such that
+Doing so, we extend the notion of Penrose’s twistor space to phase spaces of dimensions 2^{[D/2]} (D = 2, 3, 4 Mod 8) which serve as moduli space of certain multivector varieties, denoted as X[M_{D}], with D-dimensional Lorentz covariance. These appear as quadrics in R^{dim(sp(2d))}. To phase spaces of dimensions (225), we referred to as Twistor–Phase Space (TPS), emphasizing the fact that they play a dual role, as non-relativistic mechanical observables in d spatial dimensions and as spinor-covariant variables in D dimensions. We observed also that quantum mechanics in phase space produces non-commutative (fuzzy) versions of X[M_{D}] compatible with Lorentz covariance. This approach permits a natural unification of concepts of non-relativistic mechanics, relativistic (algebraic) geometry, and (deformation) quantization.
+As for physical models underlying these multivector geometries, we found new types of matrix models, which can be regarded as interaction terms of Yang-Mills action principles with massive minimally coupled fermions (in a large-N limit), and whose equations of motion contain as solutions the non-commutative multivector space X[M_{D}].
+We included some heuristic arguments on a possible origin of the entropy of space-time and the expansion of the universe. With respect to the first, we observed that a constant bit-state distribution in four dimensional TPS yields a Gibbs/Shannon entropy equivalent to the area of a 2-sphere embedded in D = 3 + 1 dimensions. With respect to the second, we observed that (deformation) quantization in TPS should modify the spacetime causal structure at small scales since light-cones deform into fuzzy hyperboloids, with the consequent acceleration of signals. Hence quantum mechanics may source effective acceleration at small scales.
+As it has been shown that the computation of scattering amplitudes in gauge theory [68–74] can be greatly simplified by means of the use of twistor space and string theories in twistor space [69,75,76], we expect that TPS may be useful to explore generalization of these results to, perhaps, amplitudes of extended objetcs. We also believe that TPS may play a role in the context of Verlinde’s entropic-force picture of gravity [11,77], as TPS can be easily assigned of an entropy distribution, therefore inducing entropy of geometries immersed in the multivector spaces X[M_{D}].
+APPENDIX A: GAMMA MATRICES
+The matrices Γ satisfy the associative algebra [29],
+where we have used double square brackets [[⋯]] to indicate that λ-indices are also anti-symmetrized. The sum runs on indices k that does not yield ill-defined results.
+The following relations are useful to derive relations of multivectors and solving the equations of motion:
+APPENDIX B: THE Λ_{D} MATRIX IN D = 9 + 1, 10 + 1, 11 + 1 DIMENSIONS
+

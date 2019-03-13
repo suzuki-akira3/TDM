@@ -1,0 +1,199 @@
+A novel equivalent definition of Caputo fractional derivative without singular kernel and superconvergent analysis
+In this article, we present a new second-order finite difference discrete scheme for a fractal mobile/immobile transport model based on equivalent transformative Caputo formulation. The new transformative formulation takes the singular kernel away to make the integral calculation more efficient. Furthermore, this definition is also effective where α is a positive integer. Besides, the T-Caputo derivative also helps us to increase the convergence rate of the discretization of the α-order(0 < α < 1) Caputo derivative from O(τ^{2−α}) to O(τ^{3−α}), where τ is the time step. For numerical analysis, a Crank-Nicolson finite difference scheme to solve the fractal mobile/immobile transport model is introduced and analyzed. The unconditional stability and a priori estimates of the scheme are given rigorously. Moreover, the applicability and accuracy of the scheme are demonstrated by numerical experiments to support our theoretical analysis.
+I. INTRODUCTION
+In recent years, many problems in physical science, electromagnetism, electrochemistry, diffusion, and general transport theory can be solved by the fractional calculus approach, which gives attractive applications as a new modeling tool in a variety of scientific and engineering fields. Roughly speaking, the fractional models can be classified into two principal kinds: the space-fractional differential equation and time-fractional one. Numerical methods and theory of solutions of the problems for fractional differential equations have been studied extensively by many researchers which mainly cover finite element methods [1–6], mixed finite element methods [7–10], finite difference methods [11–14], finite volume (element) methods [15,16], (local) discontinuous Galerkin [(L)DG] methods [17], spectral methods [18,19], and so on.
+The singular kernel of the Caputo fractional derivative causes a lot of difficult problems both in integral calculation and discretization. To take the singular kernel away, Caputo and Fabrizio [20] suggested a new definition of the fractional derivative by changing the kernel (t − s)^{−α} with the function exp(−αt−s1−α) and 1Γ(1−α) with M(α)1−α. The Caputo-Fabrizio derivative can portray substance heterogeneities and configurations with different scales, which noticeably cannot be managing with the renowned local theories. And some related articles have been considered by many authors. Atangana [21] introduced the application to the nonlinear Fisher’s reaction-diffusion equation based on the new fractional derivative. He [22] also analyzed the extension of the resistance, inductance, and capacitance (RLC) electrical circuit to this fractional derivative without singular kernel. A numerical solution for the model of the resistance, inductance, and capacitance (RLC) circuit via the fractional derivative without singular kernel is considered by Atangana [23]. However, we observe that there are many different actions between the Caputo-Fabrizio derivative and Caputo derivative. The two definitions are not equivalent and cannot transform into each other in any cases.
+In this paper, we suggest a new transformative formulation of the fractional derivative named T-Caputo formula, which is equivalent to the Caputo fractional derivative in some cases. Furthermore, the two definitions can transform into each other. More importantly, the T-Caputo formula also helps us to increase the convergence rate of the discretization of the α-order(0 < α < 1) Caputo derivative from O(τ^{2−α}) to O(τ^{3−α}), where τ is the time step. For numerical analysis, we present a Crank-Nicolson finite difference scheme to solve the fractal mobile/immobile (MIM) transport model. The unconditional stability and a priori estimates of the scheme are given rigorously. Moreover, the applicability and accuracy of the scheme are demonstrated by numerical experiments to support our theoretical analysis.
+A fractal mobile/immobile transport model is a type of second-order partial differential equations (PDEs), describing a wide family of problems including heat diffusion and ocean acoustic propagation, in physical or mathematical systems with a time variable, which behave essentially like heat diffusing through a solid [24]. Significant progress has already been made in the approximation of the time fractional order dispersion equation; see Ref [25]. Schumer [26] first developed the fractional-order, mobile/immobile (MIM) model. The time drift term ∂u/∂t is added to describe the motion time and thus helps us to distinguish the status of particles conveniently. This equation is the limiting equation that governs continuous time random walks with heavy tailed random waiting times. In most cases, it is difficult, or infeasible, to find the analytical solution or good numerical solution of the problems. Numerical solutions or approximate analytical solutions become necessary. Liu et_al [27] gave a radial basis function (RBF) meshless approach for modeling a fractal mobile/immobile transport model. Numerical simulation of the fractional order mobile/immobile advection-dispersion model is considered by Liu et_al [28] Zhang and Liu [29] present a novel numerical method for the time variable fractional order mobile–immobile advection–dispersion model. The finite difference schemes are used by Ashyralyev and Cakir [30] for solving one-dimensional fractional parabolic partial differential equations. They [31] also give the finite difference method for fractional parabolic equations with the Neumann condition.
+The paper is organized as follows. In Sec. II, we give the definitions and some notations. We introduce a Crank-Nicolson finite difference scheme for a fractal mobile/immobile transport model in Sec. III. Then in Sec. IV, we give the analysis of stability and error estimates for the presented method. In Sec. V, some numerical experiments for the second-order finite difference discretization are carried out.
+II. SOME NOTATIONS AND DEFINITIONS
+First, we give some definitions which are used in the following analysis.
+Let us recall the usual Caputo fractional time derivative of order α, given by
+Here, we give the following new transformative formulation of the fractional derivative.
+Definition 1. Let u(t) ∈ C^{2}(0, T), α ∈ (0, 1), then the new transformative formula of fractional order is defined as
+From the above definition of the fractional order transformative formula, we know that the singular kernel (t − τ)^{−α} in the Caputo derivative is replaced with (t − τ)^{1−α} in the new one which does not have singularity for t = τ.
+Lemma 2. Suppose u(t) ∈ C^{2}(0, T), α ∈ (0, 1), then we have
+In particular, if the function is such that u^{′}(0) = 0, then we have
+Proof. Noting that
+Then it is easy to get
+Thus the Caputo derivative can be rewritten as
+This completes the proof.
+Definition 3. Suppose u(t) ∈ C^{n+1}(0, T), if n > 1, and α ∈ (n − 1, n), the fractional transformative formulation_{0}^{TC}D_{t}^{α}u(t)is defined by (n − 1 < α < n),
+Lemma 4. Suppose u(t) ∈ C^{n+1}(0, T), α ∈ (n − 1, n), then we have
+In particular, if the function is such that u^{(n)} (0) = 0, then we have
+Proof. Similar to the analysis in the proof of Lemma 1, we have
+Then it is easy to get
+Thus the α-order Caputo derivative can be rewritten as
+This completes the proof.
+Lemma 5. For the new fractional order transformative formulation, α ∈ (0, 1), we have
+In particular, if the function is such that u^{′}(0) = 0, then we have
+Proof. We begin considering n = 1, and then from definition (1) of _{0}^{TC}D_{t}^{α}u(t), we obtain
+Particularly, from Lemma 2, we know _{0}^{TC}D_{t}^{α}u(t)=_{0}^{C}D_{t}^{α}u(t) if u′(0) = 0. Thus we have
+It is easy to generalize the proof for any n > 1.
+Lemma 6. For the new fractional order transformative formulation, if α = n, we have
+Proof. From Definition 3, we obtain
+From Lemma 6, we obtain
+Let us consider the transformative formulation of a particular function as u(t) = cos(t) for different α(0 < α < 1). It is easy to get that u′(0) = sin(0) = 0. From Fig. 1, we observe that there are no different actions between the transformative formulation and Caputo derivative. We also consider another function as u(t) = sin(t) which has u″(0) = 0 for different α(1 < α < 2). From Fig. 2, the transformative formulation and Caputo derivative have the exact same set of states.
+III. FINITE DIFFERENCE SCHEME FOR FRACTAL MOBILE/IMMOBILE TRANSPORT MODEL
+In this section, we introduce the basic ideas for the numerical solution of the fractal mobile/immobile transport model by the second-order finite difference scheme.
+We consider the following fractal mobile/immobile transport model:
+where (x, t) ∈ Ω = [0, L] × [0, T], 0 < α < 1, f ∈ C[0, T], with the initial conditions
+and boundary conditions
+Letting t = 0 in Eq. (1), we get
+Using Lemma 2, the above model can be transformed into the following formulation:
+In order to do discretizations, we define Ω_{h} = {x_{i}|x_{i} = ih, h = L/M, 0 ≤ i ≤ M} to be a uniform mesh of interval [0, L]. Similarly, define Ω_{τ} = {t_{n}, t_{n} = nτ, τ = T/N, 0 ≤ n ≤ N} to be a uniform mesh of interval [0, T]. The values of the function u at the grid points are denoted as ujk=u(x_{j},t_{k}). Ujk is the approximate solution at the point (x_{j}, t_{k}). Besides, we suppose V = {V_{i}, 0 ≤ i ≤ M, V_{0} = V_{M} = 0} and W = {W_{i}, 0 ≤ i ≤ N, W_{0} = W_{M} = 0} are two grid functions on Ω_{h}. g = {g^{n}, 0 ≤ n ≤ N} is a grid function on Ω_{τ}.
+For functions g, V, and W, we give some notations and define L^{2} discrete inner products and norms. Define [14]
+and
+A. The Crank-Nicholson finite difference scheme
+From now on, let C stand for a positive number independent of τ and h but possibly with different values at different places. We give some lemmas which are used in stability analysis and error estimates.
+The objective of this section is to consider the Crank-Nicolson finite difference method for Eq. (1). A discrete approximation to the new transformative formulation _{0}^{TC}D_{t}^{α}u(x,t) at (x_{i},t_{k+12}) can be obtained by the following approximation:
+where c_{j}∈(x_{j−12},x_{j+12}) and for ξ_{1}∈(t_{j+12},t_{j+1}), ξ_{2}∈(t_{j},t_{j+12}), ξ_{3}∈(t_{j−12},t_{j}), ξ_{4}∈(t_{j−1},t_{j−12}), η∈(t_{j−12},t_{j+12}), and u(t)∈C^{4}[0,t_{k+12}], we have
+In particular, for j = 0, denote u^{−1} = u^{0} − τu′(x, 0) = ϕ − τψ. Using the simple linear interpolant of u at (−t_{1}, 0), so for s∈(−t_{12},0), we have u″(x, s) = 0. It is a suitable method to satisfy the condition u^{−1} = u^{0} − τu′(x, 0).
+Combining Eq. (4) with (5), we obtain
+where
+and
+We give some lemmas about M_{j} that will be used in the following analysis.
+Lemma 7. For the definition M_{j} (j = 0, 1, 2, …, N − 1), we have M_{j} > 0 and M_{j+1} ≥ M_{j}, ∀j ≤ k.
+Proof. Observing that x^{2−α} is a monotone increasing function for 0 < α < 1, then we have M_{j} = (j + 1)^{2−α} − j^{2−α} > 0. Next, let f(x) = (x + 1)^{2−α} − x^{2−α}, we have
+Thus we obtain
+This completes the proof.
+Lemma 8. For the definition M_{j} = (j + 1)^{2−α} − j^{2−α}, we denote G_{j+1} = M_{j+1} − M_{j} (j = 0, 1, 2, …, N − 1). Then it holds that
+Proof. First, using Lemma 7, it is easy to get G_{j} ≥ 0. Next, for fixed 0 < α < 1, we give the following function:
+and then we have
+Using Taylor’s expansion, we have
+where ξ_{1} ∈ (x + 1, x + 2) and ξ_{2} ∈ (x, x + 1).Thus, we have
+It means that G_{j} > G_{j+1}, ∀j ≥ 1. This completes the proof.The discretization of the first order time derivative is stated as
+and the discretization of the second-order spatial derivative is stated as
+Combining Eq. (6) with Eqs. (9) and (10), we can obtain the following finite difference scheme, ∀k = 0, 1, ⋯N − 1:
+Note that G_{j+1} = M_{j+1} − M_{j} (j = 0, 1, 2, …, N − 1), for k ≥ 1, we have
+Let β=τ^{1−α}Γ(3−α), then the above scheme (11) can be rewritten as
+IV. STABILITY ANALYSIS AND OPTIMAL ERROR ESTIMATES
+A. Stability analysis
+We analyze the stability of the difference scheme by a Fourier analysis. Let Ũik be the approximate solution of (13) and define
+Then we have
+As the same definition in Ref [32], we define the grid function
+We can expand ρ^{k}(x) in a Fourier series
+where discrete Fourier coefficients d_{k}(l) are
+Then we have the Parseval equality for the discrete Fourier transform
+Introduce the following norm:
+Then we obtain
+Based on the above analysis, we can suppose that the solution of Eq. (14) has the following form ρmk=d_{k}e^{imhγ}, where L = 1 and γ = 2πl.
+Lemma 9. Suppose that d_{k}(l) (k = 1, 2, …, N) are defined by (15), then for 0 < α < 1, we have
+Proof. Substituting ρmk=d_{k}e^{imhγ} into Eq. (14), we have
+By simply calculating, we can get
+Noting that e^{ihγ} + e^{−ihγ} = 2 cos(hγ), Eq. (17) can be rewritten as the following formulation:
+First, letting k = 0 in Eq. (18), we obtain
+Now suppose that we have proved that |d_{n}| ≤ |d_{0}|, n = 1, 2, …, k, then using Eq. (18), we obtain
+Observing that G_{j} ≥ 0 and G_{j} − G_{j+1} ≥ 0 in Lemma 8, then we obtain
+Combining Eq. (20) with Eq. (21), we can obtain
+If −1−cos(hγ)h^{2}τ+1+β−βG_{1}>0, then we have
+If −1−cos(hγ)h^{2}τ+1+β−βG_{1}≤0, then we have
+It means that
+Note that (2^{2−α} − 3)τ^{1−α} ≤ Γ(3 − α), ∀τ ≤ T = 1. It means that |d_{k+1}| ≤ |d_{0}| is unconditionally efficient. By using mathematical induction, we complete the proof.
+Theorem 10. The Crank-Nicolson finite difference scheme defined by(13)is unconditionally stable for 0 < α < 1.
+Proof. Suppose that Ũ{k} is the approximate solution of Eq. (13), and applying Lemma 9 and Parseval equality, we obtain
+which proves that scheme (13) is unconditionally stable.
+B. Optimal error estimate
+Combining Eqs. (1) and (6) with (9) and (10), we obtain
+where the truncation error at (x_{i},t_{k+12}) is R̃ik+12=O(τ^{2}+h^{2}).
+Let εik=uik−Uik be the error at (x_{i}, t_{k}), then subtracting Eq. (13) from Eq. (27), we get the error equation as follows:
+Similar to the stability analysis, we define the grid functions as follows:
+and
+We can expand ε^{k}(x) and R̃{k+12}(x) in two Fourier series
+where the discrete Fourier coefficients μ_{k}(l) and ν_{k+12}(l) are
+Then we have the Parseval equality for the discrete Fourier transforms
+and
+Using the boundary conditions, it is easy to obtain ε0k=εMk=0. Thus we define
+and
+Without loss of generality, suppose that L = 1, γ = 2πl, and
+Next, taking notice of the above assumptions (31), we have
+After simplifications, the equation can be rewritten as
+Lemma 11. Suppose that μ_{k}(l) (k = 1, 2, …, N) andν_{k+12}(l)(k=0,1,2,…,N−1)are defined by(29), then for 0 < α < 1, we have
+Proof. Notice that the error equation satisfies the initial condition εi0=0, j = 0, 1, …, M, thus we have μ_{0} = 0. First, letting k = 0, we have
+It means that |μ_{1}|<|ν_{12}|.Now suppose that we have proved that |μ_{n}| ≤ C|μ_{0}|, n = 1, 2, …, k, then using Eq. (33), we have
+Similar to the analysis of Eq. (21), we obtain
+Combining Eq. (34) with (35), we have
+Noting that R̃{k+12}=O(τ^{2}+h^{2}), ∀0 ≤ k ≤ N − 1, and using Eq. (30), we obtain that there is a positive constant C_{k+12} such that
+Let C=max{C_{12},C_{32},…,C_{N−12}}, we have
+Now, let C = max(C_{1}, C_{2}), and if −1−cos(hγ)h^{2}τ+1+β−βG_{1}>0, then we have
+If −1−cos(hγ)h^{2}τ+1+β−βG_{1}≤0, then we have
+Similar to the stability analysis, we have
+It means that |μ_{k+1}|≤C|ν_{12}|. This completes the proof.
+Theorem 12. The Crank-Nicolson finite difference scheme is defined by Eq. (13) for 0 < α < 1, u^{k}=(u1k,u2k,…,uM−1k), andU^{k}=(U1k,U2k,…,UM−1k); then there exists a positive constant C independent of h, k, and τ such that
+Proof. Applying Lemma 11 and Parseval equality, we obtain
+This completes the proof.
+V. NUMERICAL RESULTS
+In this section, some numerical calculations are carried out to test our theoretical results. We consider a numerical example by taking space-time domain Ω = [0, 1] × [0, 1].
+Example 1. We give the exact solution u(x, t) = e^{t} sin(πx), and for different α, we have different f(x, t),
+Example 2. The exact solution is u(x, t) = e^{t}x^{2}(1 − x)^{2},
+Numerical and exact solutions of the fractal mobile/immobile transport model have been depicted in Fig. 3 (Example 1) and Fig. 4 (Example 2). Tables I–VI show the approximation errors and convergence rates for the second-order Crank-Nicolson difference scheme. We take τ=12000, a value small enough to check the space errors and convergence rates at t = 1/2 in Table I and at T = 1 in Tables III and V. We choose different spatial step sizes to obtain the numerical convergence order in space. In Tables II, IV, and VI, we take h=12000, a value small enough such that the spatial discretization errors are negligible as compared with the time errors at both t = 1/2 and T = 1. We can check that these numerical convergence orders almost approaching 2 are consistent with the theoretical analysis.
+VI. CONCLUSION
+In this article, we define a novel transformative Caputo fractional derivative which is equivalent to the Caputo fractional derivative. This new transformative Caputo derivative takes the singular kernel away to make the integral calculation more efficient. Furthermore, the transformative formulation also helps us to increase the convergence rate of the discretization of the α-order (0 < α < 1) Caputo derivative from O(τ^{2−α}) to O(τ^{3−α}), where τ is the time step. We prove some lemmas and give a Crank-Nicholson finite difference scheme for the fractal mobile/immobile transport model. By using transformative formulation, second-order error estimates in both of temporal and spatial mesh-sizes in discrete L^{∞}(L^{2}) errors are established for the Crank-Nicolson finite difference scheme.
+TABLE I. 
+Errors and convergence rates at the middle time t = 1/2 of Example 1 with different α and take h = 1/2000.
+TABLE II. 
+Errors and convergence rates at the middle time t = 1/2 of Example 1 with different α and take τ = 1/2000.
+TABLE III. 
+Errors and convergence rates at the final time T = 1 of Example 1 with different α and take h = 1/2000.
+TABLE IV. 
+Errors and convergence rates at the final time T = 1 of Example 1 with different α and take τ = 1/2000.
+TABLE V. 
+Errors and convergence rates at the final time T = 1 of Example 2 with different α and take h = 1/2000.
+TABLE VI. 
+Errors and convergence rates at the final time T = 1 of Example 2 with different α and take τ = 1/2000.
+TABLE I. -body
+		γ = 0.1	γ = 0.5	γ = 0.9
+h	τ	L_{2} norm error	Rate	L_{2} norm error	Rate	L_{2} norm error	Rate
+1/2000	1/8	2.1406 × 10^{−3}		2.1149 × 10^{−3}		2.0002 × 10^{−3}	
+1/2000	1/16	5.3499 × 10^{−4}	2.0004	5.2927 × 10^{−4}	1.9985	5.0078 × 10^{−4}	1.9978
+1/2000	1/32	1.3359 × 10^{−4}	2.0016	1.3232 × 10^{−4}	1.9999	1.2542 × 10^{−4}	1.9974
+1/2000	1/64	3.3251 × 10^{−5}	2.0063	3.2962 × 10^{−5}	2.0051	3.1309 × 10^{−5}	2.0021
+1/2000	1/128	8.1648 × 10^{−6}	2.0259	8.1014 × 10^{−6}	2.0245	7.7083 × 10^{−6}	2.0220
+TABLE II. -body
+		γ = 0.1	γ = 0.5	γ = 0.9
+h	τ	L_{2} norm error	Rate	L_{2} norm error	Rate	L_{2} norm error	Rate
+1/8	1/2000	1.2398 × 10^{−2}		1.2076 × 10^{−2}		1.1883 × 10^{−2}	
+1/16	1/2000	3.0875 × 10^{−3}	2.0056	3.0084 × 10^{−3}	2.0051	2.9618 × 10^{−3}	2.0043
+1/32	1/2000	7.7108 × 10^{−4}	2.0015	7.5141 × 10^{−4}	2.0013	7.3987 × 10^{−4}	2.0011
+1/64	1/2000	1.9269 × 10^{−4}	2.0006	1.8778 × 10^{−4}	2.0005	1.8491 × 10^{−4}	2.0004
+1/128	1/2000	4.8145 × 10^{−5}	2.0008	4.6918 × 10^{−5}	2.0008	4.6200 × 10^{−5}	2.0008
+TABLE III. -body
+		γ = 0.1	γ = 0.5	γ = 0.9
+h	τ	L_{2} norm error	Rate	L_{2} norm error	Rate	L_{2} norm error	Rate
+1/2000	1/8	3.3538 × 10^{−3}		3.5156 × 10^{−3}		3.3965 × 10^{−3}	
+1/2000	1/16	8.8481 × 10^{−4}	1.9224	8.8098 × 10^{−4}	1.9966	8.5199 × 10^{−4}	1.9951
+1/2000	1/32	2.2132 × 10^{−4}	1.9992	2.2029 × 10^{−4}	1.9997	2.1334 × 10^{−4}	1.9977
+1/2000	1/64	5.5017 × 10^{−5}	2.0082	5.4873 × 10^{−5}	2.0052	5.3220 × 10^{−5}	2.0031
+1/2000	1/128	1.3509 × 10^{−5}	2.0260	1.3481 × 10^{−5}	2.0252	1.3089 × 10^{−5}	2.0236
+TABLE IV. -body
+		γ = 0.1	γ = 0.5	γ = 0.9
+h	τ	L_{2} norm error	Rate	L_{2} norm error	Rate	L_{2} norm error	Rate
+1/8	1/2000	2.0603 × 10^{−2}		2.0487 × 10^{−2}		2.0542 × 10^{−2}	
+1/16	1/2000	5.1295 × 10^{−3}	2.0060	5.1010 × 10^{−3}	2.0059	5.1149 × 10^{−3}	2.0058
+1/32	1/2000	1.2810 × 10^{−3}	2.0015	1.2739 × 10^{−3}	2.0015	1.2774 × 10^{−3}	2.0015
+1/64	1/2000	3.2012 × 10^{−4}	2.0006	3.1836 × 10^{−4}	2.0005	3.1923 × 10^{−4}	2.0005
+1/128	1/2000	7.9984 × 10^{−5}	2.0008	7.9542 × 10^{−5}	2.0009	7.9761 × 10^{−5}	2.0008
+TABLE V. -body
+		γ = 0.1	γ = 0.5	γ = 0.9
+h	τ	L_{2} norm error	Rate	L_{2} norm error	Rate	L_{2} norm error	Rate
+1/2000	1/8	1.9924 × 10^{−4}		1.9816 × 10^{−4}		1.9166 × 10^{−4}	
+1/2000	1/16	4.9831 × 10^{−5}	1.9994	4.9621 × 10^{−5}	1.9976	4.8024 × 10^{−5}	1.9967
+1/2000	1/32	1.2386 × 10^{−5}	2.0083	1.2346 × 10^{−5}	2.0069	1.1963 × 10^{−5}	2.0052
+1/2000	1/64	3.0214 × 10^{−6}	2.0354	3.0140 × 10^{−6}	2.0343	2.9227 × 10^{−6}	2.0332
+1/2000	1/128	6.8010 × 10^{−7}	2.1514	6.7944 × 10^{−7}	2.1493	6.5733 × 10^{−7}	2.1526
+TABLE VI. -body
+		γ = 0.1	γ = 0.5	γ = 0.9
+h	τ	L_{2} norm error	Rate	L_{2} norm error	Rate	L_{2} norm error	Rate
+1/8	1/2000	6.4192 × 10^{−3}		6.3831 × 10^{−3}		6.4003 × 10^{−3}	
+1/16	1/2000	1.6076 × 10^{−3}	1.9975	1.5987 × 10^{−3}	1.9974	1.6031 × 10^{−3}	1.9973
+1/32	1/2000	4.0208 × 10^{−4}	1.9994	3.9986 × 10^{−4}	1.9993	4.0095 × 10^{−4}	1.9994
+1/64	1/2000	1.0052 × 10^{−4}	2.0000	9.9758 × 10^{−5}	2.0030	1.0024 × 10^{−4}	2.0000
+1/128	1/2000	2.5130 × 10^{−5}	2.0000	2.4992 × 10^{−5}	1.9970	2.5060 × 10^{−5}	2.0000
+FIG. 1. 
+Simulation of the transformative formulation (up) and Caputo derivative (down), with α = 0.1, 0.3, 0.6, 0.9 in the time interval [0, 20].
+FIG. 2. 
+Simulation of the transformative formulation (up) and Caputo derivative (down), with α = 1.1, 1.3, 1.6, 1.9 in the time interval [0, 20].
+FIG. 3. 
+Solution behavior of Example 1 at T = 1/4, T = 1/2, T = 3/4, T = 1 with the model parameters α = 1/2.
+FIG. 4. 
+Solution behavior of Example 2 at T = 1/4, T = 1/2, T = 3/4, T = 1 with the model parameters α = 1/2.

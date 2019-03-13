@@ -1,0 +1,168 @@
+A class of exactly solvable rationally extended non-central potentials in two and three dimensions
+We start from a seven parameter (six continuous and one discrete) family of non-central exactly solvable potentials in three dimensions and construct a wide class of ten parameters (six continuous and four discrete) family of rationally extended exactly solvable non-central real as well as PT symmetric complex potentials. The energy eigenvalues and the eigenfunctions of these extended non-central potentials are obtained explicitly and it is shown that the wave eigenfunctions of these potentials are either associated with the exceptional orthogonal polynomials or some type of new polynomials which can be further re-expressed in terms of the corresponding classical orthogonal polynomials. Similarly, we also construct a wide class of rationally extended exactly solvable non-central real as well as complex PT-invariant potentials in two dimensions.
+I. INTRODUCTION
+In non-relativistic quantum mechanics, the exactly solvable (ES) problems play an important role in the understanding of different quantum mechanical systems associated with any branch of theoretical physics. For many of the quantum mechanical systems, whose exact solutions are unknown, these ES potentials are generally considered as a starting potential to get their approximate eigenspectrum. Most of the ES potentials are either one-dimensional or are central potentials which are essentially one-dimensional on the half line.
+There are only few a examples of exactly solvable non-central potentials whose solutions are well known; see, for example, Refs [1–5]. In a comprehensive study, Khare and Bhaduri [6] have discussed a number of exactly solvable non-central potentials by considering the Schrödinger equation in three-dimensional spherical polar and two-dimensional polar coordinates. The classical orthogonal polynomials (such as Hermite, Laguerre, Jacobi polynomial, etc.) are playing a fundamental role in the construction of the bound state solutions to these ES potentials. The solution of most of the ES non-central potentials is connected with the above well-known orthogonal polynomials. It has been observed that the solution of all the non-central potentials obtained in Ref [6] is associated either with the classical Laguerre or Jacobi orthogonal polynomials.
+After the recent discovery of the two new families of orthogonal polynomials, namely, the exceptional X_{m} Laguerre and X_{m} Jacobi orthogonal polynomials [7,8], a number of new exactly solvable potentials have been discovered [9–18]. In most of these cases, these new potentials are the rational extension of the corresponding conventional potentials [19,20]. Various properties of these new extended potentials have also been studied by different groups [21–30]. It is then natural to consider the rational extension of the conventional non-central potentials discussed in Ref [6] and discover new exactly solvable non-central potentials whose solutions are in terms of the rational extension of the Jacobi or Laguerre polynomials. The purpose of this paper is precisely to address this issue.
+In this present manuscript, our aim is to obtain the rational extension of all the non-central conventional potentials discussed in Ref [6]. Furthermore, one of the major developments after the work of Ref [6] has been the discovery of PT-invariant complex potentials with real energy eigenvalues. The concept of PT [combined parity (P) and time reversal (T)] symmetric quantum mechanics [31] also plays a crucial role in the understanding of the complex quantum mechanical systems. Bender and Boettcher [31] have showed that the eigenspectrum of such non-Hermitian PT symmetric complex systems is real provided the PT-symmetry is not spontaneously broken. The second purpose of this paper is to consider PT-symmetric, noncentral, exactly solvable potentials and obtain their rational extensions. It turns out that the bound state eigenfunctions of some of these potentials are not in the exact form of exceptional orthogonal polynomials (EOPs) rather they are written in the form of some new types of polynomials which can be further written in terms of the corresponding classical orthogonal polynomials.
+The paper is organized as follows:
+In Sec. II, we start from the non-central potentials with seven parameters (six continuous and one discrete) in spherical polar coordinates and explain how one can obtain its rationally extended (RE) solution in terms of ten parameter (six continuous and four discrete) solutions. Various forms of r, θ, and ϕ dependent potential terms are also mentioned. For an illustration, we discuss in detail in Secs. II A and II B, respectively, two examples (one real and one complex and PT symmetric) of ten parameter rationally extended non-central potentials. In particular, we show that the corresponding eigenfunctions are product of the exceptional Jacobi, exceptional Laguerre, and/or some type of new orthogonal polynomials. A list of possible forms of θ and ϕ dependent terms with the corresponding eigenfunctions as well as the other parametric relations is given in Tables I and II, respectively. Some examples of RE non-central potentials in two-dimensional polar coordinates are also mentioned in brief in Sec. III. In particular, we start from the five parameter (four continuous and one discrete) families of non-central potentials in polar coordinates and obtain the corresponding rationally extended non-central potentials with seven parameters (four continuous and three discrete). Finally, we summarize our results in Sec. IV.
+II. NON-CENTRAL POTENTIAL IN 3-DIMENSIONAL SPHERICAL POLAR COORDINATES
+In spherical polar coordinates (r, θ, ϕ), consider a non-central potential [32] of the form
+The Schrödinger equation corresponding to this potential, i.e.,
+has been solved exactly [6] by using the fact that the eigenfunction can be written in the product form as
+Using Eq. (3) in Eq. (2), we obtain three exactly solvable uncoupled equations given by
+and
+By considering different forms of a seven parameter family of potentials, Eqs. (4)–(6) have been solved exactly [6] and in this way one has constructed several non-central potentials V(r, θ, ϕ) by considering different forms of Ũ(r), V(θ) and U(ϕ) with the corresponding eigenvalues being E, ℓ^{2}, and m^{2}, respectively. The eigenfunctions corresponding to these three Eqs. (4)–(6) are either in terms of classical Laguerre or Jacobi orthogonal polynomials. The complete eigenfunctions are obtained by using Eq. (3). The forms of the potential V(r, θ, ϕ) with their solutions can be found in detail in Ref [6]. As an illustration, one of the seven parameter families of the potential considered in Ref [6] is given by
+In this work, if we change the potential V(r,θ,ϕ)⇒V_{m1,m2,m3}(r,θ,ϕ) by redefining the extended form Ũ(r)⇒Ũ_{m1,ext}(r), V(θ)⇒Vm_{2},ext(h)(θ), and U(ϕ)⇒Um_{3},ext(h)(ϕ), i.e.,
+and the eigenfunction
+then Eq. (2) becomes
+Here h = I, II correspond to the real potential while h = (PT)_{1}, (PT)_{2} correspond to the complex and PT symmetric potential in θ and/or ϕ.
+Similar to Eqs. (4)–(6), the Eq. (10) can also be easily uncoupled into three new exactly solvable equations given by
+and
+By knowing the solutions of Eqs. (11)–(13), a complete solution of the extended non-central potential V_{m1,m2,m3}(r,θ,ϕ) can be obtained by using Eq. (9) with the energy eigenvalues E.
+We show that there is one choice of Ũ_{m1,ext}(r), four choices of Vm_{2},ext(h)(θ) (two real and two PT symmetric), and three choices of Um_{3},ext(h)(ϕ) (two real and one PT symmetric) for which one can obtain exact solutions of the non-central potential. These choices are as follows:
+(a) Form ofŨ_{m1,ext}(r)
+where
+Here Lm_{1}(δ̃)(−ωr^{2}/2) is a classical Laguerre polynomial.
+(b) Forms ofVm_{2},ext(h)(θ)
+(i) For h = I,
+where the rational part Vm_{2},rat(I)(θ) is given by
+(ii) For h = II,
+with the rational part
+(iii) For h = (PT)_{1},
+is a complex and PT symmetric form of Vm_{2},ext(h)(θ) with the corresponding complex and PT symmetric rational term
+(iv) For h = (PT)_{2}The potential given in case (ii) can also be made complex and PT symmetric by multiplying the potential parameter D by imaginary number i and get
+with the complex rational part
+Here the potential parameters α and β are complex.
+(c) Forms ofVm_{3},ext(h)(ϕ)
+(i) For h = I,
+where
+Note that here p is any positive integer.
+(ii) For h = II,
+where
+Here p is any odd positive integer.
+(iii) For h = (PT)_{1},Case (ii) of the ϕ dependent terms can be made complex and PT symmetric by replacing the potential parameter F → iF and we get
+where the complex rational term with the complex parameters α̃ and β̃ are given by
+Note that here p is any odd positive integer.
+Here Pm_{2}(α̃,β̃)(z) and Pm_{3}(α,β)(z) are classical Jacobi polynomials.
+By taking various combinations of these allowed choices, we then have twelve different, rational, exactly solvable non-central potentials in three dimensions, each with ten parameters. These choices of potentials, the corresponding eigenvalues, and eigenfunctions are given in Tables I and II. In particular, in Table I, we give the four forms of possible Vm_{2},ext(h)(θ) (two real and two complex but PT-invariant) with their corresponding eigenvalues and eigenfunctions. In Table II, we similarly give two real and one complex and PT symmetric forms of Um_{3},ext(h)(ϕ) and the corresponding eigenvalues and eigenfunctions.
+As an illustration, we discuss two examples in detail, one real and one PT-invariant complex case in Secs. II A and II B, respectively.
+A. Example of rationally extended (RE) non-central real potential
+In this section, we discuss an example of the ten parameter (six continuous and four discrete) RE non-central real potential and its bound state solutions explicitly. We consider the potential of the form
+where the six parameters ω, δ, C, D, F, and G are continuous parameters while the rest four, i.e., p, m_{1}, m_{2}, and m_{3} are discrete parameters. In particular, each of them can take any integral value. The rational terms Ũ_{m1,rat}(r),Vm_{2},rat(I)(θ) and Um_{3},rat(I)(ϕ) are given by Eqs. (14), (15), and (19), respectively. It is easy to show that the eigenvalues of this extended non-central potential are the same as that of the conventional case given by Eq. (2) but the eigenfunctions are different which are obtained in terms of EOPs. The complete eigenfunction is given by Eq. (9) which is ultimately a product of these EOPs. To solve the above extended non-central potential, first we consider a simple case of m_{1} = m_{2} = m_{3} = 1 and then we generalize it to any arbitrary positive integer values of m_{1}, m_{2}, and m_{3}.
+Case (i): Form_{1} = m_{2} = m_{3} = 1
+In this case, the ten parameter RE non-central potential is reduced to a seven parameter RE non-central potential
+where p is any positive integer. To get the exact solution of Eq. (23), we define the rational terms Ũ_{1,rat}(r),V1,rat(I)(θ) and U1,rat(I)(ϕ) as [by putting m_{1} = m_{2} = m_{3} in the rational parts of Eqs. (14), (15), and (19)]
+and
+On comparing Eq. (23) with Eq. (8) (for m_{1} = m_{2} = m_{3} = 1 and h = I), we get the rationally extended trigonometric Pöschl-Teller potential [9,11]
+where
+is the corresponding conventional potential. The un-normalized ϕ dependent wavefunction of Eq. (11) (for m_{3} = 1) with the extended potential (27) in terms of X_{1} exceptional orthogonal polynomials P^n_{3}+1(α̃,β̃)(z) is well known and given by [9,11]
+where n_{3} = 0, 1, 2, 3…, z = cos(2pϕ), and the positive constant parameters
+The eigenvalue spectrum of this extended potential is the same (i.e., isospectral) as that of the conventional potential U_{con}(ϕ) which is given by
+Again from Eqs. (23) and (8), the rationally extended θ dependent potential is given by
+where the conventional potential
+The Schrödinger equation (12) (for m_{2} = 1 and h = I) becomes
+Using the rational term V1,rat(I)(θ) from Eq. (25), the wavefunction and the eigenspectrum of Eq. (34) are thus given by
+and
+where z = cos(2θ) and the parameters
+Note that the eigenvalue spectrum is unchanged while the eigenfunctions are different from those of the nonrational case.
+Similar to the above cases, from Eqs. (23) and (8), the radial component of the extended potential is given by
+where the conventional radial oscillator potential
+From Eq. (13) (for m_{1} = 1), finally, we get the exactly solvable Schrödinger equation
+with the solution in terms of X_{1} Laguerre EOPs L^n_{1}+1(δ̃)ωr^{2}2 given by [9,11]
+The energy eigenvalue E which depends on n_{1}, n_{2}, and n_{3} is given by
+where δ̃=δ+ℓ^{2} and
+Again note that the energy eigenvalues are unchanged while the corresponding eigenfunctions are different from the nonrational case.
+Case (ii): For any positive integer values ofm_{1},m_{2},andm_{3}
+In this case, we consider a more general form of the ten parameter potential given in Eq. (22). Similar to the X_{1} case, on comparing Eqs. (22) and (8), we obtain the rationally extended trigonometric Pöschl-Teller equation
+where Ucon(I)(ϕ) and Um_{3},rat(I)(ϕ) are given by Eqs. (28) and (20). The un-normalized wavefunction of Eq. (11) with the extended potential (44) in terms of the X_{m3} exceptional Jacobi polynomial P^n_{3}+m_{3}(α̃,β̃)(z) is given by [11]
+where n_{3} = 0, 1, 2, ….; m_{3} = 1, 2, 3…; z = cos(2pϕ) and the parameters α̃ and β̃ will be the same as obtained in Eq. (30). The eigenvalue of this extended potential is the same (i.e., isospectral) as that of the conventional potential Ucon(I)(ϕ) given by Eq. (31).
+Similar to the above case from Eqs. (22) and (8), the θ and r dependent extended potentials which depend on parameters m_{2} and m_{3}, respectively, are given as
+and
+The corresponding conventional potential terms Vcon(I)(θ) and Ũ_{con}(r) and the rational terms Vm_{2},rat(I)(θ) and Ũ_{m1,rat}(r) are given in Eqs. (32), (38) and (16), (15). Following the same procedure as in the X_{1} case, the solutions of Eqs. (12) and (13) with the corresponding potentials Vm_{2},ext(I)(θ) and Ũ_{m1,ext}(r) can be obtained in a simple way. Thus the bound state wavefunctions corresponding to these potentials are given by
+and
+where P^n_{2}+m_{2}(α,β)(z) and L^n_{1}+m_{1}(δ+ℓ^{2})ωr^{2}2 are X_{m2} exceptional Jacobi and X_{m1} exceptional Laguerre polynomials, respectively. The energy eigenspectrum and the other parametric relations will be same as that of the X_{1} case.
+B. Example of rationally extended PT symmetric complex non-central potential
+Similar to the above example of the real case, here we consider an example of the RE non-central potential which is complex but symmetric under the combined operation of the parity (P) (P: r → r, θ → π − θ, ϕ → ϕ + π) and the time reversal (T) (T: t → −t, i → −i) operators and given by
+where Vm_{2},rat(PT)(θ) is given by Eq. (17). In this case, we obtain a complete solution of this potential by considering the same form of the ϕ and r dependent terms (as defined in the first example) with a new form of the θ dependent term which is now complex but PT-invariant.
+Case (i): Form_{1} = m_{2} = m_{3} = 1
+For this particular case, on comparing Eq. (50) with Eq. (8) (by defining h = PT for θ dependent term and h = I for ϕ dependent term), we get the PT symmetric extended potential
+where
+is the conventional PT symmetric trigonometric Eckart potential [33] and the associated rational term is
+The form of the ϕ and the r dependent extended terms will be the same as defined by Eqs. (27) and (38). The solution of Eq. (12) (for m_{2} = 1 and h = PT) with the above potential (51) is not in the exact form of EOPs rather they are written in the form of some types of new polynomials (discussed in detail in Ref [15]) given as
+with z = i cot θ. Here the polynomial function yn_{2}(A,B)(z) can be expressed in terms of the classical Jacobi polynomials Pn_{2}(α_{n2},β_{n2})(z) as
+Here q1(A,B)(z)=P1(α_{1},β_{1})(z) (classical Jacobi polynomial Pn_{2}(α_{1},β_{1})(z) for n_{2} = 1). The parameters α_{n2} and β_{n2} in terms of A and B are given by
+where
+The other two parameters α_{1} and β_{1} are simply obtained by putting n_{2} = 1 in α_{n2} and β_{n2}. The energy eigenvalues are given by
+Thus the complete wavefunction associated with the extended PT symmetric complex non-central potential Eq. (8) (for m_{1} = m_{2} = m_{3} = 1) is obtained by using Eq. (9), which is a product of the X_{1} Jacobi polynomial [as given by Eq. (29)] and X_{1} Laguerre polynomial [as given by Eq. (41)] times a new polynomial given in Eq. (54).
+Case (ii): For any positive integer values ofm_{1},m_{2},andm_{3}
+Again by considering the same form of the ϕ and r dependent terms for any arbitrary values of m_{3} and m_{1}, the above complex potential can be generalized easily for any non-zero positive integer values of m_{2} by defining
+where VconPT(θ) and Vm_{2},rat(PT) are given by Eqs. (52) and (17), respectively. The wavefunction associated with this potential corresponding to Eq. (12) is given by
+where qm_{2}(A,B)(z)=Pm_{2}(α_{m2},β_{m2}) and the polynomial function yν,m_{2}(A,B)(z) is
+with the parameters
+The energy eigenvalues will be the same as given by Eq. (58). Thus the complete wavefunction and the eigenvalues of this complex non-central extended potential are obtained by using Eqs. (9) and (42).
+III. RE NON-CENTRAL POTENTIALS IN 2-DIMENSIONS
+In two-dimensional polar coordinates (r, ϕ), the Schrödinger equation corresponding to the non-central potential V_{m1,m3}(r,ϕ) is given by (ℏ = 2m = 1)
+The forms of the non-central potential in this coordinate system is given by
+with h = 1, 2, (PT)_{1}, and (PT)_{2}. The above Schrödinger equation is exactly solvable if we define the wavefunction in the form
+Using Ψ(r, ϕ) in Eq. (63), the angular component of the wavefunction satisfies the equation
+and the radial component satisfies
+where m^{2} is the eigenvalue of the angular equation.
+These two Eqs. (66) and (67) are identical to the corresponding Eqs. (11) and (13) obtained in the three-dimensional case except the parameter ℓ in the three-dimensional case is now replaced by m in the radial component of Eq. (67). In this case, we have one choice of Ũ_{m1,ext}(r) and four choices of Vm_{3},ext(h)(ϕ) (two real and two PT symmetric). The form of Ũ_{m1,ext}(r) will be the same as in the case of three dimensions with the parameter δ̃=δ+m^{2}. Out of these four choices of Vm_{3},ext(h)(ϕ), three [two real and one PT symmetric, h = I, II, (PT)_{1}] are already discussed in Table II of Sec. II while the fourth form of the potential [h = (PT)_{2}] is special to the two dimensions.
+The form of this complex potential is given by
+where
+where z = cos(pϕ); 0 ≤ pϕ ≤ π and
+is a classical Jacobi polynomial with the parameters
+Here p is restricted to the positive odd integers only and a dot on qm_{3}(A/p,B/p)(z) indicates single derivative with z.
+An explanation is in order as to why the potential as given by Eq. (68) is a PT-symmetric complex potential in two dimensions but only a complex but not PT-symmetric in three dimensions. The point is that unlike three space dimensions, parity in two space dimensions corresponds to say x → −x, y → +y, i.e., it corresponds to (P: r → r, ϕ → π − ϕ). The time reversal corresponds to (T: t → −t, i → −i) symmetry and the above potential (68) is PT symmetric in 2-dimensions but not in three space dimensions since in three dimensions ϕ → π + ϕ.
+Of course one can also consider the potential as given by Eq. (68) in three dimensions and there it is merely a complex but non-PT-symmetric potential. However, the spectrum is still real thereby confirming the well-known fact that PT-symmetry is sufficient but not necessary for the spectrum to be real. Note that we also have considered this type of θ-dependent potential in case (iii) of Table I (a detailed solution is also given in Sec. II B) since such a potential is indeed a complex and PT-invariant term. This is because, in three dimensions, under parity, unlike ϕ, θ → π − θ. Following the same procedure as in the three-dimensional case, the solution of this 2-dimensional PT symmetric non-central potential
+can also be obtained in a straightforward way. In particular, the solution for the special case of m_{1} = m_{3} = 1 is straightforward one; therefore, we only consider the general case of any arbitrary positive integers m_{1} and m_{3}.
+Using Eq. (68) in the angular equation (66), we get the solution of the form
+where
+and the form of yν,m_{3}(A/p,B/p)(z) will be the same as given by Eq. (61) [where we replace n_{2}→ n_{3}, m_{2}→ m_{3}, A → A/p, B → B/p and z → cos(pϕ)]. The energy eigenvalue m^{2} is given by
+The parameters A and B in terms of F and G are related as
+Now using Eq. (14) in the radial part of the Schrödinger equation (67), we get
+with the energy eigenvalues
+where
+Thus the complete wavefunction and the eigenspectrum for the above seven parameter (four continuous and three discrete) family of potential (71) are given by Eqs. (65) and (77). In the particular case of m_{1} = m_{3} = 0, these potentials are reduced to their corresponding conventional potentials whose solutions are associated with the classical orthogonal polynomials.
+IV. SUMMARY
+In this work, we have constructed twelve rationally extended non-central real and PT symmetric complex potentials in three-dimensional spherical polar coordinates. The solutions of these potentials are obtained by using the recently discovered rationally extended potentials whose solutions are in terms of X_{m1},X_{m2} or X_{m3} exceptional Laguerre and (or) Jacobi orthogonal polynomials. The eigenfunctions and the energy eigenvalues of these twelve extended non-central potentials are obtained explicitly and shown that the eigenfunctions of these extended non-central potentials are the product of Laguerre and Jacobi EOPs. It is found that the three dimensional Schrödinger equation is exactly solvable for the one possible choice for Ũ_{m1,ext}(r), four possible choices for Vm_{2},ext(h)(θ), and three choices for Um_{3},ext(h)(ϕ). All possible choices of θ and ϕ dependent potentials and the corresponding solutions are listed in Tables I and II. The various combinations of Ũ_{m1,ext}(r),Vm_{2},ext(h)(θ) and Um_{3},ext(h)(ϕ) lead to the total twelve different forms (four real and eight PT symmetric complex) of the RE non-central potentials. In the examples of PT symmetric cases, some of the solutions corresponding to the θ dependent term are not in the exact form of EOPs; they are written in the forms of some types of new orthogonal polynomials (yν,m_{2}(A,B)(z)) which are simplified further in the terms of classical Jacobi polynomials. In this work, we have only considered one choice of the r dependent extended potential as a RE radial oscillator case. One can also replace the RE radial oscillator part with the conventional Coulomb U_{con}(r)=−e^{2}r+δr^{2} (as shown in Ref [6]); then, one will have a nine parameter RE non-central potential and the spectrum can also be obtained easily. Few attempts at rational extension of Coulomb have been done [17], but they are not very general, so we are not mentioning them.
+In a particular case of m_{1} = m_{2} = m_{3} = 0, these potentials are reduced to their conventional counterparts (which are non-rational) with seven parameters (six continuous and one discrete) whose solutions are in terms of classical orthogonal polynomials. Out of these twelve conventional cases, the eight PT symmetric complex non-central seven parameter conventional potentials are also new and not discussed earlier.
+We have also considered the Schrödinger equation in two-dimensional polar coordinates and constructed four possible forms (two real and two PT symmetric complex) of the seven parameter (four continuous and three discrete) RE non-central potentials. The solutions of these potentials are also obtained in terms of EOPs.
+TABLE I. 
+In this table, all the four forms of Vm_{2},ext(h)(θ) [for h = I, II, (PT)_{1} and (PT)_{2}] with their corresponding energy eigenvalues (ℓ^{2}) and the eigenfunctions (Θm_{2},n_{2}(h)(θ)) are given. Cases (i) and (iii) are discussed in detail in the text.
+TABLE II. 
+The three different forms of ϕ dependent terms Vm_{3},ext(h)(ϕ) [for h = I, II, (PT)_{1}] with their corresponding energy eigenvalues (m^{2}) and the eigenfunctions (Φm_{3},n_{3}(h)(ϕ)) are given. Out of these, case (i) is already considered in detail in the text.
+TABLE I. -body
+Vm_{2},ext(h)(θ)	ℓ^{2}	Θm_{2},n_{2}(h)(θ)
+(i)Vm_{2},ext(I)(θ)	(2n2+α+β+1){2}	(1−z){α2+14}(1+z){β2+14}Pm_{2}(−α−1,β−1)(z)P^n_{2}+m_{2}(α,β)(z)
+n_{2} = 0, 1, 2, …
+α=C+m^{2}	z = cos 2θ
+β=121+4D	m_{2} = 1, 2…
+(ii)Vm_{2},ext(II)(θ)	(n2+α+β+12){2}	(1−z){α2+14}(1+z){β2+14}Pm_{2}(−α−1,β−1)(z)P^n_{2}+m_{2}(α,β)(z)
+α=C+m^{2}−D
+β=C+m^{2}+D	z = cos θ
+(iii)Vm_{2},ext(PT){1}(θ)	(A−1+n2){2}+B^{2}(A−1+n2){2}	(z−1){αn22}(z+1){βn22}qm_{2}(A,B)(z)yν,m_{2}(A,B)(z)
+A=12+C+m^{2},B=D2
+α_{n2}=−(A−1+n_{2})+B(A−1+n_{2})	z = i cot θ
+β_{n2}=−(A−1+n_{2})−B(A−1+n_{2})	ν = n_{2} + m_{2} − 1,
+(iv)Vm_{2},ext(PT){2}(θ)	(n2+α+β+12){2}=(n2+A){2}	(1−z){α2+14}(1+z){β2+14}Pm_{2}(−α−1,β−1)(z)P^n_{2}+m_{2}(α,β)(z)
+α=C+m^{2}−iD
+β=C+m^{2}+iD	z = cos θ
+C+m^{2}=−B^{2}+(A−12){2}
+D = 2AB
+TABLE II. -body
+Um_{3},ext(h)(ϕ)	m^{2}	Φm_{3},n_{3}(h)(ϕ)
+(i)Um_{3},ext(I)(ϕ)	p^{2}(2n3+α̃+β̃+1){2}	(1−z){α̃2+14}(1+z){β̃2+14}Pm_{3}(−α̃−1,β̃−1)(z)P^n_{3}+m_{3}(α̃,β̃)(z)
+n_{3} = 0, 1, 2, …	z = cos(2pϕ)
+α̃=121+4Gp^{2}	p = 1, 2, 3, …
+β̃=121+4Fp^{2}	m_{3} = 1, 2, 3….
+(ii)Um_{3},ext(II)(ϕ)	p^{2}(n3+α̃+β̃+12){2}	(1−z){α̃2+14}(1+z){β̃2+14}Pm_{3}(−α̃−1,β̃−1)(z)P^n_{3}+m_{3}(α̃,β̃)(z)
+α̃=121+4Gp^{2}−4Fp^{2}	z = cos(pϕ)
+β̃=121+4Gp^{2}+4Fp^{2}	p = 1, 3, 5, …
+(iii)Um_{3},ext(PT){1}(ϕ)	p^{2}(n3+α̃+β̃+12){2}=(n3p+A){2}	
+α̃=121+4Gp^{2}−4iFp^{2}	(1−z){α̃2+14}(1+z){β̃2+14}Pm_{3}(−α̃−1,β̃−1)(z)P^n_{3}+m_{3}(α̃,β̃)(z)
+β̃=121+4Gp^{2}+4iFp^{2}	z = cos(pϕ)
+G = A^{2} − B^{2} − Ap	p = 1, 3, 5, …
+F = B(2A − p)	

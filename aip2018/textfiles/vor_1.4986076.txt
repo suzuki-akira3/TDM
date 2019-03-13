@@ -1,0 +1,353 @@
+On the co-existence of maximal and whiskered tori in the planetary three-body problem
+In this paper, we discuss about the possibility of the coexistence of stable and unstable quasi-periodic Kolmogorov–Arnold–Moser (kam) tori in a region of the phase space of the three-body problem. The argument of proof goes along kam theory and, especially, the production of two non-smoothly related systems of canonical coordinates in the same region of the phase space, the possibility of which is foreseen, for “properly degenerate” systems, by a theorem of Nekhoroshev and Miščenko and Fomenko. The two coordinate systems are alternative to the classical reduction of the nodes by Jacobi, described, e.g., in Arnold [“Small denominators and problems of stability of motion in classical and celestial mechanics,” 18, 85–191 (1963)].
+I. INTRODUCTION
+At the end of the XIX century, motivated by the study of a three-body problem of celestial mechanics, Poincaré conjectured that a non-integrable system possesses, very close one to the other, stable, and unstable trajectories—Ref [35] (Vol. III, Chap. 33, n. 397, p. 389). Numerical evidence of such an occurrence has been provided, since the 1950s, as soon as computers could be used to simulate solutions of differential equations, by breakthrough papers by Fermi–Pasta–Ulam, Hénon–Heiles, Izrailev–Chirikov, etc. The phenomenon was soon understood to be relevant for physics, since such papers revealed its appearance even in regular (e.g., analytic) systems. At this respect, the recent development of Aubry–Mather theory allowed obtaining, under strong assumptions [40], still failing to be applied to celestial mechanics, the rigorous proof of the existence of motions with any prescribed frequency. In this paper, we address the question in the case of the celestial three-body problem; precisely, it is a planetary version. This is the 4 degrees of freedom problem of three-point masses interacting through gravity, where one of the masses (the “star”) is much larger than the two others (the “planets”). We move in the framework of the Kolmogorov–Arnold–Moser (kam) theory; see Refs [2],  [21], and  [28] and note Ref [41]. kam theory has been successfully applied to the problem of celestial mechanics since the 1960s. Under the point of view of kam theory, the question might be rephrased as whether one can prove coexistence, in a region of phase space, of quasi-periodic motions, both maximal and whiskered [42] possibly separated, according to Poincaré’s picture and the Aubry–Mather theory, by chaotic regions. This is precisely the question to which this paper is addressed: we determine a physical situation where such a co-existence is expected to occur. We consider the following situation, which we shall refer to as outer retrograde configuration (orc): two planets describe almost co-planar orbits. The outer planet has a retrograde motion [43].
+Before describing our result, let us make a digression on the specific features, planetary systems, and the previous literature. It is known that the two-body problem, i.e., the problem of the motions of two-point masses interacting via a law proportional to their inverse squared distance, has, for an open set of initial conditions, periodic motions rather than, more generally, quasi-periodic. For this system, periodicity consists in the fact that the bounded motions evolve (according to Kepler’s laws) on ellipses and are governed by just one frequency ν proportional to a^{−3/2}, where a is the semi-major axis of the ellipse. This pretty remarkable fact unavoidably reflects—as already underlined by Arnold in his 1963’s paper Ref [3]—on the study of the dynamics of the so-called planetary problem, i.e., the problem of (1 + N) point masses, one of which (“sun”) is of “order one,” while the remaining N (“planets”) are of much smaller size, interacting through gravity. Indeed, when the reciprocal attraction among the planets, which is of much smaller order compared to the attraction between any planet and the sun, is set to zero, the planetary problem reduces to N uncoupled two-body problems (“unperturbed problem”). He considered the case of N planets in the prograde configuration, i.e., revolving in the same verse, even though the question of the sense of rotation, at his time, was definitely of secondary importance, compared to the difficulties that had to be overcome and that we are going to recall.
+The lack of frequencies (a translationally invariant system with 1 + N bodies possesses 3N degrees of freedom; in the case of the planetary problem, it exhibits, as mentioned, only N < 3N frequencies) in the unperturbed problem was named by Arnold proper degeneracy. It represented a serious difficulty, if one wanted (as he was aiming to do) to apply Kolmogorov’s theorem, Ref [21], to the planetary problem.
+At a technical level, the appearance of the proper degeneracy consists, we might say, of a “loss of frequencies,” caused by the “too many” (or, better Poisson non-commuting [44], see below) first integrals of motion. For such abundance, this kind of system is often called super-integrable. Despite the fact that the solutions of the two-body problem are known since Newton’s times, a general theoretical setting clearly explaining the phenomenon has been given only recently, thanks to the studies by Nekhoroshev and Miščenko and Fomenko, Refs [26] and  [29] (hereafter, nmf). The three authors proved the generalization of the best known Liouville-Arnold theorem, Ref [1], which clearly relates the loss of frequencies to the existence of Poisson non-commuting independent integrals. They proved that, to an integrable Hamiltonian system with n degrees of freedom which, in addition to n independent and commuting first integrals, affords additional, independent, from the first n, n_{1} ≤ n integrals which do not commute with all the integrals of the first family, one can associate canonical coordinates including only n_{0} ≔ n − n_{1} action-angle pairs (I,φ)=(I_{1},…,I_{n0},φ_{1},…,φ_{n0}) (analogous to the ones of Arnold–Liouville case), and, in addition, certain other couples z=(p,q)=(p_{1},…,p_{n1},q_{1},…,q_{n1}), usually referred to as degenerate coordinates. The degenerate coordinates are not uniquely defined, and this is precisely the aspect that, in this paper, we shall exploit.
+Indeed, a dynamical system that is close to a super-integrable system may be written as
+where (I, φ, p, q) is one of the various (as foreseen by nmf Theorem) sets of canonical coordinates associated with the unperturbed super-integrable term h. Now, while, given the I’s, h is uniquely determined, the form of f, instead, strongly depends on the choice of coordinates. On the other hand, it is known since Arnold’s paper Ref [3] that, for system of the form (1), f may have a strategic importance.
+As an outstanding example, let us recall just the case considered by Arnold in Ref [3]. He wanted to prove (via an application of Kolmogorov’s theorem) the existence of plenty of quasi-periodic, maximal tori, forming a positive measure set in phase space. He announced the result (known as “Arnold Theorem”) at the 1962 ICM. Clearly, such a result was going in the direction of the proof of stability of the solar system, for which Kolmogorov and Arnold were awarded, in 1965, of the Lenin prize. However, in order to obtain such results he was aware that he had to overcome the problem of the lack of frequencies in the unperturbed part (indeed succeeding in this), but this was not the only one. As for the choice of coordinates, Arnold considered, in the case of the planar problem, Poincaré coordinates, as described in Ref [3] (Chap. III, Sec. 2, n.4). In term of such coordinates, the Hamiltonian of the planetary problem takes the form in (1), where n_{0} = N, n_{1} = 2N. Arnold observed that the average value f_{Poin}¯(Λ,η,ξ) with respect to the λ’s of the perturbing function f_{Poin}(Λ, λ, η, ξ) by symmetry reasons has an elliptic equilibrium point for (η, ξ) = 0 (corresponding to circular motions of the planets around their sun), for all Λ. So he managed to construct, for degenerate systems of the form (1) with f¯(I,z) having an elliptic equilibrium in z = 0 for all I, a careful version of Kolmogorov Theorem, Ref [3] (Fundamental Theorem), based on a generalized non-degeneracy condition (“full torsion”), inspired by Kolmogorov, according to which one should check, besides the non-singularity of the Hessian matrix ∂I_{i}I_{j}2h(I) in (1), also the one of the matrix of the coefficients of the second-order term of the Birkhoff normal form associated with the elliptic equilibrium (see Ref [18]). Arnold successfully applied his Fundamental Theorem to the case of the planar problem with N = 2 planets. However, while the extension to the planar problem with a generic number of planets revealed to be straightforward, Ref [33] (see Ref [12] for a previous result with a different strategy), the treatment of the problem in space contained strong extra-difficulties. Indeed, switching from planar to spatial Poincaré coordinates, the averaged perturbing function f_{Poin}¯ still exhibits an elliptic equilibrium in correspondence circular and co-planar motions, but such an equilibrium is degenerate, in the sense that the eigenvalues of the quadratic part of f_{Poin}¯ verify, identically, two linear combinations with integer coefficients (known in the field as secular resonances). This strongly prevented, in principle, the construction of the Birkhoff normal form and hence the possibility of checking the full torsion condition. But this is not all: a formal evaluation of the torsion, attempted asymptotically by Herman, Ref [17], seemed to suggest, in the absence of proper reductions of the rotation invariance, an identically vanishing determinant (implying the impossibility of applying the Fundamental Theorem to the general problem), a fact next rigorously proved, by Chierchia and the author, in Ref [8].
+It may be argued that Arnold felt that a difficulty of this kind might appear, since, without explaining his motivations, in Ref [3] (p. 141–142), he suggested to “change coordinates,” without going further. Completion of the proof of his theorem revealed it to be more difficult than expected, and the story reached a conclusion only fifty years later, thanks to contributions by Laskar, Robutel, Herman, Féjoz, and Chierchia and the author, Refs [9],  [12],  [22],  [33], and  [38]. Comprehensive reviews appeared in Refs [10] and  [13], which we refer to the interested reader. For the purposes of this paper, we only mention that the solution Arnold had in mind, based on changing coordinates, was considered, formally, in a particular case, by Malige, Robutel, and Laskar, Ref [24], and next completely achieved by the author, Ref [33], published in Refs [9] and  [33]. The long proof of Arnold Theorem should give, we hope, an idea that, from a practical point of view, producing “good” canonical coordinates, which should: (i) leave the unperturbed part unvaried, (ii) overcome the degeneracies caused by SO(3) invariance, and, eventually, (iii) preserve symmetries, parities, equilibria … from which to depart in order to apply a perturbative scheme (e.g., in the case of Arnold Theorem, the Fundamental Theorem developed around the elliptic equilibrium), is other than “easy” or “straightforward.”
+In this paper, we look at the three-body problem in the orc configuration by means of (basically) two sets of canonical coordinates. The former of such two systems of coordinates is the modification of the so-called “regular, planetary, and symplectic” (rps) coordinates, proposed in Refs [9] and  [33]. The latter, called “perihelia reduction” (p), has been proposed in Ref [32]. Both such systems of coordinates describe regularly co-planar motions which evolve on suitable invariant manifolds of each phase space. Each of such invariant manifolds turns to be an equilibrium for suitable truncated and averaged systems (where the average is performed with respect to fast angle coordinates in each of such sets), parametrized by the value of certain other action coordinates, which play the rôle of quasi-integrals of motion.
+We provide the complete proof of the existence of a positive measure set with a maximal number of frequencies for the full system, in the case of both the planar and spatial problem. More precisely, we prove the following result (a more precise formulation will be given in course of the paper; see Theorem III.2).
+Theorem There exists an eight-dimensional open region of phase space, contained in the holomorphy domain of the Hamiltonian, almost completely filled with a positive measure set of quasi-periodic motions with a maximal number of incommensurate frequencies. The motions on such tori are inorc.The proof of the Theorem adapts the techniques of Refs [9] and  [33], which, as recalled above, dealt with the prograde case. Although the strategy is the same, nevertheless, certain structural differences between the two settings do exist, which we point out. The most remarkable one is related to the effect of the rotation invariance in the two cases, in relation with the elliptic nature of the co-planar, co-circular equilibrium. While, in the case treated in Refs [9] and  [33], such ellipticity is a mere consequence of its invariance by reflections and rotations (a fact already known to M. Herman, Ref [17]), in the retrograde case, it is not so but needs to be checked specifically. As counterpart, using the p-coordinates, we shall prove a substantially different result: that there exists an eight-dimensional open region of phase space such that the lower order term of the averaged perturbing function has an hyperbolic equilibrium for values of the coordinates corresponding to motions in orc (see Proposition IV.1 for a precise formulation). Clearly, this calls for the proof of the existence of hyperbolic tori [4,6,20,27,39] in the same region of the phase space mentioned by the Theorem, even though this is not the purpose of the present paper.We conclude this introduction with recalling the related literature.The existence of a positive measure set of Lagrangian tori with a maximal number of frequencies for the general planetary problem, in the regime of well spaced orbits, small eccentricities, and small inclinations, has been established in the papers Refs [3],  [9],  [12],  [22], and  [32–34]. We refer to such technical papers for details, Refs [10] and  [13], for reviews. However, the cases treated in the literature above, even though containing all the necessary information, are not perfectly suited to the proof of the Theorem.The papers Refs [3],  [9],  [12],  [22],  [33], and  [38] deal with maximal quasi-periodic tori in the case when the planets revolve all in the same verse, and eccentricities and inclinations are small. The invariant set (the so-called “Kolmogorov-set”) for the (rescaled) Hamiltonian in (2) is proved to fill almost completely the region in phase space with small eccentricities and inclinations. A (maybe optimal) estimate about the strength at which such measure goes to zero is provided in Refs [9] and  [33].In Refs [32] and  [34], maximal quasi-periodic tori have been constructed out of the small eccentricities and inclination constraint. In such papers, the measure of the Kolmogorov-set has been found to increase while the masses decrease and the mutual semi-major axes ratios increase, independently of the values of eccentricities and inclinations. A suitable constraint on the semi-axes ratios is however imposed. Finally, the sense of revolution of the planets is the same for all of them.A study of quasi-periodic motions (including retrograde ones) bifurcating from relative equilibria appeared in Refs [30] and  [31]. However, the measure estimates obtained in those papers, based on a bit different framework [Whitney regularity and no use of Birkhoff normal form; see, e.g., Ref [31] (Theorem 5.1)], are not suitable for the purposes of the paper, where the point of view is closer to Ref [3].
+II. SETUP
+The three-body problem is the dynamical system formed by three-point masses in R^{3} interacting through gravity only. The system has thus nine degrees of freedom, meaning that its evolution is described by a system of differential equations having order eighteen. However, it is also well known that the system possesses several constant motions, and, even though the number of such a constant is not sufficient (as Poincaré showed in Ref [35]) to guarantee integrability by quadratures; nevertheless, it allows reducing the order of the equations from eighteen to eight. This complete reduction was firstly considered by Jacobi and refined by Radau, Refs [19] and  [37] (see Sec. II A). The first step to achieve it consists of getting free of the translation invariance, caused by the conservation of the total linear momentum (the velocity of the center of mass of the system). In the literature, one finds essentially two ways to do it, usually referred to as “Jacobi” or “heliocentric” coordinates. They both can be described as linear changes of coordinates, if the Hamiltonian of the system is initially written in impulse-position coordinates. We refer to Refs [3] and  [38] for a complete description of them. According to the heliocentric reduction, in a system where the masses are denoted as m_{0}, μm_{1}, and μm_{2}, where μ is a prefixed pure number (the case μ ≪ 1 and m_{i}’s of the same strength being usually referred to as “planetary” problem), the motions are described as the Hamilton equations of the six degrees of freedom Hamiltonian
+where
+are the “reduced masses”; y^{(i)} ∈ R^{3}, x^{(i)} ∈ R^{3}, and the collision set
+is to be excluded. Incidentally, the two terms in the perturbing function are sometimes referred to as direct (or Newtonian) and indirect part, respectively.
+After the linear momentum reduction, the next issue is to get rid of rotation invariance of the Hamiltonian (2), caused by the conservation of the three components C_{1}, C_{2}, and C_{3} of the total angular momentum of the system,
+This further step is more subtle than the previous one for two reasons. The first obvious reason is that, different from the linear momentum reduction, it cannot be obtained via a linear transformation. But the main reason is that, in the case of the problem in R^{3}, the C_{i}’s do not Poisson-commute and one cannot think of elimination “by quadratures” (i.e., one cannot think, roughly speaking, to use them as generalized momenta, mimicking the linear momentum reduction procedure). The only widely known method in the field (recalled in Sec. II A) is due to Jacobi, Radau and, after the work of Deprit (see Sec. II A), it is available for any number of particles. Another reduction, called “reduction of perihelia,” has been recently proposed in Ref [32] and, similar to the previous one, is available for any number of bodies. It will be recalled in Sec. IV in the particular case of three bodies. For the results of the paper, both the mentioned reductions will be used. A new unified proof of their canonical character is presented in Sec. V.
+A. The Jacobi–Radau–Deprit coordinates
+In the XIX century, Jacobi, Ref [19], found a tricky procedure that is usually referred to as “Jacobi’s reduction of the nodes” that allowed him to write the differential equations of the spatial three-body problem as a system of order eight. His speculations were refined by Radau, Ref [37], who wrote such equations as a system of eight equations of order one, corresponding to the Hamilton equations of a four degrees of freedom Hamiltonian. Even though the original work of Jacobi–Radau was suitable for a general two-particle system with an advantage of rotation invariance, it is customary (compare, e.g., Ref [3]) to refer a slightly modified procedure with the same name in such a way that the—integrable—(translationally reduced) two-body terms,
+appearing in the Hamiltonian (2), are put in action-angle form, in the sense of Liouville–Arnold Theorem, Ref [1]. As known, the Liouville–Arnold form for (5) is one-dimensional
+with the action Λ_{j}’s being related to the semi-major axis a_{i} of the Keplerian ellipse via
+Jacobi’s trick consisted in fixing in advance a rotating reference frame having its third axis in the (constant) direction of the total angular momentum C and its first axis in the (moving) direction of the so-called “nodes lines.” Astronomers call so the straight line determined by the intersection (provided it is well defined) of the instantaneous planes of the orbits of the two planets: i.e., the planes Π_{j}(t) = (y^{(j)}(t), x^{(j)}(t)), j = 1, 2. Jacobi and Radau proved that, even though the reference frame moves, nevertheless, the system of eight coordinates given by the “planar Delaunay elements” (see Ref [15])
+on the moving planes Π_{1}(t), Π_{2}(t) induces an injection
+such that the motion of the system is the solutions of the Hamilton equation of H_{j} ≔ H ◦ ϕ_{j}, which, moreover, turns to depend parametrically only on the length G = |C| (namely, it does not depend on the direction of C—a fact vaguely attributed, at that time, to the rotation invariance of the system, but next fully understood—thanks to the work of Deprit, much years later; see below). The reduction by Jacobi and Radau was well known to Arnold, who mentioned it in Ref [3] (II, Sec. 5, n. 4, p. 141) as an unavoidable tool (due to certain degeneracies that appeared if such a tool was not used) in order to prove the stability of the planetary, spatial three-body problem in the perturbative setting. The proof of stability that he had discovered consisted of checking the non-singularity of a certain matrix (“torsion”; see Sec. III B) related to a certain averaged perturbing function. However, having treated with much detail the case of the planar problem (which had required a considerable amount of computation to him), in order to simplify the analysis, instead of computing the torsion of the spatial problem directly, he preferred to try to reduce the spatial problem to a perturbed planar one, so as to use the computations he had already done. This led him to error (roughly, because Jacobi’s reduction is singular for co-planar motions). The computation of the torsion for the spatial problem, using Jacobi’s reduction of the nodes, was next completed by Laskar and Robutel, Refs [22] and  [38].
+How to obtain generalization of Jacobi–Radau coordinates to the case of more than three bodies has been a one-century long problem of mechanics, which Arnold invoked as an obstruction to the extension of his outline of proof to the general planetary problem in the space, Ref [3] (Chap. III, Sec. 5, n. 5, p. 141). Mild progress was offered only in 1982 by Boigey who, during her Ph.D., obtained a Jacobi-like reduction for the problem of four bodies, Ref [5]. One year later, in 1983, and twenty years after Arnold’s work, Deprit, positively impressed (as he declared in the introduction) by Boigey’s work, discovered a set of canonical coordinates that (in a sense; see below) reduces to Jacobi–Radau’s for N = 2 and to Boigey’s for N = 3. For some strange reason, Deprit’s work was overlooked [45] for further twenty years and Deprit himself seemed to be not much confident about the utility of his coordinates [46]. During such times, the complete proof of Arnold’s theorem had been obtained by Herman–Féjoz, Refs [12] and  [17], with a different strategy (the problem of degeneracies in the Hamiltonian was overcome with an abstract argument of Lagrangian mechanics, without using explicit coordinates). Deprit’s work was rediscovered by the author during her Ph.D., precisely in the framework of obtaining a proof of Arnold’s theorem according to the original strategy. The production, in Ref [33] (published in Ref [9]), of a new set “regularizing” coordinates (see also Sec. III) much similar to Poincaré’s coordinates, but better suited to bypass the problem of degeneracies, was the final key to reaching the objective.
+As in the case of Jacobi’s reduction, it is customary to call “Deprit’s coordinates” a modified version (in fact, the form they were rediscovered in Ref [33]) of the original set discussed in Ref [11], in such a way to satisfy (6). We recall such a modified version in the case of a system of two particles.
+We fix a domain D_{jrd}⊂R^{12} in phase space as follows. Let (k^{(1)}, k^{(2)}, k^{(3)}) be a prefixed orthonormal frame in R^{3}. For the Cartesian coordinates C_{art}=(y^{(1)},y^{(2)},x^{(1)},x^{(2)})∈D_{jrd}, we assume that the orbits t → (x^{(j)}(t), y^{(j)}(t)) generated by the Hamiltonians (5) with the initial data (x^{(j)}, y^{(j)}) are ellipses with non-vanishing eccentricity, belonging to different planes, never coinciding with the (1, 2) plane. Then we denote as P^{(j)} the unit vectors pointing in the directions of the perihelia; as a_{j} the semi-major axes; as ℓ_{j} the “mean anomaly” of x^{(j)}(which, we recall, is defined as area of the elliptic sector from P^{(j)} to x^{(j)} “normalized at 2π”); as C^{(j)} = x^{(j)} × y^{(j)}, j = 1, 2, the angular momenta of the two planets and C ≔ C^{(1)} + C^{(2)} the total angular momentum integral. By assumption, the “nodes”
+do not vanish. For three vectors u, v, w with u, v⊥w, we denote as α_{w}(u, v) the angle formed by u to v relatively to the positive (counterclockwise) orientation established by w. The jrd≔ϕjrd−1C_{art} coordinates are defined via the following formulae:
+Note that such definitions, together with assumptions of non-vanishing of the nodes (10), imply that
+The coordinates (11) will be denoted in this paper as
+by the names of their discoverers. Observe, for comparison, that, while (9) is a canonical injection, the (13)’s come out from a canonical change of coordinates
+i.e., which preserves the standard 2-form
+From a practical point of view, there is no difference with the two because indeed the coordinates Z, ζ, and γ, which do not appear in (9), are cyclic to the Hamiltonian
+[where H is as in (2)] which in fact coincides with H_{j} ≔ H ◦ ϕ_{j}. Namely, in both cases, one obtains a 10-dimensional Hamiltonian that depends on the eight coordinates in (8) and G but does not depend on the Deprit’s angle γ conjugated to G (so that one can regard G as a parameter and regard the system as having four degrees of freedom). On the other side [and we consider this the major advantage of the (11)’s], completing the (8)’s with the quadruplet (Z, G, ζ, γ) is just what is needed to obtain generalization to any N ≥ 2 by induction, as shown in Ref [33] (the original proof by Deprit in Ref [11] is not by induction).
+The analytical form of the map (14) has been provided in Refs [9] and  [33], in a different framework compared to the original one proposed by Deprit (who, in Ref [11], proposed to use “quaternions”). See also Subsection 1 of the Appendix.
+III. FULL DIMENSIONAL QUASI-PERIODIC MOTIONS IN THE RETROGRADE PROBLEM
+A. Analytical tools
+In this section, we provide the analytical tools in order to prove the existence of full dimensional quasi-periodic motions in the retrograde problem. The proof goes through a change of coordinates that transforms the Hamiltonian (2) to a new Hamiltonian with an average with respect to the angles conjugated to the Λi′s being the Birkhoff normal form. We remark, in this respect, that, instead of constructing directly a system of canonical coordinates that do the job and, at the same time, reduce the number of degrees of freedom to four (according to Sec. II A), with the purpose of limiting the computations at a minimum, we mimic the procedure followed in Ref [9] (Secs. 4–6), where the construction of the Birkhoff normal form for the fully reduced system was obtained via the passage to an intermediate system (“partial reduction”) where the number of effective degrees of freedom is one over the minimum. In particular, we shall establish a correspondence between the formulae of the “prograde” case, treated in Refs [9] and  [33], and the ones of the retrograde one, considered here. In addition to the previous literature, the coordinates that we propose have nice “regularizing properties,” described in Sec. IV C.
+1. Regularizing coordinates
+The map (14) and hence the Hamiltonian (16) are not well defined when some of the following equalities are verified:
+Some advantage is taken in using regularized coordinates, at expenses of introducing an extra-integral, as now we describe. The coordinates doing the job in the case of the prograde problem have been found in Ref [33] and have been called, in Ref [9], “regular, planetary, and symplectic” (rps). To avoid confusions with the coordinates that we shall introduce in a while, the rps coordinates in the case of the three-body problem will be denoted, in the paper, with the symbols
+(they correspond to the coordinates for n = 2 in Ref [9] and thereby named L_{1}, L_{2}, λ_{1}, λ_{2}, η_{1}, η_{2}, ξ_{1}, ξ_{2}, p_{1}, q_{1}, p_{2}, and q_{2}, respectively). For later convenience, we introduce the complexified version of the (18)’s, defined as
+where
+and we denote as
+respectively,
+the change of coordinates relating the real/complex rps’ to the Cartesian coordinates. The real-analytic character of ϕ_{rps} and hence of H_{rps} ≔ H ◦ ϕ_{rps} on a region of phase space having the form M̃{ε0}×R^{2}, with M̃{ε0}≔L̃×T^{2}×Bε_{0}6(0), has been discussed in Refs [9] and  [33].
+In this paper, we are interested to look at the so-called “retrograde problem,” whose motions live in a neighborhood of the singular manifold
+It turns out that (see Proposition III.2) the one can find regular coordinates on a region of phase space M_{ε0}×R^{2}, where
+including a neighborhood of M_{π}, and that the formulae of such regularizing coordinates are very simply related to the ones of the prograde case, as now we briefly discuss. We denote as
+the real/complex coordinates which are defined via the formulae
+and
+Observe that (t_{1},t_{2},t_{3},T,t1*,t2*,t3*,T^{*})=(0,0,0,0,0,0,0,0) is the equation of the manifolds M_{π}’s. We let
+Let ϕ2− be the involution,
+Then
+Proposition III.1. ϕ_{rpsπC}=ϕ_{rps^{C}}◦ϕ2−.Proposition III.1 (the proof of which can be found in the Appendix) is useful in order to derive the explicit expression of ϕ_{rpsπ} from the one of ϕ_{rpsπ}, as done in Subsection 5 of the Appendix. The latter is needed to determine an analyticity domain for the Hamiltonian
+which we shall provide in Sec. III A 2.
+2. A domain of analyticity for H_{rpsπ}
+Let χ, α_{−}, and α_{+} be pure numbers verifying
+Let the masses m_{0}, m_{1}, and m_{2} and the number μ in (2) and (3) be chosen so that
+and let, for fixed Λ_{−}, Λ_{+}, with
+where
+We then take for the coordinates rps_{π} = (Λ, λ, η, ξ, p, q, P, Q) in (27) the domain M_{ε0}×(0,0), where M_{ε0} is as in (23).
+Remark III.1. 
+• The cyclic pair (P, Q) has been fixed, as in Refs [9] and  [33], to (0, 0). This corresponds to fix the direction of the third axis of the prefixed reference frame parallel to the total angular momentum direction and has no influence on the dynamics.
+• The bound in (31) for m_{2} is not purely technical but is necessary in order to realize the orc configuration, with arbitrarily small eccentricities and inclinations. Indeed, when the motions are planar, circular, and orc, one has Λ_{1} = |C^{(1)}| > |C^{(2)}| = Λ_{2}, which implies, as discussed above, (31).
+• Recalling that [by (3) and (7)] the semi-axes ratio α≔a_{1}a_{2} is related to the ratio Λ_{1}Λ_{2} via
+and that, by definition of L, k_{−}<Λ_{1}Λ_{2}<k_{+} and using the definitions of k_{±} in (34), we have
+Below, we shall choice α_{+} < α_{s}, where α_{s}, L_{s} are as in (44). This will allow us to use the results of Sec. III A 1.
+Proposition III.2. One can find ε_{0} > 0, depending only on Λ_{−}, χ, and α_{+}such that the functionH_{rpsπ}in (29) is real-analytic for(Λ,λ,η,ξ,p,q)∈M_{ε0}, whereM_{0}is as in (23), for all choices of m_{0}, m_{1}, m_{2}, α_{−}, Λ_{+}, and μ satisfying (30)–(32).We have to ensure that, on the domain M_{ε0}, the map ϕ_{rpsπ} discussed in Subsection 5 of the Appendix is real-analytic and collisions are excluded. Observe that, as a consequence of (31), m_{1}m_{2}α_{−}>2χ, m_{0}+μm_{2}m_{0}+μm_{1}>12, whence χ < k_{−} < k_{+}. This inequality implies, on L, |Λ_{1} − Λ_{2}| ≥ Λ_{−}(χ − 1), and therefore |Λ_{1}−Λ_{2}|≥12Λ_{−}(χ−1) on a complex neighborhood of L depending on Λ_{−}, χ. Therefore, the former common denominator of c1*, c_{2}, c2* in (A18) is well separated from zero as soon as ε<14Λ_{−}(χ−1). The other denominators are treated in a similar way. The fact that the planar Kepler maps (A19) are analytic and that collisions are excluded on a complex neighborhood of M_{ε} depending only on Λ_{−}, α_{+}, and χ are classical facts and will be not discussed.
+3. D’Alembert rules
+The Hamiltonian H in (2) is invariant by rotations of the reference frame and reflections of the coordinates’ axes. These symmetries reflect on the Hamiltonian H_{rpsπ} in (29), and they will be named here “D’Alembert rules,” by similarity with analogue relations holding when H is written in Poincaré coordinates, where they are given such names. A full analytical discussion may be found in Subsection 6 of the Appendix. In this section, we summarize their effect on the averaged perturbing function. More precisely, we focus on the system written in complex coordinates
+and we let
+Let c_{a,a^{*}} be the coefficients of the expansion of frpsπCav up to a prefixed order m,
+(which are well defined if the corresponding real coordinates vary in the domain M_{ε0} as in Proposition III.2), then
+(s_{1}) by (A21), c_{a,a^{*}}(Λ)≠0⇒∑_{i}a_{i}=∑_{i}ai*;
+(s_{2}) by the latter identity in (A23) and the previous item, frps_{π}av is even in (t_{3},t3*). Therefore, by the previous item, frps_{π}av is even in (t_{3},t3*) and (t_{1},t_{2},t1*,t2*) separately;
+(s_{3}) by the former identity in (A23) and the parity in (t_{1},t_{2},t1*,t2*), the coefficients c_{a,a^{*}} in (37) do not change letting
+and leaving (a_{3},a3*) unvaried;
+(s_{4}) by the reality conditions frps_{π}av=(frpsπav){cc},
+as it follows using the following relations [implied by (26)]:
+into (37).
+4. Birkhoff theory in the partially reduced retrograde problem
+A remarkable consequence of (s_{1})–(s_{4}) is that (as already mentioned in the Introduction), differently from what happens in the prograde problem, in the case of the retrograde one, it is not possible to guarantee a priori that the eigenvalues of the matrix σ appearing in the second-order expansion
+where t_{h} ≔ (t_{1}, t_{2}), th*≔(t1*,t2*), are real. Indeed, the s_{1}–s_{4} imply that the entries σ_{ij} of σ and ς in (39) verify
+(in the case of the prograde problem, studied in Refs [9] and  [33], one has, correspondingly, that σ is symmetric and real because of the different form of the reality condition s_{4}). The following result is therefore not trivial:
+Proposition III.3. (Herman resonance, the Birkhoff theory, and symmetries in the partially reduced retrograde problem)LetLbe as in(33), ε_{0}as in Proposition III.2.
+(i) ForΛ∈L, the matrix σ(Λ) in(39)has two distinct eigenvalues σ_{1}(Λ), σ_{2}(Λ) which, together with ς, are real-analytic for allΛ∈L. Moreover, for allΛ∈L, one can find a real-analytic vector matrixΩ:Λ∈L→Ω(Λ)∈R^{3}, a symplectic, real-analytic 4 × 4 function matrixV:Λ∈L→V(Λ)and a real-analytic, canonical transformation
+such that if
+then
+with
+Moreover, for any prefixed s ∈ N, one can find α_{s}such that if
+(ii) It is possible to find a real-analytic 3 × 3 matrix functionT:Λ∈L_{s}→T(Λ)and real-analytic functions(Λ,τ¯)∈L_{s}×C^{3}→P_{j}(Λ,τ¯)withP_{j}(Λ,τ¯)a polynomial of degree j = 3, …, s inτ¯and a real-analytic and canonical transformation
+such that if
+then
+where
+(iii) IfΩ̃(Λ_{1},Λ_{2})andT̃(Λ_{1},Λ_{2})denote the first- and second-order Birkhoff invariants for the prograde problem with n = 2 [denoted in Ref [9] (Proposition 7.1 and Equation (8.1)], respectively, as(σ,ς¯), τ), then Ω, T are related toΩ̃, T̃via
+with s_{1} = −s_{2} = −s_{3} = 1;
+(iv) ϕ̌andϕ̆commute withR_{g}, R3−, andR_{1↔2}in (A22) and (A24).
+Remark III.2. The transformation ϕ̌ preserves the function
+Different from the prograde case, V(Λ) ∉ SO(4).
+Proof. (i) The transformation ϕ̃ in Ref [9] [Eqs. (7.20) and (7.22)] will be denoted here as
+with z^=(η^,ξ^,p^,q^) and z̃=(η̃,ξ̃,p̃,q̃). ϕ^ projects as a transformation from
+where(t̃,t̃{*}), (t^,t^{*}) are related to z̃=(η̃,ξ̃,p̃,q̃), z^=(η^,ξ^,p^,q^) in the same way as in (19), respectively. We then take ϕ̌{C}≔ϕ2−◦ϕ^{C}◦ϕ2−, where ϕ2− is as in (28). The transformation ϕ̌{C} is
+with ψ̌{1}=ψ^{1}(Λ_{1},−Λ_{2},ť,ť^{*}), ψ̌{2}=−ψ^{2}(Λ_{1},−Λ_{2},ť,ť^{*}), and U(Λ_{1},Λ_{2})=U^(Λ_{1},−Λ_{2}). Then U is symmetric and verifies
+where σ_{1} and σ_{2} are the eigenvalues of σ, with σ_{i}(Λ_{1},Λ_{2})=σ̃{i}(Λ_{1},−Λ_{2}). Observe that, while U needs not be real, since U^∈SO(2), U verifies
+Note that U is uniquely determined by conditions (52) and (53). Let (Λ,λ̌,η̌,ξ̌,p̌,q̌) be related to (Λ,λ̌,ť,ť^{*}) via (26), and let ϕ̌ be corresponding projection ϕ̌{C} as a transformation from (Λ,λ̌,η̌,ξ̌,p̌,q̌) to (Λ, λ, η, ξ, p, q) of the form in (41), with
+where
+By construction, using also
+ϕ̌ verifies (42) and (43), with σ_{1}(Λ_{1},Λ_{2})=σ̃{1}(Λ_{1},−Λ_{2}), σ_{2}(Λ_{1},Λ_{2})=σ̃(Λ_{1},−Λ_{2}), and ς(Λ_{1},Λ_{2})=ς̃(Λ_{1},−Λ_{2}). We have to check that σ_{1}, σ_{2}, ς, φ̌, and V are real when their arguments are so. It follows from Ref [9] [Eqs. (B.1) and (B.2)] and Proposition III.1 that frpsπCav has the expression in (39), with C(Λ_{1},Λ_{2})=C̃(Λ_{1},−Λ_{2}) and
+Explicitly, using Ref [9] [Eq. (B.1)], we find [according to (40)]
+with
+with α, a_{2} as in (7), (35), and, as usual, bs(j)(α)’s being the Laplace coefficients, defined via the Fourier expansion
+The eigenvalues of σ can be explicitly computed and they turn to be real. Indeed,
+Since tr σ=1Λ_{1}−1Λ_{2}s is real, we have to check that the discriminant
+is positive. Recalling that the Laplace coefficients verify
+(see Ref [12] for proof), one has
+and we have the assertion.To prove the reality of V(Λ), we first check that the matrix U(Λ) has the form
+with some x = x(Λ) ∈ R. Let, for a given 2 × 2 matrix A, C(A) be defined via C(A){ii}=Aiicc; C(A){ij}=−Aiicc for i ≠ j. Since C(σ)=σ, C(D)=D, and C(AB)=C(A)C(B), applying C to the equality (52), we find C(U)=U, which is equivalent to
+Taking into account (53) and (60), we find that U has necessarily the form (59). Then, by direct computation, we find that V(Λ) in (54) is given by
+We now check that φ(Λ,η̌,ξ̌) is real. We use the generating function of ϕ̌{C}, which is
+Then the function ψ̌ in (51) has the analytical form
+with A(Λ) being skew-symmetric because of (53). Using (60), we find
+which gives
+Then, by the first equation in (54) and (55),
+is real on real arguments. The proof of (45) goes as in Ref [9] (Proof of Proposition 7.2) upon replacing σ_{1} and σ_{2}ς with
+(ii) We denote as
+with z̆=(η̆,ξ̆,p̆,q̆) and z^=(η^,ξ^,p^,q^) the transformation in Ref [9] [Eq. (7.28)]. As in the proof of Proposition III.3, we denote as (Λ,λ^,t^,t^{*}) and (Λ,λ̆,t̆,t̆{*}) the coordinates related to (Λ,λ^,z^) and (Λ,λ̆,z̆) via the relations in (19), respectively, and we let
+the transformation induced by ϕ̆ on such coordinates. Then, by definition,
+with
+where
+If ϕ2− is as in (28), we let ϕ¯{C}≔ϕ2−◦ϕ̆{C}◦ϕ^{C} and H¯{C}≔Ȟ◦ϕ¯{C}.Then ϕ¯{C} and H¯ have the form
+with
+where C¯{0}(Λ_{1},Λ_{2})=C_{0}(Λ_{1},−Λ_{2}), Ω¯(Λ_{1},Λ_{2})=Ω̃(Λ_{1},−Λ_{2})=(σ_{1},σ_{2},ς),
+and T¯(Λ_{1},Λ_{2})=T̆(Λ_{1},−Λ_{2}). Now, if (Λ,λ¯,η¯,ξ¯,p¯,q¯) are related to (Λ,λ¯,t¯,t¯{*}) via the relations in (26), ϕ¯{C} induces a transformation from (Λ,λ¯,η¯,ξ¯,p¯,q¯) to (Λ,λ̌,η̌,ξ̌,p̌,q̌) having the form
+with
+with
+and Ω, T as in (48). The proof that ϕ¯ is real-analytic in M¯{ε¯} is standard and therefore is omitted.(iii) follows from (i) and (ii). (iv) is analogous to Refs [8] and  [9].
+5. Birkhoff theory in the fully reduced retrograde problem
+The construction of the Birkhoff normal form for the averaged, fully reduced system in the case of the prograde problem has been discussed in Ref [9] (Secs. 9 and 10). We recall the following basic steps:
+• Passage to a set of canonical coordinates on the manifold with constant G = |C|. This is accomplished via a transformation ϕ^ described in Ref [9] (Sec. 9) which conjugates a “Birkhoff-normalized partially reduced system” H̆ discussed in Ref [9] [Eqs. (7.28)–(7.30)] to a fully reduced system H^{G}, as described in Ref [9] (Remark 9.1).
+• Construction, via an Implicit Function Theorem argument [e.g., Ref [9] (Proposition 10.1)] of a canonical transformation ϕ̌ which conjugates H^{G} to Ȟ{G}, where the average Ȟ{G} with respect to the angles λ̌ appearing in Ref [9] [Eq. (10.10)] is in the Birkhoff normal form of order 4.In the case of the retrograde problem, one can mimic the procedure above or, equivalently, exploit the results of Ref [9] via Proposition III.1. Namely, if ϕ^{C}:(Λ,G,λ^,g^,t^,t^{*})→(Λ,λ̆,t̆,t̆{*}) and ϕ̌{C}:(Λ,G,λ̌,ǧ,ť,ť^{*})→(Λ,G,λ^,g^,t^,t^{*}) denote the transformations induced by the transformations ϕ̌:(Λ,G,λ^,g^,η^,ξ^)→(Λ,λ̆,η̆,ξ̆,p̆,q̆) and ϕ̌:(Λ,G,λ̌,ǧ,η̌,ξ̌)→(Λ,G,λ^,g^,η^,ξ^) of Ref [9] on the complex coordinates related to the respective real coordinates via relations to (19); ϕ2− is as in (28); ϕ̇{C}≔ϕ2−◦ϕ^{C}◦ϕ̌{C}◦ϕ2−:(Λ,λ̇,ṫ,ṫ{*})→(Λ,λ¯,t¯,t¯{*}) and then the transformation ϕ̇:(Λ,G,λ̇,γ̇,η̇,ξ̇)→(Λ,λ¯,η¯,ξ¯,p¯,q¯) induced by ϕ̇{C} in such a way that (Λ,G,λ̇,γ̇,η̇,ξ̇) and (Λ,λ¯,η¯,ξ¯,p¯,q¯) are related to (Λ,λ̇,ṫ,ṫ{*}) and (Λ,λ¯,t¯,t¯{*}), respectively, via relations (26), turns to be real on a real domain and makes the following proposition true.
+Proposition III.4 (Birkhoff Normal Form for the fully reduced retrograde problem). Fix 4 ≤ s ∈ N. There exist0<ε̇{1}<ε̇{2}4such that if
+one can find a real-analytic and symplectic transformation
+such that
+isγ̇-independent andḟ{av}(Λ,η̇,ξ̇;G)≔14π^{2}∫_{T^{2}}ḟ(Λ,λ̇,η̇,ξ̇;G)dλ̇takes the form
+whereτ̇{i}≔η̇i2+ξ̇i22and
+with s_{1} = −s_{2} = 1 and
+Remark III.3. The analytical expressions Ω̇{1}(Λ_{1},Λ_{2}) and Ω̇{2}(Λ_{1},Λ_{2}) which are available according to (68) and Ref [9] [Eqs. (7.1) and (7.5) with n = 2],
+show that the Ω̇{i}’s do not satisfy, identically, linear combinations up to any prefixed order in L̇{s,G}. This is not used in the paper but is useful to be known if one wants to obtain a stronger result concerning the measure of the invariant set [Ref [7] (Theorem 1.2)].
+6. Torsion
+Define, for a fixed G ∈ R,
+where L̇{s} is as in (44). In this section, we first compute the matrix Ṫ in (67) and next we check its non-singularity on L̇{s,G}. We proceed in three steps.
+a. Computation of T̆.
+Note that we cannot use the asymptotics of the matrix T̆ given in Ref [9] [Eq. (8.6)], because that was obtained for Λ_{1} ≪ Λ_{2}, while, for the purposes of the paper, we need Λ_{1} > Λ_{2}.
+By (48), we evaluate the T̆{ij}(Λ_{1},Λ_{2})’s first. According to Refs [9] and  [33], they have the form (neglecting to write the arguments)
+where d depends on Λ_{1}, Λ_{2}, a_{1}, and a_{2}, while C_{1}, r_{1}, r_{2} r_{3}, r_{4}, r1*, r2*, s_{1}, s_{2}, s1*, and s2* are functions of a_{1} and a_{2} only [in turn related to Λ_{1}, Λ_{2} via (7)], expressed in terms of the Laplace coefficients. Moreover, it follows from Ref [33] (Proof of Proposition 5.2) that
+with
+We recall that d is defined so that the matrix U^ in (50) is
+As in Refs [9] and  [33], we shall use the expansions of the functions above in terms of α,
+Moreover, by the definition of d in (71), d=O(αt), with t≔Λ_{2}Λ_{1}. We thus obtain
+b. Computation of T^(Λ_{1},Λ_{2}).
+Using (73) and (68), we obtain
+c. Computation of Ṫ(Λ_{1},Λ_{2};G) and checking its non-singularity.
+The matrix Ṫ(Λ_{1},Λ_{2};G) defined in (67) is given by
+It may vanish at most on a finite number of sub-manifolds of L̇{G},
+B. Existence of quasi-periodic motions
+Let us now take, as mentioned, α_{+} < α_{s}, where α_{s} is as in (44). Let Ḣ be as in (65). We aim to apply the following result to Ḣ. Note that assumption (A_{1}) is trivially satisfied by h_{k}, while (A_{2}) and (A_{3}) have been discussed in Secs. III A 5 and III A 6.
+Theorem III.1 (Arnold, Refs [3] and  [7]). LetP_{ε}≔V×T^{n1}×Bε2n_{2}, where V is an open, bounded, connected set ofR^{n1}andBε2n_{2}is a 2n_{2}-dimensional ball of radius ε centered at the origin. Let ε_{0} > 0 and let H(I, φ, p, q; μ) = H_{0}(I) + μ P(I, φ, p, q; μ) be a real-analytic Hamiltonian onP_{ε0}, endowed with the standard symplectic form dI ∧ dφ + dp ∧ dq. Assume that H verifies the following non-degeneracy assumptions:
+(A_{1}) I ∈ V → ∂_{I}H_{0}is a diffeomorphism;
+(A_{2}) P_{av}(p,q;I)=P_{0}(I)+∑i=1n_{2}Ω_{i}(I)r_{i}+12∑i,j=1n_{2}β_{ij}(I)r_{i}r_{j}+O_{5}(p,q;I), withr_{i}≔pi2+qi22;
+(A_{3}) |det β(I)| ≥ const > 0 for all I ∈ V.Then, there exist positive numbersε_{*}<ε_{0}, C_{*,}and c_{*}such that for
+one can find a setK⊂P_{ε}formed by the union of H-invariant n-dimensional Lagrangian tori, on which the H-motion is analytically conjugated to linear Diophantine quasi-periodic motions with frequencies(ω_{1},ω_{2})∈R^{n1}×R^{n2}with ω_{1} = O(1) and ω_{2} = O(μ). The setKhas positive Liouville–Lebesgue measure and satisfies
+We now aim to apply Theorem III.1 to the Hamiltonian Ḣ{G} in (65), for any fixed G ∈ R_{+}. So, if ε̇{1} as in Proposition III.4, ε∈(0,ε̇{1}); L̇{s,G} is as in (69) and Ṁ{G,ε}≔L̇{s,G}×T^{2}×Bε4 and we obtain the following
+Theorem III.2. Let ε and μ verify (74). Then the setṀ{G,ε}contains a positive measure setK̇{G}which isḢ{G}invariant and is formed by the union of 4-dimensional Lagrangian, real-analytic tori, on which theḢ{G}motions are analytically conjugated to linear quasi-periodic motions. Furthermore, K̇{G}satisfies the bound in (75), withP_{ε}replaced byṀ{G,ε}.
+IV. THE REDUCTION OF PERIHELIA
+This section contains a new coordinate system, which, just like the jrd coordinates in (11) is of the form “action-angle” and reduces completely the number of degrees of freedom. In addition, it enjoys nice and useful parity properties. It is available for any number of planets (Ref [32]), but we discuss it here only for two.
+We call Perihelia reduction for the three-body problem, the set of coordinates,
+defined as follows.
+Consider the sets of (x, y) such that the Keplerian motions t → (x^{(j)}(t), y^{(j)}(t)) generated by the Hamiltonians (5) starting from (x^{(j)}, y^{(j)}) are ellipses with non-vanishing eccentricities. Let a_{i} denote their semi-major axes; C^{(i)} ≔ x^{(i)} × y^{(i)} the angular momenta; P^{(i)}, with |P^{(i)}| = 1, the direction of the ith perihelion. Define the “p-nodes”
+and assume that they do not vanish. If, as in the definition of jrd, for any three vectors u, v, w ∈ R^{3}, with u, v ⊥ w, let α_{w}(u, v) denote the oriented angle formed from u to v, relative to the positive direction established by w, and then define
+with j = 1, 2. Note that such definitions, together with assumptions of non-vanishing of the nodes (76), imply that
+In Sec. V, we shall show that the map
+preserves that standard 2-form
+A. Analytical expression of ϕ_{p}
+The explicit form of ϕ_{p} is as follows. Let e_{2}, ζ_{2}, i, R_{1}, and R_{3} be as in (7) and (A1)–(A4). Let ι_{1} and ι_{2} be the convex angles,
+By (78), one has ι_{1}, ι_{2} ∈ (0, π). Then the expression of C, C^{(2)}, P^{(1)}, and P^{(2)} in terms of p is
+while C^{(1)} is found via
+In particular, G_{1} ≔ ||C^{(1)}|| is not an action coordinate but has the expression
+Such an expression allows finding e_{1} via (A1) as
+Letting now
+then xp(j)≔x^{(j)} and yp(j)≔y^{(j)} are, classically, given by
+where ζ_{j} solves (A2). Observe that while the expression of Q^{(2)} in (82) is relatively simple,
+the one of Q^{(1)} is much more involved. Fortunately, it will not be needed in the paper.
+B. Singularities
+By definition, the singularities of ϕ_{p} arise when
+Note that the last line corresponds to the vanishing of G_{1} in (81). These formulae show that, compared to ϕ_{jrd}, ϕ_{p} has the advantage that there are no singularities for vanishing inclinations. As a counterpart, while the singularity for G_{2} = Λ_{2} can be eliminated switching to the regularized (planar) Poincaré coordinates,
+for the spatial problem, regularization for the singularity for G_{1} = Λ_{1} does not seem to be possible, due to the non-linear expression of G_{1} in (81).
+C. Symmetries and planar equilibria
+Let
+be the Hamiltonian H expressed in terms of p. In addition to H_{jrd} in (16), H_{p} is independent of G, Z, and g. However, as an advantage with respect to the former, the symmetries by reflections induce a useful parity property to H_{p}, which does not exist for H_{jrd}. Indeed, it turns out that the transformation
+corresponds, the Cartesian coordinates in (2), to
+This can be easily verified using the formulae given in Sec. IV A. Then, the f_{p} enjoys the following parity property:
+This equalities implies that the three manifolds
+are invariant to f_{p}. Such manifolds correspond to planar motions, with the directions of the left and right arrows denoting the direction of the angular momentum of the inner and outer planet, respectively. The manifold (↑ ↓) corresponds to planar orc motions, which is the objective of this paper.
+D. A domain of regularity including (↑↓)
+In this section, we establish a suitable domain which includes the invariant manifold (↑↓) where H_{p} is regular.
+We check below that the following domain is suitable for the scope:
+where, if L is as in (33),
+with
+where L is as in (33), while c is an arbitrarily fixed number in (0, 1). We need to establish two kinds of conditions.
+1. Geometric conditions
+First of all, we need that the planets’ eccentricities e_{1} and e_{2} stay strictly confined in (0, 1). Then the following inequalities are to be satisfied:
+with ‖Cp(1)‖ as in (81). As remarked above, ‖Cp(1)‖ may vanish only for
+Since we deal with the equilibrium (↑↓) [which holds for (Θ, ϑ) = (0, 0)], the occurrence of this equality is automatically excluded, limiting the values of the coordinates (Θ, ϑ) in the set B in (86) since in this case
+Moreover, the two right inequalities in (87) are satisfied, taking
+where we have used the triangular inequality ‖Cp(1)‖≤‖C_{p}‖+‖Cp(2)‖=G+G_{2}.
+2. Non-collision conditions
+We have to exclude possible encounters of the planets with the sun and each other. Collisions of the inner planet with the sun are excluded by (86). Indeed, using (88), with Λ_{1} ≔ k_{+}Λ_{2},
+whence the minimum distance of the inner planet with the sun a_{1}(1 − e_{1}) is positive. In order to avoid planetary collisions, it is typical to ensure the following inequality:
+with 0 < c < 1. A sufficient condition for it is
+Indeed, if this inequality is satisfied, one has
+E. General properties of the secular problem
+We call the Kepler map any canonical change of coordinates
+such that
+where L⊂R^{2}, V ⊂ R^{8} are open and connected sets, and hk(j) is as in (6). Different Kepler maps are related by canonical changes,
+which leave the Λ_{i}’s unvaried. In terms of any Kepler map, the Hamiltonian (2) takes the aspect
+where
+If k is any Kepler map, the “secular problem” is the (ℓ_{1}, ℓ_{2})-independent system,
+with
+Some properties that are advantageous are used by all such systems and are listed below.
+1. The indirect part in the perturbing function (90) does not contribute to fkav
+Indeed, for any Kepler map, the impulses yk(j) satisfy
+2. Expanding the averaged Newtonian potential in terms of the semi-axes ratio,
+then
+Indeed, fkav{(0)} is the averaged Keplerian potential, given by 1a_{2}, while fkav{(1)} is the average of xk(1)⋅xk(2)‖xk(1)‖{3}, which vanishes because the second term is proportional to ∂_{ℓ2}yk(2).
+3. The term of order 2 in the expansion (93) admits G_{2} as a first integral
+This circumstance has been pointed out in Ref [16]. In particular, in all Kepler maps such that G_{2} is an action, fkav{(2)} does not depend on its conjugate variable and hence depends on one conjugated couple only. Therefore, the secular, truncated system,
+which is obtained from (91) by truncating terms of order O(μα^{3}), is integrable and, in particular, one-dimensional. This property holds true, in particular, for jrd and p. In the case of jrd, fjrdav{(2)} depends on the couple (G_{1}, γ_{1}), whose bifurcation diagram has been studied, e.g., in Refs [14],  [16], and  [23]. In the case of p, fpav{(2)} depends on the couple (Θ, ϑ) and, due to the equilibria (85), the dynamics of (95) can be studied by convergent Birkhoff series. More generally, the following formula has been proved in Ref [32] (Appendix B):
+F. Instability features in the secular problem
+In the case of k = p, Eq. (96) gives
+with
+Note that fpav{(2)} has been split so that α^{2}P_{0}=fpav{(2)}{(Θ,𝜗)=(0,0)}, whence P_{1} vanishes for (Θ, ϑ) = (0, 0). In the next proposition, we study the properties of P_{1}.
+Recall the definition of the sets A(G), B(G_{2},G) in (86).
+Proposition IV.1. For any fixed G ∈ R_{+}, there existA_{u}(G)⊂A(G)and a neighborhoodB_{u}of (0, 0), withB_{u}⊂B(G_{2},G)for allG_{2}∈Gsuch that H_{p}is real-analytic on
+and (Θ, ϑ) = (0, 0) is a hyperbolic equilibrium point for P_{1}. More precisely, there exist two functions ω and Ω of Λ_{1}, Λ_{2}, G_{2}, and the parameter G, with ω > 0 such that if
+one has
+We shall prove the proposition with
+where
+where L is as in (33) and if G^{⋆}(Λ_{1}, G) is the unique positive root of the cubic polynomial G_{2}→5Λ12G−(G+G2){2}(4G+G_{2}), then
+Implicitly, we shall prove that
+Proof. The expansion of P_{1} in (98) around (0, 0) is
+where
+Both G_{2} → a(Λ_{1}, G_{2}; G) and G_{2} → b(G_{2}; G), as functions of G_{2}, decrease monotonically from a positive value [respectively, G(5Λ12−4G^{2}) and G] to −∞ as G_{2} increases from G_{2} = 0 to G_{2} = +∞. The function a(Λ_{1}, G_{2}; G) changes its sign for G_{2} is equal to a suitable unique positive value G^{⋆}(Λ_{1}, G), while b(G_{2}; G) does it for G_{2} = G. We note that (i) inequality G < min{G_{+}, G^{⋆}} follows immediately from the assumptions (102) (in particular, the two last ones) and (ii), more generally, that G^{⋆} ≤ G is equivalent to Λ_{1} ≤ 2G. Since, for our purposes, we have to exclude G^{⋆} = G [otherwise, a(Λ_{1}, G_{2}; G) and b(G_{2}; G) would be simultaneously positive and simultaneously negative, and no hyperbolicity would be possible], we distinguish two cases.
+(a) G>2cα_{+}Λ_{2} and G+2cα_{+}Λ_{2}<Λ_{1}<2G. In this case, G^{⋆} < G. We show that no such G_{u} can exist in this case. In fact, since G^{⋆} < G, in order that the interval (G^{⋆}, G) and the set G have a non-empty intersection, one should have, necessarily, G_{+}=supG>G^{⋆} and, hence, in particular, Λ_{1} − G > G^{⋆}. Using the definition of G^{⋆}, this would imply Λ_{1} > 2G, which is a contradiction.
+(b) Λ_{1}>max{2G,G+2cα_{+}Λ_{2}}. In this case, G < G^{⋆} < Λ_{1} − G. In order that the interval (G, G^{⋆}) and the set G have a non-empty intersection, we need
+and such an intersection will be given by the interval G_{u} as in (102). Note that the definition of G¯{+} does not include Λ_{1} − G in the brackets because, as noted, G^{⋆} < Λ_{1} − G. But (106) are equivalent to (102).
+Remark IV.1. The “bifurcation” toward the hyperbolic behavior that Proposition IV.1 talks about does not appear in the case of the equilibria (↑↑) and (↓↑) which, in contrast, are always elliptic. Indeed, in such cases, one obtains an expansion analogous to (98), with the coefficients a and b in (105) to be replaced by
+Clearly, b^ is positive for all G_{2} and a^ is so for G_{2} ≥ 4G. On the other hand, when G_{2} < 4G, inequality |G − G_{2}| < Λ_{1} implies
+Therefore, a^ and b^ have always the same (positive) sign. This circumstance has been worked out in Ref [32], in the more general situation with N ≥ 2 planets, in order to infer the existence of quasi-periodic motions with a maximal number of frequencies away from the constraint, where we have discussed in Secs. II A–III B of small eccentricities and inclinations.
+G. Unperturbed hyperbolic motions
+Let us consider the Hamiltonian H_{p} in (84), on the domain D_{u} in (99). Standard averaging theory [e.g., Ref [36] (Normal Form Lemma)] allows eliminating the dependence on ℓ_{1} and ℓ_{2} at a higher order, conjugating, via a real-analytic, μ-close to the identity, canonical transformation, H_{p} to a new Hamiltonian, which we denote as
+where fpav is as in (92), while 1 < σ < 2. In view of (93), we can thus split Hp′ as
+where h_{eff} is as in (95), with k = p, namely,
+while f_{eff}≔μα^{3}P^+μ^{σ}fp′ is a smaller remainder. The leading term, h_{eff}, possesses, by Proposition IV.1, a hyperbolic fixed point at (Θ, ϑ) = (0, 0) and hence a family of three-dimensional tori with linear motions of (ℓ_{1}, ℓ_{2}, g_{2}), having the equation
+parametrized by (Λ1⋆,Λ2⋆,G2⋆)∈A_{u}(G). Together to such tori, the unperturbed system also possesses two four-dimensional manifolds, the whiskers,
+[with p_{0}, q_{0} as in (100)], including the tori T_{Λ1⋆,Λ2⋆,G2⋆} as subsets, with motions asymptotic to T_{Λ1⋆,Λ2⋆,G2⋆} in the future/past, respectively. It is a reasonable expectation (motivated by the well established kam theory) that such a structure (tori and related whiskers) is preserved in the whole system, at least for those T_{Λ1⋆,Λ2⋆,G2⋆}’s, whose frequencies ω^{⋆}≔∂_{(Λ2*,Λ2*,G2*)}h_{eff}{(Θ,𝜗)=(0,0)} are highly irrational (Diophantine).
+V. ON THE CANONICAL CHARACTER OF JACOBI–RADAU–DEPRIT AND P-COORDINATES
+In this section, we discuss, in a unified way, the canonical character of the jrd coordinates in (13)–(11) and the p-coordinates in (77). In both cases, we reduce to the discussion to the case N = 2, as needed in the paper. Both such sets of coordinates are defined for a general number of particles. The generalization of jrd can be deduced from the original Deprit’s paper, Ref [11]. See also Ref [33], for a direct, inductive approach. As for the generalization of p, one can look at Ref [32].
+The proof of the canonical character of jrd and p will be based on the Delaunay coordinates, that here we recall, and a simple lemma.
+• Delaunay coordinates (see Ref [15]), six for every body, here denoted as
+are defined as follows. The coordinates Λ_{j}, G_{j}, and ℓ_{j} are as in (11), while if
+and α_{w}(u, v) as in Sec. II A, then
+with (k^{(1)}, k^{(2)}, k^{(3)}) a prefixed orthonormal frame in R^{3}.
+• Let R_{e}(α) ∈ SO(3) be a rotation by an angle α around the unit vector e; let
+Then we have
+Lemma V.1. Giveny¯∈R^{3}and varyingx¯and α,
+Proof. Varying α and letting x¯, y¯ fixed,
+Letting also x¯ vary, one has the thesis.Now we proceed with proving the canonical character of jrd and p, by showing that they are canonically related to the coordinates d in (109). Since the couples (Λ_{j}, ℓ_{j}) are in common to d, jrd, and p, namely,
+with
+and the changes
+do not depend on (Λ_{j}, ℓ_{j}), we just need to check that such changes in (112) are canonical. We shall prove that
+Theorem V.1. The changes of coordinates in (112) preserve the standard 1-form
+We shall use many times the following definitions.
+Definition V.1. If n ⊥ n′ ∈ R^{3}, we denote as F ∼ (n, ⋅, n′) the orthonormal frameF=(n|n|,n^{′}×n|n^{′}×n|,n^{′}|n^{′}|).
+Definition V.2. We denote as
+any couple (F, F′) of orthonormal frames, with F = (i, j, k), F′ = (i′, j′, k′), such that i′ || ±k × k′.Observe that, in such a case, the transformation of coordinates which relates the coordinates X′ relatively to F′ to the coordinates X relatively to F is
+where R_{1} and R_{3} are as in (A4); ι, the “mutual inclination between F and F′,” is the convex angle between k and k′, while ψ, called “longitude of the node of F′ with respect to F,” is defined by ψ ≔ α_{k}(i, i′).
+Proof. Let F_{0} be a prefixed reference frame, and let Fd(j)∼(n_{j},⋅,C^{(j)}), with n_{j} as in (110). Then we have
+Let P^{(j)} be the coordinates of the jth perihelion with respect to F_{0}, and denote as Q^{(j)}≔C^{(j)}×P^{(j)}, with C^{(j)}=C^{(j)}|C^{(j)}|, so that (P^{(j)},Q^{(j)},C^{(j)}) is an orthonormal triple in R^{3}. The coordinates of such vectors relatively to Fd(j) are
+Therefore, by (114) and (115) and the definitions in (111), we have
+where cosi¯{j}=H_{j}G_{j}. Then in view of Lemma V.1, we obtain [using e_{1} ⋅ R_{3}(γ_{j})(e_{1} × e_{2}) = e_{1} ⋅ e_{3} = 0 and P^{(j)}×Q^{(j)}=C^{(j)}]
+Multiplying by G_{j} = |C^{(j)}| and recognizing that G_{j}C^{(j)}⋅e_{3}=H_{j}, we then have
+Now we compute the right hand side of this equation, using the jrd and p-coordinates. To this end, we need to express P^{(j)} and Q^{(j)} in terms of such two sets. To accomplish this, we observe that, in the sense of Definition V.2,
+• In the case of jrd, we have the “tree” of changes of frames,
+where Fjrd(j)∼(ν,⋅,C^{(j)}), while F_{*} ∼ (ν_{1}, ⋅, C) is the invariable frame.
+• In the case of p, we have the “chain”
+where F_{0} and F_{*} are as in the previous item, while
+Therefore,
+• Recognizing (by the analysis of the triangle formed by C^{(1)}, C^{(2)}, and C = C^{(1)} + C^{(2)}) that the inclinations i, i_{1}, and i_{2} between F_{0} and F_{*}, F_{*} and Fjrd(1), and F_{*} and Fjrd(2) are given by (A3), while the longitudes of the nodes are, respectively, ζ, γ, and γ + π, we find the formulae
+where s_{1} = −s_{2} = 1. Here we have used R_{3}(π)R_{1}(α) = R_{1}(−α)R_{3}(π) and the definitions of the angles γ_{j} in (11). Observe, incidentally, that the formulae in (119) allow us to obtain the formulae in (A5), since, as known, y^{(j)} and x^{(j)} are related to a_{j}, e_{j}, P^{(j)}, and Q^{(j)} via the classical relations in (83), with a_{j} as in (7) and e_{j} and ζ_{j} as in (A1) and (A2).
+• The expressions of P^{(j)} and Q^{(j)} in terms of the p coordinates have been given in (80) and (82).We are now ready to compute the right hand side of (116), in terms of jrd and p. To this scope, we shall use Lemma V.1.
+• Using the formulae in (119), iterate applications of Lemma V.1, and linear algebra, we obtain
+with ν ≔ R_{3}(ζ)e_{1} = (cos ζ, sin ζ, 0), k ≔ R_{3}(ζ)R_{1}(ι)e_{3}, and f_{j} ≔ R_{1}(s_{j}i_{j})e_{3}. Multiplying by G_{j} = |C^{(j)}|, summing over j = 1, 2, and recognizing that k has the direction of C, ν is orthogonal to C and G_{1}f_{1} + G_{2}f_{2} = Ge_{3}, we immediately obtain, after some cancellation,
+• Using the formulae in (80), defining C^1(1), C^2(1), C^1(2), C^2(2), and C^3(2) via
+and applying iteratively Lemma V.1, we obtain
+We multiply, as above, the first equation by |C^{(1)}| and the second by |C^{(2)}| and take the sum of the two. The sum of the first three respective terms gives, analogously to the previous item, Zdζ + Gdg. As for the remaining terms, we recognize that C^3(2)=e_{3} so that C^3(2)⋅e_{1}=0, C^3(2)⋅e_{3}=1, C^2(2)⋅e_{3}=Θ, |C^{(1)}|C^2(1)⋅e_{1}+|C^{(2)}|C^2(2)⋅e_{1}=(C^{(1)}+C^{(2)})⋅R_{3}(ζ)R_{1}(i)R_{3}(g)R_{1}(i_{1})e_{1}=C⋅R_{3}(ζ)R_{1}(i)R_{3}(g)R_{1}(i_{1})e_{1}=Ge_{3}⋅R_{3}(g)e_{1}=0. We finally obtain
+The collection of (116), (120), and (121) proves Theorem V.1.
+APPENDIX: PROOF OF PROPOSITION III.1 AND OTHER TECHNICALITIES
+Let e_{j} ∈ (0, 1) be the eccentricity of the Keplerian orbit, as known, related to Λ_{j}, G_{j} via
+and ζ_{j}(e_{j}, ℓ_{j}) be the eccentric anomaly, defined as the unique solution of the Kepler equation
+and let i, i_{1}, and i_{2} be defined via
+By (12), i, i_{1}, and i_{2} take values on (0, π). Let, finally, R_{1} and R_{3} denote the matrices
+The map ϕ_{jrd} in (14) is defined as
+with s_{1} = −s_{2} = 1 and
+The (A5) simply describe the successive rotations necessary to transform the coordinates of x^{(j)} and y^{(j)} relatively to the “orbital frame” in (A6) into the coordinates relatively to the prefixed frame. Roughly, the choice s_{1} = −s_{2} = 1 reflects the classical “opposition of the nodes” in the frame, where the total angular momentum is vertical, i.e., the identity C × C^{(1)} + C × C^{(2)} = C × C ≡ 0.
+The formulae of the ϕrpsC map may be recovered rewriting (A5) in the form
+where
+with xorb(j),yorb(j) as in (A6),
+Note that, in particular, the matrices R̃{0}, R̃{1}, and R̃{2} are given by
+Now, defining
+we have, from (A7),
+We remark that the explicit expressions of R̃{0}, R̃{j}, x̃pl(j), and ỹpl(j) will be obtained from R̃{0}, R̃{j}, x̃pl(j), and ỹpl(j) replacing the appropriate arguments as
+where we have used (A3) to evaluate sin i_{2} and
+in turn implied by (A3).
+To obtain the explicit expression of ϕ_{rpsπ}, we adopt a similar procedure as in Subsection 2 of the Appendix. In this case, we rewrite (A5) in the form
+where
+with R̃{0}, R̃{1}, x̃pl(1), and ỹpl(1) as in (A7)–(A9), while if Π2−≔1000−10001, then
+Note that here we have used
+Then we may write, for ϕ_{rpsπC}, the expression
+where
+The explicit form of ϕ_{rpsπC} is obtained replacing the appropriate arguments as [as it follows from (25)]
+having used the former equation in (A12) and
+again following from (A3).
+Since the third respective components of x̃pl(j) and ỹpl(j) in (A10) and of xpl(j) and ypl(j) in (A14) vanish, we may replace the matrices R̃{j} in (A10) and R_{j} in (A14) with the matrices that are obtained truncating at 0 their respective third columns. Collecting the formulae obtained after such a truncation with (A11) and (A15), the thesis follows.
+By Proposition III.1, the formulae of the real rps_{π} map in (27) can be derived from the ones of the real rps map given in Ref [9] [Eqs. (4.3)–(4.8) and Appendix A] [see also Ref [33] (Sec. 4.3)], for the case n = 2, letting
+The result is as follows:
+where R_{0}, R_{j}, xpl(j), and ypl(j) are defined as follows. Let s_{1} = −s_{2} = 1;
+Then
+while
+is the “2-reversed planar Poincaré map,” given by
+with Π2−=100−1; having used the relations
+We let
+the Hamiltonian (2) expressed in the complex rps_{π} coordinates. Proposition III.1 implies that the symmetries that have been discussed in Ref [9] (Sec. 6) or Ref [8] [Eqs. (3.19)–(3.24)] have the following counterpart in the case of the retrograde problem.
+The following group of symmetries holds:
+with S_{g}(t_{1},t_{2},t_{3},t1*,t2*,t3*)=(t_{1}e^{ig},t_{2}e^{ig},t_{3}e^{ig},t1*e^{−ig},t2*e^{−ig},t3*e^{−ig}). It is implied by the invariance of f_{rpsπC} under rotations around C [corresponding to the Hamiltonian flow of G in (49), which, in complex coordinates, is G=Λ_{1}−Λ_{2}−it_{1}t1*−it_{2}t2*−it_{3}t3*], which, in terms of rpsπC, are
+The following identities hold
+with
+Such identities are implied by the invariance of f_{rpsπ} under the transformations
+in turn corresponding, the Cartesian coordinates, respectively, to

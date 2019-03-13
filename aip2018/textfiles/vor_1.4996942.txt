@@ -1,0 +1,96 @@
+From the degenerate quantum compressible Navier-Stokes-Poisson system to incompressible Euler equations
+In this paper, we study the convergence from the degenerate quantum compressible Navier-Stokes-Poisson system on a unbounded domain R^{2}×T with general initial data to the incompressible Euler equation with the damping term. We prove rigorously that the weak solutions of the degenerate quantum compressible Navier-Stokes-Poisson system converge to the strong solution of the incompressible Euler equations with a linear damping term, and the result is proven by applying the refined relative entropy method and carrying out the detailed analysis on the oscillations of velocity. Furthermore, the convergence rates are obtained. To handle the oscillations of velocity, we use the dispersive estimates of acoustic systems in the work of D. Donatelli, E. Feireisl, and A. Novotny, Math. Models Methods Appl. Sci. 25(2), 371–394 (2015).
+I. INTRODUCTION
+The compressible Navier-Stokes equations arise in many sciences such as hydrodynamics, geophysics, astrophysics, and many engineering problems such as plasma confinement, liquid-metal cooling of nuclear reactors, and electromagnetic casting. Dissipative quantum models are used to describe a quantum system together with a reservoir, which absorbs the energy lost by the system, for example, active regions and contacts in semiconductor devices, spin chains with thermal noise, or open Bose-Einstein condensates. These models are typically based on the master equation in the Lindblad form, the Schrödinger-Langevin equation, or collisional Wigner equations. Due to their highly numerical complexity, simpler macroscopic models have been derived in recent years. As a physical model of quantum fluids, we consider the following degenerate quantum compressible Navier-Stokes equations with damping on Ω≔R^{2}×T where T is the one dimensional torus (see Ref [6]),
+We also assume that
+as ε tends to 0. Assume that the initial data have the following property at infinity:
+The existence of global weak solutions for the compressible Navier-Stokes equations with density-dependent viscosity is one of the challenging issues in mathematics community. Recently, Vasseur and Yu [17,18] proved the global-in-time existence solutions for the system (1.1)–(1.3) with the additional damping term ϱ|u|^{2}u in the torus T^{3} (we shall denote it as Ω below) based on Bresh and Desjardins’ entropy inequality in Refs [2–4] and the Mellet-Vasseur type inequality [13]. When α = 0, Gamba, Jüngel, and Vasseur [8] first obtained the existence of global-in-time weak solutions to viscous quantum hydrodynamic equations (1.1)–(1.3) in the one-dimensional case. Later, Jüngel [9] obtained the global existence of weak solutions for the multidimensional quantum Navier-Stokes equations (1.1)–(1.3) in the non-classical sense of weak solutions. Very recently, Antonelli and Spirito [1] obtained the global existence of finite energy weak solutions of quantum Navier-Stokes equations and the notion of weak solutions is the standard one. For the models of the degenerate compressible Navier-Stokes-Poisson system, Ye and Dou [16] studied the global weak solution of compressible Navier-Stokes-Poisson system with large initial data, but 1 < γ < 3 in pressure is restricted. We can prove the same result of the case of compressible quantum Navier-Stokes-Poisson system in the isentropic pressure ϱ^{γ} with γ > 1.
+Our goal is to rigorously investigate the limit
+as ϵ tends to 0 in the suitable sense such that the given limit v represents the unique strong solution of the following system on [0, T_{*}):
+For the given initial v_{0} such that
+for k>52, the velocity v has the following regularity:
+on [0, T_{*}); see Kato [10].
+Recently, Yang and Ju [15] studied the combined quasi-neutral, inviscid limit of the weak solutions to the barotropic quantum Navier-Stokes-Poisson system ill-prepared initial data on the 3 dimensional torus to strong incompressible Euler equations. Here we consider the general initial data case, and we work on the same problem on a unbounded domain R^{2}×T. And hence it is another version to the results obtained in Ref [15].
+It should be pointed out that this kind of problem was first studied by Brenier [5] and then there are a lot of studies on this topic by Masmoudi [12], Wang and Jiang [14], and Yang and Ju [15] on 3 dimensional torus and by Donatelli, Feireisl, and Novotny [7] on a unbounded domain. The incompressible limit problems of this model have also been studied by Kwon and Li [11]. In this paper, we study the convergence of the degenerate quantum compressible Navier-Stokes-Poisson system (1.1)–(1.3) on R^{2}×T to the strong incompressible Euler equations when the number ε is very small and we use the ill-prepared initial data. Furthermore, we get the convergence of rates.
+The outline of this article is as follows: Sec. II is devoted to introducing the dispersive estimates of the system (2.1) and (2.2). In Sec. III, we present the result of global weak solutions for degenerate compressible Navier-Stokes-Poisson equations (1.1)–(1.3) with the quantum term and the main result. In Sec. IV, we give the proof of the convergence of the weak solutions of degenerate compressible quantum Navier-Stokes-Poisson equations (1.1)–(1.3).
+II. PRELIMINARY RESULTS
+In this section, we need the dispersive estimate to handle the oscillation part of velocity. We consider the following acoustic electronic wave system:
+In order to derive the dispersive estimates, we first regularize the initial data to remove the interruption of computation of convergence. We consider a family of smooth functions
+and
+Then, for a given g, we regularize [g]_{δ} by
+Theorem 2.1. (see Ref[7]) Let{qε,δ,Φε,δ}{ε>0,δ>0}be the solution of system (2.1) and (2.2) with initial data
+Then, one has
+for all τ ≥ 0, m = 0, 1, …, 1 < p ≤ ∞, and
+for all τ ≥ 0, m = 0, 1, …, where
+for any δ > 0, and m = 0, 1, 2, …, where τ ∈ K for any compact subset K of (0, ∞).
+III. MAIN RESULTS
+In this section, we introduce the main result of the convergence of the degenerate compressible quantum Navier-Stokes-Possion equations to incompressible Euler equations. Before this, we mention the global weak solutions of degenerate compressible quantum Navier-Stokes-Poisson system and the result of global existence for the system can be provided.
+Theorem 3.1. (see Ref[16]) Let T > 0 with γ > 1, and the initial data (ϱ_{0,ε},u_{0,ε}, G_{0,ε}) satisfy
+for fixed ε > 0 and E^{ε}(ϱ_{0,ε}, u_{0,ε} + ∇ ln ϱ_{0,ε}, G_{0,ε}) < ∞ where
+Then, for any γ > 1 and any T > 0, there exists a finite energy global weak solution of (1.1)–(1.3) on [0, T] × Ω in the sense of distribution verifying the following regularity:
+Remark 3.1. As the proof of global existence of the system (1.1)–(1.3) is given in Ref[16]on the periodic domain, we can prove a global weak solution of compressible quantum Navier-Stokes-Possion equations inΩ=R^{2}×Twith the same spirit.
+Remark 3.2. The energy inequality is given by
+Before we mention the main Theorem 3.2, we assume the initial data G_{0,ε} and some notations used in Theorem 3.2: G_{0,ε} is given by
+The numbers κ, β(ε), and h(ε) are defined by
+and
+where h_{2} is defined in Theorem 2.1 and the given number p is defined in (4.12). We define the Leray projection P by
+The main result is as follows:
+Theorem 3.2. LetΩ=R^{2}×T,γ>1, and 0 < θ < 2. Assume that the condition of viscosities (1.4) holds and the quantum Navier-Stokes-Poisson system (ϱ_{ϵ}, u_{ϵ}, G_{ε}) satisfies the following initial conditions:
+where
+for a certaink>52.Then, one has
+for sufficiently small 0 < ε< 1, any compactK⊂⊂R^{2}×T, and any T < T_{*}such thatvverifies Eq. (1.7) with the initialP(u_{0}). Furthermore, the numbers κ, β(ε), and h(ε) are defined in (3.7) and (3.8).
+IV. PROOF OF THEOREM 3.2
+In this section, we are going to give a rigorous Proof of Theorem 3.2. From the regularity (3.2), it is easily shown that
+Step I. We derive the relative entropy in the version of the compressible Navier-Stokes-Poisson equations with the quantum term. From now on, we will delete δ such that Φ_{ε,δ} = Φ_{ε}, q_{ε,δ} = q_{ε}.
+Let us set
+and define the relative entropy
+where τ ∈ [0, T] and U = v + ∇ Φ_{ε}.
+Let us first adapt U as a test function to the moment equation (1.2) and then it follows that
+We also use 12|U|^{2} as a test function to the continuity equation (1.1) to deduce that
+Thus, we deduce, after adding (3.6), (4.2), and (4.3), the following inequality:
+where
+Step II. In this part, we compute the estimates of relative entropy. From (3.10)–(3.15), it is shown that
+with
+Indeed, the initial terms of A1ε can be handled as follows:
+and
+We next control the velocity terms A2ε,
+where
+while
+Indeed, the second term of the right-hand side in (4.7) together with (2.5) can be estimated as follows:
+For the first term of the right-hand side in (4.7), it follows that
+where ε< ε^{θ/2} for sufficiently small 0 < ε < 1. The third term of the right-hand side in (4.7) together with using the continuity equation (1.1) can be bounded as follows:
+The term of J2ε is also bounded by
+while
+which implies that
+and
+here we have used the regularities (1.8), (3.3), (3.4), and (4.1) and the dispersive regularity (2.5).
+Using regularity (1.8), dispersive regularity (2.5), and electronic equation (1.3), the term of J3ε can be estimated,
+Similarly, we get
+and
+Thus we get
+Let us next show that the viscosity term in A3ε vanishes. For the first term of A3ε, we use the electronic equation (1.3) and the vanishing of viscosity (1.4) to obtain
+here we have used (1.4) and (2.5). Indeed, from (1.8) and (2.4), U ∈ H^{2}(Ω) together with the Sobolev embedding, which implies that
+On the other hand, from (1.8), (2.4), (2.5), and (3.4), one has
+where a certain 1 < p and 1 < q < 2 verifying
+We will handle the pressure term and potential term A4ε,
+Next we rewrite the potential term
+while the dispersive estimate (2.1) implies that
+Furthermore, using the given Eqs. (1.1), (1.3), (2.1), and (2.2), it follows that
+Consequently, the relative entropy (4.4) arrives at
+where β is defined in (3.7) and h_{2}(ε,1,δ)<h21/p(ε,1,δ) for sufficiently h_{2}(ε, 1, δ) < 1. From the acoustic electronic wave system (2.1) and (2.2), the energy of the wave system is conserved by
+In virtue of (4.17) and Eq. (1.3), the second line of the right-hand side of (4.16) can be written as
+Denote z_{ε}=(−ε2−θΔ+1){−1}[q_{ε}]. Then making use of the result of Ref [7], we get
+for any τ ∈ [0, T). Following the electronic equation (1.3), the third term of the right-hand side in (4.18) is expressed by
+while the initial condition (3.12) implies that
+Thus summing up (4.19), (4.20), and (4.21) provides the relative entropy
+where κ is defined in (3.7).
+Finally, we need to handle the quantum potential term. From (2.4) and (2.5) together with using Eq. (1.3), we get that
+where we have used Hollder’s inequality and the Sobolev embedding H^{1}(Ω) ↪ L^{6}(Ω).
+Therefore, we have the relative entropy
+Step III. Let us apply Gronwall’s inequality to (4.24) in order to obtain
+for any τ ∈ (0, T). Note that
+We are now able to prove the local convergence of ϱ_{ϵ}u_{ϵ} as follows:
+for any compact subset K ⊂ Ω. From the dispersive estimate (2.5), we also get
+for any compact subset K ⊂ Ω.
+Consequently, using (4.25) and (4.26) together with (2.5) and passing to the limit for δ → 0, we get
+where the definition of κ, β(ε), and h(ε) are given in (3.7) and (3.8).

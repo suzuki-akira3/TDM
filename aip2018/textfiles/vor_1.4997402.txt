@@ -1,0 +1,244 @@
+Intrinsic point defects in off-stoichiometric Cu_{2}ZnSnSe_{4}: A neutron diffraction study
+This work is an experimental study of intrinsic point defects in off-stoichiometric kesterite type CZTSe by means of neutron powder diffraction. We revealed the existence of copper vacancies (V_{Cu}), various cation anti site defects (Cu_{Zn}, Zn_{Cu}, Zn_{Sn}, Sn_{Zn}, and Cu_{Zn}), as well as interstitials (Cu_{i}, Zn_{i}) in a wide range of off-stoichiometric polycrystalline powder samples synthesized by the solid state reaction. The results show that the point defects present in off-stoichiometric CZTSe agree with the off-stoichiometry type model, assuming certain cation substitutions accounting for charge balance. In addition to the known off-stoichiometry types A–H, new types (I–L) have been introduced. For the very first time, a correlation between the chemical composition of the CZTSe kesterite type phase and the occurring intrinsic point defects is presented. In addition to the off-stoichiometry type specific defects, the Cu/Zn disorder is always present in the CZTSe phase. In Cu-poor/Zn-rich CZTSe, a composition considered as the one that delivers the best photovoltaic performance, mainly copper vacancies, Zn_{Cu} and Zn_{Sn} anti sites are present. Also, this compositional region shows the lowest degree of Cu/Zn disorder.
+INTRODUCTION
+The quaternary compound semiconductor Cu_{2}ZnSnSe_{4} (CZTSe) is a promising low-cost and environmentally friendly material for photovoltaic applications [1]. It exhibits properties similar to chalcopyrite-type semiconductor materials but replaces the need for indium and gallium for cheaper and more earth crust abundant elements, such as zinc and tin. Kesterite type CZTSe fulfills the criteria for becoming an absorber layer in thin-film solar cells, for example, p-type conductivity [2], direct band gap with a value of ∼1 eV [3,4], and a high absorption coefficient (>10^{4} cm^{−1}) [5]. The record power conversion efficiency of 11.6% for CZTSe-based thin film solar cells was reported. This value has been achieved in a thin film solar cell with an off-stoichiometric CZTSe absorber layer, showing a copper poor and zinc rich composition [6]. Deviations from the stoichiometric composition lead to the formation of intrinsic point defects (vacancies, anti-sites, and interstitials) in the compound, which significantly influences the electrical and optical properties of the material [7,8]. Further studies concerning off-stoichiometry and intrinsic point defects are of great importance for the understanding and rational design of solar cell devices. Unfortunately, the current number of publications related to point defects on CZTSe kesterites is limited and in most cases, only theoretical calculations are performed [7,9,10].
+The occupation density of the different sites within the crystal structure gives insight into point defect types and concentrations. However, Cu^{+} and Zn^{2+} are isoelectronic cations which cannot be distinguished by X-ray diffraction due to their similar atomic scattering factors f. The neutron scattering lengths of Cu and Zn, b_{Cu} = 7.718(4) fm and b_{Zn} = 5.680(5) fm [11], are different. Therefore, neutron diffraction can provide a discrimination of copper and zinc in the crystal structure, making this method an invaluable tool for determination of the occupation density of the cation sites in the unit cell, and consequently, the point defect concentration and type present. Neutron diffraction has been demonstrated to be a suitable way to determine the ordering of electronically similar cations within the crystal structure. For example, the transition from the Stannite-type (space group I4¯2m) Cu_{2}FeSnS_{4} to the Kesterite-type (space group I4¯) Cu_{2}ZnSnS_{4} in the series Cu_{2}(Fe_{1−x}Zn_{x})SnS_{4} was studied by neutron diffraction applying the average neutron scattering length analysis method [12,13]. Also, the occurrence of the Cu/Zn disorder (formation of Cu_{Zn} and Zn_{Cu} anti site defects) in stoichiometric CZTS [12] as well as CZTSe has been first observed by neutron powder diffraction [14]. Later, the effect of Cu/Zn disorder on the bandgap energy in CZTSe was recognized [15], as well as the influence of Cu/Zn disorder on the bandgap fluctuations in CZTSSe [16]. It was also shown that Raman spectroscopy could be a suitable method for a qualitative investigation of the Cu/Zn disorder [17]. Most recently the temperature dependence of the Cu/Zn disorder in CZTSe was studied qualitatively and quantitatively by anomalous X-ray diffraction and an order parameter of the order/disorder transition was derived [18].
+In the case of an off-stoichiometric composition, many more point defects as those giving rise to Cu/Zn disorder can be expected in kesterite type CZTSe, which are vacancies, other anti-sites, and interstitials. In an extended study on the existence of off-stoichiometric CZTSe [19], it was clearly demonstrated that off-stoichiometric CZTSe exists also as a phase pure material, showing the ability of the CZTSe phase to tolerate deviations from the stoichiometric composition keeping the kesterite type structure. This originates from the propensity of the kesterite type structure to stabilize copper vacancies, anti-sites, and interstitials, the charge balances being commonly insured by appropriate substitutions on the cationic sites. If the oxidation states of cations and anions are retained in off-stoichiometric CZTSe, only certain substitutions can be envisioned to account for the charge balance in the off-stoichiometric material. In such compounds, the Cu/(Zn + Sn) and the Zn/Sn ratios are lower or higher than 1. The model of off-stoichiometry types, according to certain cation substitutions, was first introduced by Lafond et_al [20] proposing the types A–D in CZTS, an experimental confirmation was realized by a neutron diffraction study on an off-stoichiometric CZTSSe compound [21]. Later on, the off-stoichiometry type model was extended to the E and F type [19] as well as the G and H type [22]. The off-stoichiometry types A–H are summarized in Table I. It turns out that these off-stoichiometry types are not sufficient to describe all possible intrinsic point defects. Therefore, new off-stoichiometry types (K–L) are proposed in this paper.
+This work is intended as an experimental study of a wide range of off-stoichiometric CZTSe compounds by means of neutron powder diffraction. The aim is to reveal experimentally the existence of intrinsic cationic point defects alongside the Cu/Zn disorder within kesterite type CZTSe, using polycrystalline powder samples synthesized by the solid state reaction. The determination of the relationship between stoichiometry deviations, i. e., the cation ratios Cu/(Zn + Sn) and Zn/Sn, and the occurring point defects in CZTSe, is of prime importance because a slight deviation from stoichiometry may perturb the conversion efficiency of a solar cell. The thin film deposition methods go naturally along with local composition variations that request a high flexibility of the absorber material's crystal structure to host point defects (Fig. 1).
+EXPERIMENTAL
+Off-stoichiometric CZTSe powder samples have been synthesized by the solid state reaction of pure (5 N) elements (Cu, Zn, Sn, and Se) as previously described in Ref [19]. Phase content and atomic percentages of the elements have been determined by an electron microprobe system (JEOL-JXA 8200) equipped with a wavelength dispersive X-ray spectroscopy unit (WDX) using elemental standards for Cu, Zn, Sn, and Se. A detailed description of the chemical composition analysis is described elsewhere [19]. All samples (29 in total) exhibit a unique kesterite phase as the main phase. Secondary phases like SnSe_{2}, ZnSe, and copper selenides have been detected within few grains in most of the samples, whereas in 4 samples no secondary phases could be detected by WDX. Figure 2 presents the backscattered electron micrographs of two different samples [Cu-poor—(a), Cu-rich—(b)] containing an off-stoichiometric kesterite type phase with the following cation ratios: Cu/(Zn + Sn) = 0.816, Zn/Sn = 1.147 (a), and Cu/(Zn + Sn = 1.174, Zn/Sn = 0.777 (b).
+The cation ratios Cu/(Zn + Sn) and Zn/Sn of the CZTSe phase within all samples as deduced from the WDX analysis are plotted in Fig. 3. Furthermore, the off-stoichiometry type lines have been included in the plot according to their corresponding formulae listed in Tables I and III. Kesterite type phases are located and their chemical composition between two different off-stoichiometry types is considered as a combination of both. Type fractions and chemical composition have been calculated by linear combination [20] according to each cation ratio as well as to the corresponding off-stoichiometry substitution formulae (see Table I for A–H and Table III for the I–L types), so that the results of this calculation retain the charge balance. The formula composition, cation ratios, type fractions, and secondary phases are summarized in Table II.
+Neutron diffraction experiments have been performed at the Spallation Neutron Source (SNS, Oak Ridge National Laboratory) using the POWGEN BL-11 A powder diffractometer and at the Berlin Research Reactor (BER II) of the Helmholtz-Zentrum Berlin using the fine resolution neutron powder diffractometer FIREPOD (E9). Time of flight (T.O.F) data collected at the SNS at room temperature (300 K) used a 60 Hz frequency at two frames with center wavelengths 1.066 Å and 2.665 Å, covering a d-spacing range of 0.2760–4.6064 Å and 1.1038–9.2129 Å, respectively. The data collected at the BERII at room temperature used a wavelength of λ = 1.7982 (1) Å, covering the 2θ range up to 140° [23].
+The collected neutron diffraction data have been analyzed by a full pattern Rietveld refinement [24], using the FullProf suite software package [25]. The convolution pseudo-Voigt function with back-to-back exponential functions has been used as a peak shape function in the refinement of T.O.F. data collected at the SNS, the Thompson-Cox-Hasting pseudo-Voigt function has been applied to describe the peak shape profile of the data collected at the BER II [25]. As the starting crystal structure model for the CZTSe main phase, the kesterite type structure (space group I4¯) [14,26] with Cu on 2a: (0,0,0), Cu on 2c: (0,½,¼), Zn on 2d: (0,½,¾), Sn on 2b: (½,½,0), and Se on 8 g: (x,y,z) Wyckoff positions was selected. Refined parameters for the kesterite type structure were: lattice parameters, anion coordinates, isotropic temperature factors, and site occupancy factors. The secondary phases SnSe_{2} (space group P3¯m1), ZnSe (space group F4¯3m), CuSe (space group P6_{3}/mmc), and Cu_{2}Se (space group Fm3¯m) deduced from chemical analysis (WDX) have been included in the corresponding refinements. The Rietveld analysis has been performed without any chemical constrains. Two examples of the diffraction patterns and corresponding Rietveld analysis are shown in Fig. 4. The resulting structural parameters (lattice constants a and c and site occupancy factors of the kesterite main phase) are listed in the Appendix.
+RESULTS AND DISCUSSION
+New off-stoichiometry types are proposed covering especially Cu-rich/Sn-poor kesterites and types with Sn_{Cu} related anti sites. By keeping the composition of zinc constant, the cation substitution Sn^{4+}→ Cu^{+}_{Sn}+ 3Cu^{+}_{i} in the Cu-rich/Sn-poor region (I-type) and 4Cu^{+}→ Sn^{4+}_{Cu}+ 3 V_{Cu} in the Cu-poor/Sn-rich region (J-type) are proposed. Furthermore, when the Zn/Sn ratio remains equal to one, two more substitution reactions can be introduced: in the Cu-rich region Zn^{2+} +Sn^{4+} → Cu^{+}_{Zn} + Cu^{+}_{Sn} + 4Cu^{+}_{i} (K-type) and 6Cu^{+} → Zn^{2+}_{Cu}+ Sn^{4+}_{Cu}+4V_{Cu} (L-type) in the Cu-poor region. A summary of these newly proposed cation substitutions is presented in Table III.
+The average neutron scattering length analysis method [13] has been applied to determine neutron scattering length densities in the unit cell from which the cation distribution within the four crystallographic Wyckoff positions 2a, 2c, 2d, and 2b of the kesterite type structure is deduced. The experimental average neutron scattering length (b¯{exp}) has been calculated for each crystallographic site according to Eq. (1) using the neutron scattering lengths of the expected cation according to the kesterite type structure model (b_{Cu} = 7.718 fm, b_{Zn} = 5.680 fm, and b_{Sn} = 6.225 fm [11])
+SOF is the site occupancy factor of the Wyckoff positions 2a, 2c, 2d, and 2b extracted from the Rietveld analysis. The cation distribution model which has to be introduced is based on the calculated average neutron scattering length (b¯{calc}) [Eq. (2)]. Here it is assumed, that each site can be occupied by more than one cation (formation of anti sites) or that cations are missing (formation of vacancies)
+Here j represents the Wyckoff position 2a, 2c, 2d or 2b; X, Y, and Z are cation species fractions (Cu, Zn, and/or Sn); and b is the element specific neutron scattering length. The sum of a cation species on the different cation sites should be in good agreement with the chemical composition of the phase determined by WDX analysis. Additionally, the sum of the species fractions on one site (cations and vacancies) should be equal to one (X + Y + Z + V = 1; V stands for vacancies), which corresponds to an occupancy of 100% for the corresponding site.
+In the case of an excess of a cation species, i.e., the sum of a cation species distributed at the cation sites exceeds the amount determined by WDX, interstitials are assumed.
+In order to build a reasonable cation distribution model, the experimental (b¯{exp}) and calculated (b¯{calc}) average neutron scattering lengths are compared, minimizing the difference b¯{exp}−b¯{calc}. At least the value of the calculated average neutron scattering length has to be located within the error of the corresponding experimental average neutron scattering length.
+An example of the comparison between the average neutron scattering lengths b¯{exp} and b¯{calc} for a series of off-stoichiometric kesterite type CZTSe phases is shown in Fig. 5. Each of them represents a different mixture of off-stoichiometry types: Cu_{1.74}Zn_{1.141}Sn_{0.994}Se_{4} (84% A-type 16% B-type), Cu_{1.859}Zn_{1.111}Sn_{0.980}Se_{4} (63%B-type 37% A-type), Cu_{2.055}Zn_{1.045}Sn_{0.964}Se_{4} (33% G-type 67% F-type), and Cu_{2.181}Zn_{0.814}Sn_{1.048}Se_{4} (81% C-type 19% D-type). In the case of the Cu-poor/Zn-rich kesterite phase (A-B-type mixtures), it is observed that the experimental average neutron scattering lengths of the 2a and 2c positions are significantly lower than the value expected on these sites according to the kesterite type structure (b_{Cu} = 7.718 fm), whereas on the 2d position, the value is slightly higher than the expected neutron scattering length on this site (b_{Zn} = 5.680 fm). Such scattering length differences can be explained by the formation of intrinsic point defects. For instance, copper vacancies (V_{Cu}) and/or zinc on copper anti-site defects (Zn_{Cu}) would decrease the average neutron scattering length of a crystallographic site because b_{Zn} = 5.680 fm < b_{Cu} = 7.718 fm, likewise the copper on the zinc anti-site defect (Cu_{Zn}) would lead to an increase of the average neutron scattering length of a site. For an A-type CZTSe, the formation of copper vacancies (V_{Cu}) for a B-type CZTSe the formation of zinc on tin anti sites (Zn_{Sn}) can be expected (see Table I). The Zn on the copper anti site defect (Zn_{Cu}) will occur in both types. The observed variation of the experimental average neutron scattering length for the CZTSe phase showing an A-B-type mixture can be explained by the formation of these three point defects. In the case of the both Cu-rich kesterite phases shown in Fig. 5 (33% G-type and 81% C-type, respectively) it is observed that the experimental average neutron scattering length of the 2a site corresponds to the neutron scattering length of copper. Thus it can be concluded, that the 2a site is exclusively occupied by copper, which is in agreement with the kesterite type structure. Nevertheless the experimental average neutron scattering length of the 2d site is increased in comparison to the neutron scattering length of zinc (in the kesterite type structure zinc occupies the 2d position). Such an increase can be due to the formation of copper on zinc anti sites (Cu_{Zn}) as described above, but also by the formation of tin on zinc anti sites (Sn_{Zn}). The latter have to be taken into account for C-type CZTSe phases (see Table I). The observed variation of the experimental average neutron scattering length for the CZTSe phase showing a C-D-type mixture can be explained by the formation of the point defects Cu_{Zn}, Sn_{Zn}, and Zn_{Cu}. Nevertheless in a C-D-type mixture, the occurrence of a Zn_{Cu} anti site defect is not expected (see Table I). Thus it can be assumed, that this defect is connected to the Cu/Zn disorder, a part of the obtained Cu_{Zn} and all of the Zn_{Cu} anti sites would give rise to this disorder effect. The same can be concluded for the A-B-type mixture discussed above. On the other hand in a G-F-type mixture both the Cu_{Zn} and Sn_{Zn} anti site defects are not expected (see Table I). Thus the observed increase of the experimental average neutron scattering length of the 2d site can only be due to Cu/Zn disorder. The connected Cu_{Zn} anti site defect would explain the increase of the experimental average neutron scattering length of the 2d site as well as the Zn_{Cu} anti site defect the observed decrease of the experimental average neutron scattering length of the 2c site. The G- and F-type specific point defect, the Zn_{Sn} anti site, gives rise to the small decrease of the experimental average neutron scattering length of the 2b site.
+The cation distribution model for all off-stoichiometric CZTSe phases was deduced by this method, applying the same principles. The occurring intrinsic point defects can then be derived from the cation distribution model.
+The resulting cation distributions (i. e. cation distribution model) for the kesterite phase of these four off-stoichiometric CZTSe phases are shown in Fig. 6 as an example. The Cu-poor/Zn-rich phase Cu_{1.74}Zn_{1.141}Sn_{0.994}Se_{4} with cation ratios Cu/(Zn + Sn) = 0.816, Zn/Sn = 1.147 (84% A-type and 16% B-type), discussed above, are represented in Fig. 6(a). Copper vacancies (V_{Cu}) have been observed on both copper sites (2a and 2c), additional zinc on copper and copper on zinc antisite defects (Zn_{Cu} and Cu_{Zn}) were observed. The 2b site is exclusively occupied by tin. These point defects, derived from the cation distribution model, are in agreement with the defects expected in an A-B-type mixture, where the A-type is dominating. In addition to the off-stoichiometry type specific defect, the Cu/Zn disorder is present.
+The Cu-rich/Zn-poor kesterite phase Cu_{2.181}Zn_{0.814}Sn_{1.048}Se_{4} with cation ratios Cu/(Zn + Sn) = 1.174, Zn/Sn= 0.777 (81% C-type and D-type 19%), discussed above, is presented in Fig. 6(d). In this case, copper completely fills the 2a site, and Zn_{Cu} and Cu_{Zn} anti site defects are present on the 2c and 2d sites, respectively. They form the Cu/Zn disorder, but the Cu_{Zn} anti site defects are proportionally involved in the formation of the type specific defect (C- und D-type). Additionally, the presence of tin on the zinc anti site defect (Sn_{Zn}) has been observed on the 2d site, whereas the 2b site is exclusively occupied by tin. Thus the excess of tin in this Sn-rich kesterite phase gives rise to an anti site formation (Sn_{Zn}). On the other hand, the excess of copper results in the formation of copper interstitials (Cu_{i}) deduced from the extant copper, which cannot be distributed to the cation sites.
+Figure 6(c) shows the cation distribution model of a slightly Cu-rich/Zn-rich CZTSe phase (Cu_{2.055}Zn_{1.045}Sn_{0.964}Se_{4}) representing a G-F-type mixture (cation ratios Cu/(Zn + Sn) = 1.023 and Zn/Sn = 1.085). The tin deficit leads here to the formation of Zn_{Sn} anti sites. The observed Cu_{Zn} and Zn_{Cu} anti sites form the Cu/Zn disorder.
+The experimentally deduced point defects are in good agreement with the proposed off-stoichiometry type related defects listed in Table I. Due to the fact that the kesterite phase is a mixture of two different off-stoichiometry types, the influences of defects corresponding to both types have been observed. Moreover, the Cu/Zn disorder (anti site defects Zn_{Cu} and Cu_{Zn} on the 2c and 2d sites, respectively), have been observed within all off-stoichiometric kesterite type phases. The occurrence of such a Cu/Zn disorder is consistent with previous publications on stoichiometric CZTS and CZTSe as well as off-stoichiometric CZTSSe [12,14–16,21].
+Intrinsic point defect concentrations have been deduced using the corresponding unit cell volume calculated from the lattice parameters obtained by the Rietveld analysis (see Fig. 7). Copper vacancies have been observed only in Cu-poor CZTSe representing A-B-type mixtures. Kesterite phases with cation ratios close to the A-type, where the A-type is dominating, showed copper vacancies on both the 2a and 2c position. In case both types are balanced, copper vacancies occur only on the 2c site.
+Copper interstitials (Cu_{i}) already occur in off-stoichiometric CZTSe with Cu/(Zn + Sn)∼1. Their concentration increases as the Cu/(Zn + Zn) ratio increases. Off-stoichiometry type related zinc on copper anti site defects (Zn_{Cu}) have been observed within the Cu-poor region, and the copper on zinc anti site defects (Cu_{Zn}) in the Cu-rich region [see Fig. 7(b)], in addition to the Cu/Zn disorder [see Fig. 7(f)]. These anti site defects as well as copper vacancies and copper interstitials are strongly correlated with the Cu/(Zn + Sn) ratio of the kesterite type phase. The same behavior is observed for the tin on zinc (Sn_{Zn}) and zinc on tin (Zn_{Sn}) anti site defects [Fig. 7(c)] but in this case, a correlation with the Zn/Sn cation ratio of the kesterite type phase is observed.
+Zinc interstitials (Zn_{i}) are present within the zinc-rich region and depend on the Zn/Sn cation ratio [see Fig. 7(d)]. Zinc vacancies are expected in the zinc-poor region (E- and H-type), but so far no off-stoichiometric CZTSe has been obtained within this compositional region. Some off-stoichiometric kesterite type CZTSe phases within the Cu-rich/Sn-poor compositional region have been obtained. In fact copper on tin anti site defects (Cu_{Sn}) were observed in off-stoichiometric kesterite phases where the D-type is dominating [see Fig. 7(e)]. Also, no off-stoichiometric kesterite type CZTSe phases have been obtained in the Cu-poor/Sn-rich compositional region, therefore tin on copper (Sn_{Cu}) anti site defects have not been detected yet.
+Furthermore, the Cu/Zn disorder which refers to the 2c and 2d Wyckoff positions (lattice planes at z = ¼ and ¾) has been detected within all off-stoichiometric kesterite phases [see Fig. 7(f)]. It has to be noticed that it should be distinct between Zn_{Cu} and Cu_{Zn} type specific defects [Fig. 7(b)] and Cu/Zn disorder [Fig. 7(f)]. In comparison to the type specific defects, the disorder seems to be less influenced by the chemical composition. However, it has been observed that the off-stoichiometric kesterite type phases with a chemical composition close to the A-type line exhibit the lowest degree of disorder [see Fig. 8(a)]. In general, it should be mentioned that the concentration of Cu_{Zn} and Zn_{Cu} anti sites correlated to the Cu/Zn disorder have been found to be an order of magnitude higher (10^{20}–10^{21} cm^{−3}) when compared with the type specific defects, where the defect concentrations are rarely increased to more than 10^{18} cm^{−3}. The concentration of intrinsic point defects can be found as the Appendix .
+The tetragonal deformation (ratio of the lattice parameters, c/2a) is always <1 for all observed kesterite type phases. A slight trend in the variation of the tetragonal deformation with the cation ratios can be observed [see Fig. 8(b)].
+CONCLUSION
+The results of a neutron powder diffraction based study of intrinsic point defects in off-stoichiometric Kesterite type CZTSe have been presented. The method of the average neutron scattering length analysis was applied to create a cation distribution model, which was used to reveal the occurring instrinsic point defects in the material. The occurrence of the corresponding off-stoichiometry type specific point defects could be experimentally proven. Based on these results it is now possible to make an assumption on the intrinsic point defects present from the chemical composition (cation ratios) of the kesterite phase. Thin film solar cell devices with reasonable efficiencies reported in literature [27,28] show a Cu-poor/Zn-rich composition of the kesterite phase close to the off-stoichiometry type A. The dominating point defects in this compositional region (A-B-type mixtures) are copper vacancies (V_{Cu}) and Zn_{Cu} anti sites, both exhibiting shallow levels in the bandgap [7]. According to Chen et_al, these defects could form neutral defect clusters. Nevertheless, in case the B-type line is crossed (B-G-type mixtures), the kesterite phase is still Cu-poor/Zn-rich, but Zn_{Sn} anti site defects and zinc interstitials (Zn_{i}) will occur additionally. The latter is especially connected with deep levels in the bandgap [7], which may act as traps. In this case, fine tuning of the Sn content can be used to adjust the cation ratios accordingly so that the kesterite phase will become an A-B-type mixture. Larramona et_al [29] have shown that by this approach the number of traps within the CZTSe active layer can be reduced, resulting in a significant increase in device efficiencies. In a recent study [30], it was suggested that the crystalline disorder present in the bulk of the absorber material could induce bandgap fluctuations and band tailing, which could explain a significant part of the observed V_{OC} deficit. Due to the correlation between the Cu/Zn disorder and the photoluminescence (PL) emission shift [18] showing that with the increasing disorder, the PL emission will shift further away from the (average) bandgap, which gives rise to the reduction of the maximal achievable open circuit voltage. The presented study shows the Cu/Zn disorder present in all compositional regions of off-stoichiometric kesterite type CZTSe. The lowest degree of the Cu/Zn disorder was observed in the Cu-poor/Zn-rich region (A-B-type mixture), which would support the observation of the highest device efficiencies reported here.
+For the first time, a correlation between the cation ratios of the CZTSe kesterite type phase and occurring intrinsic point defects were clearly demonstrated. Further progress in CZTSSe based thin film devices could be inspired by these correlations showing dangerous compositional regions, even in the advantageous Cu-poor/Zn-rich range.
+APPENDIX: STRUCTURAL PARAMETERS AND INTRINSIC POINT DEFECTS CONCENTRATIONS WITHIN THE KESTERITE PHASE FOR OFF-STOICHIOMETRIC CZTSE
+TABLE I. 
+Cation substitutions leading to the off-stoichiometry types A–H. The cation substitution reaction, expected defect complex, and corresponding chemical formulae are given for CZTSe.
+TABLE II. 
+Overview of synthesized CZTSe samples: cation ratios Cu/(Zn + Sn) and Zn/Sn as well as occurring secondary phases have been obtained with WDX spectroscopy, chemical formula, off-stoichiometry type as well as fraction of types (obtained by the procedure described in Ref [2]).
+TABLE III. 
+Cation substitution leading to the off-stoichiometry types I–L, the according defect complexes, and corresponding chemical formulae of the quaternary compound.
+TABLE IV. 
+Sample overview of lattice parameters, cell volume, tetragonal deformation, and site occupation extracted from Rietveld refinement.
+TABLE V. 
+Intrinsic point defect concentrations within the kesterite phase (cm^{−3}).
+TABLE VI. 
+Intrinsic point defect concentrations within the kesterite phase (cm^{−3}).
+TABLE VII. 
+Cu/Zn disorder: Cu_{Zn} and Zn_{Cu} antisite defect concentrations within the kesterite phase (cm^{−3}).
+TABLE I. -body
+Type	Composition	Cation substitution reaction	Intrinsic point defects	Formulae	Reference
+A	Cu-poor/Zn-rich/Sn-const.	2 Cu^{+} → Zn^{2+}	V_{Cu} + Zn^{2+}_{Cu}	Cu_{2-2x}Zn_{1+x}SnSe_{4}	 [20]
+B	Cu-poor/Zn-rich/Sn-poor	2 Cu^{+} + Sn^{4+} → 3Zn^{2+}	2 Zn^{2+}_{Cu} + Zn^{2+}_{Sn}	Cu_{2-2x}Zn_{1 + 3x}Sn_{1−x}Se_{4}	 [20]
+C	Cu-rich/Zn-poor/Sn-rich	3 Zn^{2+} → 2 Cu^{+} + Sn^{4+}	2 Cu^{+}_{Zn} + Sn^{4+}_{Zn}	Cu_{2 + 2x}Zn_{1-3x}Sn_{1+x}Se_{4}	 [20]
+D	Cu-rich/Zn-poor/Sn-const.	Zn^{2+} → 2Cu^{+}	Cu^{+}_{Zn} + Cu^{+}_{i}	Cu_{2 + 2m}Zn_{1-m}SnSe_{4}	 [20]
+E	Cu-poor/Zn-poor/Sn-rich	2Cu^{+} + Zn ^{2+}→ Sn^{4+}	2V_{Cu}+Sn^{4+}_{Zn} or Sn^{4+}_{Cu}+V_{Cu}+V_{Zn}	Cu_{2-2x}Zn_{1−x}Sn_{1+x}Se_{4}	 [19]
+F	Cu-rich/Zn-rich/Sn-poor	Sn^{4+}→ Zn^{2+} + 2Cu^{+}	Zn^{2+}_{Sn} + 2Cu^{+}_{i} or Cu^{+}_{Sn} + Cu^{+}_{i} + Zn^{2+}_{i}	Cu_{2(2-x)}Zn_{2-x}Sn_{x}Se_{4}	 [19]
+G	Zn-rich/Sn-poor/Cu-const.	Sn^{4+}→ 2 Zn^{2+}	Zn^{2+}_{Sn} + Zn^{2+}_{i}	Cu_{2}Zn_{1 + 2x}Sn_{1−x}Se_{4}	 [22]
+H	Zn-poor/Sn-rich/Cu-const.	2 Zn^{2+} → Sn^{4+}	Sn^{4+}_{Zn} + V_{Zn}	Cu_{2} Zn_{1-2x}Sn_{1+x}Se_{4}	 [22]
+TABLE II. -body
+Cu/(Zn + Sn)	Zn/Sn	Type	(%)	Type	(%)	Cu	Zn	Sn	Se	Secondary phases
+A–B type kesterites
+0.911	1.127	A	24	B	76	1.892	1.101	0.977	4	
+0.833	1.129	A	88	B	12	1.766	1.125	0.996	4	Zn_{0.96}(Cu_{0.04})Se; Sn_{0.96}(Cu_{0.03}Zn_{0.01})Se_{2}
+0.816	1.147	A	84	B	16	1.74	1.141	0.994	4	Sn_{0.92}(Cu_{0.05}Zn_{0.03})Se_{2}
+0.967	1.045	A	25	B	75	1.961	1.036	0.992	4	-
+0.854	1.189	A	35	B	65	1.81	1.154	0.971	4	(Zn_{0.787}Cu_{0.142}Sn_{0.071})Se (Sn_{0.940}Cu_{0.036}Zn_{0.023})Se_{2}
+0.846	1.192	A	38	B	62	1.797	1.158	0.971	4	(Zn_{0.8}Cu_{0.1}Sn_{0.1})Se; (Sn_{0.94}Cu_{0.04}Zn_{0.02})Se_{2}
+0.950	1.099	A	3	B	97	1.947	1.073	0.977	4	CuSe
+0.920	1.113	A	25	B	75	1.902	1.09	0.979	4	(Zn_{0.8}Cu_{0.1}Sn_{0.1})Se; (Sn_{0.92}Cu_{0.05}Zn_{0.03})Se_{2}
+0.890	1.134	A	37	B	63	1.859	1.111	0.98	4	(Zn_{0.91}Cu_{0.07}Sn_{0.02})Se
+B–G type kesterites
+0.978	1.077	B	40	G	60	1.985	1.052	0.978	4	-
+0.979	1.075	B	36	G	64	1.987	1.051	0.978	4	(Cu_{0.99}Zn_{0.01}) Se
+0.959	1.120	B	59	G	41	1.965	1.083	0.967	4	(Cu_{0.99}Zn_{0.01})Se; (Zn_{0.8}Cu_{0.1}Sn_{0.1})Se; (Cu_{1.99}Zn_{0.01})Se
+0.972	1.114	B	28	G	72	1.985	1.076	0.966	4	(Cu_{1.99}Zn_{0.01})Se; (Cu_{0.8}Zn_{0.1}Sn_{0.1})Se
+0.939	1.214	B	44	G	56	1.955	1.141	0.940	4	(Cu_{0.99}Zn_{0.01})Se; (Zn_{0.8}Cu_{0.1}Sn_{0.1})Se
+0.945	1.149	B	69	G	31	1.951	1.103	0.9606	4	-
+0.910	1.222	B	85	G	15	1.911	1.155	0.945	4	(Zn_{0.8}Cu_{0.1}Sn_{0.1})Se
+G–F type kesterites
+0.998	1.042	G	82	F	18	2.007	1.026	0.985	4	(Cu_{0.99}Zn_{0.01})Se; (Zn_{0.94}Cu_{0.05}Sn_{0.01})Se
+1.000	1.046	G	75	F	25	2.011	1.028	0.983	4	(Zn_{0.95}Cu_{0.04}Sn_{0.01})Se; (Cu_{0.98}Zn_{0.02})Se
+1.008	1.100	G	62	F	38	2.036	1.058	0.962	4	(Cu_{0.98}Zn_{0.01}Sn_{0.01})Se
+1.007	1.061	G	57	F	43	2.025	1.036	0.976	4	(Cu_{1.99}Zn_{0.01})Se
+1.023	1.085	G	33	F	67	2.055	1.045	0.964	4	(Cu_{1.99}Zn_{0.01})Se; (Cu_{0.99}Zn_{0.01})Se
+0.996	1.132	G	80	F	20	2.024	1.080	0.954	4	(Cu_{0.93}Zn_{0.04}Sn_{0.03})Se; (Cu_{1.98}Zn_{0.02})Se
+F–I type kesterites
+1.014	1.017	F	85	I	15	2.025	1.0073	0.9902	4	(Cu_{1.99}Zn_{0.01})Se; (Zn_{0.95}Cu_{0.05})Se; (Cu_{0.95}Zn_{0.01}Sn_{0.04})Se
+K–D type kesterites
+1.027	0.995	K	73	D	27	2.039	0.990	0.995	4	(Zn_{0.93}Cu_{0.05}Sn_{0.02})Se; (Cu_{0.99}Zn_{0.01})Se; (Cu_{1.99}Zn_{0.01}) Se
+1.100	0.961	K	40	D	60	2.136	0.952	0.990	4	(Cu_{1.99}Zn_{0.01})Se; (Cu_{0.99}Zn_{0.01})Se
+1.145	0.910	K	2	D	98	2.186	0.909	0.999	4	(Cu_{1.99}Zn_{0.01})Se
+D–C type kesterites
+1.103	0.883	D	33	C	67	2.117	0.901	1.02	4	(Cu_{1.99}Zn_{0.01})Se; (Cu_{0.8}Zn_{0.1}Sn_{0.1})Se
+1.088	0.871	D	14	C	86	2.093	0.896	1.029	4	(Cu_{0.99}Zn_{0.01})Se
+1.174	0.777	D	19	C	81	2.181	0.814	1.048	4	(Cu_{0.99}Zn_{0.01})Se
+TABLE III. -body
+Type	Composition	Cation substitution reaction	Intrinsic point defects	Formulae
+I	Cu-rich/Sn-poor/Zn-const.	Sn^{4+}→ 4 Cu^{+}	Cu^{+}_{Sn}+ 3Cu^{+}_{i}	Cu_{2(1 + 2x)}ZnSn_{1−x}Se_{4}
+J	Cu-poor/Sn-rich/Zn-const.	4Cu^{+}→ Sn^{4+}	Sn^{4+}_{Cu}+ 3V_{Cu}	Cu_{2-2x}ZnSn_{1 + 0.5x}Se_{4}
+K	Cu-rich - Zn/Sn = 1 = const.	Zn^{2+} +Sn^{4+} → 6 Cu^{+}	Cu^{+}_{Zn} + Cu^{+}_{Sn} + 4Cu^{+}_{i}	Cu_{2 + 6x}Zn_{1−x} Sn_{1−x}Se_{4}
+L	Cu-poor - Zn/Sn = 1 = const.	6 Cu^{+} → Zn^{2+} +Sn^{4+}	Zn^{2+}_{Cu}+ Sn^{4+}_{Cu}+4V_{Cu}	Cu_{2-2x}Zn_{1 + 1/3x}Sn_{1 + 1/3x}Se_{4}
+TABLE IV. -body
+Cation ratios	Lattice parameters	Cell volume	Site occupation factor (SOF)
+Cu/(Zn+Sn)	Zn/Sn	a (Å^{3})	c (Å^{3})	c/2a	Å^{3}	2a	Error	2c	Error	2d	Error	2b	Error
+A–B type kesterites
+0.911	1.127	5.699	11.344	0.9953	367.992	1.028	30	0.96	47	1.069	62	1.002	33
+0.833	1.129	5.697	11.337	0.9950	367.364	0.976	38	0.905	27	1.02	36	1.005	40
+0.816	1.147	5.693	11.33	0.9951	367.260	0.931	32	0.875	33	1.005	43	0.984	36
+0.967	1.045	5.701	11.362	0.9965	368.301	0.985	23	0.943	33	1.036	37	0.996	25
+0.854	1.189	5.699	11.357	0.9964	368.532	0.997	29	0.888	42	1.019	49	0.987	30
+0.846	1.192	5.7	11.358	0.9963	368.529	1.007	26	0.893	41	1.068	55	0.987	30
+0.95	1.099	5.701	11.353	0.9957	368.440	1.013	32	0.852	42	1.131	56	1.024	37
+0.92	1.113	5.699	11.345	0.9954	367.966	1.024	42	0.963	52	1.061	67	0.969	47
+0.89	1.134	5.699	11.343	0.9952	367.266	0.946	32	0.898	37	1.068	49	1.005	36
+B–G type kesterites
+0.978	1.077	5.701	11.354	0.9958	368.640	1.008	26	0.983	33	0.989	32	1.005	26
+0.979	1.075	5.697	11.353	0.9964	367.441	1.014	23	0.935	38	1.083	48	0.97	29
+0.959	1.12	5.698	11.355	0.9964	367.917	0.999	28	0.926	49	1.101	65	0.98	31
+0.972	1.114	5.7	11.357	0.9962	367.674	0.994	25	0.941	33	1.04	38	0.979	25
+0.939	1.214	5.697	11.354	0.9965	367.670	1.006	25	0.989	33	1.015	37	1.008	27
+0.945	1.149	5.698	11.352	0.9961	367.191	1.003	39	0.941	44	1.068	62	1.003	44
+0.910	1.222	5.696	11.352	0.9965	366.987	1.014	34	0.956	44	1.004	48	1.002	34
+G–F type kesterite
+0.998	1.042	5.696	11.354	0.9967	367.860	0.976	32	0.95	36	1.095	47	1.044	44
+1	1.046	5.697	11.339	0.9952	368.030	0.947	37	0.893	42	1.088	55	1.013	42
+1.008	1.1	5.696	11.336	0.9951	367.432	0.963	23	0.919	37	1.048	42	1.008	23
+1.007	1.061	5.703	11.356	0.9956	368.646	0.987	28	0.952	25	1.047	34	1.005	33
+1.023	1.085	5.698	11.353	0.9962	367.940	1.020	33	0.964	30	1.015	34	1.004	28
+0.996	1.132	5.697	11.353	0.9964	367.891	0.997	22	0.956	30	1.078	35	0.985	23
+F–I type kesterites
+1.014	1.017	5.698	11.354	0.9963	367.622	1.002	26	0.957	40	1.046	48	1.012	28
+K–D type kesterites
+1.027	0.995	5.697	11.353	0.9964	367.776	0.98	30	0.96	46	1.089	50	0.989	31
+1.1	0.961	5.696	11.348	0.9961	367.429	1.011	27	0.949	26	1.065	39	0.993	33
+1.145	0.91	5.688	11.340	0.9968	366.948	0.997	21	0.961	29	1.03	31	0.977	24
+C–D type kesterites
+1.103	0.883	5.692	11.349	0.9969	366.818	0.999	22	0.926	34	1.103	43	0.997	24
+1.088	0.871	5.698	11.362	0.9970	368.348	0.992	20	0.973	27	1.052	29	1.019	30
+1.174	0.777	5.696	11.358	0.9970	368.309	0.989	28	0.929	38	1.123	53	1.002	34
+TABLE V. -body
+Cation ratio	Copper vacancies (V_{Cu})a	Zinc on copper antisite (Zn_{Cu})	Zinc on tin antisite (Zn_{Sn})	Zinc interstitials (Zn_{i})
+Cu/(Zn+Sn)		Defects/cm^{3} × 10^{20}	Error+ × 10^{19}	Error− × 10^{19}	Defects/cm^{3} × 10^{20}	Error+ × 10^{19}	Error− × 10^{19}	Defects/cm^{3} × 10^{20}	Error+ × 10^{19}	Error− × 10^{19}	Defects/cm^{3} × 10^{20}	Error × 10^{19}
+A–B type kesterites
+0.911		0.815	5.285	0.755	2.120	17.97	3.888	0.625	1.440	1.128		
+0.833		2.809	15.36	5.749	3.294	10.50	8.744					
+0.816		3.404	9.037	16.12	3.676	11.00	15.17					
+0.967		0.299	0.492	1.030	0.760	2.009	3.083	0.217	0.293	0.383		
+0.854		1.791	3.243	4.673	3.392	10.93	18.15	0.787	0.957	1.982		
+0.846		2.008	11.47	1.238	3.500	25.50	6.421	0.787	0.957	1.982		
+0.95					1.357	3.899	9.262	0.624	2.449	0.427		
+0.92		0.788	5.452	0.874	1.875	16.26	4.922	0.571	0.669	2.670		
+0.89		1.361	6.539	2.077	2.478	20.34	5.038	0.545	0.534	1.907		
+B–G type kesterites
+0.978					0.412	1.059	1.768	0.608	1.247	0.720	0.402	2.713
+0.979					0.362	1.468	1.507	0.609	0.036	2.155	0.427	2.722
+0.959					0.940	5.465	4.504	0.894	0.773	2.679	0.424	2.718
+0.972					0.419	0.845	1.976	0.928	0.403	2.483	0.718	2.720
+0.939					1.221	4.089	7.332	1.618	4.151	2.699	1.009	2.720
+0.945					1.340	3.267	12.27	1.073	3.904	1.707	0.406	2.723
+0.910					2.431	3.390	16.57	1.499	3.341	0.950	0.286	2.725
+G–F type kesterites
+0.998								0.405	0.915	0.446	0.307	2.718
+1.000								0.457	1.377	1.123	0.304	2.717
+1.008								1.040	5.912	0.003	0.544	2.722
+1.007								0.657	1.523	1.174	0.312	2.713
+1.023								0.992	0.691	2.149	0.245	2.718
+0.996								1.245	2.791	1.549	0.919	2.718
+F–I type kesterites
+1.014											0.190	2.720
+^{a} Sum of copper vacancies on 2a and 2c sites.
+TABLE VI. -body
+Cation ratio	Tin on zinc antisite (Sn_{Zn})	Copper on zinc antisite (Cu_{Zn})	Copper on tin antisite (Cu_{Sn})	Copper interstitials (Cu_{i})
+Cu/(Zn+Sn)	Defects/cm^{3} × 10^{20}	Error+ × 10^{19}	Error−×10^{19}	Defects/cm^{3} × 10^{20}	Error+ × 10^{19}	Error− × 10^{19}	Defects/cm^{3} × 10^{20}	Error+ × 10^{19}	Error− × 10^{19}	Defects/cm^{3} × 10^{20}	Error × 10^{19}
+G–F type kesterites
+0.998										0.196	2.718
+1.000										0.307	2.717
+1.008										0.991	2.722
+1.007										0.689	2.713
+1.023										1.498	2.718
+0.996										0.655	2.718
+F–I type kesterites
+1.014							0.272	0.298	0.752	0.408	2.720
+K–D type kesterites
+1.027				0.261	0.917	1.239	0.133	0.322	0.142	0.658	2.719
+1.1				1.320	2.890	5.310	0.267	0.393	0.703	2.123	2.722
+1.145				2.483	2.132	12.57	0.022	0.001	0.064	2.551	2.725
+D–C type kesterites
+1.103	0.545	1.362	1.301	2.154	5.786	10.52				1.038	2.726
+1.088	0.787	0.679	1.915	2.036	4.532	6.564				0.491	2.715
+1.174	1.303	5.038	2.809	3.747	14.61	21.63				1.172	2.715
+TABLE VII. -body
+Cation ratio	Cu 2c and Zn 2d disorder defect
+Cu/(Zn+Sn)	Zn/Sn		Defects/cm^{3} × 10^{20}	Error+ × 10^{19}	Error− × 10^{19}
+A–B type kesterites
+0.911	1.127	2.717	14.84	4.303
+0.833	1.129	1.361	2.942	2.624
+0.816	1.147	1.361	2.325	4.326
+0.967	1.045	2.769	5.726	5.914
+0.854	1.189	2.713	4.950	10.15
+0.846	1.192	3.283	14.84	5.672
+0.950	1.099	10.42	29.14	37.17
+0.920	1.113	2.718	14.22	6.465
+0.890	1.134	4.084	16.98	5.294
+B–G type kesterite
+0.978	1.077	1.356	0.2358	4.695
+0.979	1.075	5.443	18.31	11.37
+0.959	1.120	6.795	29.45	20.73
+0.972	1.114	4.624	4.466	15.49
+0.939	1.214	3.182	1.811	15.54
+0.945	1.149	7.625	18.42	29.22
+0.910	1.222	5.995	3.767	24.84
+G–F type kesterites
+0.998	1.042	2.718	2.489	8.937
+1.000	1.046	5.135	18.14	18.03
+1.008	1.100	4.899	21.54	4.615
+1.007	1.061	5.425	2.779	18.18
+1.023	1.085	5.436	12.73	8.880
+0.996	1.132	2.718	2.026	8.473
+F–I type kesterites
+1.014	1.017	5.440	2.469	13.94
+K–D type kesterites
+1.027	0.995	4.079	11.52	13.66
+1.100	0.961	5.198	10.20	10.66
+1.145	0.910	2.180	1.872	7.887
+C–D type kesterites
+1.103	0.883	5.452	5.391	23.22
+1.088	0.871	2.734	5.611	5.783
+1.174	0.777	4.073	2.077	21.81
+FIG. 1. 
+Kesterite type structure (space group I4¯) [14] with copper in red, zinc in blue, tin in black, and the yellow spheres as the anion selenium.
+FIG. 2. 
+Backscattered electron micrographs of off-stoichiometric CZTSe with the cation ratio: (a) Cu/(Zn + Sn) = 0.816, Zn/Sn = 1.147 (Cu-poor) and (b) Cu/(Zn + Sn = 1.174, Zn/Sn = 0.777 (Cu-rich). The grey grains are attributed to CZTSe. The black background is the epoxy matrix.
+FIG. 3. 
+(a) Cation ratio plot for the off-stoichiometric CZTSe phase (each point represents one sample) and (b) phase diagram of the system Cu_{2}Se-ZnSe-SnSe_{2}. The colors indicate the occurrence of secondary phases: Cu_{2}Se and/or CuSe-blue, ZnSe-magenta, and SnSe_{2}-green, and red - single phase CZTSe. All off-stoichiometry types (A–L) are shown (lines).
+FIG. 4. 
+(a) and (b): Exemplarily Rietveld analysis of the neutron diffraction pattern (frame 1 and frame 2) collected at the Spallation Neutron Source (example: kesterite phase Cu_{1.859}Zn_{1.111}Sn_{0.980}Se_{4} and ZnSe as the secondary phase). (c) Exemplarily Rietveld analysis of a diffraction pattern collected at the Berlin Research Reactor (example: kesterite phase Cu_{2.181} Zn_{0.814} Sn_{1.048} Se_{4} and CuSe as the secondary phase) Red-observed pattern, black-calculated pattern, and blue - difference line.
+FIG. 5. 
+Comparison of experimental and calculated average neutron scattering length of the cation sites in the kesterite type structure (circles—experimental b¯{exp}, stars—calculated b¯{calc} neutron scattering lengths). The colours refer to different samples: black Cu_{1.74}Zn_{1.141}Sn_{0.994}Se_{4} (84% A-type 16% B-type), green Cu_{1.859}Zn_{1.111}Sn_{0.980}Se_{4} (63%B-type 37% A-type), orange Cu_{2.055}Zn_{1.045}Sn_{0.964}Se_{4} (33% G-type 67% F-type), and blue Cu_{2.181}Zn_{0.814}Sn_{1.048}Se_{4} (81% C-type 19% D-type).
+FIG. 6. 
+Cation distribution model and corresponding point defects (a) Cu_{1.74}Zn_{1.141}Sn_{0.994}Se_{4} (Cu-poor) A-type 84% B-type 16%, (b) Cu_{1.859}Zn_{1.111}Sn_{0.980}Se_{4} (63%B-type 37% A-type), (c) Cu_{2.055}Zn_{1.045}Sn_{0.964}Se_{4} (33% G-type 67% F-type), and (d) Cu_{2.181}Zn_{0.814}Sn_{1.048}Se_{4} (81% C-type 19% D-type) Cu_{2.181}Zn_{0.814}Sn_{1.048}Se_{4} (Cu-rich) C-type 81% D-type 19%.
+FIG. 7. 
+Concentration of intrinsic point defects (defects/cm^{3}): (a) V_{Cu} and Cu_{i}, (b) Zn_{Cu} and Cu_{Zn} anti sites in dependence of the cation ratio Cu(/Zn + Sn), (c) Sn_{Zn} and Zn_{Sn} anti sites and (d) Zn_{i} in dependence of the cation ratio Zn/Sn, (e) Cu_{Sn} and (f) Cu/Zn disorder in dependence of the cation ratio Cu(/Zn + Sn) of the kesterite type phase.
+FIG. 8. 
+(a) Degree of the Cu/Zn disorder and (b) tetragonal deformation c/2a of the kesterite phase in accordance with the cation ratios Cu/(Zn+Sn) and Zn/Sn.

@@ -1,0 +1,313 @@
+Method and strategy for predicting daily global solar radiation using one and two input variables for Indian stations
+Estimation of daily global solar radiation (GSR) for a particular location is a key parameter in modeling and designing any solar energy system. Very limited observatory stations are available to collect solar radiation data. This demands solar radiation estimation for new locations where there is no observatory station. In the present study, solar radiation models are developed for estimating daily GSR for sunny locations of India. Solar radiation data are collected for a period of three years from in situ measurements. Angstrom-Prescott linear correlation and nonlinear correlations such as quadratic, cubic, exponential, and power models are developed based on the bright sunshine duration. In this new approach, the “bright sunshine duration” is estimated by a new variable named “approximate bright sunshine duration.” The developed linear one input parameter model is applied to predict the daily GSR for five other Indian locations, namely, Allahabad, Bhopal, Chennai, Hyderabad, and Mumbai. The developed linear one input parameter model was further modified as a latitude dependent model to improve the accuracy of the model and named as the latitude model. The performance of all the models is analysed by using the statistical tools, namely, Relative Root Mean Square Error, Mean Percentage Error, and Mean Absolute Percentage Error. The latitude model resulted in fair to good estimations for Tiruchirappalli and the other five Indian locations of latitudes ranging from 10°N to 26°N. Further, other solar radiation models from the literature were considered to identify their applicability for the same selected locations. The models recommended for the selected Indian locations are presented. Out of all the universal models, the monthly mean daily GSR model of Page and out of all Indian models, the monthly mean daily GSR models of Katiyar and Mani showed satisfactory performance for the majority of selected Indian locations.
+NOMENCLATURE
+GSR	Global solar radiation
+h	Altitude of the location (m)
+H	Daily global solar radiation (kWh/m^{2})
+H_{b}	Monthly mean daily beam radiation on a horizontal surface
+H_{d}	Monthly mean daily diffuse radiation on a horizontal surface
+H_{i,e}	ith measurement estimated value
+H_{i,m}	ith measurement measured value
+H_{p}	Diffuse reflectance from the ground
+H_{T}	GSR on the tilted surface
+H_{o}	Maximum possible daily global solar radiation (kWh/m^{2})
+I_{sc}	Solar constant (W/m^{2})
+MAPE	Mean absolute percentage error
+MPE	Mean percentage error
+n	Day in a year
+NASA	National Aeronautics and Space Administration
+p	Number of measurements
+R_{b}	Ratio of mean daily beam radiation on the tilted surface to that on a horizontal surface
+RRMSE	Relative root mean square error
+S	Bright sunshine duration in a given day (h)
+S_{a}	Approximate bright sunshine duration in a given day (h)
+S_{o}	Maximum possible sunshine duration in a given day (h)
+δ	Declination angle
+ϕ	Latitude of the location
+ω_{s}	Hour angle
+I. INTRODUCTION
+Solar radiation availability on the earth's surface is the main fundamental renewable energy source in nature [1]. Sun radiates light and heat. This light and heat are captured and utilized for solar energy applications such as photovoltaic [2] and solar-thermal systems, respectively. Knowledge of solar irradiance availability at a given location is required for proper utilization of solar energy [3]. The solar radiation data should be reliable and readily available for the design and performance evaluation of solar systems for any particular location. In developing countries like India, where the number of solar observation sites is limited, the global solar radiation (GSR) measurements are usually recorded only at a few locations. Mathematical models are developed for the same location and utilized by the other nearby locations. To develop the solar radiation models, data have to be collected from the meteorological stations. The best way to determine the amount of GSR at any site is to install measuring instruments such as pyranometer and pyrheliometer at that particular place [4].
+The first model for estimating daily GSR was proposed by Angstrom [5]. It was further modified by Prescott called as the Angstrom-Prescott model. The model presented a relationship between daily GSR and the bright sunshine duration. The Angstrom model was a straight line model having an intercept (denoted by “a”) and a slope (denoted by “b”). The constants “a” and “b” are called as Angstrom-Prescott (A-P) regression coefficients. Page modified the Angstrom model further and derived new regression coefficients. In some literature [6], the new regression coefficients are mentioned as Angstrom-Prescott-Page correlation coefficients. Later, this linear model was modified as nonlinear models, which relates GSR to different meteorological parameters.
+In the estimation of solar radiation availability, researchers also developed different models by empirical [7] methods apart from the Angstrom model. Advanced techniques, such as neural networks [8–10] and wavelet model [11], are reported in the literature. Generally, empirical models could be classified into three categories as shown in Fig. 1. The type of model, number of input parameters, and selection of meteorological parameters [6] are concluded as important factors [12] in developing a proper solar radiation model for any location.
+Various literature studies are available on linear and nonlinear types of solar radiation models as shown in Table I. The literature available on the various combinations of input parameters considered for predicting GSR is shown in Table II. From Tables I and II, it could be observed that all multi-input parameter models are nonlinear types and all single input parameter models are either linear or nonlinear.
+Some researchers developed both linear and nonlinear models to enhance the performance and to identify the best model. Table II also shows that many researchers focused on one input parameter models since the model required only one measured parameter of the particular location and also eliminates the need for costly instruments for measurements. One input solar radiation models based on the sunshine duration were very popular and accurate [23]. A majority of one input solar radiation models were developed by modifying the Angstrom model.
+Bahel and Arabia [29] developed a universal model to estimate the monthly average daily global radiation using sunshine hours, using the data collected from 48 stations around the world. The developed model was a third order equation. Dogniaux et_al [48] proposed a correlation between the latitude, the sunshine duration, and monthly mean daily GSR and model claimed as a universal model. Rietveld [21] analysed values of “a” and “b” from different research works and presented new regression coefficients suitable for any locations in the world.
+Almorox [28] employed the measured data of 16 meteorological stations across Spain and developed a radiation model. Garg [15] obtained an equation from the experimental data of eleven stations in India and proposed Angstrom coefficients as a = 0.3156 and b = 0.4520. Katiyar [17] also developed a model applicable for India. The solar radiation data corresponding to a period of 2001–2005, for four Indian locations including Jodhpur, Calcutta, Bombay, and Pune, were considered in the model development. A-P coefficients for each city were presented, and also A-P coefficients for entire India were given as a = 0.2281 and b = 0.5093.
+Veeran and Kumar [49]obtained a linear relation to estimate the monthly average daily global radiation at two locations in India (Chennai and Kodaikanal). In the above models, the sunshine duration was used as an input parameter for developing a mathematical model. These models estimate the monthly average daily GSR on horizontal surfaces. Some researchers also developed radiation models to forecast the radiation on tilted surfaces, and Shukla et_al [50,51] developed monthly averaged daily solar radiation models to estimate the radiation on horizontal and tilted surfaces at Bhopal, Madhya Pradesh, India.
+Some researchers focused on estimation of daily GSR instead of monthly mean daily GSR. In daily GSR models, Glover et_al introduced the latitude dependency to one of the A-P coefficients, in addition to sunshine hours, and it is claimed as a universal model. Maduekwe and Chendo [19] considered the data of Lagos, Nigeria and developed linear and nonlinear daily GSR models by using the sunshine duration as a model parameter. Using the data from Turkey, Ogelman et_al [32] developed a quadratic fit to estimate the daily GSR data using the sunshine duration. Togrul and Onat [34] developed a nonlinear equation using the sunshine duration as an input parameter to estimate the daily GSR for Elazig, Turkey, and Li et_al [18] developed a linear correlation between daily GSR and the sunshine duration for Tibet, China.
+From the above literature, it could be concluded that the majority of works focused on estimating the monthly average daily GSR [52] and very limited works are available to estimate the daily GSR. It was further observed that even though several models exist for the calculation of daily GSR for different sites, there was no particular commonly applicable model available for Indian locations since the model development requires local measured meteorological parameters [24] which are not readily available for many locations. Furthermore, basic Angstrom-Prescott solar radiation models are not focused on southern regions of India, especially Tamil Nadu, where a great amount of solar potential exists. Hence, there is a need to develop a unique model to estimate the daily GSR by considering the measured data. Further, in the literature, some models are claimed as universal models, but the performances of these models for wide Indian locations are yet to be verified and also the performance of the Indian models presented in the literature is yet be verified for sunny locations of India. It is necessary to verify the applicability of the existing daily GSR and monthly mean daily GSR models for different parts of India such that they can readily be used in predictions instead of developing a new model.
+The present study focuses on developing a new solar radiation model by using the bright sunshine duration as a model parameter. One input solar radiation models are developed based on Angstrom-Prescott linear correlation and nonlinear functions such as quadratic, cubic, exponential, and power functions. The applicability of the linear one input parameter model for other sunny Indian locations having an annual solar radiation intensity of 5–6 kWh/m^{2} day (National Renewable Energy Laboratory, NREL, Anthony Lopez, Billy Roberts; April 25, 2013) is also verified. To improve the performance of the developed linear one input parameter model, a modified model was introduced, which includes the approximate bright sunshine duration (S_{a}) and latitude of the location as input parameters. The performance of the existing daily GSR and the monthly mean daily GSR models was also tested to identify the best models for different locations in India.
+II. METHODOLOGY
+A. Traditional model considered in the present study
+Angstrom developed a linear relationship between the ratios of GSR (H) to completely clear day radiation (H_{c}) at a given location and sunshine duration (S) to the maximum possible sunshine duration (S_{o}). It is given by the following equation called as the Angstrom equation:
+Prescott and others have modified the above method by considering extra-terrestrial radiation on a horizontal surface (H_{o}) instead of clear day radiation (H_{c}) and proposed a relation as follows:
+Linear model
+Other researchers had modified the above linear equation into the following nonlinear equations [Eqs. (3)–(6)]:
+Second order model
+Third order model
+Exponential model
+Power series model
+Radiation on the horizontal surface will be used to find out the radiation on the tilted surface by using the following model [51]:
+where, a, b, c, and d are the A-P regression coefficients, S is the bright sunshine duration for a given day, S_{o} is the maximum possible daily sunshine hours in a day, H_{o} is the extra-terrestrial radiation (kWh/m^{2}), H_{T} is the GSR on the tilted surface, H_{b} is the monthly mean daily beam radiation on the horizontal surface, H_{d} is the monthly mean daily diffuse radiation on the horizontal surface, H_{p} is the diffuse reflectance from the ground, R_{b} is the ratio of mean daily beam radiation on the tilted surface to that on a horizontal surface, and H_{o} is given by the following equation:
+B. Model development
+A location in India (Tiruchirappalli) was considered, and site specifications are given in Table III. A grid connected 100 kW Solar PV (Photo voltaic ) system was established in NIT, Tiruchirappalli (Tamil Nadu, India), and global solar irradiance on a horizontal surface was continuously measured using a pyranometer (Make: Apogee, Type: Silicon cell pyranometer) interfaced with a computer to store the data. According to IEC standard 61724 and monitoring guidelines (IEC-International Electro-technical Commission. Photovoltaic system performance monitoring—guidelines for measurement, data exchange and analysis, IEC 61724. 998), the recording interval should lie in-between 1 and 10 min. Hence, an interval time of 5 min was followed, resulting in 288 data points per day. Data corresponding to the period of August-2013 to July-2015 were used for developing the Angstrom-Prescott model to find the daily GSR on a horizontal surface.
+A total of 315 360 (3 years × 365 days × 288) data points were collected from the setup, out of which 210 240 data points (2 years) had been used for model development and 105 120 (1 year) data points were used for validation.
+1. Procedure for model development
+Global solar irradiance (W/m^{2}) on a horizontal surface was measured using a Pyranometer. The computer stores the irradiance at the interval of 5 min, and each hour it records 12 data. Hourly irradiance is calculated by averaging 12 data recorded per hour. Daily GSR (H) was calculated by adding and averaging hourly irradiance from 6.30 am to 6.30 pm. Calculations were repeated for a period of three years (2013-August to 2016-July). Data of two years were used for the model development, and another one-year data were used for validation purposes. Sunshine based models, namely, linear, second order, third order, exponential, and power series, were developed for the present location by using the daily GSR (H) and bright sunshine duration (S). A new procedure was followed to calculate the bright sunshine duration which is named as the approximate bright sunshine duration (S_{a}).
+2. Drawbacks in measuring the sunshine duration using a Campbell-Stokes (CS) sunshine recorder
+Recording the sunshine duration is a very tedious and time-consuming process [53]. A CS sunshine recorder must be operated manually, and a new paper strip needs to be mounted every morning. The paper strip responds in a different manner to solar irradiance and depends upon the humidity of air [54]. In the CS recorder, burning of a paper strip happens between 106 and 285 W/m^{2} which indicates a wide range of radiation intervals [55].
+To overcome the above drawbacks, a new approach was followed to make the solar radiation model using only the pyranometer data. The bright sunshine duration (S) was modified as the approximate bright sunshine duration (S_{a}), and S was replaced by S_{a} in Eqs. (2)–(6).
+3. Procedure to calculate the approximate bright sunshine duration
+The Pyranometer was placed in a position to avoid shadow effects. A computer connected to the pyranometer stores 288 data points per day (5-min interval). Irradiance values greater than 120 W/m^{2} were considered as measured S_{a} for that particular day. (Example: 66 data points exceed the given condition, and then, the approximate sunshine duration, S_{a} = 66 × 5/60 = 5.5 h).
+4. Quality control procedure for collected data
+(1) No missing data were observed, during the measurement period. Radiation was available for each five minutes and was recorded for three years.
+(2) Full cloudy days (i.e., if the irradiance is less than 120 W/m^{2} for the entire day) are excluded in the model development and validation.
+(3) Only 4.25% of the data was lying under the full cloudy days in a year.Linear and nonlinear models with one input parameter (S_{a}) were developed. To improve the performance of the linear one input parameter model, a modified model was developed, in which the error factor was included by deriving a relation between the Mean Error (ME) and the latitude (ϕ) of the location.
+5. Procedure to calculate the error factor
+The linear one input parameter model was used to predict the one year daily GSR data of six sunny locations in India such as Tiruchirappalli, Chennai, Hyderabad, Mumbai, Bhopal, and Allahabad for which the latitude ranges from 10° N to 26° N. In one year estimation, ME produced by the linear model was calculated for each location. These ME values were correlated with the latitude of the six locations, and a quadratic fit was obtained between ME and the latitude of the locations.
+Equation (2) was modified by including the error factor in terms of latitude, named as the latitude model, and is given by the following equation:
+C. Models considered from the literature for performance analysis
+The models presented in the literature are divided into two groups for performance comparison as well as to identify the suitable models for Indian locations. Group-1 consists of daily GSR models, and Group-2 consists of monthly mean daily GSR models.
+Group-1: The following models are used to estimate the daily GSR of selected Indian locations and are presented in Table IV.
+Group-2: Monthly mean daily GSR models are presented in Table V. In the literature, the following monthly models are claimed as universal models:
+Indian models: The following models are developed for Indian locations.
+(1) Katiyar model
+(2) Garg model
+(3) Mani model
+(4) Veeran model
+The above models are used to estimate the daily GSR and monthly mean daily GSR for selected Indian locations, and a suitable model for each location is recommended.
+D. Statistical tools considered to assess the performance of the models
+Statistical tools such as the mean percentage error (MPE), mean error (ME), mean absolute percentage error (MAPE), relative root mean square error (RRMSE), and coefficient of determination (R^{2}) were used as performance indices to identify the best model. The formulae for ME, MPE, MAPE, and RRMSE are presented in Appendix A. The model is considered as the best model when MPE, ME, MAPE, and RRMSE are close to zero and R^{2} values close to one. These statistical tools are commonly used to evaluate the model performance [58,59]. Model's performance was described based on ranges of RRMSE [60] given in Table VI.
+III. RESULTS AND DISCUSSION
+The coefficients from the regression analysis of Eqs. (2)–(6) are presented in Table VII. From Table VII, R^{2} values of all the models are almost equal, indicating that all the models developed in the present study have the best fit. The procedure for regression analysis is given in Appendix B.
+A. Validation of the developed models for Tiruchirappalli
+The developed models were validated using the measured solar radiation data between August-2015 and July-2016. The error values are reported in Table VIII.
+Out of all the models (Table VIII), the second order model had the least MPE value of 0.0620% and the power series model had a maximum MPE value of −4.6791%. Apart from the power series model, all the models had positive MPE, and it was an indication of overestimation. Observing MAPE values, all the models are equally good at estimating the daily GSR, and power series model had slightly higher MAPE.
+From Table VIII, it could be concluded that all the models predict the daily GSR with almost the same accuracy [12,61]. Hence out of all, the linear one input parameter model could be considered due to its simplicity [62].
+B. Validation of the linear one input parameter model for the other locations in India
+Five sunny locations, Chennai, Hyderabad, Mumbai, Bhopal, and Allahabad, with different climatic conditions and latitudes were selected to check the applicability of the linear one input parameter model. The radiation data for these locations were taken from National Aeronautics and Space Administration (NASA)-Surface meteorology and Solar Energy division. One year data were considered for validation. S_{a}/S_{o} values of Tiruchirappalli are considered for these selected locations and are presented in Table IX.
+The linear one input parameter model used for the validation is given by the following equation:
+The linear one input parameter model [Eq. (12)] was selected, and the applicability of this model was verified. The performance of the statistical tools is presented in Table X.
+The statistical indicator RRMSE showed that the linear one input parameter model developed had a poor estimation of daily GSR for the selected locations. Reasons for poor performance are
+• Due to different climatic conditions of selected locations.
+• S_{a}/S_{o} calculated for Tiruchirappalli was utilized for other locations.
+• S_{a}/S_{o} values depend on local climatic conditions [63].
+From Table IX, it could be seen that April month had a maximum S_{a}/S_{o} ratio and December month had a minimum S_{a}/S_{o} ratio, which may not be the same case for other selected locations. Hence, the developed linear one input parameter model needs to be improved with more input parameters.
+A new model was developed by using S_{a} and the latitude of the location and called as the latitude model which is a nonlinear model. Since two input parameters were considered for the latitude model, a relationship was established between the latitude of the location and ME of the linear one input parameter model and is shown in Fig. 2. The relation between ME and the latitude of the location followed a non-linear equation.
+The proposed new solar radiation model is given by the following equations:
+ME obtained by the linear model was positive for selected locations, which implies that estimated value was higher than the actual value. Hence, the negative sign (−) was used in the latitude model [Eq. (15)].
+This latitude model was used for validation, and based on RRMSE values, the performance for selected locations was found to be satisfactory and is presented in Table XI.
+The latitude model produced positive MPE for all locations except Tiruchirappalli, indicating an underestimation for Tiruchirappalli and overestimation for remaining locations. It was within acceptable limits [64]. MAPE was low for Tiruchirappalli with a value of 8.1427% and maximum for Chennai with a value of 27.1532%. RRMSE showed the excellent estimation of daily GSR for the Tiruchirappalli location, good estimation for Mumbai and Bhopal, and fair estimation for the locations Allahabad, Chennai, and Hyderabad.
+The latitude model results showed satisfactory performance for selected locations, and the model will be applicable for the locations whose latitude lie in-between 10° N and 26° N.
+C. Performance analysis of other existing models for the selected Indian locations
+The applicability of existing models for the selected Indian locations was verified by dividing the existing models into daily and monthly mean daily GSR models. Very limited models [56] are dedicated for daily GSR estimation, out of which five existing daily GSR studies and eight existing monthly mean daily GSR studies are considered for comparing the performance of the latitude model. The results obtained by existing models and the latitude model are presented in Table XII.
+In daily models, the present modified model (latitude model) gave excellent estimation for Tiruchirappalli. The Glover model is a universal model which gave fair estimation. The Maduekwe linear model also produced fair results, whereas the Ogelman model, Togrul model, and Maduekwe nonlinear models failed for Tiruchirappalli. The applicability of the present modified model, Glover model, and Maduekwe linear models was confirmed for Tiruchirappalli (Table XII).
+Out of four universal models, Rietveld and Dogniaux models showed fair estimation, and these two models are recommended for Tiruchirappalli in monthly mean daily GSR estimation. Out of five developed models for Indian conditions, the Garg model is recommended for Tiruchirappalli. Even though the Katiyar model was claimed as the Indian model, it failed for Tiruchirappalli.
+One common observation from the error values is that all the models have negative MPE, which means that all the models underestimate. The present model also showed underestimation with an MPE of −0.6642%. Comparison of RRMSE values for the selected Indian locations for all the models [Eq. (15), Tables IV and V] in the increasing order of latitude values is presented (Figs. 3–8.)
+Out of all the models, the latitude model produced least values of RRMSE of 9.8112% for Tiruchirappalli (Fig. 3), 15.7565% for Mumbai (Fig. 6), and 17.8689% for Bhopal (Fig. 7).
+The Veeran model (19.8945%), present latitude model (20.0848%), and Mani model (20.0360%) produced the best RRMSE for Allahabad (Fig. 8).
+The Veeran model and Mani model reported almost the same and least RRMSE (20.0084% and 20.2323%, respectively) for Hyderabad, which is slightly better than the present model (23.3745%) and Page model (23.2925%) (Fig. 5).
+The Veeran model showed a least value of RRMSE of 12.1992% for Chennai (Fig. 4), and the highest RRMSE of 25.0564% was shown by the present model. The highest values of errors are reported for Chennai by the latitude model. This may be due to the changes in the bright sunshine duration of the two locations. The mismatch in sunshine hours can occur due to the difference in environmental conditions of two locations. The environmental parameters like relative humidity and rainfall duration will have an impact on the sunshine hours and on the radiation availability [65] of a particular location. Hence, substituting the actual values of S_{a}/S_{o} into the latitude model or including the more environmental parameters into the model will improve the accuracy of the latitude model further.
+Performance Indices derived by all the models considered [Eq. (15), Tables IV and V] in the present study for five Indian locations are given in Appendix C. A recommendation table is prepared from these performance index data and is shown in Table XIII.
+D. Applicability of daily GSR models
+The Daily GSR model like the Glover model, which is claimed as a universal model in the literature, showed poor performance for four Indian locations out of the six locations considered in the study. Even though the Togrul model is not claimed as the universal model, it is recommended for four Indian locations other than Tiruchirappalli and Bhopal. The Ogelman model and Maduekwe nonlinear models fail for all locations except Chennai. The Maduekwe linear model is suitable for Tiruchirappalli and Chennai. Out of six daily GSR models, only the present latitude model is recommended for all selected Indian cities, and next to this, the Togrul model could be preferred (Table XIII).
+E. Applicability of monthly mean daily GSR models
+The monthly mean daily GSR models like the Bahel model gave mixed performance for selected Indian locations. It is recommended for Chennai, Hyderabad, and Mumbai and not recommended for remaining three locations. The Page model is claimed as a universal model, and it is recommended for five selected Indian locations other than Tiruchirappalli. Even other universal models like Dogniaux and Rietveld models are not bad in estimation since they are recommended for four Indian locations other than Bhopal and Allahabad. Katiyar and Mani models could be recommended for five Indian locations. The Veeran Chennai model is also recommended for four Indian locations even though it is claimed as the site specific model. The Garg model has given mixed performance for the selected locations and is recommended for three locations. (Table XIII)
+Surprisingly, all the considered models have shown satisfactory performance for Chennai. Out of 14 models including the present latitude model, 10 models for Mumbai, 9 models for Hyderabad, 6 models for Allahabad, 6 models for Tiruchirappalli, and only four models for Bhopal have shown satisfactory performance.
+IV. CONCLUSION
+Five solar radiation models are developed, and they are linear, second order polynomial, third order polynomial, exponential, and power series models with approximate bright sunshine durations as the input parameter. It was observed that all the models [Eqs. (2)–(6)] are performing equally good [12,61,62]. Out of the five models, the linear model was modified as the latitude model by substituting the values of S_{a}/S_{o} from the given data (Table IX) and the latitude of the location. It could be concluded that the latitude model [Eq. (15)] with two input parameters (S_{a}/S_{o} and latitude) showed an excellent estimation for the present location with improved MPE, MAPE, and RRMSE compared to the linear one input parameter model [Eq. (12)]. This latitude model was applied to other five Indian locations and had given a good estimation for Mumbai and Bhopal and fair estimation for Chennai, Hyderabad, and Allahabad. A minimum MPE of 0.1008% for Bhopal, a maximum MPE of 27.1532% for Chennai, a minimum MAPE of 14.5561% for Mumbai, and a maximum MAPE of 27.1532% for Chennai were observed. A minimum RRMSE of 15.7565% for Mumbai and a maximum RRMSE of 25.0564% for Chennai were also calculated. The number of input parameters had an impact on estimation of daily GSR. It could be concluded that more than the nature of the model (linear or nonlinear), the number of input parameters has improved the model accuracy.
+The two input parameters for the proposed latitude model were S_{a}/S_{o} and latitude. Generalized S_{a}/S_{o} values are presented in Table VII for all the months. These values could be utilized for the other locations in India having latitude ranges of 10° N to 26° N to estimate the daily GSR, and mean percentage errors are expected to lie between 0.1008% and 27.1532%. The latitude model showed fair to good estimation for the selected Indian locations of the latitudes ranging from 10° N to 26° N.
+A performance analysis of existing daily and monthly models was performed for selected Indian locations by dividing them into two groups. Out of all the existing daily GSR models considered in the present study, the Glover model was reported as a universal model in previous studies, but its performance was poor for the majority of the selected Indian locations. Only the Togrul model showed satisfactory performance for the selected Indian locations, and it is recommended for four Indian locations to estimate the daily GSR.
+GSR models like Page, Katiyar, and Mani models produce satisfactory performance for selected Indian locations, but these models estimate monthly mean daily GSR values. It is not possible to calculate accurately the daily radiation values from the monthly mean daily values. Wherever the availability of daily radiation data is essential, monthly mean daily GSR models will fail and daily GSR models are more accurate than the monthly mean daily GSR models. The latitude model developed in the present study is a daily GSR model which can predict the daily GSR value for a given location. The performance of the developed model for the selected Indian locations is found to be satisfactory compared to other existing daily and monthly mean daily GSR models. It is simple and utilizes readily available data as input parameters. This model would be helpful for a location where there are no observatory stations and there is a requirement of daily GSR. This model eliminates the need of a sunshine recorder and saves the time consumption in estimation.
+APPENDIX A: STATISTICAL FORMULA
+APPENDIX B: PROCEDURE FOR REGRESSION ANALYSIS
+APPENDIX C: PERFORMANCE INDICES
+TABLE I. 
+Models available under category-I.
+TABLE II. 
+Models available under categories-II and III.
+TABLE III. 
+Site specifications of the location considered in the present study.
+TABLE IV. 
+Existing daily GSR models considered in the present study.
+TABLE V. 
+Existing monthly mean daily GSR models considered in the present study.
+TABLE VI. 
+Ranges of RRMSE to analyse the model's performance.
+TABLE VII. 
+Coefficients derived from the regression analysis of Eqs. (2)–(6).
+TABLE VIII. 
+Performance indices obtained in the estimation of daily GSR for Tiruchirappalli.
+TABLE IX. 
+S_{a}/S_{o} values used in validating the linear one input parameter model and the latitude model for selected locations in India.
+TABLE X. 
+Performance indices derived for selected Indian locations by the linear one input parameter model.
+TABLE XI. 
+Performance indices derived with the latitude model for selected Indian locations (ϕ-10° N to 26° N).
+TABLE XII. 
+Performance indices derived for Tiruchirappalli.
+TABLE XIII. 
+Models recommended for Indian locations.
+None
+Performance indices derived for Allahabad.
+TABLE I. -body
+Type of model	References
+Linear model	 [13–21]
+Nonlinear model	 [14],  [15], and  [22–47]
+TABLE II. -body
+Number of input parameters	Input parameter	References
+One input parameter model	Temperature	 [22–26]
+Sunshine duration	 [13–21] and  [27–34]
+Total transmittance	 [35]
+Total cloud cover	 [36]
+Day of the month	 [37]
+Two input parameter model	Sunshine duration and latitude	 [38–40]
+Altitude and air temperature	 [41]
+Three input parameter model	Sunshine duration and atmospheric perceptible water vapor	 [15]
+Sunshine duration and relative humidity	 [42]
+Sunshine duration, altitude, and latitude	 [14] and  [43]
+Sunshine duration, temperature, and relative humidity	 [44]
+Four input parameter model	Sunshine duration, temperature, relative humidity, and pressure	 [45] and  [46]
+	Sunshine duration, latitude, temperature, and relative humidity	 [43] and  [47]
+TABLE III. -body
+Location	Latitude	Longitude	Altitude
+Tiruchirappalli	10.8050°N	78.6856°E	85 m
+TABLE IV. -body
+Model name	Equation	Comment
+Glover model [39]	HH_{o}=0.29cosϕ+0.52(SS_{o})	Claimed as the universal model. Performance for Indian locations needs to be verified
+Maduekwe linear model [19]	HH_{o}=0.32+0.42(SS_{o})	Done for Lagos, Nigeria, Applicability for new locations not mentioned by the author
+Maduekwe nonlinear model [25]	HH_{o}=0.27+0.66(SS_{o})−0.26(SS_{o})^{2}	Done for Lagos, Nigeria, Applicability for new locations not mentioned by the author
+Ogelman model [32]	HH_{o}=0.204+0.758(SS_{o})−0.25(SS_{o})^{2}	Performance for Indian locations needs to be verified
+Togrul model [34]	HH_{o}=0.2116+0.6389(SS_{o})−0.2266(SS_{o})^{2}	Performance for Indian locations needs to be verified
+TABLE V. -body
+Model	Equation	Comment
+Universal models
+Bahel model [29]	HH_{o}=0.16+0.87(SS_{o})−0.61(SS_{o})^{2}+0.34(SS_{o})^{3}	Claimed as the universal model. Performance for Indian locations Jodhpur, Mumbai, Pune, and Calcutta was verified by Katiyar. Other locations in India need to be verified
+Dogniaux model [48]	HH_{o}=0.37022+[0.00506(SS_{o})−0.00313]ϕ+0.32029(SS_{o})	Claimed as the universal model. Performance for selected Indian locations needs to be verified
+Page model [56]	HH_{o}=0.29+0.48(SS_{o})	Claimed as the universal model. Performance for selected Indian locations needs to be verified
+Rietveld model [21]	HH_{o}=0.18+0.62(SS_{o})	Claimed as the universal model. Performance for selected Indian locations needs to be verified
+Indian models
+Garg model [15]	HH_{o}=0.3156+0.4520(SS_{o})	Performance for selected Indian locations needs to be verified.
+Katiyar model [17]	HH_{o}=0.2281+0.5093(SS_{o})	Claimed as the Indian model, Performance for selected Indian locations other than the locations mentioned by Katiyar needs to be verified
+Mani model [57]	HH_{o}=0.242+0.436(SS_{o})	Performance for selected Indian locations needs to be verified
+Veeran and Kumar model [49]	HH_{o}=0.34+0.32(SS_{o})	Performance for selected Indian locations needs to be verified
+TABLE VI. -body
+Range of RRMSE	Performance
+<10%	Excellent
+10% < RRMSE < 20%	Good
+20% < RRMSE < 30%	Fair
+>30%	Poor
+TABLE VII. -body
+Type of model	a	b	c	d	R^{2}
+Linear model [Eq. (2)]	0.8120	0.1447	…	…	0.9643
+Second order model [Eq. (3)]	0.8208	0.1139	−0.0120	…	0.9877
+Third order model [Eq. (4)]	0.8325	0.1507	−0.0445	−0.0117	0.9832
+Exponential model [Eq. (5)]	0.8093	0.1707	…	…	0.9875
+Power series model [Eq. (6)]	1.055	0.9266	…	…	0.9646
+TABLE VIII. -body
+Type of model	MPE (%)	MAPE (%)	RRMSE (%)	Result
+Linear model	2.6961	9.2906	10.7233	Good
+Second order model	0.0620	9.1146	10.7854	Good
+Third order model	1.5867	9.2568	10.7662	Good
+Exponential model	2.7072	9.2783	10.7109	Good
+Power series model	−4.6791	10.4476	12.8892	Good
+TABLE IX. -body
+Month	S_{a}/So
+January	0.7780
+February	0.8106
+March	0.7938
+April	0.9039
+May	0.7317
+June	0.8408
+July	0.8819
+August	0.8143
+September	0.7966
+October	0.8762
+November	0.7410
+December	0.6997
+TABLE X. -body
+Location	Latitude	Longitude	MPE (%)	MAPE (%)	RRMSE (%)	Result
+Tiruchirappalli	10.80° N	78.70° E	2.6961	9.2906	10.7233	Good
+Chennai	13.10° N	80.27° E	44.5388	44.5388	40.5524	Poor
+Hyderabad	17.40° N	78.48° E	54.1438	54.1438	57.1943	Poor
+Mumbai	19.10° N	72.87° E	43.8853	43.8853	43.7847	Poor
+Bhopal	23.26° N	77.41° E	50.7834	51.4873	52.2521	Poor
+Allahabad	25.44° N	81.84° E	60.5237	60.5237	58.5244	Poor
+TABLE XI. -body
+Location	MPE (%)	MAPE (%)	RRMSE (%)	Result
+Tiruchirappalli	−0.6642	8.1427	9.8112	Excellent
+Chennai	27.1532	27.1532	25.0564	Fair
+Hyderabad	12.8569	18.3978	23.3745	Fair
+Mumbai	0.2422	14.5561	15.7565	Good
+Bhopal	0.1008	15.0339	17.8689	Good
+Allahabad	9.6578	16.5744	20.0848	Fair
+TABLE XII. -body
+Model	MPE (%)	MAPE (%)	RRMSE (%)	Result
+Daily GSR models
+Present latitude model	−0.6642	8.1427	9.8112	Excellent
+Glover model	−22.2419	22.4580	25.3439	Fair
+Ogelman model	-28.0650	28.1837	30.7127	Poor
+Togrul model	−36.1280	36.1280	38.3685	Poor
+Maduekwe linear model	−27.2428	27.3668	29.9466	Fair
+Maduekwe nonlinear model	−30.2029	30.3050	32.7905	Poor
+Monthly mean daily GSR models
+Bahel model	−26.6772	26.6771	31.5130	Poor
+Dogniaux model	−25.7167	25.7167	27.7693	Fair
+Page model	−26.6004	26.6003	32.3723	Poor
+Rietveld model	−24.7398	24.7397	26.0990	Fair
+Garg model	−20.6031	21.0657	24.7019	Fair
+Katiyar model	−30.3746	30.3746	32.1000	Poor
+Mani model	−30.5961	30.5961	33.7305	Poor
+Veeran model	−30.0856	30.0855	33.0814	Poor
+TABLE XIII. -body
+Model	Tiruchirappalli	Chennai	Hyderabad	Mumbai	Bhopal	Allahabad
+Daily GSR models
+Present modified model	Recommended	Recommended	Recommended	Recommended	Recommended	Recommended
+Glover model	Recommended	Recommended	Not recommended	Not recommended	Not recommended	Not recommended
+Ogelman model	Not recommended	Recommended	Not recommended	Not recommended	Not recommended	Not recommended
+Togrul model	Not recommended	Recommended	Recommended	Recommended	Not recommended	Recommended
+Maduekwe linear model	Recommended	Recommended	Not recommended	Not recommended	Not recommended	Not recommended
+Maduekwe nonlinear model	Not recommended	Recommended	Not recommended	Not recommended	Not recommended	Not recommended
+Monthly mean daily GSR models
+Bahel model	Not recommended	Recommended	Recommended	Recommended	Not recommended	Not recommended
+Dogniaux model	Recommended	Recommended	Recommended	Recommended	Not recommended	Not recommended
+Page model	Not recommended	Recommended	Recommended	Recommended	Recommended	Recommended
+Rietveld model	Recommended	Recommended	Recommended	Recommended	Not recommended	Not recommended
+Garg model	Recommended	Recommended	Not recommended	Recommended	Not recommended	Not recommended
+Katiyar model	Not recommended	Recommended	Recommended	Recommended	Recommended	Recommended
+Mani model	Not recommended	Recommended	Recommended	Recommended	Recommended	Recommended
+Veeran model	Not recommended	Recommended	Recommended	Recommended	Not recommended	Recommended
+None
+Model name	MPE (%)	MAPE (%)	RRMSE (%)	Result
+Daily GSR models
+Present latitude model	9.6578	16.5744	20.0848	Fair
+Glover model	44.4016	45.1971	37.5430	Poor
+Ogelman model	39.0169	41.0095	33.5701	Poor
+Togrul model	24.0655	32.3515	26.2052	Fair
+Maduekwe linear model	40.0716	41.8560	35.3208	Poor
+Maduekwe nonlinear model	33.5850	36.7614	30.8760	Poor
+Monthly mean daily GSR models
+Bahel model	19.7097	19.7097	32.5896	Poor
+Dogniaux model	20.0097	20.5520	30.4961	Poor
+Page model	15.3299	18.3781	23.9099	Fair
+Rietveld model	20.5368	20.6474	30.3445	Poor
+Garg model	25.5761	25.5761	32.0849	Poor
+Katiyar model	18.149	19.6893	26.1134	Fair
+Mani model	9.78421	16.0178	20.0360	Fair
+Veeran model	10.5720	15.4748	19.8945	Good
+FIG. 1. 
+Categories of solar radiation models.
+FIG. 2. 
+Relation between the latitude of the location and the mean error.
+FIG. 3. 
+Performance comparison of all the models for Tiruchirappalli (Latitude-10.8° N).
+FIG. 4. 
+Performance comparison of all the models for Chennai (Latitude-13.10° N).
+FIG. 5. 
+Performance comparison of all the models for Hyderabad (Latitude-17.40° N).
+FIG. 6. 
+Performance comparison of all the models for Mumbai (Latitude-19.10° N).
+FIG. 7. 
+Performance comparison of all the models for Bhopal (Latitude-23.60° N).
+FIG. 8. 
+Performance comparison of all the models for Allahabad (Latitude-25.44° N).

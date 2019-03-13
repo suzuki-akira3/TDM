@@ -1,0 +1,217 @@
+Sizing and placement of solar photovoltaic plants by using time-series historical weather data
+The integration of distribution generation (DG) in distribution networks with improper planning adversely influences the quality of the electrical networks. Conventionally, the outputs from the intermittent DGs, such as solar photovoltaic (PV) plants, are assumed dispatchable. The intermittency of solar irradiance on the outputs of the PV modules has been ignored in most studies on the sizing and placement of DGs. By looking at this problem, this paper presents the sizing and placement of a distributed solar photovoltaic plant (DSPP) by using time series historical weather data. To predict the output from the PV modules, 15 years of solar data were modeled with the aid of a beta probability density function. The total energy loss index was formulated as the main objective function, and the optimization problem was solved by mixed integer optimization by using genetic algorithm. By adopting a time-varying commercial load, the proposed algorithm was applied on IEEE 33 bus and IEEE 69 bus distribution networks. The numerical studies on the two distribution networks show the advantages of the proposed approach for minimizing the total energy losses and improving the bus voltage profiles. It was revealed that up to 38% of the total energy losses in distribution networks could be reduced at sites with solar insolation of 5.65 peaks sun hours. In contrast to existing methods, planning for DGs by using weather data provided more realistic results for DSPP in distribution networks.
+NOMENCLATURE
+Beta(s)	Beta distribution function of s
+DG	Distributed generation
+DSPP	Distributed solar photovoltaic plant
+E_{loss_total}	Annual energy losses
+E^{DSPP}_{loss_total}	Annual energy losses with DSPP
+GA	Genetic algorithm
+GWp	Gigawatt peak
+I(i)	Current that is flowing through branch i
+IEEE	Institute of Electrical and Electronics Engineers
+Ki	Current temperature coefficient A/°C
+Kv	Voltage temperature coefficient V/°C
+MIOGA	Mixed integer optimization by using genetic algorithm
+NOCT	Nominal temperature of the module °C
+O&M	Operation and maintenance
+OPF	Optimal power flow
+P(i)	Active power that flow across branch i
+P_{(k+1),eff}	Effective active power that is flowing towards bus k+1 from the other buses
+P_{D(k)}	Active loads connected at bus k.
+P_{DSPP (t)}	Active power output from DSPP at time t
+P_{loss(i)}	Active power losses across the branch i
+P_{loss_total}	Total power losses in the whole network
+P_{Substation (t)}	Active power supplied through the substation at time t
+PDF	Probability density function
+pf	Power factor
+Q(i)	Reactive power that flows across branch i
+Q_{(k+1),eff}	Effective reactive power that is flowing towards bus k + 1 from the other buses
+Q_{D(k)}	Reactive loads connected at bus k
+Q_{DSPP (t)}	Reactive power output from DSPP at time t
+Q_{loss(i)}	Reactive power losses across branch i
+Q_{Substation (t)}	Reactive power supplied through the substation at time t
+RDS	Radial distribution system
+Ri	Resistance of branch i
+s	Solar irradiance in KW/m^{2}
+svα	Voltage coefficients for active loads
+Ta	Ambient temperature °C
+Tc	Cell temperature °C
+TELI	Total energy loss index
+V(k)	Voltage magnitude of kth bus
+VDevmax	Maximum voltage deviation
+vr	Voltage coefficients for reactive loads
+Xi	Reactance of branch i
+α, β	Alpha and beta parameters of beta-PDF
+η	Inverter efficiency
+μ	Mean
+σ	Standard deviation
+I. INTRODUCTION
+Renewable energy technologies, such as wind turbines and photovoltaic (PV) modules, for producing electricity are considered to be more favorable as opposed to conventional fossil fuel sources because of being sustainable, environmentally friendly, and cost effective. Of the two energy sources, PV technology is gaining more attention due to the improvements in the electricity conversion efficiencies and the reductions in the cost of the PV modules [1,2]. The global PV market has experienced significant progress in recent years, with 50% growth in the year 2016 alone; the worldwide cumulative PV installed capacity is estimated to be more than 303 GWp [3]. Furthermore, it is expected that this figure will exceed 500 GWp by the year 2019 [4]. On the one hand, this signifies the generation of carbon-free low-cost electricity in the coming years. On the other hand, this also depicts the utilization of large-scale electricity from an intermittent source.
+The electricity produced from the distribution generation (DG), such as solar PV plants, is preferred to be connected at distribution networks [5]. Over the past decade, the research for the utilization of energy from the renewable sources by considering various technical constraints has been done through several approaches. Such approaches include analytical methods [6–8], numerical methods [9], and a variety of heuristic algorithms [10–12]. However, the sources of the DGs to produce the active and reactive powers were not well defined by many authors. When using the intermittent renewable energy sources, the outputs of DGs are considered as dispatchable. Moreover, for the sizing of the DGs, only peak loads are considered without taking into account the probabilistic nature of the generations and the demands.
+Some recent studies on the integration of DGs in distribution networks when considering time-varying generations and loads have been proposed. The sizing and placements of biomass, solar PV, and wind energy--based DGs are reported by adopting evolutionary programming [13] and analytical methods as well [14,15]. However, the methodology followed by many researchers was limited due to pre-determined numbers of the combined load and the DG model. Moreover, the problem with the analytical methods is the recurrence of optimization steps, which increases the overall optimization time. These methods are often based on numerical computations and are considered to produce non-realistic results [16]. Most optimization techniques used in time-varying generation and load models trailed a list of processes to solve the DG's sizing and placement problems individually. From the review of the literature, it is revealed that existing research encompasses some loopholes in estimating the sizes of DGs by using the intermittent sources in time-varying generation and load models.
+In this paper, a robust method of the mixed integer optimization by using genetic algorithm (MIOGA) for the sizing and placement of distributed solar photovoltaic plant (DSPP) units in the distribution network is proposed. The main objective of the study was to reduce total energy losses in distribution networks; however, the study also monitored the impact of DSPP on the voltage deviations and on the penetration of DSPP in the distribution networks. To estimate the DSPP yields, the historical 15 years of hourly satellite weather data for the site under study from the years 2000 to 2014 was used. For handling such a large amount of data, the annual data was partitioned into four seasons. To calculate the probability of the output of the PV modules, the seasonal data were modeled by using the beta probability density function (beta-PDF), and, finally, a 24- h solar curve was generated. To test the effectiveness of the proposed method, the study used a voltage-dependent time-varying load model. The proposed method was tested on IEEE 33 bus and IEEE 69 bus distribution networks, and optimum sizes and locations of the DSPP for both distribution networks were determined. The simulation code of the proposed algorithm was developed in MATLAB R2015a [17].
+II. MATERIALS AND METHODS
+A. Modeling of weather data
+The predictions of power outputs from the solar power stations involve different modeling tools and algorithms [18]. These modeling tools analyze the weather data and predict the expected electricity outputs from the power stations by examining the variations in the weather data during the different seasons. The beta probability density function (beta-PDF) is one modeling tool that has been widely accepted and been used in many studies, including the modeling of historical solar data. The beta-PDF uses the hourly historical weather data as the input and calculates the probability of occurrence of a range of possible values for solar irradiances during each hour. Meteorological data is primarily taken from the ground stations and satellites [19]. For this research study, the 15 years of satellite weather data of the site at coordinates (29°19′25.6′′N, 71°49′11.8′′E) were acquired from the National Solar Radiation Database [20].
+For handling the historical weather data, the annual data are partitioned into the four seasons, winter, spring, summer, and autumn. Each season consists of the weather data of the three months, as provided in Table I. The seasonal data is then modeled by using beta-PDF, and a 24- h solar curve is generated. Therefore, the 15 years of weather data will be converted and represented by an equivalent 24- h solar curve.
+The beta-PDF for solar irradiance for any hour can be expressed as follows:
+where s is the irradiance of solar light in kW/m^{2}, and α and β are the two input parameters of the beta-PDF, which are calculated with the help of the mean (μ) and standard deviation (σ) of solar irradiance. By using the following equations, α and β can be calculated:
+The probability of the occurrence of solar irradiance during any hour can be calculated by using the following equation [14]:
+where s1 and s2 are the two solar irradiance limits, in which the probability of s has to be determined.
+B. Output from PV module
+The characteristics of the PV modules are provided in Table II [14].
+The output from the PV modules during the time segment (h) can be measured by using the following equations:
+where T_{C} and T_{A} are cell and ambient temperatures (°C), respectively; the FF is known as the fill factor. s is the probability of the solar irradiance in kW/m^{2} and is calculated by using Eq. (5).
+C. Power flow equations
+Due to the presence of high R/X ratios in the radial distribution system (RDS), the traditionally used load flow methods, e.g., Newton Raphson, are considered inappropriate for solving the power flow equations in distribution networks. Alternatively, some other computational methods, such as the Backward Forward Sweep Load Flow method, are considered suitable for load flow analysis in distribution networks [21]. The Backward Forward Sweep Load Flow method is an iterative method and consists of two sets of equations for calculating the flow of power in the networks. Of the two sets of equations, the one set is used to calculate the power flows in each branch of the network, whereas, in the second iteration, the voltage magnitude and the voltage angle of each bus are calculated. This process is carried out from the root bus to the last bus; meanwhile, two sets of equations are solved.
+The single-line diagram of a section of the distribution networks is shown in Fig. 1, which illustrates the two buses; k and k + 1, connected through branch line i. The flow of electrical power in this section can be computed through the following sets of equations as also provided in Ref [5]
+P(i) and Q(i) are the active and reactive powers that flow across the branch, and i.P_{D(k+1)} and Q_{D(k+1)} are active and reactive loads connected at bus k + 1.
+Injected total power at bus k + 1 is the sum of total loads connected at bus k + 1 and the effective power that is flowing towards bus k + 1 from the other buses. Therefore, Eqs. (11) and (12) can be written as following [22]:
+Ri and Xi are resistance and reactance, respectively, of branch i, whereas I(i) is the current that is flowing through the branch i. The power losses across branch i can be calculated by using the following equations [14]:
+where P_{loss}(i) and Q_{loss}(i) are active and reactive power losses across branch i. The total power losses in the distribution network can be calculated by summing the active and reactive power losses of all branches in the network. The total power losses can be calculated by using the following equation:
+D. DSPP model
+The output power from the DSPP can be used as a negative load [23]. when assuming DSPP is installed at bus k + 1, then hourly total active and reactive power injections for bus k + 1 can be calculated by using the following equations [14]:
+where P_{DSPP} and Q_{DSPP} are the active and reactive power generations from the DSPP. Since Q_{DSPP} is a function of P_{DSPP} with a fixed power factor, therefore
+where
+When sign = +1, the inverter is injecting reactive power; sign = −1, the inverter is consuming the reactive power, where pf is the operating power factor of the inverter. With no reactive power capability, the power factor of DSPP invertor is taken as unity. The power losses with DSPP across branch i can be calculated by using the following equations:
+Similarly, the total power losses with the addition of DSPP can be calculated by using the following equation:
+The conversion efficiencies and the performance of the inverters highly affect the overall system operations as well as the outputs of PV plants. Normally, inverters are chosen based on the rating of system demand or maximum outputs that a DSPP can produce. From a typical conversion efficiency curve, as provided in Ref [24] for a commercial inverter, the inverter's conversion efficiency from DC to AC is not constant, and this efficiency reduces if the input DC power from the PV modules is less than the rated DC values of the inverter. In this case, it becomes necessary to choose the proper size for the inverter based on predicted yields from the DSPP. The size of the inverters in this study is considered as 120% of the maximum power that the DSPP can produce through a typical day. The inverter's conversion efficiency curve as provided in Ref [24] has been considered for this study.
+E. Load models
+In practical distribution networks, the load models can be classified as constant, industrial, residential, and commercial loads [14]. These types of loads are also referred to as voltage-dependent load models. Although each type of load is of import, the scope of this study is limited to the commercial load type. The reason for choosing this type of load is mainly because most commercial markets open with sunrise and close with sunset, which makes them ideal to use the electricity produced from the sunlight. The new loads, P_{Dnew}, for every bus, depending on the type of loads, are calculated by using the following equations [25]:
+where P_{Da} and Q_{Da} are the actual active and reactive loads connected at bus k, and V(k) is the voltage magnitude of kth bus, which is calculated under the base load conditions. The two parameters vα and vr are known as voltage coefficients for active and reactive power loads. The values of vα and vr are provided in Table III.
+Similarly, hourly total loads of the network can be calculated by using the following equations:
+The purpose of using voltage-dependent time-varying load models is because the output from DSPP is also time varying. For each season, the study considers the seasonal time-varying load magnitudes by using IEEE Reliability Test System (IEEE-RTS) load data as in Ref [26]. The new loads of the time-varying load models can be calculated by using Eqs. (24) and (25) and mathematically can be expressed as following:
+The 24-h electrical demand considered in this paper for each load model is shown in Fig. 2. These demand curves follow the normalized daily load patterns and are provided in Ref [27].
+F. Problem formulation
+In addition to supplying the electrical power, distributed generations (DGs) are considered useful for reducing system losses and enhancing the bus voltages. For voltage-dependent time-varying load models, the hourly total energy losses in a distribution network can be calculated by summing the hourly active and reactive power losses of the all branches in the network. The annual energy losses in the distribution networks can be calculated by using the following equation:
+Similarly, the annual energy losses with the addition of DSPP can be calculated by using the following equation:
+Any deviation in network losses due to the installation of DSPP can be observed by dividing Eq. (30) by Eq. (31). This method can be termed as Total Energy Loss Index (TELI) and can be calculated by using the following equation:
+The minimization of the total energy loss index is the main objective of this study. Hence, this can be expressed as follows:
+In addition, to reduce the network power losses, the addition of DGs in distribution network improves the bus voltage profile. The changes in bus voltage magnitude are measured as deviation in bus voltages and hourly voltage deviation of each bus can be calculated with the following equation:
+In time-varying load models, the bus voltages start to decrease with the increase in load values, and, in this case, the network experiences the minimum voltages during the peak load hours. By using Eq. (34), the bus with lowest voltage magnitude will give a maximum voltage deviation (VDev_{max}); then, the bus with the maximum voltage deviation (VDev_{max}) will be given more importance because the voltage deviation of this bus will indicate the status of the whole network. Therefore, the study should continuously monitor the VDev_{max} throughout the simulation process. The maximum voltage deviation (VDev_{max}) can be calculated by using the following equation:
+The penetration level of the PV plants is known as the ratio of the total energy of PV plants supplied to the electric network and the total energy consumption of the network [7]. For DSPP with no reactive power capabilities, the penetration level of DSPP can be calculated through the following equation [14]:
+G. Simulation constraints
+The following constraints have been considered during the optimization of DSPP in the distribution networks.
+(1) Distributed generation capacity
+whereas P^{min}_{DSPP} is equal to 0 and P^{max}_{DSPP} is equal to a percentage of the peak active power load of each voltage-dependent load. Therefore, P^{max}_{DSPP} for each type of load type will not be the same.
+(2) Network power balance
+where P_{substation} and Q_{substation}, are the active and reactive power supplies, respectively, to the distribution network from the substation.
+(3) DG placementAs previously mentioned, the bus no. 1 in the distributed network is considered as slack bus, therefore, the DSPP can be connected to any bus, excluding bus no. 1.
+(4) Bus voltage limits
+To maintain the power quality of the distribution network, the bus voltage magnitude will remain under a Vmax of 1.0 p.u.
+H. Proposed optimization algorithm
+The genetic algorithm (GA) is the programming optimization technique to solve constrained and unconstrained problems. Inspired by Darwinian's principle to solve the real-world problem, this optimization technique follows the biological growth process [28]. GA optimizes by using evolution and natural selections. GA consists of a data structure similar to chromosomes, and these chromosomes are changed by using selection, crossover, and mutation operators. The details of working mechanism of GA and functions of its parameters are provided in Refs [29] and  [30]. The optimization process flowchart of GA is provided in Fig. 3.
+III. RESULTS AND DISCUSSION
+A. Prediction of weather data
+From the seasonal mean (μ) and the standard deviation (σ) of the historical solar irradiance data, the values for seasonal beta (β) and alpha (α) are calculated by using Eqs. (2) and (3), and are provided in Table IV. The PDFs for each hour of the four seasons are calculated by using Eqs. (1) and (4) . The PDFs for the 11th, 13th, and 17th hour are plotted in Fig. 4.
+The ambient temperature is the average of the seasonal hourly 15 years of temperature data. The annual temperature of the site ranges between 12 °C and 45 °C. The minimum and maximum temperatures during each season are 12 and 29 °C, 29 and 45 °C, 29 and 40 °C, and 16 and 32 °C, for winter, spring, summer, and autumn, respectively.
+Based on the values calculated by beta-PDF, irradiations, and ambient temperature, and the expected daily solar PV outputs for each season are calculated by using Eq. (5). From the outputs of PV modules, it is known that maximum irradiation that this site receives is 907 W/m^{2}, and it is during the summer time. On average, the site receives 4.4–6.9 peak sunny hours (PSH) every day. By using the specifications of the PV module as provided in Table V, the maximum power output that the module can produce is 177 W, and it is during the spring time.
+B. Optimization of DSPP in distribution networks
+This section consists of the simulation results for the optimization of the sizes and placements of DSPPs in distribution networks calculated by the Mixed Integer Optimization using Genetic Algorithm (MIOGA). The proposed algorithm is simulated and applied on two test systems, IEEE 33 bus and IEEE 69 bus distribution networks. The active and reactive demands of the two systems are 3.71 MW and 2.3 MVAr, and 3.8 MW and 2.69 MVAr, for IEEE 33 bus and IEEE 69 bus distribution networks, respectively. The active and reactive losses of the two test systems in the base case are known to be 211 kW and 143 kVAr for IEEE 33 bus and 225 kW and 102 kVAr for IEEE 69 bus distribution network [31–33]. The single-line diagrams, line and load data of the two distribution networks are available in Ref [34].
+For both distribution networks, a voltage-dependent time-varying commercial-type load model was used. The time-varying hourly loads were modeled by using Eqs. (28) and (29). The hourly power outputs of the DSPP plants for IEEE 33 and IEEE 69 bus distribution networks are plotted in Figs. 5 and 6, respectively, whereas, Figs. 7 and 8 portray the hourly power losses of both distribution networks.
+Results of the time-varying commercial-type load model with the optimized size and placement of DSPP in IEEE 33 bus and IEEE 69 bus distribution networks are summarized in Tables VI and VII, respectively. The optimum location of DSPP in IEEE 33 bus distribution network was bus no. 6, whereas, this location was bus no. 61 in IEEE 69 bus distribution network.
+For IEEE 33 bus distribution network, more than 28.9% of total energy loss was reduced with the installation of 3.77 MWp DSPP. The power losses during the peak load hour with and without DSPP were 97.74 and 166 kW, respectively. Moreover, the improvement in the lowest voltage bus due to the installation of DSPP is also noticeable. The voltage deviations with and without DSPP was 0.144 p.u. and 0.161 p.u., respectively. This change in voltage deviation is very significant in terms of enhancement in magnitude of bus voltage. The minimum voltage during the peak load hour was 0.938 p.u. at bus no 18. The hourly minimum bus voltages and bus voltages during the peak load hour for the IEEE 33 bus distribution network are plotted in Figs. 9 and 10, respectively.
+For an IEEE 69 bus network, more than 30% of total energy loss is reduced with the installation of 2.72 MWp DSPP. The energy loss during the peak load hour with and without DSPP was found to be 73.3 kW and 172.7 kW, respectively. The improvement in the lowest voltage bus in this network due to the installation of DSPP is also noted. The voltage deviations with and without DSPP in this network are 0.144 p.u. and 0.161 p.u., respectively. The minimum voltage during the peak load hour is found to be 0.96 p.u. at bus No. 65. The minimum bus voltages during each hour and bus voltage during the peak load hour are plotted in Figs. 11 and 12, respectively.
+The penetration of DSPP in the IEEE 33 bus distribution network was 36.81%, whereas, the penetration of DSPP in the IEEE 69 bus distribution network was found to be 25.83%. The rates of reduction in the total energy loss and penetration of DSPP in both distribution networks is observed to be varied. It is mainly because the number of feeders and size of the loads in both distribution networks are different from each other, which reveals that electrical network designs and sizes of loads play an important role in determining the rates of penetration of distribution generations.
+IV. CONCLUSION
+This paper has presented the sizing and placement of Distributed Solar Photovoltaic Plant (DSPP) by using time series historical weather data; 15 years of solar data between the years 2000 to 2014 were modeled with the aid of beta probability density function (beta-PDF) to predict the output from the PV modules. Total Energy Loss Index (TELI) was used as the main objective function. Mixed Integer Optimization using Genetic Algorithm (MIOGA) was adopted to solve the optimization problem. By considering a time-varying voltage dependent commercial load, the proposed algorithm was applied to the IEEE 33 bus and IEEE 69 bus distribution networks.
+Results obtained through this study show that power losses in distribution networks can be minimized by using the proposed approach for the sizing and placement of distributed solar photovoltaic plants (DSPP). With an average 5.65 peak sun hours (PSH), approximately 28% and 38% of the annual energy losses could be reduced in the IEEE 33 bus and IEEE 69 bus distribution networks, respectively. The penetration of DSPP in IEEE 33 bus and IEEE 69 bus distribution network was found to be 36.81% and 25.83%, respectively. The rates of reduction in total energy loss and penetration of DSPP in the two distribution networks were seen as dissimilar, mainly because the number of feeders and size of the loads in both distribution networks were different.
+From the results of this study, it is revealed that electrical network designs and load sizes play an important role in determining the rates of penetration of distribution generations. In contrast to existing methods, which only use peak load for DG planning, sizing, and placement of distributed generation by using weather data could provide more realistic results.
+TABLE I. 
+Months chosen for each season.
+TABLE II. 
+Characteristics of the PV modules.
+TABLE III. 
+Voltage coefficients for active and reactive power loads.
+TABLE IV. 
+Summary of seasonal weather, showing alpha, beta, mean, and standard deviation.
+TABLE V. 
+Specifications of modules in the study.
+TABLE VI. 
+Summary of results with DSPP in IEEE 33 bus distribution network.
+TABLE VII. 
+Summary of results with DSPP in the IEEE 69 bus distribution network.
+TABLE I. -body
+Seasons	Months
+Winter	January, February, and March
+Spring	April, May, and June
+Summer	July, August, and September
+Autumn	October, November, and December
+TABLE II. -body
+Specifications	Unit
+Short circuit current (I_{SC})	A
+Open-circuit voltage (V_{OC})	V
+Current at maximum power point (I_{MPP})	A
+Voltage at maximum power point (V_{MPP})	V
+Nominal operating temperature of cell (NOTC)	°C
+Voltage temperature coefficients (K_{V})	V/°C
+Current temperature coefficients (K_{i})	A/°C
+TABLE III. -body
+Type of load	Constant	Industrial	Residential	Commercial
+vα	0	0.18	0.92	1.51
+vr	0	6.00	4.04	3.40
+TABLE IV. -body
+Hour	Winter	Spring	Summer	Autumn
+μ	σ	μ	σ	μ	σ	μ	σ
+9	0.01	0.02	0.12	0.03	0.08	0.02	0.02	0.02
+10	0.14	0.06	0.32	0.04	0.25	0.05	0.18	0.06
+11	0.35	0.08	0.53	0.06	0.42	0.09	0.38	0.07
+12	0.54	0.10	0.71	0.08	0.57	0.13	0.55	0.08
+13	0.69	0.12	0.84	0.09	0.68	0.17	0.67	0.09
+14	0.77	0.12	0.91	0.10	0.75	0.19	0.73	0.09
+15	0.78	0.13	0.92	0.08	0.76	0.18	0.71	0.09
+16	0.72	0.12	0.85	0.08	0.70	0.18	0.63	0.09
+17	0.60	0.11	0.72	0.08	0.58	0.15	0.49	0.07
+18	0.42	0.09	0.54	0.06	0.43	0.11	0.30	0.06
+19	0.21	0.07	0.33	0.04	0.25	0.07	0.09	0.04
+20	0.03	0.03	0.11	0.03	0.08	0.04	0.00	0.00
+TABLE V. -body
+Specifications	Value
+Nominal operating temperature of cell (NOCT)	44 °C
+Current at maximum power point (I_{MPP})	8.28 A
+Voltage at maximum power point (V_{MPP})	30.2 V
+Short-circuit current (I_{SC})	8.7 A
+Open-circuit voltage (V_{OC})	37.6 V
+Current temperature coefficients (K_{i})	0.0045 A/°C
+Voltage temperature coefficients (K_{V})	0.1241 V/°C
+TABLE VI. -body
+Parameters	Without DSPP	With DSPP
+PV plant size (MWp)		3.77
+Bus no.		6
+Annual energy losses (MWh)	593.99	422.65
+Reduction in energy loss (%)		28.85
+DG penetration (%)		36.80
+Voltage deviations (VDevmax)	0.161	0.144
+TABLE VII. -body
+Parameters	Without DSPP	With DSPP
+PV plant size (MWp)		2.721
+Bus no.		61
+Annual energy losses (MWh)	617.94	383.13
+Reduction in energy loss (%)		38.00
+DG penetration (%)		25.83
+Voltage deviations (VDevmax)	0.151	0.133
+FIG. 1. 
+Single-line diagram of a two-bus section in a radial distributed network.
+FIG. 2. 
+Daily demand curved for each load model.
+FIG. 3. 
+Flowchart of genetic algorithm for sizing and placement of DSPP.
+FIG. 4. 
+Probability density of solar irradiance during each season.
+FIG. 5. 
+Power output from DSPP and system demand of IEEE 33 bus distribution network.
+FIG. 6. 
+Power output from DSPP and system demand of IEEE 69 bus distribution network.
+FIG. 7. 
+Power losses with and without DSPP in IEEE 33 bus distribution network.
+FIG. 8. 
+Power losses with and without DSPP in IEEE 69 bus distribution network.
+FIG. 9. 
+Minimum bus voltages with and without DSPP in the IEEE 33 bus distribution network.
+FIG. 10. 
+Bus voltages during the peak load hour in the IEEE 33 bus distribution network.
+FIG. 11. 
+Minimum bus voltages with and without DSPP in the IEEE 69 bus distribution network.
+FIG. 12. 
+Bus voltages during the peak load hour in the IEEE 69 bus distribution network.

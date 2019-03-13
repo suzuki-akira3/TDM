@@ -1,0 +1,203 @@
+The KAM approach to the localization in “haarsch” quasi-periodic media
+We propose a Kolmogorov-Arnold–Moser type approach to the spectral analysis of lattice Schrödinger operators with quasi-periodic potentials. In the strong disorder regime, we prove uniform exponential localization and establish measure-theoretic bounds on the “resonant” sets which are substantially stronger than in prior studies on localization in deterministic disordered environments.
+I. INTRODUCTION
+We study spectral properties of finite-difference operators, usually called lattice Schrödinger operators (LSOs), acting in the Hilbert space H=ℓ^{2}(Z^{d}),
+where ω and ϑ are the parameters, the roles of which are as follows:
+• ω∈Ω≔T^{ν}=R{ν}/Z{ν}≅0,1{ν}, ν ≥ 1;
+• T:Z{ν}×Ω→Ω is a (conservative) dynamical system;
+• ϑ ∈ Θ, where (Θ,B,P^{Θ}) is an auxiliary probability space.
+The amplitude ε > 0 of the kinetic energy operator is assumed to be small.
+The dynamical system T leaves the parameter ϑ ∈ Θ invariant, so the latter labels the operator ensembles {H_{ε}(ω, ϑ), ω ∈ Ω}. In the present paper, the function v:Ω→R, which we will call the hull of the deterministic potential V, is expanded in an orthogonal series over a basis {ϕ_{n}} in L^{2}(Ω), with coefficients considered as independent parameters
+Then one can actually identify ϑ with the collection of the coefficients {c_{n}(ϑ)} and introduce in an appropriate way the structure of the measure (e.g., probability) space in the set of all such collections. The motivation for such an approach was explained in our earlier studies [7,9]. The analysis carried out in Ref [9] strongly suggested using a direct perturbative approach to the phenomenon of exponential decay of the eigenfunctions for the operator ensembles considered there, without using first the Multi-Scale Analysis (MSA) of the Green functions. The efficiency of such a direct approach was demonstrated by Sinai [16], who used instead a variant of the Kolmogorov-Arnold–Moser (KAM) technique. The main goal of the present paper is to extend the KAM method to a class of deterministic operators featuring a very strong form of the Anderson localization, often referred to as the ULE (Uniform Localization of Eigenfunction) property.
+The KAM approach to the localization analysis of quasi-periodic operators was used by Bellissard et_al [3]; it actually pre-dates the MSA (cf. Refs [17] and  [13]). Recently, Imbrie [14] used a similar KAM-type technique for the proof of Anderson localization in a random potential on a lattice Z^{d}. As in Ref [3], he makes at each induction step a unitary transformation of an approximate eigenbasis (AEB) so that every AEB is an orthogonal basis in ℓ^{2}(Z^{d}). The orthogonality is of course a very welcome feature in the context of a technically involved perturbative spectral analysis. However, the quantitative measure-theoretic control of the small denominators, the well-known Achilles heel of the KAM techniques, becomes quite difficult in the situation where the new AEB is made orthogonal, for it requires to control perturbation diagrams of all orders at once, ultimately making the inductive procedure very complex. Apparently, there is no ideal solution to this dilemma; in the present paper, we follow the path laid down in Sinai’s work [16] and make a compromise: the AEBs are not required to be exactly orthogonal, but they are composed of compactly supported functions, which makes “local” their dependence upon the phase variable ω∈Ω=T^{ν}. A local dependence of the approximate eigenvalues (AEVs) significantly simplifies the control of small denominators. In particular, we do not have to prove a Wegner estimate as such, for some local Hamiltonians, albeit we exploit some more elementary mechanisms which can in principle be used for a derivation of a simpler (and weaker, non-optimal) variant of the Wegner estimate (cf. Ref [8]).
+Compared to the multi-scale analysis of the deterministic operators with “haarsch” potentials, the KAM approach proposed in the present work gives stronger bounds on the measure of the unwanted subsets in the parameter space for which the localization analysis is inconclusive. Specifically, these bounds, which are akin to the more traditional probability bounds used in the MSA of random operators, rapidly decay with respect to the length scales {L_{j},j∈N}. The rate of decay of such bounds as L_{j} → ∞ affects the decay of the averaged eigenfunction correlators. A genuine exponential decay of the latter, as is well-known, cannot be proved by the existing techniques of the MSA; in a number of models, it requires the Aizenman–Molchanov method (or Fractional Moments Method, FMM) [1,2]. Unfortunately, the FMM does not apply to the deterministic operators (at least, no such modification is known today), so the present paper aims to fill the gap. Admittedly, we make here only a first step, and in a more general context of deterministic operators, one has to address the issue of “resonances,” as in the models with a random (e.g., an IID) potential. The non-resonant nature of the potentials considered below provides a convenient “laboratory” where the functional-analytic aspects of the KAM method based on the approximate eigenfunctions can be easily illustrated.
+It is instructive to compare the above results to those proved by Bourgain and Goldstein [4] for individual hulls. Assuming the hull v:T^{ν}→R to be analytic in a complex neighborhood of the torus, the authors of Ref [4] proved complete localization for any fixed hull v, but for ε∈0,ε{0}(v) with some ε_{0}(v) small enough. Our extended phase×parameter space analysis shows that without the analyticity condition, the onset of a uniform (in ω ∈ Ω) Anderson localization is guaranteed for P^{Θ}-almost every choice of the Fourier coefficients of the hull v with respect to the standard Haar basis on T^{ν}, but again for ε > 0 small enough. Obviously, for a fixed ε > 0, some hulls v (but not ω) are to be excluded, as suggests the example of the Almost Mathieu operator featuring the metal-insulator transition (cf. the work by Jitomirskaya [15] and the bibliography therein). As to the phenomenon of uniform (and not just semi-uniform) decay of the localized eigenfunctions, we mention the studies by Damanik and Gan [11,12] who considered the case of the limit-periodic potentials.
+A more detailed discussion of prior results and alternative techniques can be found in Ref [9]; in particular, we refer an interested reader to the studies [5,6,11,12,15].
+A. Requirements for the dynamical system
+For clarity of presentation, we consider only the case where the phase space of the underlying dynamical system is Ω=T^{ν}, ν ≥ 1, although the principal technique of the small denominators analysis can be adapted to a much larger class of deterministic dynamical systems, satisfying the conditions of uniform polynomial aperiodicity [(UPA), cf. (1.2)] and tempered local divergence of trajectories [cf. condition (DIV) in Ref [9]]. We endow Ω=T^{ν}=R{ν}/Z^{ν} with the distance dist_{Ω}[ω′, ω″] inherited from the max-distance in R^{ν},
+The dynamical system T:T^{ν}×Z^{d}→T^{ν} is given by the translations of the torus, T^{x}ω = ω + x_{1}α_{1} + ⋯ + x_{d}α_{d}, α_{i}∈T^{ν}, x∈Z^{d}, and we assume that the frequency vectors α_{i} are chosen so that T fulfills the uniform power-law aperiodicity (diophantine) condition of the form
+(UPA)∃A,C_{A}∈N{*}∀ω∈Ω∀x,y∈Z^{ν} with x≠y,
+Notice that the condition (DIV) assumed in Ref [9] is trivially fulfilled since the translations of the torus are isometries. This simplifies some technical moments of the geometrical constructions in Sec. II.
+B. Randelette expansions
+In Ref [7], we introduced parametric families of ergodic ensembles of operators {H(ω; ϑ), ω ∈ Ω} depending upon a parameter ϑ ∈ Θ in an auxiliary space Θ. As shown in Ref [7], it is convenient to endow Θ with the structure of a probability space, (Θ,B,P^{Θ}), in such a way that ϑ is, in fact, an infinite family of IID random variables (r.v.) on Θ, providing an infinite number of auxiliary independent parameters allowing to vary the hull v(ω, ϑ) locally in the phase space Ω.
+In the framework of the LSO, we proposed in Ref [7] a more specific construction where H(ω; ϑ) = H_{0} + V(⋅; ω, ϑ), with V(x; ω, ϑ) = V(T^{x}ω, ϑ) and
+where {ϑ_{n,k}, n ≥ 0, 1 ≤ k ≤ K_{n}} are IID random variables on Θ, and φ_{n,k} ≔ (φ_{n,k}), n ≥ 0, 1 ≤ k ≤ K_{n} < ∞ are some functions on the phase space Ω of the underlying dynamical system T^{x}. Series of the form (1.3) were called in Ref [7]randelette expansions, referring to the “random” nature of the expansion coefficients and to the shape of φ_{n,k} reminding the wavelets (“ondelettes,” in French). An interesting case is where the randelettes are simply Haar wavelets with coefficients considered, formally, as independent random variables relative to an auxiliary probability space (Θ,B,P^{Θ}). For example, if Ω=T^{1}=R/Z, for n = 0 we set K_{0} = 1, φ_{0,1}(ω) = 1, and for n ≥ 1, 1 ≤ k ≤ K_{n} = 2^{n},
+where
+so suppφ_{n,k}=C_{n,k}≔Cn,k+∪Cn,k−. On the torus T^{ν} with ν > 1, the functions φ_{n,k} are the tensor products of the one-dimensional Haar’s wavelets, and C_{n,k} ≔ suppφ_{n,k} are cubes in T^{ν} of side length 2^{−n}, of the form C_{n,k}=☓j=1νk_{j}2^{n},k_{j}+12^{n}. These cubes define a partition of T^{ν} which we denote by C_{n}. Each of these cubes is partitioned into 2^{ν} sub-cubes of side length 2^{−n−1}, {C_{n,k;i}, i = 1, …, 2^{ν}}, on which φ_{n,k} takes a constant value ±1; we denote this value by s_{n,k}(ω)∈{−1,+1} so that
+Clearly, the cubes C_{n,k;i} are elements of the finer partition C_{n+1}. Indeed, similar to (1.4), we have
+where the combinations of the shifts l_{j;i} determine sign(s_{n,k}(⋅)).
+Next, consider a family of IID random variables ϑ_{n,k} on an auxiliary probability space (Θ,B,P^{Θ}), uniformly distributed in [0, 1], and let a_{n}=2^{−2bn2},n≥1,b>0, with b > 0 to be specified later, and define a function
+which can be viewed as a family of functions v_{𝜗}(⋅)=v(⋅,𝜗):T^{ν}→R, parameterized by ϑ ∈ Θ or as a particular case of a “random” series of functions, expanded over the given system of functions φ_{n,k} with “random” coefficients. Following Ref [9], we call the expansions of form (1.5) “haarsh” randelette expansions.
+C. Main result
+Theorem 1. Consider a family of lattice Schrödinger operators inℓ^{2}(Z^{d}), H_{ε}(ω, ϑ) = εΔ + V(x; ω, ϑ) [cf. (1.1)], where V(x; ω, ϑ) = v(T^{x}ω, ϑ) withv(ω, ϑ) given by the expansion (1.5), and the dynamical system T satisfies(UPA). There exists ε_{0} ∈ (0, +∞) such that for any ε ∈ (0, ε_{0}), there exists a subset Θ^{∞}(ε) ⊂ Θ withP^{Θ}Θ^{∞}(ε)↑1as ε ↓ 0 and with the following property: if ϑ ∈ Θ^{∞}(ε), then foranyω ∈ Ω:
+(A) H_{ε}(ω, ϑ) has pure point spectrum;
+(B) for anyx∈Z^{d}, there is exactly one eigenfunction ψ_{x}(⋅; ω; ϑ) such that
+i.e., ψ_{x}has the “localization center” x, so there is a natural bijection between the elements of the eigenbasis {ψ_{x}(⋅; ω, ϑ)} and the latticeZ^{d};
+(C) for allx∈Z^{d}, the eigenfunctions ψ_{x}decay uniformly away from their respective localization centers
+We will derive the assertions of Theorem 1 from the results of the KAM scale induction, in Sec. IV.Note that the simplicity of spectrum in our model was established in Ref [9].
+II. PHASE SPACE ANALYSIS AND SPECTRAL SPACINGS
+Similar to the studies [3,9], we establish a complete localization of the eigenfunctions of H_{ε}(ω, ϑ) for every (and not just almost every) phase point ω∈Ω≡T^{ν}. As stated in the inductive hypothesis K(L_{j}) (cf. Sec. III), each induction step can be carried out for all ω ∈ Ω but only outside a subset of Θ of small P^{Θ}-measure: the smaller ϵ > 0, the smaller is the measure of the excluded subset of Θ. In other words, for P^{Θ}-almost every ϑ ∈ Θ, there exists ϵ_{○}(ϑ) > 0 such that for ϵ∈0,ϵ_{◦}(𝜗), the operator ensemble H_{ε}(⋅, ϑ) on the phase space of the ergodic dynamical system T features a uniform (and not just semi-uniform) complete Anderson localization with unimodal [cf. assertion (C) of Theorem 1], exponentially decaying eigenfunctions.
+In the present section, we prepare the ground for the main measure-theoretic estimate (in the parameter space Θ) required for the KAM induction, but it would be premature to formulate the final technical result here, in an encapsulated form, since a number of related objects will appear in Sec. III.
+T-covariance. Below we often refer to the following notion.
+Definition 2.1. Let be given a dynamical system T:Z^{d}×Ω→Ω, an arbitrary set A, and an action S of the abelian group Z^{d} on A, i.e., a homomorphism S:Z^{d}→Aut(A) of Z^{d} into the group of transformations of A. A mapping F:Z^{d}×Ω→A is called T-covariant iff
+Specifically, we will need the following three categories of covariant mappings:
+(i) scalar functions λ:(x,ω)↦λ_{x}(ω)∈C satisfying
+(ii) vector-valued mappings f: (x, ω) ↦ f_{x}(⋅, ω) with values in ℓ^{2}(Z^{d}) so that a function y ↦ f_{x}(y, ω) with fixed x and ω is square-summable and satisfies
+(iii) matrix-valued mappings F:Z^{d}×Ω→Mat(Z^{d}) constant in the first argument (ranging in Z^{d}) so that its matrix elements F_{x,y}(z, ω) ≡ F_{x,y}(0, ω) satisfy
+Item (ii) corresponds to the eigenfunctions ϕ_{x}, which will be proved to be square summable, and even uniformly exponentially decaying away from their individual “localization centers” x∈Z^{d}; (i) corresponds to the eigenvalues λ_{x} associated with ϕ_{x}. The last category (iii) covers the case of the deterministic matrices (Hamiltonians) H_{ε}(ω) and various intermediate matrices used in the construction of approximate eigenbases. In fact, all three categories of covariant objects will depend upon a measurable parameter ϑ, but since the latter is not affected by the underlying dynamical system, we do not mention it in the above definition of covariance.Local dependence and stochastic support. The starting point for the KAM procedure is an observation that the original, canonical delta-basis in Z^{d} is an approximate eigenbasis for the operator H_{ε} = εΔ + V, with accuracy of order Oε, and the approximate AEVs λx0=V(x;ω) exhibit local dependence upon the values of the potential: each λx0 is measurable with respect to the sigma-algebra generated by a single r.v. V(x; ω). This renders explicit and simple the control of the first-order small denominators λx0−λy0≡V(x;⋅)−V(y;⋅) appearing in the KAM procedure, in the course of the construction of the approximate EFs of order 1.
+Definition 2.2. Let be given a measurable mapping f from the space MZ^{d}diag of diagonal matrices Λ=diag(λ_{x},x∈Z^{d}) to some measurable space (A,B). The stochastic support of f, denoted S(f), is the minimal subset S⊂Z^{d} such that f is measurable with respect to the sub-sigma-algebra F_{S} generated by the cylinder sets L_{x,t}≔{Λ∈MZ^{d}diag:λ_{x}≤t}, x∈S, t∈R.The most important consequence of the finiteness (and uniform boundedness) of the stochastic support of the AEVs will be the following property: at each step j ≥ 0, the differences λxj−λyj (hence the respective small denominators) for all y∈B_{CLj}(x) are invariant under the local transformations
+We shall see that the latter property allows one to trace the origins of the abnormally small denominators back to the random potential, which is by far simpler a task than the analysis of highly implicit AEVs for j ≫ 1. The parametric bound on the set of the unwanted hull samples obtained in this way provides a satisfactory substitute for the usual Wegner bound.Randelette expansions. We always assume the phase space Ω of the underlying dynamical system to be the torus T^{ν} of dimension ν ≥ 1: T^{ν}=R{ν}/Z^{ν}≅0,1{ν}. For each n ≥ 0, we have introduced the family of K_{n} = 2^{νn} cubes C_{n,k}, k = 1, …, K_{n}, of side length 2^{−n}, and the functions φ_{n,k} with suppφ_{n,k} = C_{n,k}. For every n ≥ 0, the supports {C_{n,k} = suppφ_{n,k}, 1 ≤ k ≤ K_{n}} naturally define a partition of the phase space Ω,
+These partitions form a monotone sequence: C_{n+1}≺C_{n}, i.e., each element of C_{n} is a union of some elements of the partition C_{n+1}. Given n ≥ 0, for each ω ∈ Ω, we denote by k^{n}(ω) the unique index such that ω∈C_{n,k^n(ω)}. For each N ≥ 0, introduce the approximant of v(ω, ϑ) given by (1.3),
+the truncated potential V_{N} and the truncated Hamiltonian Hε(N),
+For any N ≥ 0, denoting ‖f‖{∞}≔supω∈Ω‖f(ω,⋅)‖{L^{∞}(Θ)}, we have
+It is important that the RHS is much smaller than the width (a_{N}) of the distribution of random coefficients a_{N}ϑ_{N,k}, 1 ≤ k ≤ K_{N} (recall: ϑ_{N,k} ∼ Unif[0, 1]). (This is why we assumed a_{n} to be decaying faster that exponentially.) Set
+with Ã>0 chosen so that 2^{−Ñ(L)}=2^{−ÃlnL}<CA−1L^{−2A}. Then for any u∈Z^{d} and ω ∈ Ω, all the phase points {T^{x}ω,x∈B_{L^{2}}(u)} are separated by the elements of the partition C_{Ñ(L)} (of size 2^{−Ñ(L)}) since by (UPA) and the choice of Ã and Ñ,
+For further use, introduce the sigma-algebras BN⊥ generated by the r.v.,
+Conditional on BN⊥, each value of the potential V(ω, ϑ) with a fixed ω∈T^{ν} is an affine function of some ϑ_{n,k} with k = k(ω). This significantly reduces the randomness in V(ω, ϑ) but renders much simpler and transparent the analysis of regularity of its probability measure.Fix a length scale L_{j}, j ≥ 0, let
+and partition Ω=T^{ν} into a union of N_{Rj} adjacent cubes Q_{Rj}(ω_{i}), i∈〚1,N_{Rj}〛, of size R_{j} with centers ω_{i} forming a periodic grid including 0∈T^{ν}. Similarly, partition Ω into adjacent cubes Q_{rj}(ω̃{i^{′}}) of size r_{j}=Lj6A{−1}.
+Lemma 2.1. Fix any j ≥ 0. The boundaries of the cubesT^{−z}Q_{Rj}(ω_{i})withz∈B_{Lj2}(0)partition each cubeQ_{rj}(ω̃{i^{′}})into at most 2^{ν}parallelepipedsQ^{j,i^{′},k}, 1≤k≤K^{j,i^{′}}≤2^{ν}.
+Proof. (cf. Fig. 1) Let S_{a}={ω∈T^{ν}:ω_{a} mod R_{j}=0},1≤a≤ν. Equivalently, S_{a} is the union of the faces of all cubes Q_{Rj}(ω_{i}) parallel to the a-th coordinate hyperplane in the torus (with identification T^{ν}≅0,1{ν}⊂R{ν}). Let us show by contraposition that (UPA) implies that for each a∈〚1,ν〛 the images {T^{−z}S_{a}} cannot hit more than once any given cube of size R_{j}.
+Assume otherwise; then there are two distinct points x^{′},x^{″}∈B_{Lj2}(0) such that T^{−x′}S_{a}, T^{−x″}S_{a}∈Q_{Rj}(ω) for some ω. Consequently, for some K∈Z,
+hence with the integers M^{′}=Rj−1xa′, M^{″}=Rj−1xa″, M ≔ M′ − M″ ≠ 0, |M|≤2Lj2, we have Mω_{a} = ϱ + K, where K∈Z and
+On the other hand, by (UPA) we have
+which contradicts (2.2) (for L_{0} large enough). Thus ν (or less) hyperplanes partition a cube into a union of at most 2^{ν} parallelepipeds.
+With L↦Ñ(L)=ÃlnL, introduce the integers
+Let P_{j,l},1≤l≤Lj′≔∑_{i^{′},k}K^{j,i^{′}} be the collection of all partition elements Q^{j,i^{′},k} with a fixed j, numbered in some way. For each fixed z∈B_{Lj2}(0) and P_{j,l}, the phase point T^{z}ω staying inside a given parallelepiped P_{j,l} cannot cross the boundary of any cube Q_{j,i^{′}}. Therefore, we come to the following simple
+Corollary 2.1. For anyj∈N, there exists a finite measurable partition ofΩ=T^{ν}, P_{j}=P_{j,l},1≤l≤L_{j}such that for each element P_{j,l}, the collection of random variables indexed byz∈BL_{j}2(0),
+is constant (as a collection-valued function of ω) on P_{j,l}.One can formulate the above result in the following way. Pick one representative τ_{j,l} ∈ P_{j,l} per element P_{j,l}. Then we see that there are a finite number of possible random functions
+Lemma 2.2. Let be given L_{j}and two functionalsa^{′},a^{″}:V↦Ron the functionsV:Z^{d}→Rsatisfying for some finite subsetsΛ^{′},Λ^{″}⊂Z^{d},
+Assume that Λ′ ∩ Λ″ = &emptyv;andΛ^{′}∪Λ^{″}⊂B_{Lj4}(0). Let V(x; ω, ϑ) = v(T^{x}ω, ϑ), x∈Z^{d}, and consider two r.v.ζ^{′}(ω,𝜗)=a^{′}[V(⋅;ω,𝜗)], ζ^{″}(ω,𝜗)=a^{″}[V(⋅;ω,𝜗)]. Then for some C, C_{1} ∈ (0, +∞), one has
+Proof. Let Θ_{j,ϵ} be the event figuring in (2.6), then it follows from (2.4) that
+Fix any point τ_{i,l}∈T_{j}, so the only randomness left is due to ϑ ∈ Θ. The sample V_{Λ^{′}}={V(x;τ_{i,l},⋅),x∈Λ^{′}} (relative to the probability space Θ) is independent from a similarly defined sample V_{Λ^{″}}. Each of the two samples has independent, albeit possibly differently distributed, random variables (r.v.). By construction, each r.v. v_{Ñ}(T^{z}τ_{i,l},𝜗) has a uniform distribution on an interval of length a_{Ñ}. In other words, the probability distribution of the sample V_{Λ^{′}} is a normalized Lebesgue measure on a cube of side length a_{Ñ} in R^{Λ′}. Let
+and similarly define ξ″(ϑ), η″(z, ϑ) replacing Λ′ by Λ″. It is readily seen that the distribution of ξ′ conditional on (η′(z, ϑ), z ∈ Λ′} is again a uniform distribution on η′-dependent interval, except for the degenerate cases where the interval in the question is reduced to a single point or is empty.Next, conditional on V_{Λ^{″}}, thus rendering a^{″}(ω) non-random. Then (2.5) implies that a^{′}, as a functional of ξ′ and of η′, satisfies a^{′}(𝜗)=c^{′}[η^{′}(𝜗)]+ξ^{′}(𝜗) so with a^{″}, η′ fixed by conditioning, and some conditionally non-random c̃,
+Now the claim follows from Lemma 2.3.
+Lemma 2.3 (Cf. Ref [10], Lemma 6.1). Let be given IID random variables X_{1}, …, X_{n}with uniform distribution Unif[0, ℓ], ℓ > 0 and denoteξ_{n}≔n^{−1}∑i=1nX_{i}, η_{i} ≔ X_{i} − ξ_{n}, i∈[[1,n]], η(ω) = (η_{1}(ω), …, η_{n}(ω)). For any Borel functionλ:R{n}→R, one has
+Remark 1. We state Lemma 2.3 the way it is given in Ref [10], but it easily adapts to a more general case where X_{i} are independent random variables with individual uniform distributions Unif[a_{i}, a_{i} + ℓ], with arbitrary a_{i}∈R. Indeed,
+• the transformation X_{i}↦X̃{i}=X_{i}−a_{i}, Y_{i} = η_{i} − η_{n}, i∈〚1,n−1〛, gives IID random variables distributed in [0, ℓ];
+• all the differences Y_{i} = η_{i} − η_{n}, i∈〚1,n−1〛 remain invariant;
+• the families of random variables {η_{1}, …, η_{n}} and {Y_{1}, …, Y_{n−1}} generate the same σ-algebra since η_{1} + ⋯ + η_{n} = 0.Therefore, any measurable function of η(ω) is also a measurable function of Y(ω) = (Y_{1}(ω), …, Y_{n−1}(ω)) and vice versa.It is worth noticing that some technical calculations, required in the case of uniformly distributed IID samples, become unnecessary in the prototypical case of Gaussian IID samples, for in this case the r.v. ξ is independent of η_{1}, …, η_{n} [so we can condition on η in (2.7)] and it has a Gaussian density bounded by On^{1/2}, resulting in an even stronger Lipschitz-type bound than (2.7). This simple observation made in Ref [8] was the initial motivation for Ref [10].
+III. THE KAM INDUCTION
+We use the norms defined for the functions on Z^{d} and for the matrices A_{x,y} with entries indexed by x,y∈Z^{d},
+Note that for fixed m > 0, all the weighted norms ∥⋅∥_{m,x} are equivalent, and one has ‖⋅‖{m,x}≤‖⋅‖{m^{′},x} for 0 ≤ m ≤ m′. With m = 0, we obtain the conventional norm of ℓ^{2}(Z^{d}). The use of such norms in the KAM approach to localization goes back to Ref [3].
+Apart from the m-norm for matrices (Ayx){y,x∈Z^{d}} measuring the decay of their entries away from the diagonal, we shall also use sometimes a cruder characteristic of finite-band matrices which we call the spread of a matrix A, denoted SPRA,
+If A is not a finite-band matrix, its spread is infinite, but we do not encounter such situations. This meaning of the word “spread” is not traditional (usually it refers to the distances between the respective eigenvalues), but we use it here occasionally, solely for the sake of terminological brevity.
+We work with a sequence of growing length scales {L_{j},j∈N} of the form L_{j} = L_{0}Y^{j}, Y∈N{*}, and introduce a rapidly decaying positive sequence
+measuring the accuracy of the approximate eigenfunctions and eigenvalues. The small denominators will be controlled with the help of another sequence δ_{j}↓ 0. The techniques of Sec. II allow us to assume, at the price of choosing the disorder amplitude |g| large enough, that δ_{j}≥ϵja with an arbitrarily small a > 0. We often make use of popular notations such as A = t^{b+} and B = t^{b−}, for t ≪ 1 or t ≫ 1, meaning that A can actually be replaced by Const t^{a+α} with α > 0 that can be chosen as close to 0 as one pleases; respectively, B can be replaced by Const t^{b−α} with an arbitrarily small α > 0. With this notation, δ_{j}≥ϵj0+. A rapid decay of the size of tolerated “resonances” is a distinctive and valuable feature of the KAM procedure.
+Now we shall list the inductive hypotheses; this list is rather long, which is not unusual for the KAM method, but it has the advantage to provide a constructive two-page summary of the proof of the main result, along with a detailed technical information that can be used in further studies.
+Recall: AEV and AEF stand for “approximate eigenvalue(s)” and, respectively, “approximate eigenfunction(s).”
+Inductive hypothesis K(L_{j}): For all 0 ≤ i ≤ j, there exists a measurable subset [18]Θ̃{i}⊂Θ with P^{Θ}Θ̃{i}≥1−ϵi0+ such that for all 𝜗∈Θ^{j}≔∩i=0jΘ̃{i} are well-defined the following objects:
+(K1) a T-covariant vector-valued mapping ϕ•i:Z^{d}×Ω×Θ^{i}→ℓ^{2}(Z^{d}),
+(K2) a T-covariant real-valued mapping λ•i:Z^{d}×Ω×Θ^{i}→R,
+(K3) a T-covariant vector-valued mapping ψ•i:Z^{d}×Ω×Θ^{i}→ℓ^{2}(Z^{d}),
+(K4) The matrix with columns given by the vectors ϕ•i,
+has the form U^{j}=1+D^{j}̃, with
+U^{i}(ω, ϑ) is therefore boundedly invertible by the Neumann series, and so its column vectors {ϕxi,x∈Z^{d}} form a Riesz basis in ℓ^{2}(Z^{d}).The following relations hold, for all 0 ≤ i ≤ j:
+(K5) the vectors ϕxi(ω,𝜗) form an approximate covariant eigenbasis (ACE) for the operator H_{ε}(ω, ϑ), with AEV λxi(ω,𝜗) and discrepancy ψxi(ω,𝜗),
+Equivalently, the matrix U^{i}(ω, ϑ) satisfies the identity
+where Λyxi≔δ_{xy}λyi,Ψyxi≔ψxi(y), i.e., the x-th column of the matrix Ψ^{i} is given by the vector ψxi.
+(K6) For i = 0, one has [19]ϕ00(ω,𝜗)=1_{{0}}, λ00(ω,𝜗)=v(ω,𝜗). For all 1 ≤ i ≤ j, the objects λxi,ϕxi,ψxi are determined by the matrix Λ^{(0)}. Denoting by •[Λ] the dependence of an object • upon Λ, one has
+(K7) The discrepancy terms Ψ•i satisfy
+(K8) ψxi is “almost orthogonal” to the basis vector ϕxi,
+(K9) The AEFs ϕxj have compact support, of size uniformly bounded in x,
+and since H is a second-order finite-difference operator, this implies
+(K10) The approximate spectral spacings admit the following lower bound:
+(K11) The objects λxi,ϕxi,ψxi have finite stochastic supports,
+(K12) For all 0 ≤ i ≤ j − 1, one has
+The exponent 7/4 figuring in the inductive hypotheses is chosen so that a quantity of order of ϵj7/4 be small enough even compared to ϵ_{j+1} since ϵj7/4=ϵ_{j+1}⋅ϵj+11/6≪ϵ_{j+1}.
+Apart from the operator family H_{ε}(ω, ϑ), the fundamental objects are Λ^{i} and Φ^{i}, while U^{i}, Ψ^{i}, and F^{i} are derived from Λ^{i}, Φ^{i}, and H.
+Remark 2. The finiteness of the stochastic supports extends (K6) to a stronger property: the same t-dependence of λxi, ϕxi, and ψxi holds true with the local perturbations of the matrix Λ^{(0)}, viz. Λyy(0)↦Λyy(0)+t1_{BCLi(x)}(y). In fact, this is the main raison d’être of our variant of the KAM scheme with approximate AEFs. The principal motivation for this choice is the achieved local dependence of the AEVs upon the values of the potential, resulting in an effective control of the small denominators, and this is of course the crucial point for any KAM induction.
+Remark 3. We will start the induction step by showing that U^{i} is “almost orthogonal,” so the Gram matrix C^{i}=(Ui){⊤}U^{i} of the basis ϕ•i is close to 1,
+Perhaps it would be instructive to add (3.11) to the list of the inductive hypotheses, but it actually will be derived from (K4) and (K10).
+A. The base of induction
+As stated in (K6), we start with the covariant nonrandom AEF ϕx0(ω,𝜗)=1_{{x}}, x∈Z^{d}, and their respective covariant random AEV λx0(ω,𝜗)=V(x;ω,𝜗)=v(T^{x}ω,𝜗). By the definition (1.1) of the lattice Laplacian Δ, we have
+so that ψ•0 is nonrandom [constant in (ω, ϑ)] and obviously covariant. Also, (ψx0,ϕx0)≡0, which is a stronger form of (K8) for j = 0, valid for any ϵ_{0} > 0.
+Owing to the (ω, ϑ)-independence of ϕ•0 and of ψ•0, as well to the explicit dependence λx0(ω,𝜗)=v(T^{x}ω,𝜗), one has the relations (3.7) for i = 0.
+Now we turn to the m-norm estimates of the discrepancy functions [cf. (3.8) in (K8)]. By covariance of the latter, it suffices to check (3.1) with x = 0: by (3.12), one has
+Setting m=−12ln2dε, we get ε=12de^{−2m}, thus
+Therefore, by taking ε > 0 in (1.1) sufficiently small, one can have both ϵ_{0} > 0 as small as one pleases and the m-norm base estimate (3.8) with m > 0 as large as one pleases.
+B. The inductive step
+Below, we sometimes use for brevity the notation a(j) ≲ b(j) for quantities dependent upon the scale L_{j}, meaning that a(j) ≤ Cb(j) for some finite constant C and all j ≥ 0. The subscript ε in H_{ε} will be often omitted, firstly, for brevity, and secondly, to avoid using in the same formulae the amplitude ε from (1.1) and the smallness parameters ϵ_{j} depending upon it.
+Theorem 2. For any j ≥ 0,K(L_{j})impliesK(L_{j+1}).
+Proof. Fix j ≥ 0 and assume K(L_{j}).
+Step 1. The Gram matrix. Let us show that the Gram matrix of the Riesz basis {ϕ•j}, C^{j}=(Uj){⊤}U^{j}, is close to 1, viz. C^{j}=1+D^{j},‖D^{j}‖{m}=Oϵj1−. It will imply the convergence of Neumann’s series for 1+D^{j}{−1}, so
+To this end, note that by symmetry of H,
+hence
+For all x ≠ y, we have two alternatives:
+• either, for x and y too far apart [when the supports of the compactly supported functions figuring in (3.13) are disjoint], one has
+• or, by virtue of (K10) providing a lower bound on |λxj−λyj|,
+ (K12) and (K6) imply that ‖ϕxj‖{m,x}≤1+∑_{i}ϵi1−≤2, and ψ•j obey the decay bound (K7), so it follows by a simple calculation that for |x − y| ≤ CL_{j},
+As to larger distances |x − y|, (3.13) shows that C^{j} has finite spread, and for CL_{j}≤|x−y|≤Lj2 (which suffices for our purposes) we have (3.14), hence
+By normalization, Cxxj=‖ϕxj‖{2}=1. Thus C^{j} = 1 + D^{j}, where
+It follows from the identity (Uj){⊤}−(Uj){−1}U^{j}=C^{j}−1=D^{j} that
+By (K4), the matrix U^{j}=1+D̃{j} is invertible by Neumann series, and
+hence
+Note that the Gram matrix, determined by the AEFs, has the same t-independence as the AEFs [cf. (3.7)].
+Step 2. Expansion ofψ•jin the AEFsϕ•j. By (K5), {ϕyj,y∈Z^{d}} is a Riesz basis, so we have a norm-convergent expansion
+for some matrix A^{j}=(Ayxj). The basis {ϕyj,y∈Z^{d}} is almost orthogonal, and so one can obtain more explicit approximate formulae for the entries Ayxj, with accuracy sufficient for our purposes. Specifically, denote Q̃zxj≔(ϕzj,ψxj), then
+or in a matrix form, Q̃{j}=C^{j}A^{j}. On the other hand, from (3.20) and by construction of U^{j} and Ψ^{j} [cf. (3.4) and (3.6)], we get
+hence Q̃{j}=(Uj){⊤}Ψ^{j} and it obeys [cf. (3.8)]
+We have shown at step 1 that C^{j} = 1 + D^{j} with ‖D^{j}‖=Oϵ_{j}, hence
+and for the discrepancies ψxj, we obtain the decomposition
+Due to the m-norm estimates on ϕ_{•}, for any given C_{ϕ}, arbitrarily large C > 0, arbitrarily small γ > 0 and m large enough (m ≥ m(C, c_{ϕ}, γ)), one has for |x − y| > γc_{ϕ}L_{j},
+Let Q^{j} be obtained from Q̃{j} by the cutoff
+so that Q^{j} has a finite spread,
+Set C = 2 > 7/4 in (3.22), then we infer from (3.21) and (3.22) that
+so Q̃•j can be replaced in further estimates with Q•j, with accuracy Oϵj2. By hypothesis (K8) [cf. (3.9)], |Qxxj|=|(ϕxj,ψxj)|=Oϵj7/4, so we come to the decomposition
+where the correction term fxj+1 satisfies
+Owing to the cut-off estimate (3.24), we can use the approximate coefficients Qyxj of ψxj, instead of the exact (but implicit) ones, Ayxj. Collecting (3.5), (3.19), and (3.21)–(3.26), we obtain a convenient representation for the discrepancies,
+where
+Each function fxj+1 has a compact support,
+since
+Furthermore, the stochastic supports S(fxj+1) are uniformly bounded in diameter. Indeed, as shown in (3.25), fxj+1 is a measurable function of the variables
+so by virtue of (3.23), it suffices to retain in the above collection only y∈B_{γcϕLj}(x). By the inductive hypothesis (K11),
+while for Qyxj≡(ϕyj,ψxj) we have, for all y with |y − x| ≤ γc_{ϕ}L_{j},
+Similarly,
+Thus with a fixed Y > 1 and c_{ϕ}, c^{ψ} small enough, compared to Y − 1, we have
+Step 3. Construction of the new ACE. Introduce a matrix M^{j+1} by
+The matrix elements Myxj+1 are well-defined, thanks to the small denominator bound (3.10) [hypothesis (K10)]. M^{j+1} defines an operator in the space of compactly supported functions on Z^{d}, and we have [cf. (3.10) and (3.27)]
+Now define a matrix Ũ{j+1} by
+The columns of Ũ{j+1} give the new basis vectors (possibly non-normalized)
+We shall perform normalization of the approximate EFs later, at step 7, and then obtain a matrix U^{j+1} satisfying all the hypotheses of the step j + 1.Recall that we denote by SPR⋅ the “effective width” of finite-band matrices [cf. (3.3)]. By (3.28) and (3.23), SPRM^{j+1}=SPRQ^{j}≤γc_{ϕ}L_{j}, thus
+For further use, note that for all z ≠ x,
+By expansion in the Neumann series, convergent by (3.29), we have
+so the inverse (1+Mj+1){−1} can be safely replaced in subsequent calculations by 1−M^{j+1}+(Mj+1){2}, with accuracy O‖M^{j+1}‖m3. This is one of the key points of our procedure, allowing one to keep the AEVs and AEFs locally dependent upon the values of the potential.By construction, φxj+1 is determined by the variables
+where Q•j are, in turn, defined through φ•j and ψ•j, so applying the inductive hypotheses (K6), (K11) and the estimate (3.23), we come to the following upper bound on the stochastic support of φ•j+1,
+Step 4. Action of the Hamiltonian on the new ACE. From the inversion formula (3.34) and the hypothesis (K5), we infer
+where
+It follows that
+with
+thus, due to the identity (3.37) and SPRAB≤SPRA+SPRB,
+since SPRH=1 and SPRΛ̃{j+1}=0. We see that, although the exact inversion formula gives rise to the perturbation terms of all orders, hence to an infinite spread, the finite-distance cutoff performed in the definition of F^{j+1} results in a finite-spread correction to the terms quadratic in M^{j+1} (which also have finite spreads).Equivalently, the column vectors φ•j+1 of the matrix Ũ{j+1}, defined in (3.31), are covariant approximate eigenvectors of H,
+with covariant approximate eigenvalues
+and the new discrepancy terms
+or in vector form, on account of (3.36),
+Now we can check (K8),
+The above almost orthogonality condition will be preserved by the normalization of ϕ•j+1 at step 8.
+Step 5. Estimates of the new discrepancy. It follows from (3.36) that
+so by (3.39), the norms of ψ•j+1 obey an upper bound
+Further, the norms of the diagonal matrices Λ^{j} are uniformly bounded, by induction in j, due to the boundedness of the potential V providing the AEV λ^{(0)} [cf. (K6)] and the inductive perturbation bounds on λ^{i+1}−λ^{i} [cf. (K12)]. Therefore,
+The higher-order terms collected in Z^{j+1} are negligible with respect to the quadratic terms, for we have
+Step 6. m-norm of the perturbation φ•j+1−ϕ•j.The vector ϕxj+1 is the x-th column of Ũ{j+1}=U^{j}(1+M^{j+1}), so
+Step 7. Normalization of the ACE. This is only a matter of convenience, but it is not difficult to see that the normalization of φ•j+1 is actually a small-norm perturbation. Indeed, ‖ϕxj‖=1 by inductive hypothesis, and
+and therefore,
+Introduce the normalized AEF
+then by (3.42), we have ‖ϕxj+1−ϕxj‖≤ϵj1−, and from (3.40), we infer
+The normalization preserves the almost-orthogonality properties of the new AEFs, and it does not change the stochastic support of φxj+1,
+Step 8. The condition (K8). It follows from the norm perturbation estimate on the new ACE that
+Therefore, the inductive assumption (K8) is fulfilled at the step j + 1.
+Step 9. The new spectral spacings. It follows directly from the explicit formulae (3.31) and (3.38) for the new AEFs and AEVs, along with the linear growth rate bound on the diameters of the stochastic supports of the AEF/AEV, that the local deformations of the potential of the form
+leave invariant the AEFs φyj+1 and the discrepancies ψyj+1 with |y−x|≲Lj2, while the AEVs are affine functions of t undergoing under (3.45)
+Fix a pair x, y with |x−y|≤Lj+12 and consider the two possible cases:(I)|x−y|≤Lj2. Then the required lower bound on the spectral spacing follows immediately from a similar lower bound for λxj and λyj, combined with the exponential upper bound on the perturbations |λxj+1−λxj| and λyj+1−λyj|.(II)Lj2<|x−y|≤Lj+12. Then it follows from (UPA) that the finite trajectories indexed by the balls B_{Lj+12}(x) and B_{Lj+12}(y) do not overlap; moreover,
+Conditional on the σ-algebra BÑ{j}⊥ [cf. (2.1) and (2.3)] and with ω fixed, the samples V(T^{z}ω,𝜗),z∈BL_{j+1}2(x) and V(T^{z}ω,𝜗),z∈BL_{j+1}2(y) become independent and take the form
+where ṽ{z}(⋅) is BÑ{j}⊥-measurable, hence rendered non-random by the conditioning, while ζ_{x} and ζ_{y} are independent random variables uniformly distributed in individual intervals of length 2^{−Ñ(Lj)}. On account of the affine dependence (3.46) of the AEVs, the required probabilistic bounds (K10) on the spectral spacings can be derived from Lemma 2.2: taking in (2.6) ϵ=ϵj+1κ, κ > 0, and setting
+we obtain
+By covariance, it suffices to consider only the case x = 0. Therefore, the claim follows by counting the number of pairs (0, y) with y∈B_{Lj2}(0).The estimates (K7) and (K8) for i = 0 have been established in Sec. III A.Summary of the inductive step. For the reader’s convenience, we provide below the references to the stages in the proof where each of the inductive hypotheses (K1)–(K12) is proved.Recall also that the estimates required for the base of indiction (i = 0) have been established in Sec. III A, where we showed that arbitrary small ϵ_{0} > 0 and arbitrarily large decay exponents m > 0 can be obtained by letting the amplitude ε > 0 of the Laplacian (1.1) be small enough.
+IV. PROOF OF THE MAIN RESULT
+None
+None
+(K1) step 3	(K2) step 4	(K3) step 4
+(K4) step 8	(K5) independent of j	(K6) step 9
+(K7) step 5 (3.41)	(K8) step 4 (3.43) + step 9	(K9) step 3 (3.32)
+(K10) step 9	(K11) step 7 (3.44)	(K12) step 5 (3.35)
+FIG. 1. 
+Example for Lemma 2.1; ν = 2. The right portion of the picture shows the torus T^{ν} in a larger scale. Dotted lines are boundaries of some R_{j}-cubes. Hitting some of them by the images T^{x}Q_{rj}(ω_{i^{′}}) (on the right picture) and T^{y}Q_{rj}(ω_{i^{′}}) produces division hyperplanes (on the left picture) in the construction of the partition elements P_{j,l} inside the cube Q_{rj}(ω_{i^{′}}). The existence of two or more division hyperplanes of the same direction contradicts the aperiodicity condition (UPA). Therefore, there can be at most ν internal boundaries, hence at most 2^{ν} partition elements inside Q_{rj}(ω_{i^{′}}).

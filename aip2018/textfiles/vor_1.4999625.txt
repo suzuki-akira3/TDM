@@ -1,0 +1,162 @@
+Spectral semi-classical analysis of a complex Schrödinger operator in exterior domains
+Generalizing previous results obtained for the spectrum of the Dirichlet and Neumann realizations in a bounded domain of a Schrödinger operator with a purely imaginary potential −h^{2}Δ + iV in the semiclassical limit h → 0, we address the same problem in exterior domains. In particular, we obtain the left margin of the spectrum and the emptiness of the essential part of the spectrum under some additional assumptions.
+I. INTRODUCTION
+Let Ω = K^{c}, where K is a compact set with a smooth boundary in R^{d} with d ≥ 1. Consider the operator
+defined on
+or
+defined on
+where V is a real-valued C^{∞}-potential in Ω¯; ν is pointing outwards of Ω.
+The quadratic forms, respectively, read
+where the form domain is
+and
+where the form domain is
+Although the forms are not necessarily coercive when V changes sign, a natural definition, via an extended Lax-Milgram theorem, can be given for AhD or AhN under the condition that there exists C > 0 such that
+Assumption 1.1. 
+We refer to Refs [3],  [12], and  [2] for this point and the characterization of the domain of Ah#, where the notation # is used for D (Dirichlet) or N (Neumann).Note that Assumption 1.1 is satisfied for V(x) = x_{1} (Bloch-Torrey equation), which is our main motivating example (see Refs [9] and  [10]).In this last case and when K = Ø, it has been demonstrated that the spectrum is empty [1,14]. Our aim is now to establish, when K is not empty, the two following properties:
+• the emptiness of the essential spectrum, although the resolvent is not compact when d ≥ 2,
+• the non-emptiness of the spectrum and the extension of the semi-classical result of Almog-Grebenkov-Helffer [2] concerning the bottom of the real part of the spectrum.Since the case d = 1 was analyzed in Refs [12] and  [14], we will assume from now on that
+The study of the spectrum of the operator (1.1) in bounded domains began in Ref [1] where a lower bound on the left margin of the spectrum has been obtained. In Ref [14], the same lower bound has been obtained using a different technique allowing for resolvent estimates (and consequently semigroup estimates) that are not available in Ref [1]. In Ref [4], an upper bound for the spectrum has been obtained under some rather restrictive assumptions on V. In Ref [2], these assumptions were removed and an upper bound (and a lower bound) for the left margin of the spectrum has been obtained not only for (1.1) but also for (1.2) as well as for the Robin realization and for the transmission problem, continuing and relying on some one-dimensional results obtained in Ref [12] and on the formal derivation of the relevant quasimodes obtained in Ref [11].The rest of this contribution is arranged as follows: in Sec. II, we list our main results. Section III is devoted to the emptiness of the essential spectrum of (1.2) under some conditions on the potential. In some cases, we confine the essential spectrum to a certain part of the complex plane, whereas in other cases, we show that it is empty. The methods in Sec. III are equally applicable to (1.1) as well as to the Robin realization and to the transmission problem. In Sec. IV, we derive the left margin of the spectrum in the semi-classical limit, by using the same method as in Ref [2]. In Sec. V, we present some numerical results, and in Sec. VI, we emphasize some points which were not addressed within the analysis.
+II. MAIN RESULTS
+A. Analysis of the essential spectrum
+It is well-known that there is no essential spectrum of Ah# when V → +∞ as |x| → +∞, but we are motivated by the typical example V(x) = x_{1} with d ≥ 2, in which case V can tend to −∞ as well. To treat this example, we need, in addition to Assumption 1.1, the following assumption:
+Assumption 2.1. There exist R > 0 such that K ⊂ B(0, R) and a potentialV_{0}∈C^{1}(R^{d})satisfying the following:
+1. There exists C > 0 such that, for∀x∈R^{d},
+2. There exists c > 0 such that, for∀x∈R^{d},
+and such that V = V_{0}outside of B(0, R).A necessary condition for V at the boundary of B(0, R) is that ∂_{ν}V = 0 at some point of the boundary. If not, any C^{1} extension V_{0} of V inside B(0, R) has a critical point in B(0, R).We have:
+Theorem 2.2. For # ∈ {D, N}, under Assumptions 1.1 and 2.1, for anyΛ∈R, there exists h_{0} > 0 such that for h ∈ (0, h_{0}] the operatorAh#has no essential spectrum in{z∈C| Re z≤Λh^{23}}.We now introduce the stronger condition (similar to Assumption 2.1 with V_{0} = jx_{1}):
+Assumption 2.3. The potential V is given inR^{d}\Kby
+wherej∈R\{0},Ṽ∈C^{1}(R^{d})and satisfies Ṽ → 0 as |x| → +∞.
+Theorem 2.4. Under Assumption 2.3, the operatorAh#has no essential spectrum.In other words, the spectrum of the operator Ah# is either empty or discrete. This spectral property of the operator Ah# contrasts with a continuous spectrum of the Laplace operator in the exterior of a compact set. Adding a purely imaginary potential V to the Laplace operator drastically changes its spectral properties. As a consequence, the limiting behavior of the operator −Δ + igV as g → 0 is singular and violates conventional perturbation approaches that are commonly used in physical literature to deal with this problem (see discussion in Ref [10]). This finding has thus important consequences for the theory of diffusion nuclear magnetic resonance (NMR). In particular, the currently accepted perturbative analysis paradigm has to be fundamentally revised.
+Remark 2.5. It is not clear at all whether the spectrum of −Δ + ijx_{1}remains empty if we add to it a potential V such that(−Δ+ijx1){−1}Vis compact (for example, V with compact support). In fact, one may construct a real valuedV∈C^{1}(R)with compact support inRsuch that σ(−d^{2}/dx^{2} + i(x + V)) ≠ ∅. Consider, however, the operatorA=−Δ+ix_{1}+iV(x^{′})acting onR^{d}, wherex^{′}∈R^{d−1}so that x = (x_{1}, x′). SinceAis separable in x_{1}and x′, we may write
+Consequently (see also Ref [2], Sec. 4) we have
+It follows thatσ(A)=∅. If we consider the Dirichlet or Neumann realization ofAin Ω, then we may use the same procedure detailed in the proof of Theorem 2.4 to conclude thatσ_{ess}(Ah#)=∅.
+Remark 2.6. Let
+where Ṽ ∈ C^{1}satisfiesṼ→|x|→+∞0and a > 0.Then (with h = 1)
+The proof is very similar to the proof of Theorem 2.4 and is therefore skipped. Note that, in the limit a → 0^{+}, σ_{ess}(A1#) tends to the sector 0 ≤ argz ≤ π/4. This is, once again, not in accordance with the guess that the essential spectrum tends to R_{+}=σ_{ess}(−Δ).
+B. Semi-classical analysis of the bottom of the spectrum
+We begin by recalling the assumptions made in Refs [14],  [4], and  [2] (sometimes in a stronger form) while obtaining a bound on the left margin of the spectrum of Ah# in a bounded domain. By contrast, we consider here an unbounded open set with a smooth bounded boundary ∂Ω in R^{d} for d ≥ 2.
+First, we assume
+Assumption 2.7. |∇V(x)| never vanishes inΩ¯.Note that together with Assumption 2.1 this implies that V satisfies (2.1) and (2.2) in Ω¯.Let ∂Ω_{⊥} denote the subset of ∂Ω where ∇V is orthogonal to ∂Ω,
+where ν→(x) denotes the outward normal on ∂Ω at x.We now recall from Ref [2] the definition of the one-dimensional complex Airy operators. To this end, we let D^{#}, for # ∈ {D, N}, be defined in the following manner:
+Then, we define the operator
+whose domain is given by
+and set
+Next, let
+In all cases, we denote by S^{#} the set
+When # ∈ {D, N} it can be verified by a dilation argument that, when j > 0,
+Hence
+and S^{#} is actually independent of #,
+We next make the following additional assumption:
+Assumption 2.8. At each point x ofS^{#},
+where V_{∂}denotes the restriction of V to ∂Ω, and D^{2}V_{∂}denotes its Hessian matrix.It can be easily verified that (2.12) implies that S^{#} is finite. Equivalently we may write
+where α_{1}, …, α_{d−1} are the eigenvalues of the Hessian matrix D^{2}V_{∂}(x),
+where each eigenvalue is counted according to its multiplicity.Our main result is
+Theorem 2.9. Under Assumptions 2.1, 2.7, and 2.8, we have
+where a_{1} < 0 is the rightmost zero of the Airy function Ai. Moreover, for every ε > 0, there exist h_{ε} > 0 and C_{ε} > 0 such that
+In its first part, this result is essentially a reformulation, for exterior domains, of the result stated by the first author in Ref [1]. Note that the second part provides, with the aid of the Gearhart-Prüss theorem, an effective bound (with respect to both t and h) of the decay of the associated semi-group as t → +∞. The theorem holds, for instance, in the case V(x) = x_{1} where Ω is the complementary of a disk or of a sphere (and hence S^{T} consists of two points). Note that j_{m} = 1 in this case.
+Remark 2.10. A similar result can be proved for the Neumann case where (2.14) is replaced by
+wherea1′<0is the rightmost zero of Ai′, and (2.15) is replaced by
+One can also treat the Robin case or the transmission case (see Ref [2]).In the case of the Dirichlet problem, this theorem was obtained in Ref [4], Theorem 1.1 for the interior problem and under the stronger assumption that, at each point x of S^{D}, the Hessian of V_{∂}≔V_{/∂Ω^{#}} is positive definite if ∂_{ν}V(x) < 0 or negative definite if ∂_{ν}V(x) > 0, with ∂_{ν}V ≔ ν⋅∇V. This was extended in Ref [2] to the interior problem without the sign condition of the Hessian. Here we prove this theorem for the exterior problem.
+III. DETERMINATION OF THE ESSENTIAL SPECTRUM
+A. Weyl’s theorem for non-self-adjoint operators
+For an operator which is closed but not self-adjoint, there are many possible definitions for the essential spectrum. We refer the reader to the discussion in Ref [13] or Ref [17] for some particular examples. In the present work, we adopt the following definition.
+Definition 3.1. Let A be a closed operator. We will say that λ ∈ σ_{ess}(A) if one of the following conditions is not satisfied:
+1. The multiplicity α(A − λ) of λ is finite.
+2. The range R(A − λ) of (A − λ) is closed.
+3. The codimension β(A − λ) of R(A − λ) is finite.
+4. λ is an isolated point of the spectrum.For bounded selfadjoint operators A and B, Weyl’s theorem states that if A − B = W is a compact operator, then σ_{ess}(A) = σ_{ess}(B).Once the requirement for self-adjointness is dropped, a similar result can be obtained, though not without difficulties (see Ref [13]). We thus recall the following theorem from Ref [17], Corollary 2.2 (see also Ref [5], Corollary 11.2.3).
+Theorem 3.2. Let A be a bounded operator and B = A + W. If W is compact, then
+In the present contribution, we obtain the essential spectrum of (Ah#+1){−1}, which is clearly a bounded operator in view of the accretiveness of Ah#. We follow arguments disseminated in Ref [15] (see also Ref [16]) that are rather standard in the self-adjoint case. The idea is to compare two bounded operators in L(L^{2}(R^{d})). The proof is divided into two steps.
+B. The pure Bloch-Torrey case in R^{d}
+We consider the case V(x) = V_{0}(x) where V_{0} is given by
+with j ≠ 0 (assuming h = 1). We intend to use here Theorem 3.2. The first operator is, in L(L^{2}(R^{d})),
+where
+Because d ≥ 2, A is not compact, but nevertheless we have
+Lemma 3.3.
+Proof. To prove that σ(A) ⊆ {0} we use the property that
+and similarly
+However, it has been established in Refs [1] and  [2] that the spectrum of (−Δ + iV_{0} + 1) is empty and hence σ(A) ⊆ {0}.To prove that 0 ∈ σ(A) we consider first the one-dimensional operator
+defined on D(L)=H^{2}(R)∩L^{2}(R;x^{2}dx).Since (L+1){−1} is compact, it follows that there exists {f_{k}}k=1+∞⊂L^{2}(R) such that ∥f_{k}∥_{2} = 1 and ϕ_{k}=def(L+1){−1}f_{k}→0.Let ψ∈C0∞(R^{d−1}) satisfy ∥ψ∥_{2} = 1 and further g_{k}(x)=f_{k}(x_{1})ψ(x^{′})−ϕ_{k}(x_{1})Δ_{x^{′}}ψ.It can be easily verified that
+Hence, 0 ∈ σ(A), and the lemma is proved.For a given regular set K with non-empty interior, consider in L^{2}(R^{d}) [which is identified with L^{2}(K̇)⊕L^{2}(Ω) where K̇ is the interior of K] the operator
+Again we have
+and similarly
+Hence it remains to prove.
+Proposition 3.4. 
+By Weyl’s theorem, it is enough to prove.
+Proposition 3.5. A − B is a compact operator.
+Proof. We follow the proof in Ref [15], pp. 578–579 (with suitable changes due to the non-self-adjointness of A and B). To this end, we introduce the intermediate operator
+where AK̇,V_{0}D is the Dirichlet realization of (−Δ + iV(x)) in K̇.It is clear that C − B is compact, hence it is now enough to obtain the compactness of the operator C − A.For f,g∈L^{2}(R^{d}), let
+We then define
+Note that
+and
+We now write
+As v_{−} satisfies a Dirichlet condition on Γ = ∂K = ∂Ω and v_{+} satisfies a Neumann condition, we obtain via integration by parts
+To complete the proof, we notice that by the Sobolev embedding theorem and the boundedness of the trace operators we have for some compact K̃ such that K⊂K̃̇ and some constants C_{K̃}, CK̃′
+Hence,
+Let {f_{k}}k=1∞⊂L^{2}(R^{d}) satisfy ∥f_{k}∥ ≤ 1 for all k∈N. By the boundedness of A in L(L^{2}(R^{d}),H^{2}(R^{d})), the sequence ∥Af_{k}∥ is bounded in H^{2}(K̃̇). By Rellich’s theorem, the injection of H^{2}(K̃̇) in H^{32}(K̃̇) is compact. Hence there exists a subsequence {f_{km}}m=1∞ such that {Af_{km}}m=1∞ is a Cauchy sequence in H^{3/2}(K̃̇). By (3.4), {(A−C)f_{km}}m=1∞ is a Cauchy sequence in L^{2}(R^{d}) and hence convergent. This completes the proof of Proposition 3.5 and hence also of Proposition 3.4.
+Proof of Theorem 2.4. To prove Theorem 2.4 under Assumption 2.3 for the case Ṽ ≢ 0 we write, for some λ∈C with Re λ < 0,
+Since the operators (−Δ+i(V0+Ṽ)−λ){−1}:L^{2}(Ω)→H^{2}(Ω) and (−Δ+iV0−λ){−1}:L^{2}(Ω)→H^{2}(Ω) are bounded and since Ṽ: H^{2}(Ω) → L^{2}(Ω) is compact [as a matter of fact Ṽ: H^{1}(Ω) → L^{2}(Ω) is compact as well], it follows by Theorem 3.2 that the essential spectrum of (−Δ+i(V0+Ṽ)−λ){−1} is an empty set. This completes the proof of Theorem 2.4 for the case # = N.To prove Theorem 2.4 for the case # = D, we may follow the same procedure as in Proposition 3.5 to obtain a slightly different compact trace operator or apply the following simple argument:Let R be sufficiently large so that K ⊂ B(0, R). Let AB(0,R)\KD denote the Dirichlet realization of A in B(0, R)∖K. By Proposition 3.5, the operators (ARd\B(0,R)N+1){−1}⊕(AB(0,R)\KD+1){−1} and (AΩD+1){−1}, both in L(L^{2}(Ω)), differ by a compact operator. Hence, as
+we obtain that σ_{ess}(AΩD+1){−1}=∅ as well.
+Remark 3.6. An essentially identical proof permits the comparison of the essential spectrum of the two exterior problems(−Δ+iV1){♯}inΩ_{1}=R^{d}\K_{1}(with # ∈ {D, N}) and(−Δ+iV2){♭}inΩ_{2}=R^{d}\K_{2}(with ♭ ∈ {D, N}) under the condition that V_{1} = V_{2}outside a large open ball containing K_{1}and K_{2}.
+Proof of Theorem 2.2. Since the proof relies on semi-classical analysis, we reintroduce the parameter h (we no longer assume h = 1). Under Assumption 2.1, there exists R > 0 such that K ⊂ B(0, R) and a potential V_{0} satisfying (2.1) and (2.2) in R^{d} and such that V ≡ V_{0} in R^{d}\B(0,R). By Remark 3.6, we need to only consider the case when K = ∅, with V satisfying (2.1) and (2.2) in R^{d}.We use the same framework as in Refs [14] and  [2]. We cover R^{d} by balls B(a_{j}, h^{ρ}) of size h^{ρ} (13<ρ<23) and consider an associated partition of unity χ_{j,h} such that
+• ∑_{j∈Ji(h)}χ_{j,h}(x){2}=1,
+• supp χ_{j,h} ⊂ B(a_{j}(h), h^{ρ}),
+• For |α| ≤ 2, ∑_{j}∂^{α}χ_{j,h}(x)^{2} ≤ C_{α}h^{−2α|ϱ}.Λ being given, we construct the approximate resolvent (A_{h}−z) (with Re z≤Λh^{23}) by
+We then use the uniform estimate [14],
+where j = |∇V(a_{j})|, C_{ω} is independent of j, h ∈ (0, h_{0}], and
+is the linear approximation of A_{h} at the point a_{j}.As in Refs [14] and  [2], we then get
+where
+The estimation of the second term in the sum can be done precisely in the same manner as in Ref [14]. For the first term, we have by (2.1)
+By the above and [14]
+To obtain (3.8), we have relied upon (2.1) and (2.2) (of Assumption 2.1) which permit the use of (3.5). The bound on |D^{2}V_{0}|/|∇V_{0}|^{2/3} is necessary in order to estimate the error in the linear approximation of V in the ball B(a_{j}, h^{ρ}). Note that the cardinality of J_{i}(h) is now infinite, but it has been established in Ref [2] that the cardinality of the balls B(a_{k}, 2h^{ρ}) intersecting a given B(a_{j}, h^{ρ}) is uniformly bounded in j, h.By (3.8), (I+E(h)) is invertible for sufficiently small h. Hence, by (3.7), we have that
+where c is the lower bound on |∇V_{0}| given in (2.2). We may now conclude that for any Λ, the spectrum (including the essential spectrum) of A_{h}=−h^{2}Δ+iV in R^{d} is contained in {z∈C| Re z≥Λ[ch]{23}} for h which is small enough.
+IV. THE LEFT MARGIN OF THE SPECTRUM
+This section is devoted to the proof of Theorem 2.9. As the proof is very similar to the proof in a bounded domain [2], we bring only its main ingredients.
+A. Lower bound
+By lower bound, we mean
+where ΛmD is given in (2.14) and ΛmN in (2.16).
+We keep the notation of Ref [2], Sec. 6. For some 1/3 < ϱ < 2/3 and for every h ∈ (0, h_{0}], we choose two sets of indices J_{i}(h), J_{∂}(h) and a set of points
+such that B(a_{j}(h), h^{ϱ}) ⊂ Ω,
+and such that the closed balls B¯(a_{j}(h),h^{ϱ}/2), B¯(b_{k}(h),h^{ϱ}/2) are all disjoint.
+Now we construct in R^{d} two families of functions
+such that, for every x∈Ω¯,
+and such that
+• Supp χ_{j,h} ⊂ B(a_{j}(h), h^{ϱ}) for j∈J_{i}(h),
+• Supp ζ_{j,h} ⊂ B(b_{j}(h), h^{ϱ}) for j∈J_{∂}(h),
+• χ_{j,h} ≡ 1 (respectively, ζ_{j,h} ≡ 1) on B¯(a_{j}(h),h^{ϱ}/2) (respectively, B¯(b_{j}(h),h^{ϱ}/2)).
+To verify that the approximate resolvent constructed in the sequel satisfies the boundary conditions on ∂Ω, we require in addition that, for # = N,
+Note that, for all α∈N^{d}, we can assume that there exist positive h_{0} and C_{α} such that, ∀h ∈ (0, h_{0}], ∀x∈Ω¯,
+We now define the approximate resolvent as in [2]
+where R_{j,h} is given by Ref [2], Eq. (6.14), and η_{j,h} = 1_{Ω}ζ_{j,h}.
+As in (3.7), we write
+where
+The estimation of the first sum can now be made in the same manner as in the proof of Theorem 2.2, whereas the control of the second sum can be achieved as in Ref [2]. We may thus conclude that for any ϵ > 0 there exists C_{ϵ} > 0 such that for sufficiently small h
+Since for sufficiently small h, (I+E(h)) becomes invertible, we can now use (4.6) to conclude that for any ϵ > 0 there exist C_{ϵ} > 0 and h_{ϵ} > 0 such that for any h ∈ (0, h_{ϵ}]
+This completes the proof of (4.1).
+B. The proof of upper bounds
+To prove that
+we use the same procedure presented in Ref [2], Sec. 7. The only thing we care to mention is that to estimate the contribution of the interior of Ω [i.e., the first sum in (4.5) and (4.7)] we use the same approach as in the proof of Theorem 2.2. The rest of the proof, being precisely the same as in Ref [2], Sec. 7, is skipped.
+V. NUMERICAL ILLUSTRATION
+In this section, we provide a numerical evidence for the existence of a discrete spectrum of the Bloch-Torrey operator AhN=−h^{2}Δ+ix_{1} in the case of the exterior of the unit disk: Ω_{∞}={x∈R^{2}:|x|>1}. In contrast to the remaining part of this note, this section relies on numerics and does not pretend for a mathematical rigor: it only serves for illustration purposes.
+Since a numerical construction of the operator AhN is not easily accessible for an unbounded domain, we consider the operator Ah,RN=−h^{2}Δ+ix_{1} in a circular annulus Ω_{R}={x∈R^{2}:1<|x|<R} with two radii 1 and R. As R → +∞, the bounded domain Ω_{R} approaches to the exterior of the disk Ω_{∞}. We set the Neumann boundary condition at the inner circle and the Dirichlet boundary condition at the outer circle. Given that Ω_{R} is a bounded domain, the operator Ah,RN has a discrete spectrum (as ix_{1} is a bounded perturbation of the Laplace operator). The operator A_{h,R} can be represented via projections onto the Laplacian eigenbasis by an infinite-dimensional matrix −h^{2}Λ+iB, where the diagonal matrix Λ is formed by Laplacian eigenvalues and the elements of the matrix B are the projections of x_{1} onto two Laplacian eigenfunctions (see Refs [6–8] and  [11] for details). In practice, the matrix −h^{2}Λ+iB is truncated and then numerically diagonalized, yielding a well-controlled approximation of eigenvalues of the operator Ah,RN, for fixed h and R. For convenience, the eigenvalues are ordered according their increasing real part.
+As shown in Ref [11], for small enough h, the quasimodes of the operator Ah,RN are localized near the boundary of the annulus, i.e., near two circles. The quasimodes that are localized near the inner circle are almost independent of the location of the outer circle. Since the spectrum of the operator AhN in the limiting (unbounded) domain Ω_{∞} is discrete, some eigenvalues of Ah,RN are expected to converge to that of AhN as R increases.
+Table I shows several eigenvalues of the operator Ah,RN as the outer radius R grows. The symmetry of the domain implies that if λ is an eigenvalue, then the complex conjugate λ¯ is also an eigenvalue. For this reason, we only present the eigenvalues with odd indices with a positive imaginary part. One can see that the eigenvalues λ_{1}, λ_{3}, and λ_{7} are almost independent of R. These eigenvalues correspond to the eigenmodes localized near the inner circle. We interpret this behavior as the convergence of the eigenvalues to that of the operator AhN for the limiting (unbounded) domain Ω_{∞}. By contrast, the imaginary part of the eigenvalues λ_{5} and λ_{9} grows almost linearly with R, as expected from the asymptotic behavior reported in Ref [11]. These eigenvalues correspond to the eigenmodes localized near the outer circle and thus diverge as the outer circle tends to infinity (R → +∞). These numerical results illustrate the expected behavior of the spectrum. To illustrate the quality of the numerical computation, we also present in Table I the approximate eigenvalues based on their asymptotics derived in [11]
+where a_{n} and an′ are the zeros of the Airy function and its derivative, respectively. Note that λappN(n,k) corresponds to the inner circle of radius 1 where a Neumann boundary condition is prescribed, whereas λappD(n,k) corresponds to the outer circle of radius R where we impose a Dirichlet boundary condition. These approximate eigenvalues [truncated at O(h^{5/3})] show an excellent agreement with the numerically computed eigenvalues of the operator Ah,RN. This agreement confirms the accuracy of both the numerical procedure and the asymptotic formulas (5.1).
+VI. CONCLUSION
+While we have confined the discussion in this work to Dirichlet and Neumann boundary conditions for simplicity, we could have also treated the Robin case or the transmission case (see Ref [2]) with Ω^{+}=R^{d}\Ω^{−}¯. Note that we do not assume that K is connected. In the case of the Dirichlet problem, the main theorem was obtained in Ref [4], Theorem 1.1 under the stronger assumption that, at each point x of S^{D}, the Hessian of V_{∂} ≔ V_{/∂Ω} is positive definite if ∂_{ν}V(x) < 0 or negative definite if ∂_{ν}V(x) > 0, with ∂_{ν}V ≔ ν⋅∇V. This additional assumption reflects some technical difficulties in the proof that was overcome in Ref [2] by using tensor products of semigroups, a point of view that was missing in Ref [4].
+This generalization allows us to obtain the asymptotics of the left margin of σ(Ah#), for instance, when V(x_{1}, x_{2}) = x_{1}, and Ω is the exterior of a disk, where the above assumption is not satisfied.
+For this particular potential, an extension to the case when Ω is unbounded is of significant interest in the physics literature [10].
+TABLE I. 
+Several eigenvalues of the operator Ah,RN in the circular annulus Ω_{R}={x∈R^{2}:1<|x|<R} computed numerically by diagonalizing the truncated matrix representation −h^{2}Λ+iB, for h = 0.008 and R = 1.5, 2, 3. For comparison, gray shadowed lines show the approximate eigenvalues from Eqs. (5.1).
+TABLE I. -body
+λ_{n}∖R	1.5	2	3
+λ_{1}	0.0250 + 1.0318i	0.0250 + 1.0317i	0.0251 + 1.0315i
+λappN(1,1)	0.0251 + 1.0317i	0.0251 + 1.0317i	0.0251 + 1.0317i
+λ_{3}	0.0409 + 1.0160i	0.0409 + 1.0160i	0.0410 + 1.0158i
+λappN(1,3)	0.0411 + 1.0157i	0.0411 + 1.0157i	0.0411 + 1.0157i
+λ_{5}	0.0501 + 1.4157i	0.0497 + 1.9162i	0.0498 + 2.9161i
+λappD(1,1)	0.0500 + 1.4157i	0.0496 + 1.9162i	0.0491 + 2.9167i
+λ_{7}	0.0567 + 1.0003i	0.0567 + 1.0003i	0.0560 + 1.0000i
+λappN(1,5)	0.0571 + 0.9997i	0.0571 + 0.9997i	0.0571 + 0.9997i
+λ_{9}	0.0635 + 1.4026i	0.0612 + 1.9048i	0.0593 + 2.9065i
+λappD(1,3)	0.0631 + 1.4027i	0.0609 + 1.9049i	0.0583 + 2.9075i

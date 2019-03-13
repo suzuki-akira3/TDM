@@ -1,0 +1,105 @@
+Equivalence between the Arquès-Walsh sequence formula and the number of connected Feynman diagrams for every perturbation order in the fermionic many-body problem
+From the perturbative expansion of the exact Green function, an exact counting formula is derived to determine the number of different types of connected Feynman diagrams. This formula coincides with the Arquès-Walsh sequence formula in the rooted map theory, supporting the topological connection between Feynman diagrams and rooted maps. A classificatory summing-terms approach is used, in connection to discrete mathematical theory.
+I. INTRODUCTION
+The problem of counting Feynman diagrams is often raised in the current quantum field theory literature (see, for example, Ref [1]). The counting is usually done term by term and depends on the physical system under consideration. Counting formulas associated with different enumerative approaches exist and provide well-defined sequences associated with the number of Feynman diagrams for each perturbation order (see Refs [2–4]). In a mathematical-physical context, the problem presents its own particularities. Graph theory and topology are tools generally used in counting and classifying Feynman diagrams, and an example of this is given in Ref [5].
+In the many-body non-relativistic case, topological connections between Feynman diagrams and rooted maps (objects in homology theory) have been established. In particular, it can be assumed that the topology of the m-order different connected Feynman diagrams and the topology of rooted maps with m edges are the same [6]. This hypothesis implies that, for each order m, the number of those objects (connected Feynman diagrams and rooted maps) is the same, leading to the sequence
+In the rooted map case, an explicit formula for this sequence is given by [6]
+In the present work, we derive an exact counting formula for connected Feynman diagrams at every m perturbation order, and we prove the equivalence to the N(m) formula for rooted maps. The immediate consequence is the direct verification of this numerical equality implicated by the same topology. Rooted maps are used in the classification of the different partitions of a closed, connected, and oriented two-dimensional surface into polygonal regions. It is remarkable that there exists a topological connection between such objects and Feynman diagrams. Further considerations about topological similarities between those different objects can be found in Ref [6] and the references therein.
+We follow a purely combinatorial approach to the issue of counting the diagrams. Indeed, the classification of terms derived in our analysis is related to simple problems in combinatorial theory. The paper is organized as follows. In Sec. II, from the perturbative expansions of the Green functions, we deduce a counting formula for connected Feynman diagrams which is demonstrated by mathematical induction. Section III evidences combinatorial properties of our counting. In Sec. IV, we prove the equivalence between the number of different connected Feynman diagrams and the Arquès-Walsh sequence formula for rooted maps. Sec. V contains the discussion and conclusions.
+II. AN EXACT COUNTING FORMULA FOR CONNECTED FEYNMAN DIAGRAMS
+In a fermionic interacting many-body system, the exact Green function or propagator in the Heisenberg ground state ψ_{0} is given by
+where T[ ] represents the time-ordered product of field operators in the Heisenberg picture acting in the space-time points x and y, respectively. Let Ĥ = Ĥ_{0} + Ĥ_{1} be a Hamiltonian, with Ĥ_{0} containing the “kinetic” terms and Ĥ_{1} containing the two-body interaction terms in a second-quantization format. By regarding Ĥ_{1} as a perturbation, the interaction picture allows a perturbative expansion of iG_{αβ}(x,y) on the non-perturbed ground state ϕ_{0},
+The expectation value ⟨ϕ0|T[⋯]|ϕ0⟩{connected} in the expression above is interpreted in a precise Feynman diagrammatic sense [7]. Particularly, the connected diagrams are the only ones that contribute to the exact Green function of the system. Our goal is to find a formula that determines the number of connected Feynman diagrams for each term of (4). The counting is simple for the next formal object
+where all the Feynman diagrams (connected and disconnected) contribute. For each m-term, the Wick Theorem and the fact that non-contracted terms vanish in the expectation value guarantee that only totally contracted terms are non-vanishing. The possible contractions occur in pairs, and only the contractions between ψ^ and ψ^{†} are different from zero. Therefore, the total number of m-order Feynman diagrams corresponds to the number of the non-vanishing contractions in the m-term. As Ĥ_{1}(t_{1}) is
+the total number of the m-order Feynman diagrams N_{m} is
+The same principle applies when we determine the number of the non-vanishing terms present in ⟨ϕ_{0}|T[Ĥ_{1}(t_{1})⋯Ĥ_{1}(t_{m})]|ϕ_{0}⟩. In an equation such as (5), the substitution of the expectation value ⟨ϕ_{0}|T[Ĥ_{1}(t_{1})⋯Ĥ_{1}(t_{m})ψ^{Hα}(x)ψ^Hβ†(y)]|ϕ_{0}⟩ by ⟨ϕ_{0}|T[Ĥ_{1}(t_{1})⋯Ĥ_{1}(t_{m})]|ϕ_{0}⟩ generates Feynman diagrams of a special type, called bubble diagrams, which constitute the disconnected part of the disconnected Feynman diagrams. The number N_{dm} of m-order bubble diagrams is then
+For Eq. (5), it can be demonstrated [7] that the sum of the total contribution of all the bubble diagrams and the sum of the total contribution of all the connected diagrams can be factored separately. Therefore, the m-term of (5) can be written as
+Comparing this expression with (5), it follows
+where ab is the binomial coefficient and δ_{a,b} is the Kronecker delta. The number of non-vanishing terms on the left-hand side is equal to the number of terms on the right-hand side. Now, let N_{cl} be the number of connected Feynman diagrams in l-order. Equation (10) then implies
+where N_{0} = N_{d0} = 1, in accordance with (7) and (8). This ensures that N_{c0} = 1. (In zero order, we only have the free propagator.) For m > 0, Eq. (11) allows us to write, for each order, N_{cm} as a function of N_{dn} and N_{cl}, with 0 ≤ n ≤ m and 0 ≤ l ≤ m − 1. Namely,
+which leads to the sequence 4, 80, 3552, 271 104, … of total numbers of Feynman connected diagrams. For each connected Feynman diagram of order m, there exist (2m)!! identical diagrams. This is simple to verify. The m-order diagrams have m wavy lines, which represent m two-body interactions U(x_{1},x1′)U(x_{2},x2′)⋯U(x_{m},xm′). For a specific m-order connected diagram, the first wavy line can be represented by one of the 2m possible interactions [namely, the m different U(x_{i},xi′) and the different permutations coming of each pair x_{i} and xi′, which represent m new interactions], the second wavy line can be represented by one of the 2m − 2 remaining interactions, the third wavy line can be represented by one of the 2m − 4 remaining interactions, and so on. Thus, if the total number of m-order Feynman diagrams is divided by (2m)!!, we obtain the number of different m-order Feynman diagrams. The sequence of different connected diagrams is 2, 10, 74, 706, …, which resembles the Arquès-Walsh sequence mentioned in the Introduction.
+Equation (11) contains the trivial case N_{0} = N_{c0}N_{d0}, which was excluded from formulas (12)–(15). Furthermore, the assumption that N_{d0} = N_{c0} = 1 will allow us to automatically exclude all the zero indexes in these formulas, from now on.
+The iterative insertion of (12) in (13), (13) in (14), and (14) in (15), besides expressing these N_{cl} only in function of the numbers N_{l}, N_{dl}, and N_{dl−s}, with 1 ≤ s ≤ l − 1, suggests the following counting formula for N_{cm}, valid for all orders:
+with
+where (−1)^{i} is associated with the number of indexes {a_{i}} whose sum is equal to m − n. The terms with an even (odd) number of indexes will be positive (negative). The Kronecker delta guarantees that each term of (17) represents a different way of adding m − n when their indexes {a_{j}} are added. The iterative process used in (12)–(15) maintains the (N_{l} − N_{dl}) term in the iterated N_{cl} formula. Therefore, we have Cmm=1 for all m by definition. In the case of N_{c3}, e.g.,
+Equation (16) can be demonstrated by induction. Formula (11), which is valid for all orders, is identical to
+and therefore
+This permits to write N_{cm+1} (without zero indexes) as
+In the last sum, n < m + 1, and the induction hypothesis permits to write N_{cn} using (16)
+Rearranging the terms in the last formula,
+It is evident that Cm+1m+1=1 and, using (17), that Cmm+1=−m+11N_{d1}. In Sec. III, we prove that
+so
+which proves (16).
+The number of different m-order connected Feynman diagrams is simply N_{cm}/(2m)!!. In Sec. IV, we prove that
+which is the Arquès-Walsh sequence formula obtained in rooted map theory.
+III. A USEFUL PROPERTY OF THE SYMBOL Cnm
+As we saw in Sec. II, the recursive property (24) of the Cnm symbols is necessary for the validity of the counting formula (16) for connected Feynman diagrams in each perturbation order. In this section, we prove this hypothetical property. Let the right-hand side of Eq. (24) be defined as f(s, m). We intended to prove that f(s,m)=Csm+1. Note that f(s, m) is not a new notation for Csm+1. Actually, we want to prove that the expression for f(s, m) is identical to Eq. (17) applied to Csm+1, where m is arbitrary. The same strategy is used in Sec. IV to prove the equivalence between the two counting formulas N(m) and N_{cm}/(2m)!!, for arbitrary m. The proof is composed of three stages:
+A. Every term of f(s, m) is present in Csm+1
+The expression for f(s, m) is
+where the term with index r is the generic term of the sum. The condition 0 ≤ r ≤ m − s generates all the terms in Eq. (27). The presence of the minus sign in every term can be associated with the factor N_{dm+1−(s+r)} for all possible r, and this introduces the new index a_{i+1} = m + 1 − (s + r) and the correct sign (−1)^{i+1} in correspondence to the definition (17) now applied to Csm+1. [The other {a_{i}} indexes come from the generic symbol Css+r present in every term of (27)].
+The next step is to prove that every term of f(s, m) has the correct multiplication of binomial coefficients, coinciding with the coefficient in (17). The binomial coefficient in the first term can be written as
+which have the correct form. The generic term in (27) [using (17) and a_{1} +⋯+ a_{i} = r] presents the next multiplication of binomial coefficients
+It is evident that Eq. (29) can be rewritten as
+where a_{i+1} = m − s − r + 1. This form is exactly the same as in (17). Since a generic term was studied, then every term in (27) has the correct multiplicative binomial factor.
+Since the symbol Css+r contains sums of products
+with all the different ways of getting the index sum
+the new index a_{i+1} = m − s − r + 1 and the multiplicative factor N_{d}_{m−s−r+1} present in every term make (27) a sum of products
+with
+In addition, the binomial factors and the sign (−1)^{i+1} are the correct multiplicative factors present in each term of (27). Therefore, each term of f(s, m) is present in Csm+1.
+Also, it is clear from the definition of a_{i+1} that each term of f(s, m) represents a different way of adding m + 1 − s. It remains to be proved that both f(s, m) and Csm+1 are identical, or equivalently, that the sums (31) associated with each term of f(s, m) exhaust all the possibilities. Thus, after using (17) in (27), it suffices to prove that the number of terms in f(s, m) is identical to the number of different ways of adding m + 1 − s using natural numbers and that each term of Csm+1 is present in f(s, m).
+B. The number of terms in f(s, m) is equal to the number of terms in Csm+1
+Since each term in Cnm is given by (17), the total number of terms in Cnm is equivalent to the number of ways of adding m − n. As an example, let us add 5
+Here, note that 4 + 1 and 1 + 4 are considered as different ways of adding 5. Therefore, the number of terms present in Cnm with m − n = 5 is 16. By construction, the problem of finding the different ways of adding N is identical to distributing N identical objects in 1, 2, 3, …, N boxes, with the condition that all the boxes contain at least one object. This is clear in example (32), where there are 5 identical objects, the symbol + separates different “boxes” and no “box” is empty.
+In the generic case, there is a unique form to distribute N identical objects in N non-empty boxes,
+The equation above determines all other cases. For N identical objects in N − 1 non-empty boxes,
+we only have to find the number of different ways of distributing this single object in the N − 1 non-empty boxes. There are N − 1 ways.
+For M identical objects in N − M non-empty boxes,
+it is sufficient to distribute this M identical objects in the N − M non-empty boxes. There are
+ways to do this. Thus, the N different ways of adding N are
+so the number of terms in Csm+1 is 2^{m−s}. Based on (27), it is obvious that the number of terms present in f(s, m) is
+which proves that the number of terms in Csm+1 is equal to the number of terms in f(s, m).
+C. Every term of Csm+1 is present in f(s, m)
+Finally, it suffices to prove that an arbitrary term of Csm+1 is always present in f(s, m). Actually, the arbitrary term represented by the index sum
+appears
+times in Csm+1. Here, each one of the M_{k} numbers n_{k} (with 1 ≤ k ≤ ℓ) corresponds to one of the indexes {a_{i}} [see (32), for example]. It is easy to note in (17) that the binomial coefficient of these terms is identical.
+We are going to find these (M_{1}+⋯+M_{ℓ})!M_{1}!⋯M_{ℓ}! terms directly in the summing terms of (27). In the summing term N_{dn1}Csm+1−n_{1}, there are
+terms corresponding to (38). This is easy to see in the summing term that the corresponding index sum is m − s + 1 and the symbol Csm+1−n_{1} contains all the different ways of adding m + 1 − s − n_{1}. Particularly, it contains the sum
+which is obtained (M_{1}−1+M_{2}+⋯+M_{ℓ})!(M_{1}−1)!M_{2}!⋯M_{ℓ}! times from Csm+1−n_{1}.
+This process continues with the other indexes n_{k}, with k ≤ ℓ. Namely, in the summing term N_{dnk}Csm+1−n_{k}, there are
+terms corresponding to (38). Let us add all these terms,
+which is exactly the number of times that the terms represented by (38) appear in Csm+1. This proves that
+IV. CORRESPONDENCE TO THE ARQUÈS-WALSH SEQUENCE FORMULA
+The Arquès-Walsh sequence formula is
+We intend to prove that
+where N_{cm} is given by (16). The proof will be similar to the one presented in Sec. III. Using
+we rewrite N_{cm}
+By developing the sum in N_{cm} term by term, we have
+which is obtained using (8). Here is the proof:
+A. Every term of N_{cm}/(2m)!! is present in N(m)
+First, we prove that every term of N_{cm}/(2m)!! [using Csm for 1 ≤ s ≤ m in (45)] is present in N(m). The last two terms have the correct product of factors indexed by a_{j} for i = 0 (a_{1} = m + 1) and i = 1 (a_{1} = 1 and a_{2} = m), respectively. The sum of the indexes is m + 1 and the sign (−1)^{i} is correct. Dividing m!/2 by (2m)!!, we obtain the factor 1/2^{m+1}.
+Now, we focus in the generic two terms
+By developing the binomial coefficients, Csm can be written as
+and inserting this in (46) gives a total of 2^{m−s} terms. Half of them have the product [2(s + 1)]!/(s + 1)!, which is indexed by a_{k+1} = s + 1. The other half presents the product factors 2(1) and (2s)!/s!, which can be indexed by a_{k+1} = 1 and a_{k+2} = s. [All the new indexes are inside the curvy brackets in (46).] The sum of the indexes a_{1} +⋯+ a_{k} in every term is equal to m − s, so the factor (m − a_{1} −⋯− a_{k})! = s! is canceled by the external s! in (46).
+The remaining m!/2 factor, when divided by (2m)!!, gives the correct factor 1/2^{m+1}. Therefore, the 2^{m−s} terms of (46), when divided by (2m)!!, are products in the format
+whose index sum is a_{1} +⋯+ a_{i+1} = m + 1.
+Since N(m) in Eq. (41) contains all the possible ways of adding m + 1, the 2^{m−s} terms of (46) are present in N(m), divided by (2m)!!. The sign also agrees that the introduction of the new index a_{k+1} = s + 1 does not change the overall sign of the term. However, the introduction of the two new indexes a_{k+1} = 1 and a_{k+2} does change the overall sign. Thus, if the number of indexes {a_{j}} of the term is odd (even), the overall sign is positive (negative). This agrees with the term sign in N(m). Since it was studied as a generic term, every term of (45) appears in N(m).
+B. The number of terms in N_{cm}/(2m)!! is equal to the number of terms in N(m)
+The number of terms in N(m) is 2^{m} (see Sec. III B). On the other hand, according to (45), the number of terms in N_{cm} is
+Thus, N(m) and N_{cm} have the same number of terms.
+C. Every term in N(m) is present in N_{cm}/(2m)!!
+Finally, we prove that for an arbitrary mode sum of m + 1, e.g.,
+the (M_{1}+⋯+M_{ℓ})!M_{1}!⋯M_{ℓ}! associated terms in N(m) are present in N_{cm}/(2m)!!.
+Here, there are two possibilities: all the n_{i} ≠ 1 and n_{1} = 1. (There is no loss of generality in choosing n_{1}.) As in Sec. III C, we count in N_{cm} term by term and we will find that the associated terms with the index sum m + 1 are (M_{1}+⋯+M_{ℓ})!M_{1}!⋯M_{ℓ}!. In the first case (n_{i} ≠ 1), the proof is exactly the same as in Sec. III C. The contributing summing terms in N_{cm} are solely
+with 1 ≤ i ≤ ℓ. This leads to the same sum as in (40) and proves that all these terms are present in N_{cm}/(2m)!!.
+In the second case (n_{1} = 1), the terms with the two new indexes a_{k+1} and a_{k+2} (unlike the first case) also contribute. There are terms represented by (48) in
+for 2 ≤ i ≤ ℓ. The number of these terms here is
+The other terms represented by (48) are in
+where 1 ≤ i ≤ ℓ. For each i, the term’s contribution is given by the number of different ways of adding
+which is
+Here, only the indexes n_{1} and n_{i} appear M_{1} − 1 and M_{i} − 1 times, respectively. By summing up all the contributions for all i
+we get
+Therefore, the total number of terms represented by (48) that appear in N_{cm}/(2m)!! is given by the sum of (53) and (49), namely,
+This proves that N_{cm}/(2m)!! = N(m).
+V. DISCUSSION AND CONCLUSION
+We have directly proven that the number of different connected Feynman diagrams for each order is given by the Arquès-Walsh sequence formula. The assumption that the topology of the connected Feynman diagrams for every order m is identical to the topology of the m-edge rooted maps implies the numerical equality of these objects. Here, we confirm this implication using a direct counting approach, which exploits the combinatorial character of the connected Feynman diagrams.
+The formula for N(m) shows the difficulties present at computing different connected Feynman diagrams directly: The computing increases in complexity with increasing m, and more exactly with the number of different ways of adding m + 1. For each m, the number of terms present in N(m) is 2^{m}. Thinking of every term of N(m) as a member of a set A (with the property that each element represents a different way of adding m + 1), this set has the cardinality of the power set P(M), where M is an arbitrary set with m elements.

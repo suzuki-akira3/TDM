@@ -1,0 +1,166 @@
+Solar energy potential estimation by calculating sun illumination hours and sky view factor on building rooftops using digital elevation model
+The detailed and precise estimation of solar energy is a major requirement for solar applications on building roof tops. These estimations help in sustainable development, energy policy making, and renewable energy consumption. In this paper, a methodology was devised to estimate the solar radiation components. This methodology is easily accessible using a simple measuring tape to form a digital elevation model with a cell size of 1 × 1 sq. ft. Liu and Jordan's model [Liu and Jordan, “The interrelationship and characteristic distribution of direct, diffuse and total solar radiation,” Sol. Energy. 4(3), 1–19 (1960)] was modified for the urban environment and programmed in MATLAB to estimate solar potential. To validate the developed algorithm and modified model, the roof-top area of the postgraduate laboratories of the Mechanical Engineering Department (NED University) was selected as a case study. Measurements were carried out on different days, which showed good agreement with the proposed work. Within the study area, the maximum sunshine hours is 3285 annually, while the site selected has at least 1502 sunshine hours irrespective of elevations. Similarly, the sky view factor has a maximum value of 1 exposed to open plain and a minimum value of 0.4143. Radiation maps were generated for the installation of solar applications. The results showed that the average beam radiation was 4.908 kWh/m^{2}, with May and December having the maximum and minimum beam intensities of 6.679 kWh/m^{2} and 3.815 kWh/m^{2}, respectively. Similarly, the average diffuse radiation was 2.289 kWh/m^{2}, with maximum and minimum values, occurring in July and October, of 3.611 kWh/m^{2} and 1.299 kWh/m^{2}, respectively. This work will help energy consultants and households in determining the solar energy potential of the existing flat rooftops and for future construction, thereby cutting energy bills and producing long-term monetary incentives from generating their own energy.
+NOMENCLATURE
+BP	British Petroleum
+CSP	Concentrated solar power
+DEM	Digital elevation model
+ESMAP	Energy sector management assistance program
+F	Sky view factor
+GHI	Global Horizontal Irradiation
+GIS	Geographical information system
+I_{b}	Hourly beam radiation on the horizontal
+I_{d}	Hourly diffuse radiation on the horizontal
+I_{g}	Hourly global radiation on the horizontal
+I_{obs}	Diffuse radiations reaching the horizontal surface from the sky dome affected by building obstacles
+I_{T}	Hourly radiation on a tilted surface
+LiDAR	Light detection and ranging
+LJ	Liu and Jordan
+N	Mean day of the month
+PV	Photovoltaic
+R_{b}	Geometric factor
+RSI	Rotating shadowband irradiometer
+S	Illumination hours
+S_{max}	Maximum sunshine hours
+SPD	Sun path diagram
+α_{b}	Building altitude angle
+α_{e}	Sky element altitude angle
+α_{s}	Sun altitude angle
+β	Slope or tilt angle
+γ_{b}	Building azimuth angle
+γ_{e}	Sky element azimuth angle
+γ_{s}	Sun azimuth angle
+δ	Declination angle
+θ_{z}	Zenith angle
+ρ	Ground reflectance
+ϕ	Latitude
+ω	Hour angle
+INTRODUCTION
+Electricity generation from green technology has been accepted as an important option in the supply side and future energy policies of various countries. Diminishing fossil fuel resources and rising greenhouse gas levels have promoted research and development in the field of renewable energy systems, which have a positive influence on global environmental and economic issues According to British Petroleum (BP) Statistical Energy Survey 2016, renewable energy accounted for 6.7% of global power generation, including solar power generation, which had grown by 32.6% [2]. In the USA, installed solar electricity capacity increased by more than 54% (about 5.5 GW), Photovoltaic (PV) capacity by 51%, and Concentrated Solar Power (CSP) capacity by 84%, in 2014. China, on the other hand, leads the world in global photovoltaic module production, accounting for 66% of total production [3]. It is estimated that electricity production from solar PV will compete with coal, globally, by 2050 [4].
+Solar energy is clean, free, and abundant and is the oldest energy source ever used. It has been the focus of increasing amounts of research. Rooftop areas in urban environments are considered suitable locations for installing solar energy devices, including solar thermal collectors and PV panels. The urban rooftop solar energy potential could have a tremendous effect on countries' renewable energy schemes and sustainable energy policies and has the potential to be a major pillar of energy policy strategies. In practice, solar energy potential can be estimated using methods ranging from simple estimations to expensive Light Detection and Ranging (LiDAR) technologies. For solar process design and performance calculations, it is often necessary to calculate hourly radiation. The major requirement is to calculate not only daily data but also beam and diffuse radiation in the plane of a collector [5].
+Urban environments consist of high and variably elevated buildings. Also, each building has variable elevations due to the existence of penthouses, parapet walls, roof tanks, and elevated columns. The shadows cast by these obstacles can significantly affect incoming solar radiation and have significant spatial and temporal variations. Thus, urban energy potential estimation is a significant challenge and has been discussed by many researchers. Wiginton et_al [6] estimated the PV potential by dividing a region and assessing a sample of buildings. Singh and Banerjee [7] calculated the solar potential of a city using PVSyst to calculate the photovoltaic available roof area ratio. Horvath et_al [8] calculated the solar energy potential based on building typology including the shading factor. A Geographical Information System (GIS)-based approach has also been used by some researchers to address the spatial factors. Ordonez et_al [9] determined the solar energy potential of installing grid-connected photovoltaic systems on rooftops in Andalusia. This study was based on Google Earth digital maps. Similarly, Sun et_al [10], Jamal et_al [11], and Wong et_al [12] used this approach to compile and analyze geographic data for potentially bright roof-top areas. GIS-based tools and databases, such as PVGIS [13], have been used to calculate PV potential for a number of countries. However, these tools have not taken into account complex terrain shadowing effects.
+Airborne Light Detection and Ranging (LiDAR) technology is popular for estimating solar energy, as it makes height grids in urban environments easily accessible. Tereci et_al [14] estimated the annual solar potential for one urban quarter using LiDAR data, ALK map data, and GIS software. Several approaches can be adopted to calculate shadow maps of the terrain for a specified time. Most of them start with a point of interest in a 2.5-D elevation model and search in the direction of the sun, along a specified radius, to determine whether there are points that can obstruct the path of incoming sunlight. Lee and Zlatanova [15] used LiDAR to form a 2.5-D urban surface model to process facades and roofs separately. An algorithm proposed by Redweik et_al [16] calculates solar irradiation at every point, taking a geo-referenced regular height grid as input, using LiDAR Technology. Their proposed methodology is based on the r.sun radiation model developed by Suri et_al [17] and indicates that the potential of building facades is lower than that of roofs although facades have large areas.
+A methodology other than LiDAR was discussed by Li et_al [18] They developed a pixel-based methodology for existing and future urban flat rooftops. They used a Google SketchUp and MATLAB combination and presented their results using image processing. Their study area included an urban area of Xiuyuan city comprising two office buildings and twenty-four apartment buildings and presented annual and seasonal radiation maps.
+These studies have shown great potential in evaluating solar energy potential and will be of great importance in energy policy-making strategies worldwide.
+Electricity generation using PV panels on urban rooftops requires more accurate measurements to precisely determine solar radiation levels, due to the rapid development of urban solar energy applications. High resolution images are needed to determine the solar potential distribution over building rooftops. Such datasets are not commonly available for most cities in developing countries and are urgently needed as PV electricity generation is on the rise in urban areas since solar PV prices per kWh have reached new low levels. With a focus on investor benefits and on helping ordinary households access electricity without the need for heavy financial investment, this work is an advancement in the existing literature [19].
+The costly LiDAR-based techniques start with aerial data collection to construct a continuous Digital Surface Model (DSM). The raster size for DSM usually ranges from 0.3 m to 1 m [16,20,21] and is only applicable for existing rooftops. However, investors are also keenly interested in the assessment of future urban solar potential. Unlike previous methods, the present methodology begins with a simple tape measurement of the rooftop area and the associated nearby building elevations, using a cell size of 1 × 1 sq. ft (0.3048 m × 0.3048 m). This methodology estimates solar potential by simultaneously evaluating illumination hours, sky view factors, and beam and diffuse solar irradiations for all cells of the selected Digital Elevation Model (DEM) at any instant in time, allowing the calculation of irradiation over any period of time, from 1 h to 1 year, for existing as well as future planned buildings. The data from each cell can be independently processed, and thus, the integrated results help in generating radiation maps for projected solar applications.
+This paper is organized as follows: First, the necessary transformations for the DEM are given. Second, sky view factor calculations for an obstacle free site are given. Finally, solar angle calculations to assess illumination hours and sky view factors including obstacles are provided. In order to calculate a mathematical model for every hour of the year, an algorithm was developed and programmed on MATLAB. This requires a Digital Elevation Model (DEM), which calculates the total number of illumination hours, sky view factor, and beam and diffuse radiation components. This method is applicable to flat rooftops on existing and planned buildings. Once this methodology is fully developed, it can be extended to other cities to aid in policy decisions for large-scale solar power applications. This methodology is a viable option for individuals or areas with limited financial sources.
+METHODOLOGY
+Necessary transformations for the DEM
+This methodology is based on the DEM. 3D DEMs are not commonly available for most cities in developing countries; therefore, we used a simple tape measure for measuring the rooftop area and the associated nearby building elevations. The cell resolution of DEM is 1 × 1 sq. ft., so as to get as much detailed information as possible. These measurements help to form a raster image in which the total number of grids shows the length and the breadth of the selected area, while the associated grid number shows the elevation, as shown in Fig. 1.
+The Liu and Jordan [1] (LJ) model suggests that open sky will receive all the diffuse radiation if placed horizontally and half of the total diffuse radiation if placed at 90°. Therefore, a surface tilt at an angle β has a view factor of
+and the radiation on a tilted surface (I_{T}) is the sum of the beam contribution (I_{b}), the diffuse radiation on a horizontal surface (I_{d}), and global radiations (I_{g}), calculated as
+where R_{b} is the geometric factor and ρ is the surface albedo.
+For a horizontally placed collector, Eq. (2) modifies to
+This equation works well for an open environment but is not applicable in an environment containing obstacles to incoming radiation. Thus, for an urban environment, the model equation can be modified as
+where S is the illumination hours. At a particular time, a point of interest may not receive direct solar irradiation. Thus, the illumination hour can be seen as a time-dependent binary feature of a selected point, having a value of 0 or 1 depending on whether the collector will cast a shadow or not. F is the sky view factor, with a value between 0 and 1 depending how much diffuse radiation is blocked by obstacles. F can be calculated as
+where I_{obs} is the diffuse radiation reaching the horizontal surface from a sky dome affected by building obstacles.
+In this analysis, south is used as a benchmark (0°). Therefore, for any other orientations (excluding south), transformations are applied to make the obstacle orientation always toward the south. The frame of reference is set at the first cell, and trigonometric relationships and distance formula are applied at every degree of angle from 1° to 360°. This acts as a radius of search from the collector for the overall DEM. As a result, the related geometry of buildings and obstacles, i.e., the distances, building azimuth angles (γ_{b}), and building altitude angles (α_{b}), can be calculated, and the cell numbers of tall buildings that block incoming radiation are recorded.
+A building with maximum elevation may not have a maximum effect on a collector. The beam radiation obstruction will depend on both the elevation and the distance from the collector. A higher elevation building further away from the collector may have little or no effect, while a nearby lower elevation building may have a large effect on a collector.
+Sky view factor calculations for an obstacle free site
+The incoming diffuse radiation is uniformly distributed due to the isotropic sky vault. To visualize the radiation, this vault is divided into small portions of α_{e} × γ_{e}, i.e., 1° × 1° (steradians), such that the total number of elements is (91 × 360) 32 760, as shown in Fig. 2. This technique helps in visualizing the effects of sky elements because of variations in the angles measured from the normal axis of the collector within the entire DEM. The area of a single element will be Δγ_{e}.cosα_{e}.Δα_{e}. The normal direction of this element shows the magnitude of the radiation. All elements are of the same magnitude “M” because of the isotropic sky model but have different directions (diffuse hemispherical vault). Following the assumption that the collector is placed horizontally, the angle of incidence between incoming radiations from an element and normal to the collector can be calculated using the dot product k as
+and the radiance received by the collector will be
+Equation (7) shows that the radiance will be maximum if θ= 0° and minimum if θ= 90°.
+Therefore, the total radiation will be the sum of all the radiations coming from the entire vault as
+Solar angle calculations
+The geometric relationships between a plane relative to the earth at any time and the position of the sun relative to that plane can be defined by various angles [22].
+The declination δ for each day can be found from the approximate equation of Cooper [23]
+where n is the nth day of the year, varying from 1 to 365.
+The angular displacement of the local meridian, i.e., the hour angle (ω), due to rotation of the earth (polar axis) at 15° per hour is expressed as
+The sun altitude angle (α_{s}) and azimuth angle (γ_{s}) can be calculated as
+where θ_{z}=90−α_{s} (zenith angle).
+These solar angle calculations were carried out for every hour of the year, i.e., 24 × 365. The descriptions of these angles are shown in Table I.
+The next step includes the comparison of different angles. For the same values of azimuth angles (γ_{b}=γ_{s}), the altitude angles are compared. If α_{s}>α_{b}, the collector will capture the beam radiation; otherwise, the building will cast a shadow on the collector. A similar approach is used for sky elements, i.e., for the same values of azimuth angles (γ_{e}=γ_{s}), the altitude angles are compared. If α_{e}>α_{b}, the collector will not be affected by the obstacle and will behave as for an open sky; otherwise, the obstruction causes some of the diffuse radiation to be blocked and the collector experiences only the partial value of the diffuse component.
+The formulated approach can be summarized in eight easy steps:
+Step 1: Select the DEM and specify the site parameters, i.e., latitude, longitude, and south direction. For a single 1 × 1 sq. ft. analysis (point of interest), specify the x and y coordinates.
+Step 2: Transform the Cartesian coordinates and angular directions with respect to the point of interest such that the (0,0) axis lies at the point of interest and the south direction is always at 0°.
+Step 3: Calculate the diffuse radiation component for open sky with no obstacles (I_{d}) by reducing the sky dome to sky elements.
+Step 4: For values of angles between 1° and 360°, calculate the building altitude angle (α_{b}) to record the largest value for each angle.
+Step 5: Calculate the solar angles (α_{s},γ_{s}) to specify the location of the sun for the whole year.
+Step 6: Based upon steps 4 and 5, compare the altitude angles for the same values of azimuth angles to specify the sun illuminating hours (S) and the diffuse component with the obstacle (I_{obs}).
+Step 7: Based upon the calculations in steps 3 and 6, calculate the sky view factor (F = I_{obs}/I_{d}).
+Step 8: Use the modified LJ method to calculate the beam and diffuse components of the incoming radiation.
+The methodology is illustrated in the flowchart in Fig. 3.
+RESULTS AND DISCUSSION
+Physical site survey
+As a case study, the rooftop area of the postgraduate laboratory of the Mechanical Engineering Department, NED University of Engineering and Technology (24.9334°N, 67.1116°E), was analyzed to validate the proposed methodology. The magnetic declination of the site is 0.96° E ± 0.29° [24]. The examined rooftop area was 32 × 59 sq. ft. with a maximum elevation of 8 feet. The simulation was performed for the whole year. The DEM and the true compass direction are shown in Fig. 4.
+Simulation results
+Based on the DEM of the surveyed roof top area, several points of interest (1 × 1 sq. ft.) were selected so that some experienced shadow and some did not. The selection of these points helped in validating the proposed methodology. The simulations were performed, and the solar radiations were calculated. For validation, illuminating hours were justified by physically visiting the site. Radiation was measured by placing a pyranometer and using the weather station data of the NED University of Engineering and Technology [25], measured with Twin-Rotating Shadowband Irradiometer (RSI), averaging from two LiCors (Fig. 5) from July 2015 to June 2016.
+These results showed good agreement with the simulation. The same practice was adopted for multiple days to check for variations. The selected results are shown in Table II.
+A major advantage of this methodology includes the estimation of more approximate solar radiations for an urban site on an hourly, monthly, or monthly average daily basis without using pyranometers. After validating the methodology for a single point of interest, simulations were performed for bright sunshine hours. The maximum sunshine hour angles for an average day of every month [26] for Karachi city are shown in Table III. The literature suggests that the average bright sunshine hour for Karachi is 9; therefore, for monthly average daily radiations, simulations were carried out for a local time period of 08:00–16:00 h throughout the year. The results are presented in Figs. 6–8.
+Figure 6 displays the illumination hours for the entire DEM. The results show that the maximum sunshine hours for the surveyed site is 3285 h (37.5%) annually, while the site has at least 1502 sunshine hours (17.15%), irrespective of elevations. Therefore, for installing any solar application on the surveyed site in the future, this result will provide an aid to technical and economic analysis, i.e., which portion of the surveyed rooftop will have maximum illumination and in what areas will there be compromises with shadow. The Building Footprint Area can be easily determined using these results for an urban site.
+For monthly calculations, Fig. 7 shows beam irradiation for an average day for every month and Table III shows the maximum and minimum values for irradiation. The day length is longer in summer as compared to winter, as shown in Table III. Months from May to July have day lengths of around 13 h, whereas months from Nov to Jan have values of around 10 h. Thus, the summer season will experience lower shadows, and shadow intensity will be higher in winter. This behaviour is illustrated in Fig. 7, depending on the Sun Path Diagram (SPD). For the latitude of Karachi, the dominant shadow intensity in winter is almost double the shadow intensity in summer.
+Table IV presents the maximum and minimum values of beam radiations. This table shows that the average beam radiation for Karachi city is 4.908 kWh/m^{2}, with May and December having the maximum and minimum beam intensities of 6.679 kWh/m^{2} and 3.815 kWh/m^{2}, respectively.
+The sky view factor exhibits a spatial as well as a temporal nature; therefore, nearby obstacles affect the irradiance coming from each element of the sky dome. The simulation suggests that the sky view factor has a maximum value of 1 exposed to open plain and a minimum value of 0.4143 as shown in Fig. 8. These sky view factors affect diffuse radiations, and their maximum and minimum monthly average daily values are given in Table IV. For Karachi city, the average diffuse radiation is 2.289 kWh/m^{2}, with maximum and minimum values occurring in the months of July and October of 3.611 kWh/m^{2} and 1.299 kWh/m^{2}, respectively.
+CONCLUSION
+The solar energy generation potential for urban environments depends heavily on the presence of nearby obstacles. These will not only affect the beam radiations because of cast shadows but also decrease the diffuse component. The results obtained indicated that the illumination hours varied between 1502 and 3285 h, with a range of 1783. Similarly, the sky view factor varied between 0.414 and 1, with a range of 0.586. These are very important findings as the difference between the two is more than 100%. Without these estimations, the feasibility report for solar applications would show a lower payback period, which could significantly influence investment and economic policies. Knowledge of these values is important in estimating total solar energy potential for the collector. This analysis also helped in analyzing shadow distances. For instance, for an 8-foot high obstacle, the significant shadow was 16% of the total length in summer, while this value reached up to 32% of the total length in winter. This analysis helps in the selection of locations for solar collector installations. This is a generalized formulation that can be extended to any location and can help in energy policy-making worldwide.
+TABLE I. 
+Description of all the angles and their limits after necessary transformations.
+TABLE II. 
+Comparison between hourly solar radiations determined using the proposed methodology and experimental results. Two different locations are presented for 19 April, 2016 at (5,12) and 27 April, 2016 at (8,33).
+TABLE III. 
+Calculations of the declination angle, hour angle, and sunshine hour for the average day of the month as described by Klein.
+TABLE IV. 
+Range of beam and diffuse radiations for the mean day of the month calculated by simulations for the entire DEM.
+TABLE I. -body
+Angle	Symbol	Description (after transformation)
+Building altitude angle	α_{b}	The angle between the horizontal and the building with maximum elevation whose shadow will affect the collector area 0°≤α_{b}≤90°
+Building azimuth angle	γ_{b}	The angular displacement of the projection of the building with maximum elevation, on the horizontal plane measured from south, whose shadow will affect the collector area 1°≤γ_{b}≤360°
+Element altitude angle	α_{e}	The angle between the horizontal and the sky vault element 0°≤α_{e}≤90°
+Element azimuth angle	γ_{e}	The angular displacement of the sky vault element projection on the horizontal plane, measured from south 1°≤γ_{e}≤360°
+Sun altitude angle	α_{s}	The angle between the horizontal and the line to the sun 0°≤α_{s}≤90°
+Sun azimuth angle	γ_{s}	The angular displacement of beam radiation projection on the horizontal plane, measured from south 1°≤γ_{s}≤360°
+TABLE II. -body
+Date location	19th April (x = 5 ft, y = 12 ft.)	27th April (x = 8 ft, y = 33 ft.)
+Time (h)	S	F	I model (W/m^{2})	I exp (W/m^{2})	Error (%)	S	F	I model (W/m^{2})	I exp (W/m^{2})	Error (%)
+10:00	1	0.7347	_{567}	549	3.1746	1	0.9727	626	600	4.15335
+11:00	1	760	730	3.94737	1	783	758	3.19285
+12:00	1	836	834	0.23923	1	884	864	2.26244
+13:00	0	225	215	4.44444	1	916	890	2.83843
+14:00	1	373	360	3.48525	1	883	856	3.05776
+15:00	0	322	307	4.65839	1	790	762	3.5443
+TABLE III. -body
+Month	Day	Day of the year (N)	δ (deg)	ω (deg)	Smax (h)
+January	17	17	−20.82	79.82	10.64
+February	16	47	−12.89	83.89	11.19
+March	16	75	−2.41	88.88	11.85
+April	15	105	9.37	94.4	12.59
+May	15	135	18.7	99.05	13.21
+June	11	162	22.98	101.37	13.52
+July	17	198	21.08	100.32	13.38
+August	16	228	13.39	96.35	12.85
+September	15	258	2.21	91.03	12.14
+October	15	288	−9.55	85.51	11.4
+November	14	318	−18.82	80.88	10.78
+December	10	344	−22.94	78.65	10.49
+TABLE IV. -body
+	Beam irradiation	Diffuse irradiation
+kWh/m^{2}	kWh/m^{2}
+Month	High	Low	High	Low
+January	3.829	0.552	1.432	0.593
+February	4.817	1.249	1.726	0.715
+March	5.418	1.652	1.809	0.749
+April	5.818	3.324	2.617	1.084
+May	6.679	3.953	1.949	0.808
+June	6.239	2.922	2.463	1.020
+July	4.135	1.948	3.611	1.496
+August	4.585	1.93	2.957	1.225
+September	4.766	1.438	3.111	1.289
+October	5.128	1.71	1.299	0.538
+November	3.668	0.914	2.206	0.914
+December	3.815	0.544	2.283	0.946
+FIG. 1. 
+Illustrating the DEM for a cell size of 1 × 1 sq. ft. The x and y axes show the length and the breadth of the rooftop, while the grid number shows the elevation of the building/obstacle.
+FIG. 2. 
+Schematic presentation of the sky vault around the flat panel along with the spherical coordinate system, presenting altitude and azimuth angles of the sun, sky element, and building/obstacle.
+FIG. 3. 
+Flowchart of the main computer program on MATLAB developed according to the proposed methodology for finding the Illumination hours, sky view factor, and beam and diffuse radiations using the LJ Model for flat panels.
+FIG. 4. 
+Case Study of the rooftop area of postgraduate laboratories of NEDUET: (a) Actual rooftop area of 59 ft. × 32 ft. with a maximum elevation of 8 ft. and (b) associated DEM and position of the south direction from the positive x-axis.
+FIG. 5. 
+The weather station situated at the NED University of Engineering and Technology as a project of Energy Sector Management Assistance Program (ESMAP). The station is equipped with a CSPS Twin-sensor Rotating Shadowband Irradiometer (RSI) and a Kipp and Zonen CMP10 pyranometer for the redundant GHI measurement.
+FIG. 6. 
+Radiation map, simulating the total number of illumination hours for the selected DEM throughout the year.
+FIG. 7. 
+Radiation maps, simulating the beam radiations for the selected DEM for the mean day of every month.
+FIG. 8. 
+Radiation map, simulating the sky view factor for the selected DEM throughout the year.

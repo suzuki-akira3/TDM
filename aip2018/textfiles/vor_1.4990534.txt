@@ -1,0 +1,68 @@
+Completion of the Ablowitz-Kaup-Newell-Segur integrable coupling
+Integrable couplings are associated with non-semisimple Lie algebras. In this paper, we propose a new method to generate new integrable systems through making perturbation in matrix spectral problems for integrable couplings, which is called the “completion process of integrable couplings.” As an example, the idea of construction is applied to the Ablowitz-Kaup-Newell-Segur integrable coupling. Each equation in the resulting hierarchy has a bi-Hamiltonian structure furnished by the component-trace identity.
+I. INTRODUCTION
+Recently, seeking for new integrable couplings has received considerable attention and formed a pretty important area of research in mathematical physics [1–28]. Integrable couplings are coupled systems which contain given integrable equations as their sub-systems. Mathematically, for a given integrable equation u_{t} = K(u) = K(x, t, u, u_{x}, u_{xx}, …), its integrable coupling is an enlarged triangular integrable system of the following form:
+A well-known example of integrable couplings is the first-order perturbation system [1]
+where K′(u)[v] denotes the Gateaux derivative K^{′}(u)[v]=∂∂ε|_{ε=0}K(u+εv,u_{x}+εv_{x},⋯). It is known that an arbitrary Lie algebra over a field of characteristic zero has a semi-direct sum structure of a solvable Lie algebra and a semisimple Lie algebra, which is stated by the Levi-Mal’tsev theorem. Therefore, zero curvature equations over semi-direct sums of Lie algebras, i.e., non-semisimple Lie algebras, lay the foundation for generating integrable couplings. Integrable couplings usually show various specific mathematical structures, such as block matrix type Lax representations, bi-Hamiltonian structures, infinitely many symmetries, and conservation laws of triangular form. A general structure of integrable couplings connected with these kinds of algebras has recognized recently and some examples have been presented such as the Ablowitz-Kaup-Newell-Segur (AKNS), Wadati-Konono-Ichikawa (WKI), Kaup-Newell (KN), Korteweg-de Vries, Boiti-Pempinelli-Tu, and Volterra integrable couplings [2–28].
+The simplest non-semisimple Lie algebra g¯ consists of square matrices of the following block form:
+A_{1} and A_{2} are two arbitrary square matrices of the same order. This algebra has two subalgebras g̃={M(A_{1},0)} and g̃{c}={M(0,A_{2})} which form a semi-direct sum: . The notion of semi-direct sums means that the two subalgebras g̃ and g̃{c} satisfy [g̃,g̃{c}]⊆g̃{c}. We also require the closure property between g̃ and g̃{c} under the matrix multiplication: g̃g̃{c},g̃{c}g̃⊆g̃{c}. In what follows, we give a brief account of the procedure for building AKNS integrable coupling associated with g¯.
+Step 1: One needs to select an appropriate spectral matrix Ū ≡ Ū(ū, λ) with the spectral parameter λ to form a spatial spectral problem
+where
+In fact, ϕ_{x} = Uϕ is nothing but the classical 2 × 2 AKNS spatial spectral problem [29–32].
+Step 2: We construct a particular solution W¯=WW_{1}0W expressed in terms of Laurent series to the stationary zero curvature equation W¯{x}=[Ū,W¯], which is used to obtain recursion relations. One also needs to prove the localness property for W¯ based on the relations.
+Step 3: By means of the solution W¯ obtained in the previous step, we introduce temporal spectral problems ϕ_{tm}=V¯{[m]}ϕ,V¯{[m]}=(λ^{m}W¯){+}+Δ¯{m} so that the zero curvature equations Ū_{tm}−V¯x[m]+Ū,V¯{[m]}=0 generate the AKNS integrable coupling ū_{tm}=K¯{m}.
+Step 4: Finally, by using the component-trace identity (or the variational identity) [22]
+we can furnish a bi-Hamiltonian structure
+for the obtained AKNS integrable coupling.
+In this paper, we would like to generalize the spatial spectral problem of AKNS integrable coupling (1.3) by using the perturbation technique, namely, adding a nonlinear perturbation term h,
+Obviously, this generalized spatial spectral problem is reduced to the case of AKNS integrable coupling (1.3) for ϵ = 0. With the additional nonlinear term h, the generalized matrix spectral problem generates a generalization of the AKNS integrable coupling, which takes the form u_{t}=K̃(u,v),v_{t}=S̃(u,v).When ϵ = 0, the resulting integrable system becomes the standard AKNS integrable coupling. In this sense, we call the generalization of integrable couplings the “completion process of integrable couplings.”
+The rest of this paper is organized as follows. In Sec. II, we will construct a generalization of the AKNS integrable coupling from zero curvature equations, based on the above-mentioned generalized spatial spectral problem (1.5). In Sec. III, the bi-Hamiltonian structure will be furnished by using the component-trace identity (1.4), thereby, all the resulting equations in the new hierarchy possess infinitely many commuting symmetries and conservation laws. For the sake of convenience, we will use the mathematical software Maple to deal with some complicated symbolic computations. Section IV is devoted to conclusions and discussions.
+II. COMPLETION OF THE AKNS INTEGRABLE COUPLING
+Now, let us assume that W¯ has the following form:
+and solve the stationary zero curvature equation W¯{x}=[Ū,W¯], namely,
+Obviously, the above equations become
+as well as
+By assuming the following Laurent series expansions:
+and substituting (2.5) into (2.3) and (2.4), we arrive at
+and
+To guarantee the uniqueness of a_{i},b_{i},c_{i},e_{i},f_{i},g_{i},i≥0, we let a_{0} = e_{0} = 1 and also need to impose the integration conditions
+Under the above assumptions, by means of the symbolic computation software Maple, we can obtain a_{i},b_{i},c_{i},e_{i},f_{i},g_{i},i≥0 explicitly. The first four sets are listed as follows:
+The localness of the first four sets is not a coincidence. In fact, the functions a_{i},b_{i},c_{i},e_{i},f_{i},g_{i},i≥0 are all local. First from W_{x} = [U, W], we have
+Since tr(W^{2}) = 2(a^{2} + bc), we can obtain
+based on the initial data (2.8). Then, by using the Laurent expansions (2.5), a balance of coefficients of λ^{i} for each i ≥ 0 tells that
+Similarly, we have
+Thus we can obtain
+Then, by means of the Laurent expansions (2.5), a balance of coefficients of λ^{i} for each i ≥ 0 tells that
+Based on the recursion relations (2.6) and (2.7), an application of the mathematical induction finally shows that all functions a_{i},b_{i},c_{i},e_{i},f_{i},g_{i},i≥0 are differential functions in ū, and so, they are all local.
+Now, taking
+the zero curvature equations
+give
+Substituting the first four equations into the fifth one, we can compute
+Thus we introduce
+and then we have generated a complete system ū_{tm}=K¯{m}(ū) of the AKNS integrable coupling
+A nonlinear example in the above new system is
+In Sec. III, we will show that this new generalized system (2.11) is bi-Hamiltonian.
+III. BI-HAMILTONIAN STRUCTURE
+In this section, we will establish bi-Hamiltonian structures for the generalized (2.11) by using the component-trace identity (1.4). It is direct to see
+Now the corresponding component-trace identity (1.4) becomes
+Balancing coefficients of each power of λ in the above equality, we have
+Consider the particular case with m = 2, we have γ = 0. Therefore, we obtain
+In order to establish the relation between the new integrable hierarchy (2.11) and the variational derivative formula (3.1), we first compute
+Consequently, we obtain the following Hamiltonian structure for (2.11):
+with the Hamiltonian operator
+and the Hamiltonian functionals
+It is now a direct computation to show that all members in the new integrable hierarchy (2.11) are bi-Hamiltonian. We compute the recursion operator Φ≡(Φij){4×4} through
+First, we have
+which tells
+Similarly, we have
+So we finally arrive at
+where the second Hamiltonian operator M is given by
+So far, we are ready to see that the new integrable hierarchy (2.11) is integrable in the sense of Liouville. That is, it possesses infinitely many independent commuting symmetries and conservation laws. In particular, we have the Abelian algebra of symmetries,
+and the Abelian algebras of conserved functionals,
+and
+IV. CONCLUSIONS AND DISCUSSIONS
+It is known that once a generating scheme associated with a non-semisimple Lie algebra is established, it can be used to construct integrable couplings. The following non-semisimple Lie algebras formed by 2 × 2, 3 × 3, and 4 × 4 block matrices [25,33,34]:
+have been used to construct integrable couplings, where α, β, μ, ν are arbitrary constants. Certain kinds of integrable couplings based on the above non-semisimple Lie algebras have been obtained recently [2–28]. We have proposed the idea of using perturbation to construct new integrable systems, which generalizes the corresponding integrable couplings. As an example, the complete system of the AKNS integrable coupling, together with the recursion operator Φ and the bi-Hamiltonian structure (3.3), is generated successfully to illustrate the idea. The key step is that a perturbation term h = ϵ(ps + qr) is introduced and actually, the perturbation term could take a more generalized form h=∑j=1Nϵ_{j}(ps+qr){jx}. The resulting construction procedure can be applied to many other cases, including the Dirac, multi-component AKNS, WKI, KN, super-AKNS, and Volterra spectral problems [2–28,33,34].
+In addition, we mention that finite-dimensional irreducible representations [23] of some Lie algebras can also be used to create integrable couplings. For instance, a spectral matrix using V_{2},
+could be another example. Replacing λ with λ + h in the above matrix and setting
+we can also construct new completion of the AKNS integrable coupling in the same manner. For convenience, we omit the construction process and the associated results.

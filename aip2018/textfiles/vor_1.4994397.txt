@@ -1,0 +1,318 @@
+Three-body problem in d-dimensional space: Ground state, (quasi)-exact-solvability
+As a straightforward generalization and extension of our previous paper [A. V. Turbiner et_al, “Three-body problem in 3D space: Ground state, (quasi)-exact-solvability,” J. Phys. A: Math. Theor. 50, 215201 (2017)], we study the aspects of the quantum and classical dynamics of a 3-body system with equal masses, each body with d degrees of freedom, with interaction depending only on mutual (relative) distances. The study is restricted to solutions in the space of relative motion which are functions of mutual (relative) distances only. It is shown that the ground state (and some other states) in the quantum case and the planar trajectories (which are in the interaction plane) in the classical case are of this type. The quantum (and classical) Hamiltonian for which these states are eigenfunctions is derived. It corresponds to a three-dimensional quantum particle moving in a curved space with special d-dimension-independent metric in a certain d-dependent singular potential, while at d = 1, it elegantly degenerates to a two-dimensional particle moving in flat space. It admits a description in terms of pure geometrical characteristics of the interaction triangle which is defined by the three relative distances. The kinetic energy of the system is d-independent; it has a hidden sl(4, R) Lie (Poisson) algebra structure, alternatively, the hidden algebra h^{(3)} typical for the H_{3} Calogero model as in the d = 3 case. We find an exactly solvable three-body S^{3}-permutationally invariant, generalized harmonic oscillator-type potential as well as a quasi-exactly solvable three-body sextic polynomial type potential with singular terms. For both models, an extra first order integral exists. For d = 1, the whole family of 3-body (two-dimensional) Calogero-Moser-Sutherland systems as well as the Tremblay-Turbiner-Winternitz model is reproduced. It is shown that a straightforward generalization of the 3-body (rational) Calogero model to d > 1 leads to two primitive quasi-exactly solvable problems. The extension to the case of non-equal masses is straightforward and is briefly discussed.
+I. INTRODUCTION
+Let us take three classical particles in d-dimensional space with potential depending on mutual distances alone. Assume that all the initial particle positions lie on the same plane. If initial velocities are chosen parallel to this plane, then the motion will be planar: all trajectories are in the plane. Thus, after separation of the center-of-mass motion, the trajectories are defined by evolution of the relative (mutual) distances. The old question is to find equations for trajectories that depend on relative distances only. The aim of the present paper is to construct the Hamiltonian that depends on relative distances and also describes such a planar dynamics for the three-particle case. Our strategy is to study the quantum problem and then take the classical limit, making de-quantization.
+The quantum Hamiltonian for three d-dimensional particles with translation-invariant potential, which depends on relative (mutual) distances between particles only, is of the form
+with the coordinate vector of the ith particle r_{i}≡ri(d)=(x_{i,1},x_{i,2},x_{i,3},…,x_{i,d}), where
+is the (relative) distance between particles i and j, r_{ij} = r_{ji}, sometimes called the Jacobi distances.
+The number of relative distances is equal to the number of edges of the triangle which is formed by taking the particle positions as vertices. We call this triangle the triangle of interaction; see for illustration Fig. 1. Here, Δi(d) is the d-dimensional Laplacian,
+associated with the ith body. For simplicity, all masses in (1) are assumed to be equal: m_{i} = m = 1. The configuration space for H is R^{3d}. The center-of-mass motion described by the vectorial coordinate
+can be separated out; this motion is described by a d-dimensional plane wave, ∼e^{ik⋅R0}.
+The spectral problem is formulated in the space of relative motion R_{r} ≡ R^{2d}; it is of the form
+where Δr(2d) is the flat-space Laplacian in the space of relative motion. If the space of relative motion R_{r} is parameterized by two d-dimensional vectorial Jacobi coordinates
+the flat-space 2d-dimensional Laplacian in the space of relative motion becomes diagonal,
+Thus, q_{j} plays a role of the Cartesian coordinate vector in the space of relative motion.
+The case d = 1 (three bodies on a line) is special. The triangle of interaction degenerates into an interval with the marked point inside—the vertices of the triangle correspond to the endpoints and the marked point—its area is equal to zero. Moreover, for d = 1, the relative distances obey the constraint (hyperplane condition),
+where it is assumed that r_{13} = −r_{31}. Hence, the three relative distances are related and only two relative distances can serve as independent variables. Therefore, the Laplacian in the space of relative variables becomes
+cf. (5). The configuration space R_{r} is the quadrant, r_{12}, r_{23} ≥ 0. Observation [2]
+There exists a family of eigenstates of the Hamiltonian (1), including the ground state, which depend on the three relative distances {r_{ij}} alone. The same is correct for the n-body problem: there exists a family of eigenstates, including the ground state, which depend on relative distances alone.
+This observation is presented for the case of scalar particles, bosons. It can be generalized to the case of fermions.Conjecture
+In the case of three fermions, there exists a family of the eigenstates of the Hamiltonian (1), including the ground state, in which the coordinate functions depend on three relative distances {r_{ij}} only. The same is correct for the n-body problem: there exists a family of the eigenstates, including the ground state, in which the coordinate functions depend on relative distances only.
+Our primary goal is to find the differential operator in the space of relative distances {r_{ij}} for which these states are eigenstates. In other words, to find a differential equation depending only on {r_{ij}} for which these states are solutions. This implies a study of the evolution of the triangle of interaction with a fixed barycenter (center-of-mass). We consider the case of three spinless particles.
+In our previous paper [1], the physically important case d = 3 was studied in detail. In this paper, it will be shown that the generalization to arbitrary d is straightforward. Except for d = 1, almost all formulas remain conceptually unchanged, the presentation (and even wording) remains almost the same, and most conclusions are unaltered.
+II. GENERALITIES
+As a first step, let us change variables in the space of relative motion R_{r},
+where for d > 1 the number of (independent) relative distances r_{ij} is equal to 3 and Ω is a collection of (2d − 3) angular variables. Thus, we split R_{r} into a combination of the space of relative distances R̃ and a space parameterized by angular variables, essentially those on the sphere S^{2d−3}. There are known several ways to introduce variables in R_{r}: the perimetric coordinates by Hylleraas [3], the scalar products of vectorial Jacobi coordinates r_{ij} [4], and the three relative (mutual) distances r_{ij} (see, e.g., Ref [5]). We follow the last one. In turn, the angular variables are introduced as the Euler angles on the S^{2d−4} sphere defining the normal to the interaction plane (triangle) and the azimuthal angle of rotation of the interaction triangle around its barycenter, see, e.g., Ref [4].
+A key observation is that in new coordinates (r_{ij}, Ω) the flat-space Laplace operator (the kinetic energy operator) in the space of relative motion R_{r} takes the form of the sum of two second-order differential operators
+where the first operator depends on relative distances only (hence, the coefficient functions do not depend on angles), while the second operator depends on angular derivatives in such a way that it annihilates any angle-independent function,
+This observation holds for the n-body case as well [6].
+For d = 1, the operator Δ̃ is absent (no angular variables occur) and we have
+see (7). In general, for d > 1, the commutator
+If we look for angle-independent solutions of (3), due to the decomposition (8) the general spectral problem (3) reduces to a particular 3-body spectral problem
+where R̃ is the space of relative distances. Clearly, we can write
+where g^{μν}(r) is the matrix made out of coefficients in front of the second derivatives and b^{μ} is a column vector.
+Surprisingly, for any d > 1, one can find the d-dependent gauge factor Γ(r_{ij}) such that the operator Δ_{R}(r_{ij}, ∂_{ij}) takes the form of the Schrödinger operator,
+where Δ_{LB}(r) is the Laplace-Beltrami operator with contravariant, d-independent metric g^{μν}(r), in general, on some non-flat, (non-constant curvature) manifold. It makes sense of the kinetic energy. Here Ṽ(r) is the effective potential. The potential Ṽ becomes singular at the boundary of the configuration space, where the determinant D(r) = det g^{μν}(r) vanishes. The operator Δ̃{R} is Hermitian with measure D(r){−12}. Eventually, we arrive at the spectral problem for the Hamiltonian
+with d-independent kinetic energy Δ_{LB}(r). Again the case d = 1 is special, the gauge factor is trivial, Γ = 1, and
+Following the de-quantization procedure of replacement of the quantum momentum (derivative) by the classical momentum
+one can get a classical analogue of (12),
+It describes the internal motion of a 3-dimensional body with tensor of inertia (gμν){−1} with center of mass fixed.
+The Hamiltonians (12) and (13) are the main objects of study of this paper.
+III. THREE-BODY CASE: d = 1, CONCRETE RESULTS
+In the one-dimensional case d = 1, the Laplace-Beltrami operator in (12) becomes
+see (7). It corresponds to the two-dimensional flat space Laplacian and is evidently an algebraic operator. Formally, it is not S_{3} invariant unlike the original 3d-Laplacian in (1), the kinetic energy, although it remains S_{2} invariant. Note that in variables,
+see below, the emerging flat-space Laplacian Δ_{LB}(ρ) is not anymore algebraic. As a realization of S_{2} invariance of (7), let us introduce S_{2} invariants
+as new variables, which is a polynomial change of variables, then
+This is an algebraic operator which can be rewritten in terms of the generators of the maximal affine subalgebra b_{2} of the algebra sl(3, R) in ξ-variables, cf. (49); see Refs [7] and  [8].
+There exists another polynomial S_{2}-symmetric change of variables [8]
+which leaves the operator Δ_{LB} algebraic,
+In fact, the variables (16)
+are S_{3} invariants, subject to the condition that the 1st invariant σ_{1} vanishes,
+Hence, the operator (17) is, in fact, S_{3} permutationally invariant. It can be immediately seen that the operator (17) describes the kinetic energy of relative motion of the 3-body (A_{2}) rational Calogero model [9] with potential
+in algebraic form; see Ref [8]. It is easy to check that the potential V_{A2} is a rational function in σ_{2,3} (16). It was shown in Refs [7] and  [8] that the Hamiltonian of relative motion of the 3-body (A_{2}) rational Calogero model (even with potential modified by adding the harmonic oscillator potential) gauge-rotated with its ground state function and written in terms of variables σ_{2,3} is an algebraic operator as well. This operator can be rewritten in terms of the generators of the maximal affine subalgebra b_{2} of the algebra sl(3, R),
+where N is a parameter and
+Another polynomial change of variables
+leaves the operator Δ_{LB} algebraic,
+It can be immediately seen that the operator (23) describes the kinetic energy of relative motion of the 3-body (G_{2}) rational Wolfes model [10] with potential
+in algebraic form; see Ref [8]. It can be rewritten in terms of the generators of the algebra g^{(2)}; see Ref [8]. It is easy to check that the potential V_{G2} is a rational function in λ_{1,2} (22). It was shown in Refs [7] and  [8] that the Hamiltonian of relative motion of the 3-body (G_{2}) rational Wolfes model (even with potential modified by adding the harmonic oscillator potential) gauge-rotated with its ground state function and written in terms of variables λ_{1,2} is an algebraic operator. This operator can also be rewritten in terms of the generators of the algebra g^{(2)}.
+The most general polynomial change of variables known so far, which leaves the operator Δ_{LB} algebraic, has led to the discovery of the so-called Tremblay-Turbiner-Winternitz (TTW) model [11]—the most general superintegrable and exactly solvable model on the plane. Following Calogero [9], let us introduce polar coordinates in the space of relative distances,
+see (4). Now we define new variables
+which are the invariants of the dihedral group I_{2}(k) for integer k (and even rational k). The operator (7) takes an amazingly simple algebraic form
+for k = 1, 2, …. This operator can be rewritten in terms of the generators of the algebra g^{(k)}; see Ref [11]. Forming the Schrödinger operator
+we arrive at the Tremblay-Turbiner-Winternitz (TTW) model; if k = 3 at α = 0, the 3-body (A_{2}) rational Calogero model occurs, otherwise for α ≠ 0, the 3-body (G_{2}) rational Wolfes model occurs, both after separating out center-of-mass motion. Interestingly, for k = 1, we get the Smorodinsky-Winternitz model, while for k = 2, it will be the BC_{2} rational model. Both models describe the relative motion of the 3-body problem.
+The TTW model is exactly solvable and integrable for any real k—there exists a 2nd order integral (the 1st order symmetry operator squared)—while for rational k = p/q, the model is superintegrable—there exists an integral of order 2(p + q) − 1 [12]. For integer k by gauge-rotation of the Hamiltonian (24) with its ground state function, one can transform it to an algebraic operator. The same is true for both integrals: gauge rotation with ground state eigenfunction leads them to a form of algebraic operators in variables t, u. All these algebraic operators can be rewritten in terms of the generators of the algebra g^{(k)}.
+It must be emphasized that there are non-polynomial changes of variables (r_{12}, r_{23}) (trigonometric and elliptic) in (7) which can still lead to algebraic operators. In the case of trigonometric change of variables, there occurs the kinetic energy of the relative motion of 3-body, (A_{2}) trigonometric Sutherland model [7] or (G_{2}) trigonometric Sutherland model [8] or the kinetic energy of BC_{2} trigonometric model [13]. For discussion, see Ref [14].
+In the case of elliptic change of variables, there occurs the kinetic energy of relative motion of the 3-body, (A_{2}) elliptic Calogero model or (G_{2}) elliptic model [15] or the kinetic energy of the BC_{2} elliptic model [16].
+IV. THREE-BODY CASE: d > 1, CONCRETE RESULTS
+A. r-representation
+Assuming d > 1, after straightforward calculations, the operator Δ_{R}(r_{ij}, ∂_{ij}) [in decomposition (8)] can be found to be
+cf., e.g., Ref [5]. Note that at d = 1 the operator (25) becomes degenerate. This can be seen by calculating the determinant of the metric g^{μν}, see (10) for definition, of the operator (25),
+where S_{△} is the area of the interaction triangle, see below. For d = 1, the interaction triangle shrinks to the interval with a marked point, its area vanishes, S_{△} = 0, and the determinant is identically zero, D(r) = 0. This implies that the original three-dimensional configuration space at d > 1 given by S_{△} ≥ 0 shrinks to the boundary, S_{△} = 0, and effectively becomes two-dimensional.
+In general, the operator (25) does not depend on the choice of the angular variables Ω. While the operator Δ̃(r_{ij},∂_{ij},Ω,∂_{Ω}) in (8), for example, at d = 2, where there is a single angular variable, Ω = θ, is equal to
+where θ is the azimuthal angle of rotation around the barycenter of triangle of interaction, see Fig. 1, and S_{△} is the area of the interaction triangle, see Eq. (29). It is evident that Δ̃ annihilates any angle-independent function. The variable θ is not separated in Δ̃ and, thus, in Δr(2d) (8): the eigenfunctions in (3) are not factorizable to the form R(r_{ij}) A(θ).
+The configuration space in the space of relative distances is
+equivalent to S_{△} > 0. In the space with Cartesian coordinates (x, y, z) = (r_{12}, r_{13}, r_{23}), the configuration space lies in the first octant and is the interior of the inverted tetrahedral-shaped object with the base at infinity, vertex at the origin, and edges (t, t, 2t), (t, 2t, t), and (2t, t, t), 0 ≤ t < ∞.
+B. ρ-representation
+Formally, the operator (25) is invariant under reflections Z_{2} ⊕ Z_{2} ⊕ Z_{2},
+and with respect to the S_{3}-group action. If we introduce new variables,
+the operator (25) becomes algebraic,
+cf. Ref [1] at d = 3. Note that the operator (28) is of Lie-algebraic nature: it can be rewritten in terms of the generators of the algebra sl(4, R) realized by the first-order differential operators, see below. It acts as a filtration for the flag of finite-dimensional representation spaces of this algebra
+From (26) and (27), it follows that the corresponding configuration space in ρ variables is given by the conditions
+equivalent to S_{△} > 0. The boundary of the configuration space is given by S(ρ)=S△2=0. We remark that
+because the left-hand side (lhs) is equal to
+and conditions (26) should hold. Therefore, following the Heron formula, the lhs is proportional to the square of the area of the triangle of interaction S△2=S.
+The associated contravariant metric for the operator Δ_{R}(ρ) defined by coefficients in front of second derivatives is remarkably simple
+and it is linear in ρ-coordinates(!) with factorized determinant
+and is positive definite. It does not depend on dimension d, cf. Ref [1], explicitly. However, at d = 1, this determinant vanishes identically(!) (see below). It is worth noting a remarkable factorization property of the determinant
+where P=r122+r132+r232—the sum of squares of the sides of the interaction triangle—the trace of metric tensor, Tr g^{μν}(ρ) = P/4.
+The operator (28) is S_{3} permutationally invariant. Hence, it can be rewritten in terms of elementary symmetric polynomials σ_{1,2,3},
+The determinant D(ρ) has the very simple form
+with
+where only the elementary symmetric polynomials τ_{1,2} are involved. When det g^{μν}(ρ) = 0, hence, either τ_{1} = 0 or τ12=4τ_{2}, it defines the boundary of the configuration space, see (29).
+C. τ-representation
+The operator (28) being rewritten in terms of elementary symmetric polynomials σ_{1,2,3} in ρ-variables (32) remains algebraic
+with metric
+see (72) and (73). Its determinant
+cf. (33). Again, the determinant vanishes if (16S△2)=(4τ_{2}−τ12)=0.
+D. Geometrical variables’ representation
+It is important to point out that the operator Δ_{R}(τ) can be rewritten in geometrical terms using them as geometrical variables,
+namely,
+where the metric is of the form
+with determinant
+Note that the operator (37) is of Lie-algebraic nature: it can be rewritten in terms of the generators of the algebra h^{(3)} realized by the differential operators, see below. It acts as a filtration for the flag of finite-dimensional representation spaces of this algebra
+This operator will be instrumental for construction of (quasi)-exactly solvable problems for case III.
+E. Towards d = 1
+For d = 1 when the square of the interaction triangle vanishes, hence, S≡116(4τ_{2}−τ12)=0, the metric becomes degenerate, det g^{μν}(ρ) = det g^{μν}(τ) = 0. Effectively, it leads to a reduction of the dimension of the space of relative distances from 3 to 2: the configuration space 4τ_{2}−τ12≥0 shrinks to the boundary 4τ_{2}−τ12=0. In order to see this dimensional reduction explicitly, let us change variables in (28),
+It follows that
+with metric
+where ρ_{23} = ρ_{23}(ρ_{12}, ρ_{13}, S) and determinant
+which vanishes identically if S = 0.
+Imposing conditions d = 1 and S = 0 on Δ_{R} (39), we get
+where ρ_{23}=(ρ12±ρ13){2}. The operator (41) is not algebraic anymore. However, it can be easily checked by calculating the curvature that is a Laplace-Beltrami operator in flat space. By changing variables ρ → r in (41),
+we arrive at the algebraic operator (7), which is nothing but the flat Laplacian. There are also numerous changes of the coordinates ρ_{12}, ρ_{13}, see Sec. II, into ξ_{1,2} (14), σ_{1,2} (16), λ_{1,2} (22), (t, u), etc., and in all those, the operator (41) is algebraic.
+It is important to emphasize that unlike (39), in the limit d → 1 and S → 0, the algebraic operator (37) continues to be algebraic,
+The metric of operator (42) is given by
+with determinant
+Its curvature is zero; thus, Δ_{R} is the Laplace-Beltrami operator in flat space. In fact, the geometrical coordinates P, T correspond to λ_{1,2} (22), in those the 3-body G_{2} rational, Wolfes model becomes algebraic. Later the geometrical coordinates P, S, T will play an important role in construction of (quasi)-exactly solvable 3-body problems.
+F. Integral
+It can be shown that there exists the 1st order symmetry operator written in terms of ρ-variables as
+for the operator (28), such that
+Here, L_{1} is an algebraic operator, which is anti-invariant under the S_{3}-group action. The existence of the symmetry L_{1} implies that in the space of relative distances one variable can be separated out in (28).
+Set
+where w22=4(τ12−3τ_{2})=P^{2}−48S in geometrical variables as well, which are invariant under the action of L_{1}, and
+with sgn(x)=x|x| for nonzero x. These coordinates are invariant under a cyclic permutation of the indices on ρ_{jk}: 1 → 2 → 3 → 1. Under a transposition of exactly two indices, see, e.g., (12) and (3), we see that w_{1}, w_{2} remain invariant and w_{3}→−w_{3}−3π6. (For the method used to compute w_{3}, see Ref [17].) Expressions for w_{3} vary, depending on which of the 6 non-overlapping regions of (ρ_{12}, ρ_{13}, ρ_{23}) space we choose to evaluate them:
+1. 
+2.
+The regions in class 1 are related by cyclic permutations, as are the regions in class 2. We map between regions by a transposition. Thus it is enough to evaluate w_{3} in the region (a): ρ_{23} > ρ_{13} > ρ_{12}. The other 5 expressions will then follow from the permutation symmetries. In this case, we have
+[The special cases where exactly two of the ρ_{jk} are equal can be obtained from these results by continuity. Here, w_{3} is a single-valued differentiable function of ρ_{12}, ρ_{13}, ρ_{23} everywhere in the physical domain (configuration space), except for the points ρ_{12} = ρ_{13} = ρ_{23} where it is undefined.]
+In these coordinates, the operators (44) and (28) take the form
+respectively. It is evident that for the w_{3}-independent potential
+where the factor 6 is introduced for convenience, the operator L_{1} is still an integral for an arbitrary function g,
+This property of integrability permits separation of the variable w_{3} in the spectral problem
+where Ψ = ψ(w_{1}, w_{2}) ξ(w_{3}) is defined by the differential equations,
+Note that the integral L_{1} is the integral for the three-dimensional quantum problem (12). As for the original 3-body problem (3), this integral is a particular integral [18]: it commutes with the Hamiltonian (3) over the space of relative distances R̃ only,
+As for the operators H_{r} and L_{1}, they do not commute.
+G. The representations of sl(4, R)
+Both operators (28) and (44) are sl(4, R)-Lie algebraic—they can be rewritten in terms of the generators of the maximal affine subalgebra b_{4} of the algebra sl(4, R), see, e.g., Refs [19] and  [20],
+where N is a parameter and
+If N is a non-negative integer, a finite-dimensional representation space occurs,
+It is easy to check that the space P_{N} is invariant with respect to projective transformations
+where a_{i}, b_{i}, c_{i}, d_{i}, α, β, γ, and δ are real parameters, and taking them as the rows of the 4 × 4 matrix G, we arrive at the condition G ∈ GL(4, R).
+Explicitly, the above-mentioned operators Δ_{R}, L_{1} take the form
+and
+in terms of sl(4, R) generators.
+H. The Laplace-Beltrami operator, underlying geometry
+A remarkable property of the algebraic operator Δ_{R}(ρ) (28) is its gauge-equivalence to the Schrödinger operator. Making the gauge transformation with determinant D(ρ) (31) and (33) included into the factor for d ≠ 1,
+see also (32), we find that
+where the effective potential is of the form
+thus, of geometric nature, with a vanishing second term at d = 2, 4. In turn,
+is the d-independent Laplace-Beltrami operator,
+see (30) and (31). Eventually, taking into account the gauge rotation (54), we arrive at the three-dimensional Hamiltonian
+in the space of r-relative distances or
+in ρ-space, see (27), or
+in τ-space, see (32). These Hamiltonians describe the three-dimensional quantum particle moving in the curved space with metric g^{μν} with kinetic energy Δ_{LB}, in particular, in ρ-space with metric g^{μν}(ρ) (30) with kinetic energy Δ_{LB}(ρ) (56) and effective potential Ṽ(ρ) (55). The Ricci scalar, see, e.g., Ref [21], in ρ-space is equal to
+and interestingly, it has a structure similar to one of the effective potentials (54).
+It is singular at the boundary of the configuration space. (For d = 1, the configuration space degenerates to the boundary, 4τ_{2}=τ12, and becomes flat.) The Cotton tensor, see, e.g., Ref [21], for the metric (30) is nonzero, so the space is not conformally flat.
+Making the de-quantization of H_{LB}(ρ), we arrive at a three-dimensional classical system which is characterized by the Hamiltonian,
+where P_{μ}, μ = 12, 23, 13, is classical canonical momenta in ρ-space and g^{μν}(ρ) is given by (30). Here the underlying manifold (zero-potential case) admits an so(3) algebra of constants of the motion linear in the momenta, i.e., Killing vectors. Thus, the free Hamilton-Jacobi equation is integrable. However, it admits no separable coordinate system. The classical kinetic energy T = g^{μν}(ρ) P_{μ}P_{ν} Poisson-commutes with
+V. (QUASI)-EXACT-SOLVABILITY (QES)
+A. QES in ρ, τ variables, d≠ 1
+Let us take the d-independent function
+assuming d ≠ 1, where γ, ω > 0, and A ≥ 0 and for ω = 0, A > 0 are constants and τ′s are given by (32). We look for the potential for which the function (58) is the ground state function for the Hamiltonian H_{LB}(ρ) of the 3-dimensional quantum particle. This potential can be found immediately by calculating the ratio
+where Δ_{LB}(ρ) is given by (56) with metric (30). The result is
+which is d-independent, and it includes the effective potential Ṽ and many-body potential V with the energy of the ground state
+Now, let us take the Hamiltonian H_{LB,0} ≡ −Δ_{LB}(ρ) + V_{0} with potential (59), subtract E_{0} (60), and make the gauge rotation with Ψ_{0} (58). As a result, we obtain the sl(4, R)-Lie-algebraic operator with additional potential ΔV_{N} [19,20],
+see (52), where
+It is evident that for integer N the d-independent operator h^{(qes)} (J) has a finite-dimensional invariant subspace P_{N}, (51), with dimP_{N}∼N^{3} at large N. Finally, we arrive at the quasi-exactly solvable, d-independent, single particle Hamiltonian in the space of relative distances ρ,
+cf. (12), where
+is a two-variable QES potential. Its configuration space is τ_{1} ≥ 0 and 4τ_{2}≥τ12. For this potential, ∼N^{3} eigenstates can be found by algebraic means. They have the factorized form of the polynomial in ρ multiplied by Ψ_{0} (58),
+These polynomials are the eigenfunctions of the quasi-exactly solvable algebraic operator
+which is the quasi-exactly solvable sl(4, R)-Lie-algebraic operator
+cf. (61).
+As for the original many-body problem (9) in the space of relative motion
+the potential for which quasi-exactly solvable, polynomial solutions occur in the form
+where Γ∼D^{−1/4}(ρ)(4τ2−τ12){3−d4}, see (33). The three-body potential is given by
+cf. (63); it does not depend on the τ_{3}-variable and does not contain a singular term ∼1/τ_{1}.
+(II). Exactly solvable problem in ρ-variables.
+If the parameter A vanishes in (58) and (63) and (61) and (65), we will arrive at the exactly solvable problem, where Ψ_{0} (58) at A = 0 plays the role of the ground state function,
+The sl(4, R)-Lie-algebraic operator (65) contains no raising generators {J^{+}(N)} and becomes
+see (52), and, hence, it preserves the infinite flag of finite-dimensional invariant subspaces P_{N} (51) at N = 0, 1, 2, …. The single particle potential (63) becomes
+Eventually, we arrive at the exactly solvable single particle Hamiltonian in the space of relative distances
+where the spectra of energies
+are equidistant. Its degeneracy is equal to number of partitions of N = n_{1} + n_{2} + n_{3}. All eigenfunctions have the factorized form of a polynomial in ρ multiplied by Ψ_{0} (67),
+These polynomials are eigenfunctions of the exactly solvable, d-independent, algebraic operator
+or, equivalently, of the exactly solvable sl(4, R)-Lie-algebraic operator
+Those polynomials Pol_{N} are orthogonal with respect to Ψ02, (58) at A = 0, and their domain is given by (29). Being written in terms of variables w_{1,2,3}, see above, they are factorisable, F(w_{1}, w_{2}) f(w_{3}). To the best of our knowledge, these orthogonal polynomials have not been studied in the literature.
+The Hamiltonian with potential (68) can be considered as a type of a d-dimensional generalization of the 3-body Calogero model [9], see also Refs [7] and  [15], with loss of the property of pairwise interaction and absence of singular interaction terms ∼τ_{2}τ_{3}. Now the potential of interaction contains two- and three-body interaction terms. If γ = 0, 1 in (68), we arrive at the celebrated harmonic oscillator potential in the space of relative distances, see, e.g., Ref [22]. In turn, in the space of relative motion, this potential contains no singular terms at all and becomes
+see Ref [22]. We arrive at the harmonic oscillator potential V. Therefore, the potential (68) is a d-dimensional generalization of the harmonic oscillator in the space of relative motion rather than the 3-body (rational) Calogero model. An attempt to construct a true d-dimensional generalization of the 3-body (rational) Calogero model will be made below.
+(III). (Quasi)-exactly solvable problem in τ-variables.
+The quasi-exactly solvable sl(4, R)-Lie-algebraic operator h^{(qes)} (J) (65), as well as the exactly solvable operator h^{(es)} (J) (71) as its degeneration at A = 0, was acting originally in ρ variables (64). They are characterized by accidental permutation symmetry S^{3} in ρ variables and, hence, they can be rewritten in terms of τ variables (32). Surprisingly, the operator (64) remains algebraic(!)
+Evidently, it remains algebraic at A = 0 as well,
+becoming the exactly solvable one. Note that both the quasi-exactly solvable operator (72) and exactly solvable operator (73) admit the integral
+cf. (44), [h^{(qes)}(τ),L12]=0. This integral is an algebraic operator. It involves derivatives with respect to τ_{3} only.
+It can be immediately checked that the quasi-exactly solvable operator (72) has the finite-dimensional invariant subspace in polynomials in τ,
+cf. (51), with characteristic vector (1, 2, 3), and hence, the Newton pyramid has sides 1, 2, 3, associated with a solid angle of 90°; for discussion see, e.g., Ref [14]. This finite-dimensional space appears as a finite-dimensional representation space of the algebra of differential operators h^{(3)} which was discovered in the relation with the H_{3} (non-crystallographic) rational Calogero model as its hidden algebra [23]. Note that the space PN(1,2,3) is invariant with respect to the quasi-projective transformation,
+where A, B, C are parameters. (AVT thanks Kontsevich for bringing attention to this property.)
+The algebra h^{(3)} is infinite-dimensional but finitely generated; for discussion, see Ref [23]. Their generating elements can be split into two classes. The first class of generators (lowering and Cartan operators) act in PN(1,2,3) for any N, and therefore they preserve the flag P^{(1,2,3)}. The second class of operators (raising operators) act on the space PN(1,2,3) with fixed N only.
+Let us introduce the following notations for the derivatives:
+The first class of generating elements consists of the 22 generators where 13 of them are the first-order operators
+6 of them are the second-order operators,
+and 2 of them are the third-order operators,
+The generators of the second class consist of 8 operators where one of them is of the first order
+4 operators are of the second order
+and 3 operators are of the third order
+where we have introduced the diagonal operator (the Euler-Cartan generator)
+for a convenience. In fact, this operator is the identity operator, it is of the zeroth order and, hence, it belongs to the first class.
+It is not surprising that the algebraic operator h^{(qes)} (τ), (72), can be rewritten in terms of generators of the h^{(3)}-algebra,
+as well as the algebraic operator h^{(es)} (τ), (73), which occurs at A = 0, can be rewritten in terms of generators of the h^{(3)}-algebra,
+where without loss of generality we put N = 0. The integral (74) can be rewritten in terms of generators of the h^{(3)}-algebra as well,
+It involves the generators of the first class only: (77) and (78). Hence, it preserves the infinite flag of polynomials PN(1,2,3), see (75), N = 0, 1, 2, ….
+It can be immediately verified that with respect to the action of the operator (72), the finite-dimensional invariant subspace (75) is reducible: it preserves
+The operator which acts on PN(1,2) has the form
+cf. (48). It has ∼N^{2} polynomial eigenfunctions which depends on two variables τ_{1,2} only. The space PN(1,2) is the finite-dimensional representation space of the non-semi-simple Lie algebra g^{(2)} ⊂ gl(2, R) ⊕ R^{3} realized by the first-order differential operators [24] (see also Refs [25],  [26], and  [8]),
+The operator (88) can be rewritten in terms of gl(2, R) ⊕ R^{3} operators alone
+The space (75) is reducible further: the operator (72) [and also the operator (88)] preserves
+as well. The operator, which acts on PN(1), has the form
+It can be rewritten in terms of sl(2, R) algebra generators,
+It can be immediately recognized that the spectra of polynomial eigenfunctions of (91) correspond to the spectra of the QES sextic polynomial potential with singular term ∼ 1/τ_{1}, see Ref [20], case VII.
+Eventually, it can be stated that among ∼N^{3} polynomial eigenfunctions in τ variables of the quasi-exactly solvable operator (72), there are ∼N^{2} polynomial eigenfunctions of the quasi-exactly solvable operator (88) and ∼N polynomial eigenfunctions of the quasi-exactly solvable operator (91). A similar situation occurs for the exactly solvable operator (73), see (72) at A = 0, for which there exist infinitely many polynomial eigenfunctions in τ variables. Among these eigenfunctions, there exists the infinite family of the polynomial eigenfunctions in τ_{1,2} variables, which are eigenfunctions of the operator
+Besides that, there exists the infinite family of the polynomial eigenfunctions in the τ_{1} variable, which are eigensolutions of the operator
+and they are nothing but the Laguerre polynomials. The spectra of polynomial eigenfunctions is equidistant,
+and it corresponds to the spectra of a harmonic oscillator (with a singular term ∼1/τ_{1} in the potential).
+Finally, we emphasize that both the above-described QES problems in ρ and τ variables exclude conceptually the limit d = 1: the determinant of the metric g^{μν}(ρ) and g^{μν}(τ) is identically zero at d = 1 since the area of the triangle of interaction shrinks to zero, and the operator Δ_{LB} becomes singular.
+B. QES in geometrical variables for arbitrary d
+We consider the n-body Hamiltonian (9),
+written in terms of geometrical variables P, S, T and look for potentials V_{G} for which there exists an (in)finite number of polynomial eigenfunctions for any positive d > 0. This problem can be reduced to search for a square-integrable function Ψ_{0}(P, S, T) such that the gauge-rotated operator (Ψ0){−1}Δ_{R}Ψ_{0} remains algebraic (up to an additive function) and can be rewritten in terms of the generators of the algebra h^{(3)} (acting on functions of variables P, S, T).
+1. Exactly solvable problem
+Let us take the operator (37)
+and gauge-rotate it with a T-independent function
+As a result, we get the additional terms to Δ_{R},
+where evidently
+is an exactly solvable, algebraic operator, see below, and the potential
+is the exactly solvable many-body potential, which at γ̃=0 can be identified with a harmonic oscillator potential, see, e.g., Ref [22]. The second terms play the role of a centrifugal potential due to rotation of the interaction plane (triangle) around the center-of-mass. Here
+is the ground state energy. The function Ψ_{0}(P, S) is nothing but the ground state function for the potential (97); it is positive in the configuration space S_{△} > 0.
+It can be immediately checked that the exactly solvable operator (96) has infinitely many finite-dimensional invariant subspaces in polynomials in variables P, S, T,
+cf. (75), with characteristic vector (1, 2, 3), which form the infinite flag. The spectra of −h^{(exact)} coincides with the spectra of the Hamiltonian; it is
+where p_{1,2,3} = 0, 1, … are quantum numbers, with multiplicity
+The operator (96) acts on (99) reducibly. It maps
+and
+Therefore, h^{(exact)} preserves the subflag of spaces of polynomials made of PN(1,2),N=0,1,2,… as well as polynomials PN(1),N=0,1,2,…. It implies the existence of a (sub)-family of the eigenpolynomials of the form Pol_{N}(P, S) as well as another (sub)-family Pol_{N}(P). The first sub-family leads to the eigenfunctions of the reduced operator (96),
+namely,
+while the second sub-family leads to the eigenfunctions of another reduced operator (96),
+namely,
+One can recognize that (102) is the Laguerre operator.
+In general, the eigenfunctions of the algebraic sector of H̃{R}=−Δ_{R}+V^{(exact)}, which correspond to the eigenvalues (99), are factorized to the product of a polynomial and Ψ_{0}(P, S); thus, they are of the form
+However, among them, there exist two particular forms of eigenfunctions,
+and
+It is evident that they form the infinite family of eigenstates of the reduced n-body Hamiltonian H̃{R}; hence, this problem is exactly solvable. We do not know whether their spectra are complete. However, from the point of view of the original problem (3),
+it is quasi-exactly solvable since it has infinitely many angle-dependent eigenfunctions which likely are of non-algebraic nature.
+The limit d = 1 corresponds to the vanishing area of the interaction triangle, and hence, S = 0, and also γ̃=0. The ground state function (95) becomes
+the operator Δ_{R} remains algebraic, see (42), and also the operator (96),
+It is easy to check that at ω = 0 the operator hd=1(exact) is the flat Laplace-Beltrami operator with metric (43). The potential contains no singular part,
+and coincides with the regular part of the 3-body G_{2} rational, Wolfes model. The geometrical coordinates P, T correspond to λ_{1,2} (22), in those the 3-body G_{2} rational, Wolfes model becomes algebraic, and
+The spectra of the operator hd=1(exact) (104) is equidistant
+cf. (99), where p_{1,3} = 0, 1, … are quantum numbers, with multiplicity
+It can be immediately checked that the exactly solvable operator (104) has infinitely many finite-dimensional invariant subspaces of polynomials in variables P, T,
+cf. (99), with characteristic vector (1, 3), which form an infinite flag. It is easy to check that the operator (104) acts on (108) reducibly. It maps
+It leads to the eigenfunctions of a reduced operator (104),
+cf. (102). It is again the Laguerre operator.
+In general, the eigenfunctions of the algebraic sector of H̃{R}=−Δ_{R}+Vd=1(exact), which correspond to the eigenvalues (99-d1) are factorized as the product of a polynomial and Ψ_{0}(P); thus, they are of the form
+However, among them, there exists a particular form of eigenfunctions,
+2. Quasi-exactly solvable problem
+Let us take the function
+cf. (95), and make the gauge rotation of Δ_{R} (37) with Ψ_{0}. As a result, we get Δ_{R} and the additional first order terms, and overall it can be split into three terms
+where
+is the algebraic, quasi-exactly solvable, if N is the integer, operator, see below, and the potential
+is the quasi-exactly solvable many-body sextic potential, which at A=γ̃=0 can be identified with harmonic oscillator (non-singular) potential (97), see, e.g., Ref [22], and E_{0} (98). The last term in V^{(qes)} plays the role of a centrifugal potential due to rotation of the interaction plane (triangle) around the center-of-mass (barycenter). Note that the term (2ANP) is added to (111) and subtracted in (112).
+For general values of the parameter N, the operator (111) is h^{(3)} Lie-algebraic: it can be rewritten in terms of the generators of the algebra h^{(3)} (77), (78), and (80). However, it can be immediately checked that for integer N the operator (111) has a single finite-dimensional invariant subspace in polynomials in variables P, S, T,
+cf. (99), with characteristic vector (1, 2, 3). Thus, it is quasi-exactly solvable operator where ∼N^{3}/6 eigenstates can be found algebraically. In particular, it can be constructed with the algebraic secular equation of the degree ∼N^{3}/6 with real roots alone whose roots are the eigenvalues. Simple analysis of the operator (111) shows that among the ∼N^{3}/6 polynomial eigenfunctions in three variables P, S, T, there exist the ∼N^{2}/2 polynomial eigenfunctions in two variables P, S and the (N + 1) polynomial eigenfunctions in variable P. These latter eigenfunctions are the eigenfunctions of the operators
+cf. (101), and
+cf. (102), respectively. It is easy to check that the quasi-exactly solvable operator hr(qes) (113) can be rewritten in terms of the generators of the algebra g^{(2)}⊃gl(2,R)⋉R^{(2)}, see, e.g., Refs [8] and  [11] while (114) can be rewritten in terms of the generators of the algebra sl(2), see Ref [19]. The quasi-exactly solvable operator hrr(qes) corresponds to case VII in the classification of one-dimensional QES operators [20] and describes the algebraic sector of the one-dimensional QES singular sextic polynomial potential. Note that the ground state function of the QES n-body Hamiltonian (9) with potential (112),
+is of the form
+see (110), where P_{N}(P) is the positive eigenfunction of the operator hrr(qes) at P > 0.
+In the limit d = 1, the area of the interaction triangle vanishes S = 0 as well as γ̃=0 to ensure that the ground state function (110) remains finite
+and the operator h^{(qes)} remains algebraic,
+It is easy to check that at ω = 0, A = 0, the operator hd=1(qes) is the flat Laplace-Beltrami operator with metric (43). The operator hd=1(qes) (116) can be rewritten in terms of the generators of the algebra g^{(3)}⊃gl(2,R)⋉R^{(3)}, see, e.g., Ref [11]. If N is integer, the operator hd=1(qes) has a finite-dimensional invariant subspace
+and its ∼N^{2}/2 eigenfunctions are Nth degree polynomials in variables P, T. Interestingly, among these eigenfunctions, there are (N + 1) eigenfunctions in the form of polynomials of degree N in variable P. They are the eigenfunctions of the operator
+cf. (116). The quasi-exactly solvable operator hr,d=1(qes) corresponds to case VI in the classification of one-dimensional QES operators [20] and describes the algebraic sector of the one-dimensional QES (non-singular) sextic polynomial potential. It can be rewritten in terms of the generators of the algebra sl(2, R).
+The potential of the QES 3-body Hamiltonian (9) at d = 1 contains no singular part,
+Its ground state has the form
+where P_{N}(P) is the lowest eigenfunction of the operator (−hd=1,r(qes)) with the property P_{N}(P) > 0 at P > 0.
+C. Primitive QES problems
+(a). Let us take the S_{3}-permutationally symmetric function
+where γ, ω > 0 are constants and τ′s are given by (32). If d = 1, then, for the ordering r_{1} ≤ r_{2} ≤ r_{3},
+and (119) becomes the 3-body Calogero ground state function (the Wigner-Dyson distribution). Here, (119) is a natural generalization to arbitrary d.
+Now we look for the potential for which the expression (119) is the ground state function for the Hamiltonian H_{r}, see (3) and (9). This potential can be found immediately by calculating the ratio
+where Δ_{R}(r) is given by (25). The result is
+with the energy of the ground state
+It can be checked that for d = 1, imposing (120), the potential (121) becomes the familiar 3-body Calogero potential [9],
+Let us define the Hamiltonian
+and make a gauge rotation ψa−1Hr(a)ψ_{a}=−ΔR′,
+By construction, the operator ΔR′(r) (123) has a single one-dimensional invariant subspace <1> in space of polynomials’ mapping it to itself. Hence, the Hamiltonian Hr(a) is a primitive QES problem where only the ground state is known.
+(b). Let us take another S_{3}-permutationally symmetric function
+cf. (119), where γ, ω > 0 are constants. If d = 1, then, for the ordering r_{1} ≤ r_{2} ≤ r_{3},
+and (124) becomes the 3-body Calogero ground state function as (119) does. Also (124) is a natural generalization to arbitrary d.
+The potential for which the expression (124) is the ground state function for the Hamiltonian H_{r}, see (3) and (9), is given by
+where
+are S^{3} permutationally symmetric, relative r-coordinate polynomials (elementary symmetric polynomials in r_{ij}), see (18), with the energy of the ground state
+It can be checked that for d = 1, imposing (120), the potential (126) becomes the familiar 3-body Calogero potential [9],
+Let us define the Hamiltonian
+and make a gauge rotation ψb−1Hr(b)ψ_{b}=−ΔR′,
+The operator (128) has no invariant subspaces except for ⟨1⟩. Hence, the Hamiltonian Hr(b) is also a primitive QES problem where only the ground state is known.
+VI. CONCLUSIONS
+In this paper for the 3-body problem with equal masses in d-dimensional space, it is found that the Schrödinger type equation in the space R̃ of relative distances {r_{ij}},
+where the Laplace-Beltrami operator Δ_{LB}, see, e.g., (56), is d-independent and makes sense as the kinetic energy of a three-dimensional particle in curved space with metric (30) for d > 1, and for d = 1, it degenerates to the kinetic energy of a two-dimensional particle in flat space, and Ṽ(r_{ij}; d) is the effective potential. The operator (129) describes angle-independent solutions of the original 3-body problem (1), including the ground state. Hence, finding the ground state (and some other states) involves the solution of the differential equation in three variables, contrary to the original (2d)-dimensional Schrödinger equation of the relative motion. Since the Hamiltonian H_{LB} is Hermitian, the variational method can be employed with only three-dimensional integrals involved. Generalization to the case of three bodies of arbitrary masses is straightforward and is done in the Appendix. The classical analogue of the Hamiltonian in (129) was presented as well in (13). Note that in this case the operator Δ_{R} is algebraic in the ρ-representation but not in τ-representation or geometric variables representation.
+The gauge-rotated Laplace-Beltrami operator, with d-independent determinant of the metric D raised to a certain degree as the gauge factor, appears as an algebraic operator both in the variables which are squares of relative distances and which are the elementary symmetric polynomials in squares of relative distances as arguments. The former algebraic operator has the hidden algebra sl(4, R), while the latter one has the hidden algebra h^{(3)}, thus, becoming Lie-algebraic operators. Both operators can be extended to (quasi)-exactly solvable operators with potentials in a form of rational functions in either variables. Interestingly, both (quasi)-exactly solvable operators [with hidden algebra sl(4, R) and h^{(3)}, respectively] lead to the same (quasi)-exactly solvable potentials in the space of relative distances. Naturally, these (quasi)-exactly solvable potentials in the space of relative distances are quasi-exactly solvable potentials in the space of relative motion. We show that there exists a special (quasi)-exactly solvable problem in geometric variables P, S, T which admits limit d = 1 preserving polynomiality of the eigenfunctions. The ground state function always depends on the single variable P. The exactly solvable problem looks as the singular harmonic oscillator in the space of relative distances, while the quasi-exactly solvable problem appears as the singular sextic anharmonic oscillator. Both problems will be discussed in detail elsewhere.
+APPENDIX: NON-EQUAL MASSES
+For unequal masses, the symmetry operator for both (A1) and (A3) is
+which commutes
+Invariants under this action are the functions
+These invariants are related by
+Furthermore, all are non-negative. In particular,
+where
+Now we make a change of variables from ρ_{12}, ρ_{13}, ρ_{23} to W_{1}, W_{3}, W_{4} so that L_{1}=∂_{W3} in the new coordinates. We have already defined W_{1} and W_{4}. While we define W_{3} by the equations
+where
+Due to the easily verified identity
+we see that Eqs. (A5) have a locally unique solution for an angle W_{3}. In terms of these new variables, we find
+FIG. 1. 
+Three-particle system: the coordinate vectors r_{i} mark the positions of vertices of the triangle of interaction with sides r_{ij}. The center-of-mass (the barycenter of the triangle) is marked by a (red) bubble.
